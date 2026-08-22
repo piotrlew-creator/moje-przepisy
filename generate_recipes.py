@@ -1,4 +1,5 @@
 import os
+import re
 
 recipes = {
     # DAY 1
@@ -1819,14 +1820,40 @@ recipes = {
 """
 }
 
-# Utworzenie katalogu docelowego i zapisanie wszystkich plików
+def fix_recipe_formatting(content):
+    pattern = r'<span class="ing-item" data-base="([^"]+)" data-unit="([^"]+)" data-name="([^"]+)">([^<]+)</span>(?:\s*\(([^)]+)\))?'
+
+    def replace_match(match):
+        base = match.group(1)
+        unit = match.group(2)
+        old_name = match.group(3)
+        inner_text = match.group(4).strip()
+        parentheses = match.group(5)
+
+        clean_name = re.sub(r'^[0-9.]+\s*' + re.escape(unit) + r'\s*', '', inner_text).strip()
+        if not clean_name:
+            clean_name = old_name
+
+        if parentheses:
+            parentheses = parentheses.strip()
+            m = re.match(r'^([0-9.]+)\s*(.*)$', parentheses)
+            if m:
+                m_base = m.group(1)
+                m_unit = m.group(2)
+                return f'<span class="ing-item" data-base="{base}" data-unit="{unit}" data-name="{clean_name}" data-measure-base="{m_base}" data-measure-unit="{m_unit}">{inner_text} ({parentheses})</span>'
+
+        return f'<span class="ing-item" data-base="{base}" data-unit="{unit}" data-name="{clean_name}">{inner_text}</span>'
+
+    return re.sub(pattern, replace_match, content)
+
 output_dir = os.path.join("docs", "przepisy")
 os.makedirs(output_dir, exist_ok=True)
 
 for filename, content in recipes.items():
+    formatted_content = fix_recipe_formatting(content)
     file_path = os.path.join(output_dir, filename)
     with open(file_path, "w", encoding="utf-8") as f:
-        f.write(content.strip())
-    print(f"Utworzono: {file_path}")
+        f.write(formatted_content.strip())
+    print(f"Zapisano poprawnie: {file_path}")
 
-print(f"\nPomyślnie wygenerowano {len(recipes)} plików z przepisami w katalogu '{output_dir}'.")
+print(f"\nPomyślnie zaktualizowano {len(recipes)} plików z przepisami!")
