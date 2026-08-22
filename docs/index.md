@@ -7,7 +7,7 @@ Wybierz kategorię posiłku oraz składniki, na które masz ochotę:
   <div style="display:flex; gap:10px; margin-bottom:15px; flex-wrap: wrap;">
     <button class="btn-action" onclick="filterCategory('all')">Wszystkie</button>
     <button class="btn-action" onclick="filterCategory('sniadanie')">Śniadania</button>
-    <button class="btn-action" onclick="filterCategory('obiad')">Obiady / 2. Śniadania</button>
+    <button class="btn-action" onclick="filterCategory('obiad')">Obiady</button>
     <button class="btn-action" onclick="filterCategory('kolacja')">Kolacje / Przekąski</button>
   </div>
 

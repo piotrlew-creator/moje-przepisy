@@ -32,7 +32,7 @@
     <p><strong>Krok 2:</strong> Przyprawione jabłko dusimy w rondelku, aż puści soki i zacznie się rozpadać. Tak przygotowane jabłko przekładamy do miseczki.</p>
   </div>
   <div class="step-card">
-    <p><strong>Krok 3:</strong> Do rondelka po jabłkach wsypujemy ryż, odżywkę i zalewamy napojem roślinnym oraz mleczkiem kokosowym. Gotujemy na wolnym ogólniu.</p>
+    <p><strong>Krok 3:</strong> Do rondelka po jabłkach wsypujemy ryż, odżywkę i zalewamy napojem roślinnym oraz mleczkiem kokosowym. Gotujemy na wolnym ogniu.</p>
   </div>
   <div class="step-card">
     <p><strong>Krok 4:</strong> Gdy ryż zacznie się rozklejać, dokładamy do niego około 2/3 masy jabłek, które wcześniej przygotowaliśmy.</p>
