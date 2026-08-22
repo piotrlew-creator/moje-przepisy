@@ -1,0 +1,18 @@
+site_name: Baza Przepisów Dietetycznych
+theme:
+  name: material
+  language: pl
+  palette:
+    primary: teal
+    accent: orange
+  features:
+    - navigation.instant
+    - search.suggest
+
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js
+  - javascripts/recipe-engine.js
+  - javascripts/filter.js
+
+extra_css:
+  - stylesheets/custom.css
