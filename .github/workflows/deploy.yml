@@ -1,38 +1,42 @@
-name: Deploy MkDocs to GitHub Pages
+name: Publikacja strony
+
+# Jedyny workflow, który publikuje tę stronę. Nie dodawaj drugiego — dwa
+# pipeline'y pchające do GitHub Pages ścigają się i wygrywa ten, który
+# akurat skończy później.
 
 on:
   push:
-    branches:
-      - main
-      - master
+    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - name: Configure Git Credentials
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalacja zależności
+        run: pip install -r requirements.txt
+
+      - name: Generowanie stron z recipes.json
+        run: python generate_site.py
+
+      - name: Konfiguracja gita
         run: |
-          git config user.name github-actions[bot]
-          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-      - uses: actions/setup-python@v4
-        with:
-          python-version: 3.x
-
-      - run: echo "cache_id=$(date +${{ runner.os }}_%Y_%m_%d)" >> $GITHUB_OUTPUT
-        id: time
-
-      - uses: actions/cache@v3
-        with:
-          key: ${{ runner.os }}-build-${{ steps.time.outputs.cache_id }}
-          path: .cache
-          restore-keys: |
-            ${{ runner.os }}-build-
-
-      - run: pip install -r requirements.txt
-      - run: mkdocs gh-deploy --force
+      - name: Budowa i publikacja
+        run: mkdocs gh-deploy --force
