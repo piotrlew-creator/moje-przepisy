@@ -3,8 +3,8 @@
 Wybierz kategorię posiłku oraz składniki, na które masz ochotę:
 
 <div class="filter-section">
-  <h3>1. Wybierz Pora Dnia / Posiłek</h3>
-  <div style="display:flex; gap:10px; margin-bottom:15px;">
+  <h3>1. Wybierz Porę Dnia / Posiłek</h3>
+  <div style="display:flex; gap:10px; margin-bottom:15px; flex-wrap: wrap;">
     <button class="btn-action" onclick="filterCategory('all')">Wszystkie</button>
     <button class="btn-action" onclick="filterCategory('sniadanie')">Śniadania</button>
     <button class="btn-action" onclick="filterCategory('obiad')">Obiady / 2. Śniadania</button>
@@ -42,48 +42,35 @@ Wybierz kategorię posiłku oraz składniki, na które masz ochotę:
     <label><input type="checkbox" class="ing-filter" value="pstrog" onchange="filterRecipes()"> Pstrąg wędzony</label>
     <label><input type="checkbox" class="ing-filter" value="ryz" onchange="filterRecipes()"> Ryż</label>
     <label><input type="checkbox" class="ing-filter" value="serek-wiejski" onchange="filterRecipes()"> Serek wiejski / Twaróg</label>
-
   </div>
 </div>
 
 ## Dostępne Przepisy
 
-<div id="recipes-list">
-
-- [Klejący ryż z prażonym jabłkiem](przepisy/klejacy-ryz.md) { .recipe-card data-category="sniadanie" data-ingredients="ryz,jablko,mleko,odzywka" }
-- [Jajecznica z pieczarkami, cebulą i pieczywem](przepisy/jajecznica.md) { .recipe-card data-category="obiad" data-ingredients="jajka,pieczarki,cebula,chleb" }
-- [Makaron z mozzarellą, szpinakiem, ogórkiem i pomidorkami](przepisy/makaron-mozzarella.md) { .recipe-card data-category="obiad" data-ingredients="makaron,mozzarella,ogorek,pomidor" }
-- [Daktylowo-kakaowe kulki mocy z orzechami](przepisy/kulki-mocy.md) { .recipe-card data-category="kolacja" data-ingredients="daktyle,orzechy" }
-- [Owsianka](przepisy/owsianka.md) { .recipe-card data-category="sniadanie" data-ingredients="platki-owsiane,banan,orzechy,odzywka" }
-- [Serek wiejski, papryka, grahamka i orzechy](przepisy/serek-wiejski-grahamka.md) { .recipe-card data-category="obiad" data-ingredients="serek-wiejski,papryka,bulka,orzechy" }
-- [Krem paprykowo-pomidorowy](przepisy/krem-paprykowo-pomidorowy.md) { .recipe-card data-category="obiad" data-ingredients="papryka,pomidor,makaron,mozzarella" }
-- [Kanapki z serkiem śmietankowym, pomidorem i szczypiorkiem](przepisy/kanapki-z-serkiem.md) { .recipe-card data-category="kolacja" data-ingredients="chleb,serek-wiejski,pomidor" }
-- [Placuszki owsiane orzechowe](przepisy/placuszki-owsiane.md) { .recipe-card data-category="sniadanie" data-ingredients="banan,jajka,platki-owsiane,maslo-orzechowe,odzywka,orzechy" }
-- [Kanapki z żółtym serem, roszponką i pomidorem](przepisy/kanapki-z-serem.md) { .recipe-card data-category="obiad" data-ingredients="chleb,pomidor" }
-- [Pierożki gyoza z warzywami chef select z kimchi](przepisy/gyoza.md) { .recipe-card data-category="obiad" data-ingredients="" }
-- [Koktajl bananowo-orzechowy](przepisy/koktajl-bananowy.md) { .recipe-card data-category="kolacja" data-ingredients="banan,mleko,maslo-orzechowe" }
-- [Jaglanka na mleku roślinnym z gruszką](przepisy/jaglanka-gruszka.md) { .recipe-card data-category="sniadanie" data-ingredients="platki-owsiane,mleko,gruszka,odzywka,orzechy" }
-- [Kasza z tofu](przepisy/kasza-z-tofu.md) { .recipe-card data-category="obiad" data-ingredients="kaszka,brokul,cebula" }
-- [Wegańskie spaghetti bolognese](przepisy/spaghetti-bolognese.md) { .recipe-card data-category="obiad" data-ingredients="makaron,marchewka,cebula,pomidor" }
-- [Bowl śniadaniowy z jabłkiem i kaki](przepisy/bowl-sniadaniowy.md) { .recipe-card data-category="sniadanie" data-ingredients="platki-owsiane,orzechy,jablko,jogurt" }
-- [Tosty z jajkiem sadzonym i awokado](przepisy/tosty-awokado.md) { .recipe-card data-category="obiad" data-ingredients="chleb,awokado,jajka" }
-- [Zupa z dyni z pieczoną ciecierzycą](przepisy/zupa-z-dyni.md) { .recipe-card data-category="obiad" data-ingredients="dynia,ciecierzyca,marchewka" }
-- [Omlet mleczna kanapka](przepisy/omlet-mleczna-kanapka.md) { .recipe-card data-category="sniadanie" data-ingredients="jajka,jogurt,serek-wiejski" }
-- [Zapiekanka ziemniaczana z mozzarellą](przepisy/zapiekanka-ziemniaczana.md) { .recipe-card data-category="obiad" data-ingredients="mozzarella,pomidor" }
-- [Jaglany snickers](przepisy/jaglany-snickers.md) { .recipe-card data-category="sniadanie" data-ingredients="kaszka,jogurt,mleko,maslo-orzechowe,daktyle,orzechy,odzywka" }
-- [Pasta z wędzonego pstrąga i twarogu](przepisy/pasta-z-pstroga.md) { .recipe-card data-category="obiad" data-ingredients="chleb,serek-wiejski,pstrog,ogorek" }
-- [Tost z chlebem żytnim, masłem orzechowym i bananem](przepisy/tost-z-maslem-orzechowym.md) { .recipe-card data-category="sniadanie" data-ingredients="chleb,maslo-orzechowe,banan,odzywka" }
-- [Makaron penne ze szpinakiem, pieczarkami i pomidorkami](przepisy/makaron-penne.md) { .recipe-card data-category="obiad" data-ingredients="makaron,cebula,pieczarki,brokul,pomidor" }
-- [Kanapka z pastą pomidorową](przepisy/kanapka-z-pasta-pomidorowa.md) { .recipe-card data-category="kolacja" data-ingredients="chleb,pomidor" }
-
-</div>
+<ul id="recipes-list" style="list-style-type: square; padding-left: 20px;">
+  <li data-category="sniadanie" data-ingredients="ryz,jablko,mleko,odzywka"><a href="przepisy/klejacy-ryz/">Klejący ryż z prażonym jabłkiem</a></li>
+  <li data-category="obiad" data-ingredients="jajka,pieczarki,cebula,chleb"><a href="przepisy/jajecznica/">Jajecznica z pieczarkami, cebulą i pieczywem</a></li>
+  <li data-category="obiad" data-ingredients="makaron,mozzarella,ogorek,pomidor"><a href="przepisy/makaron-mozzarella/">Makaron z mozzarellą, szpinakiem, ogórkiem i pomidorkami</a></li>
+  <li data-category="kolacja" data-ingredients="daktyle,orzechy"><a href="przepisy/kulki-mocy/">Daktylowo-kakaowe kulki mocy z orzechami</a></li>
+  <li data-category="sniadanie" data-ingredients="platki-owsiane,banan,orzechy,odzywka"><a href="przepisy/owsianka/">Owsianka</a></li>
+  <li data-category="obiad" data-ingredients="serek-wiejski,papryka,bulka,orzechy"><a href="przepisy/serek-wiejski-grahamka/">Serek wiejski, papryka, grahamka i orzechy</a></li>
+  <li data-category="obiad" data-ingredients="papryka,pomidor,makaron,mozzarella"><a href="przepisy/krem-paprykowo-pomidorowy/">Krem paprykowo-pomidorowy</a></li>
+  <li data-category="kolacja" data-ingredients="chleb,serek-wiejski,pomidor"><a href="przepisy/kanapki-z-serkiem/">Kanapki z serkiem śmietankowym, pomidorem i szczypiorkiem</a></li>
+  <li data-category="sniadanie" data-ingredients="banan,jajka,platki-owsiane,maslo-orzechowe,odzywka,orzechy"><a href="przepisy/placuszki-owsiane/">Placuszki owsiane orzechowe</a></li>
+  <li data-category="obiad" data-ingredients="chleb,pomidor"><a href="przepisy/kanapki-z-serem/">Kanapki z żółtym serem, roszponką i pomidorem</a></li>
+  <li data-category="obiad" data-ingredients=""><a href="przepisy/gyoza/">Pierożki gyoza z warzywami chef select z kimchi</a></li>
+  <li data-category="kolacja" data-ingredients="banan,mleko,maslo-orzechowe"><a href="przepisy/koktajl-bananowy/">Koktajl bananowo-orzechowy</a></li>
+  <li data-category="sniadanie" data-ingredients="platki-owsiane,mleko,gruszka,odzywka,orzechy"><a href="przepisy/jaglanka-gruszka/">Jaglanka na mleku roślinnym z gruszką</a></li>
+  <li data-category="obiad" data-ingredients="kaszka,brokul,cebula"><a href="przepisy/kasza-z-tofu/">Kasza z tofu</a></li>
+  <li data-category="obiad" data-ingredients="makaron,marchewka,cebula,pomidor"><a href="przepisy/spaghetti-bolognese/">Wegańskie spaghetti bolognese</a></li>
+</ul>
 
 <script>
 function filterCategory(cat) {
   const cards = document.querySelectorAll('#recipes-list li');
   cards.forEach(card => {
     if (cat === 'all' || card.getAttribute('data-category') === cat) {
-      card.style.display = 'block';
+      card.style.display = 'list-item';
     } else {
       card.style.display = 'none';
     }
@@ -97,7 +84,7 @@ function filterRecipes() {
   cards.forEach(card => {
     const cardIngs = (card.getAttribute('data-ingredients') || '').split(',');
     if (selected.length === 0 || selected.every(ing => cardIngs.includes(ing))) {
-      card.style.display = 'block';
+      card.style.display = 'list-item';
     } else {
       card.style.display = 'none';
     }
