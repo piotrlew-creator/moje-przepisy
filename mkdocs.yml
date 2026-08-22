@@ -1,4 +1,6 @@
-site_name: Baza Przepisów Dietetycznych
+site_name: Przepisy Dietetyczne
+site_description: Baza przepisów z przelicznikiem porcji i interaktywną listą zakupów
+
 theme:
   name: material
   language: pl
@@ -7,12 +9,15 @@ theme:
     accent: orange
   features:
     - navigation.instant
-    - search.suggest
-
-extra_javascript:
-  - https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js
-  - javascripts/recipe-engine.js
-  - javascripts/filter.js
+    - navigation.top
 
 extra_css:
-  - stylesheets/custom.css
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/main.js
+
+nav:
+  - Strona Główna: index.md
+  - Przepisy:
+    - Wszystkie: index.md
