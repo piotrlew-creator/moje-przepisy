@@ -1,0 +1,12 @@
+# Wynik lokalnego `mkdocs build`
+site/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# System
+.DS_Store
+Thumbs.db

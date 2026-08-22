@@ -1,0 +1,4172 @@
+{
+ "source": "dieta.pdf — sekcja „Plan diety” (10 dni × 4 posiłki)",
+ "slots": [
+  {
+   "id": "sniadanie",
+   "label": "Śniadanie",
+   "time": "6:00-9:00",
+   "slot": 1
+  },
+  {
+   "id": "drugie-sniadanie",
+   "label": "II śniadanie",
+   "time": "10:00-13:00",
+   "slot": 2
+  },
+  {
+   "id": "obiad",
+   "label": "Obiad",
+   "time": "14:00-17:00",
+   "slot": 3
+  },
+  {
+   "id": "kolacja",
+   "label": "Kolacja",
+   "time": "18:00-21:00",
+   "slot": 4
+  }
+ ],
+ "units": {
+  "łyżka": [
+   "łyżka",
+   "łyżki",
+   "łyżek",
+   "łyżki"
+  ],
+  "łyżeczka": [
+   "łyżeczka",
+   "łyżeczki",
+   "łyżeczek",
+   "łyżeczki"
+  ],
+  "sztuka": [
+   "sztuka",
+   "sztuki",
+   "sztuk",
+   "sztuki"
+  ],
+  "garść": [
+   "garść",
+   "garście",
+   "garści",
+   "garści"
+  ],
+  "kromka": [
+   "kromka",
+   "kromki",
+   "kromek",
+   "kromki"
+  ],
+  "plaster": [
+   "plaster",
+   "plastry",
+   "plastrów",
+   "plastra"
+  ],
+  "szklanka": [
+   "szklanka",
+   "szklanki",
+   "szklanek",
+   "szklanki"
+  ],
+  "opakowanie": [
+   "opakowanie",
+   "opakowania",
+   "opakowań",
+   "opakowania"
+  ],
+  "ząbek": [
+   "ząbek",
+   "ząbki",
+   "ząbków",
+   "ząbka"
+  ],
+  "szczypta": [
+   "szczypta",
+   "szczypty",
+   "szczypt",
+   "szczypty"
+  ],
+  "porcja": [
+   "porcja",
+   "porcje",
+   "porcji",
+   "porcji"
+  ],
+  "puszka": [
+   "puszka",
+   "puszki",
+   "puszek",
+   "puszki"
+  ]
+ },
+ "ingredientIndex": [
+  {
+   "id": "chleb",
+   "label": "Chleb",
+   "count": 10
+  },
+  {
+   "id": "orzechy",
+   "label": "Orzechy",
+   "count": 10
+  },
+  {
+   "id": "oliwa",
+   "label": "Oliwa / olej",
+   "count": 9
+  },
+  {
+   "id": "pomidor",
+   "label": "Pomidor",
+   "count": 9
+  },
+  {
+   "id": "czosnek",
+   "label": "Czosnek",
+   "count": 8
+  },
+  {
+   "id": "odzywka",
+   "label": "Odżywka białkowa",
+   "count": 8
+  },
+  {
+   "id": "cebula",
+   "label": "Cebula",
+   "count": 7
+  },
+  {
+   "id": "ogorek",
+   "label": "Ogórek",
+   "count": 6
+  },
+  {
+   "id": "banan",
+   "label": "Banan",
+   "count": 5
+  },
+  {
+   "id": "jogurt",
+   "label": "Jogurt / skyr",
+   "count": 5
+  },
+  {
+   "id": "marchewka",
+   "label": "Marchewka",
+   "count": 5
+  },
+  {
+   "id": "maslo-orzechowe",
+   "label": "Masło orzechowe",
+   "count": 5
+  },
+  {
+   "id": "mleko",
+   "label": "Mleko roślinne",
+   "count": 5
+  },
+  {
+   "id": "szpinak",
+   "label": "Szpinak",
+   "count": 5
+  },
+  {
+   "id": "cytryna",
+   "label": "Cytryna",
+   "count": 4
+  },
+  {
+   "id": "jajka",
+   "label": "Jajka",
+   "count": 4
+  },
+  {
+   "id": "makaron",
+   "label": "Makaron",
+   "count": 4
+  },
+  {
+   "id": "mozzarella",
+   "label": "Mozzarella",
+   "count": 4
+  },
+  {
+   "id": "salata",
+   "label": "Sałata / rukola / roszponka",
+   "count": 4
+  },
+  {
+   "id": "baton",
+   "label": "Baton / przekąska",
+   "count": 3
+  },
+  {
+   "id": "bulka",
+   "label": "Bułka / grahamka",
+   "count": 3
+  },
+  {
+   "id": "grana-padano",
+   "label": "Grana padano",
+   "count": 3
+  },
+  {
+   "id": "gruszka",
+   "label": "Gruszka",
+   "count": 3
+  },
+  {
+   "id": "papryka",
+   "label": "Papryka",
+   "count": 3
+  },
+  {
+   "id": "pomidory-puszka",
+   "label": "Pomidory z puszki / passata",
+   "count": 3
+  },
+  {
+   "id": "platki-owsiane",
+   "label": "Płatki owsiane",
+   "count": 3
+  },
+  {
+   "id": "ryz",
+   "label": "Ryż",
+   "count": 3
+  },
+  {
+   "id": "smoothie",
+   "label": "Smoothie / sok",
+   "count": 3
+  },
+  {
+   "id": "tofu",
+   "label": "Tofu",
+   "count": 3
+  },
+  {
+   "id": "brokul",
+   "label": "Brokuł",
+   "count": 2
+  },
+  {
+   "id": "ciecierzyca",
+   "label": "Ciecierzyca",
+   "count": 2
+  },
+  {
+   "id": "daktyle",
+   "label": "Daktyle",
+   "count": 2
+  },
+  {
+   "id": "jablko",
+   "label": "Jabłko",
+   "count": 2
+  },
+  {
+   "id": "kakao",
+   "label": "Kakao",
+   "count": 2
+  },
+  {
+   "id": "kasza",
+   "label": "Kasza",
+   "count": 2
+  },
+  {
+   "id": "majonez",
+   "label": "Majonez",
+   "count": 2
+  },
+  {
+   "id": "mandarynka",
+   "label": "Mandarynka",
+   "count": 2
+  },
+  {
+   "id": "maslo",
+   "label": "Masło / margaryna",
+   "count": 2
+  },
+  {
+   "id": "mleczko-kokosowe",
+   "label": "Mleczko kokosowe",
+   "count": 2
+  },
+  {
+   "id": "maka",
+   "label": "Mąka",
+   "count": 2
+  },
+  {
+   "id": "pieczarki",
+   "label": "Pieczarki",
+   "count": 2
+  },
+  {
+   "id": "rzodkiewka",
+   "label": "Rzodkiewka",
+   "count": 2
+  },
+  {
+   "id": "seler",
+   "label": "Seler naciowy",
+   "count": 2
+  },
+  {
+   "id": "serek-wiejski",
+   "label": "Serek wiejski",
+   "count": 2
+  },
+  {
+   "id": "serek-smietankowy",
+   "label": "Serek śmietankowy",
+   "count": 2
+  },
+  {
+   "id": "syrop-agawa",
+   "label": "Syrop z agawy",
+   "count": 2
+  },
+  {
+   "id": "twarog",
+   "label": "Twaróg",
+   "count": 2
+  },
+  {
+   "id": "wafle",
+   "label": "Wafle ryżowe",
+   "count": 2
+  },
+  {
+   "id": "ziemniaki",
+   "label": "Ziemniaki",
+   "count": 2
+  },
+  {
+   "id": "ananas",
+   "label": "Ananas",
+   "count": 1
+  },
+  {
+   "id": "awokado",
+   "label": "Awokado",
+   "count": 1
+  },
+  {
+   "id": "bagietka",
+   "label": "Bagietka",
+   "count": 1
+  },
+  {
+   "id": "czekolada",
+   "label": "Czekolada gorzka",
+   "count": 1
+  },
+  {
+   "id": "dynia",
+   "label": "Dynia",
+   "count": 1
+  },
+  {
+   "id": "feta",
+   "label": "Feta",
+   "count": 1
+  },
+  {
+   "id": "gouda",
+   "label": "Gouda",
+   "count": 1
+  },
+  {
+   "id": "hummus",
+   "label": "Hummus",
+   "count": 1
+  },
+  {
+   "id": "kabanosy",
+   "label": "Kabanosy roślinne",
+   "count": 1
+  },
+  {
+   "id": "kaki",
+   "label": "Kaki",
+   "count": 1
+  },
+  {
+   "id": "kaszanka",
+   "label": "Kaszanka roślinna",
+   "count": 1
+  },
+  {
+   "id": "kielki",
+   "label": "Kiełki",
+   "count": 1
+  },
+  {
+   "id": "kukurydza",
+   "label": "Kukurydza",
+   "count": 1
+  },
+  {
+   "id": "miod",
+   "label": "Miód",
+   "count": 1
+  },
+  {
+   "id": "chia",
+   "label": "Nasiona chia",
+   "count": 1
+  },
+  {
+   "id": "ogorki-kiszone",
+   "label": "Ogórki kiszone",
+   "count": 1
+  },
+  {
+   "id": "oliwki",
+   "label": "Oliwki",
+   "count": 1
+  },
+  {
+   "id": "owsianka-instant",
+   "label": "Owsianka instant",
+   "count": 1
+  },
+  {
+   "id": "pasta-warzywna",
+   "label": "Pasta warzywna",
+   "count": 1
+  },
+  {
+   "id": "pesto",
+   "label": "Pesto",
+   "count": 1
+  },
+  {
+   "id": "gyoza",
+   "label": "Pierożki gyoza",
+   "count": 1
+  },
+  {
+   "id": "pomidory-suszone",
+   "label": "Pomidory suszone",
+   "count": 1
+  },
+  {
+   "id": "pstrag",
+   "label": "Pstrąg wędzony",
+   "count": 1
+  },
+  {
+   "id": "platki-jaglane",
+   "label": "Płatki jaglane",
+   "count": 1
+  },
+  {
+   "id": "soczewica",
+   "label": "Soczewica",
+   "count": 1
+  },
+  {
+   "id": "sos-sojowy",
+   "label": "Sos sojowy",
+   "count": 1
+  },
+  {
+   "id": "slonecznik",
+   "label": "Słonecznik",
+   "count": 1
+  },
+  {
+   "id": "tahini",
+   "label": "Tahini",
+   "count": 1
+  },
+  {
+   "id": "wiorki",
+   "label": "Wiórki kokosowe",
+   "count": 1
+  },
+  {
+   "id": "zupa-gotowa",
+   "label": "Zupa gotowa",
+   "count": 1
+  },
+  {
+   "id": "smietanka",
+   "label": "Śmietanka",
+   "count": 1
+  }
+ ],
+ "recipes": [
+  {
+   "slug": "klejacy-ryz",
+   "title": "Klejący ryż z prażonym jabłkiem",
+   "day": 1,
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "6:00-9:00",
+   "kcal": 464,
+   "protein": 25,
+   "carbs": 60,
+   "fat": 12,
+   "baseServings": 1,
+   "tags": [
+    "jablko",
+    "mleczko-kokosowe",
+    "mleko",
+    "odzywka",
+    "ryz"
+   ],
+   "ingredients": [
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "ryżu basmati",
+     "grams": 30.0,
+     "pantry": false,
+     "tag": "ryz"
+    },
+    {
+     "qty": 0.5,
+     "unit": "szklanki",
+     "unitLemma": "szklanka",
+     "name": "mleka roślinnego",
+     "grams": 125.0,
+     "pantry": false,
+     "tag": "mleko"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "jabłka",
+     "grams": 150.0,
+     "pantry": false,
+     "tag": "jablko"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "cynamonu",
+     "grams": 4.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżka",
+     "unitLemma": "łyżka",
+     "name": "ksylitolu",
+     "grams": 15.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 3.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "wegańskiej odżywki białkowej",
+     "grams": 24.0,
+     "pantry": false,
+     "tag": "odzywka"
+    },
+    {
+     "qty": 4.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "mleczka kokosowego 12%",
+     "grams": 80.0,
+     "pantry": false,
+     "tag": "mleczko-kokosowe"
+    }
+   ],
+   "steps": [
+    "Jabłko kroimy w kostkę i doprawiamy cynamonem, w razie potrzeby dodajemy ksylitol.",
+    "Przyprawione jabłko dusimy w rondelku, aż puści soki i zacznie się rozpadać. Tak przygotowane jabłko przekładamy do miseczki.",
+    "Do rondelka po jabłkach wsypujemy ryż, odżywkę i zalewamy napojem roślinnym oraz mleczkiem kokosowym. Gotujemy na wolnym ogniu.",
+    "Gdy ryż zacznie się rozklejać, dokładamy do niego około 2/3 masy jabłek, które wcześniej przygotowaliśmy.",
+    "Wystarczająco gęsty i miękki ryż z jabłkami przekładamy do miseczki, a na niego układamy resztę jabłek, które nam zostały. Smacznego!"
+   ]
+  },
+  {
+   "slug": "jajecznica",
+   "title": "Jajecznica z pieczarkami, cebulą i pieczywem",
+   "day": 1,
+   "slot": 2,
+   "slotId": "drugie-sniadanie",
+   "slotLabel": "II śniadanie",
+   "time": "10:00-13:00",
+   "kcal": 470,
+   "protein": 29,
+   "carbs": 41,
+   "fat": 23,
+   "baseServings": 1,
+   "tags": [
+    "cebula",
+    "chleb",
+    "jajka",
+    "oliwa",
+    "pieczarki",
+    "rzodkiewka",
+    "szpinak"
+   ],
+   "ingredients": [
+    {
+     "qty": 3.0,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "jajek kurzych",
+     "grams": 168.0,
+     "pantry": false,
+     "tag": "jajka"
+    },
+    {
+     "qty": 5.0,
+     "unit": "sztuk",
+     "unitLemma": "sztuka",
+     "name": "pieczarek",
+     "grams": 100.0,
+     "pantry": false,
+     "tag": "pieczarki"
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "cebuli",
+     "grams": 55.0,
+     "pantry": false,
+     "tag": "cebula"
+    },
+    {
+     "qty": 1.0,
+     "unit": "garść",
+     "unitLemma": "garść",
+     "name": "szpinaku",
+     "grams": 25.0,
+     "pantry": false,
+     "tag": "szpinak"
+    },
+    {
+     "qty": 3.0,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "rzodkiewki",
+     "grams": 45.0,
+     "pantry": false,
+     "tag": "rzodkiewka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "oleju rzepakowego",
+     "grams": 5.0,
+     "pantry": false,
+     "tag": "oliwa"
+    },
+    {
+     "qty": 2.0,
+     "unit": "kromki",
+     "unitLemma": "kromka",
+     "name": "chleba żytniego razowego",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "chleb"
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "soli",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "pieprzu",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    }
+   ],
+   "steps": [
+    "Na patelni rozgrzewamy olej i podsmażamy pokrojone pieczarki oraz cebulę.",
+    "Do zeszklonych warzyw wbijamy jajka.",
+    "Smażymy na małym ogniu, cały czas mieszając, aż jajka się zetną.",
+    "Gotową jajecznicę doprawiamy solą i pieprzem.",
+    "Podajemy z pieczywem, szpinakiem i pokrojonymi rzodkiewkami. Smacznego!"
+   ]
+  },
+  {
+   "slug": "makaron-mozzarella",
+   "title": "Makaron z mozzarellą, szpinakiem, ogórkiem i pomidorkami koktajlowymi",
+   "day": 1,
+   "slot": 3,
+   "slotId": "obiad",
+   "slotLabel": "Obiad",
+   "time": "14:00-17:00",
+   "kcal": 381,
+   "protein": 23,
+   "carbs": 40,
+   "fat": 13,
+   "baseServings": 1,
+   "tags": [
+    "grana-padano",
+    "makaron",
+    "mozzarella",
+    "ogorek",
+    "pesto",
+    "pomidor",
+    "szpinak"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "porcja",
+     "unitLemma": "porcja",
+     "name": "makaronu pełnoziarnistego",
+     "grams": 50.0,
+     "pantry": false,
+     "tag": "makaron"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "zielonego pesto",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "pesto"
+    },
+    {
+     "qty": 7.0,
+     "unit": "sztuk",
+     "unitLemma": "sztuka",
+     "name": "pomidorków koktajlowych",
+     "grams": 140.0,
+     "pantry": false,
+     "tag": "pomidor"
+    },
+    {
+     "qty": 0.5,
+     "unit": "garści",
+     "unitLemma": "garść",
+     "name": "bazylii świeżej",
+     "grams": 1.5,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 2.0,
+     "unit": "garści",
+     "unitLemma": "garść",
+     "name": "szpinaku",
+     "grams": 50.0,
+     "pantry": false,
+     "tag": "szpinak"
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "ogórka",
+     "grams": 75.0,
+     "pantry": false,
+     "tag": "ogorek"
+    },
+    {
+     "qty": 3.0,
+     "unit": "plastry",
+     "unitLemma": "plaster",
+     "name": "mozzarelli light",
+     "grams": 45.0,
+     "pantry": false,
+     "tag": "mozzarella"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżka",
+     "unitLemma": "łyżka",
+     "name": "sera grana padano",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "grana-padano"
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "soli",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "pieprzu",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    }
+   ],
+   "steps": [
+    "Makaron gotujemy według instrukcji umieszczonej na opakowaniu.",
+    "Kroimy pomidorki, ogórek zielony, siekamy bazylię.",
+    "Do miski dodajemy makaron, pokrojone warzywa, posiekaną bazylię, umyty szpinak, czerwone pesto i całość dokładnie mieszamy, w razie potrzeby przyprawiamy solą i pieprzem.",
+    "Gotowy makaron z warzywami wykładamy na talerz. Posypujmy tartym serem grana padano i układamy mozzarellę. Smacznego!"
+   ]
+  },
+  {
+   "slug": "kulki-mocy",
+   "title": "Daktylowo-kakaowe kulki mocy z orzechami",
+   "day": 1,
+   "slot": 4,
+   "slotId": "kolacja",
+   "slotLabel": "Kolacja",
+   "time": "18:00-21:00",
+   "kcal": 466,
+   "protein": 7,
+   "carbs": 61,
+   "fat": 24,
+   "baseServings": 1,
+   "tags": [
+    "daktyle",
+    "kakao",
+    "orzechy",
+    "wiorki"
+   ],
+   "ingredients": [
+    {
+     "qty": 13.0,
+     "unit": "sztuk",
+     "unitLemma": "sztuka",
+     "name": "daktyli",
+     "grams": 65.0,
+     "pantry": false,
+     "tag": "daktyle"
+    },
+    {
+     "qty": 5.0,
+     "unit": "sztuk",
+     "unitLemma": "sztuka",
+     "name": "orzechów włoskich",
+     "grams": 20.0,
+     "pantry": false,
+     "tag": "orzechy"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżka",
+     "unitLemma": "łyżka",
+     "name": "kakao",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "kakao"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżka",
+     "unitLemma": "łyżka",
+     "name": "wiórków kokosowych",
+     "grams": 15.0,
+     "pantry": false,
+     "tag": "wiorki"
+    }
+   ],
+   "steps": [
+    "Daktyle namaczamy we wrzątku przez ok. 10 minut. Następnie wszystkie składniki blendujemy ze sobą, formujemy kulki i obtaczamy w wiórkach kokosowych. Smacznego!"
+   ]
+  },
+  {
+   "slug": "owsianka",
+   "title": "Owsianka",
+   "day": 2,
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "6:00-9:00",
+   "kcal": 468,
+   "protein": 29,
+   "carbs": 55,
+   "fat": 17,
+   "baseServings": 1,
+   "tags": [
+    "banan",
+    "odzywka",
+    "orzechy",
+    "platki-owsiane"
+   ],
+   "ingredients": [
+    {
+     "qty": 3.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "płatków owsianych",
+     "grams": 30.0,
+     "pantry": false,
+     "tag": "platki-owsiane"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "małego banana",
+     "grams": 100.0,
+     "pantry": false,
+     "tag": "banan"
+    },
+    {
+     "qty": 1.0,
+     "unit": "garść",
+     "unitLemma": "garść",
+     "name": "orzechów nerkowca",
+     "grams": 30.0,
+     "pantry": false,
+     "tag": "orzechy"
+    },
+    {
+     "qty": 3.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "odżywki białkowej",
+     "grams": 24.0,
+     "pantry": false,
+     "tag": "odzywka"
+    }
+   ],
+   "steps": [
+    "Płatki owsiane zalewamy wrzątkiem do linii płatków, pozostawiamy na 3 minuty",
+    "Banana kroimy w plasterki, dodajemy odżywkę białkową i nerkowce.",
+    "Całość mieszamy i gotowe! Smacznego!"
+   ]
+  },
+  {
+   "slug": "serek-wiejski-grahamka",
+   "title": "Serek wiejski, papryka, grahamka i orzechy",
+   "day": 2,
+   "slot": 2,
+   "slotId": "drugie-sniadanie",
+   "slotLabel": "II śniadanie",
+   "time": "10:00-13:00",
+   "kcal": 514,
+   "protein": 28,
+   "carbs": 58,
+   "fat": 20,
+   "baseServings": 1,
+   "tags": [
+    "bulka",
+    "orzechy",
+    "papryka",
+    "serek-wiejski"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "opakowanie",
+     "unitLemma": "opakowanie",
+     "name": "serka wiejskiego",
+     "grams": 150.0,
+     "pantry": false,
+     "tag": "serek-wiejski"
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "papryki żółtej",
+     "grams": 85.0,
+     "pantry": false,
+     "tag": "papryka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "bułki grahamki",
+     "grams": 80.0,
+     "pantry": false,
+     "tag": "bulka"
+    },
+    {
+     "qty": 6.0,
+     "unit": "sztuk",
+     "unitLemma": "sztuka",
+     "name": "orzechów włoskich",
+     "grams": 24.0,
+     "pantry": false,
+     "tag": "orzechy"
+    }
+   ],
+   "steps": [
+    "Bułkę kroimy na pół, smarujemy serkiem wiejskim, układamy paprykę i orzechy. Smacznego!"
+   ]
+  },
+  {
+   "slug": "krem-paprykowo-pomidorowy",
+   "title": "Krem paprykowo-pomidorowy",
+   "day": 2,
+   "slot": 3,
+   "slotId": "obiad",
+   "slotLabel": "Obiad",
+   "time": "14:00-17:00",
+   "kcal": 385,
+   "protein": 18,
+   "carbs": 45,
+   "fat": 15,
+   "baseServings": 1,
+   "tags": [
+    "cebula",
+    "czosnek",
+    "makaron",
+    "marchewka",
+    "mozzarella",
+    "oliwa",
+    "papryka",
+    "pomidory-puszka",
+    "seler"
+   ],
+   "ingredients": [
+    {
+     "qty": 0.5,
+     "unit": "opakowania",
+     "unitLemma": "opakowanie",
+     "name": "pomidorów w puszce",
+     "grams": 200.0,
+     "pantry": false,
+     "tag": "pomidory-puszka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "papryki wędzonej",
+     "grams": 0.5,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "garść",
+     "unitLemma": "garść",
+     "name": "świeżej bazylii",
+     "grams": 3.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "soli i pieprzu",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 7.0,
+     "unit": "łyżek",
+     "unitLemma": "łyżka",
+     "name": "makaronu razowego",
+     "grams": 35.0,
+     "pantry": false,
+     "tag": "makaron"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "oliwy z oliwek",
+     "grams": 5.0,
+     "pantry": false,
+     "tag": "oliwa"
+    },
+    {
+     "qty": 3.0,
+     "unit": "plastry",
+     "unitLemma": "plaster",
+     "name": "mozzarelli",
+     "grams": 45.0,
+     "pantry": false,
+     "tag": "mozzarella"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "selera naciowego",
+     "grams": 45.0,
+     "pantry": false,
+     "tag": "seler"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "małej cebuli",
+     "grams": 30.0,
+     "pantry": false,
+     "tag": "cebula"
+    },
+    {
+     "qty": 1.0,
+     "unit": "ząbek",
+     "unitLemma": "ząbek",
+     "name": "czosnku",
+     "grams": 6.0,
+     "pantry": false,
+     "tag": "czosnek"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "marchewki",
+     "grams": 45.0,
+     "pantry": false,
+     "tag": "marchewka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "szklanka",
+     "unitLemma": "szklanka",
+     "name": "wody",
+     "grams": 250.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "papryki czerwonej",
+     "grams": 85.0,
+     "pantry": false,
+     "tag": "papryka"
+    }
+   ],
+   "steps": [
+    "Paprykę, seler, cebulę i marchewkę kroimy w kostkę, czosnek siekamy.",
+    "Na rozgrzanej oliwie w rondelku podsmażamy warzywa, dodajemy paprykę wędzoną. Po 7 minutach dodajemy pomidory, wodę i bazylię. Gotujemy przez 10 minut.",
+    "Całość blendujemy i doprawiamy solą i pieprzem. Gotujemy jeszcze przez 5 minut.",
+    "Makaron gotujemy według instrukcji na opakowaniu",
+    "Mozzarellę kroimy w drobną kostkę.",
+    "Zupę podajemy z makaronem i mozzarellą."
+   ]
+  },
+  {
+   "slug": "kanapki-z-serkiem",
+   "title": "Kanapki z serkiem śmietankowym, pomidorem i szczypiorkiem",
+   "day": 2,
+   "slot": 4,
+   "slotId": "kolacja",
+   "slotLabel": "Kolacja",
+   "time": "18:00-21:00",
+   "kcal": 439,
+   "protein": 12,
+   "carbs": 58,
+   "fat": 21,
+   "baseServings": 1,
+   "tags": [
+    "chleb",
+    "pomidor",
+    "serek-smietankowy",
+    "slonecznik"
+   ],
+   "ingredients": [
+    {
+     "qty": 3.0,
+     "unit": "kromki",
+     "unitLemma": "kromka",
+     "name": "chleba żytniego razowego",
+     "grams": 90.0,
+     "pantry": false,
+     "tag": "chleb"
+    },
+    {
+     "qty": 3.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "serka kanapkowego",
+     "grams": 75.0,
+     "pantry": false,
+     "tag": "serek-smietankowy"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "pomidor",
+     "grams": 160.0,
+     "pantry": false,
+     "tag": "pomidor"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "szczypiorku",
+     "grams": 10.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "nasion słonecznika",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "slonecznik"
+    }
+   ],
+   "steps": [
+    "Pieczywo smarujemy serkiem.",
+    "Pomidora i szczypiorek kroimy. Pomidora kroimy w plasterki, nakładamy na kanapki. Szczypiorek drobno siekamy.",
+    "Kanapki posypujemy szczypiorkiem i nasionami słonecznika."
+   ]
+  },
+  {
+   "slug": "placuszki-owsiane",
+   "title": "Placuszki owsiane orzechowe",
+   "day": 3,
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "6:00-9:00",
+   "kcal": 482,
+   "protein": 29,
+   "carbs": 49,
+   "fat": 22,
+   "baseServings": 1,
+   "tags": [
+    "banan",
+    "jajka",
+    "maka",
+    "maslo-orzechowe",
+    "odzywka",
+    "orzechy",
+    "syrop-agawa"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "małego banana",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "banan"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "jaja kurzego",
+     "grams": 56.0,
+     "pantry": false,
+     "tag": "jajka"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "mąki owsianej pełnoziarnistej",
+     "grams": 24.0,
+     "pantry": false,
+     "tag": "maka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "masła orzechowego",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "maslo-orzechowe"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "odżywki białkowej",
+     "grams": 16.0,
+     "pantry": false,
+     "tag": "odzywka"
+    },
+    {
+     "qty": 0.5,
+     "unit": "garści",
+     "unitLemma": "garść",
+     "name": "mieszanki orzechów",
+     "grams": 15.0,
+     "pantry": false,
+     "tag": "orzechy"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżka",
+     "unitLemma": "łyżka",
+     "name": "syropu z agawy",
+     "grams": 15.0,
+     "pantry": false,
+     "tag": "syrop-agawa"
+    }
+   ],
+   "steps": [
+    "Składniki na ciasto blendujemy i odstawiamy na 5-10 minut",
+    "Placuszki smażymy bez tłuszczu na nieprzywierającej patelni, podajemy polane syropem z agawy i posypane posiekanymi orzechami."
+   ]
+  },
+  {
+   "slug": "kanapki-z-serem",
+   "title": "Kanapki z żółtym serem, roszponką i pomidorem",
+   "day": 3,
+   "slot": 2,
+   "slotId": "drugie-sniadanie",
+   "slotLabel": "II śniadanie",
+   "time": "10:00-13:00",
+   "kcal": 462,
+   "protein": 26,
+   "carbs": 38,
+   "fat": 25,
+   "baseServings": 1,
+   "tags": [
+    "chleb",
+    "gouda",
+    "maslo",
+    "pomidor",
+    "salata"
+   ],
+   "ingredients": [
+    {
+     "qty": 2.0,
+     "unit": "kromki",
+     "unitLemma": "kromka",
+     "name": "chleba żytniego razowego",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "chleb"
+    },
+    {
+     "qty": 5.0,
+     "unit": "plastrów",
+     "unitLemma": "plaster",
+     "name": "sera gouda",
+     "grams": 75.0,
+     "pantry": false,
+     "tag": "gouda"
+    },
+    {
+     "qty": 0.5,
+     "unit": "garści",
+     "unitLemma": "garść",
+     "name": "roszponki",
+     "grams": 12.5,
+     "pantry": false,
+     "tag": "salata"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "pomidora",
+     "grams": 160.0,
+     "pantry": false,
+     "tag": "pomidor"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "margaryny",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "maslo"
+    }
+   ],
+   "steps": [
+    "Pieczywo smarujemy margaryną. Kładziemy na nie plastry sera.",
+    "Warzywa myjemy. Pomidora kroimy w plastry i układamy na kanapce razem z roszponką. Smacznego!"
+   ]
+  },
+  {
+   "slug": "gyoza",
+   "title": "Pierożki gyoza z warzywami chef select z kimchi",
+   "day": 3,
+   "slot": 3,
+   "slotId": "obiad",
+   "slotLabel": "Obiad",
+   "time": "14:00-17:00",
+   "kcal": 358,
+   "protein": 8,
+   "carbs": 60,
+   "fat": 8,
+   "baseServings": 1,
+   "tags": [
+    "gyoza",
+    "mandarynka"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "opakowanie",
+     "unitLemma": "opakowanie",
+     "name": "Pierożków gyoza z warzywami chef select",
+     "grams": 230.0,
+     "pantry": false,
+     "tag": "gyoza"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "mandarynki",
+     "grams": 65.0,
+     "pantry": false,
+     "tag": "mandarynka"
+    }
+   ],
+   "steps": [
+    "Pierożki podgrzewamy wg instrukcji na opakowaniu. Na deser zjadamy mandarynkę."
+   ]
+  },
+  {
+   "slug": "koktajl-bananowy",
+   "title": "Koktajl bananowo-orzechowy",
+   "day": 3,
+   "slot": 4,
+   "slotId": "kolacja",
+   "slotLabel": "Kolacja",
+   "time": "18:00-21:00",
+   "kcal": 468,
+   "protein": 18,
+   "carbs": 52,
+   "fat": 24,
+   "baseServings": 1,
+   "tags": [
+    "banan",
+    "chia",
+    "maslo-orzechowe",
+    "mleko"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "banana",
+     "grams": 120.0,
+     "pantry": false,
+     "tag": "banan"
+    },
+    {
+     "qty": 1.0,
+     "unit": "szklanka",
+     "unitLemma": "szklanka",
+     "name": "napoju sojowego",
+     "grams": 250.0,
+     "pantry": false,
+     "tag": "mleko"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "erytrolu",
+     "grams": 10.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 3.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "masła orzechowego",
+     "grams": 30.0,
+     "pantry": false,
+     "tag": "maslo-orzechowe"
+    },
+    {
+     "qty": 3.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "nasion chia",
+     "grams": 15.0,
+     "pantry": false,
+     "tag": "chia"
+    }
+   ],
+   "steps": [
+    "Zblenduj wszystkie składniki. W razie potrzeby dodaj wody."
+   ]
+  },
+  {
+   "slug": "jaglanka-gruszka",
+   "title": "Jaglanka na mleku roślinnym z gruszką",
+   "day": 4,
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "6:00-9:00",
+   "kcal": 457,
+   "protein": 20,
+   "carbs": 69,
+   "fat": 13,
+   "baseServings": 1,
+   "tags": [
+    "gruszka",
+    "mleko",
+    "odzywka",
+    "orzechy",
+    "platki-jaglane"
+   ],
+   "ingredients": [
+    {
+     "qty": 4.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "płatków jaglanych",
+     "grams": 40.0,
+     "pantry": false,
+     "tag": "platki-jaglane"
+    },
+    {
+     "qty": 0.5,
+     "unit": "szklanki",
+     "unitLemma": "szklanka",
+     "name": "mleka roślinnego",
+     "grams": 125.0,
+     "pantry": false,
+     "tag": "mleko"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "gruszki",
+     "grams": 130.0,
+     "pantry": false,
+     "tag": "gruszka"
+    },
+    {
+     "qty": 0.5,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "cynamonu",
+     "grams": 2.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "odżywki białkowej",
+     "grams": 16.0,
+     "pantry": false,
+     "tag": "odzywka"
+    },
+    {
+     "qty": 0.5,
+     "unit": "garści",
+     "unitLemma": "garść",
+     "name": "orzechów włoskich",
+     "grams": 15.0,
+     "pantry": false,
+     "tag": "orzechy"
+    }
+   ],
+   "steps": [
+    "Do rondelka wsypujemy płatki jaglane i zalewamy mlekiem. Gotujemy na małym ogniu, aż płatki będą miękkie. Mieszamy co chwilę.",
+    "Gruszkę kroimy w kostkę.",
+    "Gdy jaglanka zgęstnieje, dodajemy pokrojony owoc, odżywkę białkową i cynamon. Dokładnie mieszamy.",
+    "Gotową jaglankę przekładamy do miseczki i posypujemy orzechami. Smacznego!"
+   ]
+  },
+  {
+   "slug": "kanapki-z-pasta-warzywna",
+   "title": "Kanapki z pastą warzywną, serem mozzarellą i ogórkiem",
+   "day": 4,
+   "slot": 2,
+   "slotId": "drugie-sniadanie",
+   "slotLabel": "II śniadanie",
+   "time": "10:00-13:00",
+   "kcal": 484,
+   "protein": 23,
+   "carbs": 40,
+   "fat": 23,
+   "baseServings": 1,
+   "tags": [
+    "chleb",
+    "mozzarella",
+    "ogorek",
+    "pasta-warzywna"
+   ],
+   "ingredients": [
+    {
+     "qty": 2.0,
+     "unit": "kromki",
+     "unitLemma": "kromka",
+     "name": "chleba żytniego razowego",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "chleb"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "pasty warzywnej",
+     "grams": 40.0,
+     "pantry": false,
+     "tag": "pasta-warzywna"
+    },
+    {
+     "qty": 6.0,
+     "unit": "plastrów",
+     "unitLemma": "plaster",
+     "name": "mozzarelli",
+     "grams": 90.0,
+     "pantry": false,
+     "tag": "mozzarella"
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "ogórka",
+     "grams": 75.0,
+     "pantry": false,
+     "tag": "ogorek"
+    }
+   ],
+   "steps": [
+    "Pieczywo smarujemy pastą warzywną, kładziemy plasterki mozzarelli.",
+    "Ogórka myjemy, kroimy i nakładamy na kanapki."
+   ]
+  },
+  {
+   "slug": "kasza-z-tofu",
+   "title": "Kasza z tofu",
+   "day": 4,
+   "slot": 3,
+   "slotId": "obiad",
+   "slotLabel": "Obiad",
+   "time": "14:00-17:00",
+   "kcal": 372,
+   "protein": 23,
+   "carbs": 50,
+   "fat": 12,
+   "baseServings": 1,
+   "tags": [
+    "brokul",
+    "cebula",
+    "czosnek",
+    "kasza",
+    "oliwa",
+    "szpinak",
+    "tofu"
+   ],
+   "ingredients": [
+    {
+     "qty": 3.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "kaszy gryczanej",
+     "grams": 45.0,
+     "pantry": false,
+     "tag": "kasza"
+    },
+    {
+     "qty": 0.5,
+     "unit": "opakowania",
+     "unitLemma": "opakowanie",
+     "name": "tofu naturalnego",
+     "grams": 90.0,
+     "pantry": false,
+     "tag": "tofu"
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "brokuła",
+     "grams": 225.0,
+     "pantry": false,
+     "tag": "brokul"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "cebuli",
+     "grams": 20.0,
+     "pantry": false,
+     "tag": "cebula"
+    },
+    {
+     "qty": 2.0,
+     "unit": "garści",
+     "unitLemma": "garść",
+     "name": "szpinaku",
+     "grams": 50.0,
+     "pantry": false,
+     "tag": "szpinak"
+    },
+    {
+     "qty": 1.0,
+     "unit": "ząbek",
+     "unitLemma": "ząbek",
+     "name": "czosnku",
+     "grams": 6.0,
+     "pantry": false,
+     "tag": "czosnek"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "oliwy z oliwek",
+     "grams": 5.0,
+     "pantry": false,
+     "tag": "oliwa"
+    },
+    {
+     "qty": 0.5,
+     "unit": "szklanki",
+     "unitLemma": "szklanka",
+     "name": "bulionu warzywnego",
+     "grams": 125.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "soli i pieprzu",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    }
+   ],
+   "steps": [
+    "Kaszę gryczaną gotujemy w osolonej wodzie i odcedzamy",
+    "Na patelni rozgrzewamy oliwę i podsmażamy posiekaną cebulę i czosnek.",
+    "Dodajemy różyczki brokuła, tofu, kaszę, wlewamy bulion, mieszamy i przykrywamy patelnię pokrywką na 5 minut.",
+    "Dodajemy szpinak i mieszamy"
+   ]
+  },
+  {
+   "slug": "smoothie-strawberry",
+   "title": "Smoothie strawberry and friends Solevita i batonik protein bar",
+   "day": 4,
+   "slot": 4,
+   "slotId": "kolacja",
+   "slotLabel": "Kolacja",
+   "time": "18:00-21:00",
+   "kcal": 462,
+   "protein": 27,
+   "carbs": 60,
+   "fat": 14,
+   "baseServings": 1,
+   "tags": [
+    "baton",
+    "mandarynka",
+    "orzechy",
+    "smoothie"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "Protein Bar cookies and cream fllavoured crisps",
+     "grams": 45.0,
+     "pantry": false,
+     "tag": "baton"
+    },
+    {
+     "qty": 1.0,
+     "unit": "opakowanie",
+     "unitLemma": "opakowanie",
+     "name": "smoothie strawberry & friends (truskawka, banan) Solevita",
+     "grams": 250.0,
+     "pantry": false,
+     "tag": "smoothie"
+    },
+    {
+     "qty": 0.5,
+     "unit": "garści",
+     "unitLemma": "garść",
+     "name": "orzechów włoskich",
+     "grams": 15.0,
+     "pantry": false,
+     "tag": "orzechy"
+    },
+    {
+     "qty": 2.0,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "mandarynki",
+     "grams": 130.0,
+     "pantry": false,
+     "tag": "mandarynka"
+    }
+   ],
+   "steps": [
+    "Batonik, orzechy, mandarynki i smoothie jemy na posiłek."
+   ]
+  },
+  {
+   "slug": "serek-wiejski-z-miodem",
+   "title": "Serek wiejski z miodem, orzechami i gruszką",
+   "day": 5,
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "6:00-9:00",
+   "kcal": 467,
+   "protein": 30,
+   "carbs": 42,
+   "fat": 21,
+   "baseServings": 1,
+   "tags": [
+    "gruszka",
+    "miod",
+    "orzechy",
+    "serek-wiejski",
+    "wafle"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "opakowanie",
+     "unitLemma": "opakowanie",
+     "name": "serka wiejskiego",
+     "grams": 200.0,
+     "pantry": false,
+     "tag": "serek-wiejski"
+    },
+    {
+     "qty": 0.5,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "miodu",
+     "grams": 6.0,
+     "pantry": false,
+     "tag": "miod"
+    },
+    {
+     "qty": 5.0,
+     "unit": "sztuk",
+     "unitLemma": "sztuka",
+     "name": "orzechów włoskich",
+     "grams": 20.0,
+     "pantry": false,
+     "tag": "orzechy"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "gruszki",
+     "grams": 130.0,
+     "pantry": false,
+     "tag": "gruszka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "wafli ryżowych",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "wafle"
+    }
+   ],
+   "steps": [
+    "Gruszkę myjemy i kroimy w kostkę, orzechy siekamy.",
+    "Pokrojoną gruszkę wraz z orzechami dodajemy do serka wiejskiego, polewamy miodem i mieszamy. Zjadamy z waflami ryżowymi."
+   ]
+  },
+  {
+   "slug": "kanapka-z-pasta-z-ciecierzycy",
+   "title": "Kanapka z pastą z ciecierzycy",
+   "day": 5,
+   "slot": 2,
+   "slotId": "drugie-sniadanie",
+   "slotLabel": "II śniadanie",
+   "time": "10:00-13:00",
+   "kcal": 465,
+   "protein": 14,
+   "carbs": 60,
+   "fat": 20,
+   "baseServings": 1,
+   "tags": [
+    "chleb",
+    "ciecierzyca",
+    "cytryna",
+    "czosnek",
+    "kielki",
+    "marchewka",
+    "ogorek",
+    "oliwa"
+   ],
+   "ingredients": [
+    {
+     "qty": 4.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "ciecierzycy konserwowej",
+     "grams": 80.0,
+     "pantry": false,
+     "tag": "ciecierzyca"
+    },
+    {
+     "qty": 1.0,
+     "unit": "ząbek",
+     "unitLemma": "ząbek",
+     "name": "czosnku",
+     "grams": 6.0,
+     "pantry": false,
+     "tag": "czosnek"
+    },
+    {
+     "qty": 3.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "oliwy",
+     "grams": 15.0,
+     "pantry": false,
+     "tag": "oliwa"
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "kuminu",
+     "grams": 1.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "kolendry",
+     "grams": 1.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "papryki słodkiej",
+     "grams": 3.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "soku z cytryny",
+     "grams": 12.0,
+     "pantry": false,
+     "tag": "cytryna"
+    },
+    {
+     "qty": 2.0,
+     "unit": "kromki",
+     "unitLemma": "kromka",
+     "name": "chleba żytniego",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "chleb"
+    },
+    {
+     "qty": 3.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "kiełków rzodkiewki",
+     "grams": 24.0,
+     "pantry": false,
+     "tag": "kielki"
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "ogórka",
+     "grams": 75.0,
+     "pantry": false,
+     "tag": "ogorek"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "marchewki",
+     "grams": 45.0,
+     "pantry": false,
+     "tag": "marchewka"
+    }
+   ],
+   "steps": [
+    "Do blendera wkładamy składniki na pastę, blendujemy do momentu uzyskania jednolitej masy, doprawiamy solą i znowu mieszamy.",
+    "Kromki pieczywa smarujemy pastą i układamy kiełki, plastry ogórka i wstążki z marchewki."
+   ]
+  },
+  {
+   "slug": "spaghetti-bolognese",
+   "title": "Wegańskie spaghetti bolognese",
+   "day": 5,
+   "slot": 3,
+   "slotId": "obiad",
+   "slotLabel": "Obiad",
+   "time": "14:00-17:00",
+   "kcal": 385,
+   "protein": 25,
+   "carbs": 49,
+   "fat": 11,
+   "baseServings": 1,
+   "tags": [
+    "cebula",
+    "czosnek",
+    "makaron",
+    "marchewka",
+    "pomidory-puszka",
+    "sos-sojowy",
+    "tofu"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "opakowanie",
+     "unitLemma": "opakowanie",
+     "name": "tofu naturalnego",
+     "grams": 180.0,
+     "pantry": false,
+     "tag": "tofu"
+    },
+    {
+     "qty": 1.0,
+     "unit": "porcja",
+     "unitLemma": "porcja",
+     "name": "makaronu spaghetti pełnoziarnistego",
+     "grams": 50.0,
+     "pantry": false,
+     "tag": "makaron"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "marchewki",
+     "grams": 45.0,
+     "pantry": false,
+     "tag": "marchewka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "cebuli",
+     "grams": 20.0,
+     "pantry": false,
+     "tag": "cebula"
+    },
+    {
+     "qty": 1.0,
+     "unit": "ząbek",
+     "unitLemma": "ząbek",
+     "name": "czosnku",
+     "grams": 6.0,
+     "pantry": false,
+     "tag": "czosnek"
+    },
+    {
+     "qty": 0.5,
+     "unit": "opakowania",
+     "unitLemma": "opakowanie",
+     "name": "pomidorów w puszce",
+     "grams": 200.0,
+     "pantry": false,
+     "tag": "pomidory-puszka"
+    },
+    {
+     "qty": 0.5,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "sosu sojowego",
+     "grams": 5.0,
+     "pantry": false,
+     "tag": "sos-sojowy"
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "papryki wędzonej słodkiej",
+     "grams": 0.5,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "soli",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "pieprzu",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    }
+   ],
+   "steps": [
+    "Tofu odsączamy i rozdrabniamy, dodajemy do niego sos sojowy i paprykę wędzoną. Smażymy na rozgrzanej patelni przez 7-8 minut, następnie odstawiamy na bok.",
+    "Na tej samej patelni podsmażamy pokrojoną cebulę, czosnek oraz startą marchewkę przez około 8 minut.",
+    "Dodajemy podsmażone tofu i puszkę pomidorów oraz 100 ml wody",
+    "Dusimy przez 25 minut, następnie dodajemy listki bazylii oraz doprawiamy solą i pieprzem.",
+    "Makaron gotujemy według instrukcji na opakowaniu"
+   ]
+  },
+  {
+   "slug": "salatka-grecka",
+   "title": "Sałatka grecka z serem sałatkowym i pieczywem",
+   "day": 5,
+   "slot": 4,
+   "slotId": "kolacja",
+   "slotLabel": "Kolacja",
+   "time": "18:00-21:00",
+   "kcal": 464,
+   "protein": 24,
+   "carbs": 41,
+   "fat": 25,
+   "baseServings": 1,
+   "tags": [
+    "cebula",
+    "chleb",
+    "cytryna",
+    "feta",
+    "ogorek",
+    "oliwa",
+    "oliwki",
+    "papryka",
+    "pomidor",
+    "salata"
+   ],
+   "ingredients": [
+    {
+     "qty": 2.0,
+     "unit": "garści",
+     "unitLemma": "garść",
+     "name": "miksu sałat",
+     "grams": 50.0,
+     "pantry": false,
+     "tag": "salata"
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "sera feta",
+     "grams": 100.0,
+     "pantry": false,
+     "tag": "feta"
+    },
+    {
+     "qty": 0.5,
+     "unit": "garści",
+     "unitLemma": "garść",
+     "name": "oliwek zielonych",
+     "grams": 20.0,
+     "pantry": false,
+     "tag": "oliwki"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "suszonego oregano",
+     "grams": 3.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "papryki żółtej",
+     "grams": 85.0,
+     "pantry": false,
+     "tag": "papryka"
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "cebuli",
+     "grams": 55.0,
+     "pantry": false,
+     "tag": "cebula"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "oliwy z oliwek",
+     "grams": 5.0,
+     "pantry": false,
+     "tag": "oliwa"
+    },
+    {
+     "qty": 0.5,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "soku z cytryny",
+     "grams": 3.0,
+     "pantry": false,
+     "tag": "cytryna"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "pomidora",
+     "grams": 160.0,
+     "pantry": false,
+     "tag": "pomidor"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "ogórka zielonego",
+     "grams": 150.0,
+     "pantry": false,
+     "tag": "ogorek"
+    },
+    {
+     "qty": 1.0,
+     "unit": "kromka",
+     "unitLemma": "kromka",
+     "name": "chleba żytniego razowego",
+     "grams": 30.0,
+     "pantry": false,
+     "tag": "chleb"
+    }
+   ],
+   "steps": [
+    "Kroimy paprykę, cebulę, pomidor, ogórek, oliwki i ser feta/sałatkowy.",
+    "Mieszamy oliwę, oregano, sól, pieprz, sok z cytryny.",
+    "Na talerz nakładamy sałatę, pokrojone warzywa, oliwki, ser sałatkowy, polewamy sosem, dokładnie mieszamy i podajemy z pieczywem. Smacznego!"
+   ]
+  },
+  {
+   "slug": "bowl-sniadaniowy",
+   "title": "Bowl śniadaniowy z jabłkiem i kaki",
+   "day": 6,
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "6:00-9:00",
+   "kcal": 449,
+   "protein": 26,
+   "carbs": 57,
+   "fat": 17,
+   "baseServings": 1,
+   "tags": [
+    "jablko",
+    "jogurt",
+    "kaki",
+    "orzechy",
+    "platki-owsiane"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "łyżka",
+     "unitLemma": "łyżka",
+     "name": "płatków owsianych górskich",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "platki-owsiane"
+    },
+    {
+     "qty": 1.0,
+     "unit": "garść",
+     "unitLemma": "garść",
+     "name": "mieszanki orzechów",
+     "grams": 30.0,
+     "pantry": false,
+     "tag": "orzechy"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "małego jabłka",
+     "grams": 80.0,
+     "pantry": false,
+     "tag": "jablko"
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "kaki",
+     "grams": 125.0,
+     "pantry": false,
+     "tag": "kaki"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "cynamonu",
+     "grams": 4.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "opakowanie",
+     "unitLemma": "opakowanie",
+     "name": "jogurtu skyr",
+     "grams": 150.0,
+     "pantry": false,
+     "tag": "jogurt"
+    }
+   ],
+   "steps": [
+    "Owoce kroimy.",
+    "Orzechy siekamy i w miseczce łączymy z płatkami owsianymi.",
+    "Dodajemy cynamon.",
+    "Do połączonych składników dodajemy jogurt i pokrojone owoce. Smacznego!"
+   ]
+  },
+  {
+   "slug": "tosty-awokado",
+   "title": "Tosty z jajkiem sadzonym i awokado",
+   "day": 6,
+   "slot": 2,
+   "slotId": "drugie-sniadanie",
+   "slotLabel": "II śniadanie",
+   "time": "10:00-13:00",
+   "kcal": 469,
+   "protein": 21,
+   "carbs": 41,
+   "fat": 25,
+   "baseServings": 1,
+   "tags": [
+    "awokado",
+    "chleb",
+    "jajka",
+    "salata"
+   ],
+   "ingredients": [
+    {
+     "qty": 2.0,
+     "unit": "kromki",
+     "unitLemma": "kromka",
+     "name": "chleba tostowego pełnoziarnistego",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "chleb"
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "awokado",
+     "grams": 70.0,
+     "pantry": false,
+     "tag": "awokado"
+    },
+    {
+     "qty": 2.0,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "jajka",
+     "grams": 112.0,
+     "pantry": false,
+     "tag": "jajka"
+    },
+    {
+     "qty": 2.0,
+     "unit": "garści",
+     "unitLemma": "garść",
+     "name": "rukoli",
+     "grams": 40.0,
+     "pantry": false,
+     "tag": "salata"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "szczypiorku",
+     "grams": 10.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "soli",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "pieprzu",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    }
+   ],
+   "steps": [
+    "Pieczywo opiekamy w tosterze lub na patelni.",
+    "Awokado obieramy ze skórki i smarujemy kromki chleba.",
+    "Na rozgrzanej patelni, pod przykryciem przygotowujemy jajka sadzone. Doprawiamy solą i pieprzem.",
+    "Na posmarowanych kanapkach układamy rukolę i jajka. Posypujemy posiekanym szczypiorkiem. Smacznego!"
+   ]
+  },
+  {
+   "slug": "zupa-z-dyni",
+   "title": "Zupa z dyni z pieczoną ciecierzycą - przepis na 3 porcje",
+   "day": 6,
+   "slot": 3,
+   "slotId": "obiad",
+   "slotLabel": "Obiad",
+   "time": "14:00-17:00",
+   "kcal": 404,
+   "protein": 17,
+   "carbs": 49,
+   "fat": 13,
+   "baseServings": 3,
+   "tags": [
+    "ciecierzyca",
+    "cytryna",
+    "dynia",
+    "marchewka",
+    "mleczko-kokosowe",
+    "ziemniaki"
+   ],
+   "ingredients": [
+    {
+     "qty": 3.0,
+     "unit": "porcje",
+     "unitLemma": "porcja",
+     "name": "dyni",
+     "grams": 300.0,
+     "pantry": false,
+     "tag": "dynia"
+    },
+    {
+     "qty": 0.5,
+     "unit": "opakowania",
+     "unitLemma": "opakowanie",
+     "name": "mleczka kokosowego",
+     "grams": 200.0,
+     "pantry": false,
+     "tag": "mleczko-kokosowe"
+    },
+    {
+     "qty": 2.0,
+     "unit": "opakowania",
+     "unitLemma": "opakowanie",
+     "name": "ciecierzycy konserwowej",
+     "grams": 480.0,
+     "pantry": false,
+     "tag": "ciecierzyca"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "soku z cytryny",
+     "grams": 12.0,
+     "pantry": false,
+     "tag": "cytryna"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "marchwi",
+     "grams": 45.0,
+     "pantry": false,
+     "tag": "marchewka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "ziemniaków",
+     "grams": 70.0,
+     "pantry": false,
+     "tag": "ziemniaki"
+    },
+    {
+     "qty": 1.0,
+     "unit": "garść",
+     "unitLemma": "garść",
+     "name": "świeżej kolendry",
+     "grams": 4.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "czosnku granulowanego",
+     "grams": 1.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "papryki słodkiej",
+     "grams": 3.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "soli i pieprzu",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    }
+   ],
+   "steps": [
+    "Dynię, marchew, ziemniaki obieramy i kroimy na duże kawałki. Układamy na blaszce wyłożonej papierem do pieczenia. Odsączoną ciecierzycę układamy obok, wszystko przyprawiamy solą, pieprzem, czosnkiem granulowanym, słodką papryką. Pieczemy w piekarniku z termoobiegiem rozgrzanym do 230 stopni przez 25 minut.",
+    "Warzywa przekładamy do garnka (trochę ciecierzycy zostawiamy do posypania), zalewamy mlekiem kokosowym, dolewamy ok 300 ml wody, zagotowujemy.",
+    "Zupę gotujemy przez 10 minut, blendujemy na gładki krem. Podajemy z pieczoną ciecierzycą i posiekaną kolendrą. Smacznego!"
+   ]
+  },
+  {
+   "slug": "owsianka-malinowa",
+   "title": "Owsianka malinowa Crownfield",
+   "day": 6,
+   "slot": 4,
+   "slotId": "kolacja",
+   "slotLabel": "Kolacja",
+   "time": "18:00-21:00",
+   "kcal": 475,
+   "protein": 25,
+   "carbs": 79,
+   "fat": 5,
+   "baseServings": 1,
+   "tags": [
+    "jogurt",
+    "owsianka-instant",
+    "smoothie"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "opakowanie",
+     "unitLemma": "opakowanie",
+     "name": "owsianki malinowej Crownfield",
+     "grams": 65.0,
+     "pantry": false,
+     "tag": "owsianka-instant"
+    },
+    {
+     "qty": 1.0,
+     "unit": "opakowanie",
+     "unitLemma": "opakowanie",
+     "name": "jogurtu skyr",
+     "grams": 150.0,
+     "pantry": false,
+     "tag": "jogurt"
+    },
+    {
+     "qty": 1.0,
+     "unit": "opakowanie",
+     "unitLemma": "opakowanie",
+     "name": "Smoothie strawberry Solevita",
+     "grams": 250.0,
+     "pantry": false,
+     "tag": "smoothie"
+    }
+   ],
+   "steps": [
+    "Owsiankę przygotowujemy zgodnie z instrukcją na opakowaniu. Zjadamy z dodatkami."
+   ]
+  },
+  {
+   "slug": "owsianka-z-marchewka",
+   "title": "Owsianka z marchewką",
+   "day": 7,
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "6:00-9:00",
+   "kcal": 453,
+   "protein": 24,
+   "carbs": 54,
+   "fat": 20,
+   "baseServings": 1,
+   "tags": [
+    "banan",
+    "marchewka",
+    "mleko",
+    "odzywka",
+    "orzechy",
+    "platki-owsiane"
+   ],
+   "ingredients": [
+    {
+     "qty": 0.5,
+     "unit": "szklanki",
+     "unitLemma": "szklanka",
+     "name": "napoju roślinnego",
+     "grams": 125.0,
+     "pantry": false,
+     "tag": "mleko"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "płatków owsianych górskich",
+     "grams": 20.0,
+     "pantry": false,
+     "tag": "platki-owsiane"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "marchewki",
+     "grams": 45.0,
+     "pantry": false,
+     "tag": "marchewka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "soli",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "cynamonu",
+     "grams": 4.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "małego banana",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "banan"
+    },
+    {
+     "qty": 1.0,
+     "unit": "garść",
+     "unitLemma": "garść",
+     "name": "mieszanki orzechów",
+     "grams": 30.0,
+     "pantry": false,
+     "tag": "orzechy"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "wegańskiej odżywki białkowej",
+     "grams": 16.0,
+     "pantry": false,
+     "tag": "odzywka"
+    }
+   ],
+   "steps": [
+    "W rondelku podgrzewamy mleko roślinne, następnie dodajemy startą na drobnych oczkach marchewkę oraz płatki owsiane, odżywkę, sól i cynamon. Gotujemy przez 5-7 minut.",
+    "Przekładamy owsiankę do miski i na wierzch dodajemy posiekane orzechy oraz pokrojonego banana. Smacznego!"
+   ]
+  },
+  {
+   "slug": "kanapka-z-tofu-twarozkiem",
+   "title": "Kanapka z tofu twarożkiem",
+   "day": 7,
+   "slot": 2,
+   "slotId": "drugie-sniadanie",
+   "slotLabel": "II śniadanie",
+   "time": "10:00-13:00",
+   "kcal": 457,
+   "protein": 18,
+   "carbs": 57,
+   "fat": 20,
+   "baseServings": 1,
+   "tags": [
+    "bulka",
+    "majonez",
+    "ogorki-kiszone",
+    "pomidor",
+    "serek-smietankowy",
+    "tofu"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "bułki grahamki",
+     "grams": 80.0,
+     "pantry": false,
+     "tag": "bulka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżka",
+     "unitLemma": "łyżka",
+     "name": "serka śmietankowego",
+     "grams": 25.0,
+     "pantry": false,
+     "tag": "serek-smietankowy"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "majonezu wegańskiego",
+     "grams": 15.0,
+     "pantry": false,
+     "tag": "majonez"
+    },
+    {
+     "qty": 0.5,
+     "unit": "opakowania",
+     "unitLemma": "opakowanie",
+     "name": "tofu naturalnego",
+     "grams": 90.0,
+     "pantry": false,
+     "tag": "tofu"
+    },
+    {
+     "qty": 2.0,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "ogórków kiszonych",
+     "grams": 100.0,
+     "pantry": false,
+     "tag": "ogorki-kiszone"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "pomidora",
+     "grams": 160.0,
+     "pantry": false,
+     "tag": "pomidor"
+    },
+    {
+     "qty": 3.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "szczypiorku",
+     "grams": 15.0,
+     "pantry": true,
+     "tag": null
+    }
+   ],
+   "steps": [
+    "Bułkę kroimy na pół, smarujemy serkiem śmietankowym.",
+    "Tofu przekładamy do miseczki, dodajemy majonez i rozgniatamy widelcem.",
+    "Ogórki drobno siekamy. Dodajemy do twarożku, mieszamy.",
+    "Bułkę smarujemy twarożkiem, jemy z pomidorem i posiekanym szczypiorkiem."
+   ]
+  },
+  {
+   "slug": "roslinna-kaszanka",
+   "title": "Roślinna kaszanka Dobra Kaloria z pieczywem i warzywami",
+   "day": 7,
+   "slot": 3,
+   "slotId": "obiad",
+   "slotLabel": "Obiad",
+   "time": "14:00-17:00",
+   "kcal": 388,
+   "protein": 12,
+   "carbs": 49,
+   "fat": 16,
+   "baseServings": 1,
+   "tags": [
+    "bulka",
+    "kaszanka"
+   ],
+   "ingredients": [
+    {
+     "qty": 0.5,
+     "unit": "opakowania",
+     "unitLemma": "opakowanie",
+     "name": "Roślinna kaszanka na grilla i na patelnię Dobra Kaloria",
+     "grams": 90.0,
+     "pantry": false,
+     "tag": "kaszanka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "bułki",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "bulka"
+    }
+   ],
+   "steps": [
+    "Kaszankę podgrzewamy, jemy z pieczywem."
+   ]
+  },
+  {
+   "slug": "bruschetta",
+   "title": "Bruschetta z pomidorami, świeżymi ziołami i serem grana padano",
+   "day": 7,
+   "slot": 4,
+   "slotId": "kolacja",
+   "slotLabel": "Kolacja",
+   "time": "18:00-21:00",
+   "kcal": 480,
+   "protein": 24,
+   "carbs": 49,
+   "fat": 21,
+   "baseServings": 1,
+   "tags": [
+    "bagietka",
+    "cebula",
+    "czosnek",
+    "grana-padano",
+    "oliwa",
+    "pomidor"
+   ],
+   "ingredients": [
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "bagietki",
+     "grams": 70.0,
+     "pantry": false,
+     "tag": "bagietka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "pomidora",
+     "grams": 100.0,
+     "pantry": false,
+     "tag": "pomidor"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "małej cebuli czerwonej",
+     "grams": 20.0,
+     "pantry": false,
+     "tag": "cebula"
+    },
+    {
+     "qty": 1.0,
+     "unit": "ząbek",
+     "unitLemma": "ząbek",
+     "name": "czosnku",
+     "grams": 6.0,
+     "pantry": false,
+     "tag": "czosnek"
+    },
+    {
+     "qty": 1.0,
+     "unit": "garść",
+     "unitLemma": "garść",
+     "name": "bazylii świeżej",
+     "grams": 3.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 2.0,
+     "unit": "porcje",
+     "unitLemma": "porcja",
+     "name": "sera grana padano",
+     "grams": 50.0,
+     "pantry": false,
+     "tag": "grana-padano"
+    },
+    {
+     "qty": 0.5,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "octu balsamicznego",
+     "grams": 3.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "oliwy z oliwek",
+     "grams": 5.0,
+     "pantry": false,
+     "tag": "oliwa"
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "soli i pieprzu",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    }
+   ],
+   "steps": [
+    "Pomidory myjemy, cebulę i czosnek obieramy. Warzywa kroimy w kostkę.",
+    "Pokrojone warzywa mieszamy ze sobą, dodajemy posiekaną bazylię. Całość doprawiamy solą, pieprzem, octem i oliwą z oliwek.",
+    "Bagietkę kroimy na kromki i pieczemy w piekarniku rozgrzanym do 180 stopni przez około 5 minut, aż będą chrupkie.",
+    "Na grzanki nakładamy pomidory z cebulką i czosnkiem, posypujemy startym serem grana padano."
+   ]
+  },
+  {
+   "slug": "omlet-mleczna-kanapka",
+   "title": "Omlet mleczna kanapka",
+   "day": 8,
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "6:00-9:00",
+   "kcal": 454,
+   "protein": 35,
+   "carbs": 41,
+   "fat": 11,
+   "baseServings": 1,
+   "tags": [
+    "jajka",
+    "jogurt",
+    "kakao",
+    "maka",
+    "twarog"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "jajko",
+     "grams": 56.0,
+     "pantry": false,
+     "tag": "jajka"
+    },
+    {
+     "qty": 2.5,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "mąki pszennej pełnoziarnistej",
+     "grams": 35.0,
+     "pantry": false,
+     "tag": "maka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżka",
+     "unitLemma": "łyżka",
+     "name": "kakao",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "kakao"
+    },
+    {
+     "qty": 3.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "jogurtu naturalnego",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "jogurt"
+    },
+    {
+     "qty": 0.5,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "proszku do pieczenia",
+     "grams": 2.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "jogurtu naturalnego",
+     "grams": 40.0,
+     "pantry": false,
+     "tag": "jogurt"
+    },
+    {
+     "qty": 3.0,
+     "unit": "plastry",
+     "unitLemma": "plaster",
+     "name": "twarogu chudego",
+     "grams": 90.0,
+     "pantry": false,
+     "tag": "twarog"
+    },
+    {
+     "qty": 1.5,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "ksylitolu",
+     "grams": 23.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "ekstraktu waniliowego",
+     "grams": 3.0,
+     "pantry": true,
+     "tag": null
+    }
+   ],
+   "steps": [
+    "Składniki omletu mieszamy lub blendujemy ze sobą, smażymy na patelni pod przykryciem przez 3-5 minut na średnim ogniu.",
+    "Składniki kremu blendujemy na gładką masę.",
+    "Omlet ściągamy z patelni. Odstawiamy, żeby nieco ostygł. Smarujemy kremem i składamy na pół. Smacznego!"
+   ]
+  },
+  {
+   "slug": "hummus-spicy-salsa",
+   "title": "Hummus spicy salsa z waflami ryżowymi",
+   "day": 8,
+   "slot": 2,
+   "slotId": "drugie-sniadanie",
+   "slotLabel": "II śniadanie",
+   "time": "10:00-13:00",
+   "kcal": 458,
+   "protein": 16,
+   "carbs": 57,
+   "fat": 18,
+   "baseServings": 1,
+   "tags": [
+    "hummus",
+    "pomidor",
+    "smoothie",
+    "wafle"
+   ],
+   "ingredients": [
+    {
+     "qty": 0.5,
+     "unit": "opakowania",
+     "unitLemma": "opakowanie",
+     "name": "hummusu spicy salsa",
+     "grams": 80.0,
+     "pantry": false,
+     "tag": "hummus"
+    },
+    {
+     "qty": 3.0,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "wafli ryżowych",
+     "grams": 30.0,
+     "pantry": false,
+     "tag": "wafle"
+    },
+    {
+     "qty": 5.0,
+     "unit": "sztuk",
+     "unitLemma": "sztuka",
+     "name": "pomidorków koktajlowych",
+     "grams": 100.0,
+     "pantry": false,
+     "tag": "pomidor"
+    },
+    {
+     "qty": 1.0,
+     "unit": "opakowanie",
+     "unitLemma": "opakowanie",
+     "name": "Fruvity pure (banan, truskawka, jabłko)",
+     "grams": 250.0,
+     "pantry": false,
+     "tag": "smoothie"
+    }
+   ],
+   "steps": [
+    "Wafle ryżowe zjadamy z hummusem i pomidorkami koktajlowymi. Na deser zjadamy jogurt."
+   ]
+  },
+  {
+   "slug": "zapiekanka-ziemniaczana",
+   "title": "Zapiekanka ziemniaczana z mozzarellą",
+   "day": 8,
+   "slot": 3,
+   "slotId": "obiad",
+   "slotLabel": "Obiad",
+   "time": "14:00-17:00",
+   "kcal": 373,
+   "protein": 18,
+   "carbs": 42,
+   "fat": 14,
+   "baseServings": 1,
+   "tags": [
+    "czosnek",
+    "mozzarella",
+    "oliwa",
+    "pomidory-puszka",
+    "szpinak",
+    "ziemniaki"
+   ],
+   "ingredients": [
+    {
+     "qty": 2.0,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "ziemniaków",
+     "grams": 140.0,
+     "pantry": false,
+     "tag": "ziemniaki"
+    },
+    {
+     "qty": 4.0,
+     "unit": "garści",
+     "unitLemma": "garść",
+     "name": "szpinaku",
+     "grams": 100.0,
+     "pantry": false,
+     "tag": "szpinak"
+    },
+    {
+     "qty": 0.5,
+     "unit": "szklanki",
+     "unitLemma": "szklanka",
+     "name": "passaty pomidorowej",
+     "grams": 125.0,
+     "pantry": false,
+     "tag": "pomidory-puszka"
+    },
+    {
+     "qty": 3.0,
+     "unit": "ząbki",
+     "unitLemma": "ząbek",
+     "name": "czosnku",
+     "grams": 18.0,
+     "pantry": false,
+     "tag": "czosnek"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "oliwy z oliwek",
+     "grams": 5.0,
+     "pantry": false,
+     "tag": "oliwa"
+    },
+    {
+     "qty": 1.0,
+     "unit": "garść",
+     "unitLemma": "garść",
+     "name": "świeżej bazylii",
+     "grams": 3.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 2.0,
+     "unit": "szczypty",
+     "unitLemma": "szczypta",
+     "name": "gałki muszkatułowej",
+     "grams": 0.5,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "soli i pieprzu",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 3.0,
+     "unit": "plastry",
+     "unitLemma": "plaster",
+     "name": "sera mozzarella",
+     "grams": 45.0,
+     "pantry": false,
+     "tag": "mozzarella"
+    }
+   ],
+   "steps": [
+    "Piekarnik nagrzewamy do 190 stopni.",
+    "Ziemniaki obieramy i kroimy w cienkie plasterki, czosnek siekamy.",
+    "Na patelni rozgrzewamy oliwę. Podsmażamy czosnek i dodajemy do niego umyty szpinak i gałkę muszkatołową. Przyprawiamy solą i pieprzem.",
+    "Mozzarellę odsączamy i kroimy na plasterki.",
+    "Do naczynia żaroodpornego wlewamy 1/3 passaty z pomidorów, układamy na niej kilka liści bazylii, posypujemy solą, układamy plastry ziemniaków, sera mozzarella i szpinak. Układamy kolejne warstwy, aż do wyczerpania wszystkich składników. Ostatnią warstwę wykańczamy serem mozzarella.",
+    "Naczynie przykrywamy folią do pieczenia. Pieczemy przez 30 minut, po czym zdejmujemy folię i zapiekamy bez przykrycia, przez 10 minut na trybie termoobieg. Smacznego!"
+   ]
+  },
+  {
+   "slug": "ryzowy-pudding",
+   "title": "Ryżowy pudding z prażonymi gruszkami",
+   "day": 8,
+   "slot": 4,
+   "slotId": "kolacja",
+   "slotLabel": "Kolacja",
+   "time": "18:00-21:00",
+   "kcal": 472,
+   "protein": 18,
+   "carbs": 59,
+   "fat": 21,
+   "baseServings": 1,
+   "tags": [
+    "gruszka",
+    "jogurt",
+    "maslo-orzechowe",
+    "oliwa",
+    "ryz"
+   ],
+   "ingredients": [
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "ryżu basmati",
+     "grams": 30.0,
+     "pantry": false,
+     "tag": "ryz"
+    },
+    {
+     "qty": 0.5,
+     "unit": "opakowania",
+     "unitLemma": "opakowanie",
+     "name": "jogurtu skyr",
+     "grams": 75.0,
+     "pantry": false,
+     "tag": "jogurt"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "gruszki",
+     "grams": 130.0,
+     "pantry": false,
+     "tag": "gruszka"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "cynamonu",
+     "grams": 8.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 4.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "erytrolu",
+     "grams": 20.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "oleju rzepakowego",
+     "grams": 5.0,
+     "pantry": false,
+     "tag": "oliwa"
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "soli",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 3.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "masła orzechowego",
+     "grams": 30.0,
+     "pantry": false,
+     "tag": "maslo-orzechowe"
+    }
+   ],
+   "steps": [
+    "Ryż gotujemy według instrukcji na opakowaniu i odsączamy.",
+    "Gruszkę obieramy i kroimy w kostkę. Podsmażamy na oleju ze wskazaną połową porcji erytrolu przez 10 minut na patelni.",
+    "Jogurt skyr łączymy z masłem orzechowym, erytrolem i cynamonem w miseczce.",
+    "Ugotowany ryż łączymy z jogurtem i prażoną gruszką.",
+    "Całość przekładamy do miseczek. Smacznego!"
+   ]
+  },
+  {
+   "slug": "jaglany-snickers",
+   "title": "Jaglany snickers",
+   "day": 9,
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "6:00-9:00",
+   "kcal": 466,
+   "protein": 27,
+   "carbs": 52,
+   "fat": 19,
+   "baseServings": 1,
+   "tags": [
+    "czekolada",
+    "daktyle",
+    "jogurt",
+    "kasza",
+    "maslo-orzechowe",
+    "mleko",
+    "odzywka",
+    "orzechy",
+    "syrop-agawa"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "porcja",
+     "unitLemma": "porcja",
+     "name": "gorzkiej czekolady",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "czekolada"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "kaszy jaglanej",
+     "grams": 30.0,
+     "pantry": false,
+     "tag": "kasza"
+    },
+    {
+     "qty": 0.5,
+     "unit": "opakowania",
+     "unitLemma": "opakowanie",
+     "name": "jogurtu roślinnego",
+     "grams": 80.0,
+     "pantry": false,
+     "tag": "jogurt"
+    },
+    {
+     "qty": 9.0,
+     "unit": "łyżek",
+     "unitLemma": "łyżka",
+     "name": "napoju sojowego",
+     "grams": 105.0,
+     "pantry": false,
+     "tag": "mleko"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "masła orzechowego",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "maslo-orzechowe"
+    },
+    {
+     "qty": 2.0,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "świeżych daktyli",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "daktyle"
+    },
+    {
+     "qty": 2.0,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "posiekanych orzechów włoskich",
+     "grams": 8.0,
+     "pantry": false,
+     "tag": "orzechy"
+    },
+    {
+     "qty": 0.5,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "syropu z agawy",
+     "grams": 7.0,
+     "pantry": false,
+     "tag": "syrop-agawa"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "wegańskiej odżywki białkowej",
+     "grams": 16.0,
+     "pantry": false,
+     "tag": "odzywka"
+    }
+   ],
+   "steps": [
+    "Kaszę gotujemy w osolonej wodzie według instrukcji na opakowaniu.",
+    "Daktyle jeśli mamy suszone, zalewamy gorącą wodą na 10 minut. W przypadku daktyli świeżych pomijamy ten krok.",
+    "Do blendera przekładamy czekoladę, daktyle, masło orzechowe, napój roślinny, jogurt, odżywkę wegańską oraz ugotowaną kaszę.",
+    "Całość blendujemy, przekładamy do szklanek oblanych syropem z agawy i posypanych posiekanymi orzechami. Jeśli jest za gęste, dolewamy wody. Na wierzchu układamy pozostałą posiekaną czekoladę. Smacznego!"
+   ]
+  },
+  {
+   "slug": "pasta-z-pstroga",
+   "title": "Pasta z wędzonego pstrąga i twarogu ze szczypiorkiem, warzywami i pieczywem",
+   "day": 9,
+   "slot": 2,
+   "slotId": "drugie-sniadanie",
+   "slotLabel": "II śniadanie",
+   "time": "10:00-13:00",
+   "kcal": 446,
+   "protein": 31,
+   "carbs": 41,
+   "fat": 19,
+   "baseServings": 1,
+   "tags": [
+    "chleb",
+    "maslo",
+    "ogorek",
+    "pstrag",
+    "rzodkiewka",
+    "salata",
+    "twarog"
+   ],
+   "ingredients": [
+    {
+     "qty": 2.0,
+     "unit": "kromki",
+     "unitLemma": "kromka",
+     "name": "chleba żytniego razowego",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "chleb"
+    },
+    {
+     "qty": 2.0,
+     "unit": "opakowania",
+     "unitLemma": "opakowanie",
+     "name": "twarogu tłustego",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "twarog"
+    },
+    {
+     "qty": 2.0,
+     "unit": "porcje",
+     "unitLemma": "porcja",
+     "name": "pstrąga wędzonego",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "pstrag"
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "ogórka zielonego",
+     "grams": 75.0,
+     "pantry": false,
+     "tag": "ogorek"
+    },
+    {
+     "qty": 6.0,
+     "unit": "sztuk",
+     "unitLemma": "sztuka",
+     "name": "rzodkiewek",
+     "grams": 90.0,
+     "pantry": false,
+     "tag": "rzodkiewka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "garść",
+     "unitLemma": "garść",
+     "name": "rukoli",
+     "grams": 20.0,
+     "pantry": false,
+     "tag": "salata"
+    },
+    {
+     "qty": 3.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "koperku",
+     "grams": 12.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "szczypiorku",
+     "grams": 10.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "soli i pieprzu",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "masła",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "maslo"
+    }
+   ],
+   "steps": [
+    "Pstrąga obieramy z ości i dzielimy na mniejsze kawałki.",
+    "Siekamy szczypiorek i przekładamy do miski.",
+    "Dodajemy twaróg, dokładnie mieszamy. Doprawiamy solą i pieprzem.",
+    "Gotową pastę podajemy z pokrojonymi warzywami: rzodkiewką, ogórkiem, rukolą i pieczywem posmarowanym masłem. Smacznego!"
+   ]
+  },
+  {
+   "slug": "zupa-krem-z-pomidorow",
+   "title": "Zupa krem z pomidorów z bazylią Chef select",
+   "day": 9,
+   "slot": 3,
+   "slotId": "obiad",
+   "slotLabel": "Obiad",
+   "time": "14:00-17:00",
+   "kcal": 370,
+   "protein": 9,
+   "carbs": 46,
+   "fat": 13,
+   "baseServings": 1,
+   "tags": [
+    "baton",
+    "zupa-gotowa"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "opakowanie",
+     "unitLemma": "opakowanie",
+     "name": "Zupy krem z pomidorów z bazylią Chef select",
+     "grams": 450.0,
+     "pantry": false,
+     "tag": "zupa-gotowa"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "batona Raw Alesto kakao, ziarna kakaowca",
+     "grams": 50.0,
+     "pantry": false,
+     "tag": "baton"
+    }
+   ],
+   "steps": [
+    "Podgrzewamy zupę wg instrukcji na opakowaniu. Na deser zjadamy batona."
+   ]
+  },
+  {
+   "slug": "ryzowa-salatka-z-ananasem",
+   "title": "Ryżowa sałatka z ananasem, ogórkiem, selerem i kukurydzą + shake białkowy",
+   "day": 9,
+   "slot": 4,
+   "slotId": "kolacja",
+   "slotLabel": "Kolacja",
+   "time": "18:00-21:00",
+   "kcal": 458,
+   "protein": 26,
+   "carbs": 55,
+   "fat": 17,
+   "baseServings": 1,
+   "tags": [
+    "ananas",
+    "cytryna",
+    "kukurydza",
+    "majonez",
+    "odzywka",
+    "ogorek",
+    "ryz",
+    "seler"
+   ],
+   "ingredients": [
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "ryżu basmati",
+     "grams": 30.0,
+     "pantry": false,
+     "tag": "ryz"
+    },
+    {
+     "qty": 3.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "kukurydzy konserwowej",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "kukurydza"
+    },
+    {
+     "qty": 1.0,
+     "unit": "plaster",
+     "unitLemma": "plaster",
+     "name": "ananasa świeżego",
+     "grams": 80.0,
+     "pantry": false,
+     "tag": "ananas"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "małego ogórka",
+     "grams": 70.0,
+     "pantry": false,
+     "tag": "ogorek"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "selera naciowego",
+     "grams": 45.0,
+     "pantry": false,
+     "tag": "seler"
+    },
+    {
+     "qty": 0.5,
+     "unit": "garści",
+     "unitLemma": "garść",
+     "name": "świeżej kolendry",
+     "grams": 2.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżka",
+     "unitLemma": "łyżka",
+     "name": "majonezu wegańskiego",
+     "grams": 25.0,
+     "pantry": false,
+     "tag": "majonez"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżka",
+     "unitLemma": "łyżka",
+     "name": "soku z cytryny",
+     "grams": 6.0,
+     "pantry": false,
+     "tag": "cytryna"
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "soli i pieprzu",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 3.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "wegańskiej odżywki białkowej",
+     "grams": 24.0,
+     "pantry": false,
+     "tag": "odzywka"
+    }
+   ],
+   "steps": [
+    "Ryż gotujemy według instrukcji na opakowaniu.",
+    "Do ugotowanego, ostudzonego ryżu dodajemy odcedzoną kukurydzę, posiekaną kolendrę i sok z cytryny.",
+    "Ananasa, ogórka, seler naciowy kroimy w drobną kostkę i dodajemy do ryżu.",
+    "Doprawiamy solą, pieprzem, dodajemy majonez wegański. Dokładnie mieszamy. Odżywkę mieszamy z wodą i wypijamy shake białkowy. Smacznego!"
+   ]
+  },
+  {
+   "slug": "tost-z-maslem-orzechowym",
+   "title": "Tost z chlebem żytnim, masłem orzechowym i bananem + shake białkowy",
+   "day": 10,
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "6:00-9:00",
+   "kcal": 491,
+   "protein": 26,
+   "carbs": 55,
+   "fat": 23,
+   "baseServings": 1,
+   "tags": [
+    "banan",
+    "chleb",
+    "maslo-orzechowe",
+    "odzywka"
+   ],
+   "ingredients": [
+    {
+     "qty": 2.0,
+     "unit": "kromki",
+     "unitLemma": "kromka",
+     "name": "chleba żytniego",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "chleb"
+    },
+    {
+     "qty": 4.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "masła orzechowego",
+     "grams": 40.0,
+     "pantry": false,
+     "tag": "maslo-orzechowe"
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "banana",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "banan"
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "odżywki białkowej",
+     "grams": 16.0,
+     "pantry": false,
+     "tag": "odzywka"
+    }
+   ],
+   "steps": [
+    "Pokrojone kromki chleba żytniego przypiekamy na patelni",
+    "Pieczywo smarujemy masłem orzechowym i na wierzch układamy pokrojonego banana.",
+    "Z odżywki i wody przygotowujemy shake, pijemy do posiłku"
+   ]
+  },
+  {
+   "slug": "roslinne-kabanosy",
+   "title": "Roślinne kabanosy Bez kęsa mięsa Tarczyński z pieczywem i warzywami",
+   "day": 10,
+   "slot": 2,
+   "slotId": "drugie-sniadanie",
+   "slotLabel": "II śniadanie",
+   "time": "10:00-13:00",
+   "kcal": 475,
+   "protein": 25,
+   "carbs": 34,
+   "fat": 26,
+   "baseServings": 1,
+   "tags": [
+    "baton",
+    "kabanosy",
+    "pomidor"
+   ],
+   "ingredients": [
+    {
+     "qty": 1.0,
+     "unit": "opakowanie",
+     "unitLemma": "opakowanie",
+     "name": "Roślinne kabanosy Bez kęsa mięsa Tarczyński",
+     "grams": 90.0,
+     "pantry": false,
+     "tag": "kabanosy"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "pomidora",
+     "grams": 160.0,
+     "pantry": false,
+     "tag": "pomidor"
+    },
+    {
+     "qty": 1.0,
+     "unit": "opakowanie",
+     "unitLemma": "opakowanie",
+     "name": "Przekąski na 2 śniadanie kasza jaglana-jabłko-cynamon Tymbark",
+     "grams": 100.0,
+     "pantry": true,
+     "tag": "baton"
+    }
+   ],
+   "steps": [
+    "Kabanosy jemy z warzywami. Po posiłku zjadamy przekąskę."
+   ]
+  },
+  {
+   "slug": "makaron-penne",
+   "title": "Makaron penne ze szpinakiem, pieczarkami, pomidorkami cherry i serem grana padano",
+   "day": 10,
+   "slot": 3,
+   "slotId": "obiad",
+   "slotLabel": "Obiad",
+   "time": "14:00-17:00",
+   "kcal": 360,
+   "protein": 16,
+   "carbs": 37,
+   "fat": 15,
+   "baseServings": 1,
+   "tags": [
+    "brokul",
+    "cebula",
+    "czosnek",
+    "grana-padano",
+    "makaron",
+    "oliwa",
+    "pieczarki",
+    "pomidor",
+    "smietanka",
+    "szpinak"
+   ],
+   "ingredients": [
+    {
+     "qty": 12.0,
+     "unit": "łyżek",
+     "unitLemma": "łyżka",
+     "name": "makaronu penne",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "makaron"
+    },
+    {
+     "qty": 3.0,
+     "unit": "garści",
+     "unitLemma": "garść",
+     "name": "szpinaku",
+     "grams": 75.0,
+     "pantry": false,
+     "tag": "szpinak"
+    },
+    {
+     "qty": 6.0,
+     "unit": "łyżek",
+     "unitLemma": "łyżka",
+     "name": "śmietanki 12%",
+     "grams": 108.0,
+     "pantry": false,
+     "tag": "smietanka"
+    },
+    {
+     "qty": 1.0,
+     "unit": "ząbek",
+     "unitLemma": "ząbek",
+     "name": "czosnku",
+     "grams": 6.0,
+     "pantry": false,
+     "tag": "czosnek"
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "cebuli",
+     "grams": 55.0,
+     "pantry": false,
+     "tag": "cebula"
+    },
+    {
+     "qty": 10.0,
+     "unit": "sztuk",
+     "unitLemma": "sztuka",
+     "name": "pieczarek",
+     "grams": 200.0,
+     "pantry": false,
+     "tag": "pieczarki"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżka",
+     "unitLemma": "łyżka",
+     "name": "sera grana padano",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "grana-padano"
+    },
+    {
+     "qty": 0.5,
+     "unit": "sztuki",
+     "unitLemma": "sztuka",
+     "name": "brokuła",
+     "grams": 225.0,
+     "pantry": false,
+     "tag": "brokul"
+    },
+    {
+     "qty": 10.0,
+     "unit": "sztuk",
+     "unitLemma": "sztuka",
+     "name": "pomidorków",
+     "grams": 200.0,
+     "pantry": false,
+     "tag": "pomidor"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżka",
+     "unitLemma": "łyżka",
+     "name": "ksylitolu",
+     "grams": 15.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "soli",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "pieprzu",
+     "grams": 0.25,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 2.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "oliwy z oliwek",
+     "grams": 10.0,
+     "pantry": false,
+     "tag": "oliwa"
+    }
+   ],
+   "steps": [
+    "Brokuł kroimy na mniejsze różyczki.",
+    "W rondlu gotujemy wodę i doprawiamy ją solą, pieprzem i ksylitolem. Brokuł gotujemy, aż będzie miękki, około 5-7 minut.",
+    "Czosnek i cebulę siekamy, pieczarki kroimy. W rondelku z odrobiną oliwy dusimy czosnek z cebulką.",
+    "Gdy cebulka z czosnkiem się zeszklą, dodajemy pieczarki i wszystko razem dusimy.",
+    "Do uduszonych warzyw wlewamy śmietankę i gotujemy, aż lekko zgęstnieje.",
+    "Gdy sos się gotuje, gotujemy makaron według instrukcji umieszczonej na opakowaniu.",
+    "Do ugotowanego sosu dodajemy ugotowany brokuł, świeży szpinak, pokrojone pomidorki cherry, całość mieszamy i doprawiamy solą z pieprzem.",
+    "Gotowy sos mieszamy z makaronem i posypujemy serem grana padano. Smacznego!"
+   ]
+  },
+  {
+   "slug": "kanapka-z-pasta-pomidorowa",
+   "title": "Kanapka z pastą pomidorową",
+   "day": 10,
+   "slot": 4,
+   "slotId": "kolacja",
+   "slotLabel": "Kolacja",
+   "time": "18:00-21:00",
+   "kcal": 443,
+   "protein": 19,
+   "carbs": 66,
+   "fat": 15,
+   "baseServings": 1,
+   "tags": [
+    "chleb",
+    "czosnek",
+    "pomidory-suszone",
+    "soczewica",
+    "tahini"
+   ],
+   "ingredients": [
+    {
+     "qty": 4.0,
+     "unit": "łyżki",
+     "unitLemma": "łyżka",
+     "name": "soczewicy czerwonej",
+     "grams": 40.0,
+     "pantry": false,
+     "tag": "soczewica"
+    },
+    {
+     "qty": 2.0,
+     "unit": "kromki",
+     "unitLemma": "kromka",
+     "name": "chleba żytniego razowego",
+     "grams": 60.0,
+     "pantry": false,
+     "tag": "chleb"
+    },
+    {
+     "qty": 3.0,
+     "unit": "łyżeczki",
+     "unitLemma": "łyżeczka",
+     "name": "pasty tahini",
+     "grams": 18.0,
+     "pantry": false,
+     "tag": "tahini"
+    },
+    {
+     "qty": 1.0,
+     "unit": "sztuka",
+     "unitLemma": "sztuka",
+     "name": "pomidorów suszonych",
+     "grams": 20.0,
+     "pantry": false,
+     "tag": "pomidory-suszone"
+    },
+    {
+     "qty": 1.0,
+     "unit": "ząbek",
+     "unitLemma": "ząbek",
+     "name": "czosnku",
+     "grams": 6.0,
+     "pantry": false,
+     "tag": "czosnek"
+    },
+    {
+     "qty": 1.0,
+     "unit": "łyżeczka",
+     "unitLemma": "łyżeczka",
+     "name": "tymianku",
+     "grams": 3.0,
+     "pantry": true,
+     "tag": null
+    },
+    {
+     "qty": 1.0,
+     "unit": "szczypta",
+     "unitLemma": "szczypta",
+     "name": "kuminu",
+     "grams": 1.0,
+     "pantry": true,
+     "tag": null
+    }
+   ],
+   "steps": [
+    "Soczewicę gotujemy zgodnie z instrukcją na opakowaniu",
+    "Po ugotowaniu soczewicę studzimy",
+    "Przekładamy do blendera wszystkie składniki pasty i blendujemy na gładką masę.",
+    "Podajemy z pieczywem."
+   ]
+  }
+ ],
+ "substitutions": [
+  {
+   "title": "Źródła węglowodanów",
+   "items": [
+    "Pomidor = ogórek = papryka = cukinia = brokuł = marchew = rzodkiewka = kapusta = seler naciowy = kalafior = szparagi = bakłażan = dynia = pieczarki = inne warzywa (poza nasiona roślin strączkowych i ziemniakami)",
+    "Szpinak = rukola = roszponka = sałata rzymska = miks sałat = jarmuż = sałata lodowa = inne zielone warzywa liściaste",
+    "Owoce świeże, zawsze możesz zamieniać na suszone i na odwrót: 150 g owoców świeżych = 20 g suszonych",
+    "Mąka jaglana = mąka gryczana = mąka żytnia typ 2000 = mąka ryżowa = mąka z tapioki = mąka amarantusowa = mąka orkiszowa = mąka pełnoziarnista = mąka owsiana",
+    "Płatki owsiane = płatki jaglane = płatki gryczane = płatki ryżowe = płatki orkiszowe",
+    "Ryż biały = ryż basmati = ryż brązowy = ryż dziki = komosa ryżowa = kasza gryczana = kasza jaglana = kasza pęczak = kasza bulgur = kasza owsiana = kasza jęczmienna = amarantus = makaron gryczany = makaron jaglany = makaron żytni = makaron ryżowy = makaron pełnoziarnisty = makaron orkiszowy = makaron bezglutenowy",
+    "Ziemniaki = bataty = topinambur",
+    "100 g ryżu / kaszy = 450-500 g ziemniaków",
+    "Chleb żytni razowy = chleb żytni na zakwasie = chleb orkiszowy = chleb pełnoziarnisty = chleb bezglutenowy = bułka owsiana = bułka grahamka = bułka pełnoziarnista",
+    "Hummus = pasty warzywne",
+    "Miód = syrop klonowy = syrop z agawy"
+   ]
+  },
+  {
+   "title": "Źródła białka",
+   "items": [
+    "Mięso z piersi z kurczaka = mięso z piersi indyka = mielone mięso drobiowe = schab wieprzowy = polędwiczka wieprzowa = polędwica wołowa = rostbef wołowy = inne chude mięso = tofu naturalne = krewetki tygrysie",
+    "Dorsz = mintaj = pstrąg = morszczuk = sandacz = tuńczyk = krewetki tygrysie = inna chuda ryba lub owoce morza",
+    "Halibut = łosoś = śledź = makrela = pstrąg tęczowy = inna tłusta ryba",
+    "Ciecierzyca = soczewica = fasola = groch = soja",
+    "Serek wiejski = ser twarogowy chudy = tofu naturalne",
+    "Mleko 2% = mleko bezlaktozowe 2% = napój sojowy niesłodzony = napój migdałowy niesłodzony = napój owsiany niesłodzony = inne napoje roślinne niesłodzone"
+   ]
+  },
+  {
+   "title": "Źródła tłuszczu",
+   "items": [
+    "Orzechy włoskie = orzechy nerkowca = orzechy laskowe = orzechy pistacjowe = orzechy piniowe = orzechy pekan = orzechy arachidowe = siemię lniane = sezam = pestki słonecznika = pestki dyni = wiórki kokosowe = masło orzechowe = nasiona chia",
+    "Oliwa z oliwek = olej rzepakowy = olej z awokado = olej kokosowy = inny olej roślinny = masło"
+   ]
+  },
+  {
+   "title": "Napoje",
+   "items": [
+    "Woda = herbata = kawa = napary ziołowe (np. mięta, pokrzywa, melisa)"
+   ]
+  },
+  {
+   "title": "Zamienniki owoców",
+   "items": [
+    "1 sztuka (120 g) banana = 1 sztuka (170 g) dużego jabłka = 1 sztuka (240 g) pomarańczy = 1⁄2 sztuki (125 g) kaki = 3 sztuki (195 g) mandarynek = 2 sztuki (180 g) brzoskwiń = 1 sztuka (170 g) gruszki = 2 sztuki (160 g) kiwi = 3 garści (210 g) malin = 4 garści (280 g) truskawek = 2 garści (140 g) winogron = 1 sztuka (220 g) grejpfruta = 1⁄2 sztuki (140 g) mango = 7 sztuk (210 g) śliwek = 200 g ananasa = 4 garści (175 g) borówek = 2 garści (160 g) czereśni"
+   ]
+  }
+ ]
+}

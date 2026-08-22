@@ -1,1 +1,4 @@
-mkdocs-material>=9.0.0
+# Wersje przypięte celowo: build strony ma dawać ten sam wynik za pół roku.
+# Material zapowiada niekompatybilne MkDocs 2.0 — aktualizuj świadomie.
+mkdocs==1.6.1
+mkdocs-material==9.7.7

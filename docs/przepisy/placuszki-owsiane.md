@@ -1,40 +1,83 @@
+---
+hide:
+  - toc
+---
+
+<a class="p-back" href="../../">&larr; Wszystkie przepisy</a>
+
 # Placuszki owsiane orzechowe
 
-<div class="portion-selector">
-  <label for="persons-count">Liczba osób:</label>
-  <input type="number" id="persons-count" value="1" min="1" onchange="updatePortions()">
-  <button class="btn-action" onclick="toggleShoppingList()">🛒 Lista zakupów</button>
+<div class="p-hero" data-slot="1">
+<div class="p-hero__top">
+<span>Śniadanie</span><span class="p-num">6:00-9:00</span><span class="p-num">Dzień 3</span>
+</div>
+<div class="p-macros">
+<div class="p-macro"><span class="p-macro__v">482</span><span class="p-macro__l">kcal</span></div>
+<div class="p-macro"><span class="p-macro__v">29 g</span><span class="p-macro__l">białko</span></div>
+<div class="p-macro"><span class="p-macro__v">49 g</span><span class="p-macro__l">węgl.</span></div>
+<div class="p-macro"><span class="p-macro__v">22 g</span><span class="p-macro__l">tłuszcz</span></div>
+</div>
+<p style="margin:0;font-size:.66rem;color:var(--p-ink-3);font-weight:600">Wartości dla jednej porcji, tak jak w planie diety.</p>
 </div>
 
-<div id="shopping-list-box" class="shopping-list-box">
-  <h3>Lista zakupów</h3>
-  <ul id="shopping-list-items"></ul>
-  <button class="btn-action" onclick="printShoppingList()">📄 Wygeneruj PDF</button>
+<div class="p-servings">
+<span class="p-eyebrow">Dla ilu osób gotujesz?</span>
+<div class="p-stepper">
+<button type="button" class="p-stepper__btn" id="srv-minus" aria-label="Mniej osób">&minus;</button>
+<span class="p-stepper__value"><span class="p-stepper__num" id="srv-num" aria-live="polite">1</span><span class="p-stepper__word" id="srv-word">osoba</span></span>
+<button type="button" class="p-stepper__btn" id="srv-plus" aria-label="Więcej osób">+</button>
+</div>
+<p class="p-note" id="srv-note" style="margin:0" hidden></p>
 </div>
 
-## Składniki (na 1 osobę)
+<h2 id="ing-heading">Składniki na 1 osobę</h2>
+<ul class="p-ings" id="ing-list">
+<li><span class="p-ing__q">1 sztuka</span><span>małego banana</span><span class="p-ing__g">60 g</span></li>
+<li><span class="p-ing__q">1 sztuka</span><span>jaja kurzego</span><span class="p-ing__g">56 g</span></li>
+<li><span class="p-ing__q">2 łyżki</span><span>mąki owsianej pełnoziarnistej</span><span class="p-ing__g">24 g</span></li>
+<li><span class="p-ing__q">1 łyżeczka</span><span>masła orzechowego</span><span class="p-ing__g">10 g</span></li>
+<li><span class="p-ing__q">2 łyżki</span><span>odżywki białkowej</span><span class="p-ing__g">16 g</span></li>
+<li><span class="p-ing__q">0.5 garści</span><span>mieszanki orzechów</span><span class="p-ing__g">15 g</span></li>
+<li><span class="p-ing__q">1 łyżka</span><span>syropu z agawy</span><span class="p-ing__g">15 g</span></li>
+</ul>
 
-- <span class="ing-item" data-base="60" data-unit="g" data-name="mały banan">60 g małego banana</span> (1 sztuka)
-- <span class="ing-item" data-base="56" data-unit="g" data-name="jajo kurze">56 g jaja kurzego</span> (1 sztuka)
-- <span class="ing-item" data-base="24" data-unit="g" data-name="mąka owsiana pełnoziarnista">24 g mąki owsianej pełnoziarnistej</span> (2 łyżki)
-- <span class="ing-item" data-base="10" data-unit="g" data-name="masło orzechowe">10 g masła orzechowego</span> (1 łyżeczka)
-- <span class="ing-item" data-base="16" data-unit="g" data-name="odżywka białkowa">16 g odżywki białkowej</span> (2 łyżki)
-- <span class="ing-item" data-base="15" data-unit="g" data-name="mieszanka orzechów">15 g mieszanki orzechów</span> (0.5 garści)
-- <span class="ing-item" data-base="15" data-unit="g" data-name="syrop z agawy">15 g syropu z agawy</span> (1 łyżka)
-
-## Sposób przygotowania
-
-<div id="steps-container">
-  <div class="step-card">
-    <p><strong>Krok 1:</strong> Składniki na ciasto blendujemy i odstawiamy na 5-10 minut.</p>
-  </div>
-  <div class="step-card">
-    <p><strong>Krok 2:</strong> Placuszki smażymy bez tłuszczu na nieprzywierającej patelni, podajemy polane syropem z agawy i posypane posiekanymi orzechami.</p>
-  </div>
+<div class="p-actions">
+<button type="button" class="p-btn p-btn--block" id="open-shopping">&#128722; Lista zakupów</button>
+<button type="button" class="p-btn p-btn--primary p-btn--block" id="cook-start">Gotujmy &rarr;</button>
 </div>
 
-<div class="step-nav">
-  <button id="btn-prev" class="btn-action" onclick="prevStep()">Poprzedni krok</button>
-  <span id="step-indicator"></span>
-  <button id="btn-next" class="btn-action" onclick="nextStep()">Następny krok</button>
+<h2>Sposób przygotowania</h2>
+<ol class="p-steps">
+<li>Składniki na ciasto blendujemy i odstawiamy na 5-10 minut</li>
+<li>Placuszki smażymy bez tłuszczu na nieprzywierającej patelni, podajemy polane syropem z agawy i posypane posiekanymi orzechami.</li>
+</ol>
+
+<div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Placuszki owsiane orzechowe">
+<div class="p-cook__bar">
+<span class="p-cook__title">Placuszki owsiane orzechowe</span>
+<button type="button" class="p-iconbtn" id="cook-close" aria-label="Zamknij tryb gotowania">&times;</button>
 </div>
+<div class="p-progress" id="cook-progress"></div>
+<div class="p-cook__body">
+<span class="p-cook__step" id="cook-label"></span>
+<p class="p-cook__text" id="cook-text"></p>
+</div>
+<div class="p-cook__nav">
+<button type="button" class="p-btn" id="cook-prev">Wstecz</button>
+<button type="button" class="p-btn p-btn--primary" id="cook-next">Następny krok</button>
+</div>
+</div>
+<div class="p-sheet" id="shopping" data-open="0" role="dialog" aria-modal="true" aria-label="Lista zakupów">
+<button type="button" class="p-sheet__scrim" id="shopping-scrim" aria-label="Zamknij listę zakupów"></button>
+<div class="p-sheet__panel">
+<div class="p-sheet__head"><h2>Lista zakupów</h2><button type="button" class="p-iconbtn" id="close-shopping" aria-label="Zamknij">&times;</button></div>
+<div class="p-sheet__body" id="shopping-body"></div>
+<div class="p-sheet__foot">
+<button type="button" class="p-btn" id="reset-shopping">Odznacz wszystko</button>
+<button type="button" class="p-btn p-btn--primary" id="pdf-btn">Wygeneruj PDF</button>
+</div>
+</div></div>
+<div class="p-toast" id="toast" role="status" data-on="0"></div>
+
+<script>window.RECIPE = {"slug": "placuszki-owsiane", "title": "Placuszki owsiane orzechowe", "day": 3, "slotLabel": "Śniadanie", "time": "6:00-9:00", "baseServings": 1, "ingredients": [{"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "małego banana", "grams": 60.0, "pantry": false, "tag": "banan"}, {"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "jaja kurzego", "grams": 56.0, "pantry": false, "tag": "jajka"}, {"qty": 2.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "mąki owsianej pełnoziarnistej", "grams": 24.0, "pantry": false, "tag": "maka"}, {"qty": 1.0, "unit": "łyżeczka", "unitLemma": "łyżeczka", "name": "masła orzechowego", "grams": 10.0, "pantry": false, "tag": "maslo-orzechowe"}, {"qty": 2.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "odżywki białkowej", "grams": 16.0, "pantry": false, "tag": "odzywka"}, {"qty": 0.5, "unit": "garści", "unitLemma": "garść", "name": "mieszanki orzechów", "grams": 15.0, "pantry": false, "tag": "orzechy"}, {"qty": 1.0, "unit": "łyżka", "unitLemma": "łyżka", "name": "syropu z agawy", "grams": 15.0, "pantry": false, "tag": "syrop-agawa"}], "steps": ["Składniki na ciasto blendujemy i odstawiamy na 5-10 minut", "Placuszki smażymy bez tłuszczu na nieprzywierającej patelni, podajemy polane syropem z agawy i posypane posiekanymi orzechami."]};
+window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};</script>
