@@ -3,12 +3,12 @@
    --------------------------------------------------------------------------
    Trzy niezależne kawałki, wszystkie inicjowane przez boot():
      1. wyszukiwarka na stronie głównej (pora dnia + składniki),
-     2. przepis (przelicznik porcji, lista zakupów, PDF),
+     2. przepis (przelicznik porcji, zamienniki, lista zakupów, PDF),
      3. tryb gotowania (jeden krok na ekran).
 
-   Stan (liczba osób, odhaczone zakupy, numer kroku, filtry) trzymamy w
-   localStorage, żeby przypadkowe odświeżenie w trakcie gotowania niczego nie
-   gubiło.
+   Stan (liczba osób, wybrane zamienniki, odhaczone zakupy, numer kroku,
+   filtry) trzymamy w localStorage, żeby przypadkowe odświeżenie w trakcie
+   gotowania niczego nie gubiło.
    ========================================================================== */
 (function () {
   "use strict";
@@ -55,8 +55,7 @@
 
   function fmtQty(n) {
     var r = Math.round(n * 100) / 100;
-    if (Number.isInteger(r)) return String(r);
-    return String(parseFloat(r.toFixed(2)));
+    return Number.isInteger(r) ? String(r) : String(parseFloat(r.toFixed(2)));
   }
 
   function fmtGrams(n) {
@@ -64,25 +63,50 @@
     return String(Math.round(n));
   }
 
-  function unitFor(qty, ing, units) {
-    var forms = ing.unitLemma && units ? units[ing.unitLemma] : null;
-    if (!forms) return ing.unit;
-    return plural(qty, forms);
+  /* ------------------------------------------------ dopasowanie przybliżone */
+
+  function norm(s) {
+    return s.toLowerCase()
+      .normalize("NFD").replace(/[̀-ͯ]/g, "")
+      .replace(/ł/g, "l");
   }
 
-  /* --------------------------------------------------- składniki przepisu -- */
-
-  function scaleIngredient(ing, factor, units) {
-    var qty = ing.qty * factor;
-    var grams = ing.grams * factor;
-    if (factor === 1) {
-      return { qty: fmtQty(ing.qty), unit: ing.unit, name: ing.name, grams: fmtGrams(ing.grams) };
+  // Odległość Levenshteina — pozwala podpowiedzieć „Pomidor” na „pomdor”.
+  function distance(a, b) {
+    var prev = [], cur = [], i, j;
+    for (j = 0; j <= b.length; j++) prev[j] = j;
+    for (i = 1; i <= a.length; i++) {
+      cur[0] = i;
+      for (j = 1; j <= b.length; j++) {
+        cur[j] = Math.min(
+          prev[j] + 1,
+          cur[j - 1] + 1,
+          prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)
+        );
+      }
+      prev = cur.slice();
     }
-    return { qty: fmtQty(qty), unit: unitFor(qty, ing, units), name: ing.name, grams: fmtGrams(grams) };
+    return prev[b.length];
   }
 
-  function ingredientLine(s) {
-    return s.qty + " " + s.unit + " " + s.name;
+  // 0 = trafienie dosłowne, 1..n = literówka, Infinity = nie pasuje.
+  function matchScore(label, query) {
+    var l = norm(label), q = norm(query);
+    if (!q) return 0;
+    var at = l.indexOf(q);
+    if (at === 0) return 0;
+    if (at > 0) return 0.5;
+    var tolerance = q.length <= 3 ? 1 : q.length <= 6 ? 2 : 3;
+    var best = Infinity;
+    l.split(/[\s/]+/).forEach(function (word) {
+      // porównujemy z początkiem słowa o długości zapytania (±1 znak),
+      // żeby „pomdor” trafiło w „pomidor”, a nie w całą etykietę
+      for (var len = Math.max(1, q.length - 1); len <= q.length + 1; len++) {
+        var d = distance(word.slice(0, len), q);
+        if (d < best) best = d;
+      }
+    });
+    return best <= tolerance ? 1 + best : Infinity;
   }
 
   /* ================================================== STRONA GŁÓWNA ======== */
@@ -91,14 +115,16 @@
     var root = document.getElementById("finder");
     if (!root || !window.RECIPES) return;
 
-    var cards = Array.prototype.slice.call(document.querySelectorAll("#recipes .p-card"));
-    var slotChips = Array.prototype.slice.call(root.querySelectorAll("[data-slot-filter]"));
-    var ingWrap = document.getElementById("ing-chips");
-    var ingChips = Array.prototype.slice.call(ingWrap.querySelectorAll(".p-chip"));
+    var cards = [].slice.call(document.querySelectorAll("#recipes .p-card"));
+    var slotChips = [].slice.call(root.querySelectorAll("[data-slot-filter]"));
+    var ingChips = [].slice.call(document.querySelectorAll("#ing-chips .p-chip"));
     var search = document.getElementById("ing-search");
-    var toggleAll = document.getElementById("ing-toggle");
+    var searchClear = document.getElementById("search-clear");
+    var hint = document.getElementById("ing-hint");
+    var hintText = hint ? hint.textContent : "";
     var countEl = document.getElementById("result-count");
     var clearEl = document.getElementById("clear-filters");
+    var clearCount = document.getElementById("clear-count");
     var emptyEl = document.getElementById("empty-state");
     var panel = document.getElementById("ing-panel");
     var stateEl = document.getElementById("ing-state");
@@ -135,49 +161,58 @@
       });
     });
 
-    if (search) {
-      search.addEventListener("input", function () {
-        var q = search.value.trim().toLowerCase();
-        var anyHidden = false;
-        ingChips.forEach(function (chip) {
-          var label = chip.getAttribute("data-label") || "";
-          var hit = !q || label.toLowerCase().indexOf(q) !== -1;
-          chip.style.display = hit ? "" : "none";
-          if (!hit) anyHidden = true;
-        });
-        // przy szukaniu pokazujemy wszystkie pasujące, nie tylko popularne
-        ingWrap.setAttribute("data-collapsed", q ? "0" : collapsed ? "1" : "0");
-        if (anyHidden) { /* nic — tylko czytelność warunku wyżej */ }
+    // Bez zapytania widać tylko kluczowe składniki plus te już zaznaczone;
+    // z zapytaniem — wszystko, co pasuje, także mimo literówki.
+    function renderChips() {
+      var q = search ? search.value.trim() : "";
+      var exact = 0, fuzzy = [];
+      ingChips.forEach(function (chip) {
+        var label = chip.getAttribute("data-label") || "";
+        var checked = chip.querySelector("input").checked;
+        if (!q) {
+          chip.hidden = chip.getAttribute("data-rank") !== "top" && !checked;
+          return;
+        }
+        var score = matchScore(label, q);
+        chip.hidden = score === Infinity;
+        if (score <= 0.5) exact++;
+        else if (score < Infinity) fuzzy.push(label);
       });
+      if (searchClear) searchClear.hidden = !q;
+      if (hint) {
+        if (!q) {
+          hint.textContent = hintText;
+        } else if (exact === 0 && fuzzy.length) {
+          hint.textContent = "Nie znaleziono „" + q + "”. Może chodziło o: " +
+            fuzzy.slice(0, 3).join(", ") + "?";
+        } else if (exact === 0) {
+          hint.textContent = "Brak składnika pasującego do „" + q + "”.";
+        } else {
+          hint.textContent = "";
+        }
+      }
     }
 
-    var collapsed = true;
-    if (toggleAll) {
-      toggleAll.addEventListener("click", function () {
-        collapsed = !collapsed;
-        ingWrap.setAttribute("data-collapsed", collapsed ? "1" : "0");
-        toggleAll.textContent = collapsed
-          ? "Pokaż wszystkie (" + ingChips.length + ")"
-          : "Pokaż mniej";
+    if (search) {
+      search.addEventListener("input", renderChips);
+    }
+    if (searchClear) {
+      searchClear.addEventListener("click", function () {
+        search.value = "";
+        renderChips();
+        search.focus();
       });
-      toggleAll.textContent = "Pokaż wszystkie (" + ingChips.length + ")";
     }
 
     if (clearEl) {
       clearEl.addEventListener("click", function () {
-        state.slot = "all";
         state.ings = [];
-        slotChips.forEach(function (c) {
-          var sel = c.getAttribute("data-slot-filter") === "all";
-          c.setAttribute("data-on", sel ? "1" : "0");
-          c.setAttribute("aria-pressed", sel ? "true" : "false");
-        });
         ingChips.forEach(function (c) {
           c.querySelector("input").checked = false;
           c.setAttribute("data-on", "0");
         });
         if (search) search.value = "";
-        ingChips.forEach(function (c) { c.style.display = ""; });
+        renderChips();
         apply();
       });
     }
@@ -197,26 +232,26 @@
         if (ok) shown++;
       });
 
-      countEl.textContent = shown + " " + plural(shown, ["przepis", "przepisy", "przepisów", "przepisu"]);
-      var filtering = state.slot !== "all" || state.ings.length > 0;
-      clearEl.hidden = !filtering;
+      countEl.textContent = shown + " " +
+        plural(shown, ["przepis", "przepisy", "przepisów", "przepisu"]);
       emptyEl.hidden = shown !== 0;
 
+      var n = state.ings.length;
+      if (clearEl) {
+        clearEl.hidden = n === 0;
+        if (clearCount) clearCount.textContent = n ? "(" + n + ")" : "";
+      }
       if (stateEl) {
-        var n = state.ings.length;
         stateEl.textContent = n
           ? n + " " + plural(n, ["wybrany", "wybrane", "wybranych", "wybranego"])
           : "wybierz składniki";
         stateEl.setAttribute("data-active", n ? "1" : "0");
       }
-
       LS.set("filters", state);
     }
 
-    // Jeśli wracasz z zaznaczonymi składnikami, panel otwiera się sam —
-    // inaczej filtr działałby niewidocznie.
     if (panel && state.ings.length) panel.open = true;
-
+    renderChips();
     apply();
   }
 
@@ -227,6 +262,8 @@
     if (!data) return;
 
     var units = window.UNITS || {};
+    var groups = window.SWAPS || {};
+    var adjectives = window.SWAP_ADJ || {};
     var minus = document.getElementById("srv-minus");
     var plus = document.getElementById("srv-plus");
     var num = document.getElementById("srv-num");
@@ -234,16 +271,87 @@
     var list = document.getElementById("ing-list");
     var heading = document.getElementById("ing-heading");
     var note = document.getElementById("srv-note");
+    var stepsList = document.getElementById("steps-list");
+    var swapReset = document.getElementById("swap-reset");
 
     var servings = LS.get("servings:" + data.slug, 1);
     if (!(servings >= 1)) servings = 1;
     servings = Math.min(12, Math.round(servings));
 
+    var swapState = LS.get("swap:" + data.slug, {});
+
+    /* ------------------------------------------------------ zamienniki ---- */
+
+    function optionOf(ing, id) {
+      var g = groups[ing.swap.group];
+      for (var i = 0; i < g.options.length; i++) {
+        if (g.options[i].id === id) return g.options[i];
+      }
+      return null;
+    }
+
+    // Zwraca nazwę i mnożnik gramatury dla wybranego wariantu składnika.
+    // Owoce mają w PDF-ie różne wagi jednej sztuki, więc podmiana skaluje
+    // gramaturę — 1 sztuka banana to nie to samo co 1 sztuka jabłka.
+    function resolve(ing, idx) {
+      if (!ing.swap) return { name: ing.name, ratio: 1, swapped: false };
+      var chosen = swapState[idx];
+      if (!chosen || chosen === ing.swap.self) {
+        return { name: ing.name, ratio: 1, swapped: false };
+      }
+      var self = optionOf(ing, ing.swap.self);
+      var opt = optionOf(ing, chosen);
+      if (!opt) return { name: ing.name, ratio: 1, swapped: false };
+      var ratio = (opt.equiv && self && self.equiv) ? opt.equiv / self.equiv : 1;
+      var name = opt.formy[ing.swap.nameCase] || opt.formy.D || opt.formy.M;
+      return { name: name, ratio: ratio, swapped: true };
+    }
+
+    var TOKEN = /«(\d+)\|([A-Za-z]+)\|([A-Za-z_]*)\|([^|]*)\|(U?)»/g;
+
+    function renderStepText(step) {
+      return step.replace(TOKEN, function (_, idx, kase, adj, infix, up) {
+        var ing = data.ingredients[+idx];
+        var opt = optionOf(ing, swapState[+idx] || ing.swap.self) ||
+                  optionOf(ing, ing.swap.self);
+        var w = opt.formy[kase] || opt.formy.M;
+        if (adj) {
+          var rodz = (adj.slice(-2) === "_B" && kase === "Bpot")
+            ? (opt.rodzajB || opt.rodzaj) : opt.rodzaj;
+          w = adjectives[adj][rodz] + " " + (infix ? infix + " " : "") + w;
+        }
+        return up ? w.charAt(0).toUpperCase() + w.slice(1) : w;
+      });
+    }
+
+    /* ---------------------------------------------------------- porcje ---- */
+
     // Jedna osoba = dokładnie te ilości, które są w planie diety — także wtedy,
-    // gdy przepis jest tam opisany jako wieloporcjowy. Nic nie dzielimy, bo
-    // dzielenie dawałoby „0.33 opakowania” i rozjeżdżałoby się ze źródłem.
+    // gdy przepis jest tam opisany jako wieloporcjowy.
     function factor() {
       return servings;
+    }
+
+    function scaled(ing, idx) {
+      var r = resolve(ing, idx);
+      var f = factor();
+      var qty = ing.qty * f;
+      var grams = ing.grams * f * r.ratio;
+      var unit = ing.unit;
+      if (f !== 1 && ing.unitLemma && units[ing.unitLemma]) {
+        unit = plural(qty, units[ing.unitLemma]);
+      }
+      return {
+        qty: fmtQty(f === 1 ? ing.qty : qty),
+        unit: unit,
+        name: r.name,
+        grams: fmtGrams(f === 1 ? ing.grams * r.ratio : grams),
+        swapped: r.swapped,
+      };
+    }
+
+    function line(s) {
+      return s.qty + " " + s.unit + " " + s.name;
     }
 
     function render() {
@@ -251,7 +359,8 @@
       word.textContent = personWord(servings);
       minus.disabled = servings <= 1;
       plus.disabled = servings >= 12;
-      heading.textContent = "Składniki na " + servings + " " + plural(servings, ["osobę", "osoby", "osób", "osoby"]);
+      heading.textContent = "Składniki na " + servings + " " +
+        plural(servings, ["osobę", "osoby", "osób", "osoby"]);
 
       if (note) {
         note.hidden = (data.baseServings || 1) === 1;
@@ -266,28 +375,31 @@
         }
       }
 
-      list.innerHTML = "";
-      var f = factor();
-      data.ingredients.forEach(function (ing) {
-        var s = scaleIngredient(ing, f, units);
-        var li = document.createElement("li");
-        if (ing.pantry) li.setAttribute("data-pantry", "1");
-        var q = document.createElement("span");
-        q.className = "p-ing__q";
-        q.textContent = s.qty + " " + s.unit;
-        var n = document.createElement("span");
-        n.textContent = s.name;
-        var g = document.createElement("span");
-        g.className = "p-ing__g";
-        g.textContent = s.grams + " g";
-        li.appendChild(q);
-        li.appendChild(n);
-        li.appendChild(g);
-        list.appendChild(li);
+      // Same wiersze składników przepisujemy w miejscu, żeby nie gubić
+      // otwartych list rozwijanych „Zamień na”.
+      [].forEach.call(list.children, function (li, idx) {
+        var s = scaled(data.ingredients[idx], idx);
+        li.querySelector(".p-ing__q").textContent = s.qty + " " + s.unit;
+        li.querySelector(".p-ing__n").textContent = s.name;
+        li.querySelector(".p-ing__g").textContent = s.grams + " g";
+        li.setAttribute("data-swapped", s.swapped ? "1" : "0");
       });
 
+      if (stepsList) {
+        [].forEach.call(stepsList.children, function (li, i) {
+          li.textContent = renderStepText(data.steps[i]);
+        });
+      }
+
+      var anySwap = Object.keys(swapState).some(function (k) {
+        return swapState[k] && swapState[k] !== data.ingredients[+k].swap.self;
+      });
+      if (swapReset) swapReset.hidden = !anySwap;
+
       LS.set("servings:" + data.slug, servings);
+      LS.set("swap:" + data.slug, swapState);
       if (sheet && sheet.getAttribute("data-open") === "1") renderShopping();
+      if (cook && cook.getAttribute("data-open") === "1") renderStep();
     }
 
     minus.addEventListener("click", function () {
@@ -296,6 +408,26 @@
     plus.addEventListener("click", function () {
       if (servings < 12) { servings++; render(); }
     });
+
+    [].forEach.call(document.querySelectorAll(".p-select[data-ing]"), function (sel) {
+      sel.value = swapState[sel.getAttribute("data-ing")] ||
+                  data.ingredients[+sel.getAttribute("data-ing")].swap.self;
+      sel.addEventListener("change", function () {
+        swapState[sel.getAttribute("data-ing")] = sel.value;
+        render();
+      });
+    });
+
+    if (swapReset) {
+      swapReset.addEventListener("click", function () {
+        swapState = {};
+        [].forEach.call(document.querySelectorAll(".p-select[data-ing]"), function (sel) {
+          sel.value = data.ingredients[+sel.getAttribute("data-ing")].swap.self;
+        });
+        render();
+        toast("Przywrócono składniki z przepisu");
+      });
+    }
 
     /* ------------------------------------------------- lista zakupów ------ */
 
@@ -311,25 +443,30 @@
       return LS.get("bought:" + data.slug, {});
     }
 
-    function renderShopping() {
-      var bought = boughtMap();
-      var f = factor();
-      sheetBody.innerHTML = "";
-
-      [
+    function groupsForList() {
+      return [
         { key: "buy", label: "Do kupienia", pantry: false },
         { key: "pantry", label: "Przyprawy i podstawy", pantry: true },
-      ].forEach(function (group) {
-        var items = data.ingredients.filter(function (i) { return !!i.pantry === group.pantry; });
+      ];
+    }
+
+    function renderShopping() {
+      var bought = boughtMap();
+      sheetBody.innerHTML = "";
+      groupsForList().forEach(function (group) {
+        var items = [];
+        data.ingredients.forEach(function (ing, idx) {
+          if (!!ing.pantry === group.pantry) items.push({ ing: ing, idx: idx });
+        });
         if (!items.length) return;
         var h = document.createElement("p");
         h.className = "p-group";
         h.textContent = group.label;
         sheetBody.appendChild(h);
 
-        items.forEach(function (ing, idx) {
-          var s = scaleIngredient(ing, f, units);
-          var id = group.key + ":" + idx;
+        items.forEach(function (it, n) {
+          var s = scaled(it.ing, it.idx);
+          var id = group.key + ":" + n;
           var label = document.createElement("label");
           label.className = "p-check";
           var cb = document.createElement("input");
@@ -342,7 +479,14 @@
           });
           var txt = document.createElement("span");
           txt.className = "p-check__text";
-          txt.textContent = ingredientLine(s);
+          txt.textContent = line(s);
+          if (s.swapped) {
+            var tag = document.createElement("span");
+            tag.className = "p-swapped";
+            tag.textContent = "zamiennik";
+            txt.appendChild(document.createTextNode(" "));
+            txt.appendChild(tag);
+          }
           var g = document.createElement("span");
           g.className = "p-check__g";
           g.textContent = s.grams + " g";
@@ -379,7 +523,7 @@
     }
     if (pdfBtn) {
       pdfBtn.addEventListener("click", function () {
-        makePdf(data, servings, factor(), units, boughtMap(), pdfBtn);
+        makePdf(data, servings, scaled, groupsForList(), boughtMap(), pdfBtn, line);
       });
     }
 
@@ -398,10 +542,11 @@
 
     function renderStep() {
       cookLabel.textContent = "Krok " + (step + 1) + " z " + data.steps.length;
-      cookText.textContent = data.steps[step];
+      cookText.textContent = renderStepText(data.steps[step]);
       cookPrev.disabled = step === 0;
-      cookNext.textContent = step === data.steps.length - 1 ? "Gotowe · Smacznego!" : "Następny krok";
-      Array.prototype.forEach.call(cookProgress.children, function (seg, i) {
+      cookNext.textContent = step === data.steps.length - 1
+        ? "Gotowe · Smacznego!" : "Następny krok";
+      [].forEach.call(cookProgress.children, function (seg, i) {
         seg.setAttribute("data-done", i <= step ? "1" : "0");
       });
       cook.querySelector(".p-cook__body").scrollTop = 0;
@@ -443,12 +588,12 @@
       else { LS.set("step:" + data.slug, 0); closeCook(); }
     });
 
-    document.addEventListener("keydown", function (e) {
+    document.addEventListener("keydown", function (ev) {
       if (cook && cook.getAttribute("data-open") === "1") {
-        if (e.key === "Escape") closeCook();
-        if (e.key === "ArrowRight") cookNext.click();
-        if (e.key === "ArrowLeft") cookPrev.click();
-      } else if (sheet && sheet.getAttribute("data-open") === "1" && e.key === "Escape") {
+        if (ev.key === "Escape") closeCook();
+        if (ev.key === "ArrowRight") cookNext.click();
+        if (ev.key === "ArrowLeft") cookPrev.click();
+      } else if (sheet && sheet.getAttribute("data-open") === "1" && ev.key === "Escape") {
         closeSheet();
       }
     });
@@ -486,14 +631,13 @@
     el._t = setTimeout(function () { el.setAttribute("data-on", "0"); }, 2600);
   }
 
-  function makePdf(data, servings, factor, units, bought, btn) {
+  function makePdf(data, servings, scaled, groups, bought, btn, line) {
     var old = btn.textContent;
     btn.textContent = "Tworzę PDF…";
     btn.disabled = true;
 
     ensurePdf().then(function () {
-      var jsPDF = window.jspdf.jsPDF;
-      var doc = new jsPDF({ unit: "mm", format: "a4" });
+      var doc = new window.jspdf.jsPDF({ unit: "mm", format: "a4" });
 
       // Wbudowane kroje jsPDF nie mają polskich znaków — dokładamy własny.
       doc.addFileToVFS("DejaVu.ttf", window.PRZEPISY_FONT.regular);
@@ -501,9 +645,7 @@
       doc.addFileToVFS("DejaVu-Bold.ttf", window.PRZEPISY_FONT.bold);
       doc.addFont("DejaVu-Bold.ttf", "DejaVu", "bold");
 
-      var M = 18;
-      var W = 210 - M * 2;
-      var y = M;
+      var M = 18, W = 210 - M * 2, y = M;
 
       doc.setFont("DejaVu", "bold");
       doc.setFontSize(9);
@@ -520,22 +662,18 @@
       doc.setFont("DejaVu", "normal");
       doc.setFontSize(10);
       doc.setTextColor(110);
-      doc.text(
-        servings + " " + plural(servings, ["osoba", "osoby", "osób", "osoby"]) +
-        "  ·  " + data.slotLabel + " " + data.time +
-        "  ·  Dzień " + data.day,
-        M, y
-      );
+      doc.text(servings + " " + plural(servings, ["osoba", "osoby", "osób", "osoby"]) +
+               "  ·  " + data.slotLabel + " " + data.time, M, y);
       y += 8;
       doc.setDrawColor(210);
       doc.line(M, y, M + W, y);
       y += 8;
 
-      [
-        { label: "Do kupienia", pantry: false, key: "buy" },
-        { label: "Przyprawy i podstawy", pantry: true, key: "pantry" },
-      ].forEach(function (group) {
-        var items = data.ingredients.filter(function (i) { return !!i.pantry === group.pantry; });
+      groups.forEach(function (group) {
+        var items = [];
+        data.ingredients.forEach(function (ing, idx) {
+          if (!!ing.pantry === group.pantry) items.push({ ing: ing, idx: idx });
+        });
         if (!items.length) return;
 
         if (y > 250) { doc.addPage(); y = M; }
@@ -547,10 +685,10 @@
 
         doc.setFont("DejaVu", "normal");
         doc.setFontSize(11);
-        items.forEach(function (ing, idx) {
+        items.forEach(function (it, n) {
           if (y > 275) { doc.addPage(); y = M; }
-          var s = scaleIngredient(ing, factor, units);
-          var done = !!bought[group.key + ":" + idx];
+          var s = scaled(it.ing, it.idx);
+          var done = !!bought[group.key + ":" + n];
 
           doc.setDrawColor(done ? 60 : 150);
           doc.setLineWidth(0.3);
@@ -562,8 +700,7 @@
           }
 
           doc.setTextColor(done ? 140 : 25);
-          var line = ingredientLine(s);
-          var wrapped = doc.splitTextToSize(line, W - 30);
+          var wrapped = doc.splitTextToSize(line(s) + (s.swapped ? "  (zamiennik)" : ""), W - 30);
           doc.text(wrapped, M + 7, y);
           doc.setTextColor(150);
           doc.text(s.grams + " g", M + W, y, { align: "right" });
@@ -575,10 +712,8 @@
       doc.setFont("DejaVu", "normal");
       doc.setFontSize(8);
       doc.setTextColor(150);
-      doc.text(
-        "Przepisy Dietetyczne · wygenerowano " + new Date().toLocaleDateString("pl-PL"),
-        M, 287
-      );
+      doc.text("Przepisy Dietetyczne · wygenerowano " +
+               new Date().toLocaleDateString("pl-PL"), M, 287);
 
       var name = "lista-zakupow-" + data.slug + "-" + servings + "os.pdf";
       doc.save(name);

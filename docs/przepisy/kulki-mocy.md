@@ -7,9 +7,9 @@ hide:
 
 # Daktylowo-kakaowe kulki mocy z orzechami
 
-<div class="p-hero" data-slot="4">
+<div class="p-hero" data-slot="3">
 <div class="p-hero__top">
-<span>Kolacja</span><span class="p-num">18:00-21:00</span><span class="p-num">Dzień 1</span>
+<span>Kolacja</span><span class="p-num">18:00-20:00</span>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">466</span><span class="p-macro__l">kcal</span></div>
@@ -30,12 +30,31 @@ hide:
 <p class="p-note" id="srv-note" style="margin:0" hidden></p>
 </div>
 
-<h2 id="ing-heading">Składniki na 1 osobę</h2>
+<div class="p-ings__head">
+<h2 id="ing-heading" style="margin:0">Składniki na 1 osobę</h2>
+<button type="button" class="p-btn p-btn--ghost" id="swap-reset" style="min-height:auto;padding:6px 8px" hidden>Przywróć oryginał</button>
+</div>
 <ul class="p-ings" id="ing-list">
-<li><span class="p-ing__q">13 sztuk</span><span>daktyli</span><span class="p-ing__g">65 g</span></li>
-<li><span class="p-ing__q">5 sztuk</span><span>orzechów włoskich</span><span class="p-ing__g">20 g</span></li>
-<li><span class="p-ing__q">1 łyżka</span><span>kakao</span><span class="p-ing__g">10 g</span></li>
-<li><span class="p-ing__q">1 łyżka</span><span>wiórków kokosowych</span><span class="p-ing__g">15 g</span></li>
+<li><div class="p-ing__row"><span class="p-ing__q">13 sztuk</span><span class="p-ing__n">daktyli</span><span class="p-ing__g">65 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">5 sztuk</span><span class="p-ing__n">orzechów włoskich</span><span class="p-ing__g">20 g</span></div>
+<div class="p-ing__swap">
+<label class="p-swaplabel" for="swap-1">Zamień na</label>
+<select class="p-select" id="swap-1" data-ing="1">
+<option value="orzechy-wloskie" selected>Orzechy włoskie · oryginał</option>
+<option value="orzechy-nerkowca">Orzechy nerkowca</option>
+<option value="orzechy-laskowe">Orzechy laskowe</option>
+<option value="orzechy-pistacjowe">Orzechy pistacjowe</option>
+<option value="orzechy-arachidowe">Orzechy arachidowe</option>
+<option value="pestki-dyni">Pestki dyni</option>
+<option value="pestki-slonecznika">Pestki słonecznika</option>
+</select>
+</div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">1 łyżka</span><span class="p-ing__n">kakao</span><span class="p-ing__g">10 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">1 łyżka</span><span class="p-ing__n">wiórków kokosowych</span><span class="p-ing__g">15 g</span></div>
+</li>
 </ul>
 
 <div class="p-actions">
@@ -44,8 +63,8 @@ hide:
 </div>
 
 <h2>Sposób przygotowania</h2>
-<ol class="p-steps">
-<li>Daktyle namaczamy we wrzątku przez ok. 10 minut. Następnie wszystkie składniki blendujemy ze sobą, formujemy kulki i obtaczamy w wiórkach kokosowych. Smacznego!</li>
+<ol class="p-steps" id="steps-list">
+<li>Daktyle namocz we wrzątku przez ok. 10 minut. Następnie wszystkie składniki zblenduj ze sobą, uformuj kulki i obtocz w wiórkach kokosowych. Smacznego!</li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Daktylowo-kakaowe kulki mocy z orzechami">
@@ -61,8 +80,7 @@ hide:
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
 <button type="button" class="p-btn p-btn--primary" id="cook-next">Następny krok</button>
-</div>
-</div>
+</div></div>
 <div class="p-sheet" id="shopping" data-open="0" role="dialog" aria-modal="true" aria-label="Lista zakupów">
 <button type="button" class="p-sheet__scrim" id="shopping-scrim" aria-label="Zamknij listę zakupów"></button>
 <div class="p-sheet__panel">
@@ -71,9 +89,10 @@ hide:
 <div class="p-sheet__foot">
 <button type="button" class="p-btn" id="reset-shopping">Odznacz wszystko</button>
 <button type="button" class="p-btn p-btn--primary" id="pdf-btn">Wygeneruj PDF</button>
-</div>
-</div></div>
+</div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "kulki-mocy", "title": "Daktylowo-kakaowe kulki mocy z orzechami", "day": 1, "slotLabel": "Kolacja", "time": "18:00-21:00", "baseServings": 1, "ingredients": [{"qty": 13.0, "unit": "sztuk", "unitLemma": "sztuka", "name": "daktyli", "grams": 65.0, "pantry": false, "tag": "daktyle"}, {"qty": 5.0, "unit": "sztuk", "unitLemma": "sztuka", "name": "orzechów włoskich", "grams": 20.0, "pantry": false, "tag": "orzechy"}, {"qty": 1.0, "unit": "łyżka", "unitLemma": "łyżka", "name": "kakao", "grams": 10.0, "pantry": false, "tag": "kakao"}, {"qty": 1.0, "unit": "łyżka", "unitLemma": "łyżka", "name": "wiórków kokosowych", "grams": 15.0, "pantry": false, "tag": "wiorki"}], "steps": ["Daktyle namaczamy we wrzątku przez ok. 10 minut. Następnie wszystkie składniki blendujemy ze sobą, formujemy kulki i obtaczamy w wiórkach kokosowych. Smacznego!"]};
-window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};</script>
+<script>window.RECIPE = {"slug": "kulki-mocy", "title": "Daktylowo-kakaowe kulki mocy z orzechami", "slotLabel": "Kolacja", "time": "18:00-20:00", "baseServings": 1, "ingredients": [{"qty": 13.0, "unit": "sztuk", "unitLemma": "sztuka", "name": "daktyli", "grams": 65.0, "pantry": false, "tag": "daktyle"}, {"qty": 5.0, "unit": "sztuk", "unitLemma": "sztuka", "name": "orzechów włoskich", "grams": 20.0, "pantry": false, "tag": "orzechy", "swap": {"group": "orzechy", "self": "orzechy-wloskie", "nameCase": "D"}}, {"qty": 1.0, "unit": "łyżka", "unitLemma": "łyżka", "name": "kakao", "grams": 10.0, "pantry": false, "tag": "kakao"}, {"qty": 1.0, "unit": "łyżka", "unitLemma": "łyżka", "name": "wiórków kokosowych", "grams": 15.0, "pantry": false, "tag": "wiorki"}], "steps": ["Daktyle namocz we wrzątku przez ok. 10 minut. Następnie wszystkie składniki zblenduj ze sobą, uformuj kulki i obtocz w wiórkach kokosowych. Smacznego!"]};
+window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};
+window.SWAPS = {"orzechy": {"label": "Orzechy i pestki", "options": [{"id": "orzechy-wloskie", "label": "Orzechy włoskie", "rodzaj": "pl", "formy": {"M": "orzechy włoskie", "D": "orzechów włoskich", "B": "orzechy włoskie", "N": "orzechami włoskimi", "Ms": "orzechach włoskich"}, "rodzajB": "pl"}, {"id": "orzechy-nerkowca", "label": "Orzechy nerkowca", "rodzaj": "pl", "formy": {"M": "orzechy nerkowca", "D": "orzechów nerkowca", "B": "orzechy nerkowca", "N": "orzechami nerkowca", "Ms": "orzechach nerkowca"}, "rodzajB": "pl"}, {"id": "orzechy-laskowe", "label": "Orzechy laskowe", "rodzaj": "pl", "formy": {"M": "orzechy laskowe", "D": "orzechów laskowych", "B": "orzechy laskowe", "N": "orzechami laskowymi", "Ms": "orzechach laskowych"}, "rodzajB": "pl"}, {"id": "orzechy-pistacjowe", "label": "Orzechy pistacjowe", "rodzaj": "pl", "formy": {"M": "orzechy pistacjowe", "D": "orzechów pistacjowych", "B": "orzechy pistacjowe", "N": "orzechami pistacjowymi", "Ms": "orzechach pistacjowych"}, "rodzajB": "pl"}, {"id": "orzechy-arachidowe", "label": "Orzechy arachidowe", "rodzaj": "pl", "formy": {"M": "orzechy arachidowe", "D": "orzechów arachidowych", "B": "orzechy arachidowe", "N": "orzechami arachidowymi", "Ms": "orzechach arachidowych"}, "rodzajB": "pl"}, {"id": "pestki-dyni", "label": "Pestki dyni", "rodzaj": "pl", "formy": {"M": "pestki dyni", "D": "pestek dyni", "B": "pestki dyni", "N": "pestkami dyni", "Ms": "pestkach dyni"}, "rodzajB": "pl"}, {"id": "pestki-slonecznika", "label": "Pestki słonecznika", "rodzaj": "pl", "formy": {"M": "pestki słonecznika", "D": "pestek słonecznika", "B": "pestki słonecznika", "N": "pestkami słonecznika", "Ms": "pestkach słonecznika"}, "rodzajB": "pl"}]}};
+window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

@@ -7,9 +7,9 @@ hide:
 
 # Smoothie strawberry and friends Solevita i batonik protein bar
 
-<div class="p-hero" data-slot="4">
+<div class="p-hero" data-slot="3">
 <div class="p-hero__top">
-<span>Kolacja</span><span class="p-num">18:00-21:00</span><span class="p-num">Dzień 4</span>
+<span>Kolacja</span><span class="p-num">18:00-20:00</span>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">462</span><span class="p-macro__l">kcal</span></div>
@@ -30,12 +30,43 @@ hide:
 <p class="p-note" id="srv-note" style="margin:0" hidden></p>
 </div>
 
-<h2 id="ing-heading">Składniki na 1 osobę</h2>
+<div class="p-ings__head">
+<h2 id="ing-heading" style="margin:0">Składniki na 1 osobę</h2>
+<button type="button" class="p-btn p-btn--ghost" id="swap-reset" style="min-height:auto;padding:6px 8px" hidden>Przywróć oryginał</button>
+</div>
 <ul class="p-ings" id="ing-list">
-<li><span class="p-ing__q">1 sztuka</span><span>Protein Bar cookies and cream fllavoured crisps</span><span class="p-ing__g">45 g</span></li>
-<li><span class="p-ing__q">1 opakowanie</span><span>smoothie strawberry &amp; friends (truskawka, banan) Solevita</span><span class="p-ing__g">250 g</span></li>
-<li><span class="p-ing__q">0.5 garści</span><span>orzechów włoskich</span><span class="p-ing__g">15 g</span></li>
-<li><span class="p-ing__q">2 sztuki</span><span>mandarynki</span><span class="p-ing__g">130 g</span></li>
+<li><div class="p-ing__row"><span class="p-ing__q">1 sztuka</span><span class="p-ing__n">Protein Bar cookies and cream fllavoured crisps</span><span class="p-ing__g">45 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">1 opakowanie</span><span class="p-ing__n">smoothie strawberry &amp; friends (truskawka, banan) Solevita</span><span class="p-ing__g">250 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">0.5 garści</span><span class="p-ing__n">orzechów włoskich</span><span class="p-ing__g">15 g</span></div>
+<div class="p-ing__swap">
+<label class="p-swaplabel" for="swap-2">Zamień na</label>
+<select class="p-select" id="swap-2" data-ing="2">
+<option value="orzechy-wloskie" selected>Orzechy włoskie · oryginał</option>
+<option value="orzechy-nerkowca">Orzechy nerkowca</option>
+<option value="orzechy-laskowe">Orzechy laskowe</option>
+<option value="orzechy-pistacjowe">Orzechy pistacjowe</option>
+<option value="orzechy-arachidowe">Orzechy arachidowe</option>
+<option value="pestki-dyni">Pestki dyni</option>
+<option value="pestki-slonecznika">Pestki słonecznika</option>
+</select>
+</div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">2 sztuki</span><span class="p-ing__n">mandarynki</span><span class="p-ing__g">130 g</span></div>
+<div class="p-ing__swap">
+<label class="p-swaplabel" for="swap-3">Zamień na</label>
+<select class="p-select" id="swap-3" data-ing="3">
+<option value="jablko">Jabłko</option>
+<option value="gruszka">Gruszka</option>
+<option value="banan">Banan</option>
+<option value="mandarynka" selected>Mandarynka · oryginał</option>
+<option value="brzoskwinia">Brzoskwinia</option>
+<option value="kiwi">Kiwi</option>
+<option value="kaki">Kaki</option>
+</select>
+</div>
+</li>
 </ul>
 
 <div class="p-actions">
@@ -44,8 +75,8 @@ hide:
 </div>
 
 <h2>Sposób przygotowania</h2>
-<ol class="p-steps">
-<li>Batonik, orzechy, mandarynki i smoothie jemy na posiłek.</li>
+<ol class="p-steps" id="steps-list">
+<li>Batonik, orzechy, mandarynki i smoothie zjedz na posiłek.</li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Smoothie strawberry and friends Solevita i batonik protein bar">
@@ -61,8 +92,7 @@ hide:
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
 <button type="button" class="p-btn p-btn--primary" id="cook-next">Następny krok</button>
-</div>
-</div>
+</div></div>
 <div class="p-sheet" id="shopping" data-open="0" role="dialog" aria-modal="true" aria-label="Lista zakupów">
 <button type="button" class="p-sheet__scrim" id="shopping-scrim" aria-label="Zamknij listę zakupów"></button>
 <div class="p-sheet__panel">
@@ -71,9 +101,10 @@ hide:
 <div class="p-sheet__foot">
 <button type="button" class="p-btn" id="reset-shopping">Odznacz wszystko</button>
 <button type="button" class="p-btn p-btn--primary" id="pdf-btn">Wygeneruj PDF</button>
-</div>
-</div></div>
+</div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "smoothie-strawberry", "title": "Smoothie strawberry and friends Solevita i batonik protein bar", "day": 4, "slotLabel": "Kolacja", "time": "18:00-21:00", "baseServings": 1, "ingredients": [{"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "Protein Bar cookies and cream fllavoured crisps", "grams": 45.0, "pantry": false, "tag": "baton"}, {"qty": 1.0, "unit": "opakowanie", "unitLemma": "opakowanie", "name": "smoothie strawberry & friends (truskawka, banan) Solevita", "grams": 250.0, "pantry": false, "tag": "smoothie"}, {"qty": 0.5, "unit": "garści", "unitLemma": "garść", "name": "orzechów włoskich", "grams": 15.0, "pantry": false, "tag": "orzechy"}, {"qty": 2.0, "unit": "sztuki", "unitLemma": "sztuka", "name": "mandarynki", "grams": 130.0, "pantry": false, "tag": "mandarynka"}], "steps": ["Batonik, orzechy, mandarynki i smoothie jemy na posiłek."]};
-window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};</script>
+<script>window.RECIPE = {"slug": "smoothie-strawberry", "title": "Smoothie strawberry and friends Solevita i batonik protein bar", "slotLabel": "Kolacja", "time": "18:00-20:00", "baseServings": 1, "ingredients": [{"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "Protein Bar cookies and cream fllavoured crisps", "grams": 45.0, "pantry": false, "tag": "baton"}, {"qty": 1.0, "unit": "opakowanie", "unitLemma": "opakowanie", "name": "smoothie strawberry & friends (truskawka, banan) Solevita", "grams": 250.0, "pantry": false, "tag": "smoothie"}, {"qty": 0.5, "unit": "garści", "unitLemma": "garść", "name": "orzechów włoskich", "grams": 15.0, "pantry": false, "tag": "orzechy", "swap": {"group": "orzechy", "self": "orzechy-wloskie", "nameCase": "D"}}, {"qty": 2.0, "unit": "sztuki", "unitLemma": "sztuka", "name": "mandarynki", "grams": 130.0, "pantry": false, "tag": "mandarynka", "swap": {"group": "owoce", "self": "mandarynka", "nameCase": "D"}}], "steps": ["Batonik, orzechy, «3|Bpl|||» i smoothie zjedz na posiłek."]};
+window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};
+window.SWAPS = {"orzechy": {"label": "Orzechy i pestki", "options": [{"id": "orzechy-wloskie", "label": "Orzechy włoskie", "rodzaj": "pl", "formy": {"M": "orzechy włoskie", "D": "orzechów włoskich", "B": "orzechy włoskie", "N": "orzechami włoskimi", "Ms": "orzechach włoskich"}, "rodzajB": "pl"}, {"id": "orzechy-nerkowca", "label": "Orzechy nerkowca", "rodzaj": "pl", "formy": {"M": "orzechy nerkowca", "D": "orzechów nerkowca", "B": "orzechy nerkowca", "N": "orzechami nerkowca", "Ms": "orzechach nerkowca"}, "rodzajB": "pl"}, {"id": "orzechy-laskowe", "label": "Orzechy laskowe", "rodzaj": "pl", "formy": {"M": "orzechy laskowe", "D": "orzechów laskowych", "B": "orzechy laskowe", "N": "orzechami laskowymi", "Ms": "orzechach laskowych"}, "rodzajB": "pl"}, {"id": "orzechy-pistacjowe", "label": "Orzechy pistacjowe", "rodzaj": "pl", "formy": {"M": "orzechy pistacjowe", "D": "orzechów pistacjowych", "B": "orzechy pistacjowe", "N": "orzechami pistacjowymi", "Ms": "orzechach pistacjowych"}, "rodzajB": "pl"}, {"id": "orzechy-arachidowe", "label": "Orzechy arachidowe", "rodzaj": "pl", "formy": {"M": "orzechy arachidowe", "D": "orzechów arachidowych", "B": "orzechy arachidowe", "N": "orzechami arachidowymi", "Ms": "orzechach arachidowych"}, "rodzajB": "pl"}, {"id": "pestki-dyni", "label": "Pestki dyni", "rodzaj": "pl", "formy": {"M": "pestki dyni", "D": "pestek dyni", "B": "pestki dyni", "N": "pestkami dyni", "Ms": "pestkach dyni"}, "rodzajB": "pl"}, {"id": "pestki-slonecznika", "label": "Pestki słonecznika", "rodzaj": "pl", "formy": {"M": "pestki słonecznika", "D": "pestek słonecznika", "B": "pestki słonecznika", "N": "pestkami słonecznika", "Ms": "pestkach słonecznika"}, "rodzajB": "pl"}]}, "owoce": {"label": "Owoce", "options": [{"id": "jablko", "label": "Jabłko", "rodzaj": "n", "formy": {"M": "jabłko", "D": "jabłka", "B": "jabłko", "N": "jabłkiem", "Ms": "jabłku", "Mpl": "jabłka", "Dpl": "jabłek", "Bpl": "jabłka", "Npl": "jabłkami", "Mspl": "jabłkach"}, "equiv": 170, "rodzajB": "n"}, {"id": "gruszka", "label": "Gruszka", "rodzaj": "f", "formy": {"M": "gruszka", "D": "gruszki", "B": "gruszkę", "N": "gruszką", "Ms": "gruszce", "Mpl": "gruszki", "Dpl": "gruszek", "Bpl": "gruszki", "Npl": "gruszkami", "Mspl": "gruszkach"}, "equiv": 170, "rodzajB": "f"}, {"id": "banan", "label": "Banan", "rodzaj": "m", "formy": {"M": "banan", "D": "banana", "B": "banan", "N": "bananem", "Ms": "bananie", "Bpot": "banana", "Mpl": "banany", "Dpl": "bananów", "Bpl": "banany", "Npl": "bananami", "Mspl": "bananach"}, "equiv": 120, "rodzajB": "mz"}, {"id": "mandarynka", "label": "Mandarynka", "rodzaj": "f", "formy": {"M": "mandarynka", "D": "mandarynki", "B": "mandarynkę", "N": "mandarynką", "Ms": "mandarynce", "Mpl": "mandarynki", "Dpl": "mandarynek", "Bpl": "mandarynki", "Npl": "mandarynkami", "Mspl": "mandarynkach"}, "equiv": 65, "rodzajB": "f"}, {"id": "brzoskwinia", "label": "Brzoskwinia", "rodzaj": "f", "formy": {"M": "brzoskwinia", "D": "brzoskwini", "B": "brzoskwinię", "N": "brzoskwinią", "Ms": "brzoskwini", "Mpl": "brzoskwinie", "Dpl": "brzoskwiń", "Bpl": "brzoskwinie", "Npl": "brzoskwiniami", "Mspl": "brzoskwiniach"}, "equiv": 90, "rodzajB": "f"}, {"id": "kiwi", "label": "Kiwi", "rodzaj": "n", "formy": {"M": "kiwi", "D": "kiwi", "B": "kiwi", "N": "kiwi", "Ms": "kiwi", "Mpl": "kiwi", "Dpl": "kiwi", "Bpl": "kiwi", "Npl": "kiwi", "Mspl": "kiwi"}, "equiv": 80, "rodzajB": "n"}, {"id": "kaki", "label": "Kaki", "rodzaj": "n", "formy": {"M": "kaki", "D": "kaki", "B": "kaki", "N": "kaki", "Ms": "kaki", "Mpl": "kaki", "Dpl": "kaki", "Bpl": "kaki", "Npl": "kaki", "Mspl": "kaki"}, "equiv": 250, "rodzajB": "n"}]}};
+window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

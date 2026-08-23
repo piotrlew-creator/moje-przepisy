@@ -2,10 +2,9 @@
 """Generuje całą zawartość docs/ z jednego pliku recipes.json.
 
 Powstają:
-  docs/index.md          — wyszukiwarka + lista wszystkich przepisów
+  docs/index.md           — wyszukiwarka + lista wszystkich przepisów
   docs/przepisy/<slug>.md — pojedynczy przepis
-  docs/plan.md           — plan 10 dni
-  docs/zamienniki.md     — lista wymienników z PDF-u
+  docs/zamienniki.md      — lista wymienników z PDF-u
 
 Nic w docs/ nie jest pisane ręcznie, więc lista przepisów i lista składników
 nie mogą się rozjechać z przepisami. Skrypt jest też uruchamiany w GitHub
@@ -16,6 +15,7 @@ Użycie:  python generate_site.py
 import html
 import json
 import os
+import re
 import shutil
 import sys
 
@@ -24,13 +24,17 @@ DATA = os.path.join(ROOT, "recipes.json")
 DOCS = os.path.join(ROOT, "docs")
 RECIPE_DIR = os.path.join(DOCS, "przepisy")
 
-TOP_INGREDIENTS = 18  # ile chipów widać przed „Pokaż wszystkie”
+# Pliki po usuniętej funkcji „Plan 10 dni” — kasowane, gdyby zostały po
+# wcześniejszej wersji.
+PRZESTARZALE = ["plan.md"]
 
 SEARCH_ICON = (
     '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" '
     'stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">'
     '<circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>'
 )
+
+TOKEN = re.compile(r"«(\d+)\|([A-Za-z]+)\|([A-Za-z_]*)\|([^|]*)\|(U?)»")
 
 
 def e(s):
@@ -45,21 +49,41 @@ def plural(n, one, few, many):
     return many
 
 
+def num(x):
+    return str(int(x)) if float(x).is_integer() else str(x)
+
+
+def render_step(step, ingredients, groups, adjectives):
+    """Podstawia znaczniki formami składników z przepisu (wersja bez zamian).
+
+    Ta sama logika działa w przeglądarce; tutaj potrzebna jest po to, żeby
+    kroki były czytelne także bez JavaScriptu i dla wyszukiwarki.
+    """
+    def rep(m):
+        idx, case, adj, infix, up = m.groups()
+        ing = ingredients[int(idx)]
+        opt = next(o for o in groups[ing["swap"]["group"]]["options"]
+                   if o["id"] == ing["swap"]["self"])
+        word = opt["formy"].get(case) or opt["formy"]["M"]
+        if adj:
+            rodz = opt.get("rodzajB", opt["rodzaj"]) \
+                if (adj.endswith("_B") and case == "Bpot") else opt["rodzaj"]
+            word = adjectives[adj][rodz] + " " + (infix + " " if infix else "") + word
+        return word[0].upper() + word[1:] if up else word
+
+    return TOKEN.sub(rep, step)
+
+
 # --------------------------------------------------------------- index.md ---
 
 def render_index(data):
     slots = data["slots"]
     idx = data["ingredientIndex"]
+    featured = data["featuredIngredients"]
     recipes = data["recipes"]
+    by_id = {i["id"]: i for i in idx}
 
-    out = []
-    out.append("---")
-    out.append("hide:")
-    out.append("  - toc")
-    out.append("---")
-    out.append("")
-    out.append("# Co dziś jesz?")
-    out.append("")
+    out = ["---", "hide:", "  - toc", "---", "", "# Co dziś jesz?", ""]
     out.append(
         "Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — "
         f"albo po prostu przewiń wszystkie {len(recipes)} przepisów z Twojego planu."
@@ -68,12 +92,10 @@ def render_index(data):
 
     out.append('<div class="p-finder" id="finder">')
 
-    # --- pory dnia
+    # --- pora posiłku
     out.append('<div class="p-slotbar" role="group" aria-label="Pora posiłku">')
-    out.append(
-        '<button type="button" class="p-chip" data-slot-filter="all" '
-        'data-on="1" aria-pressed="true">Wszystkie</button>'
-    )
+    out.append('<button type="button" class="p-chip" data-slot-filter="all" '
+               'data-on="1" aria-pressed="true">Wszystkie</button>')
     for s in slots:
         out.append(
             f'<button type="button" class="p-chip p-chip--slot{s["slot"]}" '
@@ -90,43 +112,53 @@ def render_index(data):
     out.append('<span class="p-panel__state" id="ing-state">wybierz składniki</span>')
     out.append("</summary>")
     out.append('<div class="p-panel__inner">')
+
+    # Pole wyszukiwania i „Wyczyść” stoją obok siebie — odznaczenie wszystkiego
+    # ma być pod ręką, a nie schowane pod listą wyników.
+    out.append('<div class="p-searchrow">')
     out.append('<div class="p-search">' + SEARCH_ICON +
                '<input type="search" id="ing-search" inputmode="search" '
-               'placeholder="Szukaj składnika…" aria-label="Szukaj składnika"></div>')
-    out.append('<div class="p-chips" id="ing-chips" data-collapsed="1">')
-    for i, ing in enumerate(idx):
-        rank = "top" if i < TOP_INGREDIENTS else "rest"
+               'placeholder="Szukaj składnika…" aria-label="Szukaj składnika">'
+               '<button type="button" class="p-search__x" id="search-clear" '
+               'aria-label="Wyczyść wyszukiwanie" hidden>&times;</button></div>')
+    out.append('<button type="button" class="p-btn p-btn--clear" id="clear-filters" '
+               'hidden>Wyczyść <span class="p-num" id="clear-count"></span></button>')
+    out.append("</div>")
+
+    out.append('<div class="p-chips" id="ing-chips">')
+    for iid in featured:
+        ing = by_id[iid]
         out.append(
-            f'<label class="p-chip" data-rank="{rank}" data-label="{e(ing["label"])}">'
+            f'<label class="p-chip" data-rank="top" data-label="{e(ing["label"])}">'
+            f'<input type="checkbox" value="{e(ing["id"])}">'
+            f'{e(ing["label"])} <span class="p-num" style="opacity:.55">{ing["count"]}</span></label>'
+        )
+    for ing in idx:
+        if ing["id"] in featured:
+            continue
+        out.append(
+            f'<label class="p-chip" data-rank="rest" data-label="{e(ing["label"])}" hidden>'
             f'<input type="checkbox" value="{e(ing["id"])}">'
             f'{e(ing["label"])} <span class="p-num" style="opacity:.55">{ing["count"]}</span></label>'
         )
     out.append("</div>")
-    out.append('<button type="button" class="p-btn p-btn--ghost" id="ing-toggle" '
-               'style="align-self:flex-start"></button>')
+    out.append(f'<p class="p-hint" id="ing-hint">Widzisz {len(featured)} '
+               f"najczęstszych składników. Pozostałe {len(idx) - len(featured)} "
+               "znajdziesz przez wyszukiwanie.</p>")
     out.append("</div>")
     out.append("</details>")
     out.append("</div>")
 
-    # --- licznik
-    out.append('<div class="p-count">')
-    out.append('<span id="result-count" class="p-num"></span>')
-    out.append('<button type="button" class="p-btn p-btn--ghost" id="clear-filters" '
-               'style="min-height:auto;padding:6px 8px" hidden>Wyczyść filtry</button>')
-    out.append("</div>")
+    out.append('<div class="p-count"><span id="result-count" class="p-num"></span></div>')
     out.append("")
-
     out.append('<p class="p-empty" id="empty-state" hidden>Żaden przepis nie pasuje do tego '
                "wyboru. Odznacz część składników albo wróć do wszystkich pór dnia.</p>")
     out.append("")
 
-    # --- karty
     out.append('<ul class="p-cards" id="recipes">')
     for r in recipes:
         tags = " ".join(r["tags"])
-        top = ", ".join(
-            i["name"] for i in r["ingredients"] if not i["pantry"]
-        ).strip()
+        top = ", ".join(i["name"] for i in r["ingredients"] if not i["pantry"]).strip()
         if len(top) > 78:
             top = top[:75].rsplit(",", 1)[0] + "…"
         out.append("<li>")
@@ -139,17 +171,15 @@ def render_index(data):
         out.append(f'<span class="p-card__slot"><span class="p-dot"></span>{e(r["slotLabel"])}</span>')
         out.append(f'<span class="p-num">{e(r["time"])}</span>')
         out.append(f'<span class="p-num">{r["kcal"]} kcal</span>')
-        out.append(f'<span class="p-num">Dzień {r["day"]}</span>')
         out.append("</div>")
         if top:
             out.append(f'<div class="p-card__tags">{e(top)}</div>')
-        out.append("</div>")
-        out.append("</article>")
-        out.append("</li>")
+        out.append("</div></article></li>")
     out.append("</ul>")
     out.append("")
 
-    payload = {"count": len(recipes)}
+    payload = {"count": len(recipes),
+               "ingredients": [{"id": i["id"], "label": i["label"]} for i in idx]}
     out.append("<script>window.RECIPES = " + json.dumps(payload, ensure_ascii=False) + ";</script>")
     out.append("")
     return "\n".join(out)
@@ -157,22 +187,16 @@ def render_index(data):
 
 # ------------------------------------------------------------- przepis.md ---
 
-def render_recipe(r, units):
-    out = []
-    out.append("---")
-    out.append("hide:")
-    out.append("  - toc")
-    out.append("---")
-    out.append("")
-    out.append('<a class="p-back" href="../../">&larr; Wszystkie przepisy</a>')
-    out.append("")
-    out.append(f'# {r["title"]}')
-    out.append("")
+def render_recipe(r, data):
+    groups = data["swapGroups"]
+    adjectives = data["swapAdjectives"]
+    out = ["---", "hide:", "  - toc", "---", "",
+           '<a class="p-back" href="../../">&larr; Wszystkie przepisy</a>', "",
+           f'# {r["title"]}', ""]
 
     out.append(f'<div class="p-hero" data-slot="{r["slot"]}">')
     out.append('<div class="p-hero__top">')
-    out.append(f'<span>{e(r["slotLabel"])}</span><span class="p-num">{e(r["time"])}</span>'
-               f'<span class="p-num">Dzień {r["day"]}</span>')
+    out.append(f'<span>{e(r["slotLabel"])}</span><span class="p-num">{e(r["time"])}</span>')
     out.append("</div>")
     out.append('<div class="p-macros">')
     for value, label in [(f'{r["kcal"]}', "kcal"), (f'{r["protein"]} g', "białko"),
@@ -185,7 +209,6 @@ def render_recipe(r, units):
     out.append("</div>")
     out.append("")
 
-    # --- liczba osób
     out.append('<div class="p-servings">')
     out.append('<span class="p-eyebrow">Dla ilu osób gotujesz?</span>')
     out.append('<div class="p-stepper">')
@@ -201,19 +224,31 @@ def render_recipe(r, units):
     out.append("</div>")
     out.append("")
 
-    out.append(f'<h2 id="ing-heading">Składniki na 1 osobę</h2>')
+    out.append('<div class="p-ings__head">')
+    out.append('<h2 id="ing-heading" style="margin:0">Składniki na 1 osobę</h2>')
+    out.append('<button type="button" class="p-btn p-btn--ghost" id="swap-reset" '
+               'style="min-height:auto;padding:6px 8px" hidden>Przywróć oryginał</button>')
+    out.append("</div>")
+
     out.append('<ul class="p-ings" id="ing-list">')
-    for ing in r["ingredients"]:
-        qty = ing["qty"]
-        qty_s = str(int(qty)) if float(qty).is_integer() else str(qty)
-        grams = ing["grams"]
-        grams_s = str(int(grams)) if float(grams).is_integer() else str(grams)
+    for i, ing in enumerate(r["ingredients"]):
         pantry = ' data-pantry="1"' if ing["pantry"] else ""
-        out.append(
-            f'<li{pantry}><span class="p-ing__q">{e(qty_s)} {e(ing["unit"])}</span>'
-            f'<span>{e(ing["name"])}</span>'
-            f'<span class="p-ing__g">{e(grams_s)} g</span></li>'
-        )
+        out.append(f'<li{pantry}><div class="p-ing__row">'
+                   f'<span class="p-ing__q">{e(num(ing["qty"]))} {e(ing["unit"])}</span>'
+                   f'<span class="p-ing__n">{e(ing["name"])}</span>'
+                   f'<span class="p-ing__g">{e(num(ing["grams"]))} g</span></div>')
+        if "swap" in ing:
+            g = groups[ing["swap"]["group"]]
+            out.append('<div class="p-ing__swap">')
+            out.append(f'<label class="p-swaplabel" for="swap-{i}">Zamień na</label>')
+            out.append(f'<select class="p-select" id="swap-{i}" data-ing="{i}">')
+            for o in g["options"]:
+                sel = " selected" if o["id"] == ing["swap"]["self"] else ""
+                mark = " · oryginał" if o["id"] == ing["swap"]["self"] else ""
+                out.append(f'<option value="{e(o["id"])}"{sel}>{e(o["label"])}{mark}</option>')
+            out.append("</select>")
+            out.append("</div>")
+        out.append("</li>")
     out.append("</ul>")
     out.append("")
 
@@ -225,15 +260,13 @@ def render_recipe(r, units):
     out.append("</div>")
     out.append("")
 
-    # --- kroki (widoczne też bez JS, tryb gotowania czyta je z window.RECIPE)
     out.append("<h2>Sposób przygotowania</h2>")
-    out.append('<ol class="p-steps">')
+    out.append('<ol class="p-steps" id="steps-list">')
     for s in r["steps"]:
-        out.append(f"<li>{e(s)}</li>")
+        out.append(f"<li>{e(render_step(s, r['ingredients'], groups, adjectives))}</li>")
     out.append("</ol>")
     out.append("")
 
-    # --- tryb gotowania
     out.append('<div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" '
                f'aria-label="Gotowanie: {e(r["title"])}">')
     out.append('<div class="p-cook__bar">')
@@ -249,10 +282,8 @@ def render_recipe(r, units):
     out.append('<div class="p-cook__nav">')
     out.append('<button type="button" class="p-btn" id="cook-prev">Wstecz</button>')
     out.append('<button type="button" class="p-btn p-btn--primary" id="cook-next">Następny krok</button>')
-    out.append("</div>")
-    out.append("</div>")
+    out.append("</div></div>")
 
-    # --- lista zakupów
     out.append('<div class="p-sheet" id="shopping" data-open="0" role="dialog" aria-modal="true" '
                'aria-label="Lista zakupów">')
     out.append('<button type="button" class="p-sheet__scrim" id="shopping-scrim" '
@@ -265,55 +296,22 @@ def render_recipe(r, units):
     out.append('<div class="p-sheet__foot">')
     out.append('<button type="button" class="p-btn" id="reset-shopping">Odznacz wszystko</button>')
     out.append('<button type="button" class="p-btn p-btn--primary" id="pdf-btn">Wygeneruj PDF</button>')
-    out.append("</div>")
-    out.append("</div></div>")
+    out.append("</div></div></div>")
     out.append('<div class="p-toast" id="toast" role="status" data-on="0"></div>')
     out.append("")
 
+    used = sorted({i["swap"]["group"] for i in r["ingredients"] if "swap" in i})
     payload = {
-        "slug": r["slug"], "title": r["title"], "day": r["day"],
+        "slug": r["slug"], "title": r["title"],
         "slotLabel": r["slotLabel"], "time": r["time"],
         "baseServings": r["baseServings"],
         "ingredients": r["ingredients"], "steps": r["steps"],
     }
     out.append("<script>window.RECIPE = " + json.dumps(payload, ensure_ascii=False) + ";")
-    out.append("window.UNITS = " + json.dumps(units, ensure_ascii=False) + ";</script>")
-    out.append("")
-    return "\n".join(out)
-
-
-# ---------------------------------------------------------------- plan.md ---
-
-def render_plan(data):
-    recipes = data["recipes"]
-    days = {}
-    for r in recipes:
-        days.setdefault(r["day"], []).append(r)
-
-    out = ["---", "hide:", "  - toc", "---", "", "# Plan 10 dni", "",
-           "Dokładnie tak, jak w Twoim PDF-ie: cztery posiłki dziennie, "
-           "od śniadania o 6:00 do kolacji o 21:00.", ""]
-    for day in sorted(days):
-        meals = sorted(days[day], key=lambda m: m["slot"])
-        total = sum(m["kcal"] for m in meals)
-        out.append('<div class="p-day">')
-        out.append('<div class="p-day__head">')
-        out.append(f"<h2>Dzień {day}</h2>")
-        out.append(f'<span class="p-day__kcal">{total} kcal</span>')
-        out.append("</div>")
-        out.append('<ul class="p-day__meals">')
-        for m in meals:
-            out.append("<li>")
-            out.append(f'<a class="p-day__meal" data-slot="{m["slot"]}" '
-                       f'href="../przepisy/{e(m["slug"])}/">')
-            out.append('<span class="p-day__bar"></span>')
-            out.append(f'<span><span class="p-day__slot">{e(m["slotLabel"])} · {e(m["time"])}</span>'
-                       f'<br><span class="p-day__name">{e(m["title"])}</span></span>')
-            out.append(f'<span class="p-day__kcal p-num">{m["kcal"]} kcal</span>')
-            out.append("</a>")
-            out.append("</li>")
-        out.append("</ul>")
-        out.append("</div>")
+    out.append("window.UNITS = " + json.dumps(data["units"], ensure_ascii=False) + ";")
+    out.append("window.SWAPS = " + json.dumps(
+        {g: groups[g] for g in used}, ensure_ascii=False) + ";")
+    out.append("window.SWAP_ADJ = " + json.dumps(data["swapAdjectives"], ensure_ascii=False) + ";</script>")
     out.append("")
     return "\n".join(out)
 
@@ -323,9 +321,11 @@ def render_plan(data):
 def render_substitutions(data):
     out = ["---", "hide:", "  - toc", "---", "", "# Zamienniki", "",
            "Przepisany fragment „Listy wymienników” z Twojego planu diety. "
-           "Znak `=` znaczy: możesz wymienić jedno na drugie.", ""]
+           "Znak `=` znaczy: możesz wymienić jedno na drugie. Przy składnikach "
+           "w przepisach znajdziesz te same zamienniki pod przyciskiem "
+           "**Zamień na**.", ""]
     for group in data.get("substitutions", []):
-        out.append('<div class="p-swap">')
+        out.append('<div class="p-swap-card">')
         out.append(f'<h3>{e(group["title"])}</h3>')
         for item in group["items"]:
             out.append(f"<p>{e(item)}</p>")
@@ -349,19 +349,27 @@ def main():
     if os.path.isdir(RECIPE_DIR):
         shutil.rmtree(RECIPE_DIR)
     os.makedirs(RECIPE_DIR)
+    for stale in PRZESTARZALE:
+        p = os.path.join(DOCS, stale)
+        if os.path.exists(p):
+            os.remove(p)
+            print(f"Usunięto nieużywany plik: docs/{stale}")
 
     write(os.path.join(DOCS, "index.md"), render_index(data))
-    write(os.path.join(DOCS, "plan.md"), render_plan(data))
     write(os.path.join(DOCS, "zamienniki.md"), render_substitutions(data))
     for r in data["recipes"]:
-        write(os.path.join(RECIPE_DIR, r["slug"] + ".md"), render_recipe(r, data["units"]))
+        write(os.path.join(RECIPE_DIR, r["slug"] + ".md"), render_recipe(r, data))
 
     n = len(data["recipes"])
-    print(f"Wygenerowano: index.md, plan.md, zamienniki.md oraz {n} "
+    print(f"Wygenerowano: index.md, zamienniki.md oraz {n} "
           f"{plural(n, 'przepis', 'przepisy', 'przepisów')}.")
-    print(f"Składniki w wyszukiwarce: {len(data['ingredientIndex'])}.")
+    print(f"Kategorie: " + ", ".join(f"{s['label']} {s['time']}" for s in data["slots"]))
+    print(f"Składniki: {len(data['featuredIngredients'])} widocznych, "
+          f"{len(data['ingredientIndex'])} dostępnych przez wyszukiwanie.")
+    swaps = sum(1 for r in data["recipes"] for i in r["ingredients"] if "swap" in i)
+    print(f"Składników z zamiennikami: {swaps}.")
 
-    # Zabezpieczenie: każdy przepis musi być osiągalny ze strony głównej.
+    # --- kontrole spójności; przy błędzie build ma się wywalić, nie milczeć
     index_text = open(os.path.join(DOCS, "index.md"), encoding="utf-8").read()
     missing = [r["slug"] for r in data["recipes"]
                if f'przepisy/{r["slug"]}/' not in index_text]
@@ -374,7 +382,22 @@ def main():
     if dead:
         print("BŁĄD: filtry bez pokrycia:", dead, file=sys.stderr)
         sys.exit(1)
-    print("Kontrola spójności: OK — każdy przepis ma link, każdy filtr ma wyniki.")
+
+    known = {i["id"] for i in data["ingredientIndex"]}
+    bad = [f for f in data["featuredIngredients"] if f not in known]
+    if bad:
+        print("BŁĄD: wyróżnione składniki spoza indeksu:", bad, file=sys.stderr)
+        sys.exit(1)
+
+    for r in data["recipes"]:
+        for s in r["steps"]:
+            for m in TOKEN.finditer(s):
+                idx = int(m.group(1))
+                if idx >= len(r["ingredients"]) or "swap" not in r["ingredients"][idx]:
+                    print(f"BŁĄD: {r['slug']} — znacznik wskazuje na składnik "
+                          f"bez zamiennika ({m.group(0)})", file=sys.stderr)
+                    sys.exit(1)
+    print("Kontrola spójności: OK.")
 
 
 if __name__ == "__main__":

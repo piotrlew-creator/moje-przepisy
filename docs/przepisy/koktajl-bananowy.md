@@ -7,9 +7,9 @@ hide:
 
 # Koktajl bananowo-orzechowy
 
-<div class="p-hero" data-slot="4">
+<div class="p-hero" data-slot="3">
 <div class="p-hero__top">
-<span>Kolacja</span><span class="p-num">18:00-21:00</span><span class="p-num">Dzień 3</span>
+<span>Kolacja</span><span class="p-num">18:00-20:00</span>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">468</span><span class="p-macro__l">kcal</span></div>
@@ -30,13 +30,44 @@ hide:
 <p class="p-note" id="srv-note" style="margin:0" hidden></p>
 </div>
 
-<h2 id="ing-heading">Składniki na 1 osobę</h2>
+<div class="p-ings__head">
+<h2 id="ing-heading" style="margin:0">Składniki na 1 osobę</h2>
+<button type="button" class="p-btn p-btn--ghost" id="swap-reset" style="min-height:auto;padding:6px 8px" hidden>Przywróć oryginał</button>
+</div>
 <ul class="p-ings" id="ing-list">
-<li><span class="p-ing__q">1 sztuka</span><span>banana</span><span class="p-ing__g">120 g</span></li>
-<li><span class="p-ing__q">1 szklanka</span><span>napoju sojowego</span><span class="p-ing__g">250 g</span></li>
-<li data-pantry="1"><span class="p-ing__q">2 łyżeczki</span><span>erytrolu</span><span class="p-ing__g">10 g</span></li>
-<li><span class="p-ing__q">3 łyżeczki</span><span>masła orzechowego</span><span class="p-ing__g">30 g</span></li>
-<li><span class="p-ing__q">3 łyżeczki</span><span>nasion chia</span><span class="p-ing__g">15 g</span></li>
+<li><div class="p-ing__row"><span class="p-ing__q">1 sztuka</span><span class="p-ing__n">banana</span><span class="p-ing__g">120 g</span></div>
+<div class="p-ing__swap">
+<label class="p-swaplabel" for="swap-0">Zamień na</label>
+<select class="p-select" id="swap-0" data-ing="0">
+<option value="jablko">Jabłko</option>
+<option value="gruszka">Gruszka</option>
+<option value="banan" selected>Banan · oryginał</option>
+<option value="mandarynka">Mandarynka</option>
+<option value="brzoskwinia">Brzoskwinia</option>
+<option value="kiwi">Kiwi</option>
+<option value="kaki">Kaki</option>
+</select>
+</div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">1 szklanka</span><span class="p-ing__n">napoju sojowego</span><span class="p-ing__g">250 g</span></div>
+<div class="p-ing__swap">
+<label class="p-swaplabel" for="swap-1">Zamień na</label>
+<select class="p-select" id="swap-1" data-ing="1">
+<option value="mleko-roslinne">Mleko roślinne</option>
+<option value="napoj-roslinny">Napój roślinny</option>
+<option value="napoj-sojowy" selected>Napój sojowy · oryginał</option>
+<option value="napoj-migdalowy">Napój migdałowy</option>
+<option value="napoj-owsiany">Napój owsiany</option>
+<option value="mleko-2">Mleko 2%</option>
+</select>
+</div>
+</li>
+<li data-pantry="1"><div class="p-ing__row"><span class="p-ing__q">2 łyżeczki</span><span class="p-ing__n">erytrolu</span><span class="p-ing__g">10 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">3 łyżeczki</span><span class="p-ing__n">masła orzechowego</span><span class="p-ing__g">30 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">3 łyżeczki</span><span class="p-ing__n">nasion chia</span><span class="p-ing__g">15 g</span></div>
+</li>
 </ul>
 
 <div class="p-actions">
@@ -45,7 +76,7 @@ hide:
 </div>
 
 <h2>Sposób przygotowania</h2>
-<ol class="p-steps">
+<ol class="p-steps" id="steps-list">
 <li>Zblenduj wszystkie składniki. W razie potrzeby dodaj wody.</li>
 </ol>
 
@@ -62,8 +93,7 @@ hide:
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
 <button type="button" class="p-btn p-btn--primary" id="cook-next">Następny krok</button>
-</div>
-</div>
+</div></div>
 <div class="p-sheet" id="shopping" data-open="0" role="dialog" aria-modal="true" aria-label="Lista zakupów">
 <button type="button" class="p-sheet__scrim" id="shopping-scrim" aria-label="Zamknij listę zakupów"></button>
 <div class="p-sheet__panel">
@@ -72,9 +102,10 @@ hide:
 <div class="p-sheet__foot">
 <button type="button" class="p-btn" id="reset-shopping">Odznacz wszystko</button>
 <button type="button" class="p-btn p-btn--primary" id="pdf-btn">Wygeneruj PDF</button>
-</div>
-</div></div>
+</div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "koktajl-bananowy", "title": "Koktajl bananowo-orzechowy", "day": 3, "slotLabel": "Kolacja", "time": "18:00-21:00", "baseServings": 1, "ingredients": [{"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "banana", "grams": 120.0, "pantry": false, "tag": "banan"}, {"qty": 1.0, "unit": "szklanka", "unitLemma": "szklanka", "name": "napoju sojowego", "grams": 250.0, "pantry": false, "tag": "mleko"}, {"qty": 2.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "erytrolu", "grams": 10.0, "pantry": true, "tag": null}, {"qty": 3.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "masła orzechowego", "grams": 30.0, "pantry": false, "tag": "maslo-orzechowe"}, {"qty": 3.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "nasion chia", "grams": 15.0, "pantry": false, "tag": "chia"}], "steps": ["Zblenduj wszystkie składniki. W razie potrzeby dodaj wody."]};
-window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};</script>
+<script>window.RECIPE = {"slug": "koktajl-bananowy", "title": "Koktajl bananowo-orzechowy", "slotLabel": "Kolacja", "time": "18:00-20:00", "baseServings": 1, "ingredients": [{"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "banana", "grams": 120.0, "pantry": false, "tag": "banan", "swap": {"group": "owoce", "self": "banan", "nameCase": "D"}}, {"qty": 1.0, "unit": "szklanka", "unitLemma": "szklanka", "name": "napoju sojowego", "grams": 250.0, "pantry": false, "tag": "mleko", "swap": {"group": "mleko", "self": "napoj-sojowy", "nameCase": "D"}}, {"qty": 2.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "erytrolu", "grams": 10.0, "pantry": true, "tag": null}, {"qty": 3.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "masła orzechowego", "grams": 30.0, "pantry": false, "tag": "maslo-orzechowe"}, {"qty": 3.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "nasion chia", "grams": 15.0, "pantry": false, "tag": "chia"}], "steps": ["Zblenduj wszystkie składniki. W razie potrzeby dodaj wody."]};
+window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};
+window.SWAPS = {"mleko": {"label": "Mleko i napoje roślinne", "options": [{"id": "mleko-roslinne", "label": "Mleko roślinne", "rodzaj": "n", "formy": {"M": "mleko roślinne", "D": "mleka roślinnego", "B": "mleko roślinne", "N": "mlekiem roślinnym", "Ms": "mleku roślinnym"}, "rodzajB": "n"}, {"id": "napoj-roslinny", "label": "Napój roślinny", "rodzaj": "m", "formy": {"M": "napój roślinny", "D": "napoju roślinnego", "B": "napój roślinny", "N": "napojem roślinnym", "Ms": "napoju roślinnym"}, "rodzajB": "m"}, {"id": "napoj-sojowy", "label": "Napój sojowy", "rodzaj": "m", "formy": {"M": "napój sojowy", "D": "napoju sojowego", "B": "napój sojowy", "N": "napojem sojowym", "Ms": "napoju sojowym"}, "rodzajB": "m"}, {"id": "napoj-migdalowy", "label": "Napój migdałowy", "rodzaj": "m", "formy": {"M": "napój migdałowy", "D": "napoju migdałowego", "B": "napój migdałowy", "N": "napojem migdałowym", "Ms": "napoju migdałowym"}, "rodzajB": "m"}, {"id": "napoj-owsiany", "label": "Napój owsiany", "rodzaj": "m", "formy": {"M": "napój owsiany", "D": "napoju owsianego", "B": "napój owsiany", "N": "napojem owsianym", "Ms": "napoju owsianym"}, "rodzajB": "m"}, {"id": "mleko-2", "label": "Mleko 2%", "rodzaj": "n", "formy": {"M": "mleko 2%", "D": "mleka 2%", "B": "mleko 2%", "N": "mlekiem 2%", "Ms": "mleku 2%"}, "rodzajB": "n"}]}, "owoce": {"label": "Owoce", "options": [{"id": "jablko", "label": "Jabłko", "rodzaj": "n", "formy": {"M": "jabłko", "D": "jabłka", "B": "jabłko", "N": "jabłkiem", "Ms": "jabłku", "Mpl": "jabłka", "Dpl": "jabłek", "Bpl": "jabłka", "Npl": "jabłkami", "Mspl": "jabłkach"}, "equiv": 170, "rodzajB": "n"}, {"id": "gruszka", "label": "Gruszka", "rodzaj": "f", "formy": {"M": "gruszka", "D": "gruszki", "B": "gruszkę", "N": "gruszką", "Ms": "gruszce", "Mpl": "gruszki", "Dpl": "gruszek", "Bpl": "gruszki", "Npl": "gruszkami", "Mspl": "gruszkach"}, "equiv": 170, "rodzajB": "f"}, {"id": "banan", "label": "Banan", "rodzaj": "m", "formy": {"M": "banan", "D": "banana", "B": "banan", "N": "bananem", "Ms": "bananie", "Bpot": "banana", "Mpl": "banany", "Dpl": "bananów", "Bpl": "banany", "Npl": "bananami", "Mspl": "bananach"}, "equiv": 120, "rodzajB": "mz"}, {"id": "mandarynka", "label": "Mandarynka", "rodzaj": "f", "formy": {"M": "mandarynka", "D": "mandarynki", "B": "mandarynkę", "N": "mandarynką", "Ms": "mandarynce", "Mpl": "mandarynki", "Dpl": "mandarynek", "Bpl": "mandarynki", "Npl": "mandarynkami", "Mspl": "mandarynkach"}, "equiv": 65, "rodzajB": "f"}, {"id": "brzoskwinia", "label": "Brzoskwinia", "rodzaj": "f", "formy": {"M": "brzoskwinia", "D": "brzoskwini", "B": "brzoskwinię", "N": "brzoskwinią", "Ms": "brzoskwini", "Mpl": "brzoskwinie", "Dpl": "brzoskwiń", "Bpl": "brzoskwinie", "Npl": "brzoskwiniami", "Mspl": "brzoskwiniach"}, "equiv": 90, "rodzajB": "f"}, {"id": "kiwi", "label": "Kiwi", "rodzaj": "n", "formy": {"M": "kiwi", "D": "kiwi", "B": "kiwi", "N": "kiwi", "Ms": "kiwi", "Mpl": "kiwi", "Dpl": "kiwi", "Bpl": "kiwi", "Npl": "kiwi", "Mspl": "kiwi"}, "equiv": 80, "rodzajB": "n"}, {"id": "kaki", "label": "Kaki", "rodzaj": "n", "formy": {"M": "kaki", "D": "kaki", "B": "kaki", "N": "kaki", "Ms": "kaki", "Mpl": "kaki", "Dpl": "kaki", "Bpl": "kaki", "Npl": "kaki", "Mspl": "kaki"}, "equiv": 250, "rodzajB": "n"}]}};
+window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

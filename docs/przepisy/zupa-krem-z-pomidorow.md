@@ -7,9 +7,9 @@ hide:
 
 # Zupa krem z pomidorów z bazylią Chef select
 
-<div class="p-hero" data-slot="3">
+<div class="p-hero" data-slot="2">
 <div class="p-hero__top">
-<span>Obiad</span><span class="p-num">14:00-17:00</span><span class="p-num">Dzień 9</span>
+<span>Obiad</span><span class="p-num">13:00-16:00</span>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">370</span><span class="p-macro__l">kcal</span></div>
@@ -30,10 +30,15 @@ hide:
 <p class="p-note" id="srv-note" style="margin:0" hidden></p>
 </div>
 
-<h2 id="ing-heading">Składniki na 1 osobę</h2>
+<div class="p-ings__head">
+<h2 id="ing-heading" style="margin:0">Składniki na 1 osobę</h2>
+<button type="button" class="p-btn p-btn--ghost" id="swap-reset" style="min-height:auto;padding:6px 8px" hidden>Przywróć oryginał</button>
+</div>
 <ul class="p-ings" id="ing-list">
-<li><span class="p-ing__q">1 opakowanie</span><span>Zupy krem z pomidorów z bazylią Chef select</span><span class="p-ing__g">450 g</span></li>
-<li><span class="p-ing__q">1 sztuka</span><span>batona Raw Alesto kakao, ziarna kakaowca</span><span class="p-ing__g">50 g</span></li>
+<li><div class="p-ing__row"><span class="p-ing__q">1 opakowanie</span><span class="p-ing__n">Zupy krem z pomidorów z bazylią Chef select</span><span class="p-ing__g">450 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">1 sztuka</span><span class="p-ing__n">batona Raw Alesto kakao, ziarna kakaowca</span><span class="p-ing__g">50 g</span></div>
+</li>
 </ul>
 
 <div class="p-actions">
@@ -42,8 +47,8 @@ hide:
 </div>
 
 <h2>Sposób przygotowania</h2>
-<ol class="p-steps">
-<li>Podgrzewamy zupę wg instrukcji na opakowaniu. Na deser zjadamy batona.</li>
+<ol class="p-steps" id="steps-list">
+<li>Podgrzej zupę wg instrukcji na opakowaniu. Na deser zjedz batona.</li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Zupa krem z pomidorów z bazylią Chef select">
@@ -59,8 +64,7 @@ hide:
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
 <button type="button" class="p-btn p-btn--primary" id="cook-next">Następny krok</button>
-</div>
-</div>
+</div></div>
 <div class="p-sheet" id="shopping" data-open="0" role="dialog" aria-modal="true" aria-label="Lista zakupów">
 <button type="button" class="p-sheet__scrim" id="shopping-scrim" aria-label="Zamknij listę zakupów"></button>
 <div class="p-sheet__panel">
@@ -69,9 +73,10 @@ hide:
 <div class="p-sheet__foot">
 <button type="button" class="p-btn" id="reset-shopping">Odznacz wszystko</button>
 <button type="button" class="p-btn p-btn--primary" id="pdf-btn">Wygeneruj PDF</button>
-</div>
-</div></div>
+</div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "zupa-krem-z-pomidorow", "title": "Zupa krem z pomidorów z bazylią Chef select", "day": 9, "slotLabel": "Obiad", "time": "14:00-17:00", "baseServings": 1, "ingredients": [{"qty": 1.0, "unit": "opakowanie", "unitLemma": "opakowanie", "name": "Zupy krem z pomidorów z bazylią Chef select", "grams": 450.0, "pantry": false, "tag": "zupa-gotowa"}, {"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "batona Raw Alesto kakao, ziarna kakaowca", "grams": 50.0, "pantry": false, "tag": "baton"}], "steps": ["Podgrzewamy zupę wg instrukcji na opakowaniu. Na deser zjadamy batona."]};
-window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};</script>
+<script>window.RECIPE = {"slug": "zupa-krem-z-pomidorow", "title": "Zupa krem z pomidorów z bazylią Chef select", "slotLabel": "Obiad", "time": "13:00-16:00", "baseServings": 1, "ingredients": [{"qty": 1.0, "unit": "opakowanie", "unitLemma": "opakowanie", "name": "Zupy krem z pomidorów z bazylią Chef select", "grams": 450.0, "pantry": false, "tag": "zupa-gotowa"}, {"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "batona Raw Alesto kakao, ziarna kakaowca", "grams": 50.0, "pantry": false, "tag": "baton"}], "steps": ["Podgrzej zupę wg instrukcji na opakowaniu. Na deser zjedz batona."]};
+window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};
+window.SWAPS = {};
+window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

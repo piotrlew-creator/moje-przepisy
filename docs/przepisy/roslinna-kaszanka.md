@@ -7,9 +7,9 @@ hide:
 
 # Roślinna kaszanka Dobra Kaloria z pieczywem i warzywami
 
-<div class="p-hero" data-slot="3">
+<div class="p-hero" data-slot="2">
 <div class="p-hero__top">
-<span>Obiad</span><span class="p-num">14:00-17:00</span><span class="p-num">Dzień 7</span>
+<span>Obiad</span><span class="p-num">13:00-16:00</span>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">388</span><span class="p-macro__l">kcal</span></div>
@@ -30,10 +30,27 @@ hide:
 <p class="p-note" id="srv-note" style="margin:0" hidden></p>
 </div>
 
-<h2 id="ing-heading">Składniki na 1 osobę</h2>
+<div class="p-ings__head">
+<h2 id="ing-heading" style="margin:0">Składniki na 1 osobę</h2>
+<button type="button" class="p-btn p-btn--ghost" id="swap-reset" style="min-height:auto;padding:6px 8px" hidden>Przywróć oryginał</button>
+</div>
 <ul class="p-ings" id="ing-list">
-<li><span class="p-ing__q">0.5 opakowania</span><span>Roślinna kaszanka na grilla i na patelnię Dobra Kaloria</span><span class="p-ing__g">90 g</span></li>
-<li><span class="p-ing__q">1 sztuka</span><span>bułki</span><span class="p-ing__g">60 g</span></li>
+<li><div class="p-ing__row"><span class="p-ing__q">0.5 opakowania</span><span class="p-ing__n">Roślinna kaszanka na grilla i na patelnię Dobra Kaloria</span><span class="p-ing__g">90 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">1 sztuka</span><span class="p-ing__n">bułki</span><span class="p-ing__g">60 g</span></div>
+<div class="p-ing__swap">
+<label class="p-swaplabel" for="swap-1">Zamień na</label>
+<select class="p-select" id="swap-1" data-ing="1">
+<option value="chleb-zytni-razowy">Chleb żytni razowy</option>
+<option value="chleb-zytni">Chleb żytni</option>
+<option value="chleb-orkiszowy">Chleb orkiszowy</option>
+<option value="chleb-pelnoziarnisty">Chleb pełnoziarnisty</option>
+<option value="chleb-na-zakwasie">Chleb żytni na zakwasie</option>
+<option value="bulka-grahamka" selected>Bułka grahamka · oryginał</option>
+<option value="bulka-owsiana">Bułka owsiana</option>
+</select>
+</div>
+</li>
 </ul>
 
 <div class="p-actions">
@@ -42,8 +59,8 @@ hide:
 </div>
 
 <h2>Sposób przygotowania</h2>
-<ol class="p-steps">
-<li>Kaszankę podgrzewamy, jemy z pieczywem.</li>
+<ol class="p-steps" id="steps-list">
+<li>Kaszankę podgrzej, zjedz z pieczywem.</li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Roślinna kaszanka Dobra Kaloria z pieczywem i warzywami">
@@ -59,8 +76,7 @@ hide:
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
 <button type="button" class="p-btn p-btn--primary" id="cook-next">Następny krok</button>
-</div>
-</div>
+</div></div>
 <div class="p-sheet" id="shopping" data-open="0" role="dialog" aria-modal="true" aria-label="Lista zakupów">
 <button type="button" class="p-sheet__scrim" id="shopping-scrim" aria-label="Zamknij listę zakupów"></button>
 <div class="p-sheet__panel">
@@ -69,9 +85,10 @@ hide:
 <div class="p-sheet__foot">
 <button type="button" class="p-btn" id="reset-shopping">Odznacz wszystko</button>
 <button type="button" class="p-btn p-btn--primary" id="pdf-btn">Wygeneruj PDF</button>
-</div>
-</div></div>
+</div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "roslinna-kaszanka", "title": "Roślinna kaszanka Dobra Kaloria z pieczywem i warzywami", "day": 7, "slotLabel": "Obiad", "time": "14:00-17:00", "baseServings": 1, "ingredients": [{"qty": 0.5, "unit": "opakowania", "unitLemma": "opakowanie", "name": "Roślinna kaszanka na grilla i na patelnię Dobra Kaloria", "grams": 90.0, "pantry": false, "tag": "kaszanka"}, {"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "bułki", "grams": 60.0, "pantry": false, "tag": "bulka"}], "steps": ["Kaszankę podgrzewamy, jemy z pieczywem."]};
-window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};</script>
+<script>window.RECIPE = {"slug": "roslinna-kaszanka", "title": "Roślinna kaszanka Dobra Kaloria z pieczywem i warzywami", "slotLabel": "Obiad", "time": "13:00-16:00", "baseServings": 1, "ingredients": [{"qty": 0.5, "unit": "opakowania", "unitLemma": "opakowanie", "name": "Roślinna kaszanka na grilla i na patelnię Dobra Kaloria", "grams": 90.0, "pantry": false, "tag": "kaszanka"}, {"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "bułki", "grams": 60.0, "pantry": false, "tag": "bulka", "swap": {"group": "pieczywo", "self": "bulka-grahamka", "nameCase": "D"}}], "steps": ["Kaszankę podgrzej, zjedz z pieczywem."]};
+window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};
+window.SWAPS = {"pieczywo": {"label": "Pieczywo", "options": [{"id": "chleb-zytni-razowy", "label": "Chleb żytni razowy", "rodzaj": "m", "formy": {"M": "chleb żytni razowy", "D": "chleba żytniego razowego", "B": "chleb żytni razowy", "N": "chlebem żytnim razowym", "Ms": "chlebie żytnim razowym"}, "rodzajB": "m"}, {"id": "chleb-zytni", "label": "Chleb żytni", "rodzaj": "m", "formy": {"M": "chleb żytni", "D": "chleba żytniego", "B": "chleb żytni", "N": "chlebem żytnim", "Ms": "chlebie żytnim"}, "rodzajB": "m"}, {"id": "chleb-orkiszowy", "label": "Chleb orkiszowy", "rodzaj": "m", "formy": {"M": "chleb orkiszowy", "D": "chleba orkiszowego", "B": "chleb orkiszowy", "N": "chlebem orkiszowym", "Ms": "chlebie orkiszowym"}, "rodzajB": "m"}, {"id": "chleb-pelnoziarnisty", "label": "Chleb pełnoziarnisty", "rodzaj": "m", "formy": {"M": "chleb pełnoziarnisty", "D": "chleba pełnoziarnistego", "B": "chleb pełnoziarnisty", "N": "chlebem pełnoziarnistym", "Ms": "chlebie pełnoziarnistym"}, "rodzajB": "m"}, {"id": "chleb-na-zakwasie", "label": "Chleb żytni na zakwasie", "rodzaj": "m", "formy": {"M": "chleb żytni na zakwasie", "D": "chleba żytniego na zakwasie", "B": "chleb żytni na zakwasie", "N": "chlebem żytnim na zakwasie", "Ms": "chlebie żytnim na zakwasie"}, "rodzajB": "m"}, {"id": "bulka-grahamka", "label": "Bułka grahamka", "rodzaj": "f", "formy": {"M": "bułka grahamka", "D": "bułki grahamki", "B": "bułkę grahamkę", "N": "bułką grahamką", "Ms": "bułce grahamce"}, "rodzajB": "f"}, {"id": "bulka-owsiana", "label": "Bułka owsiana", "rodzaj": "f", "formy": {"M": "bułka owsiana", "D": "bułki owsianej", "B": "bułkę owsianą", "N": "bułką owsianą", "Ms": "bułce owsianej"}, "rodzajB": "f"}]}};
+window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

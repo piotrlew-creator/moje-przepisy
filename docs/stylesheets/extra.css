@@ -637,8 +637,21 @@ input:focus-visible {
   font-size: 0.8rem;
   line-height: 1.45;
   display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.p-ing__row {
+  display: flex;
   gap: 10px;
   align-items: baseline;
+}
+
+.p-ing__n { flex: 1; min-width: 0; }
+
+.p-ings li[data-swapped="1"] .p-ing__n {
+  color: var(--p-brand);
+  font-weight: 700;
 }
 
 .md-typeset .p-ings li:last-child { border-bottom: 0; }
@@ -996,7 +1009,7 @@ body.p-cooking { overflow: hidden; }
 .p-day__slot { font-size: 0.62rem; font-weight: 700; color: var(--p-ink-3); text-transform: uppercase; letter-spacing: 0.05em; }
 
 /* ------------------------------------------------------------ zamienniki -- */
-.p-swap {
+.p-swap-card {
   border: 1px solid var(--p-line);
   border-radius: var(--p-radius);
   background: var(--p-surface);
@@ -1004,15 +1017,15 @@ body.p-cooking { overflow: hidden; }
   margin: 0 0 10px;
 }
 
-.p-swap h3 {
+.p-swap-card h3 {
   margin: 0 0 6px !important;
   font-family: "Literata", Georgia, serif;
   font-size: 0.8rem;
   font-weight: 600;
 }
 
-.p-swap p { margin: 0; font-size: 0.76rem; line-height: 1.55; color: var(--p-ink-2); }
-.p-swap em { color: var(--p-ink); font-style: normal; font-weight: 700; }
+.p-swap-card p { margin: 0; font-size: 0.76rem; line-height: 1.55; color: var(--p-ink-2); }
+.p-swap-card em { color: var(--p-ink); font-style: normal; font-weight: 700; }
 
 /* ------------------------------------------------------------- drobiazgi -- */
 .p-note {
@@ -1182,4 +1195,124 @@ html, body { overflow-x: hidden; }
   align-items: center;
   justify-content: center;
   font-variant-numeric: tabular-nums;
+}
+
+/* ------------------------------------------------ pole szukania + wyczyść -- */
+/* „Wyczyść” stoi obok pola wyszukiwania, bo odznaczenie wszystkiego to
+   najczęstsza akcja po przefiltrowaniu — nie ma go szukać pod listą. */
+.p-searchrow {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.p-searchrow .p-search { flex: 1; min-width: 0; }
+
+.p-search__x {
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border: 0;
+  border-radius: 50%;
+  background: var(--p-surface-3);
+  color: var(--p-ink-2);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-btn--clear {
+  flex: none;
+  background: var(--p-slot-3-soft);
+  border-color: var(--p-slot-3);
+  color: var(--p-slot-3);
+  font-weight: 800;
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+.p-btn--clear:hover { background: var(--p-slot-3); color: #fff; }
+[data-md-color-scheme="slate"] .p-btn--clear:hover { color: #10130f; }
+
+.p-hint {
+  margin: 0;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: var(--p-ink-3);
+}
+
+/* --------------------------------------------------------- „Zamień na” ---- */
+.p-ings__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 12px;
+  flex-wrap: wrap;
+  margin: 32px 0 12px;
+}
+
+.p-ings__head h2 {
+  font-size: 0.95rem !important;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.p-ings__head .p-btn { white-space: nowrap; flex: none; }
+
+.p-ing__swap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.p-swaplabel {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--p-ink-3);
+  flex: none;
+}
+
+/* Natywny <select> — na telefonie otwiera systemowy wybierak, który jest
+   wygodniejszy i dostępniejszy niż własna lista rozwijana. */
+.p-select {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--p-tap);
+  padding: 8px 34px 8px 12px;
+  border: 1px solid var(--p-line-2);
+  border-radius: 10px;
+  background-color: var(--p-ground);
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2378827a' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  color: var(--p-ink);
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.p-ings li[data-swapped="1"] .p-select {
+  border-color: var(--p-brand);
+  color: var(--p-brand);
+}
+
+.p-swapped {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--p-brand);
+  background: var(--p-brand-soft);
+  border-radius: 999px;
+  padding: 1px 7px;
+  vertical-align: 1px;
 }

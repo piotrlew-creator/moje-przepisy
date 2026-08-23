@@ -9,7 +9,7 @@ hide:
 
 <div class="p-hero" data-slot="1">
 <div class="p-hero__top">
-<span>Śniadanie</span><span class="p-num">6:00-9:00</span><span class="p-num">Dzień 3</span>
+<span>Śniadanie</span><span class="p-num">7:00-10:00</span>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">482</span><span class="p-macro__l">kcal</span></div>
@@ -30,15 +30,45 @@ hide:
 <p class="p-note" id="srv-note" style="margin:0" hidden></p>
 </div>
 
-<h2 id="ing-heading">Składniki na 1 osobę</h2>
+<div class="p-ings__head">
+<h2 id="ing-heading" style="margin:0">Składniki na 1 osobę</h2>
+<button type="button" class="p-btn p-btn--ghost" id="swap-reset" style="min-height:auto;padding:6px 8px" hidden>Przywróć oryginał</button>
+</div>
 <ul class="p-ings" id="ing-list">
-<li><span class="p-ing__q">1 sztuka</span><span>małego banana</span><span class="p-ing__g">60 g</span></li>
-<li><span class="p-ing__q">1 sztuka</span><span>jaja kurzego</span><span class="p-ing__g">56 g</span></li>
-<li><span class="p-ing__q">2 łyżki</span><span>mąki owsianej pełnoziarnistej</span><span class="p-ing__g">24 g</span></li>
-<li><span class="p-ing__q">1 łyżeczka</span><span>masła orzechowego</span><span class="p-ing__g">10 g</span></li>
-<li><span class="p-ing__q">2 łyżki</span><span>odżywki białkowej</span><span class="p-ing__g">16 g</span></li>
-<li><span class="p-ing__q">0.5 garści</span><span>mieszanki orzechów</span><span class="p-ing__g">15 g</span></li>
-<li><span class="p-ing__q">1 łyżka</span><span>syropu z agawy</span><span class="p-ing__g">15 g</span></li>
+<li><div class="p-ing__row"><span class="p-ing__q">1 sztuka</span><span class="p-ing__n">małego banana</span><span class="p-ing__g">60 g</span></div>
+<div class="p-ing__swap">
+<label class="p-swaplabel" for="swap-0">Zamień na</label>
+<select class="p-select" id="swap-0" data-ing="0">
+<option value="jablko">Jabłko</option>
+<option value="gruszka">Gruszka</option>
+<option value="banan" selected>Banan · oryginał</option>
+<option value="mandarynka">Mandarynka</option>
+<option value="brzoskwinia">Brzoskwinia</option>
+<option value="kiwi">Kiwi</option>
+<option value="kaki">Kaki</option>
+</select>
+</div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">1 sztuka</span><span class="p-ing__n">jaja kurzego</span><span class="p-ing__g">56 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">2 łyżki</span><span class="p-ing__n">mąki owsianej pełnoziarnistej</span><span class="p-ing__g">24 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">1 łyżeczka</span><span class="p-ing__n">masła orzechowego</span><span class="p-ing__g">10 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">2 łyżki</span><span class="p-ing__n">odżywki białkowej</span><span class="p-ing__g">16 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">0.5 garści</span><span class="p-ing__n">mieszanki orzechów</span><span class="p-ing__g">15 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">1 łyżka</span><span class="p-ing__n">syropu z agawy</span><span class="p-ing__g">15 g</span></div>
+<div class="p-ing__swap">
+<label class="p-swaplabel" for="swap-6">Zamień na</label>
+<select class="p-select" id="swap-6" data-ing="6">
+<option value="miod">Miód</option>
+<option value="syrop-klonowy">Syrop klonowy</option>
+<option value="syrop-z-agawy" selected>Syrop z agawy · oryginał</option>
+</select>
+</div>
+</li>
 </ul>
 
 <div class="p-actions">
@@ -47,9 +77,9 @@ hide:
 </div>
 
 <h2>Sposób przygotowania</h2>
-<ol class="p-steps">
-<li>Składniki na ciasto blendujemy i odstawiamy na 5-10 minut</li>
-<li>Placuszki smażymy bez tłuszczu na nieprzywierającej patelni, podajemy polane syropem z agawy i posypane posiekanymi orzechami.</li>
+<ol class="p-steps" id="steps-list">
+<li>Składniki na ciasto zblenduj i odstaw na 5-10 minut</li>
+<li>Placuszki smaż bez tłuszczu na nieprzywierającej patelni, podaj polane syropem z agawy i posypane posiekanymi orzechami.</li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Placuszki owsiane orzechowe">
@@ -65,8 +95,7 @@ hide:
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
 <button type="button" class="p-btn p-btn--primary" id="cook-next">Następny krok</button>
-</div>
-</div>
+</div></div>
 <div class="p-sheet" id="shopping" data-open="0" role="dialog" aria-modal="true" aria-label="Lista zakupów">
 <button type="button" class="p-sheet__scrim" id="shopping-scrim" aria-label="Zamknij listę zakupów"></button>
 <div class="p-sheet__panel">
@@ -75,9 +104,10 @@ hide:
 <div class="p-sheet__foot">
 <button type="button" class="p-btn" id="reset-shopping">Odznacz wszystko</button>
 <button type="button" class="p-btn p-btn--primary" id="pdf-btn">Wygeneruj PDF</button>
-</div>
-</div></div>
+</div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "placuszki-owsiane", "title": "Placuszki owsiane orzechowe", "day": 3, "slotLabel": "Śniadanie", "time": "6:00-9:00", "baseServings": 1, "ingredients": [{"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "małego banana", "grams": 60.0, "pantry": false, "tag": "banan"}, {"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "jaja kurzego", "grams": 56.0, "pantry": false, "tag": "jajka"}, {"qty": 2.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "mąki owsianej pełnoziarnistej", "grams": 24.0, "pantry": false, "tag": "maka"}, {"qty": 1.0, "unit": "łyżeczka", "unitLemma": "łyżeczka", "name": "masła orzechowego", "grams": 10.0, "pantry": false, "tag": "maslo-orzechowe"}, {"qty": 2.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "odżywki białkowej", "grams": 16.0, "pantry": false, "tag": "odzywka"}, {"qty": 0.5, "unit": "garści", "unitLemma": "garść", "name": "mieszanki orzechów", "grams": 15.0, "pantry": false, "tag": "orzechy"}, {"qty": 1.0, "unit": "łyżka", "unitLemma": "łyżka", "name": "syropu z agawy", "grams": 15.0, "pantry": false, "tag": "syrop-agawa"}], "steps": ["Składniki na ciasto blendujemy i odstawiamy na 5-10 minut", "Placuszki smażymy bez tłuszczu na nieprzywierającej patelni, podajemy polane syropem z agawy i posypane posiekanymi orzechami."]};
-window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};</script>
+<script>window.RECIPE = {"slug": "placuszki-owsiane", "title": "Placuszki owsiane orzechowe", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "ingredients": [{"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "małego banana", "grams": 60.0, "pantry": false, "tag": "banan", "swap": {"group": "owoce", "self": "banan", "nameCase": "D"}}, {"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "jaja kurzego", "grams": 56.0, "pantry": false, "tag": "jajka"}, {"qty": 2.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "mąki owsianej pełnoziarnistej", "grams": 24.0, "pantry": false, "tag": "maka"}, {"qty": 1.0, "unit": "łyżeczka", "unitLemma": "łyżeczka", "name": "masła orzechowego", "grams": 10.0, "pantry": false, "tag": "maslo-orzechowe"}, {"qty": 2.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "odżywki białkowej", "grams": 16.0, "pantry": false, "tag": "odzywka"}, {"qty": 0.5, "unit": "garści", "unitLemma": "garść", "name": "mieszanki orzechów", "grams": 15.0, "pantry": false, "tag": "orzechy"}, {"qty": 1.0, "unit": "łyżka", "unitLemma": "łyżka", "name": "syropu z agawy", "grams": 15.0, "pantry": false, "tag": "syrop-agawa", "swap": {"group": "slodziki", "self": "syrop-z-agawy", "nameCase": "D"}}], "steps": ["Składniki na ciasto zblenduj i odstaw na 5-10 minut", "Placuszki smaż bez tłuszczu na nieprzywierającej patelni, podaj polane «6|N|||» i posypane posiekanymi orzechami."]};
+window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};
+window.SWAPS = {"owoce": {"label": "Owoce", "options": [{"id": "jablko", "label": "Jabłko", "rodzaj": "n", "formy": {"M": "jabłko", "D": "jabłka", "B": "jabłko", "N": "jabłkiem", "Ms": "jabłku", "Mpl": "jabłka", "Dpl": "jabłek", "Bpl": "jabłka", "Npl": "jabłkami", "Mspl": "jabłkach"}, "equiv": 170, "rodzajB": "n"}, {"id": "gruszka", "label": "Gruszka", "rodzaj": "f", "formy": {"M": "gruszka", "D": "gruszki", "B": "gruszkę", "N": "gruszką", "Ms": "gruszce", "Mpl": "gruszki", "Dpl": "gruszek", "Bpl": "gruszki", "Npl": "gruszkami", "Mspl": "gruszkach"}, "equiv": 170, "rodzajB": "f"}, {"id": "banan", "label": "Banan", "rodzaj": "m", "formy": {"M": "banan", "D": "banana", "B": "banan", "N": "bananem", "Ms": "bananie", "Bpot": "banana", "Mpl": "banany", "Dpl": "bananów", "Bpl": "banany", "Npl": "bananami", "Mspl": "bananach"}, "equiv": 120, "rodzajB": "mz"}, {"id": "mandarynka", "label": "Mandarynka", "rodzaj": "f", "formy": {"M": "mandarynka", "D": "mandarynki", "B": "mandarynkę", "N": "mandarynką", "Ms": "mandarynce", "Mpl": "mandarynki", "Dpl": "mandarynek", "Bpl": "mandarynki", "Npl": "mandarynkami", "Mspl": "mandarynkach"}, "equiv": 65, "rodzajB": "f"}, {"id": "brzoskwinia", "label": "Brzoskwinia", "rodzaj": "f", "formy": {"M": "brzoskwinia", "D": "brzoskwini", "B": "brzoskwinię", "N": "brzoskwinią", "Ms": "brzoskwini", "Mpl": "brzoskwinie", "Dpl": "brzoskwiń", "Bpl": "brzoskwinie", "Npl": "brzoskwiniami", "Mspl": "brzoskwiniach"}, "equiv": 90, "rodzajB": "f"}, {"id": "kiwi", "label": "Kiwi", "rodzaj": "n", "formy": {"M": "kiwi", "D": "kiwi", "B": "kiwi", "N": "kiwi", "Ms": "kiwi", "Mpl": "kiwi", "Dpl": "kiwi", "Bpl": "kiwi", "Npl": "kiwi", "Mspl": "kiwi"}, "equiv": 80, "rodzajB": "n"}, {"id": "kaki", "label": "Kaki", "rodzaj": "n", "formy": {"M": "kaki", "D": "kaki", "B": "kaki", "N": "kaki", "Ms": "kaki", "Mpl": "kaki", "Dpl": "kaki", "Bpl": "kaki", "Npl": "kaki", "Mspl": "kaki"}, "equiv": 250, "rodzajB": "n"}]}, "slodziki": {"label": "Miód i syropy", "options": [{"id": "miod", "label": "Miód", "rodzaj": "m", "formy": {"M": "miód", "D": "miodu", "B": "miód", "N": "miodem", "Ms": "miodzie"}, "rodzajB": "m"}, {"id": "syrop-klonowy", "label": "Syrop klonowy", "rodzaj": "m", "formy": {"M": "syrop klonowy", "D": "syropu klonowego", "B": "syrop klonowy", "N": "syropem klonowym", "Ms": "syropie klonowym"}, "rodzajB": "m"}, {"id": "syrop-z-agawy", "label": "Syrop z agawy", "rodzaj": "m", "formy": {"M": "syrop z agawy", "D": "syropu z agawy", "B": "syrop z agawy", "N": "syropem z agawy", "Ms": "syropie z agawy"}, "rodzajB": "m"}]}};
+window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

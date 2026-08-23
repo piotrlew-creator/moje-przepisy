@@ -4,26 +4,20 @@
   {
    "id": "sniadanie",
    "label": "Śniadanie",
-   "time": "6:00-9:00",
+   "time": "7:00-10:00",
    "slot": 1
-  },
-  {
-   "id": "drugie-sniadanie",
-   "label": "II śniadanie",
-   "time": "10:00-13:00",
-   "slot": 2
   },
   {
    "id": "obiad",
    "label": "Obiad",
-   "time": "14:00-17:00",
-   "slot": 3
+   "time": "13:00-16:00",
+   "slot": 2
   },
   {
    "id": "kolacja",
    "label": "Kolacja",
-   "time": "18:00-21:00",
-   "slot": 4
+   "time": "18:00-20:00",
+   "slot": 3
   }
  ],
  "units": {
@@ -510,7 +504,7 @@
    "slot": 1,
    "slotId": "sniadanie",
    "slotLabel": "Śniadanie",
-   "time": "6:00-9:00",
+   "time": "7:00-10:00",
    "kcal": 464,
    "protein": 25,
    "carbs": 60,
@@ -531,7 +525,12 @@
      "name": "ryżu basmati",
      "grams": 30.0,
      "pantry": false,
-     "tag": "ryz"
+     "tag": "ryz",
+     "swap": {
+      "group": "zboza",
+      "self": "ryz-basmati",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -540,7 +539,12 @@
      "name": "mleka roślinnego",
      "grams": 125.0,
      "pantry": false,
-     "tag": "mleko"
+     "tag": "mleko",
+     "swap": {
+      "group": "mleko",
+      "self": "mleko-roslinne",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -549,7 +553,12 @@
      "name": "jabłka",
      "grams": 150.0,
      "pantry": false,
-     "tag": "jablko"
+     "tag": "jablko",
+     "swap": {
+      "group": "owoce",
+      "self": "jablko",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -589,6 +598,14 @@
     }
    ],
    "steps": [
+    "«2|B|||U» pokrój w kostkę i dopraw cynamonem, w razie potrzeby dodaj ksylitol.",
+    "«2|B|przyprawiony_B||U» duś w rondelku, aż puści soki i zacznie się rozpadać. Tak «2|B|przygotowany_B||» przełóż do miseczki.",
+    "Do rondelka po «2|Mspl|||» wsyp ryż, odżywkę i zalej napojem roślinnym oraz mleczkiem kokosowym. Gotuj na wolnym ogniu.",
+    "Gdy ryż zacznie się rozklejać, dołóż do niego około 2/3 masy «2|Dpl|||», które wcześniej przygotowałeś.",
+    "Wystarczająco gęsty i miękki ryż z «2|Npl|||» przełóż do miseczki, a na niego ułóż resztę «2|Dpl|||», które Ci zostały. Smacznego!"
+   ],
+   "mealNo": 1,
+   "stepsSource": [
     "Jabłko kroimy w kostkę i doprawiamy cynamonem, w razie potrzeby dodajemy ksylitol.",
     "Przyprawione jabłko dusimy w rondelku, aż puści soki i zacznie się rozpadać. Tak przygotowane jabłko przekładamy do miseczki.",
     "Do rondelka po jabłkach wsypujemy ryż, odżywkę i zalewamy napojem roślinnym oraz mleczkiem kokosowym. Gotujemy na wolnym ogniu.",
@@ -600,10 +617,10 @@
    "slug": "jajecznica",
    "title": "Jajecznica z pieczarkami, cebulą i pieczywem",
    "day": 1,
-   "slot": 2,
-   "slotId": "drugie-sniadanie",
-   "slotLabel": "II śniadanie",
-   "time": "10:00-13:00",
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "7:00-10:00",
    "kcal": 470,
    "protein": 29,
    "carbs": 41,
@@ -635,7 +652,12 @@
      "name": "pieczarek",
      "grams": 100.0,
      "pantry": false,
-     "tag": "pieczarki"
+     "tag": "pieczarki",
+     "swap": {
+      "group": "warzywa",
+      "self": "pieczarki",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -653,7 +675,12 @@
      "name": "szpinaku",
      "grams": 25.0,
      "pantry": false,
-     "tag": "szpinak"
+     "tag": "szpinak",
+     "swap": {
+      "group": "liscizielone",
+      "self": "szpinak",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 3.0,
@@ -662,7 +689,12 @@
      "name": "rzodkiewki",
      "grams": 45.0,
      "pantry": false,
-     "tag": "rzodkiewka"
+     "tag": "rzodkiewka",
+     "swap": {
+      "group": "warzywa",
+      "self": "rzodkiewka",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -671,7 +703,12 @@
      "name": "oleju rzepakowego",
      "grams": 5.0,
      "pantry": false,
-     "tag": "oliwa"
+     "tag": "oliwa",
+     "swap": {
+      "group": "tluszcz",
+      "self": "olej-rzepakowy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -680,7 +717,12 @@
      "name": "chleba żytniego razowego",
      "grams": 60.0,
      "pantry": false,
-     "tag": "chleb"
+     "tag": "chleb",
+     "swap": {
+      "group": "pieczywo",
+      "self": "chleb-zytni-razowy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -702,6 +744,14 @@
     }
    ],
    "steps": [
+    "Na patelni rozgrzej olej i podsmaż «1|B|pokrojony_B||» oraz cebulę.",
+    "Do zeszklonych warzyw wbij jajka.",
+    "Smaż na małym ogniu, cały czas mieszając, aż jajka się zetną.",
+    "Gotową jajecznicę dopraw solą i pieprzem.",
+    "Podaj z pieczywem, «3|N|||» i pokrojonymi «4|Npl|||». Smacznego!"
+   ],
+   "mealNo": 2,
+   "stepsSource": [
     "Na patelni rozgrzewamy olej i podsmażamy pokrojone pieczarki oraz cebulę.",
     "Do zeszklonych warzyw wbijamy jajka.",
     "Smażymy na małym ogniu, cały czas mieszając, aż jajka się zetną.",
@@ -713,10 +763,10 @@
    "slug": "makaron-mozzarella",
    "title": "Makaron z mozzarellą, szpinakiem, ogórkiem i pomidorkami koktajlowymi",
    "day": 1,
-   "slot": 3,
+   "slot": 2,
    "slotId": "obiad",
    "slotLabel": "Obiad",
-   "time": "14:00-17:00",
+   "time": "13:00-16:00",
    "kcal": 381,
    "protein": 23,
    "carbs": 40,
@@ -739,7 +789,12 @@
      "name": "makaronu pełnoziarnistego",
      "grams": 50.0,
      "pantry": false,
-     "tag": "makaron"
+     "tag": "makaron",
+     "swap": {
+      "group": "makaron",
+      "self": "makaron-pelnoziarnisty",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -757,7 +812,12 @@
      "name": "pomidorków koktajlowych",
      "grams": 140.0,
      "pantry": false,
-     "tag": "pomidor"
+     "tag": "pomidor",
+     "swap": {
+      "group": "warzywa",
+      "self": "pomidor",
+      "nameCase": "Dpl"
+     }
     },
     {
      "qty": 0.5,
@@ -775,7 +835,12 @@
      "name": "szpinaku",
      "grams": 50.0,
      "pantry": false,
-     "tag": "szpinak"
+     "tag": "szpinak",
+     "swap": {
+      "group": "liscizielone",
+      "self": "szpinak",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -784,7 +849,12 @@
      "name": "ogórka",
      "grams": 75.0,
      "pantry": false,
-     "tag": "ogorek"
+     "tag": "ogorek",
+     "swap": {
+      "group": "warzywa",
+      "self": "ogorek",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 3.0,
@@ -824,6 +894,13 @@
     }
    ],
    "steps": [
+    "Makaron ugotuj według instrukcji umieszczonej na opakowaniu.",
+    "Pokrój pomidorki, ogórek zielony, posiekaj bazylię.",
+    "Do miski dodaj makaron, pokrojone warzywa, posiekaną bazylię, «4|B|umyty_B||», czerwone pesto i całość dokładnie wymieszaj, w razie potrzeby przypraw solą i pieprzem.",
+    "Gotowy makaron z warzywami wyłóż na talerz. Posyp tartym serem grana padano i ułóż mozzarellę. Smacznego!"
+   ],
+   "mealNo": 3,
+   "stepsSource": [
     "Makaron gotujemy według instrukcji umieszczonej na opakowaniu.",
     "Kroimy pomidorki, ogórek zielony, siekamy bazylię.",
     "Do miski dodajemy makaron, pokrojone warzywa, posiekaną bazylię, umyty szpinak, czerwone pesto i całość dokładnie mieszamy, w razie potrzeby przyprawiamy solą i pieprzem.",
@@ -834,10 +911,10 @@
    "slug": "kulki-mocy",
    "title": "Daktylowo-kakaowe kulki mocy z orzechami",
    "day": 1,
-   "slot": 4,
+   "slot": 3,
    "slotId": "kolacja",
    "slotLabel": "Kolacja",
-   "time": "18:00-21:00",
+   "time": "18:00-20:00",
    "kcal": 466,
    "protein": 7,
    "carbs": 61,
@@ -866,7 +943,12 @@
      "name": "orzechów włoskich",
      "grams": 20.0,
      "pantry": false,
-     "tag": "orzechy"
+     "tag": "orzechy",
+     "swap": {
+      "group": "orzechy",
+      "self": "orzechy-wloskie",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -888,6 +970,10 @@
     }
    ],
    "steps": [
+    "Daktyle namocz we wrzątku przez ok. 10 minut. Następnie wszystkie składniki zblenduj ze sobą, uformuj kulki i obtocz w wiórkach kokosowych. Smacznego!"
+   ],
+   "mealNo": 4,
+   "stepsSource": [
     "Daktyle namaczamy we wrzątku przez ok. 10 minut. Następnie wszystkie składniki blendujemy ze sobą, formujemy kulki i obtaczamy w wiórkach kokosowych. Smacznego!"
    ]
   },
@@ -898,7 +984,7 @@
    "slot": 1,
    "slotId": "sniadanie",
    "slotLabel": "Śniadanie",
-   "time": "6:00-9:00",
+   "time": "7:00-10:00",
    "kcal": 468,
    "protein": 29,
    "carbs": 55,
@@ -918,7 +1004,12 @@
      "name": "płatków owsianych",
      "grams": 30.0,
      "pantry": false,
-     "tag": "platki-owsiane"
+     "tag": "platki-owsiane",
+     "swap": {
+      "group": "platki",
+      "self": "platki-owsiane",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -927,7 +1018,12 @@
      "name": "małego banana",
      "grams": 100.0,
      "pantry": false,
-     "tag": "banan"
+     "tag": "banan",
+     "swap": {
+      "group": "owoce",
+      "self": "banan",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -936,7 +1032,12 @@
      "name": "orzechów nerkowca",
      "grams": 30.0,
      "pantry": false,
-     "tag": "orzechy"
+     "tag": "orzechy",
+     "swap": {
+      "group": "orzechy",
+      "self": "orzechy-nerkowca",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 3.0,
@@ -949,6 +1050,12 @@
     }
    ],
    "steps": [
+    "«0|B|||U» zalej wrzątkiem do linii płatków, pozostaw na 3 minuty",
+    "«1|Bpot|||U» pokrój w plasterki, dodaj odżywkę białkową i nerkowce.",
+    "Całość wymieszaj i gotowe! Smacznego!"
+   ],
+   "mealNo": 1,
+   "stepsSource": [
     "Płatki owsiane zalewamy wrzątkiem do linii płatków, pozostawiamy na 3 minuty",
     "Banana kroimy w plasterki, dodajemy odżywkę białkową i nerkowce.",
     "Całość mieszamy i gotowe! Smacznego!"
@@ -958,10 +1065,10 @@
    "slug": "serek-wiejski-grahamka",
    "title": "Serek wiejski, papryka, grahamka i orzechy",
    "day": 2,
-   "slot": 2,
-   "slotId": "drugie-sniadanie",
-   "slotLabel": "II śniadanie",
-   "time": "10:00-13:00",
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "7:00-10:00",
    "kcal": 514,
    "protein": 28,
    "carbs": 58,
@@ -981,7 +1088,12 @@
      "name": "serka wiejskiego",
      "grams": 150.0,
      "pantry": false,
-     "tag": "serek-wiejski"
+     "tag": "serek-wiejski",
+     "swap": {
+      "group": "twarogowe",
+      "self": "serek-wiejski",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -990,7 +1102,12 @@
      "name": "papryki żółtej",
      "grams": 85.0,
      "pantry": false,
-     "tag": "papryka"
+     "tag": "papryka",
+     "swap": {
+      "group": "warzywa",
+      "self": "papryka",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -999,7 +1116,12 @@
      "name": "bułki grahamki",
      "grams": 80.0,
      "pantry": false,
-     "tag": "bulka"
+     "tag": "bulka",
+     "swap": {
+      "group": "pieczywo",
+      "self": "bulka-grahamka",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 6.0,
@@ -1008,10 +1130,19 @@
      "name": "orzechów włoskich",
      "grams": 24.0,
      "pantry": false,
-     "tag": "orzechy"
+     "tag": "orzechy",
+     "swap": {
+      "group": "orzechy",
+      "self": "orzechy-wloskie",
+      "nameCase": "D"
+     }
     }
    ],
    "steps": [
+    "Bułkę pokrój na pół, posmaruj «0|N|||», ułóż «1|B|||» i orzechy. Smacznego!"
+   ],
+   "mealNo": 2,
+   "stepsSource": [
     "Bułkę kroimy na pół, smarujemy serkiem wiejskim, układamy paprykę i orzechy. Smacznego!"
    ]
   },
@@ -1019,10 +1150,10 @@
    "slug": "krem-paprykowo-pomidorowy",
    "title": "Krem paprykowo-pomidorowy",
    "day": 2,
-   "slot": 3,
+   "slot": 2,
    "slotId": "obiad",
    "slotLabel": "Obiad",
-   "time": "14:00-17:00",
+   "time": "13:00-16:00",
    "kcal": 385,
    "protein": 18,
    "carbs": 45,
@@ -1083,7 +1214,12 @@
      "name": "makaronu razowego",
      "grams": 35.0,
      "pantry": false,
-     "tag": "makaron"
+     "tag": "makaron",
+     "swap": {
+      "group": "makaron",
+      "self": "makaron-razowy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -1092,7 +1228,12 @@
      "name": "oliwy z oliwek",
      "grams": 5.0,
      "pantry": false,
-     "tag": "oliwa"
+     "tag": "oliwa",
+     "swap": {
+      "group": "tluszcz",
+      "self": "oliwa",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 3.0,
@@ -1110,7 +1251,12 @@
      "name": "selera naciowego",
      "grams": 45.0,
      "pantry": false,
-     "tag": "seler"
+     "tag": "seler",
+     "swap": {
+      "group": "warzywa",
+      "self": "seler-naciowy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -1137,7 +1283,12 @@
      "name": "marchewki",
      "grams": 45.0,
      "pantry": false,
-     "tag": "marchewka"
+     "tag": "marchewka",
+     "swap": {
+      "group": "warzywa",
+      "self": "marchewka",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -1155,10 +1306,24 @@
      "name": "papryki czerwonej",
      "grams": 85.0,
      "pantry": false,
-     "tag": "papryka"
+     "tag": "papryka",
+     "swap": {
+      "group": "warzywa",
+      "self": "papryka",
+      "nameCase": "D"
+     }
     }
    ],
    "steps": [
+    "«12|B|||U», seler, cebulę i «10|B|||» pokrój w kostkę, czosnek posiekaj.",
+    "Na rozgrzanej oliwie w rondelku podsmaż warzywa, dodaj paprykę wędzoną. Po 7 minutach dodaj pomidory, wodę i bazylię. Gotuj przez 10 minut.",
+    "Całość zblenduj i dopraw solą i pieprzem. Gotuj jeszcze przez 5 minut.",
+    "Makaron ugotuj według instrukcji na opakowaniu",
+    "Mozzarellę pokrój w drobną kostkę.",
+    "Zupę podaj z makaronem i mozzarellą."
+   ],
+   "mealNo": 3,
+   "stepsSource": [
     "Paprykę, seler, cebulę i marchewkę kroimy w kostkę, czosnek siekamy.",
     "Na rozgrzanej oliwie w rondelku podsmażamy warzywa, dodajemy paprykę wędzoną. Po 7 minutach dodajemy pomidory, wodę i bazylię. Gotujemy przez 10 minut.",
     "Całość blendujemy i doprawiamy solą i pieprzem. Gotujemy jeszcze przez 5 minut.",
@@ -1171,10 +1336,10 @@
    "slug": "kanapki-z-serkiem",
    "title": "Kanapki z serkiem śmietankowym, pomidorem i szczypiorkiem",
    "day": 2,
-   "slot": 4,
+   "slot": 3,
    "slotId": "kolacja",
    "slotLabel": "Kolacja",
-   "time": "18:00-21:00",
+   "time": "18:00-20:00",
    "kcal": 439,
    "protein": 12,
    "carbs": 58,
@@ -1194,7 +1359,12 @@
      "name": "chleba żytniego razowego",
      "grams": 90.0,
      "pantry": false,
-     "tag": "chleb"
+     "tag": "chleb",
+     "swap": {
+      "group": "pieczywo",
+      "self": "chleb-zytni-razowy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 3.0,
@@ -1212,7 +1382,12 @@
      "name": "pomidor",
      "grams": 160.0,
      "pantry": false,
-     "tag": "pomidor"
+     "tag": "pomidor",
+     "swap": {
+      "group": "warzywa",
+      "self": "pomidor",
+      "nameCase": "M"
+     }
     },
     {
      "qty": 2.0,
@@ -1234,6 +1409,12 @@
     }
    ],
    "steps": [
+    "Pieczywo posmaruj serkiem.",
+    "«2|Bpot|||U» i szczypiorek pokrój. «2|Bpot|||U» pokrój w plasterki, nałóż na kanapki. Szczypiorek drobno posiekaj.",
+    "Kanapki posyp szczypiorkiem i nasionami słonecznika."
+   ],
+   "mealNo": 4,
+   "stepsSource": [
     "Pieczywo smarujemy serkiem.",
     "Pomidora i szczypiorek kroimy. Pomidora kroimy w plasterki, nakładamy na kanapki. Szczypiorek drobno siekamy.",
     "Kanapki posypujemy szczypiorkiem i nasionami słonecznika."
@@ -1246,7 +1427,7 @@
    "slot": 1,
    "slotId": "sniadanie",
    "slotLabel": "Śniadanie",
-   "time": "6:00-9:00",
+   "time": "7:00-10:00",
    "kcal": 482,
    "protein": 29,
    "carbs": 49,
@@ -1269,7 +1450,12 @@
      "name": "małego banana",
      "grams": 60.0,
      "pantry": false,
-     "tag": "banan"
+     "tag": "banan",
+     "swap": {
+      "group": "owoce",
+      "self": "banan",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -1323,10 +1509,20 @@
      "name": "syropu z agawy",
      "grams": 15.0,
      "pantry": false,
-     "tag": "syrop-agawa"
+     "tag": "syrop-agawa",
+     "swap": {
+      "group": "slodziki",
+      "self": "syrop-z-agawy",
+      "nameCase": "D"
+     }
     }
    ],
    "steps": [
+    "Składniki na ciasto zblenduj i odstaw na 5-10 minut",
+    "Placuszki smaż bez tłuszczu na nieprzywierającej patelni, podaj polane «6|N|||» i posypane posiekanymi orzechami."
+   ],
+   "mealNo": 1,
+   "stepsSource": [
     "Składniki na ciasto blendujemy i odstawiamy na 5-10 minut",
     "Placuszki smażymy bez tłuszczu na nieprzywierającej patelni, podajemy polane syropem z agawy i posypane posiekanymi orzechami."
    ]
@@ -1335,10 +1531,10 @@
    "slug": "kanapki-z-serem",
    "title": "Kanapki z żółtym serem, roszponką i pomidorem",
    "day": 3,
-   "slot": 2,
-   "slotId": "drugie-sniadanie",
-   "slotLabel": "II śniadanie",
-   "time": "10:00-13:00",
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "7:00-10:00",
    "kcal": 462,
    "protein": 26,
    "carbs": 38,
@@ -1359,7 +1555,12 @@
      "name": "chleba żytniego razowego",
      "grams": 60.0,
      "pantry": false,
-     "tag": "chleb"
+     "tag": "chleb",
+     "swap": {
+      "group": "pieczywo",
+      "self": "chleb-zytni-razowy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 5.0,
@@ -1377,7 +1578,12 @@
      "name": "roszponki",
      "grams": 12.5,
      "pantry": false,
-     "tag": "salata"
+     "tag": "salata",
+     "swap": {
+      "group": "liscizielone",
+      "self": "roszponka",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -1386,7 +1592,12 @@
      "name": "pomidora",
      "grams": 160.0,
      "pantry": false,
-     "tag": "pomidor"
+     "tag": "pomidor",
+     "swap": {
+      "group": "warzywa",
+      "self": "pomidor",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -1399,6 +1610,11 @@
     }
    ],
    "steps": [
+    "Pieczywo posmaruj margaryną. Połóż na nie plastry sera.",
+    "Warzywa umyj. «3|Bpot|||U» pokrój w plastry i ułóż na kanapce razem z «2|N|||». Smacznego!"
+   ],
+   "mealNo": 2,
+   "stepsSource": [
     "Pieczywo smarujemy margaryną. Kładziemy na nie plastry sera.",
     "Warzywa myjemy. Pomidora kroimy w plastry i układamy na kanapce razem z roszponką. Smacznego!"
    ]
@@ -1407,10 +1623,10 @@
    "slug": "gyoza",
    "title": "Pierożki gyoza z warzywami chef select z kimchi",
    "day": 3,
-   "slot": 3,
+   "slot": 2,
    "slotId": "obiad",
    "slotLabel": "Obiad",
-   "time": "14:00-17:00",
+   "time": "13:00-16:00",
    "kcal": 358,
    "protein": 8,
    "carbs": 60,
@@ -1437,10 +1653,19 @@
      "name": "mandarynki",
      "grams": 65.0,
      "pantry": false,
-     "tag": "mandarynka"
+     "tag": "mandarynka",
+     "swap": {
+      "group": "owoce",
+      "self": "mandarynka",
+      "nameCase": "D"
+     }
     }
    ],
    "steps": [
+    "Pierożki podgrzej wg instrukcji na opakowaniu. Na deser zjedz «1|B|||»."
+   ],
+   "mealNo": 3,
+   "stepsSource": [
     "Pierożki podgrzewamy wg instrukcji na opakowaniu. Na deser zjadamy mandarynkę."
    ]
   },
@@ -1448,10 +1673,10 @@
    "slug": "koktajl-bananowy",
    "title": "Koktajl bananowo-orzechowy",
    "day": 3,
-   "slot": 4,
+   "slot": 3,
    "slotId": "kolacja",
    "slotLabel": "Kolacja",
-   "time": "18:00-21:00",
+   "time": "18:00-20:00",
    "kcal": 468,
    "protein": 18,
    "carbs": 52,
@@ -1471,7 +1696,12 @@
      "name": "banana",
      "grams": 120.0,
      "pantry": false,
-     "tag": "banan"
+     "tag": "banan",
+     "swap": {
+      "group": "owoce",
+      "self": "banan",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -1480,7 +1710,12 @@
      "name": "napoju sojowego",
      "grams": 250.0,
      "pantry": false,
-     "tag": "mleko"
+     "tag": "mleko",
+     "swap": {
+      "group": "mleko",
+      "self": "napoj-sojowy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -1512,6 +1747,10 @@
    ],
    "steps": [
     "Zblenduj wszystkie składniki. W razie potrzeby dodaj wody."
+   ],
+   "mealNo": 4,
+   "stepsSource": [
+    "Zblenduj wszystkie składniki. W razie potrzeby dodaj wody."
    ]
   },
   {
@@ -1521,7 +1760,7 @@
    "slot": 1,
    "slotId": "sniadanie",
    "slotLabel": "Śniadanie",
-   "time": "6:00-9:00",
+   "time": "7:00-10:00",
    "kcal": 457,
    "protein": 20,
    "carbs": 69,
@@ -1542,7 +1781,12 @@
      "name": "płatków jaglanych",
      "grams": 40.0,
      "pantry": false,
-     "tag": "platki-jaglane"
+     "tag": "platki-jaglane",
+     "swap": {
+      "group": "platki",
+      "self": "platki-jaglane",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -1551,7 +1795,12 @@
      "name": "mleka roślinnego",
      "grams": 125.0,
      "pantry": false,
-     "tag": "mleko"
+     "tag": "mleko",
+     "swap": {
+      "group": "mleko",
+      "self": "mleko-roslinne",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -1560,7 +1809,12 @@
      "name": "gruszki",
      "grams": 130.0,
      "pantry": false,
-     "tag": "gruszka"
+     "tag": "gruszka",
+     "swap": {
+      "group": "owoce",
+      "self": "gruszka",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -1587,10 +1841,22 @@
      "name": "orzechów włoskich",
      "grams": 15.0,
      "pantry": false,
-     "tag": "orzechy"
+     "tag": "orzechy",
+     "swap": {
+      "group": "orzechy",
+      "self": "orzechy-wloskie",
+      "nameCase": "D"
+     }
     }
    ],
    "steps": [
+    "Do rondelka wsyp «0|B|||» i zalej mlekiem. Gotuj na małym ogniu, aż płatki będą miękkie. Mieszaj co chwilę.",
+    "«2|B|||U» pokrój w kostkę.",
+    "Gdy jaglanka zgęstnieje, dodaj pokrojony owoc, odżywkę białkową i cynamon. Dokładnie wymieszaj.",
+    "Gotową jaglankę przełóż do miseczki i posyp orzechami. Smacznego!"
+   ],
+   "mealNo": 1,
+   "stepsSource": [
     "Do rondelka wsypujemy płatki jaglane i zalewamy mlekiem. Gotujemy na małym ogniu, aż płatki będą miękkie. Mieszamy co chwilę.",
     "Gruszkę kroimy w kostkę.",
     "Gdy jaglanka zgęstnieje, dodajemy pokrojony owoc, odżywkę białkową i cynamon. Dokładnie mieszamy.",
@@ -1601,10 +1867,10 @@
    "slug": "kanapki-z-pasta-warzywna",
    "title": "Kanapki z pastą warzywną, serem mozzarellą i ogórkiem",
    "day": 4,
-   "slot": 2,
-   "slotId": "drugie-sniadanie",
-   "slotLabel": "II śniadanie",
-   "time": "10:00-13:00",
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "7:00-10:00",
    "kcal": 484,
    "protein": 23,
    "carbs": 40,
@@ -1624,7 +1890,12 @@
      "name": "chleba żytniego razowego",
      "grams": 60.0,
      "pantry": false,
-     "tag": "chleb"
+     "tag": "chleb",
+     "swap": {
+      "group": "pieczywo",
+      "self": "chleb-zytni-razowy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -1633,7 +1904,12 @@
      "name": "pasty warzywnej",
      "grams": 40.0,
      "pantry": false,
-     "tag": "pasta-warzywna"
+     "tag": "pasta-warzywna",
+     "swap": {
+      "group": "pasty",
+      "self": "pasta-warzywna",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 6.0,
@@ -1651,10 +1927,20 @@
      "name": "ogórka",
      "grams": 75.0,
      "pantry": false,
-     "tag": "ogorek"
+     "tag": "ogorek",
+     "swap": {
+      "group": "warzywa",
+      "self": "ogorek",
+      "nameCase": "D"
+     }
     }
    ],
    "steps": [
+    "Pieczywo posmaruj «1|N|||», połóż plasterki mozzarelli.",
+    "«3|Bpot|||U» umyj, pokrój i nałóż na kanapki."
+   ],
+   "mealNo": 2,
+   "stepsSource": [
     "Pieczywo smarujemy pastą warzywną, kładziemy plasterki mozzarelli.",
     "Ogórka myjemy, kroimy i nakładamy na kanapki."
    ]
@@ -1663,10 +1949,10 @@
    "slug": "kasza-z-tofu",
    "title": "Kasza z tofu",
    "day": 4,
-   "slot": 3,
+   "slot": 2,
    "slotId": "obiad",
    "slotLabel": "Obiad",
-   "time": "14:00-17:00",
+   "time": "13:00-16:00",
    "kcal": 372,
    "protein": 23,
    "carbs": 50,
@@ -1689,7 +1975,12 @@
      "name": "kaszy gryczanej",
      "grams": 45.0,
      "pantry": false,
-     "tag": "kasza"
+     "tag": "kasza",
+     "swap": {
+      "group": "zboza",
+      "self": "kasza-gryczana",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -1698,7 +1989,12 @@
      "name": "tofu naturalnego",
      "grams": 90.0,
      "pantry": false,
-     "tag": "tofu"
+     "tag": "tofu",
+     "swap": {
+      "group": "twarogowe",
+      "self": "tofu-naturalne",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -1707,7 +2003,12 @@
      "name": "brokuła",
      "grams": 225.0,
      "pantry": false,
-     "tag": "brokul"
+     "tag": "brokul",
+     "swap": {
+      "group": "warzywa",
+      "self": "brokul",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -1725,7 +2026,12 @@
      "name": "szpinaku",
      "grams": 50.0,
      "pantry": false,
-     "tag": "szpinak"
+     "tag": "szpinak",
+     "swap": {
+      "group": "liscizielone",
+      "self": "szpinak",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -1743,7 +2049,12 @@
      "name": "oliwy z oliwek",
      "grams": 5.0,
      "pantry": false,
-     "tag": "oliwa"
+     "tag": "oliwa",
+     "swap": {
+      "group": "tluszcz",
+      "self": "oliwa",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -1765,6 +2076,13 @@
     }
    ],
    "steps": [
+    "«0|B|||U» ugotuj w osolonej wodzie i odcedź",
+    "Na patelni rozgrzej oliwę i podsmaż posiekaną cebulę i czosnek.",
+    "Dodaj różyczki «2|D|||», tofu, kaszę, wlej bulion, wymieszaj i przykryj patelnię pokrywką na 5 minut.",
+    "Dodaj «4|B|||» i wymieszaj"
+   ],
+   "mealNo": 3,
+   "stepsSource": [
     "Kaszę gryczaną gotujemy w osolonej wodzie i odcedzamy",
     "Na patelni rozgrzewamy oliwę i podsmażamy posiekaną cebulę i czosnek.",
     "Dodajemy różyczki brokuła, tofu, kaszę, wlewamy bulion, mieszamy i przykrywamy patelnię pokrywką na 5 minut.",
@@ -1775,10 +2093,10 @@
    "slug": "smoothie-strawberry",
    "title": "Smoothie strawberry and friends Solevita i batonik protein bar",
    "day": 4,
-   "slot": 4,
+   "slot": 3,
    "slotId": "kolacja",
    "slotLabel": "Kolacja",
-   "time": "18:00-21:00",
+   "time": "18:00-20:00",
    "kcal": 462,
    "protein": 27,
    "carbs": 60,
@@ -1816,7 +2134,12 @@
      "name": "orzechów włoskich",
      "grams": 15.0,
      "pantry": false,
-     "tag": "orzechy"
+     "tag": "orzechy",
+     "swap": {
+      "group": "orzechy",
+      "self": "orzechy-wloskie",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -1825,10 +2148,19 @@
      "name": "mandarynki",
      "grams": 130.0,
      "pantry": false,
-     "tag": "mandarynka"
+     "tag": "mandarynka",
+     "swap": {
+      "group": "owoce",
+      "self": "mandarynka",
+      "nameCase": "D"
+     }
     }
    ],
    "steps": [
+    "Batonik, orzechy, «3|Bpl|||» i smoothie zjedz na posiłek."
+   ],
+   "mealNo": 4,
+   "stepsSource": [
     "Batonik, orzechy, mandarynki i smoothie jemy na posiłek."
    ]
   },
@@ -1839,7 +2171,7 @@
    "slot": 1,
    "slotId": "sniadanie",
    "slotLabel": "Śniadanie",
-   "time": "6:00-9:00",
+   "time": "7:00-10:00",
    "kcal": 467,
    "protein": 30,
    "carbs": 42,
@@ -1860,7 +2192,12 @@
      "name": "serka wiejskiego",
      "grams": 200.0,
      "pantry": false,
-     "tag": "serek-wiejski"
+     "tag": "serek-wiejski",
+     "swap": {
+      "group": "twarogowe",
+      "self": "serek-wiejski",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -1869,7 +2206,12 @@
      "name": "miodu",
      "grams": 6.0,
      "pantry": false,
-     "tag": "miod"
+     "tag": "miod",
+     "swap": {
+      "group": "slodziki",
+      "self": "miod",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 5.0,
@@ -1878,7 +2220,12 @@
      "name": "orzechów włoskich",
      "grams": 20.0,
      "pantry": false,
-     "tag": "orzechy"
+     "tag": "orzechy",
+     "swap": {
+      "group": "orzechy",
+      "self": "orzechy-wloskie",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -1887,7 +2234,12 @@
      "name": "gruszki",
      "grams": 130.0,
      "pantry": false,
-     "tag": "gruszka"
+     "tag": "gruszka",
+     "swap": {
+      "group": "owoce",
+      "self": "gruszka",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -1900,6 +2252,11 @@
     }
    ],
    "steps": [
+    "«3|B|||U» umyj i pokrój w kostkę, orzechy posiekaj.",
+    "«3|B|pokrojony_B||U» wraz z orzechami dodaj do «0|D|||», polej «1|N|||» i wymieszaj. Zjedz z waflami ryżowymi."
+   ],
+   "mealNo": 1,
+   "stepsSource": [
     "Gruszkę myjemy i kroimy w kostkę, orzechy siekamy.",
     "Pokrojoną gruszkę wraz z orzechami dodajemy do serka wiejskiego, polewamy miodem i mieszamy. Zjadamy z waflami ryżowymi."
    ]
@@ -1908,10 +2265,10 @@
    "slug": "kanapka-z-pasta-z-ciecierzycy",
    "title": "Kanapka z pastą z ciecierzycy",
    "day": 5,
-   "slot": 2,
-   "slotId": "drugie-sniadanie",
-   "slotLabel": "II śniadanie",
-   "time": "10:00-13:00",
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "7:00-10:00",
    "kcal": 465,
    "protein": 14,
    "carbs": 60,
@@ -1935,7 +2292,12 @@
      "name": "ciecierzycy konserwowej",
      "grams": 80.0,
      "pantry": false,
-     "tag": "ciecierzyca"
+     "tag": "ciecierzyca",
+     "swap": {
+      "group": "straczkowe",
+      "self": "ciecierzyca",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -1953,7 +2315,12 @@
      "name": "oliwy",
      "grams": 15.0,
      "pantry": false,
-     "tag": "oliwa"
+     "tag": "oliwa",
+     "swap": {
+      "group": "tluszcz",
+      "self": "oliwa",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -1998,7 +2365,12 @@
      "name": "chleba żytniego",
      "grams": 60.0,
      "pantry": false,
-     "tag": "chleb"
+     "tag": "chleb",
+     "swap": {
+      "group": "pieczywo",
+      "self": "chleb-zytni",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 3.0,
@@ -2016,7 +2388,12 @@
      "name": "ogórka",
      "grams": 75.0,
      "pantry": false,
-     "tag": "ogorek"
+     "tag": "ogorek",
+     "swap": {
+      "group": "warzywa",
+      "self": "ogorek",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2025,10 +2402,20 @@
      "name": "marchewki",
      "grams": 45.0,
      "pantry": false,
-     "tag": "marchewka"
+     "tag": "marchewka",
+     "swap": {
+      "group": "warzywa",
+      "self": "marchewka",
+      "nameCase": "D"
+     }
     }
    ],
    "steps": [
+    "Do blendera włóż składniki na pastę, zblenduj do momentu uzyskania jednolitej masy, dopraw solą i znowu wymieszaj.",
+    "Kromki pieczywa posmaruj pastą i ułóż kiełki, plastry «9|D|||» i wstążki z «10|D|||»."
+   ],
+   "mealNo": 2,
+   "stepsSource": [
     "Do blendera wkładamy składniki na pastę, blendujemy do momentu uzyskania jednolitej masy, doprawiamy solą i znowu mieszamy.",
     "Kromki pieczywa smarujemy pastą i układamy kiełki, plastry ogórka i wstążki z marchewki."
    ]
@@ -2037,10 +2424,10 @@
    "slug": "spaghetti-bolognese",
    "title": "Wegańskie spaghetti bolognese",
    "day": 5,
-   "slot": 3,
+   "slot": 2,
    "slotId": "obiad",
    "slotLabel": "Obiad",
-   "time": "14:00-17:00",
+   "time": "13:00-16:00",
    "kcal": 385,
    "protein": 25,
    "carbs": 49,
@@ -2063,7 +2450,12 @@
      "name": "tofu naturalnego",
      "grams": 180.0,
      "pantry": false,
-     "tag": "tofu"
+     "tag": "tofu",
+     "swap": {
+      "group": "twarogowe",
+      "self": "tofu-naturalne",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2072,7 +2464,12 @@
      "name": "makaronu spaghetti pełnoziarnistego",
      "grams": 50.0,
      "pantry": false,
-     "tag": "makaron"
+     "tag": "makaron",
+     "swap": {
+      "group": "makaron",
+      "self": "makaron-pelnoziarnisty",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2081,7 +2478,12 @@
      "name": "marchewki",
      "grams": 45.0,
      "pantry": false,
-     "tag": "marchewka"
+     "tag": "marchewka",
+     "swap": {
+      "group": "warzywa",
+      "self": "marchewka",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2148,6 +2550,14 @@
     }
    ],
    "steps": [
+    "Tofu odsącz i rozdrobnij, dodaj do niego sos sojowy i paprykę wędzoną. Smaż na rozgrzanej patelni przez 7-8 minut, następnie odstaw na bok.",
+    "Na tej samej patelni podsmaż pokrojoną cebulę, czosnek oraz «2|B|starty_B||» przez około 8 minut.",
+    "Dodaj podsmażone tofu i puszkę pomidorów oraz 100 ml wody",
+    "Duś przez 25 minut, następnie dodaj listki bazylii oraz dopraw solą i pieprzem.",
+    "Makaron ugotuj według instrukcji na opakowaniu"
+   ],
+   "mealNo": 3,
+   "stepsSource": [
     "Tofu odsączamy i rozdrabniamy, dodajemy do niego sos sojowy i paprykę wędzoną. Smażymy na rozgrzanej patelni przez 7-8 minut, następnie odstawiamy na bok.",
     "Na tej samej patelni podsmażamy pokrojoną cebulę, czosnek oraz startą marchewkę przez około 8 minut.",
     "Dodajemy podsmażone tofu i puszkę pomidorów oraz 100 ml wody",
@@ -2159,10 +2569,10 @@
    "slug": "salatka-grecka",
    "title": "Sałatka grecka z serem sałatkowym i pieczywem",
    "day": 5,
-   "slot": 4,
+   "slot": 3,
    "slotId": "kolacja",
    "slotLabel": "Kolacja",
-   "time": "18:00-21:00",
+   "time": "18:00-20:00",
    "kcal": 464,
    "protein": 24,
    "carbs": 41,
@@ -2188,7 +2598,12 @@
      "name": "miksu sałat",
      "grams": 50.0,
      "pantry": false,
-     "tag": "salata"
+     "tag": "salata",
+     "swap": {
+      "group": "liscizielone",
+      "self": "miks-salat",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -2224,7 +2639,12 @@
      "name": "papryki żółtej",
      "grams": 85.0,
      "pantry": false,
-     "tag": "papryka"
+     "tag": "papryka",
+     "swap": {
+      "group": "warzywa",
+      "self": "papryka",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -2242,7 +2662,12 @@
      "name": "oliwy z oliwek",
      "grams": 5.0,
      "pantry": false,
-     "tag": "oliwa"
+     "tag": "oliwa",
+     "swap": {
+      "group": "tluszcz",
+      "self": "oliwa",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -2260,7 +2685,12 @@
      "name": "pomidora",
      "grams": 160.0,
      "pantry": false,
-     "tag": "pomidor"
+     "tag": "pomidor",
+     "swap": {
+      "group": "warzywa",
+      "self": "pomidor",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2269,7 +2699,12 @@
      "name": "ogórka zielonego",
      "grams": 150.0,
      "pantry": false,
-     "tag": "ogorek"
+     "tag": "ogorek",
+     "swap": {
+      "group": "warzywa",
+      "self": "ogorek",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2278,10 +2713,21 @@
      "name": "chleba żytniego razowego",
      "grams": 30.0,
      "pantry": false,
-     "tag": "chleb"
+     "tag": "chleb",
+     "swap": {
+      "group": "pieczywo",
+      "self": "chleb-zytni-razowy",
+      "nameCase": "D"
+     }
     }
    ],
    "steps": [
+    "Pokrój «4|B|||», cebulę, «8|B|||», «9|B|||», oliwki i ser feta/sałatkowy.",
+    "Wymieszaj oliwę, oregano, sól, pieprz, sok z cytryny.",
+    "Na talerz nałóż sałatę, pokrojone warzywa, oliwki, ser sałatkowy, polej sosem, dokładnie wymieszaj i podaj z pieczywem. Smacznego!"
+   ],
+   "mealNo": 4,
+   "stepsSource": [
     "Kroimy paprykę, cebulę, pomidor, ogórek, oliwki i ser feta/sałatkowy.",
     "Mieszamy oliwę, oregano, sól, pieprz, sok z cytryny.",
     "Na talerz nakładamy sałatę, pokrojone warzywa, oliwki, ser sałatkowy, polewamy sosem, dokładnie mieszamy i podajemy z pieczywem. Smacznego!"
@@ -2294,7 +2740,7 @@
    "slot": 1,
    "slotId": "sniadanie",
    "slotLabel": "Śniadanie",
-   "time": "6:00-9:00",
+   "time": "7:00-10:00",
    "kcal": 449,
    "protein": 26,
    "carbs": 57,
@@ -2315,7 +2761,12 @@
      "name": "płatków owsianych górskich",
      "grams": 10.0,
      "pantry": false,
-     "tag": "platki-owsiane"
+     "tag": "platki-owsiane",
+     "swap": {
+      "group": "platki",
+      "self": "platki-owsiane",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2333,7 +2784,12 @@
      "name": "małego jabłka",
      "grams": 80.0,
      "pantry": false,
-     "tag": "jablko"
+     "tag": "jablko",
+     "swap": {
+      "group": "owoce",
+      "self": "jablko",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -2342,7 +2798,12 @@
      "name": "kaki",
      "grams": 125.0,
      "pantry": false,
-     "tag": "kaki"
+     "tag": "kaki",
+     "swap": {
+      "group": "owoce",
+      "self": "kaki",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2364,6 +2825,13 @@
     }
    ],
    "steps": [
+    "Owoce pokrój.",
+    "Orzechy posiekaj i w miseczce połącz z «0|N|||».",
+    "Dodaj cynamon.",
+    "Do połączonych składników dodaj jogurt i pokrojone owoce. Smacznego!"
+   ],
+   "mealNo": 1,
+   "stepsSource": [
     "Owoce kroimy.",
     "Orzechy siekamy i w miseczce łączymy z płatkami owsianymi.",
     "Dodajemy cynamon.",
@@ -2374,10 +2842,10 @@
    "slug": "tosty-awokado",
    "title": "Tosty z jajkiem sadzonym i awokado",
    "day": 6,
-   "slot": 2,
-   "slotId": "drugie-sniadanie",
-   "slotLabel": "II śniadanie",
-   "time": "10:00-13:00",
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "7:00-10:00",
    "kcal": 469,
    "protein": 21,
    "carbs": 41,
@@ -2397,7 +2865,12 @@
      "name": "chleba tostowego pełnoziarnistego",
      "grams": 60.0,
      "pantry": false,
-     "tag": "chleb"
+     "tag": "chleb",
+     "swap": {
+      "group": "pieczywo",
+      "self": "chleb-pelnoziarnisty",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -2424,7 +2897,12 @@
      "name": "rukoli",
      "grams": 40.0,
      "pantry": false,
-     "tag": "salata"
+     "tag": "salata",
+     "swap": {
+      "group": "liscizielone",
+      "self": "rukola",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -2455,6 +2933,13 @@
     }
    ],
    "steps": [
+    "Pieczywo opiecz w tosterze lub na patelni.",
+    "Awokado obierz ze skórki i posmaruj kromki chleba.",
+    "Na rozgrzanej patelni, pod przykryciem przygotuj jajka sadzone. Dopraw solą i pieprzem.",
+    "Na posmarowanych kanapkach ułóż «3|B|||» i jajka. Posyp posiekanym szczypiorkiem. Smacznego!"
+   ],
+   "mealNo": 2,
+   "stepsSource": [
     "Pieczywo opiekamy w tosterze lub na patelni.",
     "Awokado obieramy ze skórki i smarujemy kromki chleba.",
     "Na rozgrzanej patelni, pod przykryciem przygotowujemy jajka sadzone. Doprawiamy solą i pieprzem.",
@@ -2465,10 +2950,10 @@
    "slug": "zupa-z-dyni",
    "title": "Zupa z dyni z pieczoną ciecierzycą - przepis na 3 porcje",
    "day": 6,
-   "slot": 3,
+   "slot": 2,
    "slotId": "obiad",
    "slotLabel": "Obiad",
-   "time": "14:00-17:00",
+   "time": "13:00-16:00",
    "kcal": 404,
    "protein": 17,
    "carbs": 49,
@@ -2490,7 +2975,12 @@
      "name": "dyni",
      "grams": 300.0,
      "pantry": false,
-     "tag": "dynia"
+     "tag": "dynia",
+     "swap": {
+      "group": "warzywa",
+      "self": "dynia",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -2508,7 +2998,12 @@
      "name": "ciecierzycy konserwowej",
      "grams": 480.0,
      "pantry": false,
-     "tag": "ciecierzyca"
+     "tag": "ciecierzyca",
+     "swap": {
+      "group": "straczkowe",
+      "self": "ciecierzyca",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -2526,7 +3021,12 @@
      "name": "marchwi",
      "grams": 45.0,
      "pantry": false,
-     "tag": "marchewka"
+     "tag": "marchewka",
+     "swap": {
+      "group": "warzywa",
+      "self": "marchew",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2535,7 +3035,12 @@
      "name": "ziemniaków",
      "grams": 70.0,
      "pantry": false,
-     "tag": "ziemniaki"
+     "tag": "ziemniaki",
+     "swap": {
+      "group": "ziemniaki",
+      "self": "ziemniaki",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2575,6 +3080,12 @@
     }
    ],
    "steps": [
+    "«0|B|||U», «4|B|||», «5|B|||» obierz i pokrój na duże kawałki. Ułóż na blaszce wyłożonej papierem do pieczenia. «2|B|odsaczony_B||U» ułóż obok, wszystko przypraw solą, pieprzem, czosnkiem granulowanym, słodką papryką. Piecz w piekarniku z termoobiegiem rozgrzanym do 230 stopni przez 25 minut.",
+    "Warzywa przełóż do garnka (trochę «2|D|||» zostaw do posypania), zalej mlekiem kokosowym, dolej ok 300 ml wody, zagotuj.",
+    "Zupę gotuj przez 10 minut, zblenduj na gładki krem. Podaj z «2|N|pieczony_N||» i posiekaną kolendrą. Smacznego!"
+   ],
+   "mealNo": 3,
+   "stepsSource": [
     "Dynię, marchew, ziemniaki obieramy i kroimy na duże kawałki. Układamy na blaszce wyłożonej papierem do pieczenia. Odsączoną ciecierzycę układamy obok, wszystko przyprawiamy solą, pieprzem, czosnkiem granulowanym, słodką papryką. Pieczemy w piekarniku z termoobiegiem rozgrzanym do 230 stopni przez 25 minut.",
     "Warzywa przekładamy do garnka (trochę ciecierzycy zostawiamy do posypania), zalewamy mlekiem kokosowym, dolewamy ok 300 ml wody, zagotowujemy.",
     "Zupę gotujemy przez 10 minut, blendujemy na gładki krem. Podajemy z pieczoną ciecierzycą i posiekaną kolendrą. Smacznego!"
@@ -2584,10 +3095,10 @@
    "slug": "owsianka-malinowa",
    "title": "Owsianka malinowa Crownfield",
    "day": 6,
-   "slot": 4,
+   "slot": 3,
    "slotId": "kolacja",
    "slotLabel": "Kolacja",
-   "time": "18:00-21:00",
+   "time": "18:00-20:00",
    "kcal": 475,
    "protein": 25,
    "carbs": 79,
@@ -2628,6 +3139,10 @@
     }
    ],
    "steps": [
+    "Owsiankę przygotuj zgodnie z instrukcją na opakowaniu. Zjedz z dodatkami."
+   ],
+   "mealNo": 4,
+   "stepsSource": [
     "Owsiankę przygotowujemy zgodnie z instrukcją na opakowaniu. Zjadamy z dodatkami."
    ]
   },
@@ -2638,7 +3153,7 @@
    "slot": 1,
    "slotId": "sniadanie",
    "slotLabel": "Śniadanie",
-   "time": "6:00-9:00",
+   "time": "7:00-10:00",
    "kcal": 453,
    "protein": 24,
    "carbs": 54,
@@ -2660,7 +3175,12 @@
      "name": "napoju roślinnego",
      "grams": 125.0,
      "pantry": false,
-     "tag": "mleko"
+     "tag": "mleko",
+     "swap": {
+      "group": "mleko",
+      "self": "napoj-roslinny",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -2669,7 +3189,12 @@
      "name": "płatków owsianych górskich",
      "grams": 20.0,
      "pantry": false,
-     "tag": "platki-owsiane"
+     "tag": "platki-owsiane",
+     "swap": {
+      "group": "platki",
+      "self": "platki-owsiane",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2678,7 +3203,12 @@
      "name": "marchewki",
      "grams": 45.0,
      "pantry": false,
-     "tag": "marchewka"
+     "tag": "marchewka",
+     "swap": {
+      "group": "warzywa",
+      "self": "marchewka",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2705,7 +3235,12 @@
      "name": "małego banana",
      "grams": 60.0,
      "pantry": false,
-     "tag": "banan"
+     "tag": "banan",
+     "swap": {
+      "group": "owoce",
+      "self": "banan",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2727,6 +3262,11 @@
     }
    ],
    "steps": [
+    "W rondelku podgrzej mleko roślinne, następnie dodaj «2|B|starty_B|na drobnych oczkach|» oraz «1|B|||», odżywkę, sól i cynamon. Gotuj przez 5-7 minut.",
+    "Przełóż owsiankę do miski i na wierzch dodaj posiekane orzechy oraz «5|Bpot|pokrojony_B||». Smacznego!"
+   ],
+   "mealNo": 1,
+   "stepsSource": [
     "W rondelku podgrzewamy mleko roślinne, następnie dodajemy startą na drobnych oczkach marchewkę oraz płatki owsiane, odżywkę, sól i cynamon. Gotujemy przez 5-7 minut.",
     "Przekładamy owsiankę do miski i na wierzch dodajemy posiekane orzechy oraz pokrojonego banana. Smacznego!"
    ]
@@ -2735,10 +3275,10 @@
    "slug": "kanapka-z-tofu-twarozkiem",
    "title": "Kanapka z tofu twarożkiem",
    "day": 7,
-   "slot": 2,
-   "slotId": "drugie-sniadanie",
-   "slotLabel": "II śniadanie",
-   "time": "10:00-13:00",
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "7:00-10:00",
    "kcal": 457,
    "protein": 18,
    "carbs": 57,
@@ -2760,7 +3300,12 @@
      "name": "bułki grahamki",
      "grams": 80.0,
      "pantry": false,
-     "tag": "bulka"
+     "tag": "bulka",
+     "swap": {
+      "group": "pieczywo",
+      "self": "bulka-grahamka",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2787,7 +3332,12 @@
      "name": "tofu naturalnego",
      "grams": 90.0,
      "pantry": false,
-     "tag": "tofu"
+     "tag": "tofu",
+     "swap": {
+      "group": "twarogowe",
+      "self": "tofu-naturalne",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -2805,7 +3355,12 @@
      "name": "pomidora",
      "grams": 160.0,
      "pantry": false,
-     "tag": "pomidor"
+     "tag": "pomidor",
+     "swap": {
+      "group": "warzywa",
+      "self": "pomidor",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 3.0,
@@ -2818,6 +3373,13 @@
     }
    ],
    "steps": [
+    "Bułkę pokrój na pół, posmaruj serkiem śmietankowym.",
+    "Tofu przełóż do miseczki, dodaj majonez i rozgnieć widelcem.",
+    "Ogórki drobno posiekaj. Dodaj do twarożku, wymieszaj.",
+    "Bułkę posmaruj twarożkiem, zjedz z «5|N|||» i posiekanym szczypiorkiem."
+   ],
+   "mealNo": 2,
+   "stepsSource": [
     "Bułkę kroimy na pół, smarujemy serkiem śmietankowym.",
     "Tofu przekładamy do miseczki, dodajemy majonez i rozgniatamy widelcem.",
     "Ogórki drobno siekamy. Dodajemy do twarożku, mieszamy.",
@@ -2828,10 +3390,10 @@
    "slug": "roslinna-kaszanka",
    "title": "Roślinna kaszanka Dobra Kaloria z pieczywem i warzywami",
    "day": 7,
-   "slot": 3,
+   "slot": 2,
    "slotId": "obiad",
    "slotLabel": "Obiad",
-   "time": "14:00-17:00",
+   "time": "13:00-16:00",
    "kcal": 388,
    "protein": 12,
    "carbs": 49,
@@ -2858,10 +3420,19 @@
      "name": "bułki",
      "grams": 60.0,
      "pantry": false,
-     "tag": "bulka"
+     "tag": "bulka",
+     "swap": {
+      "group": "pieczywo",
+      "self": "bulka-grahamka",
+      "nameCase": "D"
+     }
     }
    ],
    "steps": [
+    "Kaszankę podgrzej, zjedz z pieczywem."
+   ],
+   "mealNo": 3,
+   "stepsSource": [
     "Kaszankę podgrzewamy, jemy z pieczywem."
    ]
   },
@@ -2869,10 +3440,10 @@
    "slug": "bruschetta",
    "title": "Bruschetta z pomidorami, świeżymi ziołami i serem grana padano",
    "day": 7,
-   "slot": 4,
+   "slot": 3,
    "slotId": "kolacja",
    "slotLabel": "Kolacja",
-   "time": "18:00-21:00",
+   "time": "18:00-20:00",
    "kcal": 480,
    "protein": 24,
    "carbs": 49,
@@ -2903,7 +3474,12 @@
      "name": "pomidora",
      "grams": 100.0,
      "pantry": false,
-     "tag": "pomidor"
+     "tag": "pomidor",
+     "swap": {
+      "group": "warzywa",
+      "self": "pomidor",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2957,7 +3533,12 @@
      "name": "oliwy z oliwek",
      "grams": 5.0,
      "pantry": false,
-     "tag": "oliwa"
+     "tag": "oliwa",
+     "swap": {
+      "group": "tluszcz",
+      "self": "oliwa",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -2970,6 +3551,13 @@
     }
    ],
    "steps": [
+    "«1|Bpl|||U» umyj, cebulę i czosnek obierz. Warzywa pokrój w kostkę.",
+    "Pokrojone warzywa wymieszaj ze sobą, dodaj posiekaną bazylię. Całość dopraw solą, pieprzem, octem i «7|N|||».",
+    "Bagietkę pokrój na kromki i piecz w piekarniku rozgrzanym do 180 stopni przez około 5 minut, aż będą chrupkie.",
+    "Na grzanki nałóż «1|Bpl|||» z cebulką i czosnkiem, posyp startym serem grana padano."
+   ],
+   "mealNo": 4,
+   "stepsSource": [
     "Pomidory myjemy, cebulę i czosnek obieramy. Warzywa kroimy w kostkę.",
     "Pokrojone warzywa mieszamy ze sobą, dodajemy posiekaną bazylię. Całość doprawiamy solą, pieprzem, octem i oliwą z oliwek.",
     "Bagietkę kroimy na kromki i pieczemy w piekarniku rozgrzanym do 180 stopni przez około 5 minut, aż będą chrupkie.",
@@ -2983,7 +3571,7 @@
    "slot": 1,
    "slotId": "sniadanie",
    "slotLabel": "Śniadanie",
-   "time": "6:00-9:00",
+   "time": "7:00-10:00",
    "kcal": 454,
    "protein": 35,
    "carbs": 41,
@@ -3058,7 +3646,12 @@
      "name": "twarogu chudego",
      "grams": 90.0,
      "pantry": false,
-     "tag": "twarog"
+     "tag": "twarog",
+     "swap": {
+      "group": "twarogowe",
+      "self": "twarog-chudy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.5,
@@ -3080,6 +3673,12 @@
     }
    ],
    "steps": [
+    "Składniki omletu wymieszaj lub zblenduj ze sobą, smaż na patelni pod przykryciem przez 3-5 minut na średnim ogniu.",
+    "Składniki kremu zblenduj na gładką masę.",
+    "Omlet ściągnij z patelni. Odstaw, żeby nieco ostygł. Posmaruj kremem i złóż na pół. Smacznego!"
+   ],
+   "mealNo": 1,
+   "stepsSource": [
     "Składniki omletu mieszamy lub blendujemy ze sobą, smażymy na patelni pod przykryciem przez 3-5 minut na średnim ogniu.",
     "Składniki kremu blendujemy na gładką masę.",
     "Omlet ściągamy z patelni. Odstawiamy, żeby nieco ostygł. Smarujemy kremem i składamy na pół. Smacznego!"
@@ -3089,10 +3688,10 @@
    "slug": "hummus-spicy-salsa",
    "title": "Hummus spicy salsa z waflami ryżowymi",
    "day": 8,
-   "slot": 2,
-   "slotId": "drugie-sniadanie",
-   "slotLabel": "II śniadanie",
-   "time": "10:00-13:00",
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "7:00-10:00",
    "kcal": 458,
    "protein": 16,
    "carbs": 57,
@@ -3112,7 +3711,12 @@
      "name": "hummusu spicy salsa",
      "grams": 80.0,
      "pantry": false,
-     "tag": "hummus"
+     "tag": "hummus",
+     "swap": {
+      "group": "pasty",
+      "self": "hummus",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 3.0,
@@ -3130,7 +3734,12 @@
      "name": "pomidorków koktajlowych",
      "grams": 100.0,
      "pantry": false,
-     "tag": "pomidor"
+     "tag": "pomidor",
+     "swap": {
+      "group": "warzywa",
+      "self": "pomidor",
+      "nameCase": "Dpl"
+     }
     },
     {
      "qty": 1.0,
@@ -3143,6 +3752,10 @@
     }
    ],
    "steps": [
+    "Wafle ryżowe zjedz z «0|N|||» i pomidorkami koktajlowymi. Na deser zjedz jogurt."
+   ],
+   "mealNo": 2,
+   "stepsSource": [
     "Wafle ryżowe zjadamy z hummusem i pomidorkami koktajlowymi. Na deser zjadamy jogurt."
    ]
   },
@@ -3150,10 +3763,10 @@
    "slug": "zapiekanka-ziemniaczana",
    "title": "Zapiekanka ziemniaczana z mozzarellą",
    "day": 8,
-   "slot": 3,
+   "slot": 2,
    "slotId": "obiad",
    "slotLabel": "Obiad",
-   "time": "14:00-17:00",
+   "time": "13:00-16:00",
    "kcal": 373,
    "protein": 18,
    "carbs": 42,
@@ -3175,7 +3788,12 @@
      "name": "ziemniaków",
      "grams": 140.0,
      "pantry": false,
-     "tag": "ziemniaki"
+     "tag": "ziemniaki",
+     "swap": {
+      "group": "ziemniaki",
+      "self": "ziemniaki",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 4.0,
@@ -3184,7 +3802,12 @@
      "name": "szpinaku",
      "grams": 100.0,
      "pantry": false,
-     "tag": "szpinak"
+     "tag": "szpinak",
+     "swap": {
+      "group": "liscizielone",
+      "self": "szpinak",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -3211,7 +3834,12 @@
      "name": "oliwy z oliwek",
      "grams": 5.0,
      "pantry": false,
-     "tag": "oliwa"
+     "tag": "oliwa",
+     "swap": {
+      "group": "tluszcz",
+      "self": "oliwa",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -3251,6 +3879,15 @@
     }
    ],
    "steps": [
+    "Piekarnik nagrzej do 190 stopni.",
+    "«0|B|||U» obierz i pokrój w cienkie plasterki, czosnek posiekaj.",
+    "Na patelni rozgrzej oliwę. Podsmaż czosnek i dodaj do niego «1|B|umyty_B||» i gałkę muszkatołową. Przypraw solą i pieprzem.",
+    "Mozzarellę odsącz i pokrój na plasterki.",
+    "Do naczynia żaroodpornego wlej 1/3 passaty z pomidorów, ułóż na niej kilka liści bazylii, posyp solą, ułóż plastry «0|D|||», sera mozzarella i «1|B|||». Ułóż kolejne warstwy, aż do wyczerpania wszystkich składników. Ostatnią warstwę wykończ serem mozzarella.",
+    "Naczynie przykryj folią do pieczenia. Piecz przez 30 minut, po czym zdejmij folię i zapiecz bez przykrycia, przez 10 minut na trybie termoobieg. Smacznego!"
+   ],
+   "mealNo": 3,
+   "stepsSource": [
     "Piekarnik nagrzewamy do 190 stopni.",
     "Ziemniaki obieramy i kroimy w cienkie plasterki, czosnek siekamy.",
     "Na patelni rozgrzewamy oliwę. Podsmażamy czosnek i dodajemy do niego umyty szpinak i gałkę muszkatołową. Przyprawiamy solą i pieprzem.",
@@ -3263,10 +3900,10 @@
    "slug": "ryzowy-pudding",
    "title": "Ryżowy pudding z prażonymi gruszkami",
    "day": 8,
-   "slot": 4,
+   "slot": 3,
    "slotId": "kolacja",
    "slotLabel": "Kolacja",
-   "time": "18:00-21:00",
+   "time": "18:00-20:00",
    "kcal": 472,
    "protein": 18,
    "carbs": 59,
@@ -3287,7 +3924,12 @@
      "name": "ryżu basmati",
      "grams": 30.0,
      "pantry": false,
-     "tag": "ryz"
+     "tag": "ryz",
+     "swap": {
+      "group": "zboza",
+      "self": "ryz-basmati",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -3305,7 +3947,12 @@
      "name": "gruszki",
      "grams": 130.0,
      "pantry": false,
-     "tag": "gruszka"
+     "tag": "gruszka",
+     "swap": {
+      "group": "owoce",
+      "self": "gruszka",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -3332,7 +3979,12 @@
      "name": "oleju rzepakowego",
      "grams": 5.0,
      "pantry": false,
-     "tag": "oliwa"
+     "tag": "oliwa",
+     "swap": {
+      "group": "tluszcz",
+      "self": "olej-rzepakowy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -3354,6 +4006,14 @@
     }
    ],
    "steps": [
+    "Ryż ugotuj według instrukcji na opakowaniu i odsącz.",
+    "«2|B|||U» obierz i pokrój w kostkę. Podsmaż na oleju ze wskazaną połową porcji erytrolu przez 10 minut na patelni.",
+    "Jogurt skyr połącz z masłem orzechowym, erytrolem i cynamonem w miseczce.",
+    "Ugotowany ryż połącz z jogurtem i «2|N|prazony_N||».",
+    "Całość przełóż do miseczek. Smacznego!"
+   ],
+   "mealNo": 4,
+   "stepsSource": [
     "Ryż gotujemy według instrukcji na opakowaniu i odsączamy.",
     "Gruszkę obieramy i kroimy w kostkę. Podsmażamy na oleju ze wskazaną połową porcji erytrolu przez 10 minut na patelni.",
     "Jogurt skyr łączymy z masłem orzechowym, erytrolem i cynamonem w miseczce.",
@@ -3368,7 +4028,7 @@
    "slot": 1,
    "slotId": "sniadanie",
    "slotLabel": "Śniadanie",
-   "time": "6:00-9:00",
+   "time": "7:00-10:00",
    "kcal": 466,
    "protein": 27,
    "carbs": 52,
@@ -3402,7 +4062,12 @@
      "name": "kaszy jaglanej",
      "grams": 30.0,
      "pantry": false,
-     "tag": "kasza"
+     "tag": "kasza",
+     "swap": {
+      "group": "zboza",
+      "self": "kasza-jaglana",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -3420,7 +4085,12 @@
      "name": "napoju sojowego",
      "grams": 105.0,
      "pantry": false,
-     "tag": "mleko"
+     "tag": "mleko",
+     "swap": {
+      "group": "mleko",
+      "self": "napoj-sojowy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -3447,7 +4117,12 @@
      "name": "posiekanych orzechów włoskich",
      "grams": 8.0,
      "pantry": false,
-     "tag": "orzechy"
+     "tag": "orzechy",
+     "swap": {
+      "group": "orzechy",
+      "self": "orzechy-wloskie",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -3456,7 +4131,12 @@
      "name": "syropu z agawy",
      "grams": 7.0,
      "pantry": false,
-     "tag": "syrop-agawa"
+     "tag": "syrop-agawa",
+     "swap": {
+      "group": "slodziki",
+      "self": "syrop-z-agawy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -3469,6 +4149,13 @@
     }
    ],
    "steps": [
+    "Kaszę ugotuj w osolonej wodzie według instrukcji na opakowaniu.",
+    "Daktyle jeśli masz suszone, zalej gorącą wodą na 10 minut. W przypadku daktyli świeżych pomiń ten krok.",
+    "Do blendera przełóż czekoladę, daktyle, masło orzechowe, napój roślinny, jogurt, odżywkę wegańską oraz ugotowaną kaszę.",
+    "Całość zblenduj, przełóż do szklanek oblanych «7|N|||» i posypanych posiekanymi orzechami. Jeśli jest za gęste, dolej wody. Na wierzchu ułóż pozostałą posiekaną czekoladę. Smacznego!"
+   ],
+   "mealNo": 1,
+   "stepsSource": [
     "Kaszę gotujemy w osolonej wodzie według instrukcji na opakowaniu.",
     "Daktyle jeśli mamy suszone, zalewamy gorącą wodą na 10 minut. W przypadku daktyli świeżych pomijamy ten krok.",
     "Do blendera przekładamy czekoladę, daktyle, masło orzechowe, napój roślinny, jogurt, odżywkę wegańską oraz ugotowaną kaszę.",
@@ -3479,10 +4166,10 @@
    "slug": "pasta-z-pstroga",
    "title": "Pasta z wędzonego pstrąga i twarogu ze szczypiorkiem, warzywami i pieczywem",
    "day": 9,
-   "slot": 2,
-   "slotId": "drugie-sniadanie",
-   "slotLabel": "II śniadanie",
-   "time": "10:00-13:00",
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "7:00-10:00",
    "kcal": 446,
    "protein": 31,
    "carbs": 41,
@@ -3505,7 +4192,12 @@
      "name": "chleba żytniego razowego",
      "grams": 60.0,
      "pantry": false,
-     "tag": "chleb"
+     "tag": "chleb",
+     "swap": {
+      "group": "pieczywo",
+      "self": "chleb-zytni-razowy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -3532,7 +4224,12 @@
      "name": "ogórka zielonego",
      "grams": 75.0,
      "pantry": false,
-     "tag": "ogorek"
+     "tag": "ogorek",
+     "swap": {
+      "group": "warzywa",
+      "self": "ogorek",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 6.0,
@@ -3541,7 +4238,12 @@
      "name": "rzodkiewek",
      "grams": 90.0,
      "pantry": false,
-     "tag": "rzodkiewka"
+     "tag": "rzodkiewka",
+     "swap": {
+      "group": "warzywa",
+      "self": "rzodkiewka",
+      "nameCase": "Dpl"
+     }
     },
     {
      "qty": 1.0,
@@ -3550,7 +4252,12 @@
      "name": "rukoli",
      "grams": 20.0,
      "pantry": false,
-     "tag": "salata"
+     "tag": "salata",
+     "swap": {
+      "group": "liscizielone",
+      "self": "rukola",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 3.0,
@@ -3590,6 +4297,13 @@
     }
    ],
    "steps": [
+    "Pstrąga obierz z ości i podziel na mniejsze kawałki.",
+    "Posiekaj szczypiorek i przełóż do miski.",
+    "Dodaj twaróg, dokładnie wymieszaj. Dopraw solą i pieprzem.",
+    "Gotową pastę podaj z pokrojonymi warzywami: «4|N|||», «3|N|||», «5|N|||» i pieczywem posmarowanym masłem. Smacznego!"
+   ],
+   "mealNo": 2,
+   "stepsSource": [
     "Pstrąga obieramy z ości i dzielimy na mniejsze kawałki.",
     "Siekamy szczypiorek i przekładamy do miski.",
     "Dodajemy twaróg, dokładnie mieszamy. Doprawiamy solą i pieprzem.",
@@ -3600,10 +4314,10 @@
    "slug": "zupa-krem-z-pomidorow",
    "title": "Zupa krem z pomidorów z bazylią Chef select",
    "day": 9,
-   "slot": 3,
+   "slot": 2,
    "slotId": "obiad",
    "slotLabel": "Obiad",
-   "time": "14:00-17:00",
+   "time": "13:00-16:00",
    "kcal": 370,
    "protein": 9,
    "carbs": 46,
@@ -3634,6 +4348,10 @@
     }
    ],
    "steps": [
+    "Podgrzej zupę wg instrukcji na opakowaniu. Na deser zjedz batona."
+   ],
+   "mealNo": 3,
+   "stepsSource": [
     "Podgrzewamy zupę wg instrukcji na opakowaniu. Na deser zjadamy batona."
    ]
   },
@@ -3641,10 +4359,10 @@
    "slug": "ryzowa-salatka-z-ananasem",
    "title": "Ryżowa sałatka z ananasem, ogórkiem, selerem i kukurydzą + shake białkowy",
    "day": 9,
-   "slot": 4,
+   "slot": 3,
    "slotId": "kolacja",
    "slotLabel": "Kolacja",
-   "time": "18:00-21:00",
+   "time": "18:00-20:00",
    "kcal": 458,
    "protein": 26,
    "carbs": 55,
@@ -3668,7 +4386,12 @@
      "name": "ryżu basmati",
      "grams": 30.0,
      "pantry": false,
-     "tag": "ryz"
+     "tag": "ryz",
+     "swap": {
+      "group": "zboza",
+      "self": "ryz-basmati",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 3.0,
@@ -3695,7 +4418,12 @@
      "name": "małego ogórka",
      "grams": 70.0,
      "pantry": false,
-     "tag": "ogorek"
+     "tag": "ogorek",
+     "swap": {
+      "group": "warzywa",
+      "self": "ogorek",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -3704,7 +4432,12 @@
      "name": "selera naciowego",
      "grams": 45.0,
      "pantry": false,
-     "tag": "seler"
+     "tag": "seler",
+     "swap": {
+      "group": "warzywa",
+      "self": "seler-naciowy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 0.5,
@@ -3753,6 +4486,13 @@
     }
    ],
    "steps": [
+    "Ryż ugotuj według instrukcji na opakowaniu.",
+    "Do ugotowanego, ostudzonego ryżu dodaj odcedzoną kukurydzę, posiekaną kolendrę i sok z cytryny.",
+    "Ananasa, «3|Bpot|||», «4|B|||» pokrój w drobną kostkę i dodaj do ryżu.",
+    "Dopraw solą, pieprzem, dodaj majonez wegański. Dokładnie wymieszaj. Odżywkę wymieszaj z wodą i wypij shake białkowy. Smacznego!"
+   ],
+   "mealNo": 4,
+   "stepsSource": [
     "Ryż gotujemy według instrukcji na opakowaniu.",
     "Do ugotowanego, ostudzonego ryżu dodajemy odcedzoną kukurydzę, posiekaną kolendrę i sok z cytryny.",
     "Ananasa, ogórka, seler naciowy kroimy w drobną kostkę i dodajemy do ryżu.",
@@ -3766,7 +4506,7 @@
    "slot": 1,
    "slotId": "sniadanie",
    "slotLabel": "Śniadanie",
-   "time": "6:00-9:00",
+   "time": "7:00-10:00",
    "kcal": 491,
    "protein": 26,
    "carbs": 55,
@@ -3786,7 +4526,12 @@
      "name": "chleba żytniego",
      "grams": 60.0,
      "pantry": false,
-     "tag": "chleb"
+     "tag": "chleb",
+     "swap": {
+      "group": "pieczywo",
+      "self": "chleb-zytni",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 4.0,
@@ -3804,7 +4549,12 @@
      "name": "banana",
      "grams": 60.0,
      "pantry": false,
-     "tag": "banan"
+     "tag": "banan",
+     "swap": {
+      "group": "owoce",
+      "self": "banan",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -3817,6 +4567,12 @@
     }
    ],
    "steps": [
+    "Pokrojone kromki «0|D|||» przypiecz na patelni",
+    "Pieczywo posmaruj masłem orzechowym i na wierzch ułóż «2|Bpot|pokrojony_B||».",
+    "Z odżywki i wody przygotuj shake, pij do posiłku"
+   ],
+   "mealNo": 1,
+   "stepsSource": [
     "Pokrojone kromki chleba żytniego przypiekamy na patelni",
     "Pieczywo smarujemy masłem orzechowym i na wierzch układamy pokrojonego banana.",
     "Z odżywki i wody przygotowujemy shake, pijemy do posiłku"
@@ -3826,10 +4582,10 @@
    "slug": "roslinne-kabanosy",
    "title": "Roślinne kabanosy Bez kęsa mięsa Tarczyński z pieczywem i warzywami",
    "day": 10,
-   "slot": 2,
-   "slotId": "drugie-sniadanie",
-   "slotLabel": "II śniadanie",
-   "time": "10:00-13:00",
+   "slot": 1,
+   "slotId": "sniadanie",
+   "slotLabel": "Śniadanie",
+   "time": "7:00-10:00",
    "kcal": 475,
    "protein": 25,
    "carbs": 34,
@@ -3857,7 +4613,12 @@
      "name": "pomidora",
      "grams": 160.0,
      "pantry": false,
-     "tag": "pomidor"
+     "tag": "pomidor",
+     "swap": {
+      "group": "warzywa",
+      "self": "pomidor",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -3870,6 +4631,10 @@
     }
    ],
    "steps": [
+    "Kabanosy zjedz z warzywami. Po posiłku zjedz przekąskę."
+   ],
+   "mealNo": 2,
+   "stepsSource": [
     "Kabanosy jemy z warzywami. Po posiłku zjadamy przekąskę."
    ]
   },
@@ -3877,10 +4642,10 @@
    "slug": "makaron-penne",
    "title": "Makaron penne ze szpinakiem, pieczarkami, pomidorkami cherry i serem grana padano",
    "day": 10,
-   "slot": 3,
+   "slot": 2,
    "slotId": "obiad",
    "slotLabel": "Obiad",
-   "time": "14:00-17:00",
+   "time": "13:00-16:00",
    "kcal": 360,
    "protein": 16,
    "carbs": 37,
@@ -3906,7 +4671,12 @@
      "name": "makaronu penne",
      "grams": 60.0,
      "pantry": false,
-     "tag": "makaron"
+     "tag": "makaron",
+     "swap": {
+      "group": "makaron",
+      "self": "makaron-penne",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 3.0,
@@ -3915,7 +4685,12 @@
      "name": "szpinaku",
      "grams": 75.0,
      "pantry": false,
-     "tag": "szpinak"
+     "tag": "szpinak",
+     "swap": {
+      "group": "liscizielone",
+      "self": "szpinak",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 6.0,
@@ -3951,7 +4726,12 @@
      "name": "pieczarek",
      "grams": 200.0,
      "pantry": false,
-     "tag": "pieczarki"
+     "tag": "pieczarki",
+     "swap": {
+      "group": "warzywa",
+      "self": "pieczarki",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 1.0,
@@ -3969,7 +4749,12 @@
      "name": "brokuła",
      "grams": 225.0,
      "pantry": false,
-     "tag": "brokul"
+     "tag": "brokul",
+     "swap": {
+      "group": "warzywa",
+      "self": "brokul",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 10.0,
@@ -3978,7 +4763,12 @@
      "name": "pomidorków",
      "grams": 200.0,
      "pantry": false,
-     "tag": "pomidor"
+     "tag": "pomidor",
+     "swap": {
+      "group": "warzywa",
+      "self": "pomidor",
+      "nameCase": "Dpl"
+     }
     },
     {
      "qty": 1.0,
@@ -4014,10 +4804,26 @@
      "name": "oliwy z oliwek",
      "grams": 10.0,
      "pantry": false,
-     "tag": "oliwa"
+     "tag": "oliwa",
+     "swap": {
+      "group": "tluszcz",
+      "self": "oliwa",
+      "nameCase": "D"
+     }
     }
    ],
    "steps": [
+    "«7|B|||U» pokrój na mniejsze różyczki.",
+    "W rondlu zagotuj wodę i dopraw ją solą, pieprzem i ksylitolem. «7|B|||U» gotuj, aż będzie miękki, około 5-7 minut.",
+    "Czosnek i cebulę posiekaj, «5|B|||» pokrój. W rondelku z odrobiną oliwy duś czosnek z cebulką.",
+    "Gdy cebulka z czosnkiem się zeszklą, dodaj «5|B|||» i wszystko razem duś.",
+    "Do uduszonych warzyw wlej śmietankę i gotuj, aż lekko zgęstnieje.",
+    "Gdy sos się gotuje, ugotuj makaron według instrukcji umieszczonej na opakowaniu.",
+    "Do ugotowanego sosu dodaj «7|B|ugotowany_B||», «1|B|swiezy_B||», pokrojone pomidorki cherry, całość wymieszaj i dopraw solą z pieprzem.",
+    "Gotowy sos wymieszaj z makaronem i posyp serem grana padano. Smacznego!"
+   ],
+   "mealNo": 3,
+   "stepsSource": [
     "Brokuł kroimy na mniejsze różyczki.",
     "W rondlu gotujemy wodę i doprawiamy ją solą, pieprzem i ksylitolem. Brokuł gotujemy, aż będzie miękki, około 5-7 minut.",
     "Czosnek i cebulę siekamy, pieczarki kroimy. W rondelku z odrobiną oliwy dusimy czosnek z cebulką.",
@@ -4032,10 +4838,10 @@
    "slug": "kanapka-z-pasta-pomidorowa",
    "title": "Kanapka z pastą pomidorową",
    "day": 10,
-   "slot": 4,
+   "slot": 3,
    "slotId": "kolacja",
    "slotLabel": "Kolacja",
-   "time": "18:00-21:00",
+   "time": "18:00-20:00",
    "kcal": 443,
    "protein": 19,
    "carbs": 66,
@@ -4056,7 +4862,12 @@
      "name": "soczewicy czerwonej",
      "grams": 40.0,
      "pantry": false,
-     "tag": "soczewica"
+     "tag": "soczewica",
+     "swap": {
+      "group": "straczkowe",
+      "self": "soczewica",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 2.0,
@@ -4065,7 +4876,12 @@
      "name": "chleba żytniego razowego",
      "grams": 60.0,
      "pantry": false,
-     "tag": "chleb"
+     "tag": "chleb",
+     "swap": {
+      "group": "pieczywo",
+      "self": "chleb-zytni-razowy",
+      "nameCase": "D"
+     }
     },
     {
      "qty": 3.0,
@@ -4114,6 +4930,13 @@
     }
    ],
    "steps": [
+    "«0|B|||U» ugotuj zgodnie z instrukcją na opakowaniu",
+    "Po ugotowaniu «0|B|||» ostudź",
+    "Przełóż do blendera wszystkie składniki pasty i zblenduj na gładką masę.",
+    "Podaj z pieczywem."
+   ],
+   "mealNo": 4,
+   "stepsSource": [
     "Soczewicę gotujemy zgodnie z instrukcją na opakowaniu",
     "Po ugotowaniu soczewicę studzimy",
     "Przekładamy do blendera wszystkie składniki pasty i blendujemy na gładką masę.",
@@ -4168,5 +4991,1402 @@
     "1 sztuka (120 g) banana = 1 sztuka (170 g) dużego jabłka = 1 sztuka (240 g) pomarańczy = 1⁄2 sztuki (125 g) kaki = 3 sztuki (195 g) mandarynek = 2 sztuki (180 g) brzoskwiń = 1 sztuka (170 g) gruszki = 2 sztuki (160 g) kiwi = 3 garści (210 g) malin = 4 garści (280 g) truskawek = 2 garści (140 g) winogron = 1 sztuka (220 g) grejpfruta = 1⁄2 sztuki (140 g) mango = 7 sztuk (210 g) śliwek = 200 g ananasa = 4 garści (175 g) borówek = 2 garści (160 g) czereśni"
    ]
   }
- ]
+ ],
+ "featuredIngredients": [
+  "jajka",
+  "makaron",
+  "ryz",
+  "kasza",
+  "platki-owsiane",
+  "chleb",
+  "banan",
+  "jablko",
+  "gruszka",
+  "pomidor",
+  "ogorek",
+  "papryka",
+  "szpinak",
+  "pieczarki",
+  "awokado",
+  "mozzarella",
+  "serek-wiejski",
+  "tofu",
+  "orzechy",
+  "maslo-orzechowe"
+ ],
+ "swapAdjectives": {
+  "umyty_B": {
+   "m": "umyty",
+   "f": "umytą",
+   "n": "umyte",
+   "pl": "umyte",
+   "mz": "umytego"
+  },
+  "swiezy_B": {
+   "m": "świeży",
+   "f": "świeżą",
+   "n": "świeże",
+   "pl": "świeże",
+   "mz": "świeżego"
+  },
+  "odsaczony_B": {
+   "m": "odsączony",
+   "f": "odsączoną",
+   "n": "odsączone",
+   "pl": "odsączone",
+   "mz": "odsączonego"
+  },
+  "pieczony_N": {
+   "m": "pieczonym",
+   "f": "pieczoną",
+   "n": "pieczonym",
+   "pl": "pieczonymi",
+   "mz": "pieczonym"
+  },
+  "pokrojony_B": {
+   "m": "pokrojony",
+   "f": "pokrojoną",
+   "n": "pokrojone",
+   "pl": "pokrojone",
+   "mz": "pokrojonego"
+  },
+  "ugotowany_B": {
+   "m": "ugotowany",
+   "f": "ugotowaną",
+   "n": "ugotowane",
+   "pl": "ugotowane",
+   "mz": "ugotowanego"
+  },
+  "podsmazony_B": {
+   "m": "podsmażony",
+   "f": "podsmażoną",
+   "n": "podsmażone",
+   "pl": "podsmażone",
+   "mz": "podsmażonego"
+  },
+  "przyprawiony_B": {
+   "m": "przyprawiony",
+   "f": "przyprawioną",
+   "n": "przyprawione",
+   "pl": "przyprawione",
+   "mz": "przyprawionego"
+  },
+  "prazony_N": {
+   "m": "prażonym",
+   "f": "prażoną",
+   "n": "prażonym",
+   "pl": "prażonymi",
+   "mz": "prażonym"
+  },
+  "pokrojony_N": {
+   "m": "pokrojonym",
+   "f": "pokrojoną",
+   "n": "pokrojonym",
+   "pl": "pokrojonymi",
+   "mz": "pokrojonym"
+  },
+  "starty_B": {
+   "m": "starty",
+   "f": "startą",
+   "n": "starte",
+   "pl": "starte",
+   "mz": "startego"
+  },
+  "ugotowany_N": {
+   "m": "ugotowanym",
+   "f": "ugotowaną",
+   "n": "ugotowanym",
+   "pl": "ugotowanymi",
+   "mz": "ugotowanym"
+  },
+  "przygotowany_B": {
+   "m": "przygotowany",
+   "f": "przygotowaną",
+   "n": "przygotowane",
+   "pl": "przygotowane",
+   "mz": "przygotowanego"
+  }
+ },
+ "swapGroups": {
+  "platki": {
+   "label": "Płatki",
+   "options": [
+    {
+     "id": "platki-owsiane",
+     "label": "Płatki owsiane",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "płatki owsiane",
+      "D": "płatków owsianych",
+      "B": "płatki owsiane",
+      "N": "płatkami owsianymi",
+      "Ms": "płatkach owsianych"
+     },
+     "rodzajB": "pl"
+    },
+    {
+     "id": "platki-jaglane",
+     "label": "Płatki jaglane",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "płatki jaglane",
+      "D": "płatków jaglanych",
+      "B": "płatki jaglane",
+      "N": "płatkami jaglanymi",
+      "Ms": "płatkach jaglanych"
+     },
+     "rodzajB": "pl"
+    },
+    {
+     "id": "platki-gryczane",
+     "label": "Płatki gryczane",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "płatki gryczane",
+      "D": "płatków gryczanych",
+      "B": "płatki gryczane",
+      "N": "płatkami gryczanymi",
+      "Ms": "płatkach gryczanych"
+     },
+     "rodzajB": "pl"
+    },
+    {
+     "id": "platki-ryzowe",
+     "label": "Płatki ryżowe",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "płatki ryżowe",
+      "D": "płatków ryżowych",
+      "B": "płatki ryżowe",
+      "N": "płatkami ryżowymi",
+      "Ms": "płatkach ryżowych"
+     },
+     "rodzajB": "pl"
+    },
+    {
+     "id": "platki-orkiszowe",
+     "label": "Płatki orkiszowe",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "płatki orkiszowe",
+      "D": "płatków orkiszowych",
+      "B": "płatki orkiszowe",
+      "N": "płatkami orkiszowymi",
+      "Ms": "płatkach orkiszowych"
+     },
+     "rodzajB": "pl"
+    }
+   ]
+  },
+  "zboza": {
+   "label": "Ryż i kasze",
+   "options": [
+    {
+     "id": "ryz-basmati",
+     "label": "Ryż basmati",
+     "rodzaj": "m",
+     "formy": {
+      "M": "ryż basmati",
+      "D": "ryżu basmati",
+      "B": "ryż basmati",
+      "N": "ryżem basmati",
+      "Ms": "ryżu basmati"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "ryz-brazowy",
+     "label": "Ryż brązowy",
+     "rodzaj": "m",
+     "formy": {
+      "M": "ryż brązowy",
+      "D": "ryżu brązowego",
+      "B": "ryż brązowy",
+      "N": "ryżem brązowym",
+      "Ms": "ryżu brązowym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "kasza-jaglana",
+     "label": "Kasza jaglana",
+     "rodzaj": "f",
+     "formy": {
+      "M": "kasza jaglana",
+      "D": "kaszy jaglanej",
+      "B": "kaszę jaglaną",
+      "N": "kaszą jaglaną",
+      "Ms": "kaszy jaglanej"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "kasza-gryczana",
+     "label": "Kasza gryczana",
+     "rodzaj": "f",
+     "formy": {
+      "M": "kasza gryczana",
+      "D": "kaszy gryczanej",
+      "B": "kaszę gryczaną",
+      "N": "kaszą gryczaną",
+      "Ms": "kaszy gryczanej"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "kasza-bulgur",
+     "label": "Kasza bulgur",
+     "rodzaj": "f",
+     "formy": {
+      "M": "kasza bulgur",
+      "D": "kaszy bulgur",
+      "B": "kaszę bulgur",
+      "N": "kaszą bulgur",
+      "Ms": "kaszy bulgur"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "komosa",
+     "label": "Komosa ryżowa",
+     "rodzaj": "f",
+     "formy": {
+      "M": "komosa ryżowa",
+      "D": "komosy ryżowej",
+      "B": "komosę ryżową",
+      "N": "komosą ryżową",
+      "Ms": "komosie ryżowej"
+     },
+     "rodzajB": "f"
+    }
+   ]
+  },
+  "makaron": {
+   "label": "Makaron",
+   "options": [
+    {
+     "id": "makaron-pelnoziarnisty",
+     "label": "Makaron pełnoziarnisty",
+     "rodzaj": "m",
+     "formy": {
+      "M": "makaron pełnoziarnisty",
+      "D": "makaronu pełnoziarnistego",
+      "B": "makaron pełnoziarnisty",
+      "N": "makaronem pełnoziarnistym",
+      "Ms": "makaronie pełnoziarnistym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "makaron-razowy",
+     "label": "Makaron razowy",
+     "rodzaj": "m",
+     "formy": {
+      "M": "makaron razowy",
+      "D": "makaronu razowego",
+      "B": "makaron razowy",
+      "N": "makaronem razowym",
+      "Ms": "makaronie razowym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "makaron-penne",
+     "label": "Makaron penne",
+     "rodzaj": "m",
+     "formy": {
+      "M": "makaron penne",
+      "D": "makaronu penne",
+      "B": "makaron penne",
+      "N": "makaronem penne",
+      "Ms": "makaronie penne"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "makaron-gryczany",
+     "label": "Makaron gryczany",
+     "rodzaj": "m",
+     "formy": {
+      "M": "makaron gryczany",
+      "D": "makaronu gryczanego",
+      "B": "makaron gryczany",
+      "N": "makaronem gryczanym",
+      "Ms": "makaronie gryczanym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "makaron-zytni",
+     "label": "Makaron żytni",
+     "rodzaj": "m",
+     "formy": {
+      "M": "makaron żytni",
+      "D": "makaronu żytniego",
+      "B": "makaron żytni",
+      "N": "makaronem żytnim",
+      "Ms": "makaronie żytnim"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "makaron-ryzowy",
+     "label": "Makaron ryżowy",
+     "rodzaj": "m",
+     "formy": {
+      "M": "makaron ryżowy",
+      "D": "makaronu ryżowego",
+      "B": "makaron ryżowy",
+      "N": "makaronem ryżowym",
+      "Ms": "makaronie ryżowym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "makaron-orkiszowy",
+     "label": "Makaron orkiszowy",
+     "rodzaj": "m",
+     "formy": {
+      "M": "makaron orkiszowy",
+      "D": "makaronu orkiszowego",
+      "B": "makaron orkiszowy",
+      "N": "makaronem orkiszowym",
+      "Ms": "makaronie orkiszowym"
+     },
+     "rodzajB": "m"
+    }
+   ]
+  },
+  "pieczywo": {
+   "label": "Pieczywo",
+   "options": [
+    {
+     "id": "chleb-zytni-razowy",
+     "label": "Chleb żytni razowy",
+     "rodzaj": "m",
+     "formy": {
+      "M": "chleb żytni razowy",
+      "D": "chleba żytniego razowego",
+      "B": "chleb żytni razowy",
+      "N": "chlebem żytnim razowym",
+      "Ms": "chlebie żytnim razowym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "chleb-zytni",
+     "label": "Chleb żytni",
+     "rodzaj": "m",
+     "formy": {
+      "M": "chleb żytni",
+      "D": "chleba żytniego",
+      "B": "chleb żytni",
+      "N": "chlebem żytnim",
+      "Ms": "chlebie żytnim"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "chleb-orkiszowy",
+     "label": "Chleb orkiszowy",
+     "rodzaj": "m",
+     "formy": {
+      "M": "chleb orkiszowy",
+      "D": "chleba orkiszowego",
+      "B": "chleb orkiszowy",
+      "N": "chlebem orkiszowym",
+      "Ms": "chlebie orkiszowym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "chleb-pelnoziarnisty",
+     "label": "Chleb pełnoziarnisty",
+     "rodzaj": "m",
+     "formy": {
+      "M": "chleb pełnoziarnisty",
+      "D": "chleba pełnoziarnistego",
+      "B": "chleb pełnoziarnisty",
+      "N": "chlebem pełnoziarnistym",
+      "Ms": "chlebie pełnoziarnistym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "chleb-na-zakwasie",
+     "label": "Chleb żytni na zakwasie",
+     "rodzaj": "m",
+     "formy": {
+      "M": "chleb żytni na zakwasie",
+      "D": "chleba żytniego na zakwasie",
+      "B": "chleb żytni na zakwasie",
+      "N": "chlebem żytnim na zakwasie",
+      "Ms": "chlebie żytnim na zakwasie"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "bulka-grahamka",
+     "label": "Bułka grahamka",
+     "rodzaj": "f",
+     "formy": {
+      "M": "bułka grahamka",
+      "D": "bułki grahamki",
+      "B": "bułkę grahamkę",
+      "N": "bułką grahamką",
+      "Ms": "bułce grahamce"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "bulka-owsiana",
+     "label": "Bułka owsiana",
+     "rodzaj": "f",
+     "formy": {
+      "M": "bułka owsiana",
+      "D": "bułki owsianej",
+      "B": "bułkę owsianą",
+      "N": "bułką owsianą",
+      "Ms": "bułce owsianej"
+     },
+     "rodzajB": "f"
+    }
+   ]
+  },
+  "mleko": {
+   "label": "Mleko i napoje roślinne",
+   "options": [
+    {
+     "id": "mleko-roslinne",
+     "label": "Mleko roślinne",
+     "rodzaj": "n",
+     "formy": {
+      "M": "mleko roślinne",
+      "D": "mleka roślinnego",
+      "B": "mleko roślinne",
+      "N": "mlekiem roślinnym",
+      "Ms": "mleku roślinnym"
+     },
+     "rodzajB": "n"
+    },
+    {
+     "id": "napoj-roslinny",
+     "label": "Napój roślinny",
+     "rodzaj": "m",
+     "formy": {
+      "M": "napój roślinny",
+      "D": "napoju roślinnego",
+      "B": "napój roślinny",
+      "N": "napojem roślinnym",
+      "Ms": "napoju roślinnym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "napoj-sojowy",
+     "label": "Napój sojowy",
+     "rodzaj": "m",
+     "formy": {
+      "M": "napój sojowy",
+      "D": "napoju sojowego",
+      "B": "napój sojowy",
+      "N": "napojem sojowym",
+      "Ms": "napoju sojowym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "napoj-migdalowy",
+     "label": "Napój migdałowy",
+     "rodzaj": "m",
+     "formy": {
+      "M": "napój migdałowy",
+      "D": "napoju migdałowego",
+      "B": "napój migdałowy",
+      "N": "napojem migdałowym",
+      "Ms": "napoju migdałowym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "napoj-owsiany",
+     "label": "Napój owsiany",
+     "rodzaj": "m",
+     "formy": {
+      "M": "napój owsiany",
+      "D": "napoju owsianego",
+      "B": "napój owsiany",
+      "N": "napojem owsianym",
+      "Ms": "napoju owsianym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "mleko-2",
+     "label": "Mleko 2%",
+     "rodzaj": "n",
+     "formy": {
+      "M": "mleko 2%",
+      "D": "mleka 2%",
+      "B": "mleko 2%",
+      "N": "mlekiem 2%",
+      "Ms": "mleku 2%"
+     },
+     "rodzajB": "n"
+    }
+   ]
+  },
+  "twarogowe": {
+   "label": "Serek wiejski i zamienniki",
+   "options": [
+    {
+     "id": "serek-wiejski",
+     "label": "Serek wiejski",
+     "rodzaj": "m",
+     "formy": {
+      "M": "serek wiejski",
+      "D": "serka wiejskiego",
+      "B": "serek wiejski",
+      "N": "serkiem wiejskim",
+      "Ms": "serku wiejskim"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "twarog-chudy",
+     "label": "Twaróg chudy",
+     "rodzaj": "m",
+     "formy": {
+      "M": "twaróg chudy",
+      "D": "twarogu chudego",
+      "B": "twaróg chudy",
+      "N": "twarogiem chudym",
+      "Ms": "twarogu chudym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "tofu-naturalne",
+     "label": "Tofu naturalne",
+     "rodzaj": "n",
+     "formy": {
+      "M": "tofu naturalne",
+      "D": "tofu naturalnego",
+      "B": "tofu naturalne",
+      "N": "tofu naturalnym",
+      "Ms": "tofu naturalnym"
+     },
+     "rodzajB": "n"
+    }
+   ]
+  },
+  "straczkowe": {
+   "label": "Nasiona roślin strączkowych",
+   "options": [
+    {
+     "id": "ciecierzyca",
+     "label": "Ciecierzyca",
+     "rodzaj": "f",
+     "formy": {
+      "M": "ciecierzyca",
+      "D": "ciecierzycy",
+      "B": "ciecierzycę",
+      "N": "ciecierzycą",
+      "Ms": "ciecierzycy"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "soczewica",
+     "label": "Soczewica",
+     "rodzaj": "f",
+     "formy": {
+      "M": "soczewica",
+      "D": "soczewicy",
+      "B": "soczewicę",
+      "N": "soczewicą",
+      "Ms": "soczewicy"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "fasola",
+     "label": "Fasola",
+     "rodzaj": "f",
+     "formy": {
+      "M": "fasola",
+      "D": "fasoli",
+      "B": "fasolę",
+      "N": "fasolą",
+      "Ms": "fasoli"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "groch",
+     "label": "Groch",
+     "rodzaj": "m",
+     "formy": {
+      "M": "groch",
+      "D": "grochu",
+      "B": "groch",
+      "N": "grochem",
+      "Ms": "grochu"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "soja",
+     "label": "Soja",
+     "rodzaj": "f",
+     "formy": {
+      "M": "soja",
+      "D": "soi",
+      "B": "soję",
+      "N": "soją",
+      "Ms": "soi"
+     },
+     "rodzajB": "f"
+    }
+   ]
+  },
+  "orzechy": {
+   "label": "Orzechy i pestki",
+   "options": [
+    {
+     "id": "orzechy-wloskie",
+     "label": "Orzechy włoskie",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "orzechy włoskie",
+      "D": "orzechów włoskich",
+      "B": "orzechy włoskie",
+      "N": "orzechami włoskimi",
+      "Ms": "orzechach włoskich"
+     },
+     "rodzajB": "pl"
+    },
+    {
+     "id": "orzechy-nerkowca",
+     "label": "Orzechy nerkowca",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "orzechy nerkowca",
+      "D": "orzechów nerkowca",
+      "B": "orzechy nerkowca",
+      "N": "orzechami nerkowca",
+      "Ms": "orzechach nerkowca"
+     },
+     "rodzajB": "pl"
+    },
+    {
+     "id": "orzechy-laskowe",
+     "label": "Orzechy laskowe",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "orzechy laskowe",
+      "D": "orzechów laskowych",
+      "B": "orzechy laskowe",
+      "N": "orzechami laskowymi",
+      "Ms": "orzechach laskowych"
+     },
+     "rodzajB": "pl"
+    },
+    {
+     "id": "orzechy-pistacjowe",
+     "label": "Orzechy pistacjowe",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "orzechy pistacjowe",
+      "D": "orzechów pistacjowych",
+      "B": "orzechy pistacjowe",
+      "N": "orzechami pistacjowymi",
+      "Ms": "orzechach pistacjowych"
+     },
+     "rodzajB": "pl"
+    },
+    {
+     "id": "orzechy-arachidowe",
+     "label": "Orzechy arachidowe",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "orzechy arachidowe",
+      "D": "orzechów arachidowych",
+      "B": "orzechy arachidowe",
+      "N": "orzechami arachidowymi",
+      "Ms": "orzechach arachidowych"
+     },
+     "rodzajB": "pl"
+    },
+    {
+     "id": "pestki-dyni",
+     "label": "Pestki dyni",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "pestki dyni",
+      "D": "pestek dyni",
+      "B": "pestki dyni",
+      "N": "pestkami dyni",
+      "Ms": "pestkach dyni"
+     },
+     "rodzajB": "pl"
+    },
+    {
+     "id": "pestki-slonecznika",
+     "label": "Pestki słonecznika",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "pestki słonecznika",
+      "D": "pestek słonecznika",
+      "B": "pestki słonecznika",
+      "N": "pestkami słonecznika",
+      "Ms": "pestkach słonecznika"
+     },
+     "rodzajB": "pl"
+    }
+   ]
+  },
+  "liscizielone": {
+   "label": "Zielone warzywa liściaste",
+   "options": [
+    {
+     "id": "szpinak",
+     "label": "Szpinak",
+     "rodzaj": "m",
+     "formy": {
+      "M": "szpinak",
+      "D": "szpinaku",
+      "B": "szpinak",
+      "N": "szpinakiem",
+      "Ms": "szpinaku"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "rukola",
+     "label": "Rukola",
+     "rodzaj": "f",
+     "formy": {
+      "M": "rukola",
+      "D": "rukoli",
+      "B": "rukolę",
+      "N": "rukolą",
+      "Ms": "rukoli"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "roszponka",
+     "label": "Roszponka",
+     "rodzaj": "f",
+     "formy": {
+      "M": "roszponka",
+      "D": "roszponki",
+      "B": "roszponkę",
+      "N": "roszponką",
+      "Ms": "roszponce"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "jarmuz",
+     "label": "Jarmuż",
+     "rodzaj": "m",
+     "formy": {
+      "M": "jarmuż",
+      "D": "jarmużu",
+      "B": "jarmuż",
+      "N": "jarmużem",
+      "Ms": "jarmużu"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "salata-rzymska",
+     "label": "Sałata rzymska",
+     "rodzaj": "f",
+     "formy": {
+      "M": "sałata rzymska",
+      "D": "sałaty rzymskiej",
+      "B": "sałatę rzymską",
+      "N": "sałatą rzymską",
+      "Ms": "sałacie rzymskiej"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "miks-salat",
+     "label": "Miks sałat",
+     "rodzaj": "m",
+     "formy": {
+      "M": "miks sałat",
+      "D": "miksu sałat",
+      "B": "miks sałat",
+      "N": "miksem sałat",
+      "Ms": "miksie sałat"
+     },
+     "rodzajB": "m"
+    }
+   ]
+  },
+  "ziemniaki": {
+   "label": "Ziemniaki",
+   "options": [
+    {
+     "id": "ziemniaki",
+     "label": "Ziemniaki",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "ziemniaki",
+      "D": "ziemniaków",
+      "B": "ziemniaki",
+      "N": "ziemniakami",
+      "Ms": "ziemniakach"
+     },
+     "rodzajB": "pl"
+    },
+    {
+     "id": "bataty",
+     "label": "Bataty",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "bataty",
+      "D": "batatów",
+      "B": "bataty",
+      "N": "batatami",
+      "Ms": "batatach"
+     },
+     "rodzajB": "pl"
+    },
+    {
+     "id": "topinambur",
+     "label": "Topinambur",
+     "rodzaj": "m",
+     "formy": {
+      "M": "topinambur",
+      "D": "topinamburu",
+      "B": "topinambur",
+      "N": "topinamburem",
+      "Ms": "topinamburze"
+     },
+     "rodzajB": "m"
+    }
+   ]
+  },
+  "tluszcz": {
+   "label": "Oliwa i oleje",
+   "options": [
+    {
+     "id": "oliwa",
+     "label": "Oliwa z oliwek",
+     "rodzaj": "f",
+     "formy": {
+      "M": "oliwa z oliwek",
+      "D": "oliwy z oliwek",
+      "B": "oliwę z oliwek",
+      "N": "oliwą z oliwek",
+      "Ms": "oliwie z oliwek"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "olej-rzepakowy",
+     "label": "Olej rzepakowy",
+     "rodzaj": "m",
+     "formy": {
+      "M": "olej rzepakowy",
+      "D": "oleju rzepakowego",
+      "B": "olej rzepakowy",
+      "N": "olejem rzepakowym",
+      "Ms": "oleju rzepakowym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "olej-kokosowy",
+     "label": "Olej kokosowy",
+     "rodzaj": "m",
+     "formy": {
+      "M": "olej kokosowy",
+      "D": "oleju kokosowego",
+      "B": "olej kokosowy",
+      "N": "olejem kokosowym",
+      "Ms": "oleju kokosowym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "olej-z-awokado",
+     "label": "Olej z awokado",
+     "rodzaj": "m",
+     "formy": {
+      "M": "olej z awokado",
+      "D": "oleju z awokado",
+      "B": "olej z awokado",
+      "N": "olejem z awokado",
+      "Ms": "oleju z awokado"
+     },
+     "rodzajB": "m"
+    }
+   ]
+  },
+  "owoce": {
+   "label": "Owoce",
+   "options": [
+    {
+     "id": "jablko",
+     "label": "Jabłko",
+     "rodzaj": "n",
+     "formy": {
+      "M": "jabłko",
+      "D": "jabłka",
+      "B": "jabłko",
+      "N": "jabłkiem",
+      "Ms": "jabłku",
+      "Mpl": "jabłka",
+      "Dpl": "jabłek",
+      "Bpl": "jabłka",
+      "Npl": "jabłkami",
+      "Mspl": "jabłkach"
+     },
+     "equiv": 170,
+     "rodzajB": "n"
+    },
+    {
+     "id": "gruszka",
+     "label": "Gruszka",
+     "rodzaj": "f",
+     "formy": {
+      "M": "gruszka",
+      "D": "gruszki",
+      "B": "gruszkę",
+      "N": "gruszką",
+      "Ms": "gruszce",
+      "Mpl": "gruszki",
+      "Dpl": "gruszek",
+      "Bpl": "gruszki",
+      "Npl": "gruszkami",
+      "Mspl": "gruszkach"
+     },
+     "equiv": 170,
+     "rodzajB": "f"
+    },
+    {
+     "id": "banan",
+     "label": "Banan",
+     "rodzaj": "m",
+     "formy": {
+      "M": "banan",
+      "D": "banana",
+      "B": "banan",
+      "N": "bananem",
+      "Ms": "bananie",
+      "Bpot": "banana",
+      "Mpl": "banany",
+      "Dpl": "bananów",
+      "Bpl": "banany",
+      "Npl": "bananami",
+      "Mspl": "bananach"
+     },
+     "equiv": 120,
+     "rodzajB": "mz"
+    },
+    {
+     "id": "mandarynka",
+     "label": "Mandarynka",
+     "rodzaj": "f",
+     "formy": {
+      "M": "mandarynka",
+      "D": "mandarynki",
+      "B": "mandarynkę",
+      "N": "mandarynką",
+      "Ms": "mandarynce",
+      "Mpl": "mandarynki",
+      "Dpl": "mandarynek",
+      "Bpl": "mandarynki",
+      "Npl": "mandarynkami",
+      "Mspl": "mandarynkach"
+     },
+     "equiv": 65,
+     "rodzajB": "f"
+    },
+    {
+     "id": "brzoskwinia",
+     "label": "Brzoskwinia",
+     "rodzaj": "f",
+     "formy": {
+      "M": "brzoskwinia",
+      "D": "brzoskwini",
+      "B": "brzoskwinię",
+      "N": "brzoskwinią",
+      "Ms": "brzoskwini",
+      "Mpl": "brzoskwinie",
+      "Dpl": "brzoskwiń",
+      "Bpl": "brzoskwinie",
+      "Npl": "brzoskwiniami",
+      "Mspl": "brzoskwiniach"
+     },
+     "equiv": 90,
+     "rodzajB": "f"
+    },
+    {
+     "id": "kiwi",
+     "label": "Kiwi",
+     "rodzaj": "n",
+     "formy": {
+      "M": "kiwi",
+      "D": "kiwi",
+      "B": "kiwi",
+      "N": "kiwi",
+      "Ms": "kiwi",
+      "Mpl": "kiwi",
+      "Dpl": "kiwi",
+      "Bpl": "kiwi",
+      "Npl": "kiwi",
+      "Mspl": "kiwi"
+     },
+     "equiv": 80,
+     "rodzajB": "n"
+    },
+    {
+     "id": "kaki",
+     "label": "Kaki",
+     "rodzaj": "n",
+     "formy": {
+      "M": "kaki",
+      "D": "kaki",
+      "B": "kaki",
+      "N": "kaki",
+      "Ms": "kaki",
+      "Mpl": "kaki",
+      "Dpl": "kaki",
+      "Bpl": "kaki",
+      "Npl": "kaki",
+      "Mspl": "kaki"
+     },
+     "equiv": 250,
+     "rodzajB": "n"
+    }
+   ]
+  },
+  "warzywa": {
+   "label": "Warzywa",
+   "options": [
+    {
+     "id": "pomidor",
+     "label": "Pomidor",
+     "rodzaj": "m",
+     "formy": {
+      "M": "pomidor",
+      "D": "pomidora",
+      "B": "pomidor",
+      "N": "pomidorem",
+      "Ms": "pomidorze",
+      "Bpot": "pomidora",
+      "Mpl": "pomidory",
+      "Dpl": "pomidorów",
+      "Bpl": "pomidory",
+      "Npl": "pomidorami",
+      "Mspl": "pomidorach"
+     },
+     "rodzajB": "mz"
+    },
+    {
+     "id": "ogorek",
+     "label": "Ogórek",
+     "rodzaj": "m",
+     "formy": {
+      "M": "ogórek",
+      "D": "ogórka",
+      "B": "ogórek",
+      "N": "ogórkiem",
+      "Ms": "ogórku",
+      "Bpot": "ogórka",
+      "Mpl": "ogórki",
+      "Dpl": "ogórków",
+      "Bpl": "ogórki",
+      "Npl": "ogórkami",
+      "Mspl": "ogórkach"
+     },
+     "rodzajB": "mz"
+    },
+    {
+     "id": "papryka",
+     "label": "Papryka",
+     "rodzaj": "f",
+     "formy": {
+      "M": "papryka",
+      "D": "papryki",
+      "B": "paprykę",
+      "N": "papryką",
+      "Ms": "papryce",
+      "Mpl": "papryki",
+      "Dpl": "papryk",
+      "Bpl": "papryki",
+      "Npl": "paprykami",
+      "Mspl": "paprykach"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "cukinia",
+     "label": "Cukinia",
+     "rodzaj": "f",
+     "formy": {
+      "M": "cukinia",
+      "D": "cukinii",
+      "B": "cukinię",
+      "N": "cukinią",
+      "Ms": "cukinii",
+      "Mpl": "cukinie",
+      "Dpl": "cukinii",
+      "Bpl": "cukinie",
+      "Npl": "cukiniami",
+      "Mspl": "cukiniach"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "brokul",
+     "label": "Brokuł",
+     "rodzaj": "m",
+     "formy": {
+      "M": "brokuł",
+      "D": "brokuła",
+      "B": "brokuł",
+      "N": "brokułem",
+      "Ms": "brokule",
+      "Bpot": "brokuła",
+      "Mpl": "brokuły",
+      "Dpl": "brokułów",
+      "Bpl": "brokuły",
+      "Npl": "brokułami",
+      "Mspl": "brokułach"
+     },
+     "rodzajB": "mz"
+    },
+    {
+     "id": "marchewka",
+     "label": "Marchewka",
+     "rodzaj": "f",
+     "formy": {
+      "M": "marchewka",
+      "D": "marchewki",
+      "B": "marchewkę",
+      "N": "marchewką",
+      "Ms": "marchewce",
+      "Mpl": "marchewki",
+      "Dpl": "marchewek",
+      "Bpl": "marchewki",
+      "Npl": "marchewkami",
+      "Mspl": "marchewkach"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "marchew",
+     "label": "Marchew",
+     "rodzaj": "f",
+     "formy": {
+      "M": "marchew",
+      "D": "marchwi",
+      "B": "marchew",
+      "N": "marchwią",
+      "Ms": "marchwi",
+      "Mpl": "marchwie",
+      "Dpl": "marchwi",
+      "Bpl": "marchwie",
+      "Npl": "marchwiami",
+      "Mspl": "marchwiach"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "rzodkiewka",
+     "label": "Rzodkiewka",
+     "rodzaj": "f",
+     "formy": {
+      "M": "rzodkiewka",
+      "D": "rzodkiewki",
+      "B": "rzodkiewkę",
+      "N": "rzodkiewką",
+      "Ms": "rzodkiewce",
+      "Mpl": "rzodkiewki",
+      "Dpl": "rzodkiewek",
+      "Bpl": "rzodkiewki",
+      "Npl": "rzodkiewkami",
+      "Mspl": "rzodkiewkach"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "seler-naciowy",
+     "label": "Seler naciowy",
+     "rodzaj": "m",
+     "formy": {
+      "M": "seler naciowy",
+      "D": "selera naciowego",
+      "B": "seler naciowy",
+      "N": "selerem naciowym",
+      "Ms": "selerze naciowym",
+      "Mpl": "selery naciowe",
+      "Dpl": "selerów naciowych",
+      "Bpl": "selery naciowe",
+      "Npl": "selerami naciowymi",
+      "Mspl": "selerach naciowych"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "dynia",
+     "label": "Dynia",
+     "rodzaj": "f",
+     "formy": {
+      "M": "dynia",
+      "D": "dyni",
+      "B": "dynię",
+      "N": "dynią",
+      "Ms": "dyni",
+      "Mpl": "dynie",
+      "Dpl": "dyń",
+      "Bpl": "dynie",
+      "Npl": "dyniami",
+      "Mspl": "dyniach"
+     },
+     "rodzajB": "f"
+    },
+    {
+     "id": "pieczarki",
+     "label": "Pieczarki",
+     "rodzaj": "pl",
+     "formy": {
+      "M": "pieczarki",
+      "D": "pieczarek",
+      "B": "pieczarki",
+      "N": "pieczarkami",
+      "Ms": "pieczarkach",
+      "Mpl": "pieczarki",
+      "Dpl": "pieczarek",
+      "Bpl": "pieczarki",
+      "Npl": "pieczarkami",
+      "Mspl": "pieczarkach"
+     },
+     "rodzajB": "pl"
+    },
+    {
+     "id": "kalafior",
+     "label": "Kalafior",
+     "rodzaj": "m",
+     "formy": {
+      "M": "kalafior",
+      "D": "kalafiora",
+      "B": "kalafior",
+      "N": "kalafiorem",
+      "Ms": "kalafiorze",
+      "Bpot": "kalafiora",
+      "Mpl": "kalafiory",
+      "Dpl": "kalafiorów",
+      "Bpl": "kalafiory",
+      "Npl": "kalafiorami",
+      "Mspl": "kalafiorach"
+     },
+     "rodzajB": "mz"
+    },
+    {
+     "id": "baklazan",
+     "label": "Bakłażan",
+     "rodzaj": "m",
+     "formy": {
+      "M": "bakłażan",
+      "D": "bakłażana",
+      "B": "bakłażan",
+      "N": "bakłażanem",
+      "Ms": "bakłażanie",
+      "Bpot": "bakłażana",
+      "Mpl": "bakłażany",
+      "Dpl": "bakłażanów",
+      "Bpl": "bakłażany",
+      "Npl": "bakłażanami",
+      "Mspl": "bakłażanach"
+     },
+     "rodzajB": "mz"
+    }
+   ]
+  },
+  "slodziki": {
+   "label": "Miód i syropy",
+   "options": [
+    {
+     "id": "miod",
+     "label": "Miód",
+     "rodzaj": "m",
+     "formy": {
+      "M": "miód",
+      "D": "miodu",
+      "B": "miód",
+      "N": "miodem",
+      "Ms": "miodzie"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "syrop-klonowy",
+     "label": "Syrop klonowy",
+     "rodzaj": "m",
+     "formy": {
+      "M": "syrop klonowy",
+      "D": "syropu klonowego",
+      "B": "syrop klonowy",
+      "N": "syropem klonowym",
+      "Ms": "syropie klonowym"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "syrop-z-agawy",
+     "label": "Syrop z agawy",
+     "rodzaj": "m",
+     "formy": {
+      "M": "syrop z agawy",
+      "D": "syropu z agawy",
+      "B": "syrop z agawy",
+      "N": "syropem z agawy",
+      "Ms": "syropie z agawy"
+     },
+     "rodzajB": "m"
+    }
+   ]
+  },
+  "pasty": {
+   "label": "Hummus i pasty warzywne",
+   "options": [
+    {
+     "id": "hummus",
+     "label": "Hummus",
+     "rodzaj": "m",
+     "formy": {
+      "M": "hummus",
+      "D": "hummusu",
+      "B": "hummus",
+      "N": "hummusem",
+      "Ms": "hummusie"
+     },
+     "rodzajB": "m"
+    },
+    {
+     "id": "pasta-warzywna",
+     "label": "Pasta warzywna",
+     "rodzaj": "f",
+     "formy": {
+      "M": "pasta warzywna",
+      "D": "pasty warzywnej",
+      "B": "pastę warzywną",
+      "N": "pastą warzywną",
+      "Ms": "paście warzywnej"
+     },
+     "rodzajB": "f"
+    }
+   ]
+  }
+ }
 }

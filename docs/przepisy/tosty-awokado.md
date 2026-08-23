@@ -7,9 +7,9 @@ hide:
 
 # Tosty z jajkiem sadzonym i awokado
 
-<div class="p-hero" data-slot="2">
+<div class="p-hero" data-slot="1">
 <div class="p-hero__top">
-<span>II śniadanie</span><span class="p-num">10:00-13:00</span><span class="p-num">Dzień 6</span>
+<span>Śniadanie</span><span class="p-num">7:00-10:00</span>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">469</span><span class="p-macro__l">kcal</span></div>
@@ -30,15 +30,48 @@ hide:
 <p class="p-note" id="srv-note" style="margin:0" hidden></p>
 </div>
 
-<h2 id="ing-heading">Składniki na 1 osobę</h2>
+<div class="p-ings__head">
+<h2 id="ing-heading" style="margin:0">Składniki na 1 osobę</h2>
+<button type="button" class="p-btn p-btn--ghost" id="swap-reset" style="min-height:auto;padding:6px 8px" hidden>Przywróć oryginał</button>
+</div>
 <ul class="p-ings" id="ing-list">
-<li><span class="p-ing__q">2 kromki</span><span>chleba tostowego pełnoziarnistego</span><span class="p-ing__g">60 g</span></li>
-<li><span class="p-ing__q">0.5 sztuki</span><span>awokado</span><span class="p-ing__g">70 g</span></li>
-<li><span class="p-ing__q">2 sztuki</span><span>jajka</span><span class="p-ing__g">112 g</span></li>
-<li><span class="p-ing__q">2 garści</span><span>rukoli</span><span class="p-ing__g">40 g</span></li>
-<li data-pantry="1"><span class="p-ing__q">2 łyżeczki</span><span>szczypiorku</span><span class="p-ing__g">10 g</span></li>
-<li data-pantry="1"><span class="p-ing__q">1 szczypta</span><span>soli</span><span class="p-ing__g">0.25 g</span></li>
-<li data-pantry="1"><span class="p-ing__q">1 szczypta</span><span>pieprzu</span><span class="p-ing__g">0.25 g</span></li>
+<li><div class="p-ing__row"><span class="p-ing__q">2 kromki</span><span class="p-ing__n">chleba tostowego pełnoziarnistego</span><span class="p-ing__g">60 g</span></div>
+<div class="p-ing__swap">
+<label class="p-swaplabel" for="swap-0">Zamień na</label>
+<select class="p-select" id="swap-0" data-ing="0">
+<option value="chleb-zytni-razowy">Chleb żytni razowy</option>
+<option value="chleb-zytni">Chleb żytni</option>
+<option value="chleb-orkiszowy">Chleb orkiszowy</option>
+<option value="chleb-pelnoziarnisty" selected>Chleb pełnoziarnisty · oryginał</option>
+<option value="chleb-na-zakwasie">Chleb żytni na zakwasie</option>
+<option value="bulka-grahamka">Bułka grahamka</option>
+<option value="bulka-owsiana">Bułka owsiana</option>
+</select>
+</div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">0.5 sztuki</span><span class="p-ing__n">awokado</span><span class="p-ing__g">70 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">2 sztuki</span><span class="p-ing__n">jajka</span><span class="p-ing__g">112 g</span></div>
+</li>
+<li><div class="p-ing__row"><span class="p-ing__q">2 garści</span><span class="p-ing__n">rukoli</span><span class="p-ing__g">40 g</span></div>
+<div class="p-ing__swap">
+<label class="p-swaplabel" for="swap-3">Zamień na</label>
+<select class="p-select" id="swap-3" data-ing="3">
+<option value="szpinak">Szpinak</option>
+<option value="rukola" selected>Rukola · oryginał</option>
+<option value="roszponka">Roszponka</option>
+<option value="jarmuz">Jarmuż</option>
+<option value="salata-rzymska">Sałata rzymska</option>
+<option value="miks-salat">Miks sałat</option>
+</select>
+</div>
+</li>
+<li data-pantry="1"><div class="p-ing__row"><span class="p-ing__q">2 łyżeczki</span><span class="p-ing__n">szczypiorku</span><span class="p-ing__g">10 g</span></div>
+</li>
+<li data-pantry="1"><div class="p-ing__row"><span class="p-ing__q">1 szczypta</span><span class="p-ing__n">soli</span><span class="p-ing__g">0.25 g</span></div>
+</li>
+<li data-pantry="1"><div class="p-ing__row"><span class="p-ing__q">1 szczypta</span><span class="p-ing__n">pieprzu</span><span class="p-ing__g">0.25 g</span></div>
+</li>
 </ul>
 
 <div class="p-actions">
@@ -47,11 +80,11 @@ hide:
 </div>
 
 <h2>Sposób przygotowania</h2>
-<ol class="p-steps">
-<li>Pieczywo opiekamy w tosterze lub na patelni.</li>
-<li>Awokado obieramy ze skórki i smarujemy kromki chleba.</li>
-<li>Na rozgrzanej patelni, pod przykryciem przygotowujemy jajka sadzone. Doprawiamy solą i pieprzem.</li>
-<li>Na posmarowanych kanapkach układamy rukolę i jajka. Posypujemy posiekanym szczypiorkiem. Smacznego!</li>
+<ol class="p-steps" id="steps-list">
+<li>Pieczywo opiecz w tosterze lub na patelni.</li>
+<li>Awokado obierz ze skórki i posmaruj kromki chleba.</li>
+<li>Na rozgrzanej patelni, pod przykryciem przygotuj jajka sadzone. Dopraw solą i pieprzem.</li>
+<li>Na posmarowanych kanapkach ułóż rukolę i jajka. Posyp posiekanym szczypiorkiem. Smacznego!</li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Tosty z jajkiem sadzonym i awokado">
@@ -67,8 +100,7 @@ hide:
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
 <button type="button" class="p-btn p-btn--primary" id="cook-next">Następny krok</button>
-</div>
-</div>
+</div></div>
 <div class="p-sheet" id="shopping" data-open="0" role="dialog" aria-modal="true" aria-label="Lista zakupów">
 <button type="button" class="p-sheet__scrim" id="shopping-scrim" aria-label="Zamknij listę zakupów"></button>
 <div class="p-sheet__panel">
@@ -77,9 +109,10 @@ hide:
 <div class="p-sheet__foot">
 <button type="button" class="p-btn" id="reset-shopping">Odznacz wszystko</button>
 <button type="button" class="p-btn p-btn--primary" id="pdf-btn">Wygeneruj PDF</button>
-</div>
-</div></div>
+</div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "tosty-awokado", "title": "Tosty z jajkiem sadzonym i awokado", "day": 6, "slotLabel": "II śniadanie", "time": "10:00-13:00", "baseServings": 1, "ingredients": [{"qty": 2.0, "unit": "kromki", "unitLemma": "kromka", "name": "chleba tostowego pełnoziarnistego", "grams": 60.0, "pantry": false, "tag": "chleb"}, {"qty": 0.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "awokado", "grams": 70.0, "pantry": false, "tag": "awokado"}, {"qty": 2.0, "unit": "sztuki", "unitLemma": "sztuka", "name": "jajka", "grams": 112.0, "pantry": false, "tag": "jajka"}, {"qty": 2.0, "unit": "garści", "unitLemma": "garść", "name": "rukoli", "grams": 40.0, "pantry": false, "tag": "salata"}, {"qty": 2.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "szczypiorku", "grams": 10.0, "pantry": true, "tag": null}, {"qty": 1.0, "unit": "szczypta", "unitLemma": "szczypta", "name": "soli", "grams": 0.25, "pantry": true, "tag": null}, {"qty": 1.0, "unit": "szczypta", "unitLemma": "szczypta", "name": "pieprzu", "grams": 0.25, "pantry": true, "tag": null}], "steps": ["Pieczywo opiekamy w tosterze lub na patelni.", "Awokado obieramy ze skórki i smarujemy kromki chleba.", "Na rozgrzanej patelni, pod przykryciem przygotowujemy jajka sadzone. Doprawiamy solą i pieprzem.", "Na posmarowanych kanapkach układamy rukolę i jajka. Posypujemy posiekanym szczypiorkiem. Smacznego!"]};
-window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};</script>
+<script>window.RECIPE = {"slug": "tosty-awokado", "title": "Tosty z jajkiem sadzonym i awokado", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "ingredients": [{"qty": 2.0, "unit": "kromki", "unitLemma": "kromka", "name": "chleba tostowego pełnoziarnistego", "grams": 60.0, "pantry": false, "tag": "chleb", "swap": {"group": "pieczywo", "self": "chleb-pelnoziarnisty", "nameCase": "D"}}, {"qty": 0.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "awokado", "grams": 70.0, "pantry": false, "tag": "awokado"}, {"qty": 2.0, "unit": "sztuki", "unitLemma": "sztuka", "name": "jajka", "grams": 112.0, "pantry": false, "tag": "jajka"}, {"qty": 2.0, "unit": "garści", "unitLemma": "garść", "name": "rukoli", "grams": 40.0, "pantry": false, "tag": "salata", "swap": {"group": "liscizielone", "self": "rukola", "nameCase": "D"}}, {"qty": 2.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "szczypiorku", "grams": 10.0, "pantry": true, "tag": null}, {"qty": 1.0, "unit": "szczypta", "unitLemma": "szczypta", "name": "soli", "grams": 0.25, "pantry": true, "tag": null}, {"qty": 1.0, "unit": "szczypta", "unitLemma": "szczypta", "name": "pieprzu", "grams": 0.25, "pantry": true, "tag": null}], "steps": ["Pieczywo opiecz w tosterze lub na patelni.", "Awokado obierz ze skórki i posmaruj kromki chleba.", "Na rozgrzanej patelni, pod przykryciem przygotuj jajka sadzone. Dopraw solą i pieprzem.", "Na posmarowanych kanapkach ułóż «3|B|||» i jajka. Posyp posiekanym szczypiorkiem. Smacznego!"]};
+window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"]};
+window.SWAPS = {"liscizielone": {"label": "Zielone warzywa liściaste", "options": [{"id": "szpinak", "label": "Szpinak", "rodzaj": "m", "formy": {"M": "szpinak", "D": "szpinaku", "B": "szpinak", "N": "szpinakiem", "Ms": "szpinaku"}, "rodzajB": "m"}, {"id": "rukola", "label": "Rukola", "rodzaj": "f", "formy": {"M": "rukola", "D": "rukoli", "B": "rukolę", "N": "rukolą", "Ms": "rukoli"}, "rodzajB": "f"}, {"id": "roszponka", "label": "Roszponka", "rodzaj": "f", "formy": {"M": "roszponka", "D": "roszponki", "B": "roszponkę", "N": "roszponką", "Ms": "roszponce"}, "rodzajB": "f"}, {"id": "jarmuz", "label": "Jarmuż", "rodzaj": "m", "formy": {"M": "jarmuż", "D": "jarmużu", "B": "jarmuż", "N": "jarmużem", "Ms": "jarmużu"}, "rodzajB": "m"}, {"id": "salata-rzymska", "label": "Sałata rzymska", "rodzaj": "f", "formy": {"M": "sałata rzymska", "D": "sałaty rzymskiej", "B": "sałatę rzymską", "N": "sałatą rzymską", "Ms": "sałacie rzymskiej"}, "rodzajB": "f"}, {"id": "miks-salat", "label": "Miks sałat", "rodzaj": "m", "formy": {"M": "miks sałat", "D": "miksu sałat", "B": "miks sałat", "N": "miksem sałat", "Ms": "miksie sałat"}, "rodzajB": "m"}]}, "pieczywo": {"label": "Pieczywo", "options": [{"id": "chleb-zytni-razowy", "label": "Chleb żytni razowy", "rodzaj": "m", "formy": {"M": "chleb żytni razowy", "D": "chleba żytniego razowego", "B": "chleb żytni razowy", "N": "chlebem żytnim razowym", "Ms": "chlebie żytnim razowym"}, "rodzajB": "m"}, {"id": "chleb-zytni", "label": "Chleb żytni", "rodzaj": "m", "formy": {"M": "chleb żytni", "D": "chleba żytniego", "B": "chleb żytni", "N": "chlebem żytnim", "Ms": "chlebie żytnim"}, "rodzajB": "m"}, {"id": "chleb-orkiszowy", "label": "Chleb orkiszowy", "rodzaj": "m", "formy": {"M": "chleb orkiszowy", "D": "chleba orkiszowego", "B": "chleb orkiszowy", "N": "chlebem orkiszowym", "Ms": "chlebie orkiszowym"}, "rodzajB": "m"}, {"id": "chleb-pelnoziarnisty", "label": "Chleb pełnoziarnisty", "rodzaj": "m", "formy": {"M": "chleb pełnoziarnisty", "D": "chleba pełnoziarnistego", "B": "chleb pełnoziarnisty", "N": "chlebem pełnoziarnistym", "Ms": "chlebie pełnoziarnistym"}, "rodzajB": "m"}, {"id": "chleb-na-zakwasie", "label": "Chleb żytni na zakwasie", "rodzaj": "m", "formy": {"M": "chleb żytni na zakwasie", "D": "chleba żytniego na zakwasie", "B": "chleb żytni na zakwasie", "N": "chlebem żytnim na zakwasie", "Ms": "chlebie żytnim na zakwasie"}, "rodzajB": "m"}, {"id": "bulka-grahamka", "label": "Bułka grahamka", "rodzaj": "f", "formy": {"M": "bułka grahamka", "D": "bułki grahamki", "B": "bułkę grahamkę", "N": "bułką grahamką", "Ms": "bułce grahamce"}, "rodzajB": "f"}, {"id": "bulka-owsiana", "label": "Bułka owsiana", "rodzaj": "f", "formy": {"M": "bułka owsiana", "D": "bułki owsianej", "B": "bułkę owsianą", "N": "bułką owsianą", "Ms": "bułce owsianej"}, "rodzajB": "f"}]}};
+window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

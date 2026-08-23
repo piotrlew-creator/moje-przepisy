@@ -54,16 +54,19 @@ print(f"  niezgodnych z PDF: {len(missing)}")
 for k in missing: print('   ', owner[k], k)
 
 # kroki
+# Kroki porównujemy z pola `stepsSource` — to dosłowny zapis z PDF-u.
+# Pole `steps` zawiera tę samą treść przepisaną na tryb rozkazujący
+# („pokrój” zamiast „kroimy”) i ze znacznikami zamienników.
 right=' '.join(col(xmin=340))
 # pdfplumber wstawia czasem spację przed przecinkiem — normalizujemy obie strony
 norm = lambda t: re.sub(r'\s+([,.])', r'\1', re.sub(r'\s+',' ', t)).strip()
 right=norm(right)
 bad=[]
 for r in data['recipes']:
-    for s in r['steps']:
+    for s in r['stepsSource']:
         probe=norm(s)[:60]
         if probe not in right: bad.append((r['slug'], probe))
-print(f"Kroki: {sum(len(r['steps']) for r in data['recipes'])} sprawdzonych, niezgodnych: {len(bad)}")
+print(f"Kroki: {sum(len(r['stepsSource']) for r in data['recipes'])} sprawdzonych, niezgodnych: {len(bad)}")
 for b in bad[:10]: print('   ', b)
 
 # tytuly + metadane
@@ -75,6 +78,8 @@ badt=[r['title'] for r in data['recipes'] if re.sub(r'\s+',' ',r['title']) not i
 print(f"Tytuły: {len(data['recipes'])} sprawdzonych, niezgodnych: {len(badt)}", badt)
 
 # komplet 10x4
-grid=Counter((r['day'], r['slot']) for r in data['recipes'])
+# mealNo to oryginalny numer posiłku z PDF-u (1–4); `slot` na stronie
+# ma już scalone śniadania, więc do kontroli kompletności bierzemy mealNo.
+grid=Counter((r['day'], r['mealNo']) for r in data['recipes'])
 print("Siatka 10 dni × 4 posiłki kompletna:", all(grid.get((d,s))==1 for d in range(1,11) for s in range(1,5)))
 sys.exit(1 if (missing or bad or badt) else 0)
