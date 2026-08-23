@@ -400,10 +400,18 @@
         name: r.name,
         grams: fmtGrams(f === 1 ? ing.grams * r.ratio : grams),
         swapped: r.swapped,
+        nameFirst: !!ing.nameFirst,
+        weightOnly: !!ing.weightOnly,
+        section: ing.section || null,
       };
     }
 
+    // Zapis zgodny ze źródłem: starsze plany podają najpierw ilość
+    // („2 łyżki ryżu basmati”), nowsze najpierw nazwę („Papryka – 0.5 sztuki”),
+    // a część składników ma tylko gramaturę („50 g kaszy kuskus”).
     function line(s) {
+      if (s.weightOnly) return s.grams + " g " + s.name;
+      if (s.nameFirst) return s.name + " – " + s.qty + " " + s.unit;
       return s.qty + " " + s.unit + " " + s.name;
     }
 
@@ -430,12 +438,15 @@
 
       // Same wiersze składników przepisujemy w miejscu, żeby nie gubić
       // otwartych list rozwijanych „Zamień na”.
-      [].forEach.call(list.children, function (li, idx) {
+      var idx = 0;
+      [].forEach.call(list.children, function (li) {
+        if (li.classList.contains("p-ings__sec")) return;  // nagłówek sekcji
         var s = scaled(data.ingredients[idx], idx);
-        li.querySelector(".p-ing__q").textContent = s.qty + " " + s.unit;
+        li.querySelector(".p-ing__q").textContent = s.weightOnly ? "" : s.qty + " " + s.unit;
         li.querySelector(".p-ing__n").textContent = s.name;
         li.querySelector(".p-ing__g").textContent = s.grams + " g";
         li.setAttribute("data-swapped", s.swapped ? "1" : "0");
+        idx++;
       });
 
       if (stepsList) {
@@ -517,8 +528,18 @@
         h.textContent = group.label;
         sheetBody.appendChild(h);
 
+        var sekcja = null;
         items.forEach(function (it, n) {
           var s = scaled(it.ing, it.idx);
+          if (s.section !== sekcja) {
+            sekcja = s.section;
+            if (sekcja) {
+              var sh = document.createElement("p");
+              sh.className = "p-group p-group--sub";
+              sh.textContent = sekcja;
+              sheetBody.appendChild(sh);
+            }
+          }
           var id = group.key + ":" + n;
           var label = document.createElement("label");
           label.className = "p-check";

@@ -1,42 +1,61 @@
-name: Publikacja strony
+# Jedyny workflow publikujący tę stronę.
+#
+# Nie dodawaj drugiego — dwa pipeline'y ścigają się o GitHub Pages i wygrywa
+# ten, który akurat skończy później. Jeśli w repo leży jeszcze
+# .github/workflows/jekyll-gh-pages.yml, skasuj go.
+#
+# Wymagane ustawienie: Settings ▸ Pages ▸ Build and deployment ▸ Source =
+# „Deploy from a branch”, Branch = gh-pages / (root). Workflow sam tworzy
+# i aktualizuje gałąź gh-pages.
 
-# Jedyny workflow, który publikuje tę stronę. Nie dodawaj drugiego — dwa
-# pipeline'y pchające do GitHub Pages ścigają się i wygrywa ten, który
-# akurat skończy później.
+name: Publikacja strony
 
 on:
   push:
     branches: [main]
-  workflow_dispatch:
+  workflow_dispatch:        # pozwala uruchomić ręcznie z zakładki Actions
 
-permissions:
-  contents: write
-
+# Dwa pushe pod rząd nie deployują się równolegle: nowszy czeka na starszy.
 concurrency:
   group: pages
   cancel-in-progress: false
 
+permissions:
+  contents: write           # potrzebne, żeby zapisać gałąź gh-pages
+
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: Pobierz repozytorium
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0    # gh-deploy potrzebuje pełnej historii
 
-      - uses: actions/setup-python@v5
+      - name: Ustaw Pythona
+        uses: actions/setup-python@v5
         with:
           python-version: "3.12"
           cache: pip
 
-      - name: Instalacja zależności
+      - name: Zainstaluj zależności
         run: pip install -r requirements.txt
 
-      - name: Generowanie stron z recipes.json
+      - name: Wygeneruj docs/ z recipes.json
         run: python generate_site.py
 
-      - name: Konfiguracja gita
+      # Jeśli wygenerowane docs/ różni się od tego w repo, znaczy że ktoś
+      # zacommitował recipes.json bez uruchomienia generatora. Strona i tak
+      # zbuduje się poprawnie (publikujemy świeży wynik), ale warto wiedzieć.
+      - name: Sprawdź, czy docs/ w repo jest aktualne
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if ! git diff --quiet -- docs; then
+            echo "::warning::docs/ w repo jest nieaktualne — uruchom lokalnie 'python generate_site.py' i zacommituj wynik."
+            git diff --stat -- docs
+          fi
 
-      - name: Budowa i publikacja
-        run: mkdocs gh-deploy --force
+      - name: Zbuduj i opublikuj na gh-pages
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdocs gh-deploy --force --no-history

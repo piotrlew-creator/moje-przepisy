@@ -30,11 +30,11 @@
   --p-brand-ink: #ffffff;
   --p-brand-soft: #e2efe7;
 
-  --p-slot-1: #37701f; /* śniadanie  7:00 — zielony       */
-  --p-slot-2: #9a2420; /* obiad     13:00 — ciemnoczerwony */
-  --p-slot-3: #24417d; /* kolacja   18:00 — granatowy      */
-  --p-slot-1-soft: #e4f0dc;
-  --p-slot-2-soft: #f7e2e0;
+  --p-slot-1: #a44e09; /* śniadanie  7:00 — ciemnopomarańczowy */
+  --p-slot-2: #2b6630; /* obiad     13:00 — ciemnozielony      */
+  --p-slot-3: #24417d; /* kolacja   18:00 — granatowy          */
+  --p-slot-1-soft: #fae6d5;
+  --p-slot-2-soft: #e2efdf;
   --p-slot-3-soft: #e0e6f4;
   /* Kolor napisu na wypełnionym kaflu — osobny token, bo nie każde tło
      uniesie biały tekst. */
@@ -71,14 +71,14 @@
   --p-brand-ink: #0d1a12;
   --p-brand-soft: #1a2e22;
 
-  /* Na ciemnym tle wszystkie trzy są rozjaśnione — inaczej ciemna czerwień
-     i granat zlałyby się z tłem. */
-  --p-slot-1: #8fc96f; /* zielony        */
-  --p-slot-2: #e08279; /* ciemnoczerwony */
-  --p-slot-3: #90a9e6; /* granatowy      */
-  --p-slot-1-soft: #1b2a16;
-  --p-slot-2-soft: #2e1a18;
-  --p-slot-3-soft: #191f33;
+  /* Na ciemnym tle ta sama trójka w jaśniejszym wydaniu — ciemny pomarańcz,
+     zieleń i granat zlałyby się z tłem. */
+  --p-slot-1: #eac65c; /* żółty          */
+  --p-slot-2: #8fd07a; /* jasnozielony   */
+  --p-slot-3: #7fb6e8; /* jasnoniebieski */
+  --p-slot-1-soft: #2e2614;
+  --p-slot-2-soft: #1c2a18;
+  --p-slot-3-soft: #16202e;
   --p-slot-1-ink: #10130f;
   --p-slot-2-ink: #10130f;
   --p-slot-3-ink: #10130f;
@@ -1330,4 +1330,35 @@ html, body { overflow-x: hidden; }
   border-radius: 999px;
   padding: 1px 7px;
   vertical-align: 1px;
+}
+
+/* ------------------------------------------- sekcje i zapis składników ---- */
+/* Nowsze plany dzielą składniki na części („sos:”, „Przekąska: …”). */
+.md-typeset .p-ings li.p-ings__sec {
+  display: block;
+  padding: 12px 16px 4px;
+  border-bottom: 0;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--p-ink-3);
+  background: var(--p-surface-2);
+}
+
+/* Zapis „Nazwa – ilość” zamiast „ilość Nazwa”: ta sama treść, kolejność
+   jak w źródle. */
+.p-ings li[data-order="name"] .p-ing__row { flex-wrap: wrap; }
+.p-ings li[data-order="name"] .p-ing__n { order: 1; flex: 1 1 auto; font-weight: 700; color: var(--p-ink); }
+.p-ings li[data-order="name"] .p-ing__q { order: 2; font-weight: 600; color: var(--p-ink-2); }
+.p-ings li[data-order="name"] .p-ing__g { order: 3; }
+.p-ings .p-ing__q:empty { display: none; }
+
+.p-group--sub {
+  padding-top: 10px;
+  padding-bottom: 2px;
+  color: var(--p-ink-2);
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 0.66rem;
 }

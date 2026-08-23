@@ -86,7 +86,8 @@ def render_index(data):
     out = ["---", "hide:", "  - toc", "---", "", "# Co dziś jesz?", ""]
     out.append(
         "Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — "
-        f"albo po prostu przewiń wszystkie {len(recipes)} przepisów z Twojego planu."
+        f"albo po prostu przewiń wszystkie {len(recipes)} "
+        f"{plural(len(recipes), 'przepis', 'przepisy', 'przepisów')} z Twoich planów."
     )
     out.append("")
 
@@ -232,10 +233,20 @@ def render_recipe(r, data):
     out.append("</div>")
 
     out.append('<ul class="p-ings" id="ing-list">')
+    sekcja = None
     for i, ing in enumerate(r["ingredients"]):
+        # Nowsze plany dzielą składniki na sekcje („sos:”, „Przekąska: …”).
+        if ing.get("section") != sekcja:
+            sekcja = ing.get("section")
+            if sekcja:
+                out.append(f'<li class="p-ings__sec">{e(sekcja)}</li>')
         pantry = ' data-pantry="1"' if ing["pantry"] else ""
-        out.append(f'<li{pantry}><div class="p-ing__row">'
-                   f'<span class="p-ing__q">{e(num(ing["qty"]))} {e(ing["unit"])}</span>'
+        order = ' data-order="name"' if ing.get("nameFirst") else ""
+        # „Kasza kuskus – 50 g” nie ma miary domowej, więc gramatura jest
+        # jedyną liczbą i nie powtarzamy jej po prawej stronie.
+        ilosc = "" if ing.get("weightOnly") else f'{num(ing["qty"])} {ing["unit"]}'
+        out.append(f'<li{pantry}{order}><div class="p-ing__row">'
+                   f'<span class="p-ing__q">{e(ilosc)}</span>'
                    f'<span class="p-ing__n">{e(ing["name"])}</span>'
                    f'<span class="p-ing__g">{e(num(ing["grams"]))} g</span></div>')
         if "swap" in ing:

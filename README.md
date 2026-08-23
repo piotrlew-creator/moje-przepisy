@@ -1,6 +1,6 @@
 # Przepisy Dietetyczne
 
-Statyczna strona z przepisami z planu diety: wyszukiwarka według pory posiłku
+Statyczna strona z przepisami z planów diety: wyszukiwarka według pory posiłku
 i składników, przelicznik porcji, zamienniki składników, interaktywna lista
 zakupów z eksportem do PDF oraz tryb gotowania krok po kroku. Zbudowana na
 MkDocs Material, hostowana na GitHub Pages.
@@ -17,7 +17,7 @@ kroki przygotowania, kaloryczność, makroskładniki, dzień i numer posiłku.
 
 ```
 recipes.json ──▶ generate_site.py ──▶ docs/index.md          (wyszukiwarka + lista dań)
-                                      docs/przepisy/*.md     (40 przepisów)
+                                      docs/przepisy/*.md     (280 przepisów)
                                       docs/zamienniki.md     (lista wymienników)
                                              │
                                              ▼
@@ -44,11 +44,13 @@ Znacznik wskazuje konkretny składnik, nie grupę — inaczej w sałatce greckie
 stronie głównej i lista składników w filtrze nie mogą się rozjechać z samymi
 przepisami — wcześniej właśnie tak się stało i 25 z 40 dań było nieosiągalnych.
 
-Generator na koniec sprawdza dwie rzeczy i przerywa build, jeśli któraś nie
+Generator na koniec sprawdza cztery rzeczy i przerywa build, jeśli któraś nie
 wychodzi:
 
 * każdy przepis ma link ze strony głównej,
-* każdy składnik w filtrze ma co najmniej jeden pasujący przepis.
+* każdy składnik w filtrze ma co najmniej jeden pasujący przepis,
+* każdy składnik z `featuredIngredients` istnieje w `ingredientIndex`,
+* każdy znacznik zamiennika w krokach wskazuje składnik, który zamiennik ma.
 
 ## Porządki po przebudowie
 
@@ -87,12 +89,14 @@ Dopisz obiekt do tablicy `recipes` w `recipes.json` i uruchom
 | pole | znaczenie |
 |---|---|
 | `slug` | nazwa pliku i adres strony |
+| `plan` | z którego planu pochodzi przepis (1–11) |
 | `day`, `slot` | dzień planu (1–10) i numer posiłku (1–4) |
 | `mealNo` | numer posiłku z PDF-u (1–4), do kontroli kompletności |
+| `sourceTime` | godziny posiłku z PDF-u; `null` dla przekąski, która ich nie ma |
 | `slotId`, `slotLabel`, `time` | pora dnia — musi zgadzać się z `slots` |
 | `kcal`, `protein`, `carbs`, `fat` | wartości z planu diety, na porcję |
 | `baseServings` | ile porcji daje przepis w źródle (domyślnie 1) |
-| `ingredients[]` | `qty` + `unit` (miara domowa), `grams`, `name`, `pantry`, `tag`, opcjonalnie `swap` |
+| `ingredients[]` | `qty` + `unit` (miara domowa), `grams`, `name`, `pantry`, `tag`, opcjonalnie `swap`, `nameFirst`, `weightOnly`, `section` |
 | `stepsSource[]` | kroki dosłownie ze źródła |
 | `steps[]` | kroki w trybie rozkazującym, ze znacznikami zamienników |
 | `tags[]` | identyfikatory składników używane przez filtr |
@@ -102,16 +106,35 @@ Nowy składnik w filtrze wymaga też wpisu w `ingredientIndex`
 składników widać bez wyszukiwania — reszta jest dostępna przez pole „Szukaj
 składnika”, które toleruje literówki.
 
+## Dwa zapisy składnika
+
+Plany różnią się tym, co stoi w wierszu pierwsze, a strona zachowuje zapis
+źródłowy — stąd trzy flagi przy składniku:
+
+| zapis w PDF | flagi | jak wygląda na stronie |
+|---|---|---|
+| `2 łyżki ryżu basmati (30 g)` | brak | `2 łyżki ryżu basmati` |
+| `Papryka czerwona – 0.5 sztuki (85 g)` | `nameFirst` | `Papryka czerwona — 0.5 sztuki` |
+| `Kasza kuskus – 50 g` | `nameFirst`, `weightOnly` | `Kasza kuskus 50 g` |
+
+`section` przechowuje nagłówek, którym nowsze plany dzielą listę składników
+(`łosoś:`, `sos:`, `Panierka:`). Sekcje widać i na stronie przepisu, i na
+liście zakupów.
+
 ## Kategorie posiłków
 
-PDF ma cztery posiłki dziennie; na stronie Posiłek 1 i 2 są scalone w jedno
-„Śniadanie”:
+Plany mają trzy albo cztery posiłki dziennie, a niektóre dokładają przekąskę
+bez godzin. Na stronie wszystko sprowadza się do trzech pór, po godzinie
+rozpoczęcia z PDF-u:
 
-| Strona | Posiłki z PDF-u | Godziny |
+| Strona | Godzina startu w PDF | Godziny na stronie |
 |---|---|---|
-| Śniadanie | 1 i 2 | 7:00–10:00 |
-| Obiad | 3 | 13:00–16:00 |
-| Kolacja | 4 | 18:00–20:00 |
+| Śniadanie | do 10:00 (Posiłek 1 i 2) | 7:00–10:00 |
+| Obiad | 12:00–16:00 | 13:00–16:00 |
+| Kolacja | od 17:00 | 18:00–20:00 |
+
+Przekąska nie ma w PDF-ie godzin i zamyka dzień w planach, które nie mają
+osobnej kolacji — dlatego trafia do kolacji (`sourceTime: null`).
 
 ## Zamienniki składników
 
@@ -127,7 +150,17 @@ daje 106 g, a nie 150 g.
 
 ## Skąd pochodzą dane
 
-Sekcja „Plan diety” z PDF-a z planem żywieniowym: 10 dni × 4 posiłki.
-Nazwy dań, składniki i kroki są przepisane dosłownie, łącznie z literówkami
-oryginału. Trzymaj plik źródłowy w `source/`, żeby dało się odtworzyć każdą
-liczbę.
+Rozdział „Plan diety” z dziesięciu planów żywieniowych — razem 358 posiłków,
+z czego **280 unikalnych przepisów**; powtórzenia (to samo danie w kilku
+planach) są odsiewane po nazwie. Nazwy dań, składniki i kroki są przepisane
+dosłownie, łącznie z literówkami oryginału. Trzymaj pliki źródłowe w
+`source/`, żeby dało się odtworzyć każdą liczbę.
+
+Kontrola zgodności ze źródłem:
+
+```bash
+python verify_against_pdf.py source        # albo: source/plan1.pdf source/plan2.pdf ...
+```
+
+Skrypt czyta PDF-y drugą, niezależną ścieżką i sprawdza, czy każdy składnik,
+każdy krok z `stepsSource` i każda nazwa dania stoją w źródle dosłownie.
