@@ -10,9 +10,9 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-finder" id="finder">
 <div class="p-slotbar" role="group" aria-label="Pora posiłku">
 <button type="button" class="p-chip" data-slot-filter="all" data-on="1" aria-pressed="true">Wszystkie</button>
-<button type="button" class="p-chip p-chip--slot1" data-slot-filter="sniadanie" aria-pressed="false"><span class="p-dot"></span>Śniadanie <span class="p-num" style="opacity:.7">7:00-10:00</span></button>
-<button type="button" class="p-chip p-chip--slot2" data-slot-filter="obiad" aria-pressed="false"><span class="p-dot"></span>Obiad <span class="p-num" style="opacity:.7">13:00-16:00</span></button>
-<button type="button" class="p-chip p-chip--slot3" data-slot-filter="kolacja" aria-pressed="false"><span class="p-dot"></span>Kolacja <span class="p-num" style="opacity:.7">18:00-20:00</span></button>
+<button type="button" class="p-chip p-chip--slot1" data-slot-filter="sniadanie" data-slot-label="Śniadanie" aria-pressed="false"><span class="p-dot"></span>Śniadanie <span class="p-num" style="opacity:.7">7:00-10:00</span></button>
+<button type="button" class="p-chip p-chip--slot2" data-slot-filter="obiad" data-slot-label="Obiad" aria-pressed="false"><span class="p-dot"></span>Obiad <span class="p-num" style="opacity:.7">13:00-16:00</span></button>
+<button type="button" class="p-chip p-chip--slot3" data-slot-filter="kolacja" data-slot-label="Kolacja" aria-pressed="false"><span class="p-dot"></span>Kolacja <span class="p-num" style="opacity:.7">18:00-20:00</span></button>
 </div>
 <details class="p-panel" id="ing-panel">
 <summary class="p-panel__summary">

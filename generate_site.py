@@ -99,7 +99,8 @@ def render_index(data):
     for s in slots:
         out.append(
             f'<button type="button" class="p-chip p-chip--slot{s["slot"]}" '
-            f'data-slot-filter="{e(s["id"])}" aria-pressed="false">'
+            f'data-slot-filter="{e(s["id"])}" data-slot-label="{e(s["label"])}" '
+            f'aria-pressed="false">'
             f'<span class="p-dot"></span>{e(s["label"])} '
             f'<span class="p-num" style="opacity:.7">{e(s["time"])}</span></button>'
         )

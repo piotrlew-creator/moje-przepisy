@@ -129,8 +129,27 @@
     var panel = document.getElementById("ing-panel");
     var stateEl = document.getElementById("ing-state");
 
-    var saved = LS.get("filters", { slot: "all", ings: [] });
-    var state = { slot: saved.slot || "all", ings: saved.ings || [] };
+    // Pora posiłku startuje zawsze na „Wszystkie” — zawężenie do śniadania,
+    // obiadu czy kolacji ma być świadomym wyborem, a nie stanem odziedziczonym
+    // po poprzedniej wizycie. Zaznaczone składniki pamiętamy dalej.
+    var saved = LS.get("filters", { ings: [] });
+    var state = { slot: "all", ings: saved.ings || [] };
+
+    // Ile przepisów w danej porze posiłku zawiera dany składnik.
+    var countsBySlot = { all: {} };
+    cards.forEach(function (card) {
+      var slot = card.getAttribute("data-slot-id");
+      countsBySlot[slot] = countsBySlot[slot] || {};
+      (card.getAttribute("data-tags") || "").split(" ").forEach(function (t) {
+        if (!t) return;
+        countsBySlot.all[t] = (countsBySlot.all[t] || 0) + 1;
+        countsBySlot[slot][t] = (countsBySlot[slot][t] || 0) + 1;
+      });
+    });
+
+    function countFor(tag) {
+      return (countsBySlot[state.slot] || {})[tag] || 0;
+    }
 
     slotChips.forEach(function (chip) {
       var on = chip.getAttribute("data-slot-filter") === state.slot;
@@ -143,9 +162,26 @@
           c.setAttribute("data-on", sel ? "1" : "0");
           c.setAttribute("aria-pressed", sel ? "true" : "false");
         });
+        // Składnik, którego nie ma w wybranej porze posiłku, zostaje
+        // odznaczony — inaczej wynik byłby pusty bez widocznej przyczyny.
+        ingChips.forEach(function (c) {
+          var input = c.querySelector("input");
+          if (input.checked && countFor(input.value) === 0) {
+            input.checked = false;
+            c.setAttribute("data-on", "0");
+          }
+        });
+        state.ings = checkedIngredients();
         apply();
       });
     });
+
+    function checkedIngredients() {
+      return ingChips
+        .map(function (c) { return c.querySelector("input"); })
+        .filter(function (i) { return i.checked; })
+        .map(function (i) { return i.value; });
+    }
 
     ingChips.forEach(function (chip) {
       var input = chip.querySelector("input");
@@ -153,24 +189,31 @@
       chip.setAttribute("data-on", input.checked ? "1" : "0");
       input.addEventListener("change", function () {
         chip.setAttribute("data-on", input.checked ? "1" : "0");
-        state.ings = ingChips
-          .map(function (c) { return c.querySelector("input"); })
-          .filter(function (i) { return i.checked; })
-          .map(function (i) { return i.value; });
+        state.ings = checkedIngredients();
         apply();
       });
     });
 
-    // Bez zapytania widać tylko kluczowe składniki plus te już zaznaczone;
-    // z zapytaniem — wszystko, co pasuje, także mimo literówki.
+    // Widoczność kafelka składnika zależy od dwóch rzeczy: czy występuje
+    // w wybranej porze posiłku i czy pasuje do wpisanego zapytania.
+    // Bez zapytania pokazujemy kluczowe składniki plus już zaznaczone.
     function renderChips() {
       var q = search ? search.value.trim() : "";
-      var exact = 0, fuzzy = [];
+      var exact = 0, fuzzy = [], available = 0;
       ingChips.forEach(function (chip) {
+        var input = chip.querySelector("input");
         var label = chip.getAttribute("data-label") || "";
-        var checked = chip.querySelector("input").checked;
+        var n = countFor(input.value);
+        var badge = chip.querySelector(".p-num");
+        if (badge) badge.textContent = n;
+
+        if (n === 0) {
+          chip.hidden = true;
+          return;
+        }
+        available++;
         if (!q) {
-          chip.hidden = chip.getAttribute("data-rank") !== "top" && !checked;
+          chip.hidden = chip.getAttribute("data-rank") !== "top" && !input.checked;
           return;
         }
         var score = matchScore(label, q);
@@ -178,17 +221,25 @@
         if (score <= 0.5) exact++;
         else if (score < Infinity) fuzzy.push(label);
       });
+
       if (searchClear) searchClear.hidden = !q;
       if (hint) {
-        if (!q) {
-          hint.textContent = hintText;
-        } else if (exact === 0 && fuzzy.length) {
+        if (q && exact === 0 && fuzzy.length) {
           hint.textContent = "Nie znaleziono „" + q + "”. Może chodziło o: " +
             fuzzy.slice(0, 3).join(", ") + "?";
-        } else if (exact === 0) {
+        } else if (q && exact === 0) {
           hint.textContent = "Brak składnika pasującego do „" + q + "”.";
-        } else {
+        } else if (q) {
           hint.textContent = "";
+        } else if (state.slot === "all") {
+          hint.textContent = hintText;
+        } else {
+          var meal = document.querySelector('[data-slot-filter="' + state.slot + '"]');
+          var mealName = meal ? (meal.getAttribute("data-slot-label") || "") : "";
+          hint.textContent = available + " " +
+            plural(available, ["składnik", "składniki", "składników", "składnika"]) +
+            " występujących w kategorii " + mealName +
+            ". Resztę zobaczysz po powrocie do „Wszystkie”.";
         }
       }
     }
@@ -247,11 +298,13 @@
           : "wybierz składniki";
         stateEl.setAttribute("data-active", n ? "1" : "0");
       }
-      LS.set("filters", state);
+      // Zapisujemy tylko składniki — pora posiłku zawsze startuje od
+      // „Wszystkie”.
+      LS.set("filters", { ings: state.ings });
+      renderChips();
     }
 
     if (panel && state.ings.length) panel.open = true;
-    renderChips();
     apply();
   }
 

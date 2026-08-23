@@ -1,9 +1,10 @@
 /* ==========================================================================
    Przepisy Dietetyczne — warstwa wizualna
    --------------------------------------------------------------------------
-   Paleta jest zbudowana wokół pory dnia: każdy z czterech posiłków planu ma
-   własny kolor, od bursztynu o 6:00 do indygo o 21:00. Kolor niesie więc
-   informację (który to posiłek), a nie tylko dekorację.
+   Paleta koduje porę posiłku: śniadanie zielone, obiad żółty, kolacja
+   granatowa. Kolor niesie więc informację (który to posiłek), a nie tylko
+   dekorację. Żółty jest zbyt jasny na biały tekst, dlatego każdy kafel ma
+   osobny token na kolor napisu (--p-slot-N-ink).
 
    Typografia: Literata (nagłówki, tytuły dań) + Manrope (interfejs, kroki).
 
@@ -29,14 +30,23 @@
   --p-brand-ink: #ffffff;
   --p-brand-soft: #e2efe7;
 
-  --p-slot-1: #a06c10; /* śniadanie   6:00 */
-  --p-slot-2: #43722f; /* II śniadanie 10:00 */
-  --p-slot-3: #a94822; /* obiad       14:00 */
-  --p-slot-4: #55478a; /* kolacja     18:00 */
-  --p-slot-1-soft: #f6eddb;
-  --p-slot-2-soft: #e6eedf;
-  --p-slot-3-soft: #f7e7df;
-  --p-slot-4-soft: #e9e5f3;
+  --p-slot-1: #37701f; /* śniadanie  7:00 — zielony       */
+  --p-slot-2: #9a2420; /* obiad     13:00 — ciemnoczerwony */
+  --p-slot-3: #24417d; /* kolacja   18:00 — granatowy      */
+  --p-slot-1-soft: #e4f0dc;
+  --p-slot-2-soft: #f7e2e0;
+  --p-slot-3-soft: #e0e6f4;
+  /* Kolor napisu na wypełnionym kaflu — osobny token, bo nie każde tło
+     uniesie biały tekst. */
+  --p-slot-1-ink: #ffffff;
+  --p-slot-2-ink: #ffffff;
+  --p-slot-3-ink: #ffffff;
+
+  /* Ciepły akcent przycisku „Wyczyść”. Bursztyn, bo trzy kolory posiłków
+     (zieleń, czerwień, granat) są już zajęte i akcent musi się od nich
+     odróżniać. */
+  --p-accent-warm: #8a5e12;
+  --p-accent-warm-soft: #f7edd8;
 
   --p-shadow: 0 1px 2px rgba(25, 30, 26, 0.07), 0 4px 14px rgba(25, 30, 26, 0.05);
   --p-shadow-lift: 0 6px 24px rgba(25, 30, 26, 0.14);
@@ -61,14 +71,20 @@
   --p-brand-ink: #0d1a12;
   --p-brand-soft: #1a2e22;
 
-  --p-slot-1: #dcae55;
-  --p-slot-2: #8fc476;
-  --p-slot-3: #e0855c;
-  --p-slot-4: #a599dd;
-  --p-slot-1-soft: #2a2213;
-  --p-slot-2-soft: #1d2718;
-  --p-slot-3-soft: #2c1d15;
-  --p-slot-4-soft: #221d33;
+  /* Na ciemnym tle wszystkie trzy są rozjaśnione — inaczej ciemna czerwień
+     i granat zlałyby się z tłem. */
+  --p-slot-1: #8fc96f; /* zielony        */
+  --p-slot-2: #e08279; /* ciemnoczerwony */
+  --p-slot-3: #90a9e6; /* granatowy      */
+  --p-slot-1-soft: #1b2a16;
+  --p-slot-2-soft: #2e1a18;
+  --p-slot-3-soft: #191f33;
+  --p-slot-1-ink: #10130f;
+  --p-slot-2-ink: #10130f;
+  --p-slot-3-ink: #10130f;
+
+  --p-accent-warm: #e0b15c;
+  --p-accent-warm-soft: #2c2611;
 
   --p-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 4px 14px rgba(0, 0, 0, 0.35);
   --p-shadow-lift: 0 6px 24px rgba(0, 0, 0, 0.55);
@@ -87,7 +103,7 @@
   --md-typeset-a-color: var(--p-brand);
   --md-primary-fg-color: var(--p-brand);
   --md-primary-bg-color: var(--p-brand-ink);
-  --md-accent-fg-color: var(--p-slot-3);
+  --md-accent-fg-color: var(--p-brand);
   --md-code-bg-color: var(--p-surface-2);
   --md-text-font: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --md-code-font: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -208,9 +224,13 @@ body,
   cursor: default;
 }
 
+/* Obramowanie fokusu tylko dla klawiatury. Przy :focus-within zielony pierścień
+   pojawiał się też po zwykłym tapnięciu — na czerwonym kaflu „Obiad” wyglądał
+   jak błąd. */
 .p-btn:focus-visible,
-.p-chip:focus-within,
-.p-check:focus-within,
+.p-chip:focus-visible,
+.p-chip:has(input:focus-visible),
+.p-check:has(input:focus-visible),
 input:focus-visible {
   outline: 3px solid var(--p-brand);
   outline-offset: 2px;
@@ -257,22 +277,21 @@ input:focus-visible {
   color: var(--p-brand-ink);
 }
 
-.p-chip--slot1[data-on="1"] { background: var(--p-slot-1); border-color: var(--p-slot-1); color: #fff; }
-.p-chip--slot2[data-on="1"] { background: var(--p-slot-2); border-color: var(--p-slot-2); color: #fff; }
-.p-chip--slot3[data-on="1"] { background: var(--p-slot-3); border-color: var(--p-slot-3); color: #fff; }
-.p-chip--slot4[data-on="1"] { background: var(--p-slot-4); border-color: var(--p-slot-4); color: #fff; }
-
-[data-md-color-scheme="slate"] .p-chip--slot1[data-on="1"],
-[data-md-color-scheme="slate"] .p-chip--slot2[data-on="1"],
-[data-md-color-scheme="slate"] .p-chip--slot3[data-on="1"],
-[data-md-color-scheme="slate"] .p-chip--slot4[data-on="1"] {
-  color: #10130f;
+/* Kafel „Wszystkie” nie jest porą posiłku — po przejściu śniadania na zieleń
+   marki byłby nie do odróżnienia, więc dostaje neutralną czerń. */
+.p-slotbar .p-chip[data-slot-filter="all"][data-on="1"] {
+  background: var(--p-ink);
+  border-color: var(--p-ink);
+  color: var(--p-ground);
 }
+
+.p-chip--slot1[data-on="1"] { background: var(--p-slot-1); border-color: var(--p-slot-1); color: var(--p-slot-1-ink); }
+.p-chip--slot2[data-on="1"] { background: var(--p-slot-2); border-color: var(--p-slot-2); color: var(--p-slot-2-ink); }
+.p-chip--slot3[data-on="1"] { background: var(--p-slot-3); border-color: var(--p-slot-3); color: var(--p-slot-3-ink); }
 
 .p-chip--slot1 .p-dot { color: var(--p-slot-1); }
 .p-chip--slot2 .p-dot { color: var(--p-slot-2); }
 .p-chip--slot3 .p-dot { color: var(--p-slot-3); }
-.p-chip--slot4 .p-dot { color: var(--p-slot-4); }
 .p-chip[data-on="1"] .p-dot { color: currentColor; }
 
 /* ---------------------------------------------------------- wyszukiwarka -- */
@@ -439,7 +458,6 @@ input:focus-visible {
 .p-card[data-slot="1"] .p-card__band { background: var(--p-slot-1); }
 .p-card[data-slot="2"] .p-card__band { background: var(--p-slot-2); }
 .p-card[data-slot="3"] .p-card__band { background: var(--p-slot-3); }
-.p-card[data-slot="4"] .p-card__band { background: var(--p-slot-4); }
 
 .p-card__body {
   display: flex;
@@ -483,7 +501,6 @@ input:focus-visible {
 .p-card[data-slot="1"] .p-dot { background: var(--p-slot-1); }
 .p-card[data-slot="2"] .p-dot { background: var(--p-slot-2); }
 .p-card[data-slot="3"] .p-dot { background: var(--p-slot-3); }
-.p-card[data-slot="4"] .p-dot { background: var(--p-slot-4); }
 
 .p-card__tags {
   font-size: 0.64rem;
@@ -507,7 +524,6 @@ input:focus-visible {
 .p-hero[data-slot="1"] { border-left-color: var(--p-slot-1); background: var(--p-slot-1-soft); }
 .p-hero[data-slot="2"] { border-left-color: var(--p-slot-2); background: var(--p-slot-2-soft); }
 .p-hero[data-slot="3"] { border-left-color: var(--p-slot-3); background: var(--p-slot-3-soft); }
-.p-hero[data-slot="4"] { border-left-color: var(--p-slot-4); background: var(--p-slot-4-soft); }
 
 .p-hero__top {
   display: flex;
@@ -1003,7 +1019,6 @@ body.p-cooking { overflow: hidden; }
 .p-day__meal[data-slot="1"] .p-day__bar { background: var(--p-slot-1); }
 .p-day__meal[data-slot="2"] .p-day__bar { background: var(--p-slot-2); }
 .p-day__meal[data-slot="3"] .p-day__bar { background: var(--p-slot-3); }
-.p-day__meal[data-slot="4"] .p-day__bar { background: var(--p-slot-4); }
 
 .p-day__name { font-size: 0.76rem; font-weight: 600; line-height: 1.3; }
 .p-day__slot { font-size: 0.62rem; font-weight: 700; color: var(--p-ink-3); text-transform: uppercase; letter-spacing: 0.05em; }
@@ -1226,15 +1241,15 @@ html, body { overflow-x: hidden; }
 
 .p-btn--clear {
   flex: none;
-  background: var(--p-slot-3-soft);
-  border-color: var(--p-slot-3);
-  color: var(--p-slot-3);
+  background: var(--p-accent-warm-soft);
+  border-color: var(--p-accent-warm);
+  color: var(--p-accent-warm);
   font-weight: 800;
   padding: 10px 14px;
   white-space: nowrap;
 }
 
-.p-btn--clear:hover { background: var(--p-slot-3); color: #fff; }
+.p-btn--clear:hover { background: var(--p-accent-warm); color: #fff; }
 [data-md-color-scheme="slate"] .p-btn--clear:hover { color: #10130f; }
 
 .p-hint {
