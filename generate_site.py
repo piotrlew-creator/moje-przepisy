@@ -49,6 +49,21 @@ def plural(n, one, few, many):
     return many
 
 
+# Skróty jednostek — tylko przy wyświetlaniu. W recipes.json zostaje pełny
+# zapis z PDF-u, żeby verify_against_pdf.py dalej porównywał dane ze źródłem
+# znak w znak. Ta sama tabela jest w docs/javascripts/app.js (SKROTY), bo
+# tam ilości są przeliczane na żywo — zmieniasz jedno, zmień drugie.
+SKROTY = {
+    "sztuka": "szt.", "sztuki": "szt.", "sztuk": "szt.",
+    "opakowanie": "op.", "opakowania": "op.", "opakowań": "op.",
+    "szczypta": "szcz.", "szczypty": "szcz.", "szczypt": "szcz.",
+}
+
+
+def skrot(u):
+    return SKROTY.get(u, u)
+
+
 def num(x):
     return str(int(x)) if float(x).is_integer() else str(x)
 
@@ -244,7 +259,7 @@ def render_recipe(r, data):
         order = ' data-order="name"' if ing.get("nameFirst") else ""
         # „Kasza kuskus – 50 g” nie ma miary domowej, więc gramatura jest
         # jedyną liczbą i nie powtarzamy jej po prawej stronie.
-        ilosc = "" if ing.get("weightOnly") else f'{num(ing["qty"])} {ing["unit"]}'
+        ilosc = "" if ing.get("weightOnly") else f'{num(ing["qty"])} {skrot(ing["unit"])}'
         out.append(f'<li{pantry}{order}><div class="p-ing__row">'
                    f'<span class="p-ing__q">{e(ilosc)}</span>'
                    f'<span class="p-ing__n">{e(ing["name"])}</span>'
@@ -409,6 +424,33 @@ def main():
                     print(f"BŁĄD: {r['slug']} — znacznik wskazuje na składnik "
                           f"bez zamiennika ({m.group(0)})", file=sys.stderr)
                     sys.exit(1)
+
+    # Skróty jednostek są w dwóch miejscach — tu i w app.js. Gdyby się
+    # rozjechały, strona przepisu pokazywałaby „1 szt.”, a po zmianie liczby
+    # osób „2 sztuki”. Pilnujemy, żeby obie tabele mówiły to samo.
+    js = open(os.path.join(DOCS, "javascripts", "app.js"), encoding="utf-8").read()
+    blok = re.search(r"var SKROTY = \{(.*?)\};", js, re.S)
+    if not blok:
+        print("BŁĄD: nie znalazłem tabeli SKROTY w app.js", file=sys.stderr)
+        sys.exit(1)
+    z_js = dict(re.findall(r'"([^"]+)":\s*"([^"]+)"', blok.group(1)))
+    if z_js != SKROTY:
+        print("BŁĄD: skróty jednostek rozjechały się między generate_site.py "
+              f"a app.js.\n  tylko w app.js: {sorted(set(z_js) - set(SKROTY))}"
+              f"\n  tylko w generate_site.py: {sorted(set(SKROTY) - set(z_js))}"
+              f"\n  różne wartości: "
+              f"{sorted(k for k in set(z_js) & set(SKROTY) if z_js[k] != SKROTY[k])}",
+              file=sys.stderr)
+        sys.exit(1)
+
+    uzyte = {i["unit"] for r in data["recipes"] for i in r["ingredients"]}
+    odmiany = {f for lem in SKROTY if lem in data["units"] for f in data["units"][lem]}
+    nieobjete = sorted(f for f in odmiany | uzyte
+                       if f in odmiany and f not in SKROTY)
+    if nieobjete:
+        print(f"BŁĄD: formy jednostek bez skrótu: {nieobjete}", file=sys.stderr)
+        sys.exit(1)
+
     print("Kontrola spójności: OK.")
 
 

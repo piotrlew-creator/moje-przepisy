@@ -30,15 +30,16 @@
   --p-brand-ink: #ffffff;
   --p-brand-soft: #e2efe7;
 
-  --p-slot-1: #a44e09; /* śniadanie  7:00 — ciemnopomarańczowy */
-  --p-slot-2: #2b6630; /* obiad     13:00 — ciemnozielony      */
-  --p-slot-3: #24417d; /* kolacja   18:00 — granatowy          */
-  --p-slot-1-soft: #fae6d5;
+  --p-slot-1: #dd7a1f; /* śniadanie  7:00 — pomarańczowy  */
+  --p-slot-2: #2b6630; /* obiad     13:00 — ciemnozielony */
+  --p-slot-3: #24417d; /* kolacja   18:00 — granatowy     */
+  --p-slot-1-soft: #fdeadb;
   --p-slot-2-soft: #e2efdf;
   --p-slot-3-soft: #e0e6f4;
   /* Kolor napisu na wypełnionym kaflu — osobny token, bo nie każde tło
-     uniesie biały tekst. */
-  --p-slot-1-ink: #ffffff;
+     uniesie biały tekst. Pomarańcz jest na to za jasny (biel dałaby 3,0),
+     więc śniadanie dostaje ciemny napis: 5,6 zamiast 3,0. */
+  --p-slot-1-ink: #1a1c19;
   --p-slot-2-ink: #ffffff;
   --p-slot-3-ink: #ffffff;
 
@@ -74,10 +75,10 @@
   /* Na ciemnym tle ta sama trójka w jaśniejszym wydaniu — ciemny pomarańcz,
      zieleń i granat zlałyby się z tłem. */
   --p-slot-1: #eac65c; /* żółty          */
-  --p-slot-2: #8fd07a; /* jasnozielony   */
+  --p-slot-2: #c9cdc7; /* jasnoszary     */
   --p-slot-3: #7fb6e8; /* jasnoniebieski */
   --p-slot-1-soft: #2e2614;
-  --p-slot-2-soft: #1c2a18;
+  --p-slot-2-soft: #272a27;
   --p-slot-3-soft: #16202e;
   --p-slot-1-ink: #10130f;
   --p-slot-2-ink: #10130f;

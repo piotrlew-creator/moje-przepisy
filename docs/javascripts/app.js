@@ -385,6 +385,20 @@
       return servings;
     }
 
+    // Skróty jednostek. Działają wyłącznie przy wyświetlaniu — w recipes.json
+    // zostaje pełny zapis z PDF-u, dzięki czemu verify_against_pdf.py nadal
+    // porównuje dane ze źródłem znak w znak. Ta sama tabela jest w
+    // generate_site.py (SKROTY) — zmieniasz jedno, zmień drugie.
+    var SKROTY = {
+      "sztuka": "szt.", "sztuki": "szt.", "sztuk": "szt.",
+      "opakowanie": "op.", "opakowania": "op.", "opakowań": "op.",
+      "szczypta": "szcz.", "szczypty": "szcz.", "szczypt": "szcz."
+    };
+
+    function skrot(u) {
+      return Object.prototype.hasOwnProperty.call(SKROTY, u) ? SKROTY[u] : u;
+    }
+
     function scaled(ing, idx) {
       var r = resolve(ing, idx);
       var f = factor();
@@ -396,7 +410,7 @@
       }
       return {
         qty: fmtQty(f === 1 ? ing.qty : qty),
-        unit: unit,
+        unit: skrot(unit),
         name: r.name,
         grams: fmtGrams(f === 1 ? ing.grams * r.ratio : grams),
         swapped: r.swapped,
