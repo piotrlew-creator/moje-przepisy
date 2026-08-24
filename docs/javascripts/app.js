@@ -218,6 +218,43 @@
     return s.weightOnly ? s.name : line(s);
   }
 
+  /* ------------------------------------------------- działy sklepowe ----- */
+  // Lista ułożona alfabetycznie każe biegać po sklepie tam i z powrotem:
+  // bazylia, chleb, cukinia, jajka… Dlatego produkty idą działami, a działy
+  // w kolejności obchodu sklepu (warzywa przy wejściu, na końcu napoje).
+  // Podział przychodzi z serwera (`window.DZIALY` + pole `dzial` przy każdym
+  // składniku), żeby strona przepisu, zbiorcza lista i oba PDF-y grupowały
+  // dokładnie tak samo.
+  var DZIALY = window.DZIALY || [];
+  var ETYKIETA_DZIALU = {};
+  DZIALY.forEach(function (p) { ETYKIETA_DZIALU[p[0]] = p[1]; });
+
+  // `pozycje` to dowolne obiekty z polem `dzial`. Zwraca listę
+  // { key, label, pozycje } — tylko działy, w których coś jest, w kolejności
+  // sklepowej. Nieznany dział trafia na koniec, do „Pozostałych”.
+  function wgDzialow(pozycje) {
+    var kubelki = {};
+    pozycje.forEach(function (p) {
+      var d = p.dzial && ETYKIETA_DZIALU[p.dzial] ? p.dzial : "inne";
+      (kubelki[d] = kubelki[d] || []).push(p);
+    });
+    var out = [];
+    DZIALY.forEach(function (para) {
+      var swoje = kubelki[para[0]];
+      if (swoje && swoje.length) out.push({ key: para[0], label: para[1], pozycje: swoje });
+    });
+    return out;
+  }
+
+  // Spiżarnia to rzeczy, po które zwykle nie trzeba iść do sklepu (sól, ocet,
+  // suszone oregano) — zostają razem na końcu listy zamiast rozsypywać się po
+  // działach. Wyjątkiem są świeże zioła: „natka pietruszki” czy „bazylia
+  // świeża” technicznie siedzą w spiżarni, ale pęczek trzeba wziąć z półki
+  // z warzywami, więc idą do warzyw.
+  function doSpizarni(p) {
+    return !!p.pantry && p.dzial !== "warzywa";
+  }
+
   // Przeliczenie składnika na wybraną liczbę porcji. `podmiana` jest opcjonalna
   // — strona zakupów nie zna zamienników, strona przepisu podaje je z resolve().
   function skaluj(ing, f, units, podmiana) {
@@ -872,63 +909,74 @@
       return LS.get("bought:" + data.slug, {});
     }
 
-    function groupsForList() {
-      return [
-        { key: "buy", label: "Do kupienia", pantry: false },
-        { key: "pantry", label: "Przyprawy i podstawy", pantry: true },
-      ];
+    // Pozycje listy zakupów tego przepisu, już przeliczone na wybraną liczbę
+    // osób i pogrupowane działami sklepowymi. Osobno idą rzeczy spiżarniowe:
+    // po sól i oregano zwykle nie trzeba iść do sklepu, więc rozsypywanie ich
+    // po działach tylko wydłużałoby trasę.
+    //
+    // Identyfikator odhaczenia to numer składnika w przepisie, a nie pozycja
+    // na liście — dzięki temu zmiana kolejności czy liczby osób nie przenosi
+    // ptaszków na sąsiedni produkt.
+    function pozycjeZakupow() {
+      var doKupienia = [], spizarnia = [];
+      data.ingredients.forEach(function (ing, idx) {
+        var s = scaled(ing, idx);
+        var poz = {
+          id: "i:" + idx,
+          dzial: ing.dzial,
+          pantry: ing.pantry,
+          tekst: lineShort(s),
+          gramy: s.grams,
+          uwaga: s.swapped ? "zamiennik" : "",
+          sort: norm(s.name),
+        };
+        (doSpizarni(poz) ? spizarnia : doKupienia).push(poz);
+      });
+      // W obrębie działu alfabetycznie — tak samo jak na liście zbiorczej.
+      // Kolejność z przepisu ma sens przy gotowaniu, nie przy półce w sklepie.
+      var abc = function (a, b) { return a.sort < b.sort ? -1 : (a.sort > b.sort ? 1 : 0); };
+      doKupienia.sort(abc);
+      spizarnia.sort(abc);
+      var sekcje = wgDzialow(doKupienia);
+      if (spizarnia.length) {
+        sekcje.push({ key: "spizarnia", label: "Przyprawy i podstawy", pozycje: spizarnia });
+      }
+      return sekcje;
     }
 
     function renderShopping() {
       var bought = boughtMap();
       sheetBody.innerHTML = "";
-      groupsForList().forEach(function (group) {
-        var items = [];
-        data.ingredients.forEach(function (ing, idx) {
-          if (!!ing.pantry === group.pantry) items.push({ ing: ing, idx: idx });
-        });
-        if (!items.length) return;
+      pozycjeZakupow().forEach(function (group) {
         var h = document.createElement("p");
         h.className = "p-group";
         h.textContent = group.label;
         sheetBody.appendChild(h);
 
-        var sekcja = null;
-        items.forEach(function (it, n) {
-          var s = scaled(it.ing, it.idx);
-          if (s.section !== sekcja) {
-            sekcja = s.section;
-            if (sekcja) {
-              var sh = document.createElement("p");
-              sh.className = "p-group p-group--sub";
-              sh.textContent = sekcja;
-              sheetBody.appendChild(sh);
-            }
-          }
-          var id = group.key + ":" + n;
+        group.pozycje.forEach(function (poz) {
           var label = document.createElement("label");
           label.className = "p-check";
           var cb = document.createElement("input");
           cb.type = "checkbox";
-          cb.checked = !!bought[id];
+          cb.checked = !!bought[poz.id];
           cb.addEventListener("change", function () {
             var b = boughtMap();
-            if (cb.checked) b[id] = true; else delete b[id];
+            if (cb.checked) b[poz.id] = true; else delete b[poz.id];
             LS.set("bought:" + data.slug, b);
           });
           var txt = document.createElement("span");
           txt.className = "p-check__text";
-          txt.textContent = lineShort(s);
-          if (s.swapped) {
+          txt.textContent = poz.tekst;
+          if (poz.uwaga) {
             var tag = document.createElement("span");
             tag.className = "p-swapped";
-            tag.textContent = "zamiennik";
+            tag.textContent = poz.uwaga;
             txt.appendChild(document.createTextNode(" "));
             txt.appendChild(tag);
           }
           var g = document.createElement("span");
           g.className = "p-check__g";
-          g.textContent = s.grams + " g";
+          g.textContent = poz.gramy + " g";
           label.appendChild(cb);
           label.appendChild(txt);
           label.appendChild(g);
@@ -1038,19 +1086,16 @@
           podtytul: servings + " " + jednostka + "  ·  " + data.slotLabel + " " + data.time,
           plik: "lista-zakupow-" + data.slug + "-" + servings +
                 (wieloporcjowy ? "porcji" : "os") + ".pdf",
-          sekcje: groupsForList().map(function (group) {
-            var pozycje = [];
-            data.ingredients.forEach(function (ing, idx) {
-              if (!!ing.pantry !== group.pantry) return;
-              var s = scaled(ing, idx);
-              pozycje.push({
-                tekst: lineShort(s),
-                gramy: s.grams,
-                odhaczone: !!bought[group.key + ":" + pozycje.length],
-                uwaga: s.swapped ? "zamiennik" : "",
-              });
-            });
-            return { label: group.label, pozycje: pozycje };
+          sekcje: pozycjeZakupow().map(function (group) {
+            return {
+              label: group.label,
+              pozycje: group.pozycje.map(function (poz) {
+                return {
+                  tekst: poz.tekst, gramy: poz.gramy, uwaga: poz.uwaga,
+                  odhaczone: !!bought[poz.id],
+                };
+              }),
+            };
           }),
         });
       });
@@ -1393,15 +1438,15 @@
         r.i.forEach(function (a) {
           var ing = {
             qty: a[0], unit: a[1], unitLemma: a[2] || null, name: a[3],
-            grams: a[4], pantry: !!a[5], tag: a[6] || "",
+            grams: a[4], pantry: !!a[5], tag: a[6] || "", dzial: a[7] || "",
           };
           var lemat = ing.unitLemma || ing.unit;
           var klucz = ing.tag + "|" + rdzen(ing.name) + "|" + lemat;
           if (!poz[klucz]) {
             poz[klucz] = {
               qty: 0, grams: 0, unitLemma: ing.unitLemma, unit: ing.unit,
-              name: ing.name, pantry: ing.pantry, zrodla: [],
-              weightOnly: ing.unit === "g",
+              name: ing.name, pantry: ing.pantry, dzial: ing.dzial, zrodla: [],
+              weightOnly: ing.unit === "g", klucz: klucz,
             };
           }
           var p = poz[klucz];
@@ -1416,10 +1461,15 @@
         var unit = p.unit;
         if (p.unitLemma && units[p.unitLemma]) unit = plural(p.qty, units[p.unitLemma]);
         return {
+          // Identyfikator odhaczenia to klucz scalania, a nie numer wiersza:
+          // po dorzuceniu dania do koszyka lista się przestawia, a ptaszki
+          // mają zostać przy swoich produktach.
+          id: p.klucz,
           tekst: p.weightOnly ? p.name
             : fmtQty(p.qty) + " " + skrot(unit) + " " + p.name,
           gramy: fmtGrams(p.grams),
           pantry: p.pantry,
+          dzial: p.dzial,
           zrodla: p.zrodla,
           sort: norm(p.name),
         };
@@ -1497,30 +1547,31 @@
       rysujListeZakupow();
     }
 
+    // Produkty do kupienia idą działami sklepu, a rzeczy spiżarniowe zostają
+    // razem na końcu — po sól i oregano zwykle nie trzeba nigdzie iść.
     function grupy() {
-      return [
-        { key: "buy", label: "Do kupienia", pantry: false },
-        { key: "have", label: "Zwykle masz w kuchni", pantry: true },
-      ];
+      var pozycje = zloz();
+      var spizarnia = pozycje.filter(doSpizarni);
+      var sekcje = wgDzialow(pozycje.filter(function (p) { return !doSpizarni(p); }));
+      if (spizarnia.length) {
+        sekcje.push({ key: "spizarnia", label: "Zwykle masz w kuchni", pozycje: spizarnia });
+      }
+      return sekcje;
     }
 
     function rysujListeZakupow() {
       bodyEl.innerHTML = "";
       if (!Object.keys(koszyk).length) return;
-      var pozycje = zloz();
       var bought = boughtMap();
 
       grupy().forEach(function (g) {
-        var swoje = pozycje.filter(function (p) { return p.pantry === g.pantry; });
-        if (!swoje.length) return;
-
         var h = document.createElement("p");
         h.className = "p-group";
         h.textContent = g.label;
         bodyEl.appendChild(h);
 
-        swoje.forEach(function (p, n) {
-          var id = g.key + ":" + n;
+        g.pozycje.forEach(function (p) {
+          var id = p.id;
           var label = document.createElement("label");
           label.className = "p-check";
           var cb = document.createElement("input");
@@ -1571,7 +1622,6 @@
     }
     if (pdfBtn) {
       pdfBtn.addEventListener("click", function () {
-        var pozycje = zloz();
         var bought = boughtMap();
         var dania = Object.keys(koszyk).length;
         var porcje = Object.keys(koszyk).reduce(function (a, k) { return a + koszyk[k]; }, 0);
@@ -1589,15 +1639,14 @@
           sekcje: grupy().map(function (g) {
             return {
               label: g.label,
-              pozycje: pozycje.filter(function (p) { return p.pantry === g.pantry; })
-                .map(function (p, n) {
-                  return {
-                    tekst: p.tekst,
-                    gramy: p.gramy,
-                    odhaczone: !!bought[g.key + ":" + n],
-                    uwaga: p.zrodla.length > 1 ? "z " + p.zrodla.length + " dań" : "",
-                  };
-                }),
+              pozycje: g.pozycje.map(function (p) {
+                return {
+                  tekst: p.tekst,
+                  gramy: p.gramy,
+                  odhaczone: !!bought[p.id],
+                  uwaga: p.zrodla.length > 1 ? "z " + p.zrodla.length + " dań" : "",
+                };
+              }),
             };
           }),
         });

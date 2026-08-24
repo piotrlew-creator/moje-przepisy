@@ -920,13 +920,26 @@ body.p-cooking { overflow: hidden; }
   border-top: 1px solid var(--p-line);
 }
 
+/* Nagłówek działu sklepowego. Działów bywa i osiem, więc każdy dostaje
+   kreskę u góry — inaczej na telefonie lista zlewa się w jeden słup tekstu
+   i trudno na pierwszy rzut oka znaleźć, gdzie zaczyna się nabiał.
+   Odstęp między literami maleje na wąskich ekranach, żeby „MAKARONY, RYŻE,
+   KASZE I MĄKI” nie rozłaziło się na trzy linie. */
 .p-group {
   font-size: 0.6rem;
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: clamp(0.04em, 1.6vw, 0.12em);
   text-transform: uppercase;
   color: var(--p-ink-3);
-  padding: 14px 16px 6px;
+  padding: 16px 16px 6px;
+  border-top: 1px solid var(--p-line);
+  margin-top: 6px;
+}
+
+.p-group:first-child {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 12px;
 }
 
 .p-check {
@@ -941,6 +954,10 @@ body.p-cooking { overflow: hidden; }
 }
 
 .p-check:last-child { border-bottom: 0; }
+
+/* Ostatnia pozycja działu i kreska nad nagłówkiem następnego dawały dwie
+   linie kilka pikseli od siebie. Zostaje ta przy nagłówku. */
+.p-check:has(+ .p-group) { border-bottom: 0; }
 
 .p-check input {
   appearance: none;
@@ -1342,15 +1359,6 @@ html, body { overflow-x: hidden; }
 .p-ings li[data-order="name"] .p-ing__q { order: 2; font-weight: 600; color: var(--p-ink-2); }
 .p-ings li[data-order="name"] .p-ing__g { order: 3; }
 .p-ings .p-ing__q:empty { display: none; }
-
-.p-group--sub {
-  padding-top: 10px;
-  padding-bottom: 2px;
-  color: var(--p-ink-2);
-  text-transform: none;
-  letter-spacing: 0.02em;
-  font-size: 0.66rem;
-}
 
 /* --------------------------------------------------------------- logo ----- */
 /* Garnek jest znakiem rozpoznawczym strony, a Material domyślnie chowa logo

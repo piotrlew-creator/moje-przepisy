@@ -34,6 +34,7 @@ w katalogu głównym.
 |---|---|
 | `extract.py` | czyta rozdział „Plan diety”: dzieli stronę na kolumny, skleja zawinięte składniki, rozpoznaje oba zapisy składnika, wydziela przekąski |
 | `tagi.py` | przypisuje składnikom identyfikatory do filtra i oznacza produkty spiżarniane (sól, pieprz, oliwa) |
+| `dzialy.py` | układa kategorie z `tagi.py` w działy sklepowe, w kolejności obchodu sklepu — po tym grupują się listy zakupów i PDF-y |
 | `imperative2.py` | słownik czasowników: „kroimy” → „pokrój”, z zachowaniem form niedokonanych tam, gdzie czynność trwa („gotuj”, nie „ugotuj”) |
 | `swaps.py` | grupy wymienne z „Listy wymienników” wraz z pełną odmianą przez przypadki |
 | `dane_stale.py` | treść strony „Zamienniki” i lista dwudziestu wyróżnionych składników — jedyne dane, których nie da się odczytać z PDF-u |
@@ -49,3 +50,14 @@ liście.
 
 Pomijane są też **przekąski** — pozycje bez godzin w PDF-ie (batonik, jogurt,
 garść orzechów). Nie ma w nich czego gotować, więc nie są przepisami.
+
+## Działy sklepowe
+
+`dzialy.py` nie jest częścią przebudowy z PDF-ów — dział liczy się dopiero
+w `generate_site.py`, więc zmiana układu półek nie wymaga ponownego czytania
+PDF-ów. Wystarczy poprawić `PO_TAGU` (albo `REGULY_SPIZ` dla przypraw)
+i uruchomić `python generate_site.py`.
+
+Kompletność sprawdza się sama: jeżeli któraś kategoria z `tagi.py` nie ma
+działu albo jakiś składnik wpadnie do „Pozostałych”, `generate_site.py`
+przerwie z komunikatem, zamiast po cichu dokleić produkt na końcu listy.

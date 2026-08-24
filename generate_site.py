@@ -21,6 +21,9 @@ import sys
 from collections import Counter
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+import dzialy  # noqa: E402  (po dołożeniu tools/ do ścieżki)
+
 DATA = os.path.join(ROOT, "recipes.json")
 DOCS = os.path.join(ROOT, "docs")
 RECIPE_DIR = os.path.join(DOCS, "przepisy")
@@ -36,6 +39,12 @@ SEARCH_ICON = (
 )
 
 TOKEN = re.compile(r"«(\d+)\|([A-Za-z]+)\|([A-Za-z_]*)\|([^|]*)\|(U?)»")
+
+
+def dzial_skladnika(ing):
+    """Dział sklepowy składnika — liczony tu, a nie w recipes.json, żeby zmiana
+    układu działów nie wymagała ponownego przetwarzania PDF-ów."""
+    return dzialy.dzial(ing["name"], ing.get("tag"), ing.get("pantry"))
 
 # Przepisy, w których dietetyk wymienił w krokach składnik nieobecny na liście.
 # Zapis jest wierny PDF-owi i nie poprawiamy go — ale generator o tym
@@ -461,9 +470,11 @@ def render_recipe(r, data):
         "slotLabel": r["slotLabel"], "time": r["time"],
         "baseServings": r["baseServings"], "kcal": r["kcal"],
         "times": [czas_kroku(st) for st in r["steps"]],
-        "ingredients": r["ingredients"], "steps": r["steps"],
+        "ingredients": [dict(i, dzial=dzial_skladnika(i)) for i in r["ingredients"]],
+        "steps": r["steps"],
     }
     out.append("<script>window.RECIPE = " + json.dumps(payload, ensure_ascii=False) + ";")
+    out.append("window.DZIALY = " + json.dumps(dzialy.DZIALY, ensure_ascii=False) + ";")
     out.append("window.UNITS = " + json.dumps(data["units"], ensure_ascii=False) + ";")
     out.append("window.SWAPS = " + json.dumps(
         {g: groups[g] for g in used}, ensure_ascii=False) + ";")
@@ -551,7 +562,10 @@ def render_shopping(data):
                "każdego przepisu.</p></noscript>")
     out.append("")
     out.append("<script>window.UNITS = " +
-               json.dumps(data["units"], ensure_ascii=False, separators=(",", ":")) + ";</script>")
+               json.dumps(data["units"], ensure_ascii=False, separators=(",", ":")) +
+               ";\nwindow.DZIALY = " +
+               json.dumps(dzialy.DZIALY, ensure_ascii=False, separators=(",", ":")) +
+               ";</script>")
     out.append("")
     return "\n".join(out)
 
@@ -567,7 +581,8 @@ def dane_zakupow(data):
             "s": r["slug"], "t": r["title"], "l": r["slotLabel"],
             "sid": r["slotId"], "b": r["baseServings"], "k": r["kcal"],
             "i": [[i["qty"], i["unit"], i["unitLemma"] or "", i["name"],
-                   i["grams"], 1 if i["pantry"] else 0, i["tag"] or ""]
+                   i["grams"], 1 if i["pantry"] else 0, i["tag"] or "",
+                   dzial_skladnika(i)]
                   for i in r["ingredients"]],
         } for r in data["recipes"]],
     }
@@ -600,6 +615,17 @@ def sprawdz(data):
     bad = [f for f in data["featuredIngredients"] if f not in known]
     if bad:
         bledy.append(f"wyróżnione składniki spoza indeksu: {bad}")
+
+    # Działy sklepowe: każda kategoria z tagi.py musi mieć swój dział, a żaden
+    # składnik nie może wylądować w koszu „Pozostałe” — inaczej lista zakupów
+    # cicho zgubiłaby produkt na końcu, poza trasą po sklepie.
+    braki = dzialy.sprawdz_pokrycie()
+    if braki:
+        bledy.append(f"kategorie bez działu sklepowego: {braki}")
+    zgubione = sorted({i["name"] for r in data["recipes"] for i in r["ingredients"]
+                       if dzial_skladnika(i) == "inne"})
+    if zgubione:
+        bledy.append(f"składniki bez działu sklepowego: {zgubione[:12]}")
 
     grupy = data["swapGroups"]
     przym = data["swapAdjectives"]
