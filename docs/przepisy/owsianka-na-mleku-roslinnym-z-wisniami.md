@@ -1,5 +1,6 @@
 ---
 title: "Owsianka na mleku roślinnym z wiśniami, orzechami, bananem i czekoladą"
+description: "Śniadanie, 565 kcal, 31 g białka. Składniki: napoju sojowego, płatków owsianych, wiśni, orzechów włoskich, banana, czekolady."
 hide:
   - toc
 ---

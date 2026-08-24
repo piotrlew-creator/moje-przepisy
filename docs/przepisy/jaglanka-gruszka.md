@@ -1,5 +1,6 @@
 ---
 title: "Jaglanka na mleku roślinnym z gruszką"
+description: "Śniadanie, 457 kcal, 20 g białka. Składniki: płatków jaglanych, mleka roślinnego, gruszki, odżywki białkowej, orzechów włoskich."
 hide:
   - toc
 ---

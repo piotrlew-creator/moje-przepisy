@@ -1,5 +1,6 @@
 ---
 title: "Kakaowa owsianka z siekanymi orzechami"
+description: "Śniadanie, 450 kcal, 32 g białka. Składniki: płatków owsianych górskich, napoju sojowego, kakao, posiekanych orzechów włoskich, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

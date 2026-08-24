@@ -1,5 +1,6 @@
 ---
 title: "Omlet na słodko z bananem"
+description: "Śniadanie, 504 kcal, 10 g białka. Składniki: Jajko kurze całe, Mąka pszenna pełnoziarnista, Wiórki kokosowe, Kakao 16%, Truskawki, świeże lub mrożone, Banan."
 hide:
   - toc
 ---

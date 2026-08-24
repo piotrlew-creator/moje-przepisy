@@ -1,5 +1,6 @@
 ---
 title: "Makaron z pieczonymi warzywami i serem mozzarella"
+description: "Obiad, 370 kcal, 17 g białka. Składniki: papryki czerwonej, małej cebuli, czosnku, makaronu pełnoziarnistego penne, pomidorków koktajlowych, mozzarelli."
 hide:
   - toc
 ---

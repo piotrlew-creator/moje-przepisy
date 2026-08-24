@@ -1,5 +1,6 @@
 ---
 title: "Warstwowy deser z gorzką czekoladą"
+description: "Śniadanie, 617 kcal, 39 g białka. Składniki: Serek proteinowy ze skyrem waniliowy Go Active, Biszkopty, Pudding proteinowy smak słony karmel Go active, Czekolada gorzka 70%, Śmietana 12%."
 hide:
   - toc
 ---

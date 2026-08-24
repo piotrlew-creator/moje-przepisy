@@ -1,5 +1,6 @@
 ---
 title: "Sałatka z serem halloumi, kuskusem, pomidorem oraz ogórkiem"
+description: "Śniadanie, 595 kcal, 25 g białka. Składniki: Kasza kuskus, Oliwki zielone, Papryka czerwona, Pomidor, Ogórek świeży, Ser halloumi."
 hide:
   - toc
 ---

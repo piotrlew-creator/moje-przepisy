@@ -1,5 +1,6 @@
 ---
 title: "Pieczony omlet z cukinią"
+description: "Śniadanie, 473 kcal, 28 g białka. Składniki: jaj, małej cukinii, pomidorków koktajlowych, chleba żytniego razowego, oliwy z oliwek."
 hide:
   - toc
 ---

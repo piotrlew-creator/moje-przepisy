@@ -1,5 +1,6 @@
 ---
 title: "Owsianka bounty"
+description: "Śniadanie, 455 kcal, 27 g białka. Składniki: płatków owsianych, czekolady gorzkiej, wiórków kokosowych, mleka roślinnego niesłodzonego, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

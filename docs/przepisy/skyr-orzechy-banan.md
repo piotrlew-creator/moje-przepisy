@@ -1,5 +1,6 @@
 ---
 title: "Skyr + orzechy + banan"
+description: "Śniadanie, 474 kcal, 26 g białka. Składniki: jogurtu skyr, banana, orzechów włoskich."
 hide:
   - toc
 ---

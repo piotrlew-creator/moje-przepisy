@@ -1,5 +1,6 @@
 ---
 title: "Lasagne w papryce"
+description: "Obiad, 509 kcal, 30 g białka. Składniki: Papryka czerwona, Oliwa z oliwek, Cebula, Czosnek, Mięso wegańskie a la wołowe Dobra Kaloria, Passata pomidorowa."
 hide:
   - toc
 ---

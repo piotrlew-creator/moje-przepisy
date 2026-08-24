@@ -1,5 +1,6 @@
 ---
 title: "Tortilla z ciecierzycą, cukinią i awokado + shake białkowy - przepis na 2 porcje"
+description: "Obiad, 381 kcal, 19 g białka. Składniki: tortilli pełnoziarnistej, ciecierzycy konserwowej, awokado, cebuli czerwonej, cukinii, passaty pomidorowej."
 hide:
   - toc
 ---

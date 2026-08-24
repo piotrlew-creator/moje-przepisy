@@ -1,5 +1,6 @@
 ---
 title: "Vege spaghetti bolognese"
+description: "Obiad, 489 kcal, 27 g białka. Składniki: tofu naturalnego, makaronu spaghetti, pomidorów w puszce, sosu sojowego, marchewki, cebuli."
 hide:
   - toc
 ---

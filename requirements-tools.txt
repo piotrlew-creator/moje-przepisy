@@ -1,0 +1,11 @@
+# Zależności potoku wyciągania danych z PDF-ów (tools/) i kontroli zgodności
+# (verify_against_pdf.py). NIE są potrzebne do zbudowania strony — ta powstaje
+# z recipes.json i wymaga tylko requirements.txt.
+#
+# Poza tym potrzebna jest binarka `pdftotext` z pakietu poppler:
+#   Ubuntu/Debian:  sudo apt install poppler-utils
+#   Windows:        https://github.com/oschwartz10612/poppler-windows/releases
+#   macOS:          brew install poppler
+#
+# Instalacja:  pip install -r requirements-tools.txt
+pdfplumber==0.11.9

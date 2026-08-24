@@ -1,5 +1,6 @@
 ---
 title: "Zapiekanka warzywna z serem feta"
+description: "Obiad, 364 kcal, 16 g białka. Składniki: cukinii, ziemniaków, sera feta, małej czerwonej cebuli, marchewki, papryki czerwonej."
 hide:
   - toc
 ---

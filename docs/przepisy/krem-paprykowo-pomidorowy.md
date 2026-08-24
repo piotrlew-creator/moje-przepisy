@@ -1,5 +1,6 @@
 ---
 title: "Krem paprykowo-pomidorowy"
+description: "Obiad, 385 kcal, 18 g białka. Składniki: pomidorów w puszce, makaronu razowego, oliwy z oliwek, mozzarelli, selera naciowego, małej cebuli."
 hide:
   - toc
 ---

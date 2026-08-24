@@ -1,5 +1,6 @@
 ---
 title: "Jajecznica z kiełbaską roślinną"
+description: "Kolacja, 613 kcal, 33 g białka. Składniki: Oliwa z oliwek, Kiełbaski roślinne węgierskie Dobra Kaloria, Jajko kurze całe, Chleb bezglutenowy, Ogórek świeży."
 hide:
   - toc
 ---

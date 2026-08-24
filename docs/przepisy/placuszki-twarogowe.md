@@ -1,5 +1,6 @@
 ---
 title: "Placuszki twarogowe"
+description: "Kolacja, 465 kcal, 28 g białka. Składniki: twarogu półtłustego, jajka kurzego, mąki orkiszowej pełnoziarnistej, borówek, oliwy z oliwek, banana."
 hide:
   - toc
 ---

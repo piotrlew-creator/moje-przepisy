@@ -1,5 +1,6 @@
 ---
 title: "Kakaowo-orzechowe trufle z daktyli"
+description: "Kolacja, 463 kcal, 27 g białka. Składniki: daktyli świeżych, kakao, orzechów, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

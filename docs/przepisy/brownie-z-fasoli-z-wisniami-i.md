@@ -1,5 +1,6 @@
 ---
 title: "Brownie z fasoli z wiśniami i bananem"
+description: "Kolacja, 465 kcal, 11 g białka. Składniki: mąki pszennej pełnoziarnistej, oleju rzepakowego, fasoli czerwonej konserwowej, kakao, zmielonego siemienia lnianego, czekolady gorzkiej."
 hide:
   - toc
 ---

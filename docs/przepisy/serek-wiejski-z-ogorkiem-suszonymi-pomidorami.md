@@ -1,5 +1,6 @@
 ---
 title: "Serek wiejski z ogórkiem, suszonymi pomidorami i pieczywem"
+description: "Śniadanie, 526 kcal, 33 g białka. Składniki: serka wiejskiego, selera naciowego, ogórka, pomidorów suszonych, chleba żytniego razowego, masła."
 hide:
   - toc
 ---

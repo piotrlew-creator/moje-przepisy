@@ -1,5 +1,6 @@
 ---
 title: "Pęczak z dynią i serem typu feta"
+description: "Obiad, 487 kcal, 24 g białka. Składniki: Dynia świeża lub mrożona, Ser typu Feta, Kasza jęczmienna pęczak, Oliwa z oliwek, Szpinak, Cebula."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Tost z awokado i mozzarellą"
+description: "Śniadanie, 463 kcal, 23 g białka. Składniki: chleba żytniego razowego, mozzarelli, awokado, małego pomidora."
 hide:
   - toc
 ---

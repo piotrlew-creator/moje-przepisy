@@ -1,5 +1,6 @@
 ---
 title: "Koktajl bananowo-orzechowy"
+description: "Kolacja, 468 kcal, 18 g białka. Składniki: banana, napoju sojowego, masła orzechowego, nasion chia."
 hide:
   - toc
 ---

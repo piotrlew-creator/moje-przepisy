@@ -1,5 +1,6 @@
 ---
 title: "Smażony ryż z brokułami i tofu"
+description: "Obiad, 367 kcal, 19 g białka. Składniki: ryżu basmati, tofu naturalnego, sosu sojowego, brokuła, marchewki, cebuli dymki."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Shake snickers"
+description: "Śniadanie, 460 kcal, 26 g białka. Składniki: napoju roślinnego, wegańskiej odżywki białkowej, kakao, masła orzechowego, rozpuszczonej gorzkiej czekolady, płatków owsianych."
 hide:
   - toc
 ---

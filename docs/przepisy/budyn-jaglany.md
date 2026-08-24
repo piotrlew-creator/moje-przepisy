@@ -1,5 +1,6 @@
 ---
 title: "Budyń jaglany"
+description: "Kolacja, 438 kcal, 30 g białka. Składniki: kaszy jaglanej, małego jabłka, napoju sojowego, orzechów włoskich, odżywki białkowej."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 site_name: Gotuj z Lewym
 site_description: Przepisy z Twojego planu diety — z przelicznikiem porcji, listą zakupów i trybem gotowania krok po kroku.
+site_author: Piotr Lewandowski
 site_url: https://piotrlew-creator.github.io/moje-przepisy/
 repo_url: https://github.com/piotrlew-creator/moje-przepisy
 edit_uri: ""
@@ -7,6 +8,11 @@ edit_uri: ""
 theme:
   name: material
   language: pl
+  # Kroje pisma leżą w docs/fonts/ i wpina je stylesheets/fonts.css. Bez tego
+  # Material dociąga jeszcze Roboto z fonts.googleapis.com — żądanie blokujące
+  # renderowanie po font, którego strona i tak nie używa.
+  font: false
+  custom_dir: overrides
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default

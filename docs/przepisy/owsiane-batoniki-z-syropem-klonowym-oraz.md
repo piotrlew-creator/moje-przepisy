@@ -1,5 +1,6 @@
 ---
 title: "Owsiane batoniki z syropem klonowym oraz masłem orzechowym"
+description: "Kolacja, 600 kcal, 21 g białka. Składniki: Płatki owsiane górskie, Masło orzechowe, Mieszanka orzechów, Syrop klonowy, Jogurt naturalny bez laktozy."
 hide:
   - toc
 ---

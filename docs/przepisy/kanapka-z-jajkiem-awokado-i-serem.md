@@ -1,5 +1,6 @@
 ---
 title: "Kanapka z jajkiem, awokado i serem cheddar + mandarynka"
+description: "Śniadanie, 568 kcal, 29 g białka. Składniki: jajka, sera cheddar, awokado, chleba żytniego razowego, mandarynek."
 hide:
   - toc
 ---

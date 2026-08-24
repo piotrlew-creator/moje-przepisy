@@ -1,5 +1,6 @@
 ---
 title: "Zielony makaron z groszkiem"
+description: "Obiad, 598 kcal, 16 g białka. Składniki: Groszek mrożony, Makaron pełnoziarnisty, Ser typu Feta, Por, Cebula, Sok z cytryny."
 hide:
   - toc
 ---

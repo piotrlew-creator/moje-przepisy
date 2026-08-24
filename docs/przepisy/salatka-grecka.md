@@ -1,5 +1,6 @@
 ---
 title: "Sałatka grecka z serem sałatkowym i pieczywem"
+description: "Kolacja, 464 kcal, 24 g białka. Składniki: miksu sałat, sera feta, oliwek zielonych, papryki żółtej, cebuli, oliwy z oliwek."
 hide:
   - toc
 ---

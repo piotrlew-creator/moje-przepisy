@@ -1,5 +1,6 @@
 ---
 title: "Owsianka z gruszką"
+description: "Śniadanie, 468 kcal, 31 g białka. Składniki: płatków owsianych, mleka roślinnego, małej gruszki, migdałów, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Zupa krem z pomidorów"
+description: "Obiad, 503 kcal, 28 g białka. Składniki: marchewki, selera naciowego, cebuli, czosnku, pomidora, oliwy z oliwek."
 hide:
   - toc
 ---

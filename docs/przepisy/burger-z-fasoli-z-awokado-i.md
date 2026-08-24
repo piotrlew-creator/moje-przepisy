@@ -1,5 +1,6 @@
 ---
 title: "Burger z fasoli z awokado i grillowaną cukinią"
+description: "Obiad, 359 kcal, 12 g białka. Składniki: kaszy jaglanej, fasoli czerwonej, koncentratu pomidorowego, nasion słonecznika, płatków owsianych, papryki ostrej suszonej."
 hide:
   - toc
 ---

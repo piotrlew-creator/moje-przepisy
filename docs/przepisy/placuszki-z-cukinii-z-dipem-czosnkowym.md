@@ -1,5 +1,6 @@
 ---
 title: "Placuszki z cukinii z dipem czosnkowym"
+description: "Kolacja, 460 kcal, 23 g białka. Składniki: cukinii, mąki z ciecierzycy, jajek kurzych, czosnku, jogurtu naturalnego, majonezu."
 hide:
   - toc
 ---

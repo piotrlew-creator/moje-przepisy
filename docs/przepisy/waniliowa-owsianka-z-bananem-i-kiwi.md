@@ -1,5 +1,6 @@
 ---
 title: "Waniliowa owsianka z bananem i kiwi"
+description: "Śniadanie, 443 kcal, 25 g białka. Składniki: napoju sojowego, płatków owsianych, banana, kiwi, soku z cytryny, migdałów."
 hide:
   - toc
 ---

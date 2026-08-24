@@ -1,5 +1,6 @@
 ---
 title: "Kanapki z ziołowym twarożkiem"
+description: "Śniadanie, 524 kcal, 28 g białka. Składniki: chleba żytniego razowego, sera twarogowego półtłustego, jogurtu naturalnego 2%, rzodkiewek, pomidorków koktajlowych, masła."
 hide:
   - toc
 ---

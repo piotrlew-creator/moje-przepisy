@@ -1,5 +1,6 @@
 ---
 title: "Klejący ryż z prażonym jabłkiem"
+description: "Śniadanie, 464 kcal, 25 g białka. Składniki: ryżu basmati, mleka roślinnego, jabłka, wegańskiej odżywki białkowej, mleczka kokosowego 12%."
 hide:
   - toc
 ---

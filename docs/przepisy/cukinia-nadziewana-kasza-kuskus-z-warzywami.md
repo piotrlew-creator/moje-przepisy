@@ -1,5 +1,6 @@
 ---
 title: "Cukinia nadziewana kaszą kuskus z warzywami i serem feta"
+description: "Obiad, 375 kcal, 18 g białka. Składniki: kaszy kuskus, cukinii, cebuli, czosnku, papryki żółtej, pomidora."
 hide:
   - toc
 ---

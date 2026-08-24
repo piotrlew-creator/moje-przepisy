@@ -1,5 +1,6 @@
 ---
 title: "Placuszki twarogowe z jabłkiem"
+description: "Śniadanie, 447 kcal, 32 g białka. Składniki: sera twarogowego chudego, małego jabłka, jajek kurzych, mąki orkiszowej, oliwy z oliwek."
 hide:
   - toc
 ---

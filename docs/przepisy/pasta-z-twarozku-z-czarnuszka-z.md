@@ -1,5 +1,6 @@
 ---
 title: "Pasta z twarożku z czarnuszką z warzywami"
+description: "Śniadanie, 457 kcal, 27 g białka. Składniki: sera twarogowego półtłustego, mleka roślinnego, papryki, pomidora, ogórka, rzodkiewki."
 hide:
   - toc
 ---

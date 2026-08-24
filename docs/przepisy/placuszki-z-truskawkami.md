@@ -1,5 +1,6 @@
 ---
 title: "Placuszki z truskawkami"
+description: "Śniadanie, 466 kcal, 27 g białka. Składniki: mąki żytniej pełnoziarnistej, jogurtu greckiego/skyr, truskawek, jajek kurzych, oliwy z oliwek."
 hide:
   - toc
 ---

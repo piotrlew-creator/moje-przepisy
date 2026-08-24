@@ -1,5 +1,6 @@
 ---
 title: "Jaglanka z jabłkiem i cynamonem"
+description: "Kolacja, 460 kcal, 20 g białka. Składniki: płatków jaglanych, napoju roślinnego, małego jabłka, masła orzechowego, orzechów, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Szybka pieczona ryba"
+description: "Obiad, 510 kcal, 26 g białka. Składniki: Łosoś świeży, Ryż basmati, Pomidorki koktajlowe, Cukinia, Cytryna, Syrop klonowy."
 hide:
   - toc
 ---

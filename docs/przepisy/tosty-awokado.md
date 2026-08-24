@@ -1,5 +1,6 @@
 ---
 title: "Tosty z jajkiem sadzonym i awokado"
+description: "Śniadanie, 469 kcal, 21 g białka. Składniki: chleba tostowego pełnoziarnistego, awokado, jajka, rukoli."
 hide:
   - toc
 ---

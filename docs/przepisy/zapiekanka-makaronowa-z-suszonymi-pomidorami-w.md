@@ -1,5 +1,6 @@
 ---
 title: "Zapiekanka makaronowa z suszonymi pomidorami w kremowo-serowym sosie (liczba porcji: 2)"
+description: "Obiad, 482 kcal, 14 g białka. Składniki: Makaron bezglutenowy, Marchew, Pomidory suszone w oleju (odsączone), Boczniaki, Oliwa z oliwek, Ser z niebieską pleśnią, Lazur."
 hide:
   - toc
 ---

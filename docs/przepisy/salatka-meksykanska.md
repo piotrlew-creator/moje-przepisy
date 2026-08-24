@@ -1,5 +1,6 @@
 ---
 title: "Sałatka meksykańska"
+description: "Śniadanie, 415 kcal, 14 g białka. Składniki: Fasola czerwona konserwowa, Ananas świeży, Makaron pełnoziarnisty, Kukurydza konserwowa, Por, Papryka czerwona."
 hide:
   - toc
 ---

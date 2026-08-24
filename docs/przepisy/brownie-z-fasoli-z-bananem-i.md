@@ -1,5 +1,6 @@
 ---
 title: "Brownie z fasoli z bananem i mango"
+description: "Kolacja, 462 kcal, 20 g białka. Składniki: czerwonej fasoli konserwowej, mąki pszennej pełnoziarnistej, kakao, siemienia lnianego, czekolady gorzkiej, mleka roślinnego."
 hide:
   - toc
 ---

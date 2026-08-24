@@ -1,5 +1,6 @@
 ---
 title: "Cytrynowy skyrnik proteinowy"
+description: "Śniadanie, 602 kcal, 51 g białka. Składniki: Jogurt skyr bez laktozy, Jajko kurze całe, Budyń w proszku (z cukrem), Cytryna, Maliny świeże lub mrożone, Płatki migdałów."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Kotlety z fasoli z surówką"
+description: "Obiad, 476 kcal, 24 g białka. Składniki: czerwonej fasoli konserwowej, płatków owsianych górskich, pietruszki, kapusty białej, pora (białej części), czosnku."
 hide:
   - toc
 ---

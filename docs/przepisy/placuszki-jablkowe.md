@@ -1,5 +1,6 @@
 ---
 title: "Placuszki jabłkowe"
+description: "Kolacja, 599 kcal, 31 g białka. Składniki: Kasza jaglana, Jabłko, Budyń w proszku (z cukrem), Olej rzepakowy, Jajko kurze całe, Jogurt skyr."
 hide:
   - toc
 ---

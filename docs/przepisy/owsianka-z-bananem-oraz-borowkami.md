@@ -1,5 +1,6 @@
 ---
 title: "Owsianka z bananem oraz borówkami"
+description: "Kolacja, 601 kcal, 31 g białka. Składniki: Płatki owsiane górskie, Banan, Borówki amerykańskie, Płatki migdałów, Jogurt skyr bez laktozy."
 hide:
   - toc
 ---

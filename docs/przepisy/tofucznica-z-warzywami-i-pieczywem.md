@@ -1,5 +1,6 @@
 ---
 title: "Tofucznica z warzywami i pieczywem"
+description: "Kolacja, 468 kcal, 24 g białka. Składniki: tofu naturalnego, płatków drożdżowych, małej cebuli, papryki czerwonej, ogórka, pomidorów."
 hide:
   - toc
 ---

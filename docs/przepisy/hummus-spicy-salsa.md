@@ -1,5 +1,6 @@
 ---
 title: "Hummus spicy salsa z waflami ryżowymi"
+description: "Śniadanie, 458 kcal, 16 g białka. Składniki: hummusu spicy salsa, wafli ryżowych, pomidorków koktajlowych, Fruvity pure (banan, truskawka, jabłko)."
 hide:
   - toc
 ---

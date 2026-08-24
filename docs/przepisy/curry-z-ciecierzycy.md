@@ -1,5 +1,6 @@
 ---
 title: "Curry z ciecierzycy"
+description: "Obiad, 481 kcal, 19 g białka. Składniki: ryżu basmati, małej cebuli, imbiru, czosnku, papryczki chili, pomidorków koktajlowych."
 hide:
   - toc
 ---

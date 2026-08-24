@@ -1,5 +1,6 @@
 ---
 title: "Bruschetta z pomidorami, świeżymi ziołami i serem grana padano"
+description: "Kolacja, 480 kcal, 24 g białka. Składniki: bagietki, pomidora, małej cebuli czerwonej, czosnku, sera grana padano, oliwy z oliwek."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Kanapki z żółtym serem, roszponką i pomidorem"
+description: "Śniadanie, 462 kcal, 26 g białka. Składniki: chleba żytniego razowego, sera gouda, roszponki, pomidora, margaryny."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Owsianka Lion"
+description: "Śniadanie, 451 kcal, 22 g białka. Składniki: płatków owsianych, mleka roślinnego, wegańskiej odżywki białkowej, płatków Lion, orzechów arachidowych, banana."
 hide:
   - toc
 ---

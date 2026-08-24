@@ -1,5 +1,6 @@
 ---
 title: "Owsiane batoniki z czekoladą, orzechami arachidowymi i miodem"
+description: "Śniadanie, 471 kcal, 15 g białka. Składniki: płatków owsianych górskich, orzeszków arachidowych, masła orzechowego, gorzkiej czekolady, miodu, jogurtu naturalnego."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Tortilla pełnoziarnista z sałatką po grecku i serem halloumi"
+description: "Obiad, 514 kcal, 22 g białka. Składniki: Ser halloumi, Ogórek świeży, Papryka czerwona, Cebula, Pomidor, Oliwki zielone."
 hide:
   - toc
 ---

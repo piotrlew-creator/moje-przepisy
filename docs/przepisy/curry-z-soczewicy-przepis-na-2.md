@@ -1,5 +1,6 @@
 ---
 title: "Curry z soczewicy - przepis na 2 porcje"
+description: "Obiad, 377 kcal, 15 g białka. Składniki: oliwy z oliwek, ryżu basmati, małej cebuli, czosnku, imbiru, marchewki."
 hide:
   - toc
 ---

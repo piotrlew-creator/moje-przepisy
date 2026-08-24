@@ -1,5 +1,6 @@
 ---
 title: "Tofucznica z cebulką, szczypiorkiem i pieczywem"
+description: "Śniadanie, 455 kcal, 23 g białka. Składniki: tofu naturalnego, cebuli, płatków drożdżowych, oleju rzepakowego, chleba żytniego razowego, pomidorków koktajlowych."
 hide:
   - toc
 ---

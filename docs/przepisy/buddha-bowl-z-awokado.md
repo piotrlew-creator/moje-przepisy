@@ -1,5 +1,6 @@
 ---
 title: "Buddha bowl z awokado"
+description: "Obiad, 380 kcal, 17 g białka. Składniki: soczewicy czarnej, awokado, pomidorków koktajlowych, ogórka zielonego, ananasa świeżego, pasty miso."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Buddha bowl z hummusem i kaszą kuskus"
+description: "Śniadanie, 401 kcal, 11 g białka. Składniki: Hummus, Papryka czerwona, Marchew, Kasza kuskus, Seler naciowy."
 hide:
   - toc
 ---

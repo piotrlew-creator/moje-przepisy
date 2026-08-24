@@ -1,5 +1,6 @@
 ---
 title: "Tost z awokado i łososiem"
+description: "Śniadanie, 470 kcal, 32 g białka. Składniki: chleba żytniego razowego, awokado, łososia wędzonego, rzodkiewki, kiełków np. rzodkiewki, soku z cytryny."
 hide:
   - toc
 ---

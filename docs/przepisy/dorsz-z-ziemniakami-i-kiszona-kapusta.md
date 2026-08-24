@@ -1,5 +1,6 @@
 ---
 title: "Dorsz z ziemniakami i kiszoną kapustą"
+description: "Obiad, 379 kcal, 24 g białka. Składniki: dorsza świeżego, ziemniaków, kapusty kwaszonej, jabłka, marchwi, cebuli."
 hide:
   - toc
 ---

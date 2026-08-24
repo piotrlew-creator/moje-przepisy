@@ -1,5 +1,6 @@
 ---
 title: "Jogurt naturalny z domową granolą, ananasem i czekoladą"
+description: "Śniadanie, 550 kcal, 15 g białka. Składniki: jogurtu naturalnego, ananasa, czekolady, płatków owsianych, syropu klonowego, wiórków kokosowych."
 hide:
   - toc
 ---

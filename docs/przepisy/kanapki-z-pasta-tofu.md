@@ -1,5 +1,6 @@
 ---
 title: "Kanapki z pastą tofu"
+description: "Śniadanie, 446 kcal, 23 g białka. Składniki: tofu wędzonego, cebuli, ogórków kiszonych, soku z ogórków kiszonych, chleba żytniego razowego, oliwy z oliwek."
 hide:
   - toc
 ---

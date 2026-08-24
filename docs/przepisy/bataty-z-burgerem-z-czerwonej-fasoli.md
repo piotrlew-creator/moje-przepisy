@@ -1,5 +1,6 @@
 ---
 title: "Bataty z burgerem z czerwonej fasoli i sosem salsa"
+description: "Obiad, 382 kcal, 15 g białka. Składniki: czerwonej fasoli konserwowej, batata (0,5 średniej wielkości), cebuli, czosnku, mango, pomidora."
 hide:
   - toc
 ---

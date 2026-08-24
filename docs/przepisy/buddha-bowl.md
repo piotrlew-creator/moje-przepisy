@@ -1,5 +1,6 @@
 ---
 title: "Buddha bowl"
+description: "Obiad, 382 kcal, 14 g białka. Składniki: ryżu basmati, tofu naturalnego, batata, mieszanych sałat, sosu sojowego, oliwy z oliwek."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Kanapki z hummusem, wędliną i warzywami"
+description: "Kolacja, 593 kcal, 19 g białka. Składniki: Chleb żytni razowy, Plastry wegańskie z pistacjami Go Vege, Pomidor, Papryka czerwona, Ogórek świeży, Hummus."
 hide:
   - toc
 ---

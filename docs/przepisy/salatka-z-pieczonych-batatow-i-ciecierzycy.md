@@ -1,5 +1,6 @@
 ---
 title: "Sałatka z pieczonych batatów i ciecierzycy"
+description: "Kolacja, 498 kcal, 29 g białka. Składniki: małego batata, oliwy z oliwek, ciecierzycy konserwowej, pomidorków koktajlowych, rukoli, tofu naturalnego."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Makaron fusilli z czerwonym pesto i mozzarellą"
+description: "Obiad, 366 kcal, 15 g białka. Składniki: pesto czerwonego, papryki czerwonej, cebuli, cukinii, mozzarelli, rukoli."
 hide:
   - toc
 ---

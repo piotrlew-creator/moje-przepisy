@@ -1,5 +1,6 @@
 ---
 title: "Skyr + orzechy + wafle ryżowe"
+description: "Śniadanie, 521 kcal, 31 g białka. Składniki: jogurtu skyr, wafli ryżowych, orzechów włoskich."
 hide:
   - toc
 ---

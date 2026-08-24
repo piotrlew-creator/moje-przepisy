@@ -1,5 +1,6 @@
 ---
 title: "Makaron penne z awokado, pomidorkami koktajlowymi, rukolą, bazylią i serem grana padano"
+description: "Obiad, 385 kcal, 13 g białka. Składniki: makaronu penne, awokado, serka śmietankowego, pomidorków koktajlowych, sera grana padano, rukoli."
 hide:
   - toc
 ---

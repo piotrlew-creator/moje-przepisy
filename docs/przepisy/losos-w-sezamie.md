@@ -1,5 +1,6 @@
 ---
 title: "Łosoś w sezamie"
+description: "Obiad, 379 kcal, 16 g białka. Składniki: świeżego łososia, ryżu basmati, cytryny, sezamu, sosu sojowego, soku z limonki."
 hide:
   - toc
 ---

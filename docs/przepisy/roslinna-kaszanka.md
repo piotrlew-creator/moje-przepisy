@@ -1,5 +1,6 @@
 ---
 title: "Roślinna kaszanka Dobra Kaloria z pieczywem i warzywami"
+description: "Obiad, 388 kcal, 12 g białka. Składniki: Roślinna kaszanka na grilla i na patelnię Dobra Kaloria, bułki."
 hide:
   - toc
 ---

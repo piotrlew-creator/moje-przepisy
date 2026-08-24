@@ -1,5 +1,6 @@
 ---
 title: "Pasta jajeczna"
+description: "Śniadanie, 448 kcal, 29 g białka. Składniki: serka wiejskiego light, jajek kurzych, chleba żytniego razowego, pomidorków koktajlowych."
 hide:
   - toc
 ---

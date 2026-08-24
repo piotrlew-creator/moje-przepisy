@@ -1,5 +1,6 @@
 ---
 title: "Makaron penne ze szpinakiem, pieczarkami, pomidorkami cherry i serem grana padano"
+description: "Obiad, 360 kcal, 16 g białka. Składniki: makaronu penne, szpinaku, śmietanki 12%, czosnku, cebuli, pieczarek."
 hide:
   - toc
 ---

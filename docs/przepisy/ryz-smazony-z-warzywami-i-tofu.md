@@ -1,5 +1,6 @@
 ---
 title: "Ryż smażony z warzywami i tofu"
+description: "Obiad, 487 kcal, 25 g białka. Składniki: tofu, marchwii, pora, selera naciowego, ryżu, cebuli."
 hide:
   - toc
 ---

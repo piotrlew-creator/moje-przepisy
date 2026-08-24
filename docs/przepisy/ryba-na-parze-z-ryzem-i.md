@@ -1,5 +1,6 @@
 ---
 title: "Ryba na parze z ryżem i surówką z kapusty pekińskiej"
+description: "Obiad, 369 kcal, 21 g białka. Składniki: świeżego mintaja, ryżu, kapusty pekińskiej, papryki czerwonej, ogórka, sok z cytryny."
 hide:
   - toc
 ---

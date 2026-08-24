@@ -1,5 +1,6 @@
 ---
 title: "Zupa krem z ciecierzycy z grzankami"
+description: "Obiad, 415 kcal, 19 g białka. Składniki: pietruszki, selera, ciecierzycy konserwowej, małej cebuli, czosnku, oliwy z oliwek."
 hide:
   - toc
 ---

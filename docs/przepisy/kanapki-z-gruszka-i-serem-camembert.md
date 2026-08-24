@@ -1,5 +1,6 @@
 ---
 title: "Kanapki z gruszką i serem camembert"
+description: "Kolacja, 474 kcal, 22 g białka. Składniki: gruszki, sera camembert, rukoli, pomidorków koktajlowych, bułki grahamki, mandarynki."
 hide:
   - toc
 ---

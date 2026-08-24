@@ -1,5 +1,6 @@
 ---
 title: "Koktajl czekoladowy"
+description: "Śniadanie, 469 kcal, 30 g białka. Składniki: banana, wegańskiej odżywki białkowej, kakao, masła orzechowego, napoju migdałowego."
 hide:
   - toc
 ---

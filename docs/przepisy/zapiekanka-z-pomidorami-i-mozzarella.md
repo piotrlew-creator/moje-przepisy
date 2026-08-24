@@ -1,5 +1,6 @@
 ---
 title: "Zapiekanka z pomidorami i mozzarellą"
+description: "Kolacja, 474 kcal, 21 g białka. Składniki: bagietki, małego pomidora, sera mozzarella, małej cebuli czerwonej, oliwy z oliwek, nasion słonecznika."
 hide:
   - toc
 ---

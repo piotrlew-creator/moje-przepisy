@@ -1,5 +1,6 @@
 ---
 title: "Serek wiejski z owocami i syropem klonowym"
+description: "Śniadanie, 604 kcal, 32 g białka. Składniki: Serek wiejski naturalny, Banan, Pomarańcza, Syrop klonowy, Migdały."
 hide:
   - toc
 ---

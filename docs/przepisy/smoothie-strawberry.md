@@ -1,5 +1,6 @@
 ---
 title: "Smoothie strawberry and friends Solevita i batonik protein bar"
+description: "Kolacja, 462 kcal, 27 g białka. Składniki: Protein Bar cookies and cream fllavoured crisps, smoothie strawberry & friends (truskawka, banan) Solevita, orzechów włoskich, mandarynki."
 hide:
   - toc
 ---

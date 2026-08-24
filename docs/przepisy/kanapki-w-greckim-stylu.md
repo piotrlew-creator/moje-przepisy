@@ -1,5 +1,6 @@
 ---
 title: "Kanapki w greckim stylu"
+description: "Kolacja, 598 kcal, 33 g białka. Składniki: Chleb bezglutenowy, Ser typu Feta, Ogórek świeży, Pomidorki koktajlowe, Papryka czerwona."
 hide:
   - toc
 ---

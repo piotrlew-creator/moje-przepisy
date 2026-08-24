@@ -709,12 +709,38 @@
       }
     }
 
+    // Na telefonie gest cofania to podstawowy sposób zamykania nakładek.
+    // Bez wpisu w historii „wstecz” wyrzucał ze strony przepisu na listę —
+    // w środku gotowania. Otwarcie okna dokłada wpis, zamknięcie go zdejmuje.
+    var zamykaHistoria = false;
+
+    function pchnijHistorie(nazwa) {
+      try {
+        history.pushState({ pModal: nazwa }, "");
+      } catch (e) {
+        /* przeglądarka bez pushState — okno działa dalej, tylko bez „wstecz” */
+      }
+    }
+
+    function zdejmijHistorie(nazwa) {
+      if (zamykaHistoria) return;
+      if (history.state && history.state.pModal === nazwa) history.back();
+    }
+
+    window.addEventListener("popstate", function () {
+      zamykaHistoria = true;
+      if (cook && cook.getAttribute("data-open") === "1") closeCook();
+      else if (sheet && sheet.getAttribute("data-open") === "1") closeSheet();
+      zamykaHistoria = false;
+    });
+
     function openSheet() {
       if (sheet.getAttribute("data-open") === "1") return;
       renderShopping();
       sheet.setAttribute("data-open", "1");
       document.body.classList.add("p-cooking");
       zablokujTlo(sheet);
+      pchnijHistorie("shopping");
       closeBtn.focus();
     }
 
@@ -723,6 +749,7 @@
       document.body.classList.remove("p-cooking");
       odblokujTlo();
       openBtn.focus();
+      zdejmijHistorie("shopping");
     }
 
     if (openBtn) openBtn.addEventListener("click", openSheet);
@@ -804,6 +831,7 @@
       cook.setAttribute("data-open", "1");
       document.body.classList.add("p-cooking");
       zablokujTlo(cook);
+      pchnijHistorie("cook");
       cookNext.focus();
       trzymajEkran();
     }
@@ -814,6 +842,7 @@
       odblokujTlo();
       pusćEkran();
       cookStart.focus();
+      zdejmijHistorie("cook");
     }
 
     if (cookStart) cookStart.addEventListener("click", openCook);
@@ -902,7 +931,12 @@
       doc.setFont("DejaVu", "normal");
       doc.setFontSize(10);
       doc.setTextColor(110);
-      doc.text(servings + " " + plural(servings, ["osoba", "osoby", "osób", "osoby"]) +
+      // Przy przepisach opisanych w planie jako wieloporcjowe liczymy porcje
+      // z planu, nie osoby — tak samo jak stepper na stronie.
+      var jednostka = (data.baseServings || 1) > 1
+        ? plural(servings, ["porcja", "porcje", "porcji", "porcji"]) + " z planu"
+        : plural(servings, ["osoba", "osoby", "osób", "osoby"]);
+      doc.text(servings + " " + jednostka +
                "  ·  " + data.slotLabel + " " + data.time, M, y);
       y += 8;
       doc.setDrawColor(210);
@@ -955,7 +989,8 @@
       doc.text("Gotuj z Lewym · wygenerowano " +
                new Date().toLocaleDateString("pl-PL"), M, 287);
 
-      var name = "lista-zakupow-" + data.slug + "-" + servings + "os.pdf";
+      var name = "lista-zakupow-" + data.slug + "-" + servings +
+        ((data.baseServings || 1) > 1 ? "porcji" : "os") + ".pdf";
       doc.save(name);
       toast("Zapisano " + name);
     }).catch(function () {

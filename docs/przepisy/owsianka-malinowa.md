@@ -1,5 +1,6 @@
 ---
 title: "Owsianka malinowa Crownfield"
+description: "Kolacja, 475 kcal, 25 g białka. Składniki: owsianki malinowej Crownfield, jogurtu skyr, Smoothie strawberry Solevita."
 hide:
   - toc
 ---

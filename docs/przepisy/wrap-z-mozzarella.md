@@ -1,5 +1,6 @@
 ---
 title: "Wrap z mozzarellą"
+description: "Śniadanie, 462 kcal, 18 g białka. Składniki: tortilli pełnoziarnistej, sera mozzarella, rukoli, cebuli czerwonej, oliwy z oliwek, pomidora."
 hide:
   - toc
 ---

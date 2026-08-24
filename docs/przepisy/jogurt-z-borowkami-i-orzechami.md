@@ -1,5 +1,6 @@
 ---
 title: "Jogurt z borówkami i orzechami"
+description: "Śniadanie, 468 kcal, 30 g białka. Składniki: borówek świeżych lub mrożonych, jogurtu, mieszanki orzechów, płatków owsianych."
 hide:
   - toc
 ---

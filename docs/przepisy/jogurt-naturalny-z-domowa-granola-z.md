@@ -1,5 +1,6 @@
 ---
 title: "Jogurt naturalny z domową granolą z orzechami i jabłkiem"
+description: "Kolacja, 460 kcal, 26 g białka. Składniki: płatków owsianych górskich, orzechów włoskich, gorzkiej czekolady, syropu klonowego, małego jabłka, jogurtu skyr."
 hide:
   - toc
 ---

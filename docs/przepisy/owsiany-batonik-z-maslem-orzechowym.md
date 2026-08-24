@@ -1,5 +1,6 @@
 ---
 title: "Owsiany batonik z masłem orzechowym"
+description: "Śniadanie, 477 kcal, 25 g białka. Składniki: płatków owsianych górskich, masła orzechowego, wegańskiej odżywki białkowej, mleka roślinnego, nasion chia."
 hide:
   - toc
 ---

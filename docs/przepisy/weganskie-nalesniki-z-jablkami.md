@@ -1,5 +1,6 @@
 ---
 title: "Wegańskie naleśniki z jabłkami"
+description: "Kolacja, 458 kcal, 27 g białka. Składniki: napoju roślinnego, mąki pszennej pełnoziarnistej, oleju rzepakowego, małego jabłka, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

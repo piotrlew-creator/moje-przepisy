@@ -37,7 +37,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <label class="p-chip" data-rank="top" data-label="Jabłko"><input type="checkbox" value="jablko">Jabłko <span class="p-num" style="opacity:.55">17</span></label>
 <label class="p-chip" data-rank="top" data-label="Pomidor"><input type="checkbox" value="pomidor">Pomidor <span class="p-num" style="opacity:.55">70</span></label>
 <label class="p-chip" data-rank="top" data-label="Ogórek"><input type="checkbox" value="ogorek">Ogórek <span class="p-num" style="opacity:.55">33</span></label>
-<label class="p-chip" data-rank="top" data-label="Papryka"><input type="checkbox" value="papryka">Papryka <span class="p-num" style="opacity:.55">35</span></label>
+<label class="p-chip" data-rank="top" data-label="Papryka"><input type="checkbox" value="papryka">Papryka <span class="p-num" style="opacity:.55">34</span></label>
 <label class="p-chip" data-rank="top" data-label="Szpinak"><input type="checkbox" value="szpinak">Szpinak <span class="p-num" style="opacity:.55">20</span></label>
 <label class="p-chip" data-rank="top" data-label="Cukinia"><input type="checkbox" value="cukinia">Cukinia <span class="p-num" style="opacity:.55">19</span></label>
 <label class="p-chip" data-rank="top" data-label="Mozzarella"><input type="checkbox" value="mozzarella">Mozzarella <span class="p-num" style="opacity:.55">22</span></label>
@@ -662,594 +662,6 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__tags">soczewicy czerwonej, chleba żytniego razowego, pasty tahini…</div>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka gouda maliny pomidor salata serek-smietankowy smoothie">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/lunchbox-kanapki-z-serem-gouda-i/">Lunchbox Kanapki z serem gouda i warzywami + jogurt + owoc</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">615 kcal</span>
-</div>
-<div class="p-card__tags">Bułka owsiana, Pomidor, Rukola, Ser gouda, Serek śmietankowy bez laktozy…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="halloumi ogorek oliwki papryka pomidor salata tortilla">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/tortilla-z-salatka-po-grecku-i/">Tortilla z sałatką po grecku i serem halloumi</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">509 kcal</span>
-</div>
-<div class="p-card__tags">Ser halloumi, Ogórek świeży, Papryka czerwona, Pomidor, Oliwki zielone…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bulka losos oliwa papryka pomidor">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/bulka-owsiana-z-lososiem-i-warzywami/">Bułka owsiana z łososiem i warzywami</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">615 kcal</span>
-</div>
-<div class="p-card__tags">Bułka owsiana, Pomidor, Papryka czerwona, Łosoś wędzony, Oliwa z oliwek</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cytryna halloumi kuskus ogorek oliwa oliwki papryka pomidor salata">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/salatka-z-serem-halloumi-kuskusem-pomidorem/">Sałatka z serem halloumi, kuskusem, pomidorem oraz ogórkiem</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">595 kcal</span>
-</div>
-<div class="p-card__tags">Kasza kuskus, Oliwki zielone, Papryka czerwona, Pomidor, Ogórek świeży…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ciasto-nalesniki jogurt maliny twarog">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/nalesniki-z-serem-twarogowym-bez-laktozy/">Naleśniki z serem twarogowym bez laktozy oraz malinami</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">514 kcal</span>
-</div>
-<div class="p-card__tags">Ciasto do naleśników low fodmap, Ser twarogowy półtłusty bez laktozy…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb feta ogorek papryka pomidor">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/kanapki-w-greckim-stylu/">Kanapki w greckim stylu</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">598 kcal</span>
-</div>
-<div class="p-card__tags">Chleb bezglutenowy, Ser typu Feta, Ogórek świeży, Pomidorki koktajlowe…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb gouda papryka pesto">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/kanapki-z-zielonym-pesto-serem-gouda/">Kanapki z zielonym pesto, serem gouda i papryką czerwoną</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">577 kcal</span>
-</div>
-<div class="p-card__tags">Chleb bezglutenowy, Pesto zielone, Ser gouda, Papryka czerwona</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="dynia feta kasza oliwa szpinak">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/kasza-jaglana-z-dynia-i-serem/">Kasza jaglana z dynią i serem typu feta</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">469 kcal</span>
-</div>
-<div class="p-card__tags">Dynia świeża lub mrożona, Ser typu Feta, Kasza jaglana, Oliwa z oliwek…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb jajka majonez oliwa papryka pomidor salata">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/jajka-w-koszulkach-z-chlebem-bezglutenowym/">Jajka w koszulkach z chlebem bezglutenowym</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">618 kcal</span>
-</div>
-<div class="p-card__tags">Jajko kurze całe, Chleb bezglutenowy, Miks sałat, Papryka czerwona…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chrzan losos ogorek szpinak tortilla">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/tortilla-z-lososiem-szpinakiem-koperkiem-oraz/">Tortilla z łososiem, szpinakiem, koperkiem oraz ogórkiem</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">610 kcal</span>
-</div>
-<div class="p-card__tags">Ogórek świeży, Szpinak, Chrzan (tarty), Tortilla bezglutenowa, Łosoś wędzony</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan jajka jogurt maka oliwa">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/placki-bananowe/">Placki bananowe</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">609 kcal</span>
-</div>
-<div class="p-card__tags">Banan, Mąka jaglana, Jajko kurze całe, Olej rzepakowy, Jogurt skyr bez laktozy</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="budyn cytryna jajka jogurt maliny migdaly">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/cytrynowy-skyrnik-proteinowy/">Cytrynowy skyrnik proteinowy</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">602 kcal</span>
-</div>
-<div class="p-card__tags">Jogurt skyr bez laktozy, Jajko kurze całe, Budyń w proszku (z cukrem)…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cytryna dorsz oliwa pomidor szpinak ziemniaki">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/dorsz-z-ziemniakami-szpinakiem-oraz-pomidorkami/">Dorsz z ziemniakami, szpinakiem oraz pomidorkami koktajlowymi</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">493 kcal</span>
-</div>
-<div class="p-card__tags">Dorsz, Ziemniaki, Szpinak, Pomidorki koktajlowe, Oliwa z oliwek, Sok z cytryny</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb cytryna feta ogorek oliwa oliwki papryka pomidor salata">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/salatka-grecka-z-serem-typu-feta/">Sałatka grecka z serem typu feta oraz chlebem bezglutenowym</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">603 kcal</span>
-</div>
-<div class="p-card__tags">Miks sałat, Ser typu Feta, Oliwki zielone, Papryka czerwona…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka maslo ogorek pomidor">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/kanapki-z-jajkiem-na-miekko/">Kanapki z jajkiem na miękko</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">588 kcal</span>
-</div>
-<div class="p-card__tags">Jajko kurze całe, Chleb bezglutenowy, Masło extra, Pomidor, Ogórek świeży</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="makaron mozzarella oliwa pesto pomidor">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/spaghetti-z-pesto/">Spaghetti z pesto</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">494 kcal</span>
-</div>
-<div class="p-card__tags">Makaron bezglutenowy, Ser mozzarella kulka…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="borowki jogurt kiwi migdaly platki-owsiane">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/owsianka-z-kawalkami-kiwi-oraz-borowkami/">Owsianka z kawałkami kiwi oraz borówkami</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">600 kcal</span>
-</div>
-<div class="p-card__tags">Płatki owsiane górskie, Jogurt skyr bez laktozy, Kiwi…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jogurt maliny orzechy platki-jaglane">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/platki-z-malinami-oraz-orzechami-wloskimi/">Płatki z malinami oraz orzechami włoskimi</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">588 kcal</span>
-</div>
-<div class="p-card__tags">Jogurt skyr bez laktozy, Płatki jaglane, Orzechy włoskie…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cukinia cytryna losos oliwa pomidor ryz sos-sojowy syrop-klonowy">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/szybka-pieczona-ryba/">Szybka pieczona ryba</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">510 kcal</span>
-</div>
-<div class="p-card__tags">Łosoś świeży, Ryż basmati, Pomidorki koktajlowe, Cukinia, Cytryna…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb jajka kielbaski ogorek oliwa">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/jajecznica-z-kielbaska-roslinna/">Jajecznica z kiełbaską roślinną</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">613 kcal</span>
-</div>
-<div class="p-card__tags">Oliwa z oliwek, Kiełbaski roślinne węgierskie Dobra Kaloria…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan migdaly pomarancza serek-wiejski syrop-klonowy">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/serek-wiejski-bez-laktozy-z-owocami/">Serek wiejski bez laktozy z owocami i syropem klonowym</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">606 kcal</span>
-</div>
-<div class="p-card__tags">Serek wiejski bez laktozy, Banan, Pomarańcza, Syrop klonowy, Migdały</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="chleb feta oliwa papryka pomidory-puszka">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/zupa-pomidorowo-paprykowa/">Zupa pomidorowo paprykowa</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">487 kcal</span>
-</div>
-<div class="p-card__tags">Papryka czerwona, Oliwa z oliwek, Pomidory z puszki, Chleb bezglutenowy…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jogurt maslo-orzechowe orzechy platki-owsiane syrop-klonowy">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/owsiane-batoniki-z-syropem-klonowym-oraz/">Owsiane batoniki z syropem klonowym oraz masłem orzechowym</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">600 kcal</span>
-</div>
-<div class="p-card__tags">Płatki owsiane górskie, Masło orzechowe, Mieszanka orzechów, Syrop klonowy…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb halloumi ogorek pomidor salata">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/salatka-z-grillowanym-serem-halloumi/">Sałatka z grillowanym serem halloumi</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">579 kcal</span>
-</div>
-<div class="p-card__tags">Ser halloumi, Miks sałat, Pomidor, Ogórek świeży, Chleb bezglutenowy</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="jajka makaron marchewka mleko oliwa pieczarki ser-plesniowy">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/zapiekanka-makaronowa-z-suszonymi-pomidorami-w/">Zapiekanka makaronowa z suszonymi pomidorami w kremowo-serowym sosie (liczba porcji: 2)</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">482 kcal</span>
-</div>
-<div class="p-card__tags">Makaron bezglutenowy, Marchew, Pomidory suszone w oleju (odsączone)…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb mozzarella papryka pomidor szpinak">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/kanapka-z-mozzarella-i-warzywami/">Kanapka z mozzarellą i warzywami</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">612 kcal</span>
-</div>
-<div class="p-card__tags">Chleb bezglutenowy, Szpinak, Ser mozzarella kulka, Pomidor, Papryka czerwona</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="borowki maliny maslo-orzechowe platki-owsiane serek-wiejski">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/serek-wiejski-z-malinami-borowkami-oraz/">Serek wiejski z malinami, borówkami oraz masłem orzechowym</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">610 kcal</span>
-</div>
-<div class="p-card__tags">Serek wiejski bez laktozy, Płatki owsiane górskie, Masło orzechowe…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cytryna dorsz oliwa pomidor ziemniaki">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/ryba-grillowana-w-papilocie/">Ryba grillowana w papilocie</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">516 kcal</span>
-</div>
-<div class="p-card__tags">Dorsz, Ziemniaki, Pomidorki koktajlowe, Sok z cytryny, Oliwa z oliwek</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan borowki jogurt migdaly platki-owsiane">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/owsianka-z-bananem-oraz-borowkami/">Owsianka z bananem oraz borówkami</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">601 kcal</span>
-</div>
-<div class="p-card__tags">Płatki owsiane górskie, Banan, Borówki amerykańskie, Płatki migdałów…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula halloumi ogorek oliwki papryka pomidor salata tortilla">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/tortilla-pelnoziarnista-z-salatka-po-grecku/">Tortilla pełnoziarnista z sałatką po grecku i serem halloumi</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">514 kcal</span>
-</div>
-<div class="p-card__tags">Ser halloumi, Ogórek świeży, Papryka czerwona, Cebula, Pomidor…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb hummus ogorek papryka plastry-wegan pomidor">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/kanapki-z-hummusem-wedlina-i-warzywami/">Kanapki z hummusem, wędliną i warzywami</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">593 kcal</span>
-</div>
-<div class="p-card__tags">Chleb żytni razowy, Plastry wegańskie z pistacjami Go Vege, Pomidor…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia czosnek kasza marchewka oliwa papryka pomidory-puszka soczewica">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/gulasz-z-soczewicy-czerwonej/">Gulasz z soczewicy czerwonej</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">499 kcal</span>
-</div>
-<div class="p-card__tags">Papryka czerwona, Kasza jęczmienna pęczak, Cukinia, Cebula, Czosnek…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="ciasto-nalesniki daktyle jogurt kakao orzechy">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/nalesniki-z-kremem-czekoladowym/">Naleśniki z kremem czekoladowym</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">603 kcal</span>
-</div>
-<div class="p-card__tags">Ciasto do naleśników wegańskie, Orzechy laskowe, Daktyle, suszone…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="biszkopty czekolada pudding serek-proteinowy smietanka">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/warstwowy-deser-z-gorzka-czekolada/">Warstwowy deser z gorzką czekoladą</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">617 kcal</span>
-</div>
-<div class="p-card__tags">Serek proteinowy ze skyrem waniliowy Go Active, Biszkopty…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek dynia feta kasza oliwa szpinak">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/peczak-z-dynia-i-serem-typu/">Pęczak z dynią i serem typu feta</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">487 kcal</span>
-</div>
-<div class="p-card__tags">Dynia świeża lub mrożona, Ser typu Feta, Kasza jęczmienna pęczak…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jablko jajka jogurt miod mleko oliwa platki-owsiane">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/pieczona-owsianka-z-jablkiem-oraz-cynamonem/">Pieczona owsianka z jabłkiem oraz cynamonem</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">603 kcal</span>
-</div>
-<div class="p-card__tags">Płatki owsiane górskie, Jajko kurze całe, Mleko roślinne niesłodzone, Miód…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="brokul cytryna losos miod musztarda oliwa ryz">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/losos-w-sosie-musztardowo-miodowym-z/">Łosoś w sosie musztardowo-miodowym z ryżem oraz brokułem</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">495 kcal</span>
-</div>
-<div class="p-card__tags">Łosoś świeży, Ryż basmati, Brokuł, świeży lub mrożony, Miód, Musztarda…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="budyn jablko jajka jogurt kasza oliwa">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/placuszki-jablkowe/">Placuszki jabłkowe</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">599 kcal</span>
-</div>
-<div class="p-card__tags">Kasza jaglana, Jabłko, Budyń w proszku (z cukrem), Olej rzepakowy…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="chleb cytryna feta kukurydza oliwa pomidor salata">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/salatka-z-serem-i-kukurydza-konserwowa/">Sałatka z serem i kukurydzą konserwową</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">501 kcal</span>
-</div>
-<div class="p-card__tags">Miks sałat, Kukurydza konserwowa, Ser typu Feta, Pomidorki koktajlowe…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb mozzarella plastry-wegan pomidor rzodkiewka serek-smietankowy">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/tost-z-szynka-serem-i-warzywami/">Tost z szynką, serem i warzywami</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">598 kcal</span>
-</div>
-<div class="p-card__tags">Chleb żytni razowy, Plastry wegańskie z pistacjami Go Vege…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="kakao maslo-orzechowe mleko odzywka platki-owsiane">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/czekoladowe-smoothie/">Czekoladowe smoothie</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">583 kcal</span>
-</div>
-<div class="p-card__tags">Mleko roślinne niesłodzone, Kakao 16%, Masło orzechowe, Odżywka białkowa…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado bajgiel czosnek halloumi miod musztarda pomidor salata">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/bajgiel-z-kremowym-sosem/">Bajgiel z kremowym sosem</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">602 kcal</span>
-</div>
-<div class="p-card__tags">Bajgiel z sezamem, Ser halloumi, Rukola, Pomidor, Awokado, Miód, Musztarda…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek makaron mieso-wegan mozzarella oliwa papryka pomidor pomidory-puszka">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/lasagne-w-papryce/">Lasagne w papryce</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">509 kcal</span>
-</div>
-<div class="p-card__tags">Papryka czerwona, Oliwa z oliwek, Cebula, Czosnek…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan migdaly pomarancza serek-wiejski syrop-klonowy">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/serek-wiejski-z-owocami-i-syropem/">Serek wiejski z owocami i syropem klonowym</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">604 kcal</span>
-</div>
-<div class="p-card__tags">Serek wiejski naturalny, Banan, Pomarańcza, Syrop klonowy, Migdały</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb jajka majonez ogorek plastry-wegan pomidor">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/kanapki-z-szynka-jajkiem-i-ogorkiem/">Kanapki z szynką, jajkiem i ogórkiem kiszonym</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">595 kcal</span>
-</div>
-<div class="p-card__tags">Chleb żytni razowy, Majonez wegański…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="borowki jajka maka oliwa twarog">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/syrniki-z-owocami/">Syrniki z owocami (liczba porcji: 3)</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
-<span class="p-num">7:00-10:00</span>
-<span class="p-num">596 kcal</span>
-</div>
-<div class="p-card__tags">Ser twarogowy półtłusty, Jajko kurze całe, Mąka pszenna pełnoziarnista…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="biszkopty jogurt kakao kawa orzechy truskawki">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/tiramisu-z-truskawkami/">Tiramisu z truskawkami</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">596 kcal</span>
-</div>
-<div class="p-card__tags">Biszkopty, Jogurt skyr, Jogurt naturalny 2%, Kakao 16%…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ciasto-nalesniki jogurt truskawki twarog">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/nalesniki-z-serem-twarogowym-bez-laktozy-2/">Naleśniki z serem twarogowym bez laktozy i owocami</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
-<span class="p-num">13:00-16:00</span>
-<span class="p-num">504 kcal</span>
-</div>
-<div class="p-card__tags">Ciasto do naleśników low fodmap, Ser twarogowy półtłusty bez laktozy…</div>
-</div></article></li>
-<li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb gouda jajka ogorek oliwa plastry-wegan">
-<div class="p-card__band"></div>
-<div class="p-card__body">
-<a class="p-card__title" href="przepisy/tosty-francuskie-z-serem-gouda-oraz/">Tosty francuskie z serem gouda oraz plastrem wegańskim</a>
-<div class="p-card__meta">
-<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
-<span class="p-num">18:00-20:00</span>
-<span class="p-num">604 kcal</span>
-</div>
-<div class="p-card__tags">Chleb żytni razowy, Jajko kurze całe, Ser gouda…</div>
-</div></article></li>
-<li>
 <article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek dynia grana-padano marchewka oliwa ryz salata">
 <div class="p-card__band"></div>
 <div class="p-card__body">
@@ -1512,6 +924,18 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <span class="p-num">473 kcal</span>
 </div>
 <div class="p-card__tags">jaja kurzego, mąki owsianej pełnoziarnistej, odżywki białkowej…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb mozzarella pomidor szpinak">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/kanapka-z-mozzarella-i-warzywami/">Kanapka z mozzarellą i warzywami</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">484 kcal</span>
+</div>
+<div class="p-card__tags">chleba żytniego, szpinaku, mozzarelli, małego pomidora</div>
 </div></article></li>
 <li>
 <article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek dynia fasola mleczko-kokosowe oliwa ziemniaki">
@@ -3218,6 +2642,18 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__tags">Jajko kurze całe, Mąka pszenna pełnoziarnista, Wiórki kokosowe, Kakao 16%…</div>
 </div></article></li>
 <li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka maslo ogorek pomidor">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/kanapki-z-jajkiem-na-miekko/">Kanapki z jajkiem na miękko</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">412 kcal</span>
+</div>
+<div class="p-card__tags">Jajko kurze całe, Chleb żytni razowy, Masło extra, Pomidor, Ogórek</div>
+</div></article></li>
+<li>
 <article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cytryna czosnek feta groszek makaron oliwa orzechy por">
 <div class="p-card__band"></div>
 <div class="p-card__body">
@@ -3336,5 +2772,569 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <span class="p-num">612 kcal</span>
 </div>
 <div class="p-card__tags">Ryż basmati, Soczewica zielona, Passata pomidorowa, Cebula, Czosnek…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka gouda maliny pomidor salata serek-smietankowy smoothie">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/lunchbox-kanapki-z-serem-gouda-i/">Lunchbox Kanapki z serem gouda i warzywami + jogurt + owoc</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">615 kcal</span>
+</div>
+<div class="p-card__tags">Bułka owsiana, Pomidor, Rukola, Ser gouda, Serek śmietankowy bez laktozy…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="halloumi ogorek oliwki papryka pomidor salata tortilla">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/tortilla-z-salatka-po-grecku-i/">Tortilla z sałatką po grecku i serem halloumi</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">509 kcal</span>
+</div>
+<div class="p-card__tags">Ser halloumi, Ogórek świeży, Papryka czerwona, Pomidor, Oliwki zielone…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bulka losos oliwa papryka pomidor">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/bulka-owsiana-z-lososiem-i-warzywami/">Bułka owsiana z łososiem i warzywami</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">615 kcal</span>
+</div>
+<div class="p-card__tags">Bułka owsiana, Pomidor, Papryka czerwona, Łosoś wędzony, Oliwa z oliwek</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cytryna halloumi kuskus ogorek oliwa oliwki papryka pomidor salata">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/salatka-z-serem-halloumi-kuskusem-pomidorem/">Sałatka z serem halloumi, kuskusem, pomidorem oraz ogórkiem</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">595 kcal</span>
+</div>
+<div class="p-card__tags">Kasza kuskus, Oliwki zielone, Papryka czerwona, Pomidor, Ogórek świeży…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ciasto-nalesniki jogurt maliny twarog">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/nalesniki-z-serem-twarogowym-bez-laktozy/">Naleśniki z serem twarogowym bez laktozy oraz malinami</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">514 kcal</span>
+</div>
+<div class="p-card__tags">Ciasto do naleśników low fodmap, Ser twarogowy półtłusty bez laktozy…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb feta ogorek papryka pomidor">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/kanapki-w-greckim-stylu/">Kanapki w greckim stylu</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">598 kcal</span>
+</div>
+<div class="p-card__tags">Chleb bezglutenowy, Ser typu Feta, Ogórek świeży, Pomidorki koktajlowe…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb gouda papryka pesto">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/kanapki-z-zielonym-pesto-serem-gouda/">Kanapki z zielonym pesto, serem gouda i papryką czerwoną</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">577 kcal</span>
+</div>
+<div class="p-card__tags">Chleb bezglutenowy, Pesto zielone, Ser gouda, Papryka czerwona</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="dynia feta kasza oliwa szpinak">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/kasza-jaglana-z-dynia-i-serem/">Kasza jaglana z dynią i serem typu feta</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">469 kcal</span>
+</div>
+<div class="p-card__tags">Dynia świeża lub mrożona, Ser typu Feta, Kasza jaglana, Oliwa z oliwek…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb jajka majonez oliwa papryka pomidor salata">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/jajka-w-koszulkach-z-chlebem-bezglutenowym/">Jajka w koszulkach z chlebem bezglutenowym</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">618 kcal</span>
+</div>
+<div class="p-card__tags">Jajko kurze całe, Chleb bezglutenowy, Miks sałat, Papryka czerwona…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chrzan losos ogorek szpinak tortilla">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/tortilla-z-lososiem-szpinakiem-koperkiem-oraz/">Tortilla z łososiem, szpinakiem, koperkiem oraz ogórkiem</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">610 kcal</span>
+</div>
+<div class="p-card__tags">Ogórek świeży, Szpinak, Chrzan (tarty), Tortilla bezglutenowa, Łosoś wędzony</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan jajka jogurt maka oliwa">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/placki-bananowe/">Placki bananowe</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">609 kcal</span>
+</div>
+<div class="p-card__tags">Banan, Mąka jaglana, Jajko kurze całe, Olej rzepakowy, Jogurt skyr bez laktozy</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="budyn cytryna jajka jogurt maliny migdaly">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/cytrynowy-skyrnik-proteinowy/">Cytrynowy skyrnik proteinowy</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">602 kcal</span>
+</div>
+<div class="p-card__tags">Jogurt skyr bez laktozy, Jajko kurze całe, Budyń w proszku (z cukrem)…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cytryna dorsz oliwa pomidor szpinak ziemniaki">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/dorsz-z-ziemniakami-szpinakiem-oraz-pomidorkami/">Dorsz z ziemniakami, szpinakiem oraz pomidorkami koktajlowymi</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">493 kcal</span>
+</div>
+<div class="p-card__tags">Dorsz, Ziemniaki, Szpinak, Pomidorki koktajlowe, Oliwa z oliwek, Sok z cytryny</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb cytryna feta ogorek oliwa oliwki papryka pomidor salata">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/salatka-grecka-z-serem-typu-feta/">Sałatka grecka z serem typu feta oraz chlebem bezglutenowym</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">603 kcal</span>
+</div>
+<div class="p-card__tags">Miks sałat, Ser typu Feta, Oliwki zielone, Papryka czerwona…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="makaron mozzarella oliwa pesto pomidor">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/spaghetti-z-pesto/">Spaghetti z pesto</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">494 kcal</span>
+</div>
+<div class="p-card__tags">Makaron bezglutenowy, Ser mozzarella kulka…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="borowki jogurt kiwi migdaly platki-owsiane">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/owsianka-z-kawalkami-kiwi-oraz-borowkami/">Owsianka z kawałkami kiwi oraz borówkami</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">600 kcal</span>
+</div>
+<div class="p-card__tags">Płatki owsiane górskie, Jogurt skyr bez laktozy, Kiwi…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jogurt maliny orzechy platki-jaglane">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/platki-z-malinami-oraz-orzechami-wloskimi/">Płatki z malinami oraz orzechami włoskimi</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">588 kcal</span>
+</div>
+<div class="p-card__tags">Jogurt skyr bez laktozy, Płatki jaglane, Orzechy włoskie…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cukinia cytryna losos oliwa pomidor ryz sos-sojowy syrop-klonowy">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/szybka-pieczona-ryba/">Szybka pieczona ryba</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">510 kcal</span>
+</div>
+<div class="p-card__tags">Łosoś świeży, Ryż basmati, Pomidorki koktajlowe, Cukinia, Cytryna…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb jajka kielbaski ogorek oliwa">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/jajecznica-z-kielbaska-roslinna/">Jajecznica z kiełbaską roślinną</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">613 kcal</span>
+</div>
+<div class="p-card__tags">Oliwa z oliwek, Kiełbaski roślinne węgierskie Dobra Kaloria…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan migdaly pomarancza serek-wiejski syrop-klonowy">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/serek-wiejski-bez-laktozy-z-owocami/">Serek wiejski bez laktozy z owocami i syropem klonowym</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">606 kcal</span>
+</div>
+<div class="p-card__tags">Serek wiejski bez laktozy, Banan, Pomarańcza, Syrop klonowy, Migdały</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="chleb feta oliwa papryka pomidory-puszka">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/zupa-pomidorowo-paprykowa/">Zupa pomidorowo paprykowa</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">487 kcal</span>
+</div>
+<div class="p-card__tags">Papryka czerwona, Oliwa z oliwek, Pomidory z puszki, Chleb bezglutenowy…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jogurt maslo-orzechowe orzechy platki-owsiane syrop-klonowy">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/owsiane-batoniki-z-syropem-klonowym-oraz/">Owsiane batoniki z syropem klonowym oraz masłem orzechowym</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">600 kcal</span>
+</div>
+<div class="p-card__tags">Płatki owsiane górskie, Masło orzechowe, Mieszanka orzechów, Syrop klonowy…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb halloumi ogorek pomidor salata">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/salatka-z-grillowanym-serem-halloumi/">Sałatka z grillowanym serem halloumi</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">579 kcal</span>
+</div>
+<div class="p-card__tags">Ser halloumi, Miks sałat, Pomidor, Ogórek świeży, Chleb bezglutenowy</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="jajka makaron marchewka mleko oliwa pieczarki ser-plesniowy">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/zapiekanka-makaronowa-z-suszonymi-pomidorami-w/">Zapiekanka makaronowa z suszonymi pomidorami w kremowo-serowym sosie (liczba porcji: 2)</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">482 kcal</span>
+</div>
+<div class="p-card__tags">Makaron bezglutenowy, Marchew, Pomidory suszone w oleju (odsączone)…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="borowki maliny maslo-orzechowe platki-owsiane serek-wiejski">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/serek-wiejski-z-malinami-borowkami-oraz/">Serek wiejski z malinami, borówkami oraz masłem orzechowym</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">610 kcal</span>
+</div>
+<div class="p-card__tags">Serek wiejski bez laktozy, Płatki owsiane górskie, Masło orzechowe…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ciasto-nalesniki jogurt truskawki twarog">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/nalesniki-z-serem-twarogowym-bez-laktozy-2/">Naleśniki z serem twarogowym bez laktozy i owocami</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">504 kcal</span>
+</div>
+<div class="p-card__tags">Ciasto do naleśników low fodmap, Ser twarogowy półtłusty bez laktozy…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan borowki jogurt migdaly platki-owsiane">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/owsianka-z-bananem-oraz-borowkami/">Owsianka z bananem oraz borówkami</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">601 kcal</span>
+</div>
+<div class="p-card__tags">Płatki owsiane górskie, Banan, Borówki amerykańskie, Płatki migdałów…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cytryna dorsz oliwa pomidor ziemniaki">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/ryba-grillowana-w-papilocie/">Ryba grillowana w papilocie</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">516 kcal</span>
+</div>
+<div class="p-card__tags">Dorsz, Ziemniaki, Pomidorki koktajlowe, Sok z cytryny, Oliwa z oliwek</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula halloumi ogorek oliwki papryka pomidor salata tortilla">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/tortilla-pelnoziarnista-z-salatka-po-grecku/">Tortilla pełnoziarnista z sałatką po grecku i serem halloumi</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">514 kcal</span>
+</div>
+<div class="p-card__tags">Ser halloumi, Ogórek świeży, Papryka czerwona, Cebula, Pomidor…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb hummus ogorek papryka plastry-wegan pomidor">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/kanapki-z-hummusem-wedlina-i-warzywami/">Kanapki z hummusem, wędliną i warzywami</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">593 kcal</span>
+</div>
+<div class="p-card__tags">Chleb żytni razowy, Plastry wegańskie z pistacjami Go Vege, Pomidor…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia czosnek kasza marchewka oliwa papryka pomidory-puszka soczewica">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/gulasz-z-soczewicy-czerwonej/">Gulasz z soczewicy czerwonej</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">499 kcal</span>
+</div>
+<div class="p-card__tags">Papryka czerwona, Kasza jęczmienna pęczak, Cukinia, Cebula, Czosnek…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="ciasto-nalesniki daktyle jogurt kakao orzechy">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/nalesniki-z-kremem-czekoladowym/">Naleśniki z kremem czekoladowym</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">603 kcal</span>
+</div>
+<div class="p-card__tags">Ciasto do naleśników wegańskie, Orzechy laskowe, Daktyle, suszone…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="biszkopty czekolada pudding serek-proteinowy smietanka">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/warstwowy-deser-z-gorzka-czekolada/">Warstwowy deser z gorzką czekoladą</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">617 kcal</span>
+</div>
+<div class="p-card__tags">Serek proteinowy ze skyrem waniliowy Go Active, Biszkopty…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek dynia feta kasza oliwa szpinak">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/peczak-z-dynia-i-serem-typu/">Pęczak z dynią i serem typu feta</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">487 kcal</span>
+</div>
+<div class="p-card__tags">Dynia świeża lub mrożona, Ser typu Feta, Kasza jęczmienna pęczak…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jablko jajka jogurt miod mleko oliwa platki-owsiane">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/pieczona-owsianka-z-jablkiem-oraz-cynamonem/">Pieczona owsianka z jabłkiem oraz cynamonem</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">603 kcal</span>
+</div>
+<div class="p-card__tags">Płatki owsiane górskie, Jajko kurze całe, Mleko roślinne niesłodzone, Miód…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="brokul cytryna losos miod musztarda oliwa ryz">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/losos-w-sosie-musztardowo-miodowym-z/">Łosoś w sosie musztardowo-miodowym z ryżem oraz brokułem</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">495 kcal</span>
+</div>
+<div class="p-card__tags">Łosoś świeży, Ryż basmati, Brokuł, świeży lub mrożony, Miód, Musztarda…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="budyn jablko jajka jogurt kasza oliwa">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/placuszki-jablkowe/">Placuszki jabłkowe</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">599 kcal</span>
+</div>
+<div class="p-card__tags">Kasza jaglana, Jabłko, Budyń w proszku (z cukrem), Olej rzepakowy…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="chleb cytryna feta kukurydza oliwa pomidor salata">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/salatka-z-serem-i-kukurydza-konserwowa/">Sałatka z serem i kukurydzą konserwową</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">501 kcal</span>
+</div>
+<div class="p-card__tags">Miks sałat, Kukurydza konserwowa, Ser typu Feta, Pomidorki koktajlowe…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb mozzarella plastry-wegan pomidor rzodkiewka serek-smietankowy">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/tost-z-szynka-serem-i-warzywami/">Tost z szynką, serem i warzywami</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">598 kcal</span>
+</div>
+<div class="p-card__tags">Chleb żytni razowy, Plastry wegańskie z pistacjami Go Vege…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="kakao maslo-orzechowe mleko odzywka platki-owsiane">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/czekoladowe-smoothie/">Czekoladowe smoothie</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">583 kcal</span>
+</div>
+<div class="p-card__tags">Mleko roślinne niesłodzone, Kakao 16%, Masło orzechowe, Odżywka białkowa…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado bajgiel czosnek halloumi miod musztarda pomidor salata">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/bajgiel-z-kremowym-sosem/">Bajgiel z kremowym sosem</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">602 kcal</span>
+</div>
+<div class="p-card__tags">Bajgiel z sezamem, Ser halloumi, Rukola, Pomidor, Awokado, Miód, Musztarda…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek makaron mieso-wegan mozzarella oliwa papryka pomidor pomidory-puszka">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/lasagne-w-papryce/">Lasagne w papryce</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
+<span class="p-num">13:00-16:00</span>
+<span class="p-num">509 kcal</span>
+</div>
+<div class="p-card__tags">Papryka czerwona, Oliwa z oliwek, Cebula, Czosnek…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan migdaly pomarancza serek-wiejski syrop-klonowy">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/serek-wiejski-z-owocami-i-syropem/">Serek wiejski z owocami i syropem klonowym</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">604 kcal</span>
+</div>
+<div class="p-card__tags">Serek wiejski naturalny, Banan, Pomarańcza, Syrop klonowy, Migdały</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb jajka majonez ogorek plastry-wegan pomidor">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/kanapki-z-szynka-jajkiem-i-ogorkiem/">Kanapki z szynką, jajkiem i ogórkiem kiszonym</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">595 kcal</span>
+</div>
+<div class="p-card__tags">Chleb żytni razowy, Majonez wegański…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="borowki jajka maka oliwa twarog">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/syrniki-z-owocami/">Syrniki z owocami (liczba porcji: 3)</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
+<span class="p-num">7:00-10:00</span>
+<span class="p-num">596 kcal</span>
+</div>
+<div class="p-card__tags">Ser twarogowy półtłusty, Jajko kurze całe, Mąka pszenna pełnoziarnista…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="biszkopty jogurt kakao kawa orzechy truskawki">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/tiramisu-z-truskawkami/">Tiramisu z truskawkami</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">596 kcal</span>
+</div>
+<div class="p-card__tags">Biszkopty, Jogurt skyr, Jogurt naturalny 2%, Kakao 16%…</div>
+</div></article></li>
+<li>
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb gouda jajka ogorek oliwa plastry-wegan">
+<div class="p-card__band"></div>
+<div class="p-card__body">
+<a class="p-card__title" href="przepisy/tosty-francuskie-z-serem-gouda-oraz/">Tosty francuskie z serem gouda oraz plastrem wegańskim</a>
+<div class="p-card__meta">
+<span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
+<span class="p-num">18:00-20:00</span>
+<span class="p-num">604 kcal</span>
+</div>
+<div class="p-card__tags">Chleb żytni razowy, Jajko kurze całe, Ser gouda…</div>
 </div></article></li>
 </ul>

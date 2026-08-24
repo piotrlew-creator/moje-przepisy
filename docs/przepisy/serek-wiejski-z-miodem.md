@@ -1,5 +1,6 @@
 ---
 title: "Serek wiejski z miodem, orzechami i gruszką"
+description: "Śniadanie, 467 kcal, 30 g białka. Składniki: serka wiejskiego, miodu, orzechów włoskich, gruszki, wafli ryżowych."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Owsianka z twarogiem i owocami"
+description: "Śniadanie, 554 kcal, 28 g białka. Składniki: płatków owsianych, twarogu półtłustego, banana, borówek, pistacji."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Pierożki gyoza z warzywami chef select z kimchi"
+description: "Obiad, 358 kcal, 8 g białka. Składniki: Pierożków gyoza z warzywami chef select, mandarynki."
 hide:
   - toc
 ---

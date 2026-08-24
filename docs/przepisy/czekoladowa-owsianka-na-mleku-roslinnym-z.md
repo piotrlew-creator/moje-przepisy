@@ -1,5 +1,6 @@
 ---
 title: "Czekoladowa owsianka na mleku roślinnym z malinami"
+description: "Śniadanie, 561 kcal, 35 g białka. Składniki: napoju sojowego, płatków owsianych, kakao, malin, płatków migdałów, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

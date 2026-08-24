@@ -1,5 +1,6 @@
 ---
 title: "Pasta z łososia teriyaki z pieczywem"
+description: "Kolacja, 456 kcal, 27 g białka. Składniki: łososia świeżego, ogórka zielonego, pora, majonezu, sosu sojowego, sosu sriracha."
 hide:
   - toc
 ---

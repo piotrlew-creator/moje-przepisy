@@ -1,5 +1,6 @@
 ---
 title: "Pieczywo z wiosennym serkiem wiejskim, rzodkiewką i ogórkiem"
+description: "Śniadanie, 468 kcal, 36 g białka. Składniki: serka wiejskiego, rzodkiewek, ogórka, bułki grahamki."
 hide:
   - toc
 ---

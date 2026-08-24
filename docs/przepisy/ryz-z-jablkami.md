@@ -1,5 +1,6 @@
 ---
 title: "Ryż z jabłkami"
+description: "Śniadanie, 482 kcal, 29 g białka. Składniki: ryżu basmati, napoju roślinnego, małego jabłka, orzechów, jogurtu skyr."
 hide:
   - toc
 ---

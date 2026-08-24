@@ -1,5 +1,6 @@
 ---
 title: "Owsianka z marchewką"
+description: "Śniadanie, 453 kcal, 24 g białka. Składniki: napoju roślinnego, płatków owsianych górskich, marchewki, małego banana, mieszanki orzechów, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

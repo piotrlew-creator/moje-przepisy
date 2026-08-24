@@ -1,5 +1,6 @@
 ---
 title: "Chia bowl z kiwi i pomarańczą"
+description: "Śniadanie, 517 kcal, 11 g białka. Składniki: Mleko roślinne niesłodzone, Kiwi, Pomarańcza, Nasiona chia, Płatki owsiane górskie, Mieszanka orzechów."
 hide:
   - toc
 ---

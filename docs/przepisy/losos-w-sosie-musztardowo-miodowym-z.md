@@ -1,5 +1,6 @@
 ---
 title: "Łosoś w sosie musztardowo-miodowym z ryżem oraz brokułem"
+description: "Obiad, 495 kcal, 21 g białka. Składniki: Łosoś świeży, Ryż basmati, Brokuł, świeży lub mrożony, Miód, Musztarda, Sok z cytryny."
 hide:
   - toc
 ---

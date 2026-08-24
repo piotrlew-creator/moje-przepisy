@@ -1,5 +1,6 @@
 ---
 title: "Gotowana czerwona fasola po meksykańsku"
+description: "Obiad, 382 kcal, 14 g białka. Składniki: ryżu brązowego, fasoli czerwonej konserwowej, marchewki, cebuli, czosnku, soku z limonki."
 hide:
   - toc
 ---

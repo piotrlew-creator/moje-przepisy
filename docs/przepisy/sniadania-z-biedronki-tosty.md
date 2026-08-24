@@ -1,5 +1,6 @@
 ---
 title: "Śniadania z Biedronki: Tosty"
+description: "Śniadanie, 477 kcal, 21 g białka. Składniki: chleba tostowego, sera mozzarella light, papryki konserwowej."
 hide:
   - toc
 ---

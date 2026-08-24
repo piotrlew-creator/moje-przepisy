@@ -1,5 +1,6 @@
 ---
 title: "Lunchbox Kanapki z serem gouda i warzywami + jogurt + owoc"
+description: "Śniadanie, 615 kcal, 30 g białka. Składniki: Bułka owsiana, Pomidor, Rukola, Ser gouda, Serek śmietankowy bez laktozy, Fruvita pure banan, truskawka, jabłko."
 hide:
   - toc
 ---

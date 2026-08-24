@@ -1,5 +1,6 @@
 ---
 title: "Roślinne parówki Bez kęsa mięsa Tarczyński z pieczywem i warzywami"
+description: "Śniadanie, 472 kcal, 15 g białka. Składniki: Roślinnych parówek Bez kęsa mięsa Tarczyński, bułki, pomidorków koktajlowych, ketchupu."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Serek wiejski z malinami, borówkami oraz masłem orzechowym"
+description: "Śniadanie, 610 kcal, 36 g białka. Składniki: Serek wiejski bez laktozy, Płatki owsiane górskie, Masło orzechowe, Borówki amerykańskie, Maliny świeże lub mrożone."
 hide:
   - toc
 ---

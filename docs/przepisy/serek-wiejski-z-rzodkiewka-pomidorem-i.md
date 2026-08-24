@@ -1,5 +1,6 @@
 ---
 title: "Serek wiejski z rzodkiewką, pomidorem i pieczywem"
+description: "Śniadanie, 451 kcal, 30 g białka. Składniki: serka wiejskiego, chleba żytniego, pomidora, rzodkiewki, masła."
 hide:
   - toc
 ---

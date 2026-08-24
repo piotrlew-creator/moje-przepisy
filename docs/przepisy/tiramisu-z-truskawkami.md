@@ -1,5 +1,6 @@
 ---
 title: "Tiramisu z truskawkami"
+description: "Kolacja, 596 kcal, 34 g białka. Składniki: Biszkopty, Jogurt skyr, Jogurt naturalny 2%, Kakao 16%, Napar z kawy (bez cukru), Truskawki, świeże lub mrożone."
 hide:
   - toc
 ---

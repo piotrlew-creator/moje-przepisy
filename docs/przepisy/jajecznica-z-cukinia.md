@@ -1,5 +1,6 @@
 ---
 title: "Jajecznica z cukinią"
+description: "Śniadanie, 391 kcal, 6 g białka. Składniki: Jajko kurze całe, Cukinia, Chleb żytni razowy."
 hide:
   - toc
 ---

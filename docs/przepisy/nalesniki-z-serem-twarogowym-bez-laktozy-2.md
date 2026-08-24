@@ -1,5 +1,6 @@
 ---
 title: "Naleśniki z serem twarogowym bez laktozy i owocami"
+description: "Obiad, 504 kcal, 30 g białka. Składniki: Ciasto do naleśników low fodmap, Ser twarogowy półtłusty bez laktozy, Jogurt naturalny bez laktozy, Truskawki, świeże lub mrożone."
 hide:
   - toc
 ---

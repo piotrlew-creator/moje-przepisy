@@ -1,5 +1,6 @@
 ---
 title: "Owsiano-żytnie batoniki z miodem i czekoladą"
+description: "Kolacja, 456 kcal, 16 g białka. Składniki: płatków owsianych górskich, płatków żytnich, żurawiny suszonej, czekolady gorzkiej, miodu, jogurtu skyr."
 hide:
   - toc
 ---

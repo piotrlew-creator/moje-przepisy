@@ -1,5 +1,6 @@
 ---
 title: "Omlet ze szpinakiem"
+description: "Śniadanie, 439 kcal, 29 g białka. Składniki: szpinaku, jajek kurzych, czosnku, pomidorków koktajlowych, chleba żytniego razowego."
 hide:
   - toc
 ---

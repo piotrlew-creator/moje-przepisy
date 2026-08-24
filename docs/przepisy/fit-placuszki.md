@@ -1,5 +1,6 @@
 ---
 title: "Fit Placuszki"
+description: "Śniadanie, 473 kcal, 28 g białka. Składniki: jaja kurzego, mąki owsianej pełnoziarnistej, odżywki białkowej, napoju roślinnego, np. migdałowego, malin, oleju kokosowego."
 hide:
   - toc
 ---

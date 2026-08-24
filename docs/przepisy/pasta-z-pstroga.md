@@ -1,5 +1,6 @@
 ---
 title: "Pasta z wędzonego pstrąga i twarogu ze szczypiorkiem, warzywami i pieczywem"
+description: "Śniadanie, 446 kcal, 31 g białka. Składniki: chleba żytniego razowego, twarogu tłustego, pstrąga wędzonego, ogórka zielonego, rzodkiewek, rukoli."
 hide:
   - toc
 ---

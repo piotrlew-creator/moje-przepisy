@@ -1,5 +1,6 @@
 ---
 title: "Placuszki z cukinii"
+description: "Obiad, 480 kcal, 30 g białka. Składniki: cukinii, mąki orkiszowej pełnoziarnistej, jajka kurzego, jogurtu skyr, oliwy z oliwek."
 hide:
   - toc
 ---

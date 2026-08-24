@@ -1,5 +1,6 @@
 ---
 title: "Owoce z jogurtem roślinnym"
+description: "Śniadanie, 435 kcal, 33 g białka. Składniki: jogurtu roślinnego, melona, ananasa świeżego, jabłka, nasion chia, odżywki białkowej."
 hide:
   - toc
 ---

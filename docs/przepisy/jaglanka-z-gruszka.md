@@ -1,5 +1,6 @@
 ---
 title: "Jaglanka z gruszką"
+description: "Śniadanie, 441 kcal, 30 g białka. Składniki: płatków jaglanych, napoju migdałowego, małej gruszki, orzechów włoskich, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

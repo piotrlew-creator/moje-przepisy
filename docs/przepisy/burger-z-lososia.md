@@ -1,5 +1,6 @@
 ---
 title: "Burger z łososia"
+description: "Obiad, 362 kcal, 16 g białka. Składniki: łososia, bułki, sezamu, soku z cytryny, majonezu, sosu sriracha."
 hide:
   - toc
 ---

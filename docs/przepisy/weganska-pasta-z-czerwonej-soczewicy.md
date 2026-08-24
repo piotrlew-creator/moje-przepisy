@@ -1,5 +1,6 @@
 ---
 title: "Wegańska pasta z czerwonej soczewicy"
+description: "Śniadanie, 451 kcal, 17 g białka. Składniki: czerwonej soczewicy, cebuli, czosnku, selera, pomidorów z puszki, koncentratu pomidorowego."
 hide:
   - toc
 ---

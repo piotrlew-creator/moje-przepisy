@@ -9,6 +9,7 @@ a nie jego powtórzeniem. Porównuje z rozdziałem „Plan diety”:
   * każdy krok przygotowania (`stepsSource`, czyli zapis przed zamianą
     czasowników na tryb rozkazujący) — w całości, nie tylko początek,
   * każdą nazwę dania,
+  * kaloryczność i makroskładniki (osobna ścieżka odczytu — pdftotext),
   * komplet posiłków w każdym planie.
 
 Użycie:
@@ -18,6 +19,7 @@ Użycie:
 import json
 import os
 import re
+import subprocess
 import sys
 from collections import Counter
 
@@ -27,6 +29,11 @@ PODZIAL = 340
 RE_ILOSC = re.compile(r"^([\d.]+)\s+(\S+)\s+(.+?)\s+\(([\d.]+)\s*g\)$")
 RE_NAZWA = re.compile(r"^(.+?)\s+[–—]\s+([\d.]+)\s+(\S+)\s+\(([\d.]+)\s*g\)$")
 RE_WAGA = re.compile(r"^(.+?)\s+[–—]\s+([\d.]+)\s*g$")
+
+# Nagłówek posiłku z pdftotext: kcal, białko, węglowodany, tłuszcz.
+RE_MAKRO = re.compile(
+    r"(?:Posiłek\s+\d\s*/\s*\d{1,2}:\d{2}-\d{1,2}:\d{2}|^\s*Przekąska)\s+"
+    r"(\d+)\s+(\d+)\s*g\s+(\d+)\s*g\s+(\d+)\s*g", re.M)
 
 norm = lambda t: re.sub(r"\s+([,.])", r"\1", re.sub(r"\s+", " ", t)).strip()
 
@@ -67,6 +74,15 @@ def sklej(linie):
     return out
 
 
+def makra(path):
+    """Czwórki (kcal, B, W, T) z nagłówków posiłków — druga ścieżka odczytu."""
+    txt = subprocess.run(["pdftotext", "-layout", path, "-"],
+                         capture_output=True, text=True, check=True).stdout
+    start = txt.index("Plan diety")
+    return {tuple(int(x) for x in m.groups())
+            for m in RE_MAKRO.finditer(txt[start:])}
+
+
 def czytaj(path):
     pdf = pdfplumber.open(path)
     start = next(n for n, pg in enumerate(pdf.pages)
@@ -92,12 +108,13 @@ def wiersz_zrodlowy(i):
 def main(pliki):
     dane = json.load(open("recipes.json", encoding="utf-8"))
 
-    skladniki, kroki, teksty = set(), [], []
+    skladniki, kroki, teksty, czworki = set(), [], [], set()
     for p in pliki:
         s, kr, ca = czytaj(p)
         skladniki |= s
         kroki.append(kr)
         teksty.append(ca)
+        czworki |= makra(p)
     kroki = " ".join(kroki)
     teksty = " ".join(teksty)
 
@@ -124,6 +141,14 @@ def main(pliki):
     zle_tytuly = [r["slug"] for r in dane["recipes"]
                   if norm(r["title"]) not in teksty]
 
+    # Kcal i makro idą z PDF-u inną ścieżką niż składniki (pdftotext kontra
+    # pdfplumber) i są zestawiane z treścią po kolejności — czyli podatne na
+    # przesunięcie o jeden posiłek. Sprawdzamy, czy każda czwórka istnieje
+    # w źródle.
+    zle_makro = [(r["slug"], (r["kcal"], r["protein"], r["carbs"], r["fat"]))
+                 for r in dane["recipes"]
+                 if (r["kcal"], r["protein"], r["carbs"], r["fat"]) not in czworki]
+
     print(f"Składniki: {sprawdzone} sprawdzonych, niezgodnych z PDF: {len(zle_skl)}")
     for x in zle_skl[:15]:
         print("   ", x)
@@ -133,6 +158,9 @@ def main(pliki):
     print(f"Tytuły:    {len(dane['recipes'])} sprawdzonych, niezgodnych: {len(zle_tytuly)}")
     for x in zle_tytuly[:15]:
         print("   ", x)
+    print(f"Kcal+makro: {len(dane['recipes'])} sprawdzonych, niezgodnych: {len(zle_makro)}")
+    for x in zle_makro[:15]:
+        print("   ", x[0], x[1])
 
     # komplet posiłków w każdym planie (po odsianiu powtórzeń część wypada —
     # pokazujemy więc, ile dni i posiłków zostało z każdego planu)
@@ -143,7 +171,7 @@ def main(pliki):
         print(f"   plan {plan:>2}: {c:3d} przepisów z {dni} dni")
 
     print("\nPory posiłków:", dict(Counter(r["slotLabel"] for r in dane["recipes"])))
-    return 1 if (zle_skl or zle_kroki or zle_tytuly) else 0
+    return 1 if (zle_skl or zle_kroki or zle_tytuly or zle_makro) else 0
 
 
 if __name__ == "__main__":

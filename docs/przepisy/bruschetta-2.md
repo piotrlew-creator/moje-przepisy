@@ -1,5 +1,6 @@
 ---
 title: "Bruschetta"
+description: "Śniadanie, 460 kcal, 20 g białka. Składniki: bagietki, pomidora, cebuli, czosnku, oliwy z oliwek, sera mozzarella w kulkach."
 hide:
   - toc
 ---

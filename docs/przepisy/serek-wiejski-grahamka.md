@@ -1,5 +1,6 @@
 ---
 title: "Serek wiejski, papryka, grahamka i orzechy"
+description: "Śniadanie, 514 kcal, 28 g białka. Składniki: serka wiejskiego, papryki żółtej, bułki grahamki, orzechów włoskich."
 hide:
   - toc
 ---

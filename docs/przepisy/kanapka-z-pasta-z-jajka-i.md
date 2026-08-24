@@ -1,5 +1,6 @@
 ---
 title: "Kanapka z pastą z jajka i awokado"
+description: "Śniadanie, 463 kcal, 27 g białka. Składniki: chleba żytniego razowego, jajek kurzych, awokado, soku z cytryny, pomidora."
 hide:
   - toc
 ---

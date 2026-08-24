@@ -1,5 +1,6 @@
 ---
 title: "Zupa z dyni z pieczoną ciecierzycą - przepis na 3 porcje"
+description: "Obiad, 404 kcal, 17 g białka. Składniki: dyni, mleczka kokosowego, ciecierzycy konserwowej, soku z cytryny, marchwi, ziemniaków."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Chlebek bananowy z kakao i orzechami"
+description: "Śniadanie, 443 kcal, 25 g białka. Składniki: małego banana, mąki pszennej pełnoziarnistej, mleka roślinnego, oleju rzepakowego, kakao, orzechów włoskich."
 hide:
   - toc
 ---

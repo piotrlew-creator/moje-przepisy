@@ -1,5 +1,6 @@
 ---
 title: "Hot dog z wegańską parówką"
+description: "Kolacja, 456 kcal, 13 g białka. Składniki: bułki do hot dogów, parówek wegańskich Tarczyński, cebuli czerwonej, ogórków konserwowych, papryki konserwowej, ketchupu."
 hide:
   - toc
 ---

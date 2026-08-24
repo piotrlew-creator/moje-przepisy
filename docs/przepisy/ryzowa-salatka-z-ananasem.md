@@ -1,5 +1,6 @@
 ---
 title: "Ryżowa sałatka z ananasem, ogórkiem, selerem i kukurydzą + shake białkowy"
+description: "Kolacja, 458 kcal, 26 g białka. Składniki: ryżu basmati, kukurydzy konserwowej, ananasa świeżego, małego ogórka, selera naciowego, majonezu wegańskiego."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Ciasto marchewkowe z kakao"
+description: "Kolacja, 474 kcal, 9 g białka. Składniki: marchwi, mąki pszennej pełnoziarnistej, oleju rzepakowego, jajka, kakao, orzechów włoskich."
 hide:
   - toc
 ---

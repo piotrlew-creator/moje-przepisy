@@ -1,5 +1,6 @@
 ---
 title: "Ryż na mleku z czekoladą i malinami"
+description: "Śniadanie, 544 kcal, 21 g białka. Składniki: ryżu białego, mleka roślinnego, czekolady gorzkiej, malin, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

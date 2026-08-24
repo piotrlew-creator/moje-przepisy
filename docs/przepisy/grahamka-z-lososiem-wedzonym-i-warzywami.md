@@ -1,5 +1,6 @@
 ---
 title: "Grahamka z łososiem wędzonym i warzywami"
+description: "Śniadanie, 440 kcal, 30 g białka. Składniki: bułki grahamki, pomidora, papryki czerwonej, łososia wędzonego."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Tost z chlebem żytnim, masłem orzechowym i bananem + shake białkowy"
+description: "Śniadanie, 491 kcal, 26 g białka. Składniki: chleba żytniego, masła orzechowego, banana, odżywki białkowej."
 hide:
   - toc
 ---

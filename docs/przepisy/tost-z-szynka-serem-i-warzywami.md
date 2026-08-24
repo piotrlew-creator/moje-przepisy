@@ -1,5 +1,6 @@
 ---
 title: "Tost z szynką, serem i warzywami"
+description: "Kolacja, 598 kcal, 28 g białka. Składniki: Chleb żytni razowy, Plastry wegańskie z pistacjami Go Vege, Ser mozzarella kulka, Pomidor, Rzodkiewka, Serek śmietankowy."
 hide:
   - toc
 ---

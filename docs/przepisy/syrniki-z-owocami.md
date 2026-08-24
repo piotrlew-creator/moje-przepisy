@@ -1,5 +1,6 @@
 ---
 title: "Syrniki z owocami (liczba porcji: 3)"
+description: "Śniadanie, 596 kcal, 38 g białka. Składniki: Ser twarogowy półtłusty, Jajko kurze całe, Mąka pszenna pełnoziarnista, Olej rzepakowy, Mąka pszenna typ 500, Borówki amerykańskie."
 hide:
   - toc
 ---

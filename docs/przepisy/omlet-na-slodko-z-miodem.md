@@ -1,5 +1,6 @@
 ---
 title: "Omlet na słodko z miodem"
+description: "Śniadanie, 521 kcal, 33 g białka. Składniki: jajek kurzych, mąki pszennej pełnoziarnistej, miodu, świeżych lub mrożonych owoców."
 hide:
   - toc
 ---

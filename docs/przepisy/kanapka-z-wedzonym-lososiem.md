@@ -1,5 +1,6 @@
 ---
 title: "Kanapka z wędzonym łososiem"
+description: "Śniadanie, 474 kcal, 29 g białka. Składniki: bułki grahamki, łososia wędzonego, serka śmietankowego, chrzanu, kiełków np. rzodkiewki, ogórka."
 hide:
   - toc
 ---

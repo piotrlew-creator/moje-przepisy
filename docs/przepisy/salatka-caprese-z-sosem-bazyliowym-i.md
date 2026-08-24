@@ -1,5 +1,6 @@
 ---
 title: "Sałatka caprese z sosem bazyliowym i pieczywem"
+description: "Śniadanie, 518 kcal, 26 g białka. Składniki: sera mozzarella, pomidora, rukoli, czosnku, soku z cytryny, chleba żytniego razowego."
 hide:
   - toc
 ---

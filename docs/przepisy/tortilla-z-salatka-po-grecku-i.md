@@ -1,5 +1,6 @@
 ---
 title: "Tortilla z sałatką po grecku i serem halloumi"
+description: "Obiad, 509 kcal, 23 g białka. Składniki: Ser halloumi, Ogórek świeży, Papryka czerwona, Pomidor, Oliwki zielone, Tortilla bezglutenowa."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Owsianka snickers"
+description: "Śniadanie, 443 kcal, 25 g białka. Składniki: płatków owsianych, napoju roślinnego np. migdałowego, czekolady gorzkiej, masła orzechowego, małego banana, mieszanki prażonych orzechów."
 hide:
   - toc
 ---

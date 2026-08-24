@@ -1,5 +1,6 @@
 ---
 title: "Kanapki na słodko z masłem orzechowym, twarogiem i jabłkiem"
+description: "Śniadanie, 497 kcal, 11 g białka. Składniki: Chleb żytni razowy, Masło orzechowe, Ser twarogowy półtłusty, Jabłko."
 hide:
   - toc
 ---

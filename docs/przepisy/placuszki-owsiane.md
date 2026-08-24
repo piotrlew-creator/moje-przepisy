@@ -1,5 +1,6 @@
 ---
 title: "Placuszki owsiane orzechowe"
+description: "Śniadanie, 482 kcal, 29 g białka. Składniki: małego banana, jaja kurzego, mąki owsianej pełnoziarnistej, masła orzechowego, odżywki białkowej, mieszanki orzechów."
 hide:
   - toc
 ---

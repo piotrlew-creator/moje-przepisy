@@ -1,5 +1,6 @@
 ---
 title: "Omlet mleczna kanapka"
+description: "Śniadanie, 454 kcal, 35 g białka. Składniki: jajko, mąki pszennej pełnoziarnistej, kakao, jogurtu naturalnego, jogurtu naturalnego, twarogu chudego."
 hide:
   - toc
 ---

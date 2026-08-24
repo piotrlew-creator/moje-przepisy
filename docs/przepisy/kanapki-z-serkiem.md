@@ -1,5 +1,6 @@
 ---
 title: "Kanapki z serkiem śmietankowym, pomidorem i szczypiorkiem"
+description: "Kolacja, 439 kcal, 12 g białka. Składniki: chleba żytniego razowego, serka kanapkowego, pomidor, nasion słonecznika."
 hide:
   - toc
 ---

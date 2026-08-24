@@ -1,5 +1,6 @@
 ---
 title: "Zapiekanka ziemniaczana z mozzarellą"
+description: "Obiad, 373 kcal, 18 g białka. Składniki: ziemniaków, szpinaku, passaty pomidorowej, czosnku, oliwy z oliwek, sera mozzarella."
 hide:
   - toc
 ---

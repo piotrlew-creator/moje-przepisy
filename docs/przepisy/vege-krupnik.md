@@ -1,5 +1,6 @@
 ---
 title: "Vege krupnik"
+description: "Obiad, 363 kcal, 15 g białka. Składniki: cukinii, ciecierzycy konserwowej, kaszy jęczmiennej, papryki czerwonej, marchewki, pietruszki."
 hide:
   - toc
 ---

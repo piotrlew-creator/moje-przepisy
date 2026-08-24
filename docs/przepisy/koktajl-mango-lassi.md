@@ -1,5 +1,6 @@
 ---
 title: "Koktajl mango lassi"
+description: "Śniadanie, 522 kcal, 26 g białka. Składniki: mango, napoju sojowego, wegańskiej odżywki białkowej, awokado, pomarańczy, imbiru świeżego."
 hide:
   - toc
 ---

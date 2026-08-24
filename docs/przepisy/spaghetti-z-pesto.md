@@ -1,5 +1,6 @@
 ---
 title: "Spaghetti z pesto"
+description: "Obiad, 494 kcal, 14 g białka. Składniki: Makaron bezglutenowy, Ser mozzarella kulka, Pomidory suszone w oleju (odsączone), Pomidorki koktajlowe, Pesto zielone."
 hide:
   - toc
 ---

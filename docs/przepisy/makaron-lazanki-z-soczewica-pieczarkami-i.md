@@ -1,5 +1,6 @@
 ---
 title: "Makaron łazanki z soczewicą, pieczarkami i kapustą kiszoną"
+description: "Obiad, 482 kcal, 22 g białka. Składniki: soczewicy zielonej, kapusty kiszonej, makaronu łazanki, pieczarek, małej cebuli, czosnku."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Kanapka z tofu twarożkiem"
+description: "Śniadanie, 457 kcal, 18 g białka. Składniki: bułki grahamki, serka śmietankowego, majonezu wegańskiego, tofu naturalnego, ogórków kiszonych, pomidora."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Owsianka w stylu kinder country"
+description: "Śniadanie, 478 kcal, 5 g białka. Składniki: Płatki owsiane górskie, Mango świeże lub mrożone, Mleko roślinne niesłodzone, Masło orzechowe, Ryż preparowany, Czekolada mleczna."
 hide:
   - toc
 ---

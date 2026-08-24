@@ -1,5 +1,6 @@
 ---
 title: "Roladki z łososiem i twarożkiem szpinakowym"
+description: "Śniadanie, 557 kcal, 28 g białka. Składniki: łososia wędzonego, tortilli pełnoziarnistej, serka śmietankowego, szpinaku, oleju rzepakowego, soku z cytryny."
 hide:
   - toc
 ---

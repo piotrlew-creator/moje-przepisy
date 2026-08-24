@@ -1,5 +1,6 @@
 ---
 title: "Zupa krem z pomidorów z bazylią Chef select"
+description: "Obiad, 370 kcal, 9 g białka. Składniki: Zupy krem z pomidorów z bazylią Chef select, batona Raw Alesto kakao, ziarna kakaowca."
 hide:
   - toc
 ---

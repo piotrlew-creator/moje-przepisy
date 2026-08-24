@@ -1,5 +1,6 @@
 ---
 title: "Placki bananowe"
+description: "Kolacja, 609 kcal, 23 g białka. Składniki: Banan, Mąka jaglana, Jajko kurze całe, Olej rzepakowy, Jogurt skyr bez laktozy."
 hide:
   - toc
 ---

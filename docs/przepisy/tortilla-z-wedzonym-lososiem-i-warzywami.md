@@ -1,5 +1,6 @@
 ---
 title: "Tortilla z wędzonym łososiem i warzywami"
+description: "Kolacja, 450 kcal, 27 g białka. Składniki: tortilii pełnoziarnistej, łososia wędzonego, serka śmietankowego, rzodkiewki, ogórka, rukoli."
 hide:
   - toc
 ---

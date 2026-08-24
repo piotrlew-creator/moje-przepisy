@@ -1,5 +1,6 @@
 ---
 title: "Sałatka grecka z serem typu feta oraz chlebem bezglutenowym"
+description: "Kolacja, 603 kcal, 29 g białka. Składniki: Miks sałat, Ser typu Feta, Oliwki zielone, Papryka czerwona, Oliwa z oliwek, Sok z cytryny."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Śniadania z Biedronki: Hummus pietruszkowy"
+description: "Śniadanie, 525 kcal, 15 g białka. Składniki: ciecierzycy konserwowej, czosnku, soku z cytryny, oliwy z oliwek, zielonych oliwek, chleba żytniego razowego."
 hide:
   - toc
 ---

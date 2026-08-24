@@ -1,5 +1,6 @@
 ---
 title: "Pudding czekoladowy z truskawkami"
+description: "Kolacja, 456 kcal, 21 g białka. Składniki: mleka roślinnego np. migdałowe, truskawek, kakao, płatków ryżowych, wegańskiej odżywki białkowej, wiórek kokosowych."
 hide:
   - toc
 ---

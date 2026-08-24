@@ -1,5 +1,6 @@
 ---
 title: "Sałatka z grillowanym serem halloumi"
+description: "Śniadanie, 579 kcal, 30 g białka. Składniki: Ser halloumi, Miks sałat, Pomidor, Ogórek świeży, Chleb bezglutenowy."
 hide:
   - toc
 ---

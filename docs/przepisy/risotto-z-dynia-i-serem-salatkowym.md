@@ -1,5 +1,6 @@
 ---
 title: "Risotto z dynią i serem sałatkowym"
+description: "Obiad, 362 kcal, 16 g białka. Składniki: ryżu, dyni, sera salatkowego, grana padano, rukoli, marchwi."
 hide:
   - toc
 ---

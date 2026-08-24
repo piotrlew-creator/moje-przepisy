@@ -1,5 +1,6 @@
 ---
 title: "Budyń waniliowy na mleku roślinnym z sosem malinowym"
+description: "Śniadanie, 463 kcal, 26 g białka. Składniki: mleka roślinnego, mąki ziemniaczanej, malin, wegańskiej odżywki białkowej, orzechów włoskich."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Zapiekana tortilla"
+description: "Śniadanie, 413 kcal, 5 g białka. Składniki: Tortilla pszenna, Jajko kurze całe, Cebula czerwona, Papryka czerwona, Ser gouda."
 hide:
   - toc
 ---

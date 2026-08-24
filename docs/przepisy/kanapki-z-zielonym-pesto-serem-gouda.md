@@ -1,5 +1,6 @@
 ---
 title: "Kanapki z zielonym pesto, serem gouda i papryką czerwoną"
+description: "Śniadanie, 577 kcal, 28 g białka. Składniki: Chleb bezglutenowy, Pesto zielone, Ser gouda, Papryka czerwona."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Budyń na mleku roślinnym z jagodami i płatkami migdałowymi"
+description: "Śniadanie, 475 kcal, 27 g białka. Składniki: mleka roślinnego, mąki ziemniaczanej, płatków migdałowych, jagód, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

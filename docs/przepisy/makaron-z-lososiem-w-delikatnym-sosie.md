@@ -1,5 +1,6 @@
 ---
 title: "Makaron z łososiem w delikatnym sosie kokosowym"
+description: "Obiad, 615 kcal, 13 g białka. Składniki: Łosoś wędzony, Makaron pełnoziarnisty, Cukinia, Czosnek, Pomidorki koktajlowe, Mleczko kokosowe 12%."
 hide:
   - toc
 ---

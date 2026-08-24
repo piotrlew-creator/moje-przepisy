@@ -1,5 +1,6 @@
 ---
 title: "Jajecznica z pieczywem"
+description: "Śniadanie, 438 kcal, 26 g białka. Składniki: jajek kurzych, oliwy z oliwek, chleba żytniego razowego, pomidorków koktajlowych."
 hide:
   - toc
 ---

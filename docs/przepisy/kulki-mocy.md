@@ -1,5 +1,6 @@
 ---
 title: "Daktylowo-kakaowe kulki mocy z orzechami"
+description: "Kolacja, 466 kcal, 7 g białka. Składniki: daktyli, orzechów włoskich, kakao, wiórków kokosowych."
 hide:
   - toc
 ---

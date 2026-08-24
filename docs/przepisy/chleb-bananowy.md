@@ -1,5 +1,6 @@
 ---
 title: "Chleb bananowy"
+description: "Śniadanie, 463 kcal, 27 g białka. Składniki: małego banana, mąki owsianej pełnoziarnistej, oleju kokosowego, jaja kurzego całego, odżywki białkowej."
 hide:
   - toc
 ---

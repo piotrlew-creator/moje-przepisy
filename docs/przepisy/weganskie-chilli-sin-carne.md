@@ -1,5 +1,6 @@
 ---
 title: "Wegańskie chilli sin carne"
+description: "Obiad, 372 kcal, 11 g białka. Składniki: kapusty białej, fasoli czarnej konserwowej, kukurydzy konserwowej, papryki zielonej, cebuli, czosnku."
 hide:
   - toc
 ---

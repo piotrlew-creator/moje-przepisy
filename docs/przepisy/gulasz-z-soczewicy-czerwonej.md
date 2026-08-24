@@ -1,5 +1,6 @@
 ---
 title: "Gulasz z soczewicy czerwonej"
+description: "Obiad, 499 kcal, 21 g białka. Składniki: Papryka czerwona, Kasza jęczmienna pęczak, Cukinia, Cebula, Czosnek, Soczewica czerwona."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Jogurt naturalny z domową granolą, orzechami i żurawiną"
+description: "Kolacja, 467 kcal, 26 g białka. Składniki: płatków owsianych górskich, syropu z agawy, żurawiny suszonej, orzechów np. włoskich, jogurtu skyr."
 hide:
   - toc
 ---

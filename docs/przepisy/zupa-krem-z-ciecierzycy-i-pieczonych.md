@@ -1,5 +1,6 @@
 ---
 title: "Zupa krem z ciecierzycy i pieczonych warzyw"
+description: "Obiad, 377 kcal, 21 g białka. Składniki: marchewki, ciecierzycy konserwowej, czosnku, małej cebuli, pora, pietruszki."
 hide:
   - toc
 ---

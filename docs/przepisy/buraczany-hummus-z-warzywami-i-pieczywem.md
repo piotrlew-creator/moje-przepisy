@@ -1,5 +1,6 @@
 ---
 title: "Buraczany hummus z warzywami i pieczywem"
+description: "Śniadanie, 457 kcal, 16 g białka. Składniki: chleba żytniego razowego, ciecierzycy konserwowej, małego buraka gotowanego, oliwy z oliwek, masła orzechowego, soku z cytryny."
 hide:
   - toc
 ---

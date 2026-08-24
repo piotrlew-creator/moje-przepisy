@@ -1,5 +1,6 @@
 ---
 title: "Płatki z malinami oraz orzechami włoskimi"
+description: "Śniadanie, 588 kcal, 28 g białka. Składniki: Jogurt skyr bez laktozy, Płatki jaglane, Orzechy włoskie, Maliny świeże lub mrożone."
 hide:
   - toc
 ---

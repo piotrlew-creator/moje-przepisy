@@ -1,5 +1,6 @@
 ---
 title: "Kanapka z pastą z ciecierzycy"
+description: "Śniadanie, 465 kcal, 14 g białka. Składniki: ciecierzycy konserwowej, czosnku, oliwy, soku z cytryny, chleba żytniego, kiełków rzodkiewki."
 hide:
   - toc
 ---

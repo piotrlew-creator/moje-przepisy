@@ -1,5 +1,6 @@
 ---
 title: "Jajka w koszulkach z chlebem bezglutenowym"
+description: "Kolacja, 618 kcal, 26 g białka. Składniki: Jajko kurze całe, Chleb bezglutenowy, Miks sałat, Papryka czerwona, Pomidorki koktajlowe, Oliwa z oliwek."
 hide:
   - toc
 ---

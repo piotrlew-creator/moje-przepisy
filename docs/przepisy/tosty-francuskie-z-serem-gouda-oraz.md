@@ -1,5 +1,6 @@
 ---
 title: "Tosty francuskie z serem gouda oraz plastrem wegańskim"
+description: "Kolacja, 604 kcal, 30 g białka. Składniki: Chleb żytni razowy, Jajko kurze całe, Ser gouda, Plastry wegańskie z pistacjami Go Vege, Ogórek świeży, Oliwa z oliwek."
 hide:
   - toc
 ---

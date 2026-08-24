@@ -1,5 +1,6 @@
 ---
 title: "Czekoladowy krem jaglany z porzeczkami"
+description: "Kolacja, 451 kcal, 27 g białka. Składniki: mleka roślinnego, płatków jaglanych, porzeczek czarnych, kakao, czekolady gorzkiej, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

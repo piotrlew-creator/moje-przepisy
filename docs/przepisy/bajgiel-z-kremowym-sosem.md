@@ -1,5 +1,6 @@
 ---
 title: "Bajgiel z kremowym sosem"
+description: "Śniadanie, 602 kcal, 26 g białka. Składniki: Bajgiel z sezamem, Ser halloumi, Rukola, Pomidor, Awokado, Miód."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Pasta jajeczna z ogórkiem, szczypiorkiem, koperkiem i pieczywem + jabłko"
+description: "Śniadanie, 556 kcal, 31 g białka. Składniki: jajek, chleba żytniego, musztardy, ogórka zielonego, jogurtu naturalnego, nasion słonecznika."
 hide:
   - toc
 ---

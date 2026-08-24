@@ -1,5 +1,6 @@
 ---
 title: "Fit Monte"
+description: "Śniadanie, 477 kcal, 26 g białka. Składniki: orzechów laskowych, jogurtu skyr, kakao, banana."
 hide:
   - toc
 ---

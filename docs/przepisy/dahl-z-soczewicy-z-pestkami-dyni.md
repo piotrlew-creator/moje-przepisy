@@ -1,5 +1,6 @@
 ---
 title: "Dahl z soczewicy z pestkami dyni"
+description: "Obiad, 511 kcal, 23 g białka. Składniki: żółtej soczewicy, cebuli, czosnku, imbiru, marchwii, pomidorów w puszce."
 hide:
   - toc
 ---

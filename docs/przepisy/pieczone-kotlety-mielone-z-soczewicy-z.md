@@ -1,5 +1,6 @@
 ---
 title: "Pieczone kotlety mielone z soczewicy z ziemniakami"
+description: "Obiad, 386 kcal, 16 g białka. Składniki: soczewicy zielonej, cebuli, czosnku, pieczarek uprawnych, mielonego siemienia lnianego, bułki tartej."
 hide:
   - toc
 ---

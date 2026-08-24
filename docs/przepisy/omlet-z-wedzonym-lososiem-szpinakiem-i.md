@@ -1,5 +1,6 @@
 ---
 title: "Omlet z wędzonym łososiem, szpinakiem i pomidorkami koktajlowymi"
+description: "Śniadanie, 469 kcal, 31 g białka. Składniki: łososia wędzonego, szpinaku, jajek kurzych, pomidorków koktajlowych, oleju rzepakowego, chleba żytniego razowego."
 hide:
   - toc
 ---

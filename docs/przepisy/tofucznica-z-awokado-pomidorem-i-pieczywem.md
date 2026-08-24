@@ -1,5 +1,6 @@
 ---
 title: "Tofucznica z awokado, pomidorem i pieczywem"
+description: "Śniadanie, 536 kcal, 25 g białka. Składniki: tofu naturalnego, awokado, pomidora, cebuli, nasion słonecznika, płatków drożdżowych."
 hide:
   - toc
 ---

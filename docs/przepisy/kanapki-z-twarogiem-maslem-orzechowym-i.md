@@ -1,5 +1,6 @@
 ---
 title: "Kanapki z twarogiem, masłem orzechowym i dżemem"
+description: "Śniadanie, 447 kcal, 28 g białka. Składniki: chleba żytniego, twarogu chudego, masła orzechowego, dżemu niskosłodzonego wiśniowego."
 hide:
   - toc
 ---

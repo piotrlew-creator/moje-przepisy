@@ -1,5 +1,6 @@
 ---
 title: "Zapiekane pieczarki portobello z farszem z jajek"
+description: "Obiad, 363 kcal, 22 g białka. Składniki: pieczarek portobello, jajek kurzych, małej cebuli, płatków owsianych, ziemniaków, selera naciowego."
 hide:
   - toc
 ---

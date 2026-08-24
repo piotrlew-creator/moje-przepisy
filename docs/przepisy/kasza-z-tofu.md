@@ -1,5 +1,6 @@
 ---
 title: "Kasza z tofu"
+description: "Obiad, 372 kcal, 23 g białka. Składniki: kaszy gryczanej, tofu naturalnego, brokuła, cebuli, szpinaku, czosnku."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Cukinia zapiekana z sosem pomidorowym, soczewicą i beszamelem na mleku roślinnym"
+description: "Obiad, 367 kcal, 16 g białka. Składniki: soczewicy czerwonej, cebuli, selera naciowego, marchwi, pomidorów z puszki, cukinii."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Kanapka z pastą pomidorową"
+description: "Kolacja, 443 kcal, 19 g białka. Składniki: soczewicy czerwonej, chleba żytniego razowego, pasty tahini, pomidorów suszonych, czosnku."
 hide:
   - toc
 ---

@@ -75,6 +75,15 @@ python generate_site.py     # wygeneruj docs/ z recipes.json
 mkdocs serve                # podgląd na http://127.0.0.1:8000
 ```
 
+Do samej strony to wszystko, czego trzeba. Potok wyciągania danych z PDF-ów
+i kontrola zgodności mają osobne zależności — patrz `requirements-tools.txt`
+(pdfplumber plus binarka `pdftotext` z pakietu poppler).
+
+`overrides/` nadpisuje jeden partial Material for MkDocs: oryginał odpytywał
+`api.github.com` o gwiazdki repozytorium przy każdym wejściu na stronę.
+Razem z `theme.font: false` (kroje leżą w `docs/fonts/`) strona nie wysyła
+żadnego żądania poza własny serwer.
+
 ## Publikacja
 
 Push na `main` uruchamia `.github/workflows/deploy.yml`, który generuje strony
@@ -90,7 +99,7 @@ Dopisz obiekt do tablicy `recipes` w `recipes.json` i uruchom
 | pole | znaczenie |
 |---|---|
 | `slug` | nazwa pliku i adres strony |
-| `plan` | z którego planu pochodzi przepis (1–11) |
+| `plan` | z którego planu pochodzi przepis (1–11); przy powtórzeniu dania wygrywa plan o **niższym** numerze |
 | `title` | nazwa dania; trafia też do `title:` we front matterze strony, bo bez tego MkDocs wziąłby tytuł z nazwy pliku („Klejacy ryz”) |
 | `day`, `slot` | dzień planu (1–10) i numer posiłku (1–4) |
 | `mealNo` | numer posiłku z PDF-u (1–4), do kontroli kompletności |
@@ -174,8 +183,15 @@ z `recipes.json`), a w historii gita zostałyby na zawsze.
 Kontrola zgodności ze źródłem:
 
 ```bash
-python verify_against_pdf.py source        # albo: source/plan1.pdf source/plan2.pdf ...
+pip install -r requirements-tools.txt
+python verify_against_pdf.py source        # albo: source/dieta.pdf source/dieta_2.pdf ...
 ```
 
 Skrypt czyta PDF-y drugą, niezależną ścieżką i sprawdza, czy każdy składnik,
-każdy krok z `stepsSource` i każda nazwa dania stoją w źródle dosłownie.
+każdy krok z `stepsSource`, każda nazwa dania oraz każda czwórka
+kcal/białko/węglowodany/tłuszcz stoją w źródle dosłownie.
+
+Dane, których nie da się wyciągnąć z rozdziału „Plan diety” — „Lista
+wymienników” i dwadzieścia wyróżnionych składników — mają własne źródło
+w `tools/dane_stale.py`. Wcześniej siedziały wyłącznie w `recipes.json`
+i skasowanie tego pliku znaczyło ich bezpowrotną utratę.

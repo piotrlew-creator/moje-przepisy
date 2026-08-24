@@ -1,5 +1,6 @@
 ---
 title: "Fasola z papryką i pomidorami z kaszą jęczmienną"
+description: "Obiad, 372 kcal, 16 g białka. Składniki: fasoli białej konserwowej, papryki pieczona w zalewie, pomidorów konserwowych, kaszy jęczmiennej, cebuli, oliwy z oliwek."
 hide:
   - toc
 ---

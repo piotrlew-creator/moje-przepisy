@@ -1,5 +1,6 @@
 ---
 title: "Kanapki z szynką, jajkiem i ogórkiem kiszonym"
+description: "Kolacja, 595 kcal, 25 g białka. Składniki: Chleb żytni razowy, Majonez wegański, Plastry wegańskie z pistacjami Go Vege, Jajko kurze całe, Ogórek kiszony, Pomidor."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Zupa z białej fasoli, ziemniaków i pieczarek"
+description: "Obiad, 603 kcal, 28 g białka. Składniki: Ziemniaki, Fasola biała konserwowa, Olej rzepakowy, Cebula, Czosnek, Pietruszka korzeń."
 hide:
   - toc
 ---

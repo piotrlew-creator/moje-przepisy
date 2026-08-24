@@ -1,5 +1,6 @@
 ---
 title: "Dorsz z ziemniakami, szpinakiem oraz pomidorkami koktajlowymi"
+description: "Obiad, 493 kcal, 21 g białka. Składniki: Dorsz, Ziemniaki, Szpinak, Pomidorki koktajlowe, Oliwa z oliwek, Sok z cytryny."
 hide:
   - toc
 ---

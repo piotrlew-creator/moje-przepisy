@@ -1,5 +1,6 @@
 ---
 title: "Wege omlet z mozzarellą i suszonymi pomidorami"
+description: "Śniadanie, 461 kcal, 25 g białka. Składniki: mąki z ciecierzycy, suszonych pomidorów, pieczarek, cebuli, oleju rzepakowego, mozzarelli."
 hide:
   - toc
 ---

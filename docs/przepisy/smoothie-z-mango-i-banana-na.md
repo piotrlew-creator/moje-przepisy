@@ -1,5 +1,6 @@
 ---
 title: "Smoothie z mango i banana na mleku roślinnym"
+description: "Kolacja, 461 kcal, 27 g białka. Składniki: mango, małego banana, napoju migdałowego, soku z limonki, odżywki białkowej, wiórków kokosowych."
 hide:
   - toc
 ---

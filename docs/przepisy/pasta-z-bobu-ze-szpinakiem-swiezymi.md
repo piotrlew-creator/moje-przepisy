@@ -1,5 +1,6 @@
 ---
 title: "Pasta z bobu ze szpinakiem, świeżymi pomidorami i pieczywem"
+description: "Kolacja, 483 kcal, 30 g białka. Składniki: bobu, czosnku, cebuli, oliwy z oliwek, szpinaku, pomidora."
 hide:
   - toc
 ---

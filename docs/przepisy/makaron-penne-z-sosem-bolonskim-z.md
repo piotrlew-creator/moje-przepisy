@@ -1,5 +1,6 @@
 ---
 title: "Makaron penne z sosem bolońskim z soczewicy"
+description: "Obiad, 378 kcal, 18 g białka. Składniki: soczewicy zielonej, selera naciowego, czosnku, małej cebuli, pomidorów w puszce, oliwy z oliwek."
 hide:
   - toc
 ---

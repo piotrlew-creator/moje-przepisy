@@ -1,5 +1,6 @@
 ---
 title: "Serek wiejski na słodko z masłem orzechowym, domową konfiturą jagodową i płatkami owsianymi"
+description: "Śniadanie, 460 kcal, 32 g białka. Składniki: serka wiejskiego, masła orzechowego, dżemu niskosłodzonego np. jagodowego, płatków owsianych górskich."
 hide:
   - toc
 ---

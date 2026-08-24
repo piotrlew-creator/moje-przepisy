@@ -1,5 +1,6 @@
 ---
 title: "Racuszki jabłkowo-owsiane"
+description: "Śniadanie, 504 kcal, 11 g białka. Składniki: Jabłko, Mąka pszenna pełnoziarnista, Płatki owsiane górskie, Mleko roślinne niesłodzone, Olej rzepakowy, Jogurt skyr."
 hide:
   - toc
 ---

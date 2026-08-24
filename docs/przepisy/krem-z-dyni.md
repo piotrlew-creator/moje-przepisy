@@ -1,5 +1,6 @@
 ---
 title: "Krem z dyni"
+description: "Obiad, 375 kcal, 14 g białka. Składniki: dyni, czarnej fasoli konserwowej, cebuli, czosnku, mleczka kokosowego 12%, ziemniaka."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Pulpeciki z soczewicy z kaszą jęczmienną"
+description: "Obiad, 368 kcal, 19 g białka. Składniki: suchej soczewicy zielonej, czosnku, cebuli, pora, mleka roślinnego, kaszy jęczmiennej."
 hide:
   - toc
 ---

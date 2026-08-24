@@ -1,5 +1,6 @@
 ---
 title: "Sałatka z serem i kukurydzą konserwową"
+description: "Obiad, 501 kcal, 21 g białka. Składniki: Miks sałat, Kukurydza konserwowa, Ser typu Feta, Pomidorki koktajlowe, Oliwa z oliwek, Sok z cytryny."
 hide:
   - toc
 ---

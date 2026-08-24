@@ -1,5 +1,6 @@
 ---
 title: "Kanapka z jajkiem"
+description: "Śniadanie, 443 kcal, 23 g białka. Składniki: chleba żytniego, serka kanapkowego, jaj, pomidora, rzodkiewki, rukoli."
 hide:
   - toc
 ---

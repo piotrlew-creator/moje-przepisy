@@ -1,5 +1,6 @@
 ---
 title: "Jaglany snickers"
+description: "Śniadanie, 466 kcal, 27 g białka. Składniki: gorzkiej czekolady, kaszy jaglanej, jogurtu roślinnego, napoju sojowego, masła orzechowego, świeżych daktyli."
 hide:
   - toc
 ---

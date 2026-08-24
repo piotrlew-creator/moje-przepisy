@@ -1,5 +1,6 @@
 ---
 title: "Kanapki z pastą bezjajeczną z ciecierzycy + shake"
+description: "Śniadanie, 397 kcal, 12 g białka. Składniki: Ciecierzyca konserwowa, Majonez wegański, Musztarda, Chleb żytni razowy, Pomidor, Odżywka białkowa."
 hide:
   - toc
 ---

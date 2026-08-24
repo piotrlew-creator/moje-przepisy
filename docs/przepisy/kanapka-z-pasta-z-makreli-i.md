@@ -1,5 +1,6 @@
 ---
 title: "Kanapka z pastą z makreli i jajek"
+description: "Śniadanie, 439 kcal, 27 g białka. Składniki: makreli wędzonej, jajka, jogurtu naturalnego, chleba żytniego."
 hide:
   - toc
 ---

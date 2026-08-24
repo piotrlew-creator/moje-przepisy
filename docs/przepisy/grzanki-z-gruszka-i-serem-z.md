@@ -1,5 +1,6 @@
 ---
 title: "Grzanki z gruszką i serem z niebieską pleśnią"
+description: "Śniadanie, 404 kcal, 6 g białka. Składniki: Chleb żytni razowy, Ser z niebieską pleśnią, Lazur, Gruszka, Oliwa z oliwek, Odżywka białkowa."
 hide:
   - toc
 ---

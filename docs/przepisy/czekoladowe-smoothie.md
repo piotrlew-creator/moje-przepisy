@@ -1,5 +1,6 @@
 ---
 title: "Czekoladowe smoothie"
+description: "Śniadanie, 583 kcal, 28 g białka. Składniki: Mleko roślinne niesłodzone, Kakao 16%, Masło orzechowe, Odżywka białkowa, Płatki owsiane górskie."
 hide:
   - toc
 ---

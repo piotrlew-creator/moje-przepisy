@@ -1,5 +1,6 @@
 ---
 title: "Warzywne spring rolls"
+description: "Kolacja, 460 kcal, 12 g białka. Składniki: ogórka, marchwi, kapusty, buraka, makaronu ryżowego, papieru ryżowego."
 hide:
   - toc
 ---

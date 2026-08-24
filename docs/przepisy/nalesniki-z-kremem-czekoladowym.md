@@ -1,5 +1,6 @@
 ---
 title: "Naleśniki z kremem czekoladowym"
+description: "Kolacja, 603 kcal, 16 g białka. Składniki: Ciasto do naleśników wegańskie, Orzechy laskowe, Daktyle, suszone, Kakao 16%, Jogurt skyr sojowy."
 hide:
   - toc
 ---

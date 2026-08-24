@@ -1,5 +1,6 @@
 ---
 title: "Kokosowy krem jaglany z malinami"
+description: "Śniadanie, 461 kcal, 26 g białka. Składniki: mleka roślinnego, płatków jaglanych, malin świeżych lub mrożonych, wiórków kokosowych, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

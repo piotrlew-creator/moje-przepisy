@@ -1,5 +1,6 @@
 ---
 title: "Tabbouleh z ogórkiem i pomidorem"
+description: "Obiad, 382 kcal, 13 g białka. Składniki: kuskusu, cebuli, papryki, ogórka zielonego, pomidora, ciecierzycy konserwowej."
 hide:
   - toc
 ---

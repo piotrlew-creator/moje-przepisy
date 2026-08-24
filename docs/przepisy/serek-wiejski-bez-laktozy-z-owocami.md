@@ -1,5 +1,6 @@
 ---
 title: "Serek wiejski bez laktozy z owocami i syropem klonowym"
+description: "Śniadanie, 606 kcal, 30 g białka. Składniki: Serek wiejski bez laktozy, Banan, Pomarańcza, Syrop klonowy, Migdały."
 hide:
   - toc
 ---

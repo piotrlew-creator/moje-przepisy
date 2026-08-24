@@ -1,5 +1,6 @@
 ---
 title: "Makaron z mozzarellą, szpinakiem, ogórkiem i pomidorkami koktajlowymi"
+description: "Obiad, 381 kcal, 23 g białka. Składniki: makaronu pełnoziarnistego, zielonego pesto, pomidorków koktajlowych, szpinaku, ogórka, mozzarelli light."
 hide:
   - toc
 ---

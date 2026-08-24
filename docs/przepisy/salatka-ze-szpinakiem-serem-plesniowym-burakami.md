@@ -1,5 +1,6 @@
 ---
 title: "Sałatka ze szpinakiem, serem pleśniowym, burakami i grzankami"
+description: "Kolacja, 455 kcal, 21 g białka. Składniki: chleb pszennego, truskawek, buraków, musztardy, miodu, sera camembert."
 hide:
   - toc
 ---

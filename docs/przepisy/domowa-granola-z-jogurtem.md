@@ -1,5 +1,6 @@
 ---
 title: "Domowa granola z jogurtem"
+description: "Kolacja, 466 kcal, 26 g białka. Składniki: płatków owsianych górskich, żurawiny suszonej, orzechów włoskich, syropu klonowego, jogurtu skyr, nasion chia."
 hide:
   - toc
 ---

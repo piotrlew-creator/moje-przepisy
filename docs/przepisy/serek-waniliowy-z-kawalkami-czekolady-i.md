@@ -1,5 +1,6 @@
 ---
 title: "Serek waniliowy z kawałkami czekolady i bananem"
+description: "Kolacja, 465 kcal, 25 g białka. Składniki: czekolady gorzkiej, banana, jogurtu skyr, wafli ryżowych, płatków migdałowych."
 hide:
   - toc
 ---

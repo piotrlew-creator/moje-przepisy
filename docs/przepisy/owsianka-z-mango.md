@@ -1,5 +1,6 @@
 ---
 title: "Owsianka z mango"
+description: "Kolacja, 472 kcal, 29 g białka. Składniki: płatków owsianych, mango, wiórków kokosowych, napoju migdałowego, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Kanapka z grillowanym tofu"
+description: "Kolacja, 475 kcal, 24 g białka. Składniki: tofu naturalnego, sosu sojowego, czosnku, imbiru, syropu klonowego, soku z cytryny."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Owsianka"
+description: "Śniadanie, 468 kcal, 29 g białka. Składniki: płatków owsianych, małego banana, orzechów nerkowca, odżywki białkowej."
 hide:
   - toc
 ---

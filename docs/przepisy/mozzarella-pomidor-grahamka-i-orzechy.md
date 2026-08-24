@@ -1,5 +1,6 @@
 ---
 title: "Mozzarella, pomidor, grahamka i orzechy"
+description: "Śniadanie, 469 kcal, 22 g białka. Składniki: bułki grahamki, sera mozzarella, orzechów włoskich, małego pomidora."
 hide:
   - toc
 ---

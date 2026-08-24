@@ -1,5 +1,6 @@
 ---
 title: "Jajecznica z pieczarkami, cebulą i pieczywem"
+description: "Śniadanie, 470 kcal, 29 g białka. Składniki: jajek kurzych, pieczarek, cebuli, szpinaku, rzodkiewki, oleju rzepakowego."
 hide:
   - toc
 ---

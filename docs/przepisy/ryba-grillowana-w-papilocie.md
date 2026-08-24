@@ -1,5 +1,6 @@
 ---
 title: "Ryba grillowana w papilocie"
+description: "Obiad, 516 kcal, 25 g białka. Składniki: Dorsz, Ziemniaki, Pomidorki koktajlowe, Sok z cytryny, Oliwa z oliwek."
 hide:
   - toc
 ---

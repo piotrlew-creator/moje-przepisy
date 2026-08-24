@@ -1,5 +1,6 @@
 ---
 title: "Filet z pstrąga z ziemniakami i brokułami"
+description: "Obiad, 504 kcal, 38 g białka. Składniki: fileta z pstrąga, ziemniaków, brokuła, oleju, cytryny."
 hide:
   - toc
 ---

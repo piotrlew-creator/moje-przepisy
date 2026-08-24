@@ -1,5 +1,6 @@
 ---
 title: "Wytrawny omlet z warzywami i suszonymi pomidorami"
+description: "Śniadanie, 521 kcal, 31 g białka. Składniki: jajek, cukinii, pomidora suszonego, brokuła, mąki pszennej pełnoziarnistej, szpinaku."
 hide:
   - toc
 ---

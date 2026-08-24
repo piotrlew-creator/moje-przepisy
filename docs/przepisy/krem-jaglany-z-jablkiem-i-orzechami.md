@@ -1,5 +1,6 @@
 ---
 title: "Krem jaglany z jabłkiem i orzechami"
+description: "Śniadanie, 467 kcal, 28 g białka. Składniki: mleka roślinnego, płatków jaglanych, jabłek, orzechów, odżywki białkowej."
 hide:
   - toc
 ---

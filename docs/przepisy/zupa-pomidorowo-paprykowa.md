@@ -1,5 +1,6 @@
 ---
 title: "Zupa pomidorowo paprykowa"
+description: "Obiad, 487 kcal, 20 g białka. Składniki: Papryka czerwona, Oliwa z oliwek, Pomidory z puszki, Chleb bezglutenowy, Ser typu Feta."
 hide:
   - toc
 ---

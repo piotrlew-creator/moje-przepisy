@@ -1,5 +1,6 @@
 ---
 title: "Jogurtowe placki z owocami"
+description: "Śniadanie, 521 kcal, 31 g białka. Składniki: jogurtu skyr, jajka, oliwy z oliwek, mąki orkiszowej białej, truskawek."
 hide:
   - toc
 ---

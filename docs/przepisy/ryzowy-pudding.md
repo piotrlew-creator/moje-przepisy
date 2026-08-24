@@ -1,5 +1,6 @@
 ---
 title: "Ryżowy pudding z prażonymi gruszkami"
+description: "Kolacja, 472 kcal, 18 g białka. Składniki: ryżu basmati, jogurtu skyr, gruszki, oleju rzepakowego, masła orzechowego."
 hide:
   - toc
 ---

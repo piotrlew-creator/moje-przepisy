@@ -1,5 +1,6 @@
 ---
 title: "Ryż z jogurtem i owocami"
+description: "Śniadanie, 501 kcal, 6 g białka. Składniki: Ryż basmati, Jogurt skyr bez laktozy, Syrop klonowy, Truskawki, świeże lub mrożone, Mieszanka orzechów."
 hide:
   - toc
 ---

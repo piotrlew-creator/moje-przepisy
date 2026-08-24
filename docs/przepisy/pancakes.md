@@ -1,5 +1,6 @@
 ---
 title: "Pancakes"
+description: "Kolacja, 473 kcal, 17 g białka. Składniki: małego banana, jajka, płatków owsianych, masła orzechowego, gorzkiej czekolady, oleju kokosowego."
 hide:
   - toc
 ---

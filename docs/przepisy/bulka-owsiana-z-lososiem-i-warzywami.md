@@ -1,5 +1,6 @@
 ---
 title: "Bułka owsiana z łososiem i warzywami"
+description: "Kolacja, 615 kcal, 33 g białka. Składniki: Bułka owsiana, Pomidor, Papryka czerwona, Łosoś wędzony, Oliwa z oliwek."
 hide:
   - toc
 ---

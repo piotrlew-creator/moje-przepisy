@@ -1,5 +1,6 @@
 ---
 title: "Kasza jaglana z cukinią i pomidorami"
+description: "Obiad, 366 kcal, 13 g białka. Składniki: kaszy jaglanej, cukinii, pomidora, cebuli, oliwy z oliwek, tofu naturalnego."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Tortilla z łososiem, szpinakiem, koperkiem oraz ogórkiem"
+description: "Śniadanie, 610 kcal, 37 g białka. Składniki: Ogórek świeży, Szpinak, Chrzan (tarty), Tortilla bezglutenowa, Łosoś wędzony."
 hide:
   - toc
 ---

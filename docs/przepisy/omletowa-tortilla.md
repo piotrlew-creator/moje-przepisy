@@ -1,5 +1,6 @@
 ---
 title: "Omletowa tortilla"
+description: "Śniadanie, 548 kcal, 27 g białka. Składniki: jajek kurzych, pomidorków koktajlowych, sera mozzarella, roszponki, chleba żytniego razowego, oliwy z oliwek."
 hide:
   - toc
 ---

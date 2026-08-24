@@ -1,5 +1,6 @@
 ---
 title: "Pasta z twarożku z suszonymi pomidorami, szczypiorkiem, liśćmi szpinaku, pomidorem i ciemnym pieczywem"
+description: "Śniadanie, 478 kcal, 31 g białka. Składniki: twarożku, szpinaku, pomidora, suszonych pomidorów, chleb żytniego razowego, masła."
 hide:
   - toc
 ---

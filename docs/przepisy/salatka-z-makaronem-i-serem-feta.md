@@ -1,5 +1,6 @@
 ---
 title: "Sałatka z makaronem i serem feta"
+description: "Obiad, 386 kcal, 17 g białka. Składniki: rukoli, makaronu pełnoziarnistego, np. świderki, sera feta, małego buraka, grejpfruta, płatków migdałów."
 hide:
   - toc
 ---

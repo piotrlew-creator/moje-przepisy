@@ -1,5 +1,6 @@
 ---
 title: "Kanapka z pastą z czerwonej fasoli"
+description: "Śniadanie, 451 kcal, 16 g białka. Składniki: fasoli czerwonej konserwowej, czerwonej cebuli, czosnku, soku z cytryny, oliwy z oliwek, chleba żytniego."
 hide:
   - toc
 ---

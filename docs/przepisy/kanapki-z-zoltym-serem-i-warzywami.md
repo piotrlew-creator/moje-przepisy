@@ -1,5 +1,6 @@
 ---
 title: "Kanapki z żółtym serem i warzywami"
+description: "Śniadanie, 458 kcal, 25 g białka. Składniki: chleba żytniego razowego, małego pomidora, małego ogórka, rukoli, sera żółtego, serka śmietankowego."
 hide:
   - toc
 ---

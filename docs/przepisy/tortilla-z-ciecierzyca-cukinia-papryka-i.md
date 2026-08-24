@@ -1,5 +1,6 @@
 ---
 title: "Tortilla z ciecierzycą, cukinią, papryką i sosem czosnkowym"
+description: "Obiad, 378 kcal, 13 g białka. Składniki: tortilli pszennych, ciecierzycy konserwowej, cukinii, papryki czerwonej, marchwi, jogurtu roślinnego."
 hide:
   - toc
 ---

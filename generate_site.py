@@ -37,6 +37,15 @@ SEARCH_ICON = (
 
 TOKEN = re.compile(r"«(\d+)\|([A-Za-z]+)\|([A-Za-z_]*)\|([^|]*)\|(U?)»")
 
+# Przepisy, w których dietetyk wymienił w krokach składnik nieobecny na liście.
+# Zapis jest wierny PDF-owi i nie poprawiamy go — ale generator o tym
+# przypomina, żeby nikt nie uznał tego za błąd wyciągania danych.
+ZNANE_BRAKI = {
+    "krem-z-dyni": "imbir",
+    "fasola-z-papryka-i-pomidorami-z": "marchew",
+    "hummus-spicy-salsa": "jogurt",
+}
+
 
 def e(s):
     return html.escape(str(s), quote=True)
@@ -235,7 +244,14 @@ def render_recipe(r, data):
     # `title:` musi być jawny. Bez niego MkDocs bierze tytuł z nazwy pliku
     # („Klejacy ryz”), bo strony przepisów są poza nawigacją — a ten tytuł
     # trafia do karty przeglądarki, zakładek, Google i wyszukiwarki na stronie.
-    out = ["---", f"title: {yaml_str(r['title'])}", "hide:", "  - toc", "---", "",
+    # Bez własnego `description:` wszystkie 263 strony dostawały ten sam opis
+    # skopiowany z `site_description` — w wyszukiwarce i przy udostępnianiu
+    # linku wyglądały identycznie.
+    widoczne = [i["name"] for i in r["ingredients"] if not i["pantry"]][:6]
+    opis = (f'{r["slotLabel"]}, {r["kcal"]} kcal, {r["protein"]} g białka. '
+            f'Składniki: {", ".join(widoczne)}.')
+    out = ["---", f"title: {yaml_str(r['title'])}",
+           f"description: {yaml_str(opis)}", "hide:", "  - toc", "---", "",
            '<a class="p-back" href="../../">&larr; Wszystkie przepisy</a>', "",
            f'# {md_escape(r["title"])}', ""]
 
@@ -486,6 +502,20 @@ def sprawdz(data):
                        if f not in SKROTY and lematy.get(f, f) in SKROTY)
     if nieobjete:
         bledy.append(f"formy jednostek bez skrótu: {nieobjete}")
+
+    # Ostrzeżenia — nie blokują buildu, bo źródłem jest PDF i to dietetyk
+    # napisał krok, który wspomina o czymś spoza listy składników. Warto jednak
+    # o tym wiedzieć: przy gotowaniu taki krok myli.
+    ostrzezenia = []
+    for slug, brak in ZNANE_BRAKI.items():
+        if any(r["slug"] == slug for r in data["recipes"]):
+            ostrzezenia.append(f"{slug}: krok wspomina o „{brak}”, którego nie ma "
+                               "na liście składników (tak jest w PDF-ie)")
+
+    if ostrzezenia:
+        print("Uwagi (nie blokują buildu):", file=sys.stderr)
+        for o in ostrzezenia:
+            print("  ·", o, file=sys.stderr)
 
     if bledy:
         print("BŁĄD w danych — nie generuję strony:", file=sys.stderr)

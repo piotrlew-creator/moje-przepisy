@@ -1,0 +1,18 @@
+{#-
+  Nadpisanie partiala Material for MkDocs.
+
+  Oryginał odpytuje api.github.com o liczbę gwiazdek i najnowsze wydanie przy
+  każdym wejściu na stronę. To dwa żądania do obcego serwera, bez limitu
+  autoryzacji (60/h na adres IP), po dane, których nikt tu nie ogląda.
+  Zostawiamy sam link do repozytorium.
+-#}
+<a href="{{ config.repo_url }}" title="{{ lang.t('source.link.title') }}"
+   class="md-source" rel="noopener" target="_blank">
+  {%- if config.theme.icon.repo -%}
+    <div class="md-source__icon md-icon">
+      {%- set icon = config.theme.icon.repo -%}
+      {%- include ".icons/" ~ icon ~ ".svg" -%}
+    </div>
+  {%- endif -%}
+  <div class="md-source__repository">{{ config.repo_name }}</div>
+</a>

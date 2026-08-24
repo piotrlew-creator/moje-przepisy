@@ -20,6 +20,7 @@ import sys
 import unicodedata
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import dane_stale
 import extract
 import tagi
 from imperative2 import VERBS, NIEDOKONANE, TRWANIE, ZAIMKI
@@ -91,12 +92,22 @@ def slug(tytul, zajete):
     s = s.replace("ł", "l")
     s = re.sub(r"[^a-z0-9]+", "-", s).strip("-")
     s = "-".join(s.split("-")[:6])[:60].strip("-")
+    # Ucinanie po sześciu słowach lubi zostawić na końcu spójnik
+    # („brownie-z-fasoli-z-wisniami-i”). Istniejące slugi zostają nietknięte,
+    # bo przechodzą przez slug_po_tytule — to dotyczy tylko nowych.
+    s = re.sub(r"-(i|z|w|na|oraz|do|ze|od|po|a|o)$", "", s)
     baza, n = s, 2
     while s in zajete:
         s = f"{baza}-{n}"
         n += 1
     zajete.add(s)
     return s
+
+
+def numer_planu(sciezka):
+    """Numer z nazwy pliku; sam „dieta.pdf” to plan pierwszy."""
+    cyfry = re.sub(r"\D", "", os.path.basename(sciezka))
+    return int(cyfry) if cyfry else 1
 
 
 def slot_po_godzinie(czas):
@@ -124,18 +135,30 @@ def klucz_tytulu(t):
 
 
 def main():
-    stara = json.load(open(WYNIK, encoding="utf-8"))
+    # Poprzedni recipes.json służy wyłącznie do zachowania slugów — adresy
+    # stron muszą przeżyć przebudowę, inaczej posypią się zakładki i zapisane
+    # w przeglądarce listy zakupów. Jeśli pliku nie ma, budujemy od zera.
+    try:
+        with open(WYNIK, encoding="utf-8") as f:
+            stara = json.load(f)
+    except FileNotFoundError:
+        print(f"(brak {WYNIK} — buduję od zera, slugi powstaną z tytułów)")
+        stara = {"recipes": []}
     slug_po_tytule = {klucz_tytulu(r["title"]): r["slug"] for r in stara["recipes"]}
     baza_porcji = {klucz_tytulu(r["title"]): r["baseServings"] for r in stara["recipes"]}
 
-    wszystkie_pdf = sorted(os.path.join(KATALOG, f) for f in os.listdir(KATALOG)
-                           if f.lower().endswith(".pdf"))
-    pierwszy = [p for p in wszystkie_pdf if p.endswith(PIERWSZY_WZORZEC)]
-    pliki = pierwszy + [p for p in wszystkie_pdf if p not in pierwszy]
+    # Kolejność musi być NUMERYCZNA, nie alfabetyczna. Przy sortowaniu tekstem
+    # „dieta_10.pdf” staje przed „dieta_2.pdf” i — bo przy powtórzeniach
+    # zostawiamy pierwsze wystąpienie — plan 10 podmieniał dania planom 2–9.
+    # Plan 9 wypadał wtedy w całości. Przy dwunastym planie byłoby jeszcze
+    # gorzej: wjechałby z priorytetem nad wszystko poza jedynką.
+    pliki = sorted((os.path.join(KATALOG, f) for f in os.listdir(KATALOG)
+                    if f.lower().endswith(".pdf")), key=numer_planu)
+    pierwszy = [p for p in pliki if os.path.basename(p) == PIERWSZY_WZORZEC]
 
     wszystkie, widziane = [], set()
     for path in pliki:
-        plan = "1" if path in pierwszy else re.sub(r"\D", "", os.path.basename(path)) or "?"
+        plan = str(numer_planu(path))
         for r in extract.przepisy(path):
             # Przekąski (batonik, jogurt, garść orzechów) nie są przepisami —
             # nie ma w nich czego gotować, a w wyszukiwarce zaśmiecały kolację
@@ -198,9 +221,14 @@ def main():
         })
 
     # jednostki miary — odmiana przy przeliczaniu porcji
+    # Wymienniki i wyróżnione składniki mają własne źródło w repozytorium
+    # (tools/dane_stale.py), więc nie giną razem z recipes.json.
     dane = dict(stara)
+    dane["source"] = dane_stale.ZRODLO
     dane["slots"] = SLOTS
     dane["units"] = JEDNOSTKI
+    dane["substitutions"] = dane_stale.WYMIENNIKI
+    dane["featuredIngredients"] = dane_stale.WYROZNIONE
     dane["recipes"] = przepisy
 
     etykiety = {}

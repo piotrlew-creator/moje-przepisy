@@ -1,5 +1,6 @@
 ---
 title: "Pulpeciki z soczewicy w sosie pomidorowym z ryżem"
+description: "Obiad, 612 kcal, 13 g białka. Składniki: Ryż basmati, Soczewica zielona, Passata pomidorowa, Cebula, Czosnek, Olej rzepakowy."
 hide:
   - toc
 ---

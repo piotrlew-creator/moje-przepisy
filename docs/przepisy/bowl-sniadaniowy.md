@@ -1,5 +1,6 @@
 ---
 title: "Bowl śniadaniowy z jabłkiem i kaki"
+description: "Śniadanie, 449 kcal, 26 g białka. Składniki: płatków owsianych górskich, mieszanki orzechów, małego jabłka, kaki, jogurtu skyr."
 hide:
   - toc
 ---

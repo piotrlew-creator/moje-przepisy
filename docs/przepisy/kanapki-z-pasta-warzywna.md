@@ -1,5 +1,6 @@
 ---
 title: "Kanapki z pastą warzywną, serem mozzarellą i ogórkiem"
+description: "Śniadanie, 484 kcal, 23 g białka. Składniki: chleba żytniego razowego, pasty warzywnej, mozzarelli, ogórka."
 hide:
   - toc
 ---

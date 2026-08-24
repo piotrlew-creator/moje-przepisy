@@ -1,5 +1,6 @@
 ---
 title: "Zapiekanka makaronowa z serem mozzarella"
+description: "Obiad, 372 kcal, 21 g białka. Składniki: makaronu penne, jajek kurzych, mleka roślinnego, marchwi, cebuli, czosnku."
 hide:
   - toc
 ---

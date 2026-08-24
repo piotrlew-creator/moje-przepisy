@@ -1,5 +1,6 @@
 ---
 title: "Orzechowa owsianka z bananem i dżemem porzeczkowym"
+description: "Śniadanie, 470 kcal, 26 g białka. Składniki: płatków owsianych, mleka roślinnego, orzechów, banana, dżemu porzeczkowego, odżywki białkwoej."
 hide:
   - toc
 ---

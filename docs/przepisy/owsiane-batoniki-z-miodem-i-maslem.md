@@ -1,5 +1,6 @@
 ---
 title: "Owsiane batoniki z miodem i masłem orzechowym"
+description: "Śniadanie, 481 kcal, 30 g białka. Składniki: płatków owsianych, masła orzechowego, mieszanych orzechów, miodu, jogurtu skyr."
 hide:
   - toc
 ---

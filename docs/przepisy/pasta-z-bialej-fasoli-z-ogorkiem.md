@@ -1,5 +1,6 @@
 ---
 title: "Pasta z białej fasoli z ogórkiem kiszonym i pieczywem"
+description: "Śniadanie, 458 kcal, 17 g białka. Składniki: chleba żytniego razowego, białej fasoli konserwowej, małej cebuli, małego jabłka, kiszonego ogórka, oleju rzepakowego."
 hide:
   - toc
 ---

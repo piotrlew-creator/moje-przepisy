@@ -1,5 +1,6 @@
 ---
 title: "Jogurtowo-mleczny koktajl z miętą i mango"
+description: "Śniadanie, 533 kcal, 33 g białka. Składniki: napoju sojowego, jogurtu roślinnego, mango, limonki, płatków migdałów, wegańskiej odżywki białkowej."
 hide:
   - toc
 ---

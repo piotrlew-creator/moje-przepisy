@@ -1,5 +1,6 @@
 ---
 title: "Owsianka z kawałkami kiwi oraz borówkami"
+description: "Kolacja, 600 kcal, 31 g białka. Składniki: Płatki owsiane górskie, Jogurt skyr bez laktozy, Kiwi, Borówki amerykańskie, Migdały."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Pieczona owsianka z jabłkiem oraz cynamonem"
+description: "Kolacja, 603 kcal, 25 g białka. Składniki: Płatki owsiane górskie, Jajko kurze całe, Mleko roślinne niesłodzone, Miód, Jabłko, Olej rzepakowy."
 hide:
   - toc
 ---

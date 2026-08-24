@@ -1,5 +1,6 @@
 ---
 title: "Owsianka brownie z mikrofali"
+description: "Śniadanie, 491 kcal, 7 g białka. Składniki: Płatki owsiane górskie, Banan, Czekolada gorzka 70%, Masło orzechowe, Jogurt skyr."
 hide:
   - toc
 ---

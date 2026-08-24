@@ -1,5 +1,6 @@
 ---
 title: "Tortille z batatami i fasolą"
+description: "Obiad, 615 kcal, 22 g białka. Składniki: Fasola czerwona konserwowa, Batat, Cebula, Czosnek, Pomidory z puszki, Papryka czerwona."
 hide:
   - toc
 ---

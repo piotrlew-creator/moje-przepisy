@@ -1,5 +1,6 @@
 ---
 title: "Bowl z łososiem teriyaki"
+description: "Obiad, 596 kcal, 9 g białka. Składniki: Łosoś świeży, Sos sojowy, Sok z limonki, Imbir, Czosnek, Limonka."
 hide:
   - toc
 ---

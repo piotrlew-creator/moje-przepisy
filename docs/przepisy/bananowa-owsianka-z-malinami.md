@@ -1,5 +1,6 @@
 ---
 title: "Bananowa owsianka z malinami"
+description: "Śniadanie, 465 kcal, 27 g białka. Składniki: płatków owsianych górskich, malin, banana, orzechów włoskich, jogurtu skyr."
 hide:
   - toc
 ---

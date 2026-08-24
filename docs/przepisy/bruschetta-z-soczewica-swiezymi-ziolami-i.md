@@ -1,5 +1,6 @@
 ---
 title: "Bruschetta z soczewicą, świeżymi ziołami i serem grana padano"
+description: "Kolacja, 456 kcal, 23 g białka. Składniki: bagietki, soczewicy czerwonej, pora, cukinii, marchwi, cebuli."
 hide:
   - toc
 ---

@@ -1,5 +1,6 @@
 ---
 title: "Roślinne kabanosy Bez kęsa mięsa Tarczyński z pieczywem i warzywami"
+description: "Śniadanie, 475 kcal, 25 g białka. Składniki: Roślinne kabanosy Bez kęsa mięsa Tarczyński, pomidora."
 hide:
   - toc
 ---

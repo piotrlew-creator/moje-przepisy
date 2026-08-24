@@ -1,5 +1,6 @@
 ---
 title: "Zupa śródziemnomorska"
+description: "Obiad, 586 kcal, 26 g białka. Składniki: Cebula, Ziemniaki, Cukinia, Fasola biała konserwowa, Passata pomidorowa, Marchew."
 hide:
   - toc
 ---

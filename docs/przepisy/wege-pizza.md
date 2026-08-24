@@ -1,5 +1,6 @@
 ---
 title: "Wege pizza"
+description: "Kolacja, 464 kcal, 18 g białka. Składniki: mąki orkiszowej, oliwy z oliwek, koncentratu pomidorowego, czosnku, ciecierzycy ugotowanej, cebuli czerwonej."
 hide:
   - toc
 ---
