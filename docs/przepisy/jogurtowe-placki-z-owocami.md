@@ -12,6 +12,7 @@ hide:
 <div class="p-hero" data-slot="1">
 <div class="p-hero__top">
 <span>Śniadanie</span><span class="p-num">7:00-10:00</span>
+<button type="button" class="p-fav p-fav--hero" data-fav="jogurtowe-placki-z-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych"><span aria-hidden="true">&#9825;</span></button>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">521</span><span class="p-macro__l">kcal</span></div>
@@ -20,6 +21,7 @@ hide:
 <div class="p-macro"><span class="p-macro__v">27 g</span><span class="p-macro__l">tłuszcz</span></div>
 </div>
 <p style="margin:0;font-size:.66rem;color:var(--p-ink-3);font-weight:600">Wartości dla jednej porcji, tak jak w planie diety.</p>
+<p class="p-cooked" id="cooked-note" hidden></p>
 </div>
 
 <div class="p-servings">
@@ -70,12 +72,12 @@ hide:
 
 <h2>Sposób przygotowania</h2>
 <ol class="p-steps" id="steps-list">
-<li>W misce wymieszaj lub zmiksuj jogurt z jajkiem. Dodaj erytrol, mąkę przesianą z proszkiem do pieczenia</li>
-<li>Wymieszaj do połączenia się składników w gładką i jednolitą masę</li>
-<li>Rozgrzej patelnię i nałóż po 1 pełnej łyżce ciasta na jednego placka zachowując odstępy (placki urosną podczas smażenia)</li>
-<li>Placki smażyć na niezbyt dużym ogniu, do czasu aż urosną i będą ładnie zrumienione (około 2,5 minuty)</li>
-<li>Gdy placki podrosną (mniej więcej w drugiej połowie smażenia) włóż w placki pokrojone truskawki</li>
-<li>Przewróć placki na drugą stronę i smaż do zarumienienia, przez około 2,5 minuty lub trochę krócej. Gotowe placuszki posyp pudrem</li>
+<li><span class="p-step__text">W misce wymieszaj lub zmiksuj jogurt z jajkiem. Dodaj erytrol, mąkę przesianą z proszkiem do pieczenia</span></li>
+<li><span class="p-step__text">Wymieszaj do połączenia się składników w gładką i jednolitą masę</span></li>
+<li><span class="p-step__text">Rozgrzej patelnię i nałóż po 1 pełnej łyżce ciasta na jednego placka zachowując odstępy (placki urosną podczas smażenia)</span></li>
+<li><span class="p-step__text">Placki smażyć na niezbyt dużym ogniu, do czasu aż urosną i będą ładnie zrumienione (około 2,5 minuty)</span></li>
+<li><span class="p-step__text">Gdy placki podrosną (mniej więcej w drugiej połowie smażenia) włóż w placki pokrojone truskawki</span></li>
+<li><span class="p-step__text">Przewróć placki na drugą stronę i smaż do zarumienienia, przez około 2,5 minuty lub trochę krócej. Gotowe placuszki posyp pudrem</span></li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Jogurtowe placki z owocami">
@@ -87,6 +89,7 @@ hide:
 <div class="p-cook__body">
 <span class="p-cook__step" id="cook-label"></span>
 <p class="p-cook__text" id="cook-text"></p>
+<button type="button" class="p-timer__btn p-timer__btn--cook" id="cook-timer" hidden></button>
 </div>
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
@@ -103,7 +106,7 @@ hide:
 </div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "jogurtowe-placki-z-owocami", "title": "Jogurtowe placki z owocami", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "kcal": 521, "ingredients": [{"qty": 1.0, "unit": "opakowanie", "unitLemma": "opakowanie", "name": "jogurtu skyr", "grams": 150.0, "pantry": false, "tag": "jogurt"}, {"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "jajka", "grams": 56.0, "pantry": false, "tag": "jajka"}, {"qty": 4.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "oliwy z oliwek", "grams": 20.0, "pantry": false, "tag": "oliwa", "swap": {"group": "tluszcz", "self": "oliwa", "nameCase": "D"}}, {"qty": 3.5, "unit": "łyżki", "unitLemma": "łyżka", "name": "mąki orkiszowej białej", "grams": 35.0, "pantry": false, "tag": "maka"}, {"qty": 0.5, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "proszku do pieczenia", "grams": 2.0, "pantry": true, "tag": null}, {"qty": 3.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "erytrolu", "grams": 15.0, "pantry": true, "tag": null}, {"qty": 150.0, "unit": "g", "unitLemma": null, "name": "truskawek", "grams": 150.0, "pantry": false, "tag": "truskawki", "weightOnly": true}], "steps": ["W misce wymieszaj lub zmiksuj jogurt z jajkiem. Dodaj erytrol, mąkę przesianą z proszkiem do pieczenia", "Wymieszaj do połączenia się składników w gładką i jednolitą masę", "Rozgrzej patelnię i nałóż po 1 pełnej łyżce ciasta na jednego placka zachowując odstępy (placki urosną podczas smażenia)", "Placki smażyć na niezbyt dużym ogniu, do czasu aż urosną i będą ładnie zrumienione (około 2,5 minuty)", "Gdy placki podrosną (mniej więcej w drugiej połowie smażenia) włóż w placki pokrojone truskawki", "Przewróć placki na drugą stronę i smaż do zarumienienia, przez około 2,5 minuty lub trochę krócej. Gotowe placuszki posyp pudrem"]};
+<script>window.RECIPE = {"slug": "jogurtowe-placki-z-owocami", "title": "Jogurtowe placki z owocami", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "kcal": 521, "times": [null, null, null, null, null, null], "ingredients": [{"qty": 1.0, "unit": "opakowanie", "unitLemma": "opakowanie", "name": "jogurtu skyr", "grams": 150.0, "pantry": false, "tag": "jogurt"}, {"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "jajka", "grams": 56.0, "pantry": false, "tag": "jajka"}, {"qty": 4.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "oliwy z oliwek", "grams": 20.0, "pantry": false, "tag": "oliwa", "swap": {"group": "tluszcz", "self": "oliwa", "nameCase": "D"}}, {"qty": 3.5, "unit": "łyżki", "unitLemma": "łyżka", "name": "mąki orkiszowej białej", "grams": 35.0, "pantry": false, "tag": "maka"}, {"qty": 0.5, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "proszku do pieczenia", "grams": 2.0, "pantry": true, "tag": null}, {"qty": 3.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "erytrolu", "grams": 15.0, "pantry": true, "tag": null}, {"qty": 150.0, "unit": "g", "unitLemma": null, "name": "truskawek", "grams": 150.0, "pantry": false, "tag": "truskawki", "weightOnly": true}], "steps": ["W misce wymieszaj lub zmiksuj jogurt z jajkiem. Dodaj erytrol, mąkę przesianą z proszkiem do pieczenia", "Wymieszaj do połączenia się składników w gładką i jednolitą masę", "Rozgrzej patelnię i nałóż po 1 pełnej łyżce ciasta na jednego placka zachowując odstępy (placki urosną podczas smażenia)", "Placki smażyć na niezbyt dużym ogniu, do czasu aż urosną i będą ładnie zrumienione (około 2,5 minuty)", "Gdy placki podrosną (mniej więcej w drugiej połowie smażenia) włóż w placki pokrojone truskawki", "Przewróć placki na drugą stronę i smaż do zarumienienia, przez około 2,5 minuty lub trochę krócej. Gotowe placuszki posyp pudrem"]};
 window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"], "kostka": ["kostka", "kostki", "kostek", "kostki"], "listek": ["listek", "listki", "listków", "listka"], "łodyga": ["łodyga", "łodygi", "łodyg", "łodygi"]};
 window.SWAPS = {"tluszcz": {"label": "Oliwa i oleje", "options": [{"id": "oliwa", "label": "Oliwa z oliwek", "rodzaj": "f", "formy": {"M": "oliwa z oliwek", "D": "oliwy z oliwek", "B": "oliwę z oliwek", "N": "oliwą z oliwek", "Ms": "oliwie z oliwek"}, "rodzajB": "f"}, {"id": "olej-rzepakowy", "label": "Olej rzepakowy", "rodzaj": "m", "formy": {"M": "olej rzepakowy", "D": "oleju rzepakowego", "B": "olej rzepakowy", "N": "olejem rzepakowym", "Ms": "oleju rzepakowym"}, "rodzajB": "m"}, {"id": "olej-kokosowy", "label": "Olej kokosowy", "rodzaj": "m", "formy": {"M": "olej kokosowy", "D": "oleju kokosowego", "B": "olej kokosowy", "N": "olejem kokosowym", "Ms": "oleju kokosowym"}, "rodzajB": "m"}, {"id": "olej-z-awokado", "label": "Olej z awokado", "rodzaj": "m", "formy": {"M": "olej z awokado", "D": "oleju z awokado", "B": "olej z awokado", "N": "olejem z awokado", "Ms": "oleju z awokado"}, "rodzajB": "m"}]}};
 window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

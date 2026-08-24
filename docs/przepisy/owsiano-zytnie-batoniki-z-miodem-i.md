@@ -12,6 +12,7 @@ hide:
 <div class="p-hero" data-slot="3">
 <div class="p-hero__top">
 <span>Kolacja</span><span class="p-num">18:00-20:00</span>
+<button type="button" class="p-fav p-fav--hero" data-fav="owsiano-zytnie-batoniki-z-miodem-i" aria-pressed="false" aria-label="Dodaj do ulubionych"><span aria-hidden="true">&#9825;</span></button>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">456</span><span class="p-macro__l">kcal</span></div>
@@ -20,6 +21,7 @@ hide:
 <div class="p-macro"><span class="p-macro__v">10 g</span><span class="p-macro__l">tłuszcz</span></div>
 </div>
 <p style="margin:0;font-size:.66rem;color:var(--p-ink-3);font-weight:600">Wartości dla jednej porcji, tak jak w planie diety.</p>
+<p class="p-cooked" id="cooked-note" hidden></p>
 </div>
 
 <div class="p-servings">
@@ -77,10 +79,10 @@ hide:
 
 <h2>Sposób przygotowania</h2>
 <ol class="p-steps" id="steps-list">
-<li>Do miseczki wsyp: płatki, żurawinę, posiekaną czekoladę, miód, wlej 90 ml wody. Wymieszaj.</li>
-<li>Masę przełóż do keksówki o wymiarach 10 cm x 30 cm.</li>
-<li>Ciasto piecz w piekarniku rozgrzanym do 180 stopni, w trybie góra-dół przez 20 minut.</li>
-<li>Ostudź i pokrój na batoniki. Podaj ze skyrem. Smacznego!</li>
+<li><span class="p-step__text">Do miseczki wsyp: płatki, żurawinę, posiekaną czekoladę, miód, wlej 90 ml wody. Wymieszaj.</span></li>
+<li><span class="p-step__text">Masę przełóż do keksówki o wymiarach 10 cm x 30 cm.</span></li>
+<li data-sec="1200"><span class="p-step__text">Ciasto piecz w piekarniku rozgrzanym do 180 stopni, w trybie góra-dół przez 20 minut.</span><button type="button" class="p-timer__btn" data-timer="2">&#9201; 20:00</button></li>
+<li><span class="p-step__text">Ostudź i pokrój na batoniki. Podaj ze skyrem. Smacznego!</span></li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Owsiano-żytnie batoniki z miodem i czekoladą">
@@ -92,6 +94,7 @@ hide:
 <div class="p-cook__body">
 <span class="p-cook__step" id="cook-label"></span>
 <p class="p-cook__text" id="cook-text"></p>
+<button type="button" class="p-timer__btn p-timer__btn--cook" id="cook-timer" hidden></button>
 </div>
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
@@ -108,7 +111,7 @@ hide:
 </div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "owsiano-zytnie-batoniki-z-miodem-i", "title": "Owsiano-żytnie batoniki z miodem i czekoladą", "slotLabel": "Kolacja", "time": "18:00-20:00", "baseServings": 1, "kcal": 456, "ingredients": [{"qty": 8.0, "unit": "łyżek", "unitLemma": "łyżka", "name": "płatków owsianych górskich", "grams": 80.0, "pantry": false, "tag": "platki-owsiane", "swap": {"group": "platki", "self": "platki-owsiane", "nameCase": "D"}}, {"qty": 3.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "płatków żytnich", "grams": 30.0, "pantry": false, "tag": "platki-inne"}, {"qty": 1.5, "unit": "garści", "unitLemma": "garść", "name": "żurawiny suszonej", "grams": 38.0, "pantry": false, "tag": "zurawina"}, {"qty": 3.0, "unit": "porcje", "unitLemma": "porcja", "name": "czekolady gorzkiej", "grams": 30.0, "pantry": false, "tag": "czekolada"}, {"qty": 3.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "miodu", "grams": 36.0, "pantry": false, "tag": "miod", "swap": {"group": "slodziki", "self": "miod", "nameCase": "D"}}, {"qty": 1.0, "unit": "opakowanie", "unitLemma": "opakowanie", "name": "jogurtu skyr", "grams": 150.0, "pantry": false, "tag": "jogurt"}], "steps": ["Do miseczki wsyp: płatki, żurawinę, posiekaną czekoladę, «4|B|||», wlej 90 ml wody. Wymieszaj.", "Masę przełóż do keksówki o wymiarach 10 cm x 30 cm.", "Ciasto piecz w piekarniku rozgrzanym do 180 stopni, w trybie góra-dół przez 20 minut.", "Ostudź i pokrój na batoniki. Podaj ze skyrem. Smacznego!"]};
+<script>window.RECIPE = {"slug": "owsiano-zytnie-batoniki-z-miodem-i", "title": "Owsiano-żytnie batoniki z miodem i czekoladą", "slotLabel": "Kolacja", "time": "18:00-20:00", "baseServings": 1, "kcal": 456, "times": [null, null, 1200, null], "ingredients": [{"qty": 8.0, "unit": "łyżek", "unitLemma": "łyżka", "name": "płatków owsianych górskich", "grams": 80.0, "pantry": false, "tag": "platki-owsiane", "swap": {"group": "platki", "self": "platki-owsiane", "nameCase": "D"}}, {"qty": 3.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "płatków żytnich", "grams": 30.0, "pantry": false, "tag": "platki-inne"}, {"qty": 1.5, "unit": "garści", "unitLemma": "garść", "name": "żurawiny suszonej", "grams": 38.0, "pantry": false, "tag": "zurawina"}, {"qty": 3.0, "unit": "porcje", "unitLemma": "porcja", "name": "czekolady gorzkiej", "grams": 30.0, "pantry": false, "tag": "czekolada"}, {"qty": 3.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "miodu", "grams": 36.0, "pantry": false, "tag": "miod", "swap": {"group": "slodziki", "self": "miod", "nameCase": "D"}}, {"qty": 1.0, "unit": "opakowanie", "unitLemma": "opakowanie", "name": "jogurtu skyr", "grams": 150.0, "pantry": false, "tag": "jogurt"}], "steps": ["Do miseczki wsyp: płatki, żurawinę, posiekaną czekoladę, «4|B|||», wlej 90 ml wody. Wymieszaj.", "Masę przełóż do keksówki o wymiarach 10 cm x 30 cm.", "Ciasto piecz w piekarniku rozgrzanym do 180 stopni, w trybie góra-dół przez 20 minut.", "Ostudź i pokrój na batoniki. Podaj ze skyrem. Smacznego!"]};
 window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"], "kostka": ["kostka", "kostki", "kostek", "kostki"], "listek": ["listek", "listki", "listków", "listka"], "łodyga": ["łodyga", "łodygi", "łodyg", "łodygi"]};
 window.SWAPS = {"platki": {"label": "Płatki", "options": [{"id": "platki-owsiane", "label": "Płatki owsiane", "rodzaj": "pl", "formy": {"M": "płatki owsiane", "D": "płatków owsianych", "B": "płatki owsiane", "N": "płatkami owsianymi", "Ms": "płatkach owsianych"}, "rodzajB": "pl"}, {"id": "platki-jaglane", "label": "Płatki jaglane", "rodzaj": "pl", "formy": {"M": "płatki jaglane", "D": "płatków jaglanych", "B": "płatki jaglane", "N": "płatkami jaglanymi", "Ms": "płatkach jaglanych"}, "rodzajB": "pl"}, {"id": "platki-gryczane", "label": "Płatki gryczane", "rodzaj": "pl", "formy": {"M": "płatki gryczane", "D": "płatków gryczanych", "B": "płatki gryczane", "N": "płatkami gryczanymi", "Ms": "płatkach gryczanych"}, "rodzajB": "pl"}, {"id": "platki-ryzowe", "label": "Płatki ryżowe", "rodzaj": "pl", "formy": {"M": "płatki ryżowe", "D": "płatków ryżowych", "B": "płatki ryżowe", "N": "płatkami ryżowymi", "Ms": "płatkach ryżowych"}, "rodzajB": "pl"}, {"id": "platki-orkiszowe", "label": "Płatki orkiszowe", "rodzaj": "pl", "formy": {"M": "płatki orkiszowe", "D": "płatków orkiszowych", "B": "płatki orkiszowe", "N": "płatkami orkiszowymi", "Ms": "płatkach orkiszowych"}, "rodzajB": "pl"}]}, "slodziki": {"label": "Miód i syropy", "options": [{"id": "miod", "label": "Miód", "rodzaj": "m", "formy": {"M": "miód", "D": "miodu", "B": "miód", "N": "miodem", "Ms": "miodzie"}, "rodzajB": "m"}, {"id": "syrop-klonowy", "label": "Syrop klonowy", "rodzaj": "m", "formy": {"M": "syrop klonowy", "D": "syropu klonowego", "B": "syrop klonowy", "N": "syropem klonowym", "Ms": "syropie klonowym"}, "rodzajB": "m"}, {"id": "syrop-z-agawy", "label": "Syrop z agawy", "rodzaj": "m", "formy": {"M": "syrop z agawy", "D": "syropu z agawy", "B": "syrop z agawy", "N": "syropem z agawy", "Ms": "syropie z agawy"}, "rodzajB": "m"}]}};
 window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

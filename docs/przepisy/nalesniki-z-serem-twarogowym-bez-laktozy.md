@@ -12,6 +12,7 @@ hide:
 <div class="p-hero" data-slot="2">
 <div class="p-hero__top">
 <span>Obiad</span><span class="p-num">13:00-16:00</span>
+<button type="button" class="p-fav p-fav--hero" data-fav="nalesniki-z-serem-twarogowym-bez-laktozy" aria-pressed="false" aria-label="Dodaj do ulubionych"><span aria-hidden="true">&#9825;</span></button>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">514</span><span class="p-macro__l">kcal</span></div>
@@ -20,6 +21,7 @@ hide:
 <div class="p-macro"><span class="p-macro__v">16 g</span><span class="p-macro__l">tłuszcz</span></div>
 </div>
 <p style="margin:0;font-size:.66rem;color:var(--p-ink-3);font-weight:600">Wartości dla jednej porcji, tak jak w planie diety.</p>
+<p class="p-cooked" id="cooked-note" hidden></p>
 </div>
 
 <div class="p-servings">
@@ -59,10 +61,10 @@ hide:
 
 <h2>Sposób przygotowania</h2>
 <ol class="p-steps" id="steps-list">
-<li>Naleśniki przygotuj wg przepisu: https://centrumrespo.pl/przepisy/ciasto- do-nalesnikow-bez-glutenu/</li>
-<li>Wymieszaj jogurt bez laktozy, cynamon, ser twarogowy bez laktozy oraz sól.</li>
-<li>Gotową masą serową przełóż naleśniki.</li>
-<li>Owoce możesz włożyć zarówno do środka jak i położyć na wierzch. Smacznego!</li>
+<li><span class="p-step__text">Naleśniki przygotuj wg przepisu: https://centrumrespo.pl/przepisy/ciasto- do-nalesnikow-bez-glutenu/</span></li>
+<li><span class="p-step__text">Wymieszaj jogurt bez laktozy, cynamon, ser twarogowy bez laktozy oraz sól.</span></li>
+<li><span class="p-step__text">Gotową masą serową przełóż naleśniki.</span></li>
+<li><span class="p-step__text">Owoce możesz włożyć zarówno do środka jak i położyć na wierzch. Smacznego!</span></li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Naleśniki z serem twarogowym bez laktozy oraz malinami">
@@ -74,6 +76,7 @@ hide:
 <div class="p-cook__body">
 <span class="p-cook__step" id="cook-label"></span>
 <p class="p-cook__text" id="cook-text"></p>
+<button type="button" class="p-timer__btn p-timer__btn--cook" id="cook-timer" hidden></button>
 </div>
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
@@ -90,7 +93,7 @@ hide:
 </div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "nalesniki-z-serem-twarogowym-bez-laktozy", "title": "Naleśniki z serem twarogowym bez laktozy oraz malinami", "slotLabel": "Obiad", "time": "13:00-16:00", "baseServings": 1, "kcal": 514, "ingredients": [{"qty": 2.0, "unit": "sztuki", "unitLemma": "sztuka", "name": "Ciasto do naleśników low fodmap", "grams": 192.0, "pantry": false, "tag": "ciasto-nalesniki", "nameFirst": true}, {"qty": 3.0, "unit": "plastry", "unitLemma": "plaster", "name": "Ser twarogowy półtłusty bez laktozy", "grams": 90.0, "pantry": false, "tag": "twarog", "nameFirst": true}, {"qty": 3.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "Jogurt naturalny bez laktozy", "grams": 60.0, "pantry": false, "tag": "jogurt", "nameFirst": true}, {"qty": 1.0, "unit": "szczypta", "unitLemma": "szczypta", "name": "Sól", "grams": 0.25, "pantry": true, "tag": null, "nameFirst": true}, {"qty": 0.5, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "Cynamon", "grams": 2.0, "pantry": true, "tag": null, "nameFirst": true}, {"qty": 100.0, "unit": "g", "unitLemma": null, "name": "Maliny świeże lub mrożone", "grams": 100.0, "pantry": false, "tag": "maliny", "nameFirst": true, "weightOnly": true}], "steps": ["Naleśniki przygotuj wg przepisu: https://centrumrespo.pl/przepisy/ciasto- do-nalesnikow-bez-glutenu/", "Wymieszaj jogurt bez laktozy, cynamon, ser twarogowy bez laktozy oraz sól.", "Gotową masą serową przełóż naleśniki.", "Owoce możesz włożyć zarówno do środka jak i położyć na wierzch. Smacznego!"]};
+<script>window.RECIPE = {"slug": "nalesniki-z-serem-twarogowym-bez-laktozy", "title": "Naleśniki z serem twarogowym bez laktozy oraz malinami", "slotLabel": "Obiad", "time": "13:00-16:00", "baseServings": 1, "kcal": 514, "times": [null, null, null, null], "ingredients": [{"qty": 2.0, "unit": "sztuki", "unitLemma": "sztuka", "name": "Ciasto do naleśników low fodmap", "grams": 192.0, "pantry": false, "tag": "ciasto-nalesniki", "nameFirst": true}, {"qty": 3.0, "unit": "plastry", "unitLemma": "plaster", "name": "Ser twarogowy półtłusty bez laktozy", "grams": 90.0, "pantry": false, "tag": "twarog", "nameFirst": true}, {"qty": 3.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "Jogurt naturalny bez laktozy", "grams": 60.0, "pantry": false, "tag": "jogurt", "nameFirst": true}, {"qty": 1.0, "unit": "szczypta", "unitLemma": "szczypta", "name": "Sól", "grams": 0.25, "pantry": true, "tag": null, "nameFirst": true}, {"qty": 0.5, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "Cynamon", "grams": 2.0, "pantry": true, "tag": null, "nameFirst": true}, {"qty": 100.0, "unit": "g", "unitLemma": null, "name": "Maliny świeże lub mrożone", "grams": 100.0, "pantry": false, "tag": "maliny", "nameFirst": true, "weightOnly": true}], "steps": ["Naleśniki przygotuj wg przepisu: https://centrumrespo.pl/przepisy/ciasto- do-nalesnikow-bez-glutenu/", "Wymieszaj jogurt bez laktozy, cynamon, ser twarogowy bez laktozy oraz sól.", "Gotową masą serową przełóż naleśniki.", "Owoce możesz włożyć zarówno do środka jak i położyć na wierzch. Smacznego!"]};
 window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"], "kostka": ["kostka", "kostki", "kostek", "kostki"], "listek": ["listek", "listki", "listków", "listka"], "łodyga": ["łodyga", "łodygi", "łodyg", "łodygi"]};
 window.SWAPS = {};
 window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

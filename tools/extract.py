@@ -43,6 +43,11 @@ RE_SMIECI = re.compile(
     r"^\(\d+\s*g błonnika"
     r"|^\(\d+$"
     r"|^\d+\s*g błonnika"
+    # Podsumowanie dnia bywa złamane tak, że liczba zostaje w lewej kolumnie,
+    # a reszta linii ląduje w prawej na wysokości ostatniego kroku. Bez tego
+    # do przepisu doklejało się „g błonnika, 1110 mg wapnia…”.
+    r"|^g błonnika"
+    r"|^\d+\s*mg (wapnia|magnezu|potasu|żelaza)"
     r"|^Plan diety$"
     r"|^Lista wymienników$"
     r"|^Kcal(\s+[BWT])*$"

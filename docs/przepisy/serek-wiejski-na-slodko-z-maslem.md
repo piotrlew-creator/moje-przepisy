@@ -12,6 +12,7 @@ hide:
 <div class="p-hero" data-slot="1">
 <div class="p-hero__top">
 <span>Śniadanie</span><span class="p-num">7:00-10:00</span>
+<button type="button" class="p-fav p-fav--hero" data-fav="serek-wiejski-na-slodko-z-maslem" aria-pressed="false" aria-label="Dodaj do ulubionych"><span aria-hidden="true">&#9825;</span></button>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">460</span><span class="p-macro__l">kcal</span></div>
@@ -20,6 +21,7 @@ hide:
 <div class="p-macro"><span class="p-macro__v">21 g</span><span class="p-macro__l">tłuszcz</span></div>
 </div>
 <p style="margin:0;font-size:.66rem;color:var(--p-ink-3);font-weight:600">Wartości dla jednej porcji, tak jak w planie diety.</p>
+<p class="p-cooked" id="cooked-note" hidden></p>
 </div>
 
 <div class="p-servings">
@@ -73,8 +75,8 @@ hide:
 
 <h2>Sposób przygotowania</h2>
 <ol class="p-steps" id="steps-list">
-<li>Serek wiejski przełóż do miseczki, dodaj masło orzechowe, konfiturę z jagód, i płatki owsiane. Całość wymieszaj.</li>
-<li>Smacznego :)</li>
+<li><span class="p-step__text">Serek wiejski przełóż do miseczki, dodaj masło orzechowe, konfiturę z jagód, i płatki owsiane. Całość wymieszaj.</span></li>
+<li><span class="p-step__text">Smacznego :)</span></li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Serek wiejski na słodko z masłem orzechowym, domową konfiturą jagodową i płatkami owsianymi">
@@ -86,6 +88,7 @@ hide:
 <div class="p-cook__body">
 <span class="p-cook__step" id="cook-label"></span>
 <p class="p-cook__text" id="cook-text"></p>
+<button type="button" class="p-timer__btn p-timer__btn--cook" id="cook-timer" hidden></button>
 </div>
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
@@ -102,7 +105,7 @@ hide:
 </div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "serek-wiejski-na-slodko-z-maslem", "title": "Serek wiejski na słodko z masłem orzechowym, domową konfiturą jagodową i płatkami owsianymi", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "kcal": 460, "ingredients": [{"qty": 1.0, "unit": "opakowanie", "unitLemma": "opakowanie", "name": "serka wiejskiego", "grams": 200.0, "pantry": false, "tag": "serek-wiejski", "swap": {"group": "twarogowe", "self": "serek-wiejski", "nameCase": "D"}}, {"qty": 2.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "masła orzechowego", "grams": 20.0, "pantry": false, "tag": "maslo-orzechowe"}, {"qty": 2.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "dżemu niskosłodzonego np. jagodowego", "grams": 30.0, "pantry": false, "tag": "jagody"}, {"qty": 2.5, "unit": "łyżki", "unitLemma": "łyżka", "name": "płatków owsianych górskich", "grams": 25.0, "pantry": false, "tag": "platki-owsiane", "swap": {"group": "platki", "self": "platki-owsiane", "nameCase": "D"}}], "steps": ["«0|B|||U» przełóż do miseczki, dodaj masło orzechowe, konfiturę z jagód, i «3|B|||». Całość wymieszaj.", "Smacznego :)"]};
+<script>window.RECIPE = {"slug": "serek-wiejski-na-slodko-z-maslem", "title": "Serek wiejski na słodko z masłem orzechowym, domową konfiturą jagodową i płatkami owsianymi", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "kcal": 460, "times": [null, null], "ingredients": [{"qty": 1.0, "unit": "opakowanie", "unitLemma": "opakowanie", "name": "serka wiejskiego", "grams": 200.0, "pantry": false, "tag": "serek-wiejski", "swap": {"group": "twarogowe", "self": "serek-wiejski", "nameCase": "D"}}, {"qty": 2.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "masła orzechowego", "grams": 20.0, "pantry": false, "tag": "maslo-orzechowe"}, {"qty": 2.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "dżemu niskosłodzonego np. jagodowego", "grams": 30.0, "pantry": false, "tag": "jagody"}, {"qty": 2.5, "unit": "łyżki", "unitLemma": "łyżka", "name": "płatków owsianych górskich", "grams": 25.0, "pantry": false, "tag": "platki-owsiane", "swap": {"group": "platki", "self": "platki-owsiane", "nameCase": "D"}}], "steps": ["«0|B|||U» przełóż do miseczki, dodaj masło orzechowe, konfiturę z jagód, i «3|B|||». Całość wymieszaj.", "Smacznego :)"]};
 window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"], "kostka": ["kostka", "kostki", "kostek", "kostki"], "listek": ["listek", "listki", "listków", "listka"], "łodyga": ["łodyga", "łodygi", "łodyg", "łodygi"]};
 window.SWAPS = {"platki": {"label": "Płatki", "options": [{"id": "platki-owsiane", "label": "Płatki owsiane", "rodzaj": "pl", "formy": {"M": "płatki owsiane", "D": "płatków owsianych", "B": "płatki owsiane", "N": "płatkami owsianymi", "Ms": "płatkach owsianych"}, "rodzajB": "pl"}, {"id": "platki-jaglane", "label": "Płatki jaglane", "rodzaj": "pl", "formy": {"M": "płatki jaglane", "D": "płatków jaglanych", "B": "płatki jaglane", "N": "płatkami jaglanymi", "Ms": "płatkach jaglanych"}, "rodzajB": "pl"}, {"id": "platki-gryczane", "label": "Płatki gryczane", "rodzaj": "pl", "formy": {"M": "płatki gryczane", "D": "płatków gryczanych", "B": "płatki gryczane", "N": "płatkami gryczanymi", "Ms": "płatkach gryczanych"}, "rodzajB": "pl"}, {"id": "platki-ryzowe", "label": "Płatki ryżowe", "rodzaj": "pl", "formy": {"M": "płatki ryżowe", "D": "płatków ryżowych", "B": "płatki ryżowe", "N": "płatkami ryżowymi", "Ms": "płatkach ryżowych"}, "rodzajB": "pl"}, {"id": "platki-orkiszowe", "label": "Płatki orkiszowe", "rodzaj": "pl", "formy": {"M": "płatki orkiszowe", "D": "płatków orkiszowych", "B": "płatki orkiszowe", "N": "płatkami orkiszowymi", "Ms": "płatkach orkiszowych"}, "rodzajB": "pl"}]}, "twarogowe": {"label": "Serek wiejski i zamienniki", "options": [{"id": "serek-wiejski", "label": "Serek wiejski", "rodzaj": "m", "formy": {"M": "serek wiejski", "D": "serka wiejskiego", "B": "serek wiejski", "N": "serkiem wiejskim", "Ms": "serku wiejskim"}, "rodzajB": "m"}, {"id": "twarog-chudy", "label": "Twaróg chudy", "rodzaj": "m", "formy": {"M": "twaróg chudy", "D": "twarogu chudego", "B": "twaróg chudy", "N": "twarogiem chudym", "Ms": "twarogu chudym"}, "rodzajB": "m"}, {"id": "tofu-naturalne", "label": "Tofu naturalne", "rodzaj": "n", "formy": {"M": "tofu naturalne", "D": "tofu naturalnego", "B": "tofu naturalne", "N": "tofu naturalnym", "Ms": "tofu naturalnym"}, "rodzajB": "n"}]}};
 window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

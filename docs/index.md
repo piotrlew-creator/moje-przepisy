@@ -15,16 +15,22 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <button type="button" class="p-chip p-chip--slot2" data-slot-filter="obiad" data-slot-label="Obiad" aria-pressed="false"><span class="p-dot"></span>Obiad <span class="p-num" style="opacity:.7">13:00-16:00</span></button>
 <button type="button" class="p-chip p-chip--slot3" data-slot-filter="kolacja" data-slot-label="Kolacja" aria-pressed="false"><span class="p-dot"></span>Kolacja <span class="p-num" style="opacity:.7">18:00-20:00</span></button>
 </div>
+<div class="p-searchrow">
+<div class="p-search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="ing-search" inputmode="search" placeholder="Szukaj dania albo składnika…" aria-label="Szukaj dania albo składnika"><button type="button" class="p-search__x" id="search-clear" aria-label="Wyczyść wyszukiwanie" hidden>&times;</button></div>
+<button type="button" class="p-btn p-btn--clear" id="clear-filters" hidden>Wyczyść <span class="p-num" id="clear-count"></span></button>
+</div>
+<div class="p-modes" role="group" aria-label="Widok">
+<button type="button" class="p-chip p-chip--mode" id="mode-fav" data-on="0" aria-pressed="false"><span class="p-heart" aria-hidden="true">&#9825;</span>Ulubione <span class="p-num" id="fav-count"></span></button>
+<button type="button" class="p-chip p-chip--mode" id="mode-cooked" data-on="0" aria-pressed="false">Ugotowane <span class="p-num" id="cooked-count"></span></button>
+<button type="button" class="p-chip p-chip--mode" id="mode-fridge" data-on="0" aria-pressed="false">&#129530; Mam w lodówce</button>
+</div>
 <details class="p-panel" id="ing-panel">
 <summary class="p-panel__summary">
 <span class="p-eyebrow">Mam ochotę na…</span>
 <span class="p-panel__state" id="ing-state">wybierz składniki</span>
 </summary>
 <div class="p-panel__inner">
-<div class="p-searchrow">
-<div class="p-search"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input type="search" id="ing-search" inputmode="search" placeholder="Szukaj składnika…" aria-label="Szukaj składnika"><button type="button" class="p-search__x" id="search-clear" aria-label="Wyczyść wyszukiwanie" hidden>&times;</button></div>
-<button type="button" class="p-btn p-btn--clear" id="clear-filters" hidden>Wyczyść <span class="p-num" id="clear-count"></span></button>
-</div>
+<p class="p-hint" id="fridge-hint" hidden>Zaznacz, co masz pod ręką. Zamiast odsiewać przepisy, ułożę je od tych, do których brakuje najmniej. Sól, pieprz i oliwa nie liczą się jako braki.</p>
 <div class="p-chips" id="ing-chips">
 <label class="p-chip" data-rank="top" data-label="Jajka"><input type="checkbox" value="jajka">Jajka <span class="p-num" style="opacity:.55">43</span></label>
 <label class="p-chip" data-rank="top" data-label="Makaron"><input type="checkbox" value="makaron">Makaron <span class="p-num" style="opacity:.55">19</span></label>
@@ -182,3159 +188,4213 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 
 <ul class="p-cards" id="recipes">
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jablko mleczko-kokosowe mleko odzywka ryz">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jablko mleczko-kokosowe mleko odzywka ryz" data-slug="klejacy-ryz" data-title="Klejący ryż z prażonym jabłkiem" data-kcal="464" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/klejacy-ryz/">Klejący ryż z prażonym jabłkiem</a>
+<button type="button" class="p-fav" data-fav="klejacy-ryz" aria-pressed="false" aria-label="Dodaj do ulubionych: Klejący ryż z prażonym jabłkiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">464 kcal</span>
 </div>
 <div class="p-card__tags">ryżu basmati, mleka roślinnego, jabłka, wegańskiej odżywki białkowej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula chleb jajka oliwa pieczarki rzodkiewka szpinak">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula chleb jajka oliwa pieczarki rzodkiewka szpinak" data-slug="jajecznica" data-title="Jajecznica z pieczarkami, cebulą i pieczywem" data-kcal="470" data-protein="29">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jajecznica/">Jajecznica z pieczarkami, cebulą i pieczywem</a>
+<button type="button" class="p-fav" data-fav="jajecznica" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajecznica z pieczarkami, cebulą i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">470 kcal</span>
 </div>
 <div class="p-card__tags">jajek kurzych, pieczarek, cebuli, szpinaku, rzodkiewki, oleju rzepakowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="grana-padano makaron mozzarella ogorek pesto pomidor szpinak">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="grana-padano makaron mozzarella ogorek pesto pomidor szpinak" data-slug="makaron-mozzarella" data-title="Makaron z mozzarellą, szpinakiem, ogórkiem i pomidorkami koktajlowymi" data-kcal="381" data-protein="23">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-mozzarella/">Makaron z mozzarellą, szpinakiem, ogórkiem i pomidorkami koktajlowymi</a>
+<button type="button" class="p-fav" data-fav="makaron-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron z mozzarellą, szpinakiem, ogórkiem i pomidorkami koktajlowymi"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">381 kcal</span>
 </div>
 <div class="p-card__tags">makaronu pełnoziarnistego, zielonego pesto, pomidorków koktajlowych…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="daktyle kakao orzechy wiorki">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="daktyle kakao orzechy wiorki" data-slug="kulki-mocy" data-title="Daktylowo-kakaowe kulki mocy z orzechami" data-kcal="466" data-protein="7">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kulki-mocy/">Daktylowo-kakaowe kulki mocy z orzechami</a>
+<button type="button" class="p-fav" data-fav="kulki-mocy" aria-pressed="false" aria-label="Dodaj do ulubionych: Daktylowo-kakaowe kulki mocy z orzechami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">466 kcal</span>
 </div>
 <div class="p-card__tags">daktyli, orzechów włoskich, kakao, wiórków kokosowych</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan odzywka orzechy platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan odzywka orzechy platki-owsiane" data-slug="owsianka" data-title="Owsianka" data-kcal="468" data-protein="29">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka/">Owsianka</a>
+<button type="button" class="p-fav" data-fav="owsianka" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">468 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych, małego banana, orzechów nerkowca, odżywki białkowej</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka orzechy papryka serek-wiejski">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka orzechy papryka serek-wiejski" data-slug="serek-wiejski-grahamka" data-title="Serek wiejski, papryka, grahamka i orzechy" data-kcal="514" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-grahamka/">Serek wiejski, papryka, grahamka i orzechy</a>
+<button type="button" class="p-fav" data-fav="serek-wiejski-grahamka" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski, papryka, grahamka i orzechy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">514 kcal</span>
 </div>
 <div class="p-card__tags">serka wiejskiego, papryki żółtej, bułki grahamki, orzechów włoskich</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek makaron marchewka mozzarella oliwa papryka pomidory-puszka seler">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek makaron marchewka mozzarella oliwa papryka pomidory-puszka seler" data-slug="krem-paprykowo-pomidorowy" data-title="Krem paprykowo-pomidorowy" data-kcal="385" data-protein="18">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/krem-paprykowo-pomidorowy/">Krem paprykowo-pomidorowy</a>
+<button type="button" class="p-fav" data-fav="krem-paprykowo-pomidorowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Krem paprykowo-pomidorowy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">385 kcal</span>
 </div>
 <div class="p-card__tags">pomidorów w puszce, makaronu razowego, oliwy z oliwek, mozzarelli…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb pomidor serek-smietankowy slonecznik">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb pomidor serek-smietankowy slonecznik" data-slug="kanapki-z-serkiem" data-title="Kanapki z serkiem śmietankowym, pomidorem i szczypiorkiem" data-kcal="439" data-protein="12">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-serkiem/">Kanapki z serkiem śmietankowym, pomidorem i szczypiorkiem</a>
+<button type="button" class="p-fav" data-fav="kanapki-z-serkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z serkiem śmietankowym, pomidorem i szczypiorkiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">439 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego razowego, serka kanapkowego, pomidor, nasion słonecznika</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan jajka maka maslo-orzechowe odzywka orzechy syrop-agawa">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan jajka maka maslo-orzechowe odzywka orzechy syrop-agawa" data-slug="placuszki-owsiane" data-title="Placuszki owsiane orzechowe" data-kcal="482" data-protein="29">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/placuszki-owsiane/">Placuszki owsiane orzechowe</a>
+<button type="button" class="p-fav" data-fav="placuszki-owsiane" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki owsiane orzechowe"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">482 kcal</span>
 </div>
 <div class="p-card__tags">małego banana, jaja kurzego, mąki owsianej pełnoziarnistej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb gouda maslo pomidor salata">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb gouda maslo pomidor salata" data-slug="kanapki-z-serem" data-title="Kanapki z żółtym serem, roszponką i pomidorem" data-kcal="462" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-serem/">Kanapki z żółtym serem, roszponką i pomidorem</a>
+<button type="button" class="p-fav" data-fav="kanapki-z-serem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z żółtym serem, roszponką i pomidorem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">462 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego razowego, sera gouda, roszponki, pomidora, margaryny</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="gyoza mandarynka">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="gyoza mandarynka" data-slug="gyoza" data-title="Pierożki gyoza z warzywami chef select z kimchi" data-kcal="358" data-protein="8">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/gyoza/">Pierożki gyoza z warzywami chef select z kimchi</a>
+<button type="button" class="p-fav" data-fav="gyoza" aria-pressed="false" aria-label="Dodaj do ulubionych: Pierożki gyoza z warzywami chef select z kimchi"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">358 kcal</span>
 </div>
 <div class="p-card__tags">Pierożków gyoza z warzywami chef select, mandarynki</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan chia maslo-orzechowe mleko">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan chia maslo-orzechowe mleko" data-slug="koktajl-bananowy" data-title="Koktajl bananowo-orzechowy" data-kcal="468" data-protein="18">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/koktajl-bananowy/">Koktajl bananowo-orzechowy</a>
+<button type="button" class="p-fav" data-fav="koktajl-bananowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Koktajl bananowo-orzechowy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">468 kcal</span>
 </div>
 <div class="p-card__tags">banana, napoju sojowego, masła orzechowego, nasion chia</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="gruszka mleko odzywka orzechy platki-jaglane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="gruszka mleko odzywka orzechy platki-jaglane" data-slug="jaglanka-gruszka" data-title="Jaglanka na mleku roślinnym z gruszką" data-kcal="457" data-protein="20">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jaglanka-gruszka/">Jaglanka na mleku roślinnym z gruszką</a>
+<button type="button" class="p-fav" data-fav="jaglanka-gruszka" aria-pressed="false" aria-label="Dodaj do ulubionych: Jaglanka na mleku roślinnym z gruszką"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">457 kcal</span>
 </div>
 <div class="p-card__tags">płatków jaglanych, mleka roślinnego, gruszki, odżywki białkowej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb mozzarella ogorek pasta-warzywna">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb mozzarella ogorek pasta-warzywna" data-slug="kanapki-z-pasta-warzywna" data-title="Kanapki z pastą warzywną, serem mozzarellą i ogórkiem" data-kcal="484" data-protein="23">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-pasta-warzywna/">Kanapki z pastą warzywną, serem mozzarellą i ogórkiem</a>
+<button type="button" class="p-fav" data-fav="kanapki-z-pasta-warzywna" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z pastą warzywną, serem mozzarellą i ogórkiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">484 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego razowego, pasty warzywnej, mozzarelli, ogórka</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="brokul cebula czosnek kasza oliwa szpinak tofu">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="brokul cebula czosnek kasza oliwa szpinak tofu" data-slug="kasza-z-tofu" data-title="Kasza z tofu" data-kcal="372" data-protein="23">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kasza-z-tofu/">Kasza z tofu</a>
+<button type="button" class="p-fav" data-fav="kasza-z-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Kasza z tofu"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">372 kcal</span>
 </div>
 <div class="p-card__tags">kaszy gryczanej, tofu naturalnego, brokuła, cebuli, szpinaku, czosnku…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="baton mandarynka orzechy smoothie">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="baton mandarynka orzechy smoothie" data-slug="smoothie-strawberry" data-title="Smoothie strawberry and friends Solevita i batonik protein bar" data-kcal="462" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/smoothie-strawberry/">Smoothie strawberry and friends Solevita i batonik protein bar</a>
+<button type="button" class="p-fav" data-fav="smoothie-strawberry" aria-pressed="false" aria-label="Dodaj do ulubionych: Smoothie strawberry and friends Solevita i batonik protein bar"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">462 kcal</span>
 </div>
 <div class="p-card__tags">Protein Bar cookies and cream fllavoured crisps…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="gruszka miod orzechy serek-wiejski wafle">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="gruszka miod orzechy serek-wiejski wafle" data-slug="serek-wiejski-z-miodem" data-title="Serek wiejski z miodem, orzechami i gruszką" data-kcal="467" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-z-miodem/">Serek wiejski z miodem, orzechami i gruszką</a>
+<button type="button" class="p-fav" data-fav="serek-wiejski-z-miodem" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z miodem, orzechami i gruszką"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">467 kcal</span>
 </div>
 <div class="p-card__tags">serka wiejskiego, miodu, orzechów włoskich, gruszki, wafli ryżowych</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb ciecierzyca cytryna czosnek kielki marchewka ogorek oliwa">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb ciecierzyca cytryna czosnek kielki marchewka ogorek oliwa" data-slug="kanapka-z-pasta-z-ciecierzycy" data-title="Kanapka z pastą z ciecierzycy" data-kcal="465" data-protein="14">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-pasta-z-ciecierzycy/">Kanapka z pastą z ciecierzycy</a>
+<button type="button" class="p-fav" data-fav="kanapka-z-pasta-z-ciecierzycy" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą z ciecierzycy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">465 kcal</span>
 </div>
 <div class="p-card__tags">ciecierzycy konserwowej, czosnku, oliwy, soku z cytryny, chleba żytniego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek makaron marchewka pomidory-puszka sos-sojowy tofu">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek makaron marchewka pomidory-puszka sos-sojowy tofu" data-slug="spaghetti-bolognese" data-title="Wegańskie spaghetti bolognese" data-kcal="385" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/spaghetti-bolognese/">Wegańskie spaghetti bolognese</a>
+<button type="button" class="p-fav" data-fav="spaghetti-bolognese" aria-pressed="false" aria-label="Dodaj do ulubionych: Wegańskie spaghetti bolognese"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">385 kcal</span>
 </div>
 <div class="p-card__tags">tofu naturalnego, makaronu spaghetti pełnoziarnistego, marchewki, cebuli…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="cebula chleb cytryna feta ogorek oliwa oliwki papryka pomidor salata">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="cebula chleb cytryna feta ogorek oliwa oliwki papryka pomidor salata" data-slug="salatka-grecka" data-title="Sałatka grecka z serem sałatkowym i pieczywem" data-kcal="464" data-protein="24">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-grecka/">Sałatka grecka z serem sałatkowym i pieczywem</a>
+<button type="button" class="p-fav" data-fav="salatka-grecka" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka grecka z serem sałatkowym i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">464 kcal</span>
 </div>
 <div class="p-card__tags">miksu sałat, sera feta, oliwek zielonych, papryki żółtej, cebuli…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jablko jogurt kaki orzechy platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jablko jogurt kaki orzechy platki-owsiane" data-slug="bowl-sniadaniowy" data-title="Bowl śniadaniowy z jabłkiem i kaki" data-kcal="449" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/bowl-sniadaniowy/">Bowl śniadaniowy z jabłkiem i kaki</a>
+<button type="button" class="p-fav" data-fav="bowl-sniadaniowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Bowl śniadaniowy z jabłkiem i kaki"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">449 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych górskich, mieszanki orzechów, małego jabłka, kaki…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado chleb jajka salata">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado chleb jajka salata" data-slug="tosty-awokado" data-title="Tosty z jajkiem sadzonym i awokado" data-kcal="469" data-protein="21">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tosty-awokado/">Tosty z jajkiem sadzonym i awokado</a>
+<button type="button" class="p-fav" data-fav="tosty-awokado" aria-pressed="false" aria-label="Dodaj do ulubionych: Tosty z jajkiem sadzonym i awokado"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">469 kcal</span>
 </div>
 <div class="p-card__tags">chleba tostowego pełnoziarnistego, awokado, jajka, rukoli</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ciecierzyca cytryna dynia marchewka mleczko-kokosowe ziemniaki">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ciecierzyca cytryna dynia marchewka mleczko-kokosowe ziemniaki" data-slug="zupa-z-dyni" data-title="Zupa z dyni z pieczoną ciecierzycą - przepis na 3 porcje" data-kcal="404" data-protein="17">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-z-dyni/">Zupa z dyni z pieczoną ciecierzycą - przepis na 3 porcje</a>
+<button type="button" class="p-fav" data-fav="zupa-z-dyni" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa z dyni z pieczoną ciecierzycą - przepis na 3 porcje"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">404 kcal</span>
 </div>
 <div class="p-card__tags">dyni, mleczka kokosowego, ciecierzycy konserwowej, soku z cytryny, marchwi…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jogurt owsianka-instant smoothie">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jogurt owsianka-instant smoothie" data-slug="owsianka-malinowa" data-title="Owsianka malinowa Crownfield" data-kcal="475" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-malinowa/">Owsianka malinowa Crownfield</a>
+<button type="button" class="p-fav" data-fav="owsianka-malinowa" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka malinowa Crownfield"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">475 kcal</span>
 </div>
 <div class="p-card__tags">owsianki malinowej Crownfield, jogurtu skyr, Smoothie strawberry Solevita</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan marchewka mleko odzywka orzechy platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan marchewka mleko odzywka orzechy platki-owsiane" data-slug="owsianka-z-marchewka" data-title="Owsianka z marchewką" data-kcal="453" data-protein="24">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-z-marchewka/">Owsianka z marchewką</a>
+<button type="button" class="p-fav" data-fav="owsianka-z-marchewka" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z marchewką"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">453 kcal</span>
 </div>
 <div class="p-card__tags">napoju roślinnego, płatków owsianych górskich, marchewki, małego banana…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka majonez ogorki-kiszone pomidor serek-smietankowy tofu">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka majonez ogorki-kiszone pomidor serek-smietankowy tofu" data-slug="kanapka-z-tofu-twarozkiem" data-title="Kanapka z tofu twarożkiem" data-kcal="457" data-protein="18">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-tofu-twarozkiem/">Kanapka z tofu twarożkiem</a>
+<button type="button" class="p-fav" data-fav="kanapka-z-tofu-twarozkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z tofu twarożkiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">457 kcal</span>
 </div>
 <div class="p-card__tags">bułki grahamki, serka śmietankowego, majonezu wegańskiego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="bulka kaszanka">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="bulka kaszanka" data-slug="roslinna-kaszanka" data-title="Roślinna kaszanka Dobra Kaloria z pieczywem i warzywami" data-kcal="388" data-protein="12">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/roslinna-kaszanka/">Roślinna kaszanka Dobra Kaloria z pieczywem i warzywami</a>
+<button type="button" class="p-fav" data-fav="roslinna-kaszanka" aria-pressed="false" aria-label="Dodaj do ulubionych: Roślinna kaszanka Dobra Kaloria z pieczywem i warzywami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">388 kcal</span>
 </div>
 <div class="p-card__tags">Roślinna kaszanka na grilla i na patelnię Dobra Kaloria, bułki</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bagietka cebula czosnek grana-padano oliwa pomidor">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bagietka cebula czosnek grana-padano oliwa pomidor" data-slug="bruschetta" data-title="Bruschetta z pomidorami, świeżymi ziołami i serem grana padano" data-kcal="480" data-protein="24">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/bruschetta/">Bruschetta z pomidorami, świeżymi ziołami i serem grana padano</a>
+<button type="button" class="p-fav" data-fav="bruschetta" aria-pressed="false" aria-label="Dodaj do ulubionych: Bruschetta z pomidorami, świeżymi ziołami i serem grana padano"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">480 kcal</span>
 </div>
 <div class="p-card__tags">bagietki, pomidora, małej cebuli czerwonej, czosnku, sera grana padano…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jajka jogurt kakao maka twarog">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jajka jogurt kakao maka twarog" data-slug="omlet-mleczna-kanapka" data-title="Omlet mleczna kanapka" data-kcal="454" data-protein="35">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/omlet-mleczna-kanapka/">Omlet mleczna kanapka</a>
+<button type="button" class="p-fav" data-fav="omlet-mleczna-kanapka" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet mleczna kanapka"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">454 kcal</span>
 </div>
 <div class="p-card__tags">jajko, mąki pszennej pełnoziarnistej, kakao, jogurtu naturalnego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="hummus pomidor smoothie wafle">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="hummus pomidor smoothie wafle" data-slug="hummus-spicy-salsa" data-title="Hummus spicy salsa z waflami ryżowymi" data-kcal="458" data-protein="16">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/hummus-spicy-salsa/">Hummus spicy salsa z waflami ryżowymi</a>
+<button type="button" class="p-fav" data-fav="hummus-spicy-salsa" aria-pressed="false" aria-label="Dodaj do ulubionych: Hummus spicy salsa z waflami ryżowymi"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">458 kcal</span>
 </div>
 <div class="p-card__tags">hummusu spicy salsa, wafli ryżowych, pomidorków koktajlowych…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="czosnek mozzarella oliwa pomidory-puszka szpinak ziemniaki">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="czosnek mozzarella oliwa pomidory-puszka szpinak ziemniaki" data-slug="zapiekanka-ziemniaczana" data-title="Zapiekanka ziemniaczana z mozzarellą" data-kcal="373" data-protein="18">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zapiekanka-ziemniaczana/">Zapiekanka ziemniaczana z mozzarellą</a>
+<button type="button" class="p-fav" data-fav="zapiekanka-ziemniaczana" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka ziemniaczana z mozzarellą"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">373 kcal</span>
 </div>
 <div class="p-card__tags">ziemniaków, szpinaku, passaty pomidorowej, czosnku, oliwy z oliwek…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="gruszka jogurt maslo-orzechowe oliwa ryz">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="gruszka jogurt maslo-orzechowe oliwa ryz" data-slug="ryzowy-pudding" data-title="Ryżowy pudding z prażonymi gruszkami" data-kcal="472" data-protein="18">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryzowy-pudding/">Ryżowy pudding z prażonymi gruszkami</a>
+<button type="button" class="p-fav" data-fav="ryzowy-pudding" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryżowy pudding z prażonymi gruszkami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">472 kcal</span>
 </div>
 <div class="p-card__tags">ryżu basmati, jogurtu skyr, gruszki, oleju rzepakowego, masła orzechowego</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="czekolada daktyle jogurt kasza maslo-orzechowe mleko odzywka orzechy syrop-agawa">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="czekolada daktyle jogurt kasza maslo-orzechowe mleko odzywka orzechy syrop-agawa" data-slug="jaglany-snickers" data-title="Jaglany snickers" data-kcal="466" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jaglany-snickers/">Jaglany snickers</a>
+<button type="button" class="p-fav" data-fav="jaglany-snickers" aria-pressed="false" aria-label="Dodaj do ulubionych: Jaglany snickers"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">466 kcal</span>
 </div>
 <div class="p-card__tags">gorzkiej czekolady, kaszy jaglanej, jogurtu roślinnego, napoju sojowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb maslo ogorek pstrag rzodkiewka salata twarog">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb maslo ogorek pstrag rzodkiewka salata twarog" data-slug="pasta-z-pstroga" data-title="Pasta z wędzonego pstrąga i twarogu ze szczypiorkiem, warzywami i pieczywem" data-kcal="446" data-protein="31">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-z-pstroga/">Pasta z wędzonego pstrąga i twarogu ze szczypiorkiem, warzywami i pieczywem</a>
+<button type="button" class="p-fav" data-fav="pasta-z-pstroga" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z wędzonego pstrąga i twarogu ze szczypiorkiem, warzywami i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">446 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego razowego, twarogu tłustego, pstrąga wędzonego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="baton zupa-gotowa">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="baton zupa-gotowa" data-slug="zupa-krem-z-pomidorow" data-title="Zupa krem z pomidorów z bazylią Chef select" data-kcal="370" data-protein="9">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-krem-z-pomidorow/">Zupa krem z pomidorów z bazylią Chef select</a>
+<button type="button" class="p-fav" data-fav="zupa-krem-z-pomidorow" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa krem z pomidorów z bazylią Chef select"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">370 kcal</span>
 </div>
 <div class="p-card__tags">Zupy krem z pomidorów z bazylią Chef select, batona Raw Alesto kakao…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="ananas cytryna kukurydza majonez odzywka ogorek ryz seler">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="ananas cytryna kukurydza majonez odzywka ogorek ryz seler" data-slug="ryzowa-salatka-z-ananasem" data-title="Ryżowa sałatka z ananasem, ogórkiem, selerem i kukurydzą + shake białkowy" data-kcal="458" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryzowa-salatka-z-ananasem/">Ryżowa sałatka z ananasem, ogórkiem, selerem i kukurydzą + shake białkowy</a>
+<button type="button" class="p-fav" data-fav="ryzowa-salatka-z-ananasem" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryżowa sałatka z ananasem, ogórkiem, selerem i kukurydzą + shake białkowy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">458 kcal</span>
 </div>
 <div class="p-card__tags">ryżu basmati, kukurydzy konserwowej, ananasa świeżego, małego ogórka…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan chleb maslo-orzechowe odzywka">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan chleb maslo-orzechowe odzywka" data-slug="tost-z-maslem-orzechowym" data-title="Tost z chlebem żytnim, masłem orzechowym i bananem + shake białkowy" data-kcal="491" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tost-z-maslem-orzechowym/">Tost z chlebem żytnim, masłem orzechowym i bananem + shake białkowy</a>
+<button type="button" class="p-fav" data-fav="tost-z-maslem-orzechowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Tost z chlebem żytnim, masłem orzechowym i bananem + shake białkowy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">491 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego, masła orzechowego, banana, odżywki białkowej</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="kabanosy pomidor">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="kabanosy pomidor" data-slug="roslinne-kabanosy" data-title="Roślinne kabanosy Bez kęsa mięsa Tarczyński z pieczywem i warzywami" data-kcal="475" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/roslinne-kabanosy/">Roślinne kabanosy Bez kęsa mięsa Tarczyński z pieczywem i warzywami</a>
+<button type="button" class="p-fav" data-fav="roslinne-kabanosy" aria-pressed="false" aria-label="Dodaj do ulubionych: Roślinne kabanosy Bez kęsa mięsa Tarczyński z pieczywem i warzywami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">475 kcal</span>
 </div>
 <div class="p-card__tags">Roślinne kabanosy Bez kęsa mięsa Tarczyński, pomidora</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="brokul cebula czosnek grana-padano makaron oliwa pieczarki pomidor smietanka szpinak">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="brokul cebula czosnek grana-padano makaron oliwa pieczarki pomidor smietanka szpinak" data-slug="makaron-penne" data-title="Makaron penne ze szpinakiem, pieczarkami, pomidorkami cherry i serem grana padano" data-kcal="360" data-protein="16">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-penne/">Makaron penne ze szpinakiem, pieczarkami, pomidorkami cherry i serem grana padano</a>
+<button type="button" class="p-fav" data-fav="makaron-penne" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron penne ze szpinakiem, pieczarkami, pomidorkami cherry i serem grana padano"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">360 kcal</span>
 </div>
 <div class="p-card__tags">makaronu penne, szpinaku, śmietanki 12%, czosnku, cebuli, pieczarek…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb czosnek pomidory-suszone soczewica tahini">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb czosnek pomidory-suszone soczewica tahini" data-slug="kanapka-z-pasta-pomidorowa" data-title="Kanapka z pastą pomidorową" data-kcal="443" data-protein="19">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-pasta-pomidorowa/">Kanapka z pastą pomidorową</a>
+<button type="button" class="p-fav" data-fav="kanapka-z-pasta-pomidorowa" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą pomidorową"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">443 kcal</span>
 </div>
 <div class="p-card__tags">soczewicy czerwonej, chleba żytniego razowego, pasty tahini…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek dynia grana-padano marchewka oliwa ryz salata">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek dynia grana-padano marchewka oliwa ryz salata" data-slug="risotto-z-dynia-i-serem-salatkowym" data-title="Risotto z dynią i serem sałatkowym" data-kcal="362" data-protein="16">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/risotto-z-dynia-i-serem-salatkowym/">Risotto z dynią i serem sałatkowym</a>
+<button type="button" class="p-fav" data-fav="risotto-z-dynia-i-serem-salatkowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Risotto z dynią i serem sałatkowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">362 kcal</span>
 </div>
 <div class="p-card__tags">ryżu, dyni, sera salatkowego, grana padano, rukoli, marchwi, cebuli…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="burak kapusta makaron marchewka ogorek papier-ryzowy sos-ostry sos-sojowy">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="burak kapusta makaron marchewka ogorek papier-ryzowy sos-ostry sos-sojowy" data-slug="warzywne-spring-rolls" data-title="Warzywne spring rolls" data-kcal="460" data-protein="12">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/warzywne-spring-rolls/">Warzywne spring rolls</a>
+<button type="button" class="p-fav" data-fav="warzywne-spring-rolls" aria-pressed="false" aria-label="Dodaj do ulubionych: Warzywne spring rolls"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">460 kcal</span>
 </div>
 <div class="p-card__tags">ogórka, marchwi, kapusty, buraka, makaronu ryżowego, papieru ryżowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="czekolada jogurt miod platki-inne platki-owsiane zurawina">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="czekolada jogurt miod platki-inne platki-owsiane zurawina" data-slug="owsiano-zytnie-batoniki-z-miodem-i" data-title="Owsiano-żytnie batoniki z miodem i czekoladą" data-kcal="456" data-protein="16">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsiano-zytnie-batoniki-z-miodem-i/">Owsiano-żytnie batoniki z miodem i czekoladą</a>
+<button type="button" class="p-fav" data-fav="owsiano-zytnie-batoniki-z-miodem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiano-żytnie batoniki z miodem i czekoladą"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">456 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych górskich, płatków żytnich, żurawiny suszonej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="awokado cebula ciecierzyca cukinia czosnek odzywka oliwa pomidory-puszka tortilla">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="awokado cebula ciecierzyca cukinia czosnek odzywka oliwa pomidory-puszka tortilla" data-slug="tortilla-z-ciecierzyca-cukinia-i-awokado" data-title="Tortilla z ciecierzycą, cukinią i awokado + shake białkowy - przepis na 2 porcje" data-kcal="381" data-protein="19">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tortilla-z-ciecierzyca-cukinia-i-awokado/">Tortilla z ciecierzycą, cukinią i awokado + shake białkowy - przepis na 2 porcje</a>
+<button type="button" class="p-fav" data-fav="tortilla-z-ciecierzyca-cukinia-i-awokado" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z ciecierzycą, cukinią i awokado + shake białkowy - przepis na 2 porcje"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">381 kcal</span>
 </div>
 <div class="p-card__tags">tortilli pełnoziarnistej, ciecierzycy konserwowej, awokado…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula ciecierzyca cukinia czosnek kasza marchewka oliwa papryka pietruszka-korzen">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula ciecierzyca cukinia czosnek kasza marchewka oliwa papryka pietruszka-korzen" data-slug="vege-krupnik" data-title="Vege krupnik" data-kcal="363" data-protein="15">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/vege-krupnik/">Vege krupnik</a>
+<button type="button" class="p-fav" data-fav="vege-krupnik" aria-pressed="false" aria-label="Dodaj do ulubionych: Vege krupnik"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">363 kcal</span>
 </div>
 <div class="p-card__tags">cukinii, ciecierzycy konserwowej, kaszy jęczmiennej, papryki czerwonej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="ananas chia jablko jogurt melon odzywka">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="ananas chia jablko jogurt melon odzywka" data-slug="owoce-z-jogurtem-roslinnym" data-title="Owoce z jogurtem roślinnym" data-kcal="435" data-protein="33">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owoce-z-jogurtem-roslinnym/">Owoce z jogurtem roślinnym</a>
+<button type="button" class="p-fav" data-fav="owoce-z-jogurtem-roslinnym" aria-pressed="false" aria-label="Dodaj do ulubionych: Owoce z jogurtem roślinnym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">435 kcal</span>
 </div>
 <div class="p-card__tags">jogurtu roślinnego, melona, ananasa świeżego, jabłka, nasion chia…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb maslo pomidor rzodkiewka serek-wiejski">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb maslo pomidor rzodkiewka serek-wiejski" data-slug="serek-wiejski-z-rzodkiewka-pomidorem-i" data-title="Serek wiejski z rzodkiewką, pomidorem i pieczywem" data-kcal="451" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-z-rzodkiewka-pomidorem-i/">Serek wiejski z rzodkiewką, pomidorem i pieczywem</a>
+<button type="button" class="p-fav" data-fav="serek-wiejski-z-rzodkiewka-pomidorem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z rzodkiewką, pomidorem i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">451 kcal</span>
 </div>
 <div class="p-card__tags">serka wiejskiego, chleba żytniego, pomidora, rzodkiewki, masła</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek kasza mleko oliwa platki-drozdzowe por siemie-lniane soczewica">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek kasza mleko oliwa platki-drozdzowe por siemie-lniane soczewica" data-slug="pulpeciki-z-soczewicy-z-kasza-jeczmienna" data-title="Pulpeciki z soczewicy z kaszą jęczmienną" data-kcal="368" data-protein="19">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pulpeciki-z-soczewicy-z-kasza-jeczmienna/">Pulpeciki z soczewicy z kaszą jęczmienną</a>
+<button type="button" class="p-fav" data-fav="pulpeciki-z-soczewicy-z-kasza-jeczmienna" aria-pressed="false" aria-label="Dodaj do ulubionych: Pulpeciki z soczewicy z kaszą jęczmienną"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">368 kcal</span>
 </div>
 <div class="p-card__tags">suchej soczewicy zielonej, czosnku, cebuli, pora, mleka roślinnego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bulka cebula ketchup musztarda ogorki-kiszone oliwa papryka-konserwowa parowki">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bulka cebula ketchup musztarda ogorki-kiszone oliwa papryka-konserwowa parowki" data-slug="hot-dog-z-weganska-parowka" data-title="Hot dog z wegańską parówką" data-kcal="456" data-protein="13">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/hot-dog-z-weganska-parowka/">Hot dog z wegańską parówką</a>
+<button type="button" class="p-fav" data-fav="hot-dog-z-weganska-parowka" aria-pressed="false" aria-label="Dodaj do ulubionych: Hot dog z wegańską parówką"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">456 kcal</span>
 </div>
 <div class="p-card__tags">bułki do hot dogów, parówek wegańskich Tarczyński, cebuli czerwonej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="maka maliny mleko odzywka orzechy">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="maka maliny mleko odzywka orzechy" data-slug="budyn-waniliowy-na-mleku-roslinnym-z" data-title="Budyń waniliowy na mleku roślinnym z sosem malinowym" data-kcal="463" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/budyn-waniliowy-na-mleku-roslinnym-z/">Budyń waniliowy na mleku roślinnym z sosem malinowym</a>
+<button type="button" class="p-fav" data-fav="budyn-waniliowy-na-mleku-roslinnym-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Budyń waniliowy na mleku roślinnym z sosem malinowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">463 kcal</span>
 </div>
 <div class="p-card__tags">mleka roślinnego, mąki ziemniaczanej, malin, wegańskiej odżywki białkowej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka kielki losos oliwa pomidor szpinak">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka kielki losos oliwa pomidor szpinak" data-slug="omlet-z-wedzonym-lososiem-szpinakiem-i" data-title="Omlet z wędzonym łososiem, szpinakiem i pomidorkami koktajlowymi" data-kcal="469" data-protein="31">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/omlet-z-wedzonym-lososiem-szpinakiem-i/">Omlet z wędzonym łososiem, szpinakiem i pomidorkami koktajlowymi</a>
+<button type="button" class="p-fav" data-fav="omlet-z-wedzonym-lososiem-szpinakiem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet z wędzonym łososiem, szpinakiem i pomidorkami koktajlowymi"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">469 kcal</span>
 </div>
 <div class="p-card__tags">łososia wędzonego, szpinaku, jajek kurzych, pomidorków koktajlowych…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="brokul cebula czosnek jajka makaron marchewka mleko mozzarella oliwa pomidor">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="brokul cebula czosnek jajka makaron marchewka mleko mozzarella oliwa pomidor" data-slug="zapiekanka-makaronowa-z-serem-mozzarella" data-title="Zapiekanka makaronowa z serem mozzarella" data-kcal="372" data-protein="21">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zapiekanka-makaronowa-z-serem-mozzarella/">Zapiekanka makaronowa z serem mozzarella</a>
+<button type="button" class="p-fav" data-fav="zapiekanka-makaronowa-z-serem-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka makaronowa z serem mozzarella"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">372 kcal</span>
 </div>
 <div class="p-card__tags">makaronu penne, jajek kurzych, mleka roślinnego, marchwi, cebuli, czosnku…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="cukinia cytryna czosnek jajka jogurt majonez maka oliwa">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="cukinia cytryna czosnek jajka jogurt majonez maka oliwa" data-slug="placuszki-z-cukinii-z-dipem-czosnkowym" data-title="Placuszki z cukinii z dipem czosnkowym" data-kcal="460" data-protein="23">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/placuszki-z-cukinii-z-dipem-czosnkowym/">Placuszki z cukinii z dipem czosnkowym</a>
+<button type="button" class="p-fav" data-fav="placuszki-z-cukinii-z-dipem-czosnkowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki z cukinii z dipem czosnkowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">460 kcal</span>
 </div>
 <div class="p-card__tags">cukinii, mąki z ciecierzycy, jajek kurzych, czosnku, jogurtu naturalnego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan jajka maka odzywka olej-kokosowy">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan jajka maka odzywka olej-kokosowy" data-slug="chleb-bananowy" data-title="Chleb bananowy" data-kcal="463" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/chleb-bananowy/">Chleb bananowy</a>
+<button type="button" class="p-fav" data-fav="chleb-bananowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Chleb bananowy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">463 kcal</span>
 </div>
 <div class="p-card__tags">małego banana, mąki owsianej pełnoziarnistej, oleju kokosowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka pomidor serek-wiejski">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka pomidor serek-wiejski" data-slug="pasta-jajeczna" data-title="Pasta jajeczna" data-kcal="448" data-protein="29">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-jajeczna/">Pasta jajeczna</a>
+<button type="button" class="p-fav" data-fav="pasta-jajeczna" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta jajeczna"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">448 kcal</span>
 </div>
 <div class="p-card__tags">serka wiejskiego light, jajek kurzych, chleba żytniego razowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="awokado cukinia fasola kasza oliwa papryczka-chili platki-drozdzowe platki-owsiane pomidor pomidory-puszka salata slonecznik">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="awokado cukinia fasola kasza oliwa papryczka-chili platki-drozdzowe platki-owsiane pomidor pomidory-puszka salata slonecznik" data-slug="burger-z-fasoli-z-awokado-i" data-title="Burger z fasoli z awokado i grillowaną cukinią" data-kcal="359" data-protein="12">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/burger-z-fasoli-z-awokado-i/">Burger z fasoli z awokado i grillowaną cukinią</a>
+<button type="button" class="p-fav" data-fav="burger-z-fasoli-z-awokado-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Burger z fasoli z awokado i grillowaną cukinią"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">359 kcal</span>
 </div>
 <div class="p-card__tags">kaszy jaglanej, fasoli czerwonej, koncentratu pomidorowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan czekolada fasola kakao maka mleko oliwa siemie-lniane wisnie">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan czekolada fasola kakao maka mleko oliwa siemie-lniane wisnie" data-slug="brownie-z-fasoli-z-wisniami-i" data-title="Brownie z fasoli z wiśniami i bananem" data-kcal="465" data-protein="11">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/brownie-z-fasoli-z-wisniami-i/">Brownie z fasoli z wiśniami i bananem</a>
+<button type="button" class="p-fav" data-fav="brownie-z-fasoli-z-wisniami-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Brownie z fasoli z wiśniami i bananem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">465 kcal</span>
 </div>
 <div class="p-card__tags">mąki pszennej pełnoziarnistej, oleju rzepakowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="gruszka mleko odzywka orzechy platki-jaglane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="gruszka mleko odzywka orzechy platki-jaglane" data-slug="jaglanka-z-gruszka" data-title="Jaglanka z gruszką" data-kcal="441" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jaglanka-z-gruszka/">Jaglanka z gruszką</a>
+<button type="button" class="p-fav" data-fav="jaglanka-z-gruszka" aria-pressed="false" aria-label="Dodaj do ulubionych: Jaglanka z gruszką"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">441 kcal</span>
 </div>
 <div class="p-card__tags">płatków jaglanych, napoju migdałowego, małej gruszki, orzechów włoskich…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula chleb oliwa platki-drozdzowe pomidor tofu">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula chleb oliwa platki-drozdzowe pomidor tofu" data-slug="tofucznica-z-cebulka-szczypiorkiem-i-pieczywem" data-title="Tofucznica z cebulką, szczypiorkiem i pieczywem" data-kcal="455" data-protein="23">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tofucznica-z-cebulka-szczypiorkiem-i-pieczywem/">Tofucznica z cebulką, szczypiorkiem i pieczywem</a>
+<button type="button" class="p-fav" data-fav="tofucznica-z-cebulka-szczypiorkiem-i-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tofucznica z cebulką, szczypiorkiem i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">455 kcal</span>
 </div>
 <div class="p-card__tags">tofu naturalnego, cebuli, płatków drożdżowych, oleju rzepakowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ciecierzyca cukinia cytryna czosnek jogurt marchewka oliwa papryka tortilla">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ciecierzyca cukinia cytryna czosnek jogurt marchewka oliwa papryka tortilla" data-slug="tortilla-z-ciecierzyca-cukinia-papryka-i" data-title="Tortilla z ciecierzycą, cukinią, papryką i sosem czosnkowym" data-kcal="378" data-protein="13">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tortilla-z-ciecierzyca-cukinia-papryka-i/">Tortilla z ciecierzycą, cukinią, papryką i sosem czosnkowym</a>
+<button type="button" class="p-fav" data-fav="tortilla-z-ciecierzyca-cukinia-papryka-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z ciecierzycą, cukinią, papryką i sosem czosnkowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">378 kcal</span>
 </div>
 <div class="p-card__tags">tortilli pszennych, ciecierzycy konserwowej, cukinii, papryki czerwonej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jajka jogurt kakao maka marchewka oliwa orzechy">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jajka jogurt kakao maka marchewka oliwa orzechy" data-slug="ciasto-marchewkowe-z-kakao" data-title="Ciasto marchewkowe z kakao" data-kcal="474" data-protein="9">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/ciasto-marchewkowe-z-kakao/">Ciasto marchewkowe z kakao</a>
+<button type="button" class="p-fav" data-fav="ciasto-marchewkowe-z-kakao" aria-pressed="false" aria-label="Dodaj do ulubionych: Ciasto marchewkowe z kakao"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">474 kcal</span>
 </div>
 <div class="p-card__tags">marchwi, mąki pszennej pełnoziarnistej, oleju rzepakowego, jajka, kakao…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jajka maka maliny mleko odzywka olej-kokosowy">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jajka maka maliny mleko odzywka olej-kokosowy" data-slug="fit-placuszki" data-title="Fit Placuszki" data-kcal="473" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/fit-placuszki/">Fit Placuszki</a>
+<button type="button" class="p-fav" data-fav="fit-placuszki" aria-pressed="false" aria-label="Dodaj do ulubionych: Fit Placuszki"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">473 kcal</span>
 </div>
 <div class="p-card__tags">jaja kurzego, mąki owsianej pełnoziarnistej, odżywki białkowej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb mozzarella pomidor szpinak">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb mozzarella pomidor szpinak" data-slug="kanapka-z-mozzarella-i-warzywami" data-title="Kanapka z mozzarellą i warzywami" data-kcal="484" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-mozzarella-i-warzywami/">Kanapka z mozzarellą i warzywami</a>
+<button type="button" class="p-fav" data-fav="kanapka-z-mozzarella-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z mozzarellą i warzywami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">484 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego, szpinaku, mozzarelli, małego pomidora</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek dynia fasola mleczko-kokosowe oliwa ziemniaki">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek dynia fasola mleczko-kokosowe oliwa ziemniaki" data-slug="krem-z-dyni" data-title="Krem z dyni" data-kcal="375" data-protein="14">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/krem-z-dyni/">Krem z dyni</a>
+<button type="button" class="p-fav" data-fav="krem-z-dyni" aria-pressed="false" aria-label="Dodaj do ulubionych: Krem z dyni"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">375 kcal</span>
 </div>
 <div class="p-card__tags">dyni, czarnej fasoli konserwowej, cebuli, czosnku, mleczka kokosowego 12%…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="cebula ciecierzyca czosnek maka migdaly oliwa oliwki pomidory-puszka szpinak">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="cebula ciecierzyca czosnek maka migdaly oliwa oliwki pomidory-puszka szpinak" data-slug="wege-pizza" data-title="Wege pizza" data-kcal="464" data-protein="18">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/wege-pizza/">Wege pizza</a>
+<button type="button" class="p-fav" data-fav="wege-pizza" aria-pressed="false" aria-label="Dodaj do ulubionych: Wege pizza"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">464 kcal</span>
 </div>
 <div class="p-card__tags">mąki orkiszowej, oliwy z oliwek, koncentratu pomidorowego, czosnku…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jablko jogurt mleko orzechy ryz">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jablko jogurt mleko orzechy ryz" data-slug="ryz-z-jablkami" data-title="Ryż z jabłkami" data-kcal="482" data-protein="29">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryz-z-jablkami/">Ryż z jabłkami</a>
+<button type="button" class="p-fav" data-fav="ryz-z-jablkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryż z jabłkami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">482 kcal</span>
 </div>
 <div class="p-card__tags">ryżu basmati, napoju roślinnego, małego jabłka, orzechów, jogurtu skyr</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula chleb cytryna czosnek fasola kielki oliwa papryka rzodkiewka">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula chleb cytryna czosnek fasola kielki oliwa papryka rzodkiewka" data-slug="kanapka-z-pasta-z-czerwonej-fasoli" data-title="Kanapka z pastą z czerwonej fasoli" data-kcal="451" data-protein="16">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-pasta-z-czerwonej-fasoli/">Kanapka z pastą z czerwonej fasoli</a>
+<button type="button" class="p-fav" data-fav="kanapka-z-pasta-z-czerwonej-fasoli" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą z czerwonej fasoli"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">451 kcal</span>
 </div>
 <div class="p-card__tags">fasoli czerwonej konserwowej, czerwonej cebuli, czosnku, soku z cytryny…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek makaron mozzarella oliwa papryka pomidor">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek makaron mozzarella oliwa papryka pomidor" data-slug="makaron-z-pieczonymi-warzywami-i-serem" data-title="Makaron z pieczonymi warzywami i serem mozzarella" data-kcal="370" data-protein="17">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-z-pieczonymi-warzywami-i-serem/">Makaron z pieczonymi warzywami i serem mozzarella</a>
+<button type="button" class="p-fav" data-fav="makaron-z-pieczonymi-warzywami-i-serem" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron z pieczonymi warzywami i serem mozzarella"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">370 kcal</span>
 </div>
 <div class="p-card__tags">papryki czerwonej, małej cebuli, czosnku, makaronu pełnoziarnistego penne…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="czekolada jablko jogurt orzechy platki-owsiane syrop-klonowy">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="czekolada jablko jogurt orzechy platki-owsiane syrop-klonowy" data-slug="jogurt-naturalny-z-domowa-granola-z" data-title="Jogurt naturalny z domową granolą z orzechami i jabłkiem" data-kcal="460" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jogurt-naturalny-z-domowa-granola-z/">Jogurt naturalny z domową granolą z orzechami i jabłkiem</a>
+<button type="button" class="p-fav" data-fav="jogurt-naturalny-z-domowa-granola-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurt naturalny z domową granolą z orzechami i jabłkiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">460 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych górskich, orzechów włoskich, gorzkiej czekolady…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="czekolada kakao maslo-orzechowe mleko odzywka platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="czekolada kakao maslo-orzechowe mleko odzywka platki-owsiane" data-slug="shake-snickers" data-title="Shake snickers" data-kcal="460" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/shake-snickers/">Shake snickers</a>
+<button type="button" class="p-fav" data-fav="shake-snickers" aria-pressed="false" aria-label="Dodaj do ulubionych: Shake snickers"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">460 kcal</span>
 </div>
 <div class="p-card__tags">napoju roślinnego, wegańskiej odżywki białkowej, kakao, masła orzechowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka chrzan kielki losos ogorek serek-smietankowy">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka chrzan kielki losos ogorek serek-smietankowy" data-slug="kanapka-z-wedzonym-lososiem" data-title="Kanapka z wędzonym łososiem" data-kcal="474" data-protein="29">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-wedzonym-lososiem/">Kanapka z wędzonym łososiem</a>
+<button type="button" class="p-fav" data-fav="kanapka-z-wedzonym-lososiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z wędzonym łososiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">474 kcal</span>
 </div>
 <div class="p-card__tags">bułki grahamki, łososia wędzonego, serka śmietankowego, chrzanu…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="batat maslo-orzechowe oliwa ryz salata sos-sojowy tofu">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="batat maslo-orzechowe oliwa ryz salata sos-sojowy tofu" data-slug="buddha-bowl" data-title="Buddha bowl" data-kcal="382" data-protein="14">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/buddha-bowl/">Buddha bowl</a>
+<button type="button" class="p-fav" data-fav="buddha-bowl" aria-pressed="false" aria-label="Dodaj do ulubionych: Buddha bowl"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">382 kcal</span>
 </div>
 <div class="p-card__tags">ryżu basmati, tofu naturalnego, batata, mieszanych sałat, sosu sojowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bagietka cebula cukinia czosnek grana-padano marchewka oliwa pomidory-puszka por soczewica">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bagietka cebula cukinia czosnek grana-padano marchewka oliwa pomidory-puszka por soczewica" data-slug="bruschetta-z-soczewica-swiezymi-ziolami-i" data-title="Bruschetta z soczewicą, świeżymi ziołami i serem grana padano" data-kcal="456" data-protein="23">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/bruschetta-z-soczewica-swiezymi-ziolami-i/">Bruschetta z soczewicą, świeżymi ziołami i serem grana padano</a>
+<button type="button" class="p-fav" data-fav="bruschetta-z-soczewica-swiezymi-ziolami-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Bruschetta z soczewicą, świeżymi ziołami i serem grana padano"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">456 kcal</span>
 </div>
 <div class="p-card__tags">bagietki, soczewicy czerwonej, pora, cukinii, marchwi, cebuli, czosnku…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="czekolada jogurt maslo-orzechowe miod orzechy platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="czekolada jogurt maslo-orzechowe miod orzechy platki-owsiane" data-slug="owsiane-batoniki-z-czekolada-orzechami-arachidowymi" data-title="Owsiane batoniki z czekoladą, orzechami arachidowymi i miodem" data-kcal="471" data-protein="15">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsiane-batoniki-z-czekolada-orzechami-arachidowymi/">Owsiane batoniki z czekoladą, orzechami arachidowymi i miodem</a>
+<button type="button" class="p-fav" data-fav="owsiane-batoniki-z-czekolada-orzechami-arachidowymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiane batoniki z czekoladą, orzechami arachidowymi i miodem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">471 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych górskich, orzeszków arachidowych, masła orzechowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb maslo pomidor pomidory-suszone serek-smietankowy szpinak">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb maslo pomidor pomidory-suszone serek-smietankowy szpinak" data-slug="pasta-z-twarozku-z-suszonymi-pomidorami" data-title="Pasta z twarożku z suszonymi pomidorami, szczypiorkiem, liśćmi szpinaku, pomidorem i ciemnym pieczywem" data-kcal="478" data-protein="31">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-z-twarozku-z-suszonymi-pomidorami/">Pasta z twarożku z suszonymi pomidorami, szczypiorkiem, liśćmi szpinaku, pomidorem i ciemnym pieczywem</a>
+<button type="button" class="p-fav" data-fav="pasta-z-twarozku-z-suszonymi-pomidorami" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z twarożku z suszonymi pomidorami, szczypiorkiem, liśćmi szpinaku, pomidorem i ciemnym pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">478 kcal</span>
 </div>
 <div class="p-card__tags">twarożku, szpinaku, pomidora, suszonych pomidorów, chleb żytniego razowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula dorsz jablko kapusta marchewka oliwa ziemniaki">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula dorsz jablko kapusta marchewka oliwa ziemniaki" data-slug="dorsz-z-ziemniakami-i-kiszona-kapusta" data-title="Dorsz z ziemniakami i kiszoną kapustą" data-kcal="379" data-protein="24">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/dorsz-z-ziemniakami-i-kiszona-kapusta/">Dorsz z ziemniakami i kiszoną kapustą</a>
+<button type="button" class="p-fav" data-fav="dorsz-z-ziemniakami-i-kiszona-kapusta" aria-pressed="false" aria-label="Dodaj do ulubionych: Dorsz z ziemniakami i kiszoną kapustą"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">379 kcal</span>
 </div>
 <div class="p-card__tags">dorsza świeżego, ziemniaków, kapusty kwaszonej, jabłka, marchwi, cebuli…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="burak camembert chleb miod musztarda oliwa szpinak truskawki">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="burak camembert chleb miod musztarda oliwa szpinak truskawki" data-slug="salatka-ze-szpinakiem-serem-plesniowym-burakami" data-title="Sałatka ze szpinakiem, serem pleśniowym, burakami i grzankami" data-kcal="455" data-protein="21">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-ze-szpinakiem-serem-plesniowym-burakami/">Sałatka ze szpinakiem, serem pleśniowym, burakami i grzankami</a>
+<button type="button" class="p-fav" data-fav="salatka-ze-szpinakiem-serem-plesniowym-burakami" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka ze szpinakiem, serem pleśniowym, burakami i grzankami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">455 kcal</span>
 </div>
 <div class="p-card__tags">chleb pszennego, truskawek, buraków, musztardy, miodu, sera camembert…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan mleko odzywka orzechy platki-inne platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan mleko odzywka orzechy platki-inne platki-owsiane" data-slug="owsianka-lion" data-title="Owsianka Lion" data-kcal="451" data-protein="22">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-lion/">Owsianka Lion</a>
+<button type="button" class="p-fav" data-fav="owsianka-lion" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka Lion"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">451 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych, mleka roślinnego, wegańskiej odżywki białkowej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb cukinia jajka oliwa pomidor">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb cukinia jajka oliwa pomidor" data-slug="pieczony-omlet-z-cukinia" data-title="Pieczony omlet z cukinią" data-kcal="473" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pieczony-omlet-z-cukinia/">Pieczony omlet z cukinią</a>
+<button type="button" class="p-fav" data-fav="pieczony-omlet-z-cukinia" aria-pressed="false" aria-label="Dodaj do ulubionych: Pieczony omlet z cukinią"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">473 kcal</span>
 </div>
 <div class="p-card__tags">jaj, małej cukinii, pomidorków koktajlowych, chleba żytniego razowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="burak feta grejpfrut makaron migdaly oliwa salata">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="burak feta grejpfrut makaron migdaly oliwa salata" data-slug="salatka-z-makaronem-i-serem-feta" data-title="Sałatka z makaronem i serem feta" data-kcal="386" data-protein="17">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-z-makaronem-i-serem-feta/">Sałatka z makaronem i serem feta</a>
+<button type="button" class="p-fav" data-fav="salatka-z-makaronem-i-serem-feta" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z makaronem i serem feta"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">386 kcal</span>
 </div>
 <div class="p-card__tags">rukoli, makaronu pełnoziarnistego, np. świderki, sera feta, małego buraka…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan czekolada jogurt migdaly wafle">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan czekolada jogurt migdaly wafle" data-slug="serek-waniliowy-z-kawalkami-czekolady-i" data-title="Serek waniliowy z kawałkami czekolady i bananem" data-kcal="465" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-waniliowy-z-kawalkami-czekolady-i/">Serek waniliowy z kawałkami czekolady i bananem</a>
+<button type="button" class="p-fav" data-fav="serek-waniliowy-z-kawalkami-czekolady-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek waniliowy z kawałkami czekolady i bananem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">465 kcal</span>
 </div>
 <div class="p-card__tags">czekolady gorzkiej, banana, jogurtu skyr, wafli ryżowych, płatków migdałowych</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan cytryna kiwi migdaly mleko odzywka platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan cytryna kiwi migdaly mleko odzywka platki-owsiane" data-slug="waniliowa-owsianka-z-bananem-i-kiwi" data-title="Waniliowa owsianka z bananem i kiwi" data-kcal="443" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/waniliowa-owsianka-z-bananem-i-kiwi/">Waniliowa owsianka z bananem i kiwi</a>
+<button type="button" class="p-fav" data-fav="waniliowa-owsianka-z-bananem-i-kiwi" aria-pressed="false" aria-label="Dodaj do ulubionych: Waniliowa owsianka z bananem i kiwi"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">443 kcal</span>
 </div>
 <div class="p-card__tags">napoju sojowego, płatków owsianych, banana, kiwi, soku z cytryny, migdałów…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado chleb mozzarella pomidor">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado chleb mozzarella pomidor" data-slug="tost-z-awokado-i-mozzarella" data-title="Tost z awokado i mozzarellą" data-kcal="463" data-protein="23">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tost-z-awokado-i-mozzarella/">Tost z awokado i mozzarellą</a>
+<button type="button" class="p-fav" data-fav="tost-z-awokado-i-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Tost z awokado i mozzarellą"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">463 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego razowego, mozzarelli, awokado, małego pomidora</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="bulka-tarta burak cebula cytryna czosnek maka mleko oliwa pieczarki siemie-lniane soczewica ziemniaki">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="bulka-tarta burak cebula cytryna czosnek maka mleko oliwa pieczarki siemie-lniane soczewica ziemniaki" data-slug="pieczone-kotlety-mielone-z-soczewicy-z" data-title="Pieczone kotlety mielone z soczewicy z ziemniakami" data-kcal="386" data-protein="16">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pieczone-kotlety-mielone-z-soczewicy-z/">Pieczone kotlety mielone z soczewicy z ziemniakami</a>
+<button type="button" class="p-fav" data-fav="pieczone-kotlety-mielone-z-soczewicy-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Pieczone kotlety mielone z soczewicy z ziemniakami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">386 kcal</span>
 </div>
 <div class="p-card__tags">soczewicy zielonej, cebuli, czosnku, pieczarek uprawnych…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jablko maslo-orzechowe mleko odzywka orzechy platki-jaglane">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jablko maslo-orzechowe mleko odzywka orzechy platki-jaglane" data-slug="jaglanka-z-jablkiem-i-cynamonem" data-title="Jaglanka z jabłkiem i cynamonem" data-kcal="460" data-protein="20">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jaglanka-z-jablkiem-i-cynamonem/">Jaglanka z jabłkiem i cynamonem</a>
+<button type="button" class="p-fav" data-fav="jaglanka-z-jablkiem-i-cynamonem" aria-pressed="false" aria-label="Dodaj do ulubionych: Jaglanka z jabłkiem i cynamonem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">460 kcal</span>
 </div>
 <div class="p-card__tags">płatków jaglanych, napoju roślinnego, małego jabłka, masła orzechowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan mleko odzywka orzechy platki-owsiane porzeczki">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan mleko odzywka orzechy platki-owsiane porzeczki" data-slug="orzechowa-owsianka-z-bananem-i-dzemem" data-title="Orzechowa owsianka z bananem i dżemem porzeczkowym" data-kcal="470" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/orzechowa-owsianka-z-bananem-i-dzemem/">Orzechowa owsianka z bananem i dżemem porzeczkowym</a>
+<button type="button" class="p-fav" data-fav="orzechowa-owsianka-z-bananem-i-dzemem" aria-pressed="false" aria-label="Dodaj do ulubionych: Orzechowa owsianka z bananem i dżemem porzeczkowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">470 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych, mleka roślinnego, orzechów, banana, dżemu porzeczkowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula chleb ogorki-kiszone oliwa tofu">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula chleb ogorki-kiszone oliwa tofu" data-slug="kanapki-z-pasta-tofu" data-title="Kanapki z pastą tofu" data-kcal="446" data-protein="23">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-pasta-tofu/">Kanapki z pastą tofu</a>
+<button type="button" class="p-fav" data-fav="kanapki-z-pasta-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z pastą tofu"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">446 kcal</span>
 </div>
 <div class="p-card__tags">tofu wędzonego, cebuli, ogórków kiszonych, soku z ogórków kiszonych…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cytryna kapusta mintaj ogorek oliwa papryka ryz">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cytryna kapusta mintaj ogorek oliwa papryka ryz" data-slug="ryba-na-parze-z-ryzem-i" data-title="Ryba na parze z ryżem i surówką z kapusty pekińskiej" data-kcal="369" data-protein="21">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryba-na-parze-z-ryzem-i/">Ryba na parze z ryżem i surówką z kapusty pekińskiej</a>
+<button type="button" class="p-fav" data-fav="ryba-na-parze-z-ryzem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryba na parze z ryżem i surówką z kapusty pekińskiej"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">369 kcal</span>
 </div>
 <div class="p-card__tags">świeżego mintaja, ryżu, kapusty pekińskiej, papryki czerwonej, ogórka…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan czekolada fasola kakao maka mango mleko odzywka oliwa siemie-lniane">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan czekolada fasola kakao maka mango mleko odzywka oliwa siemie-lniane" data-slug="brownie-z-fasoli-z-bananem-i" data-title="Brownie z fasoli z bananem i mango" data-kcal="462" data-protein="20">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/brownie-z-fasoli-z-bananem-i/">Brownie z fasoli z bananem i mango</a>
+<button type="button" class="p-fav" data-fav="brownie-z-fasoli-z-bananem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Brownie z fasoli z bananem i mango"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">462 kcal</span>
 </div>
 <div class="p-card__tags">czerwonej fasoli konserwowej, mąki pszennej pełnoziarnistej, kakao…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan jogurt kakao orzechy">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan jogurt kakao orzechy" data-slug="fit-monte" data-title="Fit Monte" data-kcal="477" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/fit-monte/">Fit Monte</a>
+<button type="button" class="p-fav" data-fav="fit-monte" aria-pressed="false" aria-label="Dodaj do ulubionych: Fit Monte"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">477 kcal</span>
 </div>
 <div class="p-card__tags">orzechów laskowych, jogurtu skyr, kakao, banana</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula chleb czosnek oliwa pomidory-puszka seler soczewica">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula chleb czosnek oliwa pomidory-puszka seler soczewica" data-slug="weganska-pasta-z-czerwonej-soczewicy" data-title="Wegańska pasta z czerwonej soczewicy" data-kcal="451" data-protein="17">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/weganska-pasta-z-czerwonej-soczewicy/">Wegańska pasta z czerwonej soczewicy</a>
+<button type="button" class="p-fav" data-fav="weganska-pasta-z-czerwonej-soczewicy" aria-pressed="false" aria-label="Dodaj do ulubionych: Wegańska pasta z czerwonej soczewicy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">451 kcal</span>
 </div>
 <div class="p-card__tags">czerwonej soczewicy, cebuli, czosnku, selera, pomidorów z puszki…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek fasola limonka marchewka oliwa papryka pomidory-puszka ryz">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek fasola limonka marchewka oliwa papryka pomidory-puszka ryz" data-slug="gotowana-czerwona-fasola-po-meksykansku" data-title="Gotowana czerwona fasola po meksykańsku" data-kcal="382" data-protein="14">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/gotowana-czerwona-fasola-po-meksykansku/">Gotowana czerwona fasola po meksykańsku</a>
+<button type="button" class="p-fav" data-fav="gotowana-czerwona-fasola-po-meksykansku" aria-pressed="false" aria-label="Dodaj do ulubionych: Gotowana czerwona fasola po meksykańsku"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">382 kcal</span>
 </div>
 <div class="p-card__tags">ryżu brązowego, fasoli czerwonej konserwowej, marchewki, cebuli, czosnku…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="cebula chleb ogorek oliwa papryka platki-drozdzowe pomidor rzodkiewka salata tofu">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="cebula chleb ogorek oliwa papryka platki-drozdzowe pomidor rzodkiewka salata tofu" data-slug="tofucznica-z-warzywami-i-pieczywem" data-title="Tofucznica z warzywami i pieczywem" data-kcal="468" data-protein="24">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tofucznica-z-warzywami-i-pieczywem/">Tofucznica z warzywami i pieczywem</a>
+<button type="button" class="p-fav" data-fav="tofucznica-z-warzywami-i-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tofucznica z warzywami i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">468 kcal</span>
 </div>
 <div class="p-card__tags">tofu naturalnego, płatków drożdżowych, małej cebuli, papryki czerwonej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan jogurt orzechy">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan jogurt orzechy" data-slug="skyr-orzechy-banan" data-title="Skyr + orzechy + banan" data-kcal="474" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/skyr-orzechy-banan/">Skyr + orzechy + banan</a>
+<button type="button" class="p-fav" data-fav="skyr-orzechy-banan" aria-pressed="false" aria-label="Dodaj do ulubionych: Skyr + orzechy + banan"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">474 kcal</span>
 </div>
 <div class="p-card__tags">jogurtu skyr, banana, orzechów włoskich</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka oliwa pomidor">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka oliwa pomidor" data-slug="jajecznica-z-pieczywem" data-title="Jajecznica z pieczywem" data-kcal="438" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jajecznica-z-pieczywem/">Jajecznica z pieczywem</a>
+<button type="button" class="p-fav" data-fav="jajecznica-z-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajecznica z pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">438 kcal</span>
 </div>
 <div class="p-card__tags">jajek kurzych, oliwy z oliwek, chleba żytniego razowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula fasola kasza oliwa papryka-konserwowa pomidory-puszka">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula fasola kasza oliwa papryka-konserwowa pomidory-puszka" data-slug="fasola-z-papryka-i-pomidorami-z" data-title="Fasola z papryką i pomidorami z kaszą jęczmienną" data-kcal="372" data-protein="16">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/fasola-z-papryka-i-pomidorami-z/">Fasola z papryką i pomidorami z kaszą jęczmienną</a>
+<button type="button" class="p-fav" data-fav="fasola-z-papryka-i-pomidorami-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Fasola z papryką i pomidorami z kaszą jęczmienną"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">372 kcal</span>
 </div>
 <div class="p-card__tags">fasoli białej konserwowej, papryki pieczona w zalewie…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan limonka mango mleko odzywka wiorki">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan limonka mango mleko odzywka wiorki" data-slug="smoothie-z-mango-i-banana-na" data-title="Smoothie z mango i banana na mleku roślinnym" data-kcal="461" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/smoothie-z-mango-i-banana-na/">Smoothie z mango i banana na mleku roślinnym</a>
+<button type="button" class="p-fav" data-fav="smoothie-z-mango-i-banana-na" aria-pressed="false" aria-label="Dodaj do ulubionych: Smoothie z mango i banana na mleku roślinnym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">461 kcal</span>
 </div>
 <div class="p-card__tags">mango, małego banana, napoju migdałowego, soku z limonki…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="gruszka migdaly mleko odzywka platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="gruszka migdaly mleko odzywka platki-owsiane" data-slug="owsianka-z-gruszka" data-title="Owsianka z gruszką" data-kcal="468" data-protein="31">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-z-gruszka/">Owsianka z gruszką</a>
+<button type="button" class="p-fav" data-fav="owsianka-z-gruszka" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z gruszką"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">468 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych, mleka roślinnego, małej gruszki, migdałów…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado chleb cytryna kielki losos rzodkiewka">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado chleb cytryna kielki losos rzodkiewka" data-slug="tost-z-awokado-i-lososiem" data-title="Tost z awokado i łososiem" data-kcal="470" data-protein="32">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tost-z-awokado-i-lososiem/">Tost z awokado i łososiem</a>
+<button type="button" class="p-fav" data-fav="tost-z-awokado-i-lososiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tost z awokado i łososiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">470 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego razowego, awokado, łososia wędzonego, rzodkiewki…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia czosnek maka marchewka mleko oliwa pomidory-puszka seler soczewica">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia czosnek maka marchewka mleko oliwa pomidory-puszka seler soczewica" data-slug="cukinia-zapiekana-z-sosem-pomidorowym-soczewica" data-title="Cukinia zapiekana z sosem pomidorowym, soczewicą i beszamelem na mleku roślinnym" data-kcal="367" data-protein="16">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/cukinia-zapiekana-z-sosem-pomidorowym-soczewica/">Cukinia zapiekana z sosem pomidorowym, soczewicą i beszamelem na mleku roślinnym</a>
+<button type="button" class="p-fav" data-fav="cukinia-zapiekana-z-sosem-pomidorowym-soczewica" aria-pressed="false" aria-label="Dodaj do ulubionych: Cukinia zapiekana z sosem pomidorowym, soczewicą i beszamelem na mleku roślinnym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">367 kcal</span>
 </div>
 <div class="p-card__tags">soczewicy czerwonej, cebuli, selera naciowego, marchwi, pomidorów z puszki…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="daktyle kakao odzywka orzechy">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="daktyle kakao odzywka orzechy" data-slug="kakaowo-orzechowe-trufle-z-daktyli" data-title="Kakaowo-orzechowe trufle z daktyli" data-kcal="463" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kakaowo-orzechowe-trufle-z-daktyli/">Kakaowo-orzechowe trufle z daktyli</a>
+<button type="button" class="p-fav" data-fav="kakaowo-orzechowe-trufle-z-daktyli" aria-pressed="false" aria-label="Dodaj do ulubionych: Kakaowo-orzechowe trufle z daktyli"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">463 kcal</span>
 </div>
 <div class="p-card__tags">daktyli świeżych, kakao, orzechów, wegańskiej odżywki białkowej</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jagody maslo-orzechowe platki-owsiane serek-wiejski">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jagody maslo-orzechowe platki-owsiane serek-wiejski" data-slug="serek-wiejski-na-slodko-z-maslem" data-title="Serek wiejski na słodko z masłem orzechowym, domową konfiturą jagodową i płatkami owsianymi" data-kcal="460" data-protein="32">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-na-slodko-z-maslem/">Serek wiejski na słodko z masłem orzechowym, domową konfiturą jagodową i płatkami owsianymi</a>
+<button type="button" class="p-fav" data-fav="serek-wiejski-na-slodko-z-maslem" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski na słodko z masłem orzechowym, domową konfiturą jagodową i płatkami owsianymi"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">460 kcal</span>
 </div>
 <div class="p-card__tags">serka wiejskiego, masła orzechowego, dżemu niskosłodzonego np. jagodowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula mozzarella oliwa pomidor salata tortilla">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula mozzarella oliwa pomidor salata tortilla" data-slug="wrap-z-mozzarella" data-title="Wrap z mozzarellą" data-kcal="462" data-protein="18">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/wrap-z-mozzarella/">Wrap z mozzarellą</a>
+<button type="button" class="p-fav" data-fav="wrap-z-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Wrap z mozzarellą"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">462 kcal</span>
 </div>
 <div class="p-card__tags">tortilli pełnoziarnistej, sera mozzarella, rukoli, cebuli czerwonej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="bulka cytryna losos majonez salata sezam sos-ostry">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="bulka cytryna losos majonez salata sezam sos-ostry" data-slug="burger-z-lososia" data-title="Burger z łososia" data-kcal="362" data-protein="16">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/burger-z-lososia/">Burger z łososia</a>
+<button type="button" class="p-fav" data-fav="burger-z-lososia" aria-pressed="false" aria-label="Dodaj do ulubionych: Burger z łososia"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">362 kcal</span>
 </div>
 <div class="p-card__tags">łososia, bułki, sezamu, soku z cytryny, majonezu, sosu sriracha, rukoli</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan czekolada jajka jogurt maslo-orzechowe olej-kokosowy platki-owsiane">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan czekolada jajka jogurt maslo-orzechowe olej-kokosowy platki-owsiane" data-slug="pancakes" data-title="Pancakes" data-kcal="473" data-protein="17">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pancakes/">Pancakes</a>
+<button type="button" class="p-fav" data-fav="pancakes" aria-pressed="false" aria-label="Dodaj do ulubionych: Pancakes"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">473 kcal</span>
 </div>
 <div class="p-card__tags">małego banana, jajka, płatków owsianych, masła orzechowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jablko jajka maka oliwa twarog">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jablko jajka maka oliwa twarog" data-slug="placuszki-twarogowe-z-jablkiem" data-title="Placuszki twarogowe z jabłkiem" data-kcal="447" data-protein="32">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/placuszki-twarogowe-z-jablkiem/">Placuszki twarogowe z jabłkiem</a>
+<button type="button" class="p-fav" data-fav="placuszki-twarogowe-z-jablkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki twarogowe z jabłkiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">447 kcal</span>
 </div>
 <div class="p-card__tags">sera twarogowego chudego, małego jabłka, jajek kurzych, mąki orkiszowej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb mozzarella papryka-konserwowa">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb mozzarella papryka-konserwowa" data-slug="sniadania-z-biedronki-tosty" data-title="Śniadania z Biedronki: Tosty" data-kcal="477" data-protein="21">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/sniadania-z-biedronki-tosty/">Śniadania z Biedronki: Tosty</a>
+<button type="button" class="p-fav" data-fav="sniadania-z-biedronki-tosty" aria-pressed="false" aria-label="Dodaj do ulubionych: Śniadania z Biedronki: Tosty"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">477 kcal</span>
 </div>
 <div class="p-card__tags">chleba tostowego, sera mozzarella light, papryki konserwowej</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="brokul cebula czosnek imbir marchewka oliwa ryz sos-sojowy tahini tofu">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="brokul cebula czosnek imbir marchewka oliwa ryz sos-sojowy tahini tofu" data-slug="smazony-ryz-z-brokulami-i-tofu" data-title="Smażony ryż z brokułami i tofu" data-kcal="367" data-protein="19">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/smazony-ryz-z-brokulami-i-tofu/">Smażony ryż z brokułami i tofu</a>
+<button type="button" class="p-fav" data-fav="smazony-ryz-z-brokulami-i-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Smażony ryż z brokułami i tofu"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">367 kcal</span>
 </div>
 <div class="p-card__tags">ryżu basmati, tofu naturalnego, sosu sojowego, brokuła, marchewki…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jablko maka mleko odzywka oliwa">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jablko maka mleko odzywka oliwa" data-slug="weganskie-nalesniki-z-jablkami" data-title="Wegańskie naleśniki z jabłkami" data-kcal="458" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/weganskie-nalesniki-z-jablkami/">Wegańskie naleśniki z jabłkami</a>
+<button type="button" class="p-fav" data-fav="weganskie-nalesniki-z-jablkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Wegańskie naleśniki z jabłkami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">458 kcal</span>
 </div>
 <div class="p-card__tags">napoju roślinnego, mąki pszennej pełnoziarnistej, oleju rzepakowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan kakao maka mleko odzywka oliwa orzechy">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan kakao maka mleko odzywka oliwa orzechy" data-slug="chlebek-bananowy-z-kakao-i-orzechami" data-title="Chlebek bananowy z kakao i orzechami" data-kcal="443" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/chlebek-bananowy-z-kakao-i-orzechami/">Chlebek bananowy z kakao i orzechami</a>
+<button type="button" class="p-fav" data-fav="chlebek-bananowy-z-kakao-i-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Chlebek bananowy z kakao i orzechami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">443 kcal</span>
 </div>
 <div class="p-card__tags">małego banana, mąki pszennej pełnoziarnistej, mleka roślinnego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka jogurt makrela">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka jogurt makrela" data-slug="kanapka-z-pasta-z-makreli-i" data-title="Kanapka z pastą z makreli i jajek" data-kcal="439" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-pasta-z-makreli-i/">Kanapka z pastą z makreli i jajek</a>
+<button type="button" class="p-fav" data-fav="kanapka-z-pasta-z-makreli-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą z makreli i jajek"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">439 kcal</span>
 </div>
 <div class="p-card__tags">makreli wędzonej, jajka, jogurtu naturalnego, chleba żytniego</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia kasza oliwa pomidor tofu">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia kasza oliwa pomidor tofu" data-slug="kasza-jaglana-z-cukinia-i-pomidorami" data-title="Kasza jaglana z cukinią i pomidorami" data-kcal="366" data-protein="13">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kasza-jaglana-z-cukinia-i-pomidorami/">Kasza jaglana z cukinią i pomidorami</a>
+<button type="button" class="p-fav" data-fav="kasza-jaglana-z-cukinia-i-pomidorami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kasza jaglana z cukinią i pomidorami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">366 kcal</span>
 </div>
 <div class="p-card__tags">kaszy jaglanej, cukinii, pomidora, cebuli, oliwy z oliwek, tofu naturalnego</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bulka camembert gruszka mandarynka pomidor salata">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bulka camembert gruszka mandarynka pomidor salata" data-slug="kanapki-z-gruszka-i-serem-camembert" data-title="Kanapki z gruszką i serem camembert" data-kcal="474" data-protein="22">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-gruszka-i-serem-camembert/">Kanapki z gruszką i serem camembert</a>
+<button type="button" class="p-fav" data-fav="kanapki-z-gruszka-i-serem-camembert" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z gruszką i serem camembert"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">474 kcal</span>
 </div>
 <div class="p-card__tags">gruszki, sera camembert, rukoli, pomidorków koktajlowych, bułki grahamki…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jablko mleko odzywka orzechy platki-jaglane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jablko mleko odzywka orzechy platki-jaglane" data-slug="krem-jaglany-z-jablkiem-i-orzechami" data-title="Krem jaglany z jabłkiem i orzechami" data-kcal="467" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/krem-jaglany-z-jablkiem-i-orzechami/">Krem jaglany z jabłkiem i orzechami</a>
+<button type="button" class="p-fav" data-fav="krem-jaglany-z-jablkiem-i-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Krem jaglany z jabłkiem i orzechami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">467 kcal</span>
 </div>
 <div class="p-card__tags">mleka roślinnego, płatków jaglanych, jabłek, orzechów, odżywki białkowej</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka ketchup parowki pomidor">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka ketchup parowki pomidor" data-slug="roslinne-parowki-bez-kesa-miesa-tarczynski" data-title="Roślinne parówki Bez kęsa mięsa Tarczyński z pieczywem i warzywami" data-kcal="472" data-protein="15">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/roslinne-parowki-bez-kesa-miesa-tarczynski/">Roślinne parówki Bez kęsa mięsa Tarczyński z pieczywem i warzywami</a>
+<button type="button" class="p-fav" data-fav="roslinne-parowki-bez-kesa-miesa-tarczynski" aria-pressed="false" aria-label="Dodaj do ulubionych: Roślinne parówki Bez kęsa mięsa Tarczyński z pieczywem i warzywami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">472 kcal</span>
 </div>
 <div class="p-card__tags">Roślinnych parówek Bez kęsa mięsa Tarczyński, bułki…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="batat cebula czosnek fasola jogurt mango oliwa pomidor">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="batat cebula czosnek fasola jogurt mango oliwa pomidor" data-slug="bataty-z-burgerem-z-czerwonej-fasoli" data-title="Bataty z burgerem z czerwonej fasoli i sosem salsa" data-kcal="382" data-protein="15">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/bataty-z-burgerem-z-czerwonej-fasoli/">Bataty z burgerem z czerwonej fasoli i sosem salsa</a>
+<button type="button" class="p-fav" data-fav="bataty-z-burgerem-z-czerwonej-fasoli" aria-pressed="false" aria-label="Dodaj do ulubionych: Bataty z burgerem z czerwonej fasoli i sosem salsa"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">382 kcal</span>
 </div>
 <div class="p-card__tags">czerwonej fasoli konserwowej, batata (0,5 średniej wielkości), cebuli…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="mango mleko odzywka platki-owsiane wiorki">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="mango mleko odzywka platki-owsiane wiorki" data-slug="owsianka-z-mango" data-title="Owsianka z mango" data-kcal="472" data-protein="29">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-z-mango/">Owsianka z mango</a>
+<button type="button" class="p-fav" data-fav="owsianka-z-mango" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z mango"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">472 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych, mango, wiórków kokosowych, napoju migdałowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chia maslo-orzechowe mleko odzywka platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chia maslo-orzechowe mleko odzywka platki-owsiane" data-slug="owsiany-batonik-z-maslem-orzechowym" data-title="Owsiany batonik z masłem orzechowym" data-kcal="477" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsiany-batonik-z-maslem-orzechowym/">Owsiany batonik z masłem orzechowym</a>
+<button type="button" class="p-fav" data-fav="owsiany-batonik-z-maslem-orzechowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiany batonik z masłem orzechowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">477 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych górskich, masła orzechowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bagietka cebula czosnek mozzarella oliwa pomidor">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bagietka cebula czosnek mozzarella oliwa pomidor" data-slug="bruschetta-2" data-title="Bruschetta" data-kcal="460" data-protein="20">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/bruschetta-2/">Bruschetta</a>
+<button type="button" class="p-fav" data-fav="bruschetta-2" aria-pressed="false" aria-label="Dodaj do ulubionych: Bruschetta"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">460 kcal</span>
 </div>
 <div class="p-card__tags">bagietki, pomidora, cebuli, czosnku, oliwy z oliwek, sera mozzarella w kulkach</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cytryna czosnek imbir marchewka mleczko-kokosowe oliwa papryczka-chili pomidory-puszka ryz soczewica">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cytryna czosnek imbir marchewka mleczko-kokosowe oliwa papryczka-chili pomidory-puszka ryz soczewica" data-slug="curry-z-soczewicy-przepis-na-2" data-title="Curry z soczewicy - przepis na 2 porcje" data-kcal="377" data-protein="15">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/curry-z-soczewicy-przepis-na-2/">Curry z soczewicy - przepis na 2 porcje</a>
+<button type="button" class="p-fav" data-fav="curry-z-soczewicy-przepis-na-2" aria-pressed="false" aria-label="Dodaj do ulubionych: Curry z soczewicy - przepis na 2 porcje"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">377 kcal</span>
 </div>
 <div class="p-card__tags">oliwy z oliwek, ryżu basmati, małej cebuli, czosnku, imbiru, marchewki…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jablko kasza mleko odzywka orzechy">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jablko kasza mleko odzywka orzechy" data-slug="budyn-jaglany" data-title="Budyń jaglany" data-kcal="438" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/budyn-jaglany/">Budyń jaglany</a>
+<button type="button" class="p-fav" data-fav="budyn-jaglany" aria-pressed="false" aria-label="Dodaj do ulubionych: Budyń jaglany"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">438 kcal</span>
 </div>
 <div class="p-card__tags">kaszy jaglanej, małego jabłka, napoju sojowego, orzechów włoskich…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="kakao mleko odzywka orzechy platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="kakao mleko odzywka orzechy platki-owsiane" data-slug="kakaowa-owsianka-z-siekanymi-orzechami" data-title="Kakaowa owsianka z siekanymi orzechami" data-kcal="450" data-protein="32">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kakaowa-owsianka-z-siekanymi-orzechami/">Kakaowa owsianka z siekanymi orzechami</a>
+<button type="button" class="p-fav" data-fav="kakaowa-owsianka-z-siekanymi-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kakaowa owsianka z siekanymi orzechami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">450 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych górskich, napoju sojowego, kakao…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb czosnek jajka pomidor szpinak">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb czosnek jajka pomidor szpinak" data-slug="omlet-ze-szpinakiem" data-title="Omlet ze szpinakiem" data-kcal="439" data-protein="29">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/omlet-ze-szpinakiem/">Omlet ze szpinakiem</a>
+<button type="button" class="p-fav" data-fav="omlet-ze-szpinakiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet ze szpinakiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">439 kcal</span>
 </div>
 <div class="p-card__tags">szpinaku, jajek kurzych, czosnku, pomidorków koktajlowych…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek makaron oliwa pomidory-puszka seler slonecznik soczewica">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek makaron oliwa pomidory-puszka seler slonecznik soczewica" data-slug="makaron-penne-z-sosem-bolonskim-z" data-title="Makaron penne z sosem bolońskim z soczewicy" data-kcal="378" data-protein="18">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-penne-z-sosem-bolonskim-z/">Makaron penne z sosem bolońskim z soczewicy</a>
+<button type="button" class="p-fav" data-fav="makaron-penne-z-sosem-bolonskim-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron penne z sosem bolońskim z soczewicy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">378 kcal</span>
 </div>
 <div class="p-card__tags">soczewicy zielonej, selera naciowego, czosnku, małej cebuli…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jogurt orzechy platki-owsiane syrop-agawa zurawina">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jogurt orzechy platki-owsiane syrop-agawa zurawina" data-slug="jogurt-naturalny-z-domowa-granola-orzechami" data-title="Jogurt naturalny z domową granolą, orzechami i żurawiną" data-kcal="467" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jogurt-naturalny-z-domowa-granola-orzechami/">Jogurt naturalny z domową granolą, orzechami i żurawiną</a>
+<button type="button" class="p-fav" data-fav="jogurt-naturalny-z-domowa-granola-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurt naturalny z domową granolą, orzechami i żurawiną"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">467 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych górskich, syropu z agawy, żurawiny suszonej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jajka jogurt maka oliwa truskawki">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jajka jogurt maka oliwa truskawki" data-slug="jogurtowe-placki-z-owocami" data-title="Jogurtowe placki z owocami" data-kcal="521" data-protein="31">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jogurtowe-placki-z-owocami/">Jogurtowe placki z owocami</a>
+<button type="button" class="p-fav" data-fav="jogurtowe-placki-z-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurtowe placki z owocami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">521 kcal</span>
 </div>
 <div class="p-card__tags">jogurtu skyr, jajka, oliwy z oliwek, mąki orkiszowej białej, truskawek</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado cheddar chleb jajka mandarynka">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado cheddar chleb jajka mandarynka" data-slug="kanapka-z-jajkiem-awokado-i-serem" data-title="Kanapka z jajkiem, awokado i serem cheddar + mandarynka" data-kcal="568" data-protein="29">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-jajkiem-awokado-i-serem/">Kanapka z jajkiem, awokado i serem cheddar + mandarynka</a>
+<button type="button" class="p-fav" data-fav="kanapka-z-jajkiem-awokado-i-serem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z jajkiem, awokado i serem cheddar + mandarynka"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">568 kcal</span>
 </div>
 <div class="p-card__tags">jajka, sera cheddar, awokado, chleba żytniego razowego, mandarynek</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula chleb ciecierzyca czosnek marchewka mozzarella oliwa pietruszka-korzen seler">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula chleb ciecierzyca czosnek marchewka mozzarella oliwa pietruszka-korzen seler" data-slug="zupa-krem-z-ciecierzycy-z-grzankami" data-title="Zupa krem z ciecierzycy z grzankami" data-kcal="415" data-protein="19">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-krem-z-ciecierzycy-z-grzankami/">Zupa krem z ciecierzycy z grzankami</a>
+<button type="button" class="p-fav" data-fav="zupa-krem-z-ciecierzycy-z-grzankami" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa krem z ciecierzycy z grzankami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">415 kcal</span>
 </div>
 <div class="p-card__tags">pietruszki, selera, ciecierzycy konserwowej, małej cebuli, czosnku…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan borowki pistacje platki-owsiane twarog">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan borowki pistacje platki-owsiane twarog" data-slug="owsianka-z-twarogiem-i-owocami" data-title="Owsianka z twarogiem i owocami" data-kcal="554" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-z-twarogiem-i-owocami/">Owsianka z twarogiem i owocami</a>
+<button type="button" class="p-fav" data-fav="owsianka-z-twarogiem-i-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z twarogiem i owocami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">554 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych, twarogu półtłustego, banana, borówek, pistacji</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb maslo ogorek pomidory-suszone seler serek-wiejski">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb maslo ogorek pomidory-suszone seler serek-wiejski" data-slug="serek-wiejski-z-ogorkiem-suszonymi-pomidorami" data-title="Serek wiejski z ogórkiem, suszonymi pomidorami i pieczywem" data-kcal="526" data-protein="33">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-z-ogorkiem-suszonymi-pomidorami/">Serek wiejski z ogórkiem, suszonymi pomidorami i pieczywem</a>
+<button type="button" class="p-fav" data-fav="serek-wiejski-z-ogorkiem-suszonymi-pomidorami" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z ogórkiem, suszonymi pomidorami i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">526 kcal</span>
 </div>
 <div class="p-card__tags">serka wiejskiego, selera naciowego, ogórka, pomidorów suszonych…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cukinia jajka jogurt maka oliwa">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cukinia jajka jogurt maka oliwa" data-slug="placuszki-z-cukinii" data-title="Placuszki z cukinii" data-kcal="480" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/placuszki-z-cukinii/">Placuszki z cukinii</a>
+<button type="button" class="p-fav" data-fav="placuszki-z-cukinii" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki z cukinii"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">480 kcal</span>
 </div>
 <div class="p-card__tags">cukinii, mąki orkiszowej pełnoziarnistej, jajka kurzego, jogurtu skyr…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="ananas czekolada jogurt platki-owsiane syrop-klonowy wiorki">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="ananas czekolada jogurt platki-owsiane syrop-klonowy wiorki" data-slug="jogurt-naturalny-z-domowa-granola-ananasem" data-title="Jogurt naturalny z domową granolą, ananasem i czekoladą" data-kcal="550" data-protein="15">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jogurt-naturalny-z-domowa-granola-ananasem/">Jogurt naturalny z domową granolą, ananasem i czekoladą</a>
+<button type="button" class="p-fav" data-fav="jogurt-naturalny-z-domowa-granola-ananasem" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurt naturalny z domową granolą, ananasem i czekoladą"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">550 kcal</span>
 </div>
 <div class="p-card__tags">jogurtu naturalnego, ananasa, czekolady, płatków owsianych…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jablko jajka jogurt musztarda ogorek slonecznik">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jablko jajka jogurt musztarda ogorek slonecznik" data-slug="pasta-jajeczna-z-ogorkiem-szczypiorkiem-koperkiem" data-title="Pasta jajeczna z ogórkiem, szczypiorkiem, koperkiem i pieczywem + jabłko" data-kcal="556" data-protein="31">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-jajeczna-z-ogorkiem-szczypiorkiem-koperkiem/">Pasta jajeczna z ogórkiem, szczypiorkiem, koperkiem i pieczywem + jabłko</a>
+<button type="button" class="p-fav" data-fav="pasta-jajeczna-z-ogorkiem-szczypiorkiem-koperkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta jajeczna z ogórkiem, szczypiorkiem, koperkiem i pieczywem + jabłko"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">556 kcal</span>
 </div>
 <div class="p-card__tags">jajek, chleba żytniego, musztardy, ogórka zielonego, jogurtu naturalnego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula ciecierzyca czosnek imbir oliwa papryczka-chili pomidor pomidory-puszka ryz">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula ciecierzyca czosnek imbir oliwa papryczka-chili pomidor pomidory-puszka ryz" data-slug="curry-z-ciecierzycy" data-title="Curry z ciecierzycy" data-kcal="481" data-protein="19">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/curry-z-ciecierzycy/">Curry z ciecierzycy</a>
+<button type="button" class="p-fav" data-fav="curry-z-ciecierzycy" aria-pressed="false" aria-label="Dodaj do ulubionych: Curry z ciecierzycy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">481 kcal</span>
 </div>
 <div class="p-card__tags">ryżu basmati, małej cebuli, imbiru, czosnku, papryczki chili…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado imbir mango mleko odzywka pomarancza">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado imbir mango mleko odzywka pomarancza" data-slug="koktajl-mango-lassi" data-title="Koktajl mango lassi" data-kcal="522" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/koktajl-mango-lassi/">Koktajl mango lassi</a>
+<button type="button" class="p-fav" data-fav="koktajl-mango-lassi" aria-pressed="false" aria-label="Dodaj do ulubionych: Koktajl mango lassi"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">522 kcal</span>
 </div>
 <div class="p-card__tags">mango, napoju sojowego, wegańskiej odżywki białkowej, awokado, pomarańczy…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb ciecierzyca cytryna czosnek oliwa oliwki">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb ciecierzyca cytryna czosnek oliwa oliwki" data-slug="sniadania-z-biedronki-hummus-pietruszkowy" data-title="Śniadania z Biedronki: Hummus pietruszkowy" data-kcal="525" data-protein="15">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/sniadania-z-biedronki-hummus-pietruszkowy/">Śniadania z Biedronki: Hummus pietruszkowy</a>
+<button type="button" class="p-fav" data-fav="sniadania-z-biedronki-hummus-pietruszkowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Śniadania z Biedronki: Hummus pietruszkowy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">525 kcal</span>
 </div>
 <div class="p-card__tags">ciecierzycy konserwowej, czosnku, soku z cytryny, oliwy z oliwek…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek makaron marchewka oliwa pomidory-puszka sos-sojowy tofu">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek makaron marchewka oliwa pomidory-puszka sos-sojowy tofu" data-slug="vege-spaghetti-bolognese" data-title="Vege spaghetti bolognese" data-kcal="489" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/vege-spaghetti-bolognese/">Vege spaghetti bolognese</a>
+<button type="button" class="p-fav" data-fav="vege-spaghetti-bolognese" aria-pressed="false" aria-label="Dodaj do ulubionych: Vege spaghetti bolognese"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">489 kcal</span>
 </div>
 <div class="p-card__tags">tofu naturalnego, makaronu spaghetti, pomidorów w puszce, sosu sojowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jogurt limonka mango migdaly mleko odzywka platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jogurt limonka mango migdaly mleko odzywka platki-owsiane" data-slug="jogurtowo-mleczny-koktajl-z-mieta-i" data-title="Jogurtowo-mleczny koktajl z miętą i mango" data-kcal="533" data-protein="33">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jogurtowo-mleczny-koktajl-z-mieta-i/">Jogurtowo-mleczny koktajl z miętą i mango</a>
+<button type="button" class="p-fav" data-fav="jogurtowo-mleczny-koktajl-z-mieta-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurtowo-mleczny koktajl z miętą i mango"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">533 kcal</span>
 </div>
 <div class="p-card__tags">napoju sojowego, jogurtu roślinnego, mango, limonki, płatków migdałów…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb cytryna czosnek mozzarella oliwa pomidor salata">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb cytryna czosnek mozzarella oliwa pomidor salata" data-slug="salatka-caprese-z-sosem-bazyliowym-i" data-title="Sałatka caprese z sosem bazyliowym i pieczywem" data-kcal="518" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-caprese-z-sosem-bazyliowym-i/">Sałatka caprese z sosem bazyliowym i pieczywem</a>
+<button type="button" class="p-fav" data-fav="salatka-caprese-z-sosem-bazyliowym-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka caprese z sosem bazyliowym i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">518 kcal</span>
 </div>
 <div class="p-card__tags">sera mozzarella, pomidora, rukoli, czosnku, soku z cytryny…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek dynia imbir marchewka oliwa pomidory-puszka ryz soczewica">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek dynia imbir marchewka oliwa pomidory-puszka ryz soczewica" data-slug="dahl-z-soczewicy-z-pestkami-dyni" data-title="Dahl z soczewicy z pestkami dyni" data-kcal="511" data-protein="23">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/dahl-z-soczewicy-z-pestkami-dyni/">Dahl z soczewicy z pestkami dyni</a>
+<button type="button" class="p-fav" data-fav="dahl-z-soczewicy-z-pestkami-dyni" aria-pressed="false" aria-label="Dodaj do ulubionych: Dahl z soczewicy z pestkami dyni"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">511 kcal</span>
 </div>
 <div class="p-card__tags">żółtej soczewicy, cebuli, czosnku, imbiru, marchwii, pomidorów w puszce…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan czekolada mleko odzywka orzechy platki-owsiane wisnie">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan czekolada mleko odzywka orzechy platki-owsiane wisnie" data-slug="owsianka-na-mleku-roslinnym-z-wisniami" data-title="Owsianka na mleku roślinnym z wiśniami, orzechami, bananem i czekoladą" data-kcal="565" data-protein="31">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-na-mleku-roslinnym-z-wisniami/">Owsianka na mleku roślinnym z wiśniami, orzechami, bananem i czekoladą</a>
+<button type="button" class="p-fav" data-fav="owsianka-na-mleku-roslinnym-z-wisniami" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka na mleku roślinnym z wiśniami, orzechami, bananem i czekoladą"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">565 kcal</span>
 </div>
 <div class="p-card__tags">napoju sojowego, płatków owsianych, wiśni, orzechów włoskich, banana…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado cebula chleb oliwa platki-drozdzowe pomidor slonecznik tofu">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado cebula chleb oliwa platki-drozdzowe pomidor slonecznik tofu" data-slug="tofucznica-z-awokado-pomidorem-i-pieczywem" data-title="Tofucznica z awokado, pomidorem i pieczywem" data-kcal="536" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tofucznica-z-awokado-pomidorem-i-pieczywem/">Tofucznica z awokado, pomidorem i pieczywem</a>
+<button type="button" class="p-fav" data-fav="tofucznica-z-awokado-pomidorem-i-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tofucznica z awokado, pomidorem i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">536 kcal</span>
 </div>
 <div class="p-card__tags">tofu naturalnego, awokado, pomidora, cebuli, nasion słonecznika…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek marchewka mozzarella oliwa pomidor pomidory-puszka seler">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek marchewka mozzarella oliwa pomidor pomidory-puszka seler" data-slug="zupa-krem-z-pomidorow-2" data-title="Zupa krem z pomidorów" data-kcal="503" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-krem-z-pomidorow-2/">Zupa krem z pomidorów</a>
+<button type="button" class="p-fav" data-fav="zupa-krem-z-pomidorow-2" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa krem z pomidorów"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">503 kcal</span>
 </div>
 <div class="p-card__tags">marchewki, selera naciowego, cebuli, czosnku, pomidora, oliwy z oliwek…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jogurt orzechy wafle">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jogurt orzechy wafle" data-slug="skyr-orzechy-wafle-ryzowe" data-title="Skyr + orzechy + wafle ryżowe" data-kcal="521" data-protein="31">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/skyr-orzechy-wafle-ryzowe/">Skyr + orzechy + wafle ryżowe</a>
+<button type="button" class="p-fav" data-fav="skyr-orzechy-wafle-ryzowe" aria-pressed="false" aria-label="Dodaj do ulubionych: Skyr + orzechy + wafle ryżowe"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">521 kcal</span>
 </div>
 <div class="p-card__tags">jogurtu skyr, wafli ryżowych, orzechów włoskich</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cytryna czosnek losos oliwa serek-smietankowy szpinak tortilla">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cytryna czosnek losos oliwa serek-smietankowy szpinak tortilla" data-slug="roladki-z-lososiem-i-twarozkiem-szpinakowym" data-title="Roladki z łososiem i twarożkiem szpinakowym" data-kcal="557" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/roladki-z-lososiem-i-twarozkiem-szpinakowym/">Roladki z łososiem i twarożkiem szpinakowym</a>
+<button type="button" class="p-fav" data-fav="roladki-z-lososiem-i-twarozkiem-szpinakowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Roladki z łososiem i twarożkiem szpinakowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">557 kcal</span>
 </div>
 <div class="p-card__tags">łososia wędzonego, tortilli pełnoziarnistej, serka śmietankowego, szpinaku…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="brokul cytryna oliwa pstrag ziemniaki">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="brokul cytryna oliwa pstrag ziemniaki" data-slug="filet-z-pstraga-z-ziemniakami-i" data-title="Filet z pstrąga z ziemniakami i brokułami" data-kcal="504" data-protein="38">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/filet-z-pstraga-z-ziemniakami-i/">Filet z pstrąga z ziemniakami i brokułami</a>
+<button type="button" class="p-fav" data-fav="filet-z-pstraga-z-ziemniakami-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Filet z pstrąga z ziemniakami i brokułami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">504 kcal</span>
 </div>
 <div class="p-card__tags">fileta z pstrąga, ziemniaków, brokuła, oleju, cytryny</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="kakao maliny migdaly mleko odzywka platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="kakao maliny migdaly mleko odzywka platki-owsiane" data-slug="czekoladowa-owsianka-na-mleku-roslinnym-z" data-title="Czekoladowa owsianka na mleku roślinnym z malinami" data-kcal="561" data-protein="35">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/czekoladowa-owsianka-na-mleku-roslinnym-z/">Czekoladowa owsianka na mleku roślinnym z malinami</a>
+<button type="button" class="p-fav" data-fav="czekoladowa-owsianka-na-mleku-roslinnym-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Czekoladowa owsianka na mleku roślinnym z malinami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">561 kcal</span>
 </div>
 <div class="p-card__tags">napoju sojowego, płatków owsianych, kakao, malin, płatków migdałów…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="brokul chleb cukinia jajka maka oliwa pomidory-suszone szpinak">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="brokul chleb cukinia jajka maka oliwa pomidory-suszone szpinak" data-slug="wytrawny-omlet-z-warzywami-i-suszonymi" data-title="Wytrawny omlet z warzywami i suszonymi pomidorami" data-kcal="521" data-protein="31">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/wytrawny-omlet-z-warzywami-i-suszonymi/">Wytrawny omlet z warzywami i suszonymi pomidorami</a>
+<button type="button" class="p-fav" data-fav="wytrawny-omlet-z-warzywami-i-suszonymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Wytrawny omlet z warzywami i suszonymi pomidorami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">521 kcal</span>
 </div>
 <div class="p-card__tags">jajek, cukinii, pomidora suszonego, brokuła, mąki pszennej pełnoziarnistej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek imbir marchewka oliwa por ryz seler sos-sojowy tofu">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek imbir marchewka oliwa por ryz seler sos-sojowy tofu" data-slug="ryz-smazony-z-warzywami-i-tofu" data-title="Ryż smażony z warzywami i tofu" data-kcal="487" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryz-smazony-z-warzywami-i-tofu/">Ryż smażony z warzywami i tofu</a>
+<button type="button" class="p-fav" data-fav="ryz-smazony-z-warzywami-i-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryż smażony z warzywami i tofu"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">487 kcal</span>
 </div>
 <div class="p-card__tags">tofu, marchwii, pora, selera naciowego, ryżu, cebuli, imbiru (2cm)…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="czekolada maliny mleko odzywka ryz">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="czekolada maliny mleko odzywka ryz" data-slug="ryz-na-mleku-z-czekolada-i" data-title="Ryż na mleku z czekoladą i malinami" data-kcal="544" data-protein="21">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryz-na-mleku-z-czekolada-i/">Ryż na mleku z czekoladą i malinami</a>
+<button type="button" class="p-fav" data-fav="ryz-na-mleku-z-czekolada-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryż na mleku z czekoladą i malinami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">544 kcal</span>
 </div>
 <div class="p-card__tags">ryżu białego, mleka roślinnego, czekolady gorzkiej, malin…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jogurt maslo pomidor rzodkiewka twarog">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jogurt maslo pomidor rzodkiewka twarog" data-slug="kanapki-z-ziolowym-twarozkiem" data-title="Kanapki z ziołowym twarożkiem" data-kcal="524" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-ziolowym-twarozkiem/">Kanapki z ziołowym twarożkiem</a>
+<button type="button" class="p-fav" data-fav="kanapki-z-ziolowym-twarozkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z ziołowym twarożkiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">524 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego razowego, sera twarogowego półtłustego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek fasola jogurt kapusta musztarda oliwa pietruszka-korzen platki-owsiane por sos-sojowy">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek fasola jogurt kapusta musztarda oliwa pietruszka-korzen platki-owsiane por sos-sojowy" data-slug="kotlety-z-fasoli-z-surowka" data-title="Kotlety z fasoli z surówką" data-kcal="476" data-protein="24">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kotlety-z-fasoli-z-surowka/">Kotlety z fasoli z surówką</a>
+<button type="button" class="p-fav" data-fav="kotlety-z-fasoli-z-surowka" aria-pressed="false" aria-label="Dodaj do ulubionych: Kotlety z fasoli z surówką"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">476 kcal</span>
 </div>
 <div class="p-card__tags">czerwonej fasoli konserwowej, płatków owsianych górskich, pietruszki…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jajka maka miod owoce-mrozone">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jajka maka miod owoce-mrozone" data-slug="omlet-na-slodko-z-miodem" data-title="Omlet na słodko z miodem" data-kcal="521" data-protein="33">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/omlet-na-slodko-z-miodem/">Omlet na słodko z miodem</a>
+<button type="button" class="p-fav" data-fav="omlet-na-slodko-z-miodem" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet na słodko z miodem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">521 kcal</span>
 </div>
 <div class="p-card__tags">jajek kurzych, mąki pszennej pełnoziarnistej, miodu…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka mozzarella oliwa pomidor salata">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka mozzarella oliwa pomidor salata" data-slug="omletowa-tortilla" data-title="Omletowa tortilla" data-kcal="548" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/omletowa-tortilla/">Omletowa tortilla</a>
+<button type="button" class="p-fav" data-fav="omletowa-tortilla" aria-pressed="false" aria-label="Dodaj do ulubionych: Omletowa tortilla"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">548 kcal</span>
 </div>
 <div class="p-card__tags">jajek kurzych, pomidorków koktajlowych, sera mozzarella, roszponki…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek kapusta makaron oliwa pieczarki soczewica">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek kapusta makaron oliwa pieczarki soczewica" data-slug="makaron-lazanki-z-soczewica-pieczarkami-i" data-title="Makaron łazanki z soczewicą, pieczarkami i kapustą kiszoną" data-kcal="482" data-protein="22">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-lazanki-z-soczewica-pieczarkami-i/">Makaron łazanki z soczewicą, pieczarkami i kapustą kiszoną</a>
+<button type="button" class="p-fav" data-fav="makaron-lazanki-z-soczewica-pieczarkami-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron łazanki z soczewicą, pieczarkami i kapustą kiszoną"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">482 kcal</span>
 </div>
 <div class="p-card__tags">soczewicy zielonej, kapusty kiszonej, makaronu łazanki, pieczarek…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan czekolada maslo-orzechowe mleko odzywka orzechy platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan czekolada maslo-orzechowe mleko odzywka orzechy platki-owsiane" data-slug="owsianka-snickers" data-title="Owsianka snickers" data-kcal="443" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-snickers/">Owsianka snickers</a>
+<button type="button" class="p-fav" data-fav="owsianka-snickers" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka snickers"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">443 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych, napoju roślinnego np. migdałowego, czekolady gorzkiej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka losos papryka pomidor">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka losos papryka pomidor" data-slug="grahamka-z-lososiem-wedzonym-i-warzywami" data-title="Grahamka z łososiem wędzonym i warzywami" data-kcal="440" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/grahamka-z-lososiem-wedzonym-i-warzywami/">Grahamka z łososiem wędzonym i warzywami</a>
+<button type="button" class="p-fav" data-fav="grahamka-z-lososiem-wedzonym-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Grahamka z łososiem wędzonym i warzywami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">440 kcal</span>
 </div>
 <div class="p-card__tags">bułki grahamki, pomidora, papryki czerwonej, łososia wędzonego</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia makaron mozzarella oliwa papryka pesto salata">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia makaron mozzarella oliwa papryka pesto salata" data-slug="makaron-fusilli-z-czerwonym-pesto-i" data-title="Makaron fusilli z czerwonym pesto i mozzarellą" data-kcal="366" data-protein="15">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-fusilli-z-czerwonym-pesto-i/">Makaron fusilli z czerwonym pesto i mozzarellą</a>
+<button type="button" class="p-fav" data-fav="makaron-fusilli-z-czerwonym-pesto-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron fusilli z czerwonym pesto i mozzarellą"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">366 kcal</span>
 </div>
 <div class="p-card__tags">pesto czerwonego, papryki czerwonej, cebuli, cukinii, mozzarelli, rukoli…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan borowki jajka maka oliwa twarog">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan borowki jajka maka oliwa twarog" data-slug="placuszki-twarogowe" data-title="Placuszki twarogowe" data-kcal="465" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/placuszki-twarogowe/">Placuszki twarogowe</a>
+<button type="button" class="p-fav" data-fav="placuszki-twarogowe" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki twarogowe"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">465 kcal</span>
 </div>
 <div class="p-card__tags">twarogu półtłustego, jajka kurzego, mąki orkiszowej pełnoziarnistej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan jogurt maliny orzechy platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan jogurt maliny orzechy platki-owsiane" data-slug="bananowa-owsianka-z-malinami" data-title="Bananowa owsianka z malinami" data-kcal="465" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/bananowa-owsianka-z-malinami/">Bananowa owsianka z malinami</a>
+<button type="button" class="p-fav" data-fav="bananowa-owsianka-z-malinami" aria-pressed="false" aria-label="Dodaj do ulubionych: Bananowa owsianka z malinami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">465 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych górskich, malin, banana, orzechów włoskich, jogurtu skyr</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula maka mozzarella oliwa pieczarki pomidory-suszone">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula maka mozzarella oliwa pieczarki pomidory-suszone" data-slug="wege-omlet-z-mozzarella-i-suszonymi" data-title="Wege omlet z mozzarellą i suszonymi pomidorami" data-kcal="461" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/wege-omlet-z-mozzarella-i-suszonymi/">Wege omlet z mozzarellą i suszonymi pomidorami</a>
+<button type="button" class="p-fav" data-fav="wege-omlet-z-mozzarella-i-suszonymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Wege omlet z mozzarellą i suszonymi pomidorami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">461 kcal</span>
 </div>
 <div class="p-card__tags">mąki z ciecierzycy, suszonych pomidorów, pieczarek, cebuli…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ananas awokado cytryna czosnek imbir miso ogorek oliwa pomidor soczewica sos-sojowy">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ananas awokado cytryna czosnek imbir miso ogorek oliwa pomidor soczewica sos-sojowy" data-slug="buddha-bowl-z-awokado" data-title="Buddha bowl z awokado" data-kcal="380" data-protein="17">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/buddha-bowl-z-awokado/">Buddha bowl z awokado</a>
+<button type="button" class="p-fav" data-fav="buddha-bowl-z-awokado" aria-pressed="false" aria-label="Dodaj do ulubionych: Buddha bowl z awokado"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">380 kcal</span>
 </div>
 <div class="p-card__tags">soczewicy czarnej, awokado, pomidorków koktajlowych, ogórka zielonego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb cytryna czosnek hummus imbir kielki marchewka ogorek olej-sezamowy sos-sojowy syrop-klonowy tofu">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb cytryna czosnek hummus imbir kielki marchewka ogorek olej-sezamowy sos-sojowy syrop-klonowy tofu" data-slug="kanapka-z-grillowanym-tofu" data-title="Kanapka z grillowanym tofu" data-kcal="475" data-protein="24">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-grillowanym-tofu/">Kanapka z grillowanym tofu</a>
+<button type="button" class="p-fav" data-fav="kanapka-z-grillowanym-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z grillowanym tofu"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">475 kcal</span>
 </div>
 <div class="p-card__tags">tofu naturalnego, sosu sojowego, czosnku, imbiru, syropu klonowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan kakao maslo-orzechowe mleko odzywka">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan kakao maslo-orzechowe mleko odzywka" data-slug="koktajl-czekoladowy" data-title="Koktajl czekoladowy" data-kcal="469" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/koktajl-czekoladowy/">Koktajl czekoladowy</a>
+<button type="button" class="p-fav" data-fav="koktajl-czekoladowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Koktajl czekoladowy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">469 kcal</span>
 </div>
 <div class="p-card__tags">banana, wegańskiej odżywki białkowej, kakao, masła orzechowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka pomidor rzodkiewka salata serek-smietankowy">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka pomidor rzodkiewka salata serek-smietankowy" data-slug="kanapka-z-jajkiem" data-title="Kanapka z jajkiem" data-kcal="443" data-protein="23">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-jajkiem/">Kanapka z jajkiem</a>
+<button type="button" class="p-fav" data-fav="kanapka-z-jajkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z jajkiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">443 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego, serka kanapkowego, jaj, pomidora, rzodkiewki, rukoli</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cytryna czosnek imbir limonka losos oliwa ryz sezam sos-sojowy">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cytryna czosnek imbir limonka losos oliwa ryz sezam sos-sojowy" data-slug="losos-w-sezamie" data-title="Łosoś w sezamie" data-kcal="379" data-protein="16">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/losos-w-sezamie/">Łosoś w sezamie</a>
+<button type="button" class="p-fav" data-fav="losos-w-sezamie" aria-pressed="false" aria-label="Dodaj do ulubionych: Łosoś w sezamie"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">379 kcal</span>
 </div>
 <div class="p-card__tags">świeżego łososia, ryżu basmati, cytryny, sezamu, sosu sojowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chia jogurt orzechy platki-owsiane syrop-klonowy zurawina">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chia jogurt orzechy platki-owsiane syrop-klonowy zurawina" data-slug="domowa-granola-z-jogurtem" data-title="Domowa granola z jogurtem" data-kcal="466" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/domowa-granola-z-jogurtem/">Domowa granola z jogurtem</a>
+<button type="button" class="p-fav" data-fav="domowa-granola-z-jogurtem" aria-pressed="false" aria-label="Dodaj do ulubionych: Domowa granola z jogurtem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">466 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych górskich, żurawiny suszonej, orzechów włoskich…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jagody maka migdaly mleko odzywka">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jagody maka migdaly mleko odzywka" data-slug="budyn-na-mleku-roslinnym-z-jagodami" data-title="Budyń na mleku roślinnym z jagodami i płatkami migdałowymi" data-kcal="475" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/budyn-na-mleku-roslinnym-z-jagodami/">Budyń na mleku roślinnym z jagodami i płatkami migdałowymi</a>
+<button type="button" class="p-fav" data-fav="budyn-na-mleku-roslinnym-z-jagodami" aria-pressed="false" aria-label="Dodaj do ulubionych: Budyń na mleku roślinnym z jagodami i płatkami migdałowymi"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">475 kcal</span>
 </div>
 <div class="p-card__tags">mleka roślinnego, mąki ziemniaczanej, płatków migdałowych, jagód…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb maslo mleko ogorek papryka pomidor rzodkiewka salata twarog">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb maslo mleko ogorek papryka pomidor rzodkiewka salata twarog" data-slug="pasta-z-twarozku-z-czarnuszka-z" data-title="Pasta z twarożku z czarnuszką z warzywami" data-kcal="457" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-z-twarozku-z-czarnuszka-z/">Pasta z twarożku z czarnuszką z warzywami</a>
+<button type="button" class="p-fav" data-fav="pasta-z-twarozku-z-czarnuszka-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z twarożku z czarnuszką z warzywami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">457 kcal</span>
 </div>
 <div class="p-card__tags">sera twarogowego półtłustego, mleka roślinnego, papryki, pomidora, ogórka…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia czosnek feta kuskus oliwa papryka pomidor">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia czosnek feta kuskus oliwa papryka pomidor" data-slug="cukinia-nadziewana-kasza-kuskus-z-warzywami" data-title="Cukinia nadziewana kaszą kuskus z warzywami i serem feta" data-kcal="375" data-protein="18">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/cukinia-nadziewana-kasza-kuskus-z-warzywami/">Cukinia nadziewana kaszą kuskus z warzywami i serem feta</a>
+<button type="button" class="p-fav" data-fav="cukinia-nadziewana-kasza-kuskus-z-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Cukinia nadziewana kaszą kuskus z warzywami i serem feta"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">375 kcal</span>
 </div>
 <div class="p-card__tags">kaszy kuskus, cukinii, cebuli, czosnku, papryki żółtej, pomidora…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bob cebula chleb cytryna czosnek odzywka oliwa pomidor szpinak">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bob cebula chleb cytryna czosnek odzywka oliwa pomidor szpinak" data-slug="pasta-z-bobu-ze-szpinakiem-swiezymi" data-title="Pasta z bobu ze szpinakiem, świeżymi pomidorami i pieczywem" data-kcal="483" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-z-bobu-ze-szpinakiem-swiezymi/">Pasta z bobu ze szpinakiem, świeżymi pomidorami i pieczywem</a>
+<button type="button" class="p-fav" data-fav="pasta-z-bobu-ze-szpinakiem-swiezymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z bobu ze szpinakiem, świeżymi pomidorami i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">483 kcal</span>
 </div>
 <div class="p-card__tags">bobu, czosnku, cebuli, oliwy z oliwek, szpinaku, pomidora, chleba razowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="maliny mleko odzywka platki-jaglane wiorki">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="maliny mleko odzywka platki-jaglane wiorki" data-slug="kokosowy-krem-jaglany-z-malinami" data-title="Kokosowy krem jaglany z malinami" data-kcal="461" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kokosowy-krem-jaglany-z-malinami/">Kokosowy krem jaglany z malinami</a>
+<button type="button" class="p-fav" data-fav="kokosowy-krem-jaglany-z-malinami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kokosowy krem jaglany z malinami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">461 kcal</span>
 </div>
 <div class="p-card__tags">mleka roślinnego, płatków jaglanych, malin świeżych lub mrożonych…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado chleb cytryna jajka pomidor">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado chleb cytryna jajka pomidor" data-slug="kanapka-z-pasta-z-jajka-i" data-title="Kanapka z pastą z jajka i awokado" data-kcal="463" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-pasta-z-jajka-i/">Kanapka z pastą z jajka i awokado</a>
+<button type="button" class="p-fav" data-fav="kanapka-z-pasta-z-jajka-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą z jajka i awokado"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">463 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego razowego, jajek kurzych, awokado, soku z cytryny, pomidora</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek fasola kakao kapusta kukurydza marchewka oliwa papryka pomidory-puszka ryz">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek fasola kakao kapusta kukurydza marchewka oliwa papryka pomidory-puszka ryz" data-slug="weganskie-chilli-sin-carne" data-title="Wegańskie chilli sin carne" data-kcal="372" data-protein="11">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/weganskie-chilli-sin-carne/">Wegańskie chilli sin carne</a>
+<button type="button" class="p-fav" data-fav="weganskie-chilli-sin-carne" aria-pressed="false" aria-label="Dodaj do ulubionych: Wegańskie chilli sin carne"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">372 kcal</span>
 </div>
 <div class="p-card__tags">kapusty białej, fasoli czarnej konserwowej, kukurydzy konserwowej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="batat ciecierzyca oliwa pomidor salata tofu">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="batat ciecierzyca oliwa pomidor salata tofu" data-slug="salatka-z-pieczonych-batatow-i-ciecierzycy" data-title="Sałatka z pieczonych batatów i ciecierzycy" data-kcal="498" data-protein="29">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-z-pieczonych-batatow-i-ciecierzycy/">Sałatka z pieczonych batatów i ciecierzycy</a>
+<button type="button" class="p-fav" data-fav="salatka-z-pieczonych-batatow-i-ciecierzycy" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z pieczonych batatów i ciecierzycy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">498 kcal</span>
 </div>
 <div class="p-card__tags">małego batata, oliwy z oliwek, ciecierzycy konserwowej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jajka jogurt maka oliwa truskawki">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jajka jogurt maka oliwa truskawki" data-slug="placuszki-z-truskawkami" data-title="Placuszki z truskawkami" data-kcal="466" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/placuszki-z-truskawkami/">Placuszki z truskawkami</a>
+<button type="button" class="p-fav" data-fav="placuszki-z-truskawkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki z truskawkami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">466 kcal</span>
 </div>
 <div class="p-card__tags">mąki żytniej pełnoziarnistej, jogurtu greckiego/skyr, truskawek…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka ogorek rzodkiewka serek-wiejski">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka ogorek rzodkiewka serek-wiejski" data-slug="pieczywo-z-wiosennym-serkiem-wiejskim-rzodkiewka" data-title="Pieczywo z wiosennym serkiem wiejskim, rzodkiewką i ogórkiem" data-kcal="468" data-protein="36">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pieczywo-z-wiosennym-serkiem-wiejskim-rzodkiewka/">Pieczywo z wiosennym serkiem wiejskim, rzodkiewką i ogórkiem</a>
+<button type="button" class="p-fav" data-fav="pieczywo-z-wiosennym-serkiem-wiejskim-rzodkiewka" aria-pressed="false" aria-label="Dodaj do ulubionych: Pieczywo z wiosennym serkiem wiejskim, rzodkiewką i ogórkiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">468 kcal</span>
 </div>
 <div class="p-card__tags">serka wiejskiego, rzodkiewek, ogórka, bułki grahamki</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula ciecierzyca cytryna kuskus ogorek oliwa papryka pomidor">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula ciecierzyca cytryna kuskus ogorek oliwa papryka pomidor" data-slug="tabbouleh-z-ogorkiem-i-pomidorem" data-title="Tabbouleh z ogórkiem i pomidorem" data-kcal="382" data-protein="13">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tabbouleh-z-ogorkiem-i-pomidorem/">Tabbouleh z ogórkiem i pomidorem</a>
+<button type="button" class="p-fav" data-fav="tabbouleh-z-ogorkiem-i-pomidorem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tabbouleh z ogórkiem i pomidorem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">382 kcal</span>
 </div>
 <div class="p-card__tags">kuskusu, cebuli, papryki, ogórka zielonego, pomidora…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bagietka cebula mozzarella oliwa pomidor slonecznik">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bagietka cebula mozzarella oliwa pomidor slonecznik" data-slug="zapiekanka-z-pomidorami-i-mozzarella" data-title="Zapiekanka z pomidorami i mozzarellą" data-kcal="474" data-protein="21">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zapiekanka-z-pomidorami-i-mozzarella/">Zapiekanka z pomidorami i mozzarellą</a>
+<button type="button" class="p-fav" data-fav="zapiekanka-z-pomidorami-i-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka z pomidorami i mozzarellą"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">474 kcal</span>
 </div>
 <div class="p-card__tags">bagietki, małego pomidora, sera mozzarella, małej cebuli czerwonej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="borowki jogurt orzechy platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="borowki jogurt orzechy platki-owsiane" data-slug="jogurt-z-borowkami-i-orzechami" data-title="Jogurt z borówkami i orzechami" data-kcal="468" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jogurt-z-borowkami-i-orzechami/">Jogurt z borówkami i orzechami</a>
+<button type="button" class="p-fav" data-fav="jogurt-z-borowkami-i-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurt z borówkami i orzechami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">468 kcal</span>
 </div>
 <div class="p-card__tags">borówek świeżych lub mrożonych, jogurtu, mieszanki orzechów, płatków owsianych</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="burak chleb ciecierzyca cytryna kielki maslo-orzechowe oliwa papryka szpinak">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="burak chleb ciecierzyca cytryna kielki maslo-orzechowe oliwa papryka szpinak" data-slug="buraczany-hummus-z-warzywami-i-pieczywem" data-title="Buraczany hummus z warzywami i pieczywem" data-kcal="457" data-protein="16">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/buraczany-hummus-z-warzywami-i-pieczywem/">Buraczany hummus z warzywami i pieczywem</a>
+<button type="button" class="p-fav" data-fav="buraczany-hummus-z-warzywami-i-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Buraczany hummus z warzywami i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">457 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego razowego, ciecierzycy konserwowej…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula chrzan jajka jogurt oliwa pieczarki platki-owsiane seler ziemniaki">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula chrzan jajka jogurt oliwa pieczarki platki-owsiane seler ziemniaki" data-slug="zapiekane-pieczarki-portobello-z-farszem-z" data-title="Zapiekane pieczarki portobello z farszem z jajek" data-kcal="363" data-protein="22">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zapiekane-pieczarki-portobello-z-farszem-z/">Zapiekane pieczarki portobello z farszem z jajek</a>
+<button type="button" class="p-fav" data-fav="zapiekane-pieczarki-portobello-z-farszem-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekane pieczarki portobello z farszem z jajek"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">363 kcal</span>
 </div>
 <div class="p-card__tags">pieczarek portobello, jajek kurzych, małej cebuli, płatków owsianych…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="kakao mleko odzywka platki-inne truskawki wiorki">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="kakao mleko odzywka platki-inne truskawki wiorki" data-slug="pudding-czekoladowy-z-truskawkami" data-title="Pudding czekoladowy z truskawkami" data-kcal="456" data-protein="21">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pudding-czekoladowy-z-truskawkami/">Pudding czekoladowy z truskawkami</a>
+<button type="button" class="p-fav" data-fav="pudding-czekoladowy-z-truskawkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Pudding czekoladowy z truskawkami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">456 kcal</span>
 </div>
 <div class="p-card__tags">mleka roślinnego np. migdałowe, truskawek, kakao, płatków ryżowych…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="czekolada mleko odzywka platki-owsiane wiorki">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="czekolada mleko odzywka platki-owsiane wiorki" data-slug="owsianka-bounty" data-title="Owsianka bounty" data-kcal="455" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-bounty/">Owsianka bounty</a>
+<button type="button" class="p-fav" data-fav="owsianka-bounty" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka bounty"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">455 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych, czekolady gorzkiej, wiórków kokosowych…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb ogorek pomidor salata ser-zolty serek-smietankowy">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb ogorek pomidor salata ser-zolty serek-smietankowy" data-slug="kanapki-z-zoltym-serem-i-warzywami" data-title="Kanapki z żółtym serem i warzywami" data-kcal="458" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-zoltym-serem-i-warzywami/">Kanapki z żółtym serem i warzywami</a>
+<button type="button" class="p-fav" data-fav="kanapki-z-zoltym-serem-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z żółtym serem i warzywami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">458 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego razowego, małego pomidora, małego ogórka, rukoli…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia feta marchewka oliwa papryka ziemniaki">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia feta marchewka oliwa papryka ziemniaki" data-slug="zapiekanka-warzywna-z-serem-feta" data-title="Zapiekanka warzywna z serem feta" data-kcal="364" data-protein="16">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zapiekanka-warzywna-z-serem-feta/">Zapiekanka warzywna z serem feta</a>
+<button type="button" class="p-fav" data-fav="zapiekanka-warzywna-z-serem-feta" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka warzywna z serem feta"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">364 kcal</span>
 </div>
 <div class="p-card__tags">cukinii, ziemniaków, sera feta, małej czerwonej cebuli, marchewki…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb losos majonez ogorek olej-sezamowy por sos-ostry sos-sojowy">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb losos majonez ogorek olej-sezamowy por sos-ostry sos-sojowy" data-slug="pasta-z-lososia-teriyaki-z-pieczywem" data-title="Pasta z łososia teriyaki z pieczywem" data-kcal="456" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-z-lososia-teriyaki-z-pieczywem/">Pasta z łososia teriyaki z pieczywem</a>
+<button type="button" class="p-fav" data-fav="pasta-z-lososia-teriyaki-z-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z łososia teriyaki z pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">456 kcal</span>
 </div>
 <div class="p-card__tags">łososia świeżego, ogórka zielonego, pora, majonezu, sosu sojowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb maslo-orzechowe twarog wisnie">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb maslo-orzechowe twarog wisnie" data-slug="kanapki-z-twarogiem-maslem-orzechowym-i" data-title="Kanapki z twarogiem, masłem orzechowym i dżemem" data-kcal="447" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-twarogiem-maslem-orzechowym-i/">Kanapki z twarogiem, masłem orzechowym i dżemem</a>
+<button type="button" class="p-fav" data-fav="kanapki-z-twarogiem-maslem-orzechowym-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z twarogiem, masłem orzechowym i dżemem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">447 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego, twarogu chudego, masła orzechowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka mozzarella orzechy pomidor">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka mozzarella orzechy pomidor" data-slug="mozzarella-pomidor-grahamka-i-orzechy" data-title="Mozzarella, pomidor, grahamka i orzechy" data-kcal="469" data-protein="22">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/mozzarella-pomidor-grahamka-i-orzechy/">Mozzarella, pomidor, grahamka i orzechy</a>
+<button type="button" class="p-fav" data-fav="mozzarella-pomidor-grahamka-i-orzechy" aria-pressed="false" aria-label="Dodaj do ulubionych: Mozzarella, pomidor, grahamka i orzechy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">469 kcal</span>
 </div>
 <div class="p-card__tags">bułki grahamki, sera mozzarella, orzechów włoskich, małego pomidora</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="awokado grana-padano makaron pomidor salata serek-smietankowy">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="awokado grana-padano makaron pomidor salata serek-smietankowy" data-slug="makaron-penne-z-awokado-pomidorkami-koktajlowymi" data-title="Makaron penne z awokado, pomidorkami koktajlowymi, rukolą, bazylią i serem grana padano" data-kcal="385" data-protein="13">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-penne-z-awokado-pomidorkami-koktajlowymi/">Makaron penne z awokado, pomidorkami koktajlowymi, rukolą, bazylią i serem grana padano</a>
+<button type="button" class="p-fav" data-fav="makaron-penne-z-awokado-pomidorkami-koktajlowymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron penne z awokado, pomidorkami koktajlowymi, rukolą, bazylią i serem grana padano"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">385 kcal</span>
 </div>
 <div class="p-card__tags">makaronu penne, awokado, serka śmietankowego, pomidorków koktajlowych…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="czekolada kakao migdaly mleko odzywka platki-jaglane porzeczki">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="czekolada kakao migdaly mleko odzywka platki-jaglane porzeczki" data-slug="czekoladowy-krem-jaglany-z-porzeczkami" data-title="Czekoladowy krem jaglany z porzeczkami" data-kcal="451" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/czekoladowy-krem-jaglany-z-porzeczkami/">Czekoladowy krem jaglany z porzeczkami</a>
+<button type="button" class="p-fav" data-fav="czekoladowy-krem-jaglany-z-porzeczkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Czekoladowy krem jaglany z porzeczkami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">451 kcal</span>
 </div>
 <div class="p-card__tags">mleka roślinnego, płatków jaglanych, porzeczek czarnych, kakao…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jogurt maslo-orzechowe miod orzechy platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jogurt maslo-orzechowe miod orzechy platki-owsiane" data-slug="owsiane-batoniki-z-miodem-i-maslem" data-title="Owsiane batoniki z miodem i masłem orzechowym" data-kcal="481" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsiane-batoniki-z-miodem-i-maslem/">Owsiane batoniki z miodem i masłem orzechowym</a>
+<button type="button" class="p-fav" data-fav="owsiane-batoniki-z-miodem-i-maslem" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiane batoniki z miodem i masłem orzechowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">481 kcal</span>
 </div>
 <div class="p-card__tags">płatków owsianych, masła orzechowego, mieszanych orzechów, miodu, jogurtu skyr</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula chleb fasola jablko ogorki-kiszone oliwa">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula chleb fasola jablko ogorki-kiszone oliwa" data-slug="pasta-z-bialej-fasoli-z-ogorkiem" data-title="Pasta z białej fasoli z ogórkiem kiszonym i pieczywem" data-kcal="458" data-protein="17">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-z-bialej-fasoli-z-ogorkiem/">Pasta z białej fasoli z ogórkiem kiszonym i pieczywem</a>
+<button type="button" class="p-fav" data-fav="pasta-z-bialej-fasoli-z-ogorkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z białej fasoli z ogórkiem kiszonym i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">458 kcal</span>
 </div>
 <div class="p-card__tags">chleba żytniego razowego, białej fasoli konserwowej, małej cebuli…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula ciecierzyca czosnek marchewka oliwa pietruszka-korzen por tofu">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula ciecierzyca czosnek marchewka oliwa pietruszka-korzen por tofu" data-slug="zupa-krem-z-ciecierzycy-i-pieczonych" data-title="Zupa krem z ciecierzycy i pieczonych warzyw" data-kcal="377" data-protein="21">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-krem-z-ciecierzycy-i-pieczonych/">Zupa krem z ciecierzycy i pieczonych warzyw</a>
+<button type="button" class="p-fav" data-fav="zupa-krem-z-ciecierzycy-i-pieczonych" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa krem z ciecierzycy i pieczonych warzyw"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">377 kcal</span>
 </div>
 <div class="p-card__tags">marchewki, ciecierzycy konserwowej, czosnku, małej cebuli, pora…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="losos ogorek rzodkiewka salata serek-smietankowy tortilla">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="losos ogorek rzodkiewka salata serek-smietankowy tortilla" data-slug="tortilla-z-wedzonym-lososiem-i-warzywami" data-title="Tortilla z wędzonym łososiem i warzywami" data-kcal="450" data-protein="27">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tortilla-z-wedzonym-lososiem-i-warzywami/">Tortilla z wędzonym łososiem i warzywami</a>
+<button type="button" class="p-fav" data-fav="tortilla-z-wedzonym-lososiem-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z wędzonym łososiem i warzywami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">450 kcal</span>
 </div>
 <div class="p-card__tags">tortilii pełnoziarnistej, łososia wędzonego, serka śmietankowego…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan czekolada jogurt maslo-orzechowe platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan czekolada jogurt maslo-orzechowe platki-owsiane" data-slug="owsianka-brownie-z-mikrofali" data-title="Owsianka brownie z mikrofali" data-kcal="491" data-protein="7">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-brownie-z-mikrofali/">Owsianka brownie z mikrofali</a>
+<button type="button" class="p-fav" data-fav="owsianka-brownie-z-mikrofali" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka brownie z mikrofali"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">491 kcal</span>
 </div>
 <div class="p-card__tags">Płatki owsiane górskie, Banan, Czekolada gorzka 70%, Masło orzechowe…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb ciecierzyca majonez musztarda odzywka pomidor">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb ciecierzyca majonez musztarda odzywka pomidor" data-slug="kanapki-z-pasta-bezjajeczna-z-ciecierzycy" data-title="Kanapki z pastą bezjajeczną z ciecierzycy + shake" data-kcal="397" data-protein="12">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-pasta-bezjajeczna-z-ciecierzycy/">Kanapki z pastą bezjajeczną z ciecierzycy + shake</a>
+<button type="button" class="p-fav" data-fav="kanapki-z-pasta-bezjajeczna-z-ciecierzycy" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z pastą bezjajeczną z ciecierzycy + shake"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">397 kcal</span>
 </div>
 <div class="p-card__tags">Ciecierzyca konserwowa, Majonez wegański, Musztarda, Chleb żytni razowy…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ananas awokado cebula czosnek imbir komosa limonka losos ogorek sezam sos-sojowy syrop-agawa">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ananas awokado cebula czosnek imbir komosa limonka losos ogorek sezam sos-sojowy syrop-agawa" data-slug="bowl-z-lososiem-teriyaki" data-title="Bowl z łososiem teriyaki" data-kcal="596" data-protein="9">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/bowl-z-lososiem-teriyaki/">Bowl z łososiem teriyaki</a>
+<button type="button" class="p-fav" data-fav="bowl-z-lososiem-teriyaki" aria-pressed="false" aria-label="Dodaj do ulubionych: Bowl z łososiem teriyaki"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">596 kcal</span>
 </div>
 <div class="p-card__tags">Łosoś świeży, Sos sojowy, Sok z limonki, Imbir, Czosnek, Limonka…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="czekolada jogurt mango maslo-orzechowe mleko platki-inne platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="czekolada jogurt mango maslo-orzechowe mleko platki-inne platki-owsiane" data-slug="owsianka-w-stylu-kinder-country" data-title="Owsianka w stylu kinder country" data-kcal="478" data-protein="5">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-w-stylu-kinder-country/">Owsianka w stylu kinder country</a>
+<button type="button" class="p-fav" data-fav="owsianka-w-stylu-kinder-country" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka w stylu kinder country"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">478 kcal</span>
 </div>
 <div class="p-card__tags">Płatki owsiane górskie, Mango świeże lub mrożone…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="ananas cytryna fasola jogurt kukurydza makaron papryczka-chili papryka por">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="ananas cytryna fasola jogurt kukurydza makaron papryczka-chili papryka por" data-slug="salatka-meksykanska" data-title="Sałatka meksykańska" data-kcal="415" data-protein="14">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-meksykanska/">Sałatka meksykańska</a>
+<button type="button" class="p-fav" data-fav="salatka-meksykanska" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka meksykańska"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">415 kcal</span>
 </div>
 <div class="p-card__tags">Fasola czerwona konserwowa, Ananas świeży, Makaron pełnoziarnisty…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="batat cebula czosnek fasola odzywka oliwa papryka pomidory-puszka tortilla">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="batat cebula czosnek fasola odzywka oliwa papryka pomidory-puszka tortilla" data-slug="tortille-z-batatami-i-fasola" data-title="Tortille z batatami i fasolą" data-kcal="615" data-protein="22">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tortille-z-batatami-i-fasola/">Tortille z batatami i fasolą</a>
+<button type="button" class="p-fav" data-fav="tortille-z-batatami-i-fasola" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortille z batatami i fasolą"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">615 kcal</span>
 </div>
 <div class="p-card__tags">Fasola czerwona konserwowa, Batat, Cebula, Czosnek, Pomidory z puszki…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jogurt orzechy ryz syrop-klonowy truskawki">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jogurt orzechy ryz syrop-klonowy truskawki" data-slug="ryz-z-jogurtem-i-owocami" data-title="Ryż z jogurtem i owocami" data-kcal="501" data-protein="6">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryz-z-jogurtem-i-owocami/">Ryż z jogurtem i owocami</a>
+<button type="button" class="p-fav" data-fav="ryz-z-jogurtem-i-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryż z jogurtem i owocami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">501 kcal</span>
 </div>
 <div class="p-card__tags">Ryż basmati, Jogurt skyr bez laktozy, Syrop klonowy, Truskawki…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb cukinia jajka">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb cukinia jajka" data-slug="jajecznica-z-cukinia" data-title="Jajecznica z cukinią" data-kcal="391" data-protein="6">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jajecznica-z-cukinia/">Jajecznica z cukinią</a>
+<button type="button" class="p-fav" data-fav="jajecznica-z-cukinia" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajecznica z cukinią"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">391 kcal</span>
 </div>
 <div class="p-card__tags">Jajko kurze całe, Cukinia, Chleb żytni razowy</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia czosnek fasola marchewka oliwa pomidory-puszka szpinak ziemniaki">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia czosnek fasola marchewka oliwa pomidory-puszka szpinak ziemniaki" data-slug="zupa-srodziemnomorska" data-title="Zupa śródziemnomorska" data-kcal="586" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-srodziemnomorska/">Zupa śródziemnomorska</a>
+<button type="button" class="p-fav" data-fav="zupa-srodziemnomorska" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa śródziemnomorska"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">586 kcal</span>
 </div>
 <div class="p-card__tags">Cebula, Ziemniaki, Cukinia, Fasola biała konserwowa, Passata pomidorowa…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan jajka kakao maka truskawki wiorki">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan jajka kakao maka truskawki wiorki" data-slug="omlet-na-slodko-z-bananem" data-title="Omlet na słodko z bananem" data-kcal="504" data-protein="10">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/omlet-na-slodko-z-bananem/">Omlet na słodko z bananem</a>
+<button type="button" class="p-fav" data-fav="omlet-na-slodko-z-bananem" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet na słodko z bananem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">504 kcal</span>
 </div>
 <div class="p-card__tags">Jajko kurze całe, Mąka pszenna pełnoziarnista, Wiórki kokosowe, Kakao 16%…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka maslo ogorek pomidor">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jajka maslo ogorek pomidor" data-slug="kanapki-z-jajkiem-na-miekko" data-title="Kanapki z jajkiem na miękko" data-kcal="412" data-protein="3">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-jajkiem-na-miekko/">Kanapki z jajkiem na miękko</a>
+<button type="button" class="p-fav" data-fav="kanapki-z-jajkiem-na-miekko" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z jajkiem na miękko"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">412 kcal</span>
 </div>
 <div class="p-card__tags">Jajko kurze całe, Chleb żytni razowy, Masło extra, Pomidor, Ogórek</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cytryna czosnek feta groszek makaron oliwa orzechy por">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cytryna czosnek feta groszek makaron oliwa orzechy por" data-slug="zielony-makaron-z-groszkiem" data-title="Zielony makaron z groszkiem" data-kcal="598" data-protein="16">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zielony-makaron-z-groszkiem/">Zielony makaron z groszkiem</a>
+<button type="button" class="p-fav" data-fav="zielony-makaron-z-groszkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Zielony makaron z groszkiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">598 kcal</span>
 </div>
 <div class="p-card__tags">Groszek mrożony, Makaron pełnoziarnisty, Ser typu Feta, Por, Cebula…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jablko jogurt maka mleko oliwa platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jablko jogurt maka mleko oliwa platki-owsiane" data-slug="racuszki-jablkowo-owsiane" data-title="Racuszki jabłkowo-owsiane" data-kcal="504" data-protein="11">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/racuszki-jablkowo-owsiane/">Racuszki jabłkowo-owsiane</a>
+<button type="button" class="p-fav" data-fav="racuszki-jablkowo-owsiane" aria-pressed="false" aria-label="Dodaj do ulubionych: Racuszki jabłkowo-owsiane"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">504 kcal</span>
 </div>
 <div class="p-card__tags">Jabłko, Mąka pszenna pełnoziarnista, Płatki owsiane górskie…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="hummus kuskus marchewka papryka seler">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="hummus kuskus marchewka papryka seler" data-slug="buddha-bowl-z-hummusem-i-kasza" data-title="Buddha bowl z hummusem i kaszą kuskus" data-kcal="401" data-protein="11">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/buddha-bowl-z-hummusem-i-kasza/">Buddha bowl z hummusem i kaszą kuskus</a>
+<button type="button" class="p-fav" data-fav="buddha-bowl-z-hummusem-i-kasza" aria-pressed="false" aria-label="Dodaj do ulubionych: Buddha bowl z hummusem i kaszą kuskus"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">401 kcal</span>
 </div>
 <div class="p-card__tags">Hummus, Papryka czerwona, Marchew, Kasza kuskus, Seler naciowy</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cukinia czosnek losos makaron mleczko-kokosowe oliwa pomidor">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cukinia czosnek losos makaron mleczko-kokosowe oliwa pomidor" data-slug="makaron-z-lososiem-w-delikatnym-sosie" data-title="Makaron z łososiem w delikatnym sosie kokosowym" data-kcal="615" data-protein="13">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-z-lososiem-w-delikatnym-sosie/">Makaron z łososiem w delikatnym sosie kokosowym</a>
+<button type="button" class="p-fav" data-fav="makaron-z-lososiem-w-delikatnym-sosie" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron z łososiem w delikatnym sosie kokosowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">615 kcal</span>
 </div>
 <div class="p-card__tags">Łosoś wędzony, Makaron pełnoziarnisty, Cukinia, Czosnek…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chia kiwi mleko odzywka orzechy platki-owsiane pomarancza">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chia kiwi mleko odzywka orzechy platki-owsiane pomarancza" data-slug="chia-bowl-z-kiwi-i-pomarancza" data-title="Chia bowl z kiwi i pomarańczą" data-kcal="517" data-protein="11">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/chia-bowl-z-kiwi-i-pomarancza/">Chia bowl z kiwi i pomarańczą</a>
+<button type="button" class="p-fav" data-fav="chia-bowl-z-kiwi-i-pomarancza" aria-pressed="false" aria-label="Dodaj do ulubionych: Chia bowl z kiwi i pomarańczą"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">517 kcal</span>
 </div>
 <div class="p-card__tags">Mleko roślinne niesłodzone, Kiwi, Pomarańcza, Nasiona chia…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb gruszka odzywka oliwa ser-plesniowy">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb gruszka odzywka oliwa ser-plesniowy" data-slug="grzanki-z-gruszka-i-serem-z" data-title="Grzanki z gruszką i serem z niebieską pleśnią" data-kcal="404" data-protein="6">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/grzanki-z-gruszka-i-serem-z/">Grzanki z gruszką i serem z niebieską pleśnią</a>
+<button type="button" class="p-fav" data-fav="grzanki-z-gruszka-i-serem-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Grzanki z gruszką i serem z niebieską pleśnią"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">404 kcal</span>
 </div>
 <div class="p-card__tags">Chleb żytni razowy, Ser z niebieską pleśnią, Lazur, Gruszka…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek fasola marchewka mleko oliwa pieczarki pietruszka-korzen ziemniaki">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek fasola marchewka mleko oliwa pieczarki pietruszka-korzen ziemniaki" data-slug="zupa-z-bialej-fasoli-ziemniakow-i" data-title="Zupa z białej fasoli, ziemniaków i pieczarek" data-kcal="603" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-z-bialej-fasoli-ziemniakow-i/">Zupa z białej fasoli, ziemniaków i pieczarek</a>
+<button type="button" class="p-fav" data-fav="zupa-z-bialej-fasoli-ziemniakow-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa z białej fasoli, ziemniaków i pieczarek"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">603 kcal</span>
 </div>
 <div class="p-card__tags">Ziemniaki, Fasola biała konserwowa, Olej rzepakowy, Cebula, Czosnek…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jablko maslo-orzechowe twarog">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb jablko maslo-orzechowe twarog" data-slug="kanapki-na-slodko-z-maslem-orzechowym" data-title="Kanapki na słodko z masłem orzechowym, twarogiem i jabłkiem" data-kcal="497" data-protein="11">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-na-slodko-z-maslem-orzechowym/">Kanapki na słodko z masłem orzechowym, twarogiem i jabłkiem</a>
+<button type="button" class="p-fav" data-fav="kanapki-na-slodko-z-maslem-orzechowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki na słodko z masłem orzechowym, twarogiem i jabłkiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">497 kcal</span>
 </div>
 <div class="p-card__tags">Chleb żytni razowy, Masło orzechowe, Ser twarogowy półtłusty, Jabłko</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula gouda jajka papryka tortilla">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cebula gouda jajka papryka tortilla" data-slug="zapiekana-tortilla" data-title="Zapiekana tortilla" data-kcal="413" data-protein="5">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zapiekana-tortilla/">Zapiekana tortilla</a>
+<button type="button" class="p-fav" data-fav="zapiekana-tortilla" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekana tortilla"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">413 kcal</span>
 </div>
 <div class="p-card__tags">Tortilla pszenna, Jajko kurze całe, Cebula czerwona, Papryka czerwona…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek oliwa platki-drozdzowe pomidory-puszka ryz siemie-lniane soczewica sos-sojowy">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek oliwa platki-drozdzowe pomidory-puszka ryz siemie-lniane soczewica sos-sojowy" data-slug="pulpeciki-z-soczewicy-w-sosie-pomidorowym" data-title="Pulpeciki z soczewicy w sosie pomidorowym z ryżem" data-kcal="612" data-protein="13">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pulpeciki-z-soczewicy-w-sosie-pomidorowym/">Pulpeciki z soczewicy w sosie pomidorowym z ryżem</a>
+<button type="button" class="p-fav" data-fav="pulpeciki-z-soczewicy-w-sosie-pomidorowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Pulpeciki z soczewicy w sosie pomidorowym z ryżem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">612 kcal</span>
 </div>
 <div class="p-card__tags">Ryż basmati, Soczewica zielona, Passata pomidorowa, Cebula, Czosnek…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka gouda maliny pomidor salata serek-smietankowy smoothie">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="bulka gouda maliny pomidor salata serek-smietankowy smoothie" data-slug="lunchbox-kanapki-z-serem-gouda-i" data-title="Lunchbox Kanapki z serem gouda i warzywami + jogurt + owoc" data-kcal="615" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/lunchbox-kanapki-z-serem-gouda-i/">Lunchbox Kanapki z serem gouda i warzywami + jogurt + owoc</a>
+<button type="button" class="p-fav" data-fav="lunchbox-kanapki-z-serem-gouda-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Lunchbox Kanapki z serem gouda i warzywami + jogurt + owoc"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">615 kcal</span>
 </div>
 <div class="p-card__tags">Bułka owsiana, Pomidor, Rukola, Ser gouda, Serek śmietankowy bez laktozy…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="halloumi ogorek oliwki papryka pomidor salata tortilla">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="halloumi ogorek oliwki papryka pomidor salata tortilla" data-slug="tortilla-z-salatka-po-grecku-i" data-title="Tortilla z sałatką po grecku i serem halloumi" data-kcal="509" data-protein="23">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tortilla-z-salatka-po-grecku-i/">Tortilla z sałatką po grecku i serem halloumi</a>
+<button type="button" class="p-fav" data-fav="tortilla-z-salatka-po-grecku-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z sałatką po grecku i serem halloumi"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">509 kcal</span>
 </div>
 <div class="p-card__tags">Ser halloumi, Ogórek świeży, Papryka czerwona, Pomidor, Oliwki zielone…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bulka losos oliwa papryka pomidor">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="bulka losos oliwa papryka pomidor" data-slug="bulka-owsiana-z-lososiem-i-warzywami" data-title="Bułka owsiana z łososiem i warzywami" data-kcal="615" data-protein="33">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/bulka-owsiana-z-lososiem-i-warzywami/">Bułka owsiana z łososiem i warzywami</a>
+<button type="button" class="p-fav" data-fav="bulka-owsiana-z-lososiem-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Bułka owsiana z łososiem i warzywami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">615 kcal</span>
 </div>
 <div class="p-card__tags">Bułka owsiana, Pomidor, Papryka czerwona, Łosoś wędzony, Oliwa z oliwek</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cytryna halloumi kuskus ogorek oliwa oliwki papryka pomidor salata">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="cytryna halloumi kuskus ogorek oliwa oliwki papryka pomidor salata" data-slug="salatka-z-serem-halloumi-kuskusem-pomidorem" data-title="Sałatka z serem halloumi, kuskusem, pomidorem oraz ogórkiem" data-kcal="595" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-z-serem-halloumi-kuskusem-pomidorem/">Sałatka z serem halloumi, kuskusem, pomidorem oraz ogórkiem</a>
+<button type="button" class="p-fav" data-fav="salatka-z-serem-halloumi-kuskusem-pomidorem" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z serem halloumi, kuskusem, pomidorem oraz ogórkiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">595 kcal</span>
 </div>
 <div class="p-card__tags">Kasza kuskus, Oliwki zielone, Papryka czerwona, Pomidor, Ogórek świeży…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ciasto-nalesniki jogurt maliny twarog">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ciasto-nalesniki jogurt maliny twarog" data-slug="nalesniki-z-serem-twarogowym-bez-laktozy" data-title="Naleśniki z serem twarogowym bez laktozy oraz malinami" data-kcal="514" data-protein="31">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/nalesniki-z-serem-twarogowym-bez-laktozy/">Naleśniki z serem twarogowym bez laktozy oraz malinami</a>
+<button type="button" class="p-fav" data-fav="nalesniki-z-serem-twarogowym-bez-laktozy" aria-pressed="false" aria-label="Dodaj do ulubionych: Naleśniki z serem twarogowym bez laktozy oraz malinami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">514 kcal</span>
 </div>
 <div class="p-card__tags">Ciasto do naleśników low fodmap, Ser twarogowy półtłusty bez laktozy…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb feta ogorek papryka pomidor">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb feta ogorek papryka pomidor" data-slug="kanapki-w-greckim-stylu" data-title="Kanapki w greckim stylu" data-kcal="598" data-protein="33">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-w-greckim-stylu/">Kanapki w greckim stylu</a>
+<button type="button" class="p-fav" data-fav="kanapki-w-greckim-stylu" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki w greckim stylu"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">598 kcal</span>
 </div>
 <div class="p-card__tags">Chleb bezglutenowy, Ser typu Feta, Ogórek świeży, Pomidorki koktajlowe…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb gouda papryka pesto">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb gouda papryka pesto" data-slug="kanapki-z-zielonym-pesto-serem-gouda" data-title="Kanapki z zielonym pesto, serem gouda i papryką czerwoną" data-kcal="577" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-zielonym-pesto-serem-gouda/">Kanapki z zielonym pesto, serem gouda i papryką czerwoną</a>
+<button type="button" class="p-fav" data-fav="kanapki-z-zielonym-pesto-serem-gouda" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z zielonym pesto, serem gouda i papryką czerwoną"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">577 kcal</span>
 </div>
 <div class="p-card__tags">Chleb bezglutenowy, Pesto zielone, Ser gouda, Papryka czerwona</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="dynia feta kasza oliwa szpinak">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="dynia feta kasza oliwa szpinak" data-slug="kasza-jaglana-z-dynia-i-serem" data-title="Kasza jaglana z dynią i serem typu feta" data-kcal="469" data-protein="24">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kasza-jaglana-z-dynia-i-serem/">Kasza jaglana z dynią i serem typu feta</a>
+<button type="button" class="p-fav" data-fav="kasza-jaglana-z-dynia-i-serem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kasza jaglana z dynią i serem typu feta"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">469 kcal</span>
 </div>
 <div class="p-card__tags">Dynia świeża lub mrożona, Ser typu Feta, Kasza jaglana, Oliwa z oliwek…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb jajka majonez oliwa papryka pomidor salata">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb jajka majonez oliwa papryka pomidor salata" data-slug="jajka-w-koszulkach-z-chlebem-bezglutenowym" data-title="Jajka w koszulkach z chlebem bezglutenowym" data-kcal="618" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jajka-w-koszulkach-z-chlebem-bezglutenowym/">Jajka w koszulkach z chlebem bezglutenowym</a>
+<button type="button" class="p-fav" data-fav="jajka-w-koszulkach-z-chlebem-bezglutenowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajka w koszulkach z chlebem bezglutenowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">618 kcal</span>
 </div>
 <div class="p-card__tags">Jajko kurze całe, Chleb bezglutenowy, Miks sałat, Papryka czerwona…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chrzan losos ogorek szpinak tortilla">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chrzan losos ogorek szpinak tortilla" data-slug="tortilla-z-lososiem-szpinakiem-koperkiem-oraz" data-title="Tortilla z łososiem, szpinakiem, koperkiem oraz ogórkiem" data-kcal="610" data-protein="37">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tortilla-z-lososiem-szpinakiem-koperkiem-oraz/">Tortilla z łososiem, szpinakiem, koperkiem oraz ogórkiem</a>
+<button type="button" class="p-fav" data-fav="tortilla-z-lososiem-szpinakiem-koperkiem-oraz" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z łososiem, szpinakiem, koperkiem oraz ogórkiem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">610 kcal</span>
 </div>
 <div class="p-card__tags">Ogórek świeży, Szpinak, Chrzan (tarty), Tortilla bezglutenowa, Łosoś wędzony</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan jajka jogurt maka oliwa">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan jajka jogurt maka oliwa" data-slug="placki-bananowe" data-title="Placki bananowe" data-kcal="609" data-protein="23">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/placki-bananowe/">Placki bananowe</a>
+<button type="button" class="p-fav" data-fav="placki-bananowe" aria-pressed="false" aria-label="Dodaj do ulubionych: Placki bananowe"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">609 kcal</span>
 </div>
 <div class="p-card__tags">Banan, Mąka jaglana, Jajko kurze całe, Olej rzepakowy, Jogurt skyr bez laktozy</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="budyn cytryna jajka jogurt maliny migdaly">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="budyn cytryna jajka jogurt maliny migdaly" data-slug="cytrynowy-skyrnik-proteinowy" data-title="Cytrynowy skyrnik proteinowy" data-kcal="602" data-protein="51">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/cytrynowy-skyrnik-proteinowy/">Cytrynowy skyrnik proteinowy</a>
+<button type="button" class="p-fav" data-fav="cytrynowy-skyrnik-proteinowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Cytrynowy skyrnik proteinowy"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">602 kcal</span>
 </div>
 <div class="p-card__tags">Jogurt skyr bez laktozy, Jajko kurze całe, Budyń w proszku (z cukrem)…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cytryna dorsz oliwa pomidor szpinak ziemniaki">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cytryna dorsz oliwa pomidor szpinak ziemniaki" data-slug="dorsz-z-ziemniakami-szpinakiem-oraz-pomidorkami" data-title="Dorsz z ziemniakami, szpinakiem oraz pomidorkami koktajlowymi" data-kcal="493" data-protein="21">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/dorsz-z-ziemniakami-szpinakiem-oraz-pomidorkami/">Dorsz z ziemniakami, szpinakiem oraz pomidorkami koktajlowymi</a>
+<button type="button" class="p-fav" data-fav="dorsz-z-ziemniakami-szpinakiem-oraz-pomidorkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Dorsz z ziemniakami, szpinakiem oraz pomidorkami koktajlowymi"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">493 kcal</span>
 </div>
 <div class="p-card__tags">Dorsz, Ziemniaki, Szpinak, Pomidorki koktajlowe, Oliwa z oliwek, Sok z cytryny</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb cytryna feta ogorek oliwa oliwki papryka pomidor salata">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb cytryna feta ogorek oliwa oliwki papryka pomidor salata" data-slug="salatka-grecka-z-serem-typu-feta" data-title="Sałatka grecka z serem typu feta oraz chlebem bezglutenowym" data-kcal="603" data-protein="29">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-grecka-z-serem-typu-feta/">Sałatka grecka z serem typu feta oraz chlebem bezglutenowym</a>
+<button type="button" class="p-fav" data-fav="salatka-grecka-z-serem-typu-feta" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka grecka z serem typu feta oraz chlebem bezglutenowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">603 kcal</span>
 </div>
 <div class="p-card__tags">Miks sałat, Ser typu Feta, Oliwki zielone, Papryka czerwona…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="makaron mozzarella oliwa pesto pomidor">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="makaron mozzarella oliwa pesto pomidor" data-slug="spaghetti-z-pesto" data-title="Spaghetti z pesto" data-kcal="494" data-protein="14">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/spaghetti-z-pesto/">Spaghetti z pesto</a>
+<button type="button" class="p-fav" data-fav="spaghetti-z-pesto" aria-pressed="false" aria-label="Dodaj do ulubionych: Spaghetti z pesto"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">494 kcal</span>
 </div>
 <div class="p-card__tags">Makaron bezglutenowy, Ser mozzarella kulka…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="borowki jogurt kiwi migdaly platki-owsiane">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="borowki jogurt kiwi migdaly platki-owsiane" data-slug="owsianka-z-kawalkami-kiwi-oraz-borowkami" data-title="Owsianka z kawałkami kiwi oraz borówkami" data-kcal="600" data-protein="31">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-z-kawalkami-kiwi-oraz-borowkami/">Owsianka z kawałkami kiwi oraz borówkami</a>
+<button type="button" class="p-fav" data-fav="owsianka-z-kawalkami-kiwi-oraz-borowkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z kawałkami kiwi oraz borówkami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">600 kcal</span>
 </div>
 <div class="p-card__tags">Płatki owsiane górskie, Jogurt skyr bez laktozy, Kiwi…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jogurt maliny orzechy platki-jaglane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="jogurt maliny orzechy platki-jaglane" data-slug="platki-z-malinami-oraz-orzechami-wloskimi" data-title="Płatki z malinami oraz orzechami włoskimi" data-kcal="588" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/platki-z-malinami-oraz-orzechami-wloskimi/">Płatki z malinami oraz orzechami włoskimi</a>
+<button type="button" class="p-fav" data-fav="platki-z-malinami-oraz-orzechami-wloskimi" aria-pressed="false" aria-label="Dodaj do ulubionych: Płatki z malinami oraz orzechami włoskimi"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">588 kcal</span>
 </div>
 <div class="p-card__tags">Jogurt skyr bez laktozy, Płatki jaglane, Orzechy włoskie…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cukinia cytryna losos oliwa pomidor ryz sos-sojowy syrop-klonowy">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cukinia cytryna losos oliwa pomidor ryz sos-sojowy syrop-klonowy" data-slug="szybka-pieczona-ryba" data-title="Szybka pieczona ryba" data-kcal="510" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/szybka-pieczona-ryba/">Szybka pieczona ryba</a>
+<button type="button" class="p-fav" data-fav="szybka-pieczona-ryba" aria-pressed="false" aria-label="Dodaj do ulubionych: Szybka pieczona ryba"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">510 kcal</span>
 </div>
 <div class="p-card__tags">Łosoś świeży, Ryż basmati, Pomidorki koktajlowe, Cukinia, Cytryna…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb jajka kielbaski ogorek oliwa">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb jajka kielbaski ogorek oliwa" data-slug="jajecznica-z-kielbaska-roslinna" data-title="Jajecznica z kiełbaską roślinną" data-kcal="613" data-protein="33">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/jajecznica-z-kielbaska-roslinna/">Jajecznica z kiełbaską roślinną</a>
+<button type="button" class="p-fav" data-fav="jajecznica-z-kielbaska-roslinna" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajecznica z kiełbaską roślinną"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">613 kcal</span>
 </div>
 <div class="p-card__tags">Oliwa z oliwek, Kiełbaski roślinne węgierskie Dobra Kaloria…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan migdaly pomarancza serek-wiejski syrop-klonowy">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan migdaly pomarancza serek-wiejski syrop-klonowy" data-slug="serek-wiejski-bez-laktozy-z-owocami" data-title="Serek wiejski bez laktozy z owocami i syropem klonowym" data-kcal="606" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-bez-laktozy-z-owocami/">Serek wiejski bez laktozy z owocami i syropem klonowym</a>
+<button type="button" class="p-fav" data-fav="serek-wiejski-bez-laktozy-z-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski bez laktozy z owocami i syropem klonowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">606 kcal</span>
 </div>
 <div class="p-card__tags">Serek wiejski bez laktozy, Banan, Pomarańcza, Syrop klonowy, Migdały</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="chleb feta oliwa papryka pomidory-puszka">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="chleb feta oliwa papryka pomidory-puszka" data-slug="zupa-pomidorowo-paprykowa" data-title="Zupa pomidorowo paprykowa" data-kcal="487" data-protein="20">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-pomidorowo-paprykowa/">Zupa pomidorowo paprykowa</a>
+<button type="button" class="p-fav" data-fav="zupa-pomidorowo-paprykowa" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa pomidorowo paprykowa"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">487 kcal</span>
 </div>
 <div class="p-card__tags">Papryka czerwona, Oliwa z oliwek, Pomidory z puszki, Chleb bezglutenowy…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jogurt maslo-orzechowe orzechy platki-owsiane syrop-klonowy">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jogurt maslo-orzechowe orzechy platki-owsiane syrop-klonowy" data-slug="owsiane-batoniki-z-syropem-klonowym-oraz" data-title="Owsiane batoniki z syropem klonowym oraz masłem orzechowym" data-kcal="600" data-protein="21">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsiane-batoniki-z-syropem-klonowym-oraz/">Owsiane batoniki z syropem klonowym oraz masłem orzechowym</a>
+<button type="button" class="p-fav" data-fav="owsiane-batoniki-z-syropem-klonowym-oraz" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiane batoniki z syropem klonowym oraz masłem orzechowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">600 kcal</span>
 </div>
 <div class="p-card__tags">Płatki owsiane górskie, Masło orzechowe, Mieszanka orzechów, Syrop klonowy…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb halloumi ogorek pomidor salata">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="chleb halloumi ogorek pomidor salata" data-slug="salatka-z-grillowanym-serem-halloumi" data-title="Sałatka z grillowanym serem halloumi" data-kcal="579" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-z-grillowanym-serem-halloumi/">Sałatka z grillowanym serem halloumi</a>
+<button type="button" class="p-fav" data-fav="salatka-z-grillowanym-serem-halloumi" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z grillowanym serem halloumi"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">579 kcal</span>
 </div>
 <div class="p-card__tags">Ser halloumi, Miks sałat, Pomidor, Ogórek świeży, Chleb bezglutenowy</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="jajka makaron marchewka mleko oliwa pieczarki ser-plesniowy">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="jajka makaron marchewka mleko oliwa pieczarki ser-plesniowy" data-slug="zapiekanka-makaronowa-z-suszonymi-pomidorami-w" data-title="Zapiekanka makaronowa z suszonymi pomidorami w kremowo-serowym sosie (liczba porcji: 2)" data-kcal="482" data-protein="14">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/zapiekanka-makaronowa-z-suszonymi-pomidorami-w/">Zapiekanka makaronowa z suszonymi pomidorami w kremowo-serowym sosie (liczba porcji: 2)</a>
+<button type="button" class="p-fav" data-fav="zapiekanka-makaronowa-z-suszonymi-pomidorami-w" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka makaronowa z suszonymi pomidorami w kremowo-serowym sosie (liczba porcji: 2)"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">482 kcal</span>
 </div>
 <div class="p-card__tags">Makaron bezglutenowy, Marchew, Pomidory suszone w oleju (odsączone)…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="borowki maliny maslo-orzechowe platki-owsiane serek-wiejski">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="borowki maliny maslo-orzechowe platki-owsiane serek-wiejski" data-slug="serek-wiejski-z-malinami-borowkami-oraz" data-title="Serek wiejski z malinami, borówkami oraz masłem orzechowym" data-kcal="610" data-protein="36">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-z-malinami-borowkami-oraz/">Serek wiejski z malinami, borówkami oraz masłem orzechowym</a>
+<button type="button" class="p-fav" data-fav="serek-wiejski-z-malinami-borowkami-oraz" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z malinami, borówkami oraz masłem orzechowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">610 kcal</span>
 </div>
 <div class="p-card__tags">Serek wiejski bez laktozy, Płatki owsiane górskie, Masło orzechowe…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ciasto-nalesniki jogurt truskawki twarog">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="ciasto-nalesniki jogurt truskawki twarog" data-slug="nalesniki-z-serem-twarogowym-bez-laktozy-2" data-title="Naleśniki z serem twarogowym bez laktozy i owocami" data-kcal="504" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/nalesniki-z-serem-twarogowym-bez-laktozy-2/">Naleśniki z serem twarogowym bez laktozy i owocami</a>
+<button type="button" class="p-fav" data-fav="nalesniki-z-serem-twarogowym-bez-laktozy-2" aria-pressed="false" aria-label="Dodaj do ulubionych: Naleśniki z serem twarogowym bez laktozy i owocami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">504 kcal</span>
 </div>
 <div class="p-card__tags">Ciasto do naleśników low fodmap, Ser twarogowy półtłusty bez laktozy…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan borowki jogurt migdaly platki-owsiane">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="banan borowki jogurt migdaly platki-owsiane" data-slug="owsianka-z-bananem-oraz-borowkami" data-title="Owsianka z bananem oraz borówkami" data-kcal="601" data-protein="31">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-z-bananem-oraz-borowkami/">Owsianka z bananem oraz borówkami</a>
+<button type="button" class="p-fav" data-fav="owsianka-z-bananem-oraz-borowkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z bananem oraz borówkami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">601 kcal</span>
 </div>
 <div class="p-card__tags">Płatki owsiane górskie, Banan, Borówki amerykańskie, Płatki migdałów…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cytryna dorsz oliwa pomidor ziemniaki">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cytryna dorsz oliwa pomidor ziemniaki" data-slug="ryba-grillowana-w-papilocie" data-title="Ryba grillowana w papilocie" data-kcal="516" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryba-grillowana-w-papilocie/">Ryba grillowana w papilocie</a>
+<button type="button" class="p-fav" data-fav="ryba-grillowana-w-papilocie" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryba grillowana w papilocie"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">516 kcal</span>
 </div>
 <div class="p-card__tags">Dorsz, Ziemniaki, Pomidorki koktajlowe, Sok z cytryny, Oliwa z oliwek</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula halloumi ogorek oliwki papryka pomidor salata tortilla">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula halloumi ogorek oliwki papryka pomidor salata tortilla" data-slug="tortilla-pelnoziarnista-z-salatka-po-grecku" data-title="Tortilla pełnoziarnista z sałatką po grecku i serem halloumi" data-kcal="514" data-protein="22">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tortilla-pelnoziarnista-z-salatka-po-grecku/">Tortilla pełnoziarnista z sałatką po grecku i serem halloumi</a>
+<button type="button" class="p-fav" data-fav="tortilla-pelnoziarnista-z-salatka-po-grecku" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla pełnoziarnista z sałatką po grecku i serem halloumi"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">514 kcal</span>
 </div>
 <div class="p-card__tags">Ser halloumi, Ogórek świeży, Papryka czerwona, Cebula, Pomidor…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb hummus ogorek papryka plastry-wegan pomidor">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb hummus ogorek papryka plastry-wegan pomidor" data-slug="kanapki-z-hummusem-wedlina-i-warzywami" data-title="Kanapki z hummusem, wędliną i warzywami" data-kcal="593" data-protein="19">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-hummusem-wedlina-i-warzywami/">Kanapki z hummusem, wędliną i warzywami</a>
+<button type="button" class="p-fav" data-fav="kanapki-z-hummusem-wedlina-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z hummusem, wędliną i warzywami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">593 kcal</span>
 </div>
 <div class="p-card__tags">Chleb żytni razowy, Plastry wegańskie z pistacjami Go Vege, Pomidor…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia czosnek kasza marchewka oliwa papryka pomidory-puszka soczewica">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula cukinia czosnek kasza marchewka oliwa papryka pomidory-puszka soczewica" data-slug="gulasz-z-soczewicy-czerwonej" data-title="Gulasz z soczewicy czerwonej" data-kcal="499" data-protein="21">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/gulasz-z-soczewicy-czerwonej/">Gulasz z soczewicy czerwonej</a>
+<button type="button" class="p-fav" data-fav="gulasz-z-soczewicy-czerwonej" aria-pressed="false" aria-label="Dodaj do ulubionych: Gulasz z soczewicy czerwonej"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">499 kcal</span>
 </div>
 <div class="p-card__tags">Papryka czerwona, Kasza jęczmienna pęczak, Cukinia, Cebula, Czosnek…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="ciasto-nalesniki daktyle jogurt kakao orzechy">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="ciasto-nalesniki daktyle jogurt kakao orzechy" data-slug="nalesniki-z-kremem-czekoladowym" data-title="Naleśniki z kremem czekoladowym" data-kcal="603" data-protein="16">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/nalesniki-z-kremem-czekoladowym/">Naleśniki z kremem czekoladowym</a>
+<button type="button" class="p-fav" data-fav="nalesniki-z-kremem-czekoladowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Naleśniki z kremem czekoladowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">603 kcal</span>
 </div>
 <div class="p-card__tags">Ciasto do naleśników wegańskie, Orzechy laskowe, Daktyle, suszone…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="biszkopty czekolada pudding serek-proteinowy smietanka">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="biszkopty czekolada pudding serek-proteinowy smietanka" data-slug="warstwowy-deser-z-gorzka-czekolada" data-title="Warstwowy deser z gorzką czekoladą" data-kcal="617" data-protein="39">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/warstwowy-deser-z-gorzka-czekolada/">Warstwowy deser z gorzką czekoladą</a>
+<button type="button" class="p-fav" data-fav="warstwowy-deser-z-gorzka-czekolada" aria-pressed="false" aria-label="Dodaj do ulubionych: Warstwowy deser z gorzką czekoladą"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">617 kcal</span>
 </div>
 <div class="p-card__tags">Serek proteinowy ze skyrem waniliowy Go Active, Biszkopty…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek dynia feta kasza oliwa szpinak">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek dynia feta kasza oliwa szpinak" data-slug="peczak-z-dynia-i-serem-typu" data-title="Pęczak z dynią i serem typu feta" data-kcal="487" data-protein="24">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/peczak-z-dynia-i-serem-typu/">Pęczak z dynią i serem typu feta</a>
+<button type="button" class="p-fav" data-fav="peczak-z-dynia-i-serem-typu" aria-pressed="false" aria-label="Dodaj do ulubionych: Pęczak z dynią i serem typu feta"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">487 kcal</span>
 </div>
 <div class="p-card__tags">Dynia świeża lub mrożona, Ser typu Feta, Kasza jęczmienna pęczak…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jablko jajka jogurt miod mleko oliwa platki-owsiane">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="jablko jajka jogurt miod mleko oliwa platki-owsiane" data-slug="pieczona-owsianka-z-jablkiem-oraz-cynamonem" data-title="Pieczona owsianka z jabłkiem oraz cynamonem" data-kcal="603" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/pieczona-owsianka-z-jablkiem-oraz-cynamonem/">Pieczona owsianka z jabłkiem oraz cynamonem</a>
+<button type="button" class="p-fav" data-fav="pieczona-owsianka-z-jablkiem-oraz-cynamonem" aria-pressed="false" aria-label="Dodaj do ulubionych: Pieczona owsianka z jabłkiem oraz cynamonem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">603 kcal</span>
 </div>
 <div class="p-card__tags">Płatki owsiane górskie, Jajko kurze całe, Mleko roślinne niesłodzone, Miód…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="brokul cytryna losos miod musztarda oliwa ryz">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="brokul cytryna losos miod musztarda oliwa ryz" data-slug="losos-w-sosie-musztardowo-miodowym-z" data-title="Łosoś w sosie musztardowo-miodowym z ryżem oraz brokułem" data-kcal="495" data-protein="21">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/losos-w-sosie-musztardowo-miodowym-z/">Łosoś w sosie musztardowo-miodowym z ryżem oraz brokułem</a>
+<button type="button" class="p-fav" data-fav="losos-w-sosie-musztardowo-miodowym-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Łosoś w sosie musztardowo-miodowym z ryżem oraz brokułem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">495 kcal</span>
 </div>
 <div class="p-card__tags">Łosoś świeży, Ryż basmati, Brokuł, świeży lub mrożony, Miód, Musztarda…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="budyn jablko jajka jogurt kasza oliwa">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="budyn jablko jajka jogurt kasza oliwa" data-slug="placuszki-jablkowe" data-title="Placuszki jabłkowe" data-kcal="599" data-protein="31">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/placuszki-jablkowe/">Placuszki jabłkowe</a>
+<button type="button" class="p-fav" data-fav="placuszki-jablkowe" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki jabłkowe"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">599 kcal</span>
 </div>
 <div class="p-card__tags">Kasza jaglana, Jabłko, Budyń w proszku (z cukrem), Olej rzepakowy…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="chleb cytryna feta kukurydza oliwa pomidor salata">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="chleb cytryna feta kukurydza oliwa pomidor salata" data-slug="salatka-z-serem-i-kukurydza-konserwowa" data-title="Sałatka z serem i kukurydzą konserwową" data-kcal="501" data-protein="21">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-z-serem-i-kukurydza-konserwowa/">Sałatka z serem i kukurydzą konserwową</a>
+<button type="button" class="p-fav" data-fav="salatka-z-serem-i-kukurydza-konserwowa" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z serem i kukurydzą konserwową"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">501 kcal</span>
 </div>
 <div class="p-card__tags">Miks sałat, Kukurydza konserwowa, Ser typu Feta, Pomidorki koktajlowe…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb mozzarella plastry-wegan pomidor rzodkiewka serek-smietankowy">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb mozzarella plastry-wegan pomidor rzodkiewka serek-smietankowy" data-slug="tost-z-szynka-serem-i-warzywami" data-title="Tost z szynką, serem i warzywami" data-kcal="598" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tost-z-szynka-serem-i-warzywami/">Tost z szynką, serem i warzywami</a>
+<button type="button" class="p-fav" data-fav="tost-z-szynka-serem-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Tost z szynką, serem i warzywami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">598 kcal</span>
 </div>
 <div class="p-card__tags">Chleb żytni razowy, Plastry wegańskie z pistacjami Go Vege…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="kakao maslo-orzechowe mleko odzywka platki-owsiane">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="kakao maslo-orzechowe mleko odzywka platki-owsiane" data-slug="czekoladowe-smoothie" data-title="Czekoladowe smoothie" data-kcal="583" data-protein="28">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/czekoladowe-smoothie/">Czekoladowe smoothie</a>
+<button type="button" class="p-fav" data-fav="czekoladowe-smoothie" aria-pressed="false" aria-label="Dodaj do ulubionych: Czekoladowe smoothie"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">583 kcal</span>
 </div>
 <div class="p-card__tags">Mleko roślinne niesłodzone, Kakao 16%, Masło orzechowe, Odżywka białkowa…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado bajgiel czosnek halloumi miod musztarda pomidor salata">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="awokado bajgiel czosnek halloumi miod musztarda pomidor salata" data-slug="bajgiel-z-kremowym-sosem" data-title="Bajgiel z kremowym sosem" data-kcal="602" data-protein="26">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/bajgiel-z-kremowym-sosem/">Bajgiel z kremowym sosem</a>
+<button type="button" class="p-fav" data-fav="bajgiel-z-kremowym-sosem" aria-pressed="false" aria-label="Dodaj do ulubionych: Bajgiel z kremowym sosem"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">602 kcal</span>
 </div>
 <div class="p-card__tags">Bajgiel z sezamem, Ser halloumi, Rukola, Pomidor, Awokado, Miód, Musztarda…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek makaron mieso-wegan mozzarella oliwa papryka pomidor pomidory-puszka">
+<article class="p-card" data-slot="2" data-slot-id="obiad" data-tags="cebula czosnek makaron mieso-wegan mozzarella oliwa papryka pomidor pomidory-puszka" data-slug="lasagne-w-papryce" data-title="Lasagne w papryce" data-kcal="509" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/lasagne-w-papryce/">Lasagne w papryce</a>
+<button type="button" class="p-fav" data-fav="lasagne-w-papryce" aria-pressed="false" aria-label="Dodaj do ulubionych: Lasagne w papryce"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
 <span class="p-num">13:00-16:00</span>
 <span class="p-num">509 kcal</span>
 </div>
 <div class="p-card__tags">Papryka czerwona, Oliwa z oliwek, Cebula, Czosnek…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan migdaly pomarancza serek-wiejski syrop-klonowy">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="banan migdaly pomarancza serek-wiejski syrop-klonowy" data-slug="serek-wiejski-z-owocami-i-syropem" data-title="Serek wiejski z owocami i syropem klonowym" data-kcal="604" data-protein="32">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-z-owocami-i-syropem/">Serek wiejski z owocami i syropem klonowym</a>
+<button type="button" class="p-fav" data-fav="serek-wiejski-z-owocami-i-syropem" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z owocami i syropem klonowym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">604 kcal</span>
 </div>
 <div class="p-card__tags">Serek wiejski naturalny, Banan, Pomarańcza, Syrop klonowy, Migdały</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb jajka majonez ogorek plastry-wegan pomidor">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb jajka majonez ogorek plastry-wegan pomidor" data-slug="kanapki-z-szynka-jajkiem-i-ogorkiem" data-title="Kanapki z szynką, jajkiem i ogórkiem kiszonym" data-kcal="595" data-protein="25">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-szynka-jajkiem-i-ogorkiem/">Kanapki z szynką, jajkiem i ogórkiem kiszonym</a>
+<button type="button" class="p-fav" data-fav="kanapki-z-szynka-jajkiem-i-ogorkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z szynką, jajkiem i ogórkiem kiszonym"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">595 kcal</span>
 </div>
 <div class="p-card__tags">Chleb żytni razowy, Majonez wegański…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="borowki jajka maka oliwa twarog">
+<article class="p-card" data-slot="1" data-slot-id="sniadanie" data-tags="borowki jajka maka oliwa twarog" data-slug="syrniki-z-owocami" data-title="Syrniki z owocami (liczba porcji: 3)" data-kcal="596" data-protein="38">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/syrniki-z-owocami/">Syrniki z owocami (liczba porcji: 3)</a>
+<button type="button" class="p-fav" data-fav="syrniki-z-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Syrniki z owocami (liczba porcji: 3)"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
 <span class="p-num">7:00-10:00</span>
 <span class="p-num">596 kcal</span>
 </div>
 <div class="p-card__tags">Ser twarogowy półtłusty, Jajko kurze całe, Mąka pszenna pełnoziarnista…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="biszkopty jogurt kakao kawa orzechy truskawki">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="biszkopty jogurt kakao kawa orzechy truskawki" data-slug="tiramisu-z-truskawkami" data-title="Tiramisu z truskawkami" data-kcal="596" data-protein="34">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tiramisu-z-truskawkami/">Tiramisu z truskawkami</a>
+<button type="button" class="p-fav" data-fav="tiramisu-z-truskawkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Tiramisu z truskawkami"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">596 kcal</span>
 </div>
 <div class="p-card__tags">Biszkopty, Jogurt skyr, Jogurt naturalny 2%, Kakao 16%…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 <li>
-<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb gouda jajka ogorek oliwa plastry-wegan">
+<article class="p-card" data-slot="3" data-slot-id="kolacja" data-tags="chleb gouda jajka ogorek oliwa plastry-wegan" data-slug="tosty-francuskie-z-serem-gouda-oraz" data-title="Tosty francuskie z serem gouda oraz plastrem wegańskim" data-kcal="604" data-protein="30">
 <div class="p-card__band"></div>
 <div class="p-card__body">
+<div class="p-card__head">
 <a class="p-card__title" href="przepisy/tosty-francuskie-z-serem-gouda-oraz/">Tosty francuskie z serem gouda oraz plastrem wegańskim</a>
+<button type="button" class="p-fav" data-fav="tosty-francuskie-z-serem-gouda-oraz" aria-pressed="false" aria-label="Dodaj do ulubionych: Tosty francuskie z serem gouda oraz plastrem wegańskim"><span aria-hidden="true">&#9825;</span></button>
+</div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
 <span class="p-num">18:00-20:00</span>
 <span class="p-num">604 kcal</span>
 </div>
 <div class="p-card__tags">Chleb żytni razowy, Jajko kurze całe, Ser gouda…</div>
+<p class="p-card__miss" hidden></p>
 </div></article></li>
 </ul>
+
+<script>window.SKLADNIKI = {"oliwa":"Oliwa / olej","pomidor":"Pomidor","cebula":"Cebula","chleb":"Chleb","czosnek":"Czosnek","jogurt":"Jogurt / skyr","mleko":"Mleko roślinne","odzywka":"Odżywka białkowa","jajka":"Jajka","orzechy":"Orzechy","platki-owsiane":"Płatki owsiane","cytryna":"Cytryna","papryka":"Papryka","ogorek":"Ogórek","marchewka":"Marchewka","salata":"Sałata / rukola / roszponka","banan":"Banan","maka":"Mąka","pomidory-puszka":"Pomidory z puszki / passata","maslo-orzechowe":"Masło orzechowe","mozzarella":"Mozzarella","ryz":"Ryż","szpinak":"Szpinak","cukinia":"Cukinia","kakao":"Kakao","makaron":"Makaron","czekolada":"Czekolada","jablko":"Jabłko","fasola":"Fasola","tofu":"Tofu","losos":"Łosoś","ciecierzyca":"Ciecierzyca","migdaly":"Migdały","sos-sojowy":"Sos sojowy","awokado":"Awokado","bulka":"Bułka","soczewica":"Soczewica","kasza":"Kasza","rzodkiewka":"Rzodkiewka","twarog":"Twaróg","ziemniaki":"Ziemniaki","feta":"Feta","maliny":"Maliny","seler":"Seler","serek-smietankowy":"Serek śmietankowy","imbir":"Imbir","serek-wiejski":"Serek wiejski","tortilla":"Tortilla","miod":"Miód","syrop-klonowy":"Syrop klonowy","majonez":"Majonez","maslo":"Masło / margaryna","pieczarki":"Pieczarki","por":"Por","truskawki":"Truskawki","wiorki":"Wiórki kokosowe","borowki":"Borówki","brokul":"Brokuł","gruszka":"Gruszka","kielki":"Kiełki","mango":"Mango","musztarda":"Musztarda","oliwki":"Oliwki","platki-jaglane":"Płatki jaglane","ananas":"Ananas","dynia":"Dynia","grana-padano":"Grana padano","kapusta":"Kapusta","platki-drozdzowe":"Płatki drożdżowe","slonecznik":"Słonecznik","burak":"Burak","gouda":"Gouda","halloumi":"Halloumi","limonka":"Limonka","mleczko-kokosowe":"Mleczko kokosowe","chia":"Nasiona chia","pietruszka-korzen":"Pietruszka korzeń","pomidory-suszone":"Pomidory suszone","siemie-lniane":"Siemię lniane","bagietka":"Bagietka","batat":"Batat","daktyle":"Daktyle","hummus":"Hummus","kuskus":"Kasza kuskus","kukurydza":"Kukurydza","mandarynka":"Mandarynka","ogorki-kiszone":"Ogórki kiszone","papryczka-chili":"Papryczka chili","pesto":"Pesto","plastry-wegan":"Plastry wegańskie","pomarancza":"Pomarańcza","platki-inne":"Płatki inne","smoothie":"Smoothie / sok","syrop-agawa":"Syrop z agawy","wafle":"Wafle ryżowe","chrzan":"Chrzan","ciasto-nalesniki":"Ciasto na naleśniki","dorsz":"Dorsz","kiwi":"Kiwi","olej-kokosowy":"Olej kokosowy","papryka-konserwowa":"Papryka konserwowa","sezam":"Sezam","sos-ostry":"Sos ostry / rybny","wisnie":"Wiśnie","zurawina":"Żurawina","baton":"Baton / przekąska","biszkopty":"Biszkopty","budyn":"Budyń","camembert":"Camembert","jagody":"Jagody","ketchup":"Ketchup","olej-sezamowy":"Olej sezamowy","parowki":"Parówki roślinne","porzeczki":"Porzeczki","pstrag":"Pstrąg","ser-plesniowy":"Ser pleśniowy","tahini":"Tahini","smietanka":"Śmietanka","bajgiel":"Bajgiel","bulka-tarta":"Bułka tarta","bob":"Bób","cheddar":"Cheddar","grejpfrut":"Grejpfrut","groszek":"Groszek","kabanosy":"Kabanosy roślinne","kaki":"Kaki","kaszanka":"Kaszanka roślinna","kawa":"Kawa","kielbaski":"Kiełbaski roślinne","komosa":"Komosa ryżowa","makrela":"Makrela","melon":"Melon","mintaj":"Mintaj","miso":"Miso","mieso-wegan":"Mięso wegańskie","owoce-mrozone":"Owoce mrożone","owsianka-instant":"Owsianka instant","papier-ryzowy":"Papier ryżowy","pasta-warzywna":"Pasta warzywna","gyoza":"Pierożki gyoza","pistacje":"Pistacje","pudding":"Pudding proteinowy","ser-zolty":"Ser żółty","serek-proteinowy":"Serek proteinowy","zupa-gotowa":"Zupa gotowa"};</script>

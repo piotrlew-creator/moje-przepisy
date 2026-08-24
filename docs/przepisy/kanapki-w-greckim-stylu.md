@@ -12,6 +12,7 @@ hide:
 <div class="p-hero" data-slot="3">
 <div class="p-hero__top">
 <span>Kolacja</span><span class="p-num">18:00-20:00</span>
+<button type="button" class="p-fav p-fav--hero" data-fav="kanapki-w-greckim-stylu" aria-pressed="false" aria-label="Dodaj do ulubionych"><span aria-hidden="true">&#9825;</span></button>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">598</span><span class="p-macro__l">kcal</span></div>
@@ -20,6 +21,7 @@ hide:
 <div class="p-macro"><span class="p-macro__v">24 g</span><span class="p-macro__l">tłuszcz</span></div>
 </div>
 <p style="margin:0;font-size:.66rem;color:var(--p-ink-3);font-weight:600">Wartości dla jednej porcji, tak jak w planie diety.</p>
+<p class="p-cooked" id="cooked-note" hidden></p>
 </div>
 
 <div class="p-servings">
@@ -59,8 +61,8 @@ hide:
 
 <h2>Sposób przygotowania</h2>
 <ol class="p-steps" id="steps-list">
-<li>Na chlebie bezglutenowym ułóż ser typu feta (możesz delikatnie rozsmarować).</li>
-<li>Warzywa pokrój, posyp oregano i zjedz z kanapkami.</li>
+<li><span class="p-step__text">Na chlebie bezglutenowym ułóż ser typu feta (możesz delikatnie rozsmarować).</span></li>
+<li><span class="p-step__text">Warzywa pokrój, posyp oregano i zjedz z kanapkami.</span></li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Kanapki w greckim stylu">
@@ -72,6 +74,7 @@ hide:
 <div class="p-cook__body">
 <span class="p-cook__step" id="cook-label"></span>
 <p class="p-cook__text" id="cook-text"></p>
+<button type="button" class="p-timer__btn p-timer__btn--cook" id="cook-timer" hidden></button>
 </div>
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
@@ -88,7 +91,7 @@ hide:
 </div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "kanapki-w-greckim-stylu", "title": "Kanapki w greckim stylu", "slotLabel": "Kolacja", "time": "18:00-20:00", "baseServings": 1, "kcal": 598, "ingredients": [{"qty": 3.5, "unit": "kromki", "unitLemma": "kromka", "name": "Chleb bezglutenowy", "grams": 105.0, "pantry": false, "tag": "chleb", "nameFirst": true}, {"qty": 5.0, "unit": "plastrów", "unitLemma": "plaster", "name": "Ser typu Feta", "grams": 125.0, "pantry": false, "tag": "feta", "nameFirst": true}, {"qty": 0.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "Ogórek świeży", "grams": 75.0, "pantry": false, "tag": "ogorek", "nameFirst": true}, {"qty": 2.0, "unit": "sztuki", "unitLemma": "sztuka", "name": "Pomidorki koktajlowe", "grams": 40.0, "pantry": false, "tag": "pomidor", "nameFirst": true}, {"qty": 0.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "Papryka czerwona", "grams": 85.0, "pantry": false, "tag": "papryka", "nameFirst": true}, {"qty": 0.5, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "Oregano suszone", "grams": 1.5, "pantry": true, "tag": null, "nameFirst": true}], "steps": ["Na chlebie bezglutenowym ułóż ser typu feta (możesz delikatnie rozsmarować).", "Warzywa pokrój, posyp oregano i zjedz z kanapkami."]};
+<script>window.RECIPE = {"slug": "kanapki-w-greckim-stylu", "title": "Kanapki w greckim stylu", "slotLabel": "Kolacja", "time": "18:00-20:00", "baseServings": 1, "kcal": 598, "times": [null, null], "ingredients": [{"qty": 3.5, "unit": "kromki", "unitLemma": "kromka", "name": "Chleb bezglutenowy", "grams": 105.0, "pantry": false, "tag": "chleb", "nameFirst": true}, {"qty": 5.0, "unit": "plastrów", "unitLemma": "plaster", "name": "Ser typu Feta", "grams": 125.0, "pantry": false, "tag": "feta", "nameFirst": true}, {"qty": 0.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "Ogórek świeży", "grams": 75.0, "pantry": false, "tag": "ogorek", "nameFirst": true}, {"qty": 2.0, "unit": "sztuki", "unitLemma": "sztuka", "name": "Pomidorki koktajlowe", "grams": 40.0, "pantry": false, "tag": "pomidor", "nameFirst": true}, {"qty": 0.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "Papryka czerwona", "grams": 85.0, "pantry": false, "tag": "papryka", "nameFirst": true}, {"qty": 0.5, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "Oregano suszone", "grams": 1.5, "pantry": true, "tag": null, "nameFirst": true}], "steps": ["Na chlebie bezglutenowym ułóż ser typu feta (możesz delikatnie rozsmarować).", "Warzywa pokrój, posyp oregano i zjedz z kanapkami."]};
 window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"], "kostka": ["kostka", "kostki", "kostek", "kostki"], "listek": ["listek", "listki", "listków", "listka"], "łodyga": ["łodyga", "łodygi", "łodyg", "łodygi"]};
 window.SWAPS = {};
 window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

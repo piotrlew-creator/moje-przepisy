@@ -12,6 +12,7 @@ hide:
 <div class="p-hero" data-slot="1">
 <div class="p-hero__top">
 <span>Śniadanie</span><span class="p-num">7:00-10:00</span>
+<button type="button" class="p-fav p-fav--hero" data-fav="tortilla-z-lososiem-szpinakiem-koperkiem-oraz" aria-pressed="false" aria-label="Dodaj do ulubionych"><span aria-hidden="true">&#9825;</span></button>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">610</span><span class="p-macro__l">kcal</span></div>
@@ -20,6 +21,7 @@ hide:
 <div class="p-macro"><span class="p-macro__v">18 g</span><span class="p-macro__l">tłuszcz</span></div>
 </div>
 <p style="margin:0;font-size:.66rem;color:var(--p-ink-3);font-weight:600">Wartości dla jednej porcji, tak jak w planie diety.</p>
+<p class="p-cooked" id="cooked-note" hidden></p>
 </div>
 
 <div class="p-servings">
@@ -70,9 +72,9 @@ hide:
 
 <h2>Sposób przygotowania</h2>
 <ol class="p-steps" id="steps-list">
-<li>Pokrój ogórka, szpinak umyj. Chrzan wymieszaj z koperkiem.</li>
-<li>Na każdą tortillę ułóż chrzan, szpinak, ogórka oraz łososia.</li>
-<li>Całość zawiń. Smacznego!</li>
+<li><span class="p-step__text">Pokrój ogórka, szpinak umyj. Chrzan wymieszaj z koperkiem.</span></li>
+<li><span class="p-step__text">Na każdą tortillę ułóż chrzan, szpinak, ogórka oraz łososia.</span></li>
+<li><span class="p-step__text">Całość zawiń. Smacznego!</span></li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Tortilla z łososiem, szpinakiem, koperkiem oraz ogórkiem">
@@ -84,6 +86,7 @@ hide:
 <div class="p-cook__body">
 <span class="p-cook__step" id="cook-label"></span>
 <p class="p-cook__text" id="cook-text"></p>
+<button type="button" class="p-timer__btn p-timer__btn--cook" id="cook-timer" hidden></button>
 </div>
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
@@ -100,7 +103,7 @@ hide:
 </div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "tortilla-z-lososiem-szpinakiem-koperkiem-oraz", "title": "Tortilla z łososiem, szpinakiem, koperkiem oraz ogórkiem", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "kcal": 610, "ingredients": [{"qty": 0.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "Ogórek świeży", "grams": 75.0, "pantry": false, "tag": "ogorek", "nameFirst": true}, {"qty": 1.0, "unit": "garść", "unitLemma": "garść", "name": "Szpinak", "grams": 25.0, "pantry": false, "tag": "szpinak", "nameFirst": true, "swap": {"group": "liscizielone", "self": "szpinak", "nameCase": "M"}}, {"qty": 3.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "Chrzan (tarty)", "grams": 30.0, "pantry": false, "tag": "chrzan", "nameFirst": true}, {"qty": 1.0, "unit": "łyżeczka", "unitLemma": "łyżeczka", "name": "Koper posiekany", "grams": 4.0, "pantry": true, "tag": null, "nameFirst": true}, {"qty": 1.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "Tortilla bezglutenowa", "grams": 125.0, "pantry": false, "tag": "tortilla", "nameFirst": true}, {"qty": 120.0, "unit": "g", "unitLemma": null, "name": "Łosoś wędzony", "grams": 120.0, "pantry": false, "tag": "losos", "nameFirst": true, "weightOnly": true}], "steps": ["Pokrój ogórka, «1|B|||» umyj. Chrzan wymieszaj z koperkiem.", "Na każdą tortillę ułóż chrzan, «1|B|||», ogórka oraz łososia.", "Całość zawiń. Smacznego!"]};
+<script>window.RECIPE = {"slug": "tortilla-z-lososiem-szpinakiem-koperkiem-oraz", "title": "Tortilla z łososiem, szpinakiem, koperkiem oraz ogórkiem", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "kcal": 610, "times": [null, null, null], "ingredients": [{"qty": 0.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "Ogórek świeży", "grams": 75.0, "pantry": false, "tag": "ogorek", "nameFirst": true}, {"qty": 1.0, "unit": "garść", "unitLemma": "garść", "name": "Szpinak", "grams": 25.0, "pantry": false, "tag": "szpinak", "nameFirst": true, "swap": {"group": "liscizielone", "self": "szpinak", "nameCase": "M"}}, {"qty": 3.0, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "Chrzan (tarty)", "grams": 30.0, "pantry": false, "tag": "chrzan", "nameFirst": true}, {"qty": 1.0, "unit": "łyżeczka", "unitLemma": "łyżeczka", "name": "Koper posiekany", "grams": 4.0, "pantry": true, "tag": null, "nameFirst": true}, {"qty": 1.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "Tortilla bezglutenowa", "grams": 125.0, "pantry": false, "tag": "tortilla", "nameFirst": true}, {"qty": 120.0, "unit": "g", "unitLemma": null, "name": "Łosoś wędzony", "grams": 120.0, "pantry": false, "tag": "losos", "nameFirst": true, "weightOnly": true}], "steps": ["Pokrój ogórka, «1|B|||» umyj. Chrzan wymieszaj z koperkiem.", "Na każdą tortillę ułóż chrzan, «1|B|||», ogórka oraz łososia.", "Całość zawiń. Smacznego!"]};
 window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"], "kostka": ["kostka", "kostki", "kostek", "kostki"], "listek": ["listek", "listki", "listków", "listka"], "łodyga": ["łodyga", "łodygi", "łodyg", "łodygi"]};
 window.SWAPS = {"liscizielone": {"label": "Zielone warzywa liściaste", "options": [{"id": "szpinak", "label": "Szpinak", "rodzaj": "m", "formy": {"M": "szpinak", "D": "szpinaku", "B": "szpinak", "N": "szpinakiem", "Ms": "szpinaku"}, "rodzajB": "m"}, {"id": "rukola", "label": "Rukola", "rodzaj": "f", "formy": {"M": "rukola", "D": "rukoli", "B": "rukolę", "N": "rukolą", "Ms": "rukoli"}, "rodzajB": "f"}, {"id": "roszponka", "label": "Roszponka", "rodzaj": "f", "formy": {"M": "roszponka", "D": "roszponki", "B": "roszponkę", "N": "roszponką", "Ms": "roszponce"}, "rodzajB": "f"}, {"id": "jarmuz", "label": "Jarmuż", "rodzaj": "m", "formy": {"M": "jarmuż", "D": "jarmużu", "B": "jarmuż", "N": "jarmużem", "Ms": "jarmużu"}, "rodzajB": "m"}, {"id": "salata-rzymska", "label": "Sałata rzymska", "rodzaj": "f", "formy": {"M": "sałata rzymska", "D": "sałaty rzymskiej", "B": "sałatę rzymską", "N": "sałatą rzymską", "Ms": "sałacie rzymskiej"}, "rodzajB": "f"}, {"id": "miks-salat", "label": "Miks sałat", "rodzaj": "m", "formy": {"M": "miks sałat", "D": "miksu sałat", "B": "miks sałat", "N": "miksem sałat", "Ms": "miksie sałat"}, "rodzajB": "m"}]}};
 window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

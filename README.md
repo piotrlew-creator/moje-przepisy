@@ -1,9 +1,14 @@
 # Gotuj z Lewym
 
-Statyczna strona z przepisami z planów diety: wyszukiwarka według pory posiłku
-i składników, przelicznik porcji, zamienniki składników, interaktywna lista
-zakupów z eksportem do PDF oraz tryb gotowania krok po kroku. Zbudowana na
-MkDocs Material, hostowana na GitHub Pages.
+Statyczna strona z przepisami z planów diety: wyszukiwarka po nazwie dania
+i składnikach, ulubione, tryb „mam w lodówce”, przelicznik porcji, zamienniki
+składników, lista zakupów — dla jednego dania i zbiorcza na cały tydzień —
+z eksportem do PDF, oraz tryb gotowania krok po kroku z minutnikiem.
+Zbudowana na MkDocs Material, hostowana na GitHub Pages.
+
+Wszystko działa bez serwera i bez konta: dane w `recipes.json`, stan
+użytkownika (ulubione, ugotowane, koszyk, odhaczone zakupy) w pamięci
+przeglądarki.
 
 **Strona:** https://piotrlew-creator.github.io/moje-przepisy/
 
@@ -19,10 +24,15 @@ kroki przygotowania, kaloryczność, makroskładniki, dzień i numer posiłku.
 recipes.json ──▶ generate_site.py ──▶ docs/index.md          (wyszukiwarka + lista dań)
                                       docs/przepisy/*.md     (263 przepisy)
                                       docs/zamienniki.md     (lista wymienników)
+                                      docs/zakupy.md         (zbiorcza lista zakupów)
+                                      docs/dane/zakupy.json  (składniki wszystkich dań)
                                              │
                                              ▼
                                       mkdocs build ──▶ GitHub Pages
 ```
+
+`docs/dane/zakupy.json` (~160 kB, 23 kB po gzipie) jest doczytywany dopiero po
+wejściu na stronę zakupów — nie obciąża nikogo, kto przyszedł obejrzeć przepis.
 
 ## Dwie wersje kroków przygotowania
 
@@ -147,6 +157,40 @@ rozpoczęcia z PDF-u:
 Przekąski (batonik, jogurt, garść orzechów — pozycje bez godzin w PDF-ie) są
 **pomijane w całości**. Nie ma w nich czego gotować, a w wyszukiwarce zaśmiecały
 kolację pozycjami na 180 kcal obok obiadów na 600. Odsiewa je `tools/build.py`.
+
+## Stan zapisywany w przeglądarce
+
+| klucz | co trzyma |
+|---|---|
+| `przepisy:fav` | ulubione przepisy (lista slugów) |
+| `przepisy:cooked` | ugotowane: slug → data |
+| `przepisy:koszyk` | zbiorcza lista zakupów: slug → liczba porcji |
+| `przepisy:filters` | zaznaczone składniki na stronie głównej |
+| `przepisy:servings:<slug>` | liczba porcji na stronie przepisu |
+| `przepisy:swap:<slug>` | wybrane zamienniki |
+| `przepisy:bought:<slug>`, `przepisy:bought:zakupy` | odhaczone pozycje list zakupów |
+| `przepisy:step:<slug>` | numer kroku w trybie gotowania |
+
+Wartości domyślne nie są zapisywane — samo przeglądanie nie zostawia po sobie
+śmieci. Klucze wskazujące na nieistniejące już przepisy albo składniki są
+odsiewane przy wczytaniu.
+
+## Minutnik w krokach
+
+Czas czyta z treści kroku `czas_kroku()` w `generate_site.py`, przy budowaniu
+strony — nie w przeglądarce. Dzięki temu widać z góry, które kroki dostają
+przycisk, i da się to sprawdzić testem. Jednostka musi stać zaraz za liczbą,
+więc „180 stopniach” nie jest brane za czas; przy zakresie („25-30 minut”)
+bierzemy dolną granicę, a czasy dłuższe niż cztery godziny pomijamy — to
+zwykle „odstaw na noc”, a nie coś, co się odlicza.
+
+## Zbiorcza lista zakupów
+
+Pozycje z różnych przepisów scalamy po kluczu **kategoria + rdzeń nazwy +
+jednostka**. Sam rdzeń to za mało (połączyłby chleb żytni z bezglutenowym),
+sama kategoria też. Razem łączą „Ryż basmati” z „ryżu basmati” — bo starsze
+plany zapisują składnik w dopełniaczu, a nowsze w mianowniku — i nic ponadto.
+Przy pozycji scalonej widać, z ilu dań pochodzi.
 
 ## Zamienniki składników
 

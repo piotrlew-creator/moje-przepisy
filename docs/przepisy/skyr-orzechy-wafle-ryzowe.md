@@ -12,6 +12,7 @@ hide:
 <div class="p-hero" data-slot="1">
 <div class="p-hero__top">
 <span>Śniadanie</span><span class="p-num">7:00-10:00</span>
+<button type="button" class="p-fav p-fav--hero" data-fav="skyr-orzechy-wafle-ryzowe" aria-pressed="false" aria-label="Dodaj do ulubionych"><span aria-hidden="true">&#9825;</span></button>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">521</span><span class="p-macro__l">kcal</span></div>
@@ -20,6 +21,7 @@ hide:
 <div class="p-macro"><span class="p-macro__v">24 g</span><span class="p-macro__l">tłuszcz</span></div>
 </div>
 <p style="margin:0;font-size:.66rem;color:var(--p-ink-3);font-weight:600">Wartości dla jednej porcji, tak jak w planie diety.</p>
+<p class="p-cooked" id="cooked-note" hidden></p>
 </div>
 
 <div class="p-servings">
@@ -65,7 +67,7 @@ hide:
 
 <h2>Sposób przygotowania</h2>
 <ol class="p-steps" id="steps-list">
-<li>Jogurt zjedz z orzechami i waflami ryżowymi.</li>
+<li><span class="p-step__text">Jogurt zjedz z orzechami i waflami ryżowymi.</span></li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Skyr + orzechy + wafle ryżowe">
@@ -77,6 +79,7 @@ hide:
 <div class="p-cook__body">
 <span class="p-cook__step" id="cook-label"></span>
 <p class="p-cook__text" id="cook-text"></p>
+<button type="button" class="p-timer__btn p-timer__btn--cook" id="cook-timer" hidden></button>
 </div>
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
@@ -93,7 +96,7 @@ hide:
 </div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "skyr-orzechy-wafle-ryzowe", "title": "Skyr + orzechy + wafle ryżowe", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "kcal": 521, "ingredients": [{"qty": 1.0, "unit": "opakowanie", "unitLemma": "opakowanie", "name": "jogurtu skyr", "grams": 150.0, "pantry": false, "tag": "jogurt"}, {"qty": 5.0, "unit": "sztuk", "unitLemma": "sztuka", "name": "wafli ryżowych", "grams": 50.0, "pantry": false, "tag": "wafle"}, {"qty": 1.0, "unit": "garść", "unitLemma": "garść", "name": "orzechów włoskich", "grams": 40.0, "pantry": false, "tag": "orzechy", "swap": {"group": "orzechy", "self": "orzechy-wloskie", "nameCase": "D"}}], "steps": ["Jogurt zjedz z orzechami i waflami ryżowymi."]};
+<script>window.RECIPE = {"slug": "skyr-orzechy-wafle-ryzowe", "title": "Skyr + orzechy + wafle ryżowe", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "kcal": 521, "times": [null], "ingredients": [{"qty": 1.0, "unit": "opakowanie", "unitLemma": "opakowanie", "name": "jogurtu skyr", "grams": 150.0, "pantry": false, "tag": "jogurt"}, {"qty": 5.0, "unit": "sztuk", "unitLemma": "sztuka", "name": "wafli ryżowych", "grams": 50.0, "pantry": false, "tag": "wafle"}, {"qty": 1.0, "unit": "garść", "unitLemma": "garść", "name": "orzechów włoskich", "grams": 40.0, "pantry": false, "tag": "orzechy", "swap": {"group": "orzechy", "self": "orzechy-wloskie", "nameCase": "D"}}], "steps": ["Jogurt zjedz z orzechami i waflami ryżowymi."]};
 window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"], "kostka": ["kostka", "kostki", "kostek", "kostki"], "listek": ["listek", "listki", "listków", "listka"], "łodyga": ["łodyga", "łodygi", "łodyg", "łodygi"]};
 window.SWAPS = {"orzechy": {"label": "Orzechy i pestki", "options": [{"id": "orzechy-wloskie", "label": "Orzechy włoskie", "rodzaj": "pl", "formy": {"M": "orzechy włoskie", "D": "orzechów włoskich", "B": "orzechy włoskie", "N": "orzechami włoskimi", "Ms": "orzechach włoskich"}, "rodzajB": "pl"}, {"id": "orzechy-nerkowca", "label": "Orzechy nerkowca", "rodzaj": "pl", "formy": {"M": "orzechy nerkowca", "D": "orzechów nerkowca", "B": "orzechy nerkowca", "N": "orzechami nerkowca", "Ms": "orzechach nerkowca"}, "rodzajB": "pl"}, {"id": "orzechy-laskowe", "label": "Orzechy laskowe", "rodzaj": "pl", "formy": {"M": "orzechy laskowe", "D": "orzechów laskowych", "B": "orzechy laskowe", "N": "orzechami laskowymi", "Ms": "orzechach laskowych"}, "rodzajB": "pl"}, {"id": "orzechy-pistacjowe", "label": "Orzechy pistacjowe", "rodzaj": "pl", "formy": {"M": "orzechy pistacjowe", "D": "orzechów pistacjowych", "B": "orzechy pistacjowe", "N": "orzechami pistacjowymi", "Ms": "orzechach pistacjowych"}, "rodzajB": "pl"}, {"id": "orzechy-arachidowe", "label": "Orzechy arachidowe", "rodzaj": "pl", "formy": {"M": "orzechy arachidowe", "D": "orzechów arachidowych", "B": "orzechy arachidowe", "N": "orzechami arachidowymi", "Ms": "orzechach arachidowych"}, "rodzajB": "pl"}, {"id": "pestki-dyni", "label": "Pestki dyni", "rodzaj": "pl", "formy": {"M": "pestki dyni", "D": "pestek dyni", "B": "pestki dyni", "N": "pestkami dyni", "Ms": "pestkach dyni"}, "rodzajB": "pl"}, {"id": "pestki-slonecznika", "label": "Pestki słonecznika", "rodzaj": "pl", "formy": {"M": "pestki słonecznika", "D": "pestek słonecznika", "B": "pestki słonecznika", "N": "pestkami słonecznika", "Ms": "pestkach słonecznika"}, "rodzajB": "pl"}]}};
 window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

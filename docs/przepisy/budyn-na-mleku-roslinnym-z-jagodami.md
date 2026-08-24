@@ -12,6 +12,7 @@ hide:
 <div class="p-hero" data-slot="1">
 <div class="p-hero__top">
 <span>Śniadanie</span><span class="p-num">7:00-10:00</span>
+<button type="button" class="p-fav p-fav--hero" data-fav="budyn-na-mleku-roslinnym-z-jagodami" aria-pressed="false" aria-label="Dodaj do ulubionych"><span aria-hidden="true">&#9825;</span></button>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">475</span><span class="p-macro__l">kcal</span></div>
@@ -20,6 +21,7 @@ hide:
 <div class="p-macro"><span class="p-macro__v">15 g</span><span class="p-macro__l">tłuszcz</span></div>
 </div>
 <p style="margin:0;font-size:.66rem;color:var(--p-ink-3);font-weight:600">Wartości dla jednej porcji, tak jak w planie diety.</p>
+<p class="p-cooked" id="cooked-note" hidden></p>
 </div>
 
 <div class="p-servings">
@@ -72,10 +74,10 @@ hide:
 
 <h2>Sposób przygotowania</h2>
 <ol class="p-steps" id="steps-list">
-<li>200 ml mleka zagotuj z ksylitolem.</li>
-<li>Mąkę ziemniaczaną wymieszaj z pozostałym mlekiem i ekstraktem waniliowym. Wlej do gotującego się mleka. Wymieszaj do zgęstnienia.</li>
-<li>Dodaj jagody, odżywkę i wymieszaj.</li>
-<li>Przed podaniem budyń posyp płatkami migdałowymi. Smacznego!</li>
+<li><span class="p-step__text">200 ml mleka zagotuj z ksylitolem.</span></li>
+<li><span class="p-step__text">Mąkę ziemniaczaną wymieszaj z pozostałym mlekiem i ekstraktem waniliowym. Wlej do gotującego się mleka. Wymieszaj do zgęstnienia.</span></li>
+<li><span class="p-step__text">Dodaj jagody, odżywkę i wymieszaj.</span></li>
+<li><span class="p-step__text">Przed podaniem budyń posyp płatkami migdałowymi. Smacznego!</span></li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Budyń na mleku roślinnym z jagodami i płatkami migdałowymi">
@@ -87,6 +89,7 @@ hide:
 <div class="p-cook__body">
 <span class="p-cook__step" id="cook-label"></span>
 <p class="p-cook__text" id="cook-text"></p>
+<button type="button" class="p-timer__btn p-timer__btn--cook" id="cook-timer" hidden></button>
 </div>
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
@@ -103,7 +106,7 @@ hide:
 </div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "budyn-na-mleku-roslinnym-z-jagodami", "title": "Budyń na mleku roślinnym z jagodami i płatkami migdałowymi", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "kcal": 475, "ingredients": [{"qty": 20.0, "unit": "łyżek", "unitLemma": "łyżka", "name": "mleka roślinnego", "grams": 300.0, "pantry": false, "tag": "mleko", "swap": {"group": "mleko", "self": "mleko-roslinne", "nameCase": "D"}}, {"qty": 1.0, "unit": "łyżka", "unitLemma": "łyżka", "name": "mąki ziemniaczanej", "grams": 10.0, "pantry": false, "tag": "maka"}, {"qty": 0.5, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "ekstraktu waniliowego", "grams": 1.5, "pantry": true, "tag": null}, {"qty": 1.0, "unit": "łyżka", "unitLemma": "łyżka", "name": "ksylitolu", "grams": 15.0, "pantry": true, "tag": null}, {"qty": 2.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "płatków migdałowych", "grams": 20.0, "pantry": false, "tag": "migdaly"}, {"qty": 4.0, "unit": "garści", "unitLemma": "garść", "name": "jagód", "grams": 120.0, "pantry": false, "tag": "jagody"}, {"qty": 3.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "wegańskiej odżywki białkowej", "grams": 24.0, "pantry": false, "tag": "odzywka"}], "steps": ["200 ml mleka zagotuj z ksylitolem.", "Mąkę ziemniaczaną wymieszaj z pozostałym mlekiem i ekstraktem waniliowym. Wlej do gotującego się mleka. Wymieszaj do zgęstnienia.", "Dodaj jagody, odżywkę i wymieszaj.", "Przed podaniem budyń posyp płatkami migdałowymi. Smacznego!"]};
+<script>window.RECIPE = {"slug": "budyn-na-mleku-roslinnym-z-jagodami", "title": "Budyń na mleku roślinnym z jagodami i płatkami migdałowymi", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "kcal": 475, "times": [null, null, null, null], "ingredients": [{"qty": 20.0, "unit": "łyżek", "unitLemma": "łyżka", "name": "mleka roślinnego", "grams": 300.0, "pantry": false, "tag": "mleko", "swap": {"group": "mleko", "self": "mleko-roslinne", "nameCase": "D"}}, {"qty": 1.0, "unit": "łyżka", "unitLemma": "łyżka", "name": "mąki ziemniaczanej", "grams": 10.0, "pantry": false, "tag": "maka"}, {"qty": 0.5, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "ekstraktu waniliowego", "grams": 1.5, "pantry": true, "tag": null}, {"qty": 1.0, "unit": "łyżka", "unitLemma": "łyżka", "name": "ksylitolu", "grams": 15.0, "pantry": true, "tag": null}, {"qty": 2.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "płatków migdałowych", "grams": 20.0, "pantry": false, "tag": "migdaly"}, {"qty": 4.0, "unit": "garści", "unitLemma": "garść", "name": "jagód", "grams": 120.0, "pantry": false, "tag": "jagody"}, {"qty": 3.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "wegańskiej odżywki białkowej", "grams": 24.0, "pantry": false, "tag": "odzywka"}], "steps": ["200 ml mleka zagotuj z ksylitolem.", "Mąkę ziemniaczaną wymieszaj z pozostałym mlekiem i ekstraktem waniliowym. Wlej do gotującego się mleka. Wymieszaj do zgęstnienia.", "Dodaj jagody, odżywkę i wymieszaj.", "Przed podaniem budyń posyp płatkami migdałowymi. Smacznego!"]};
 window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"], "kostka": ["kostka", "kostki", "kostek", "kostki"], "listek": ["listek", "listki", "listków", "listka"], "łodyga": ["łodyga", "łodygi", "łodyg", "łodygi"]};
 window.SWAPS = {"mleko": {"label": "Mleko i napoje roślinne", "options": [{"id": "mleko-roslinne", "label": "Mleko roślinne", "rodzaj": "n", "formy": {"M": "mleko roślinne", "D": "mleka roślinnego", "B": "mleko roślinne", "N": "mlekiem roślinnym", "Ms": "mleku roślinnym"}, "rodzajB": "n"}, {"id": "napoj-roslinny", "label": "Napój roślinny", "rodzaj": "m", "formy": {"M": "napój roślinny", "D": "napoju roślinnego", "B": "napój roślinny", "N": "napojem roślinnym", "Ms": "napoju roślinnym"}, "rodzajB": "m"}, {"id": "napoj-sojowy", "label": "Napój sojowy", "rodzaj": "m", "formy": {"M": "napój sojowy", "D": "napoju sojowego", "B": "napój sojowy", "N": "napojem sojowym", "Ms": "napoju sojowym"}, "rodzajB": "m"}, {"id": "napoj-migdalowy", "label": "Napój migdałowy", "rodzaj": "m", "formy": {"M": "napój migdałowy", "D": "napoju migdałowego", "B": "napój migdałowy", "N": "napojem migdałowym", "Ms": "napoju migdałowym"}, "rodzajB": "m"}, {"id": "napoj-owsiany", "label": "Napój owsiany", "rodzaj": "m", "formy": {"M": "napój owsiany", "D": "napoju owsianego", "B": "napój owsiany", "N": "napojem owsianym", "Ms": "napoju owsianym"}, "rodzajB": "m"}, {"id": "mleko-2", "label": "Mleko 2%", "rodzaj": "n", "formy": {"M": "mleko 2%", "D": "mleka 2%", "B": "mleko 2%", "N": "mlekiem 2%", "Ms": "mleku 2%"}, "rodzajB": "n"}]}};
 window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

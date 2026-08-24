@@ -12,6 +12,7 @@ hide:
 <div class="p-hero" data-slot="1">
 <div class="p-hero__top">
 <span>Śniadanie</span><span class="p-num">7:00-10:00</span>
+<button type="button" class="p-fav p-fav--hero" data-fav="ryz-z-jogurtem-i-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych"><span aria-hidden="true">&#9825;</span></button>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">501</span><span class="p-macro__l">kcal</span></div>
@@ -20,6 +21,7 @@ hide:
 <div class="p-macro"><span class="p-macro__v">17 g</span><span class="p-macro__l">tłuszcz</span></div>
 </div>
 <p style="margin:0;font-size:.66rem;color:var(--p-ink-3);font-weight:600">Wartości dla jednej porcji, tak jak w planie diety.</p>
+<p class="p-cooked" id="cooked-note" hidden></p>
 </div>
 
 <div class="p-servings">
@@ -76,10 +78,10 @@ hide:
 
 <h2>Sposób przygotowania</h2>
 <ol class="p-steps" id="steps-list">
-<li>Ryż zalej wodą w stosunku 1:</li>
-<li>Gotuj na wolnym ogniu tyle minut, ile podane jest na opakowaniu. W razie potrzeby dolej, aby ryż się nie przypalił.</li>
-<li>Ugotowany ryż wymieszaj z syropem i jogurtem. Przełóż do miseczki.</li>
-<li>Na górę połóż owoce i orzechy.</li>
+<li><span class="p-step__text">Ryż zalej wodą w stosunku 1:</span></li>
+<li><span class="p-step__text">Gotuj na wolnym ogniu tyle minut, ile podane jest na opakowaniu. W razie potrzeby dolej, aby ryż się nie przypalił.</span></li>
+<li><span class="p-step__text">Ugotowany ryż wymieszaj z syropem i jogurtem. Przełóż do miseczki.</span></li>
+<li><span class="p-step__text">Na górę połóż owoce i orzechy.</span></li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Ryż z jogurtem i owocami">
@@ -91,6 +93,7 @@ hide:
 <div class="p-cook__body">
 <span class="p-cook__step" id="cook-label"></span>
 <p class="p-cook__text" id="cook-text"></p>
+<button type="button" class="p-timer__btn p-timer__btn--cook" id="cook-timer" hidden></button>
 </div>
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
@@ -107,7 +110,7 @@ hide:
 </div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "ryz-z-jogurtem-i-owocami", "title": "Ryż z jogurtem i owocami", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "kcal": 501, "ingredients": [{"qty": 50.0, "unit": "g", "unitLemma": null, "name": "Ryż basmati", "grams": 50.0, "pantry": false, "tag": "ryz", "nameFirst": true, "weightOnly": true, "swap": {"group": "zboza", "self": "ryz-basmati", "nameCase": "M"}}, {"qty": 0.5, "unit": "opakowania", "unitLemma": "opakowanie", "name": "Jogurt skyr bez laktozy", "grams": 75.0, "pantry": false, "tag": "jogurt", "nameFirst": true}, {"qty": 1.5, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "Syrop klonowy", "grams": 15.0, "pantry": false, "tag": "syrop-klonowy", "nameFirst": true, "swap": {"group": "slodziki", "self": "syrop-klonowy", "nameCase": "M"}}, {"qty": 150.0, "unit": "g", "unitLemma": null, "name": "Truskawki, świeże lub mrożone", "grams": 150.0, "pantry": false, "tag": "truskawki", "nameFirst": true, "weightOnly": true}, {"qty": 30.0, "unit": "g", "unitLemma": null, "name": "Mieszanka orzechów", "grams": 30.0, "pantry": false, "tag": "orzechy", "nameFirst": true, "weightOnly": true}], "steps": ["Ryż zalej wodą w stosunku 1:", "Gotuj na wolnym ogniu tyle minut, ile podane jest na opakowaniu. W razie potrzeby dolej, aby ryż się nie przypalił.", "Ugotowany ryż wymieszaj z syropem i jogurtem. Przełóż do miseczki.", "Na górę połóż owoce i orzechy."]};
+<script>window.RECIPE = {"slug": "ryz-z-jogurtem-i-owocami", "title": "Ryż z jogurtem i owocami", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "kcal": 501, "times": [null, null, null, null], "ingredients": [{"qty": 50.0, "unit": "g", "unitLemma": null, "name": "Ryż basmati", "grams": 50.0, "pantry": false, "tag": "ryz", "nameFirst": true, "weightOnly": true, "swap": {"group": "zboza", "self": "ryz-basmati", "nameCase": "M"}}, {"qty": 0.5, "unit": "opakowania", "unitLemma": "opakowanie", "name": "Jogurt skyr bez laktozy", "grams": 75.0, "pantry": false, "tag": "jogurt", "nameFirst": true}, {"qty": 1.5, "unit": "łyżeczki", "unitLemma": "łyżeczka", "name": "Syrop klonowy", "grams": 15.0, "pantry": false, "tag": "syrop-klonowy", "nameFirst": true, "swap": {"group": "slodziki", "self": "syrop-klonowy", "nameCase": "M"}}, {"qty": 150.0, "unit": "g", "unitLemma": null, "name": "Truskawki, świeże lub mrożone", "grams": 150.0, "pantry": false, "tag": "truskawki", "nameFirst": true, "weightOnly": true}, {"qty": 30.0, "unit": "g", "unitLemma": null, "name": "Mieszanka orzechów", "grams": 30.0, "pantry": false, "tag": "orzechy", "nameFirst": true, "weightOnly": true}], "steps": ["Ryż zalej wodą w stosunku 1:", "Gotuj na wolnym ogniu tyle minut, ile podane jest na opakowaniu. W razie potrzeby dolej, aby ryż się nie przypalił.", "Ugotowany ryż wymieszaj z syropem i jogurtem. Przełóż do miseczki.", "Na górę połóż owoce i orzechy."]};
 window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"], "kostka": ["kostka", "kostki", "kostek", "kostki"], "listek": ["listek", "listki", "listków", "listka"], "łodyga": ["łodyga", "łodygi", "łodyg", "łodygi"]};
 window.SWAPS = {"slodziki": {"label": "Miód i syropy", "options": [{"id": "miod", "label": "Miód", "rodzaj": "m", "formy": {"M": "miód", "D": "miodu", "B": "miód", "N": "miodem", "Ms": "miodzie"}, "rodzajB": "m"}, {"id": "syrop-klonowy", "label": "Syrop klonowy", "rodzaj": "m", "formy": {"M": "syrop klonowy", "D": "syropu klonowego", "B": "syrop klonowy", "N": "syropem klonowym", "Ms": "syropie klonowym"}, "rodzajB": "m"}, {"id": "syrop-z-agawy", "label": "Syrop z agawy", "rodzaj": "m", "formy": {"M": "syrop z agawy", "D": "syropu z agawy", "B": "syrop z agawy", "N": "syropem z agawy", "Ms": "syropie z agawy"}, "rodzajB": "m"}]}, "zboza": {"label": "Ryż i kasze", "options": [{"id": "ryz-basmati", "label": "Ryż basmati", "rodzaj": "m", "formy": {"M": "ryż basmati", "D": "ryżu basmati", "B": "ryż basmati", "N": "ryżem basmati", "Ms": "ryżu basmati"}, "rodzajB": "m"}, {"id": "ryz-brazowy", "label": "Ryż brązowy", "rodzaj": "m", "formy": {"M": "ryż brązowy", "D": "ryżu brązowego", "B": "ryż brązowy", "N": "ryżem brązowym", "Ms": "ryżu brązowym"}, "rodzajB": "m"}, {"id": "kasza-jaglana", "label": "Kasza jaglana", "rodzaj": "f", "formy": {"M": "kasza jaglana", "D": "kaszy jaglanej", "B": "kaszę jaglaną", "N": "kaszą jaglaną", "Ms": "kaszy jaglanej"}, "rodzajB": "f"}, {"id": "kasza-gryczana", "label": "Kasza gryczana", "rodzaj": "f", "formy": {"M": "kasza gryczana", "D": "kaszy gryczanej", "B": "kaszę gryczaną", "N": "kaszą gryczaną", "Ms": "kaszy gryczanej"}, "rodzajB": "f"}, {"id": "kasza-bulgur", "label": "Kasza bulgur", "rodzaj": "f", "formy": {"M": "kasza bulgur", "D": "kaszy bulgur", "B": "kaszę bulgur", "N": "kaszą bulgur", "Ms": "kaszy bulgur"}, "rodzajB": "f"}, {"id": "komosa", "label": "Komosa ryżowa", "rodzaj": "f", "formy": {"M": "komosa ryżowa", "D": "komosy ryżowej", "B": "komosę ryżową", "N": "komosą ryżową", "Ms": "komosie ryżowej"}, "rodzajB": "f"}]}};
 window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

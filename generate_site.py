@@ -74,6 +74,10 @@ def skrot(u):
     return SKROTY.get(u, u)
 
 
+def mmss(sek):
+    return f"{sek // 60}:{sek % 60:02d}"
+
+
 def num(x):
     return str(int(x)) if float(x).is_integer() else str(x)
 
@@ -102,6 +106,32 @@ def forma(opt, case):
     """Forma wariantu w danym przypadku, z sensownym cofnięciem."""
     f = opt["formy"]
     return f.get(case) or f.get(ZAMIENNIK_FORMY.get(case, "M")) or f["M"]
+
+
+# Minutnik: czas czytamy z treści kroku przy budowaniu strony, nie w
+# przeglądarce. Dzięki temu widać z góry, które kroki dostaną przycisk, i da się
+# to sprawdzić testem. Jednostka musi stać zaraz za liczbą, więc „180 stopniach”
+# nie jest brane za czas.
+RE_CZAS = re.compile(
+    r"(?<![\d,.])(\d{1,3})(?:\s*[-–]\s*(\d{1,3}))?\s*"
+    r"(sekund\w*|sek\b|minut\w*|min\b|godzin\w*|godz\b)", re.I)
+
+
+def czas_kroku(step):
+    """Sekundy z pierwszego określenia czasu w kroku albo None.
+
+    Przy zakresie („25-30 minut”) bierzemy dolną granicę — lepiej zajrzeć za
+    wcześnie niż spalić. Pomijamy czasy dłuższe niż cztery godziny: to zwykle
+    „odstaw na noc”, a nie coś, co się odlicza.
+    """
+    m = RE_CZAS.search(TOKEN.sub("", step))
+    if not m:
+        return None
+    jedn = m.group(3).lower()
+    mnoznik = 1 if jedn.startswith(("sekund", "sek")) else \
+        3600 if jedn.startswith(("godzin", "godz")) else 60
+    sek = int(m.group(1)) * mnoznik
+    return sek if 10 <= sek <= 4 * 3600 else None
 
 
 def render_step(step, ingredients, groups, adjectives):
@@ -159,6 +189,33 @@ def render_index(data):
         )
     out.append("</div>")
 
+    # --- szukanie: dania i składniki jednym polem
+    # Pole stoi nad panelem, nie w środku: szukanie po nazwie dania było
+    # wcześniej w ogóle niedostępne, a to najbardziej naturalny odruch.
+    out.append('<div class="p-searchrow">')
+    out.append('<div class="p-search">' + SEARCH_ICON +
+               '<input type="search" id="ing-search" inputmode="search" '
+               'placeholder="Szukaj dania albo składnika…" '
+               'aria-label="Szukaj dania albo składnika">'
+               '<button type="button" class="p-search__x" id="search-clear" '
+               'aria-label="Wyczyść wyszukiwanie" hidden>&times;</button></div>')
+    out.append('<button type="button" class="p-btn p-btn--clear" id="clear-filters" '
+               'hidden>Wyczyść <span class="p-num" id="clear-count"></span></button>')
+    out.append("</div>")
+
+    # --- tryby widoku
+    out.append('<div class="p-modes" role="group" aria-label="Widok">')
+    out.append('<button type="button" class="p-chip p-chip--mode" id="mode-fav" '
+               'data-on="0" aria-pressed="false">'
+               '<span class="p-heart" aria-hidden="true">&#9825;</span>Ulubione'
+               ' <span class="p-num" id="fav-count"></span></button>')
+    out.append('<button type="button" class="p-chip p-chip--mode" id="mode-cooked" '
+               'data-on="0" aria-pressed="false">Ugotowane'
+               ' <span class="p-num" id="cooked-count"></span></button>')
+    out.append('<button type="button" class="p-chip p-chip--mode" id="mode-fridge" '
+               'data-on="0" aria-pressed="false">&#129530; Mam w lodówce</button>')
+    out.append("</div>")
+
     # --- składniki
     out.append('<details class="p-panel" id="ing-panel">')
     out.append('<summary class="p-panel__summary">')
@@ -167,18 +224,9 @@ def render_index(data):
     out.append("</summary>")
     out.append('<div class="p-panel__inner">')
 
-    # Pole wyszukiwania i „Wyczyść” stoją obok siebie — odznaczenie wszystkiego
-    # ma być pod ręką, a nie schowane pod listą wyników.
-    out.append('<div class="p-searchrow">')
-    out.append('<div class="p-search">' + SEARCH_ICON +
-               '<input type="search" id="ing-search" inputmode="search" '
-               'placeholder="Szukaj składnika…" aria-label="Szukaj składnika">'
-               '<button type="button" class="p-search__x" id="search-clear" '
-               'aria-label="Wyczyść wyszukiwanie" hidden>&times;</button></div>')
-    out.append('<button type="button" class="p-btn p-btn--clear" id="clear-filters" '
-               'hidden>Wyczyść <span class="p-num" id="clear-count"></span></button>')
-    out.append("</div>")
-
+    out.append('<p class="p-hint" id="fridge-hint" hidden>Zaznacz, co masz pod ręką. '
+               "Zamiast odsiewać przepisy, ułożę je od tych, do których brakuje "
+               "najmniej. Sól, pieprz i oliwa nie liczą się jako braki.</p>")
     out.append('<div class="p-chips" id="ing-chips">')
     for iid in featured:
         ing = by_id[iid]
@@ -218,10 +266,17 @@ def render_index(data):
             top = top[:75].rsplit(",", 1)[0] + "…"
         out.append("<li>")
         out.append(f'<article class="p-card" data-slot="{r["slot"]}" '
-                   f'data-slot-id="{e(r["slotId"])}" data-tags="{e(tags)}">')
+                   f'data-slot-id="{e(r["slotId"])}" data-tags="{e(tags)}" '
+                   f'data-slug="{e(r["slug"])}" data-title="{e(r["title"])}" '
+                   f'data-kcal="{r["kcal"]}" data-protein="{r["protein"]}">')
         out.append('<div class="p-card__band"></div>')
         out.append('<div class="p-card__body">')
+        out.append('<div class="p-card__head">')
         out.append(f'<a class="p-card__title" href="przepisy/{e(r["slug"])}/">{e(r["title"])}</a>')
+        out.append(f'<button type="button" class="p-fav" data-fav="{e(r["slug"])}" '
+                   f'aria-pressed="false" aria-label="Dodaj do ulubionych: {e(r["title"])}">'
+                   '<span aria-hidden="true">&#9825;</span></button>')
+        out.append("</div>")
         out.append('<div class="p-card__meta">')
         out.append(f'<span class="p-card__slot"><span class="p-dot"></span>{e(r["slotLabel"])}</span>')
         out.append(f'<span class="p-num">{e(r["time"])}</span>')
@@ -229,8 +284,15 @@ def render_index(data):
         out.append("</div>")
         if top:
             out.append(f'<div class="p-card__tags">{e(top)}</div>')
+        out.append('<p class="p-card__miss" hidden></p>')
         out.append("</div></article></li>")
     out.append("</ul>")
+    out.append("")
+
+    # Etykiety kategorii — tryb „mam w lodówce” musi umieć nazwać, czego brakuje.
+    etykiety = {i["id"]: i["label"] for i in idx}
+    out.append("<script>window.SKLADNIKI = " +
+               json.dumps(etykiety, ensure_ascii=False, separators=(",", ":")) + ";</script>")
     out.append("")
 
     return "\n".join(out)
@@ -258,6 +320,9 @@ def render_recipe(r, data):
     out.append(f'<div class="p-hero" data-slot="{r["slot"]}">')
     out.append('<div class="p-hero__top">')
     out.append(f'<span>{e(r["slotLabel"])}</span><span class="p-num">{e(r["time"])}</span>')
+    out.append(f'<button type="button" class="p-fav p-fav--hero" data-fav="{e(r["slug"])}" '
+               f'aria-pressed="false" aria-label="Dodaj do ulubionych">'
+               '<span aria-hidden="true">&#9825;</span></button>')
     out.append("</div>")
     out.append('<div class="p-macros">')
     for value, label in [(f'{r["kcal"]}', "kcal"), (f'{r["protein"]} g', "białko"),
@@ -267,6 +332,7 @@ def render_recipe(r, data):
     out.append("</div>")
     out.append('<p style="margin:0;font-size:.66rem;color:var(--p-ink-3);font-weight:600">'
                "Wartości dla jednej porcji, tak jak w planie diety.</p>")
+    out.append('<p class="p-cooked" id="cooked-note" hidden></p>')
     out.append("</div>")
     out.append("")
 
@@ -342,8 +408,15 @@ def render_recipe(r, data):
 
     out.append("<h2>Sposób przygotowania</h2>")
     out.append('<ol class="p-steps" id="steps-list">')
-    for s in r["steps"]:
-        out.append(f"<li>{e(render_step(s, r['ingredients'], groups, adjectives))}</li>")
+    for nr, st in enumerate(r["steps"]):
+        sek = czas_kroku(st)
+        atrybut = f' data-sec="{sek}"' if sek else ""
+        out.append(f'<li{atrybut}>'
+                   f'<span class="p-step__text">'
+                   f'{e(render_step(st, r["ingredients"], groups, adjectives))}</span>'
+                   + (f'<button type="button" class="p-timer__btn" data-timer="{nr}">'
+                      f'&#9201; {mmss(sek)}</button>' if sek else "")
+                   + "</li>")
     out.append("</ol>")
     out.append("")
 
@@ -358,6 +431,8 @@ def render_recipe(r, data):
     out.append('<div class="p-cook__body">')
     out.append('<span class="p-cook__step" id="cook-label"></span>')
     out.append('<p class="p-cook__text" id="cook-text"></p>')
+    out.append('<button type="button" class="p-timer__btn p-timer__btn--cook" '
+               'id="cook-timer" hidden></button>')
     out.append("</div>")
     out.append('<div class="p-cook__nav">')
     out.append('<button type="button" class="p-btn" id="cook-prev">Wstecz</button>')
@@ -385,6 +460,7 @@ def render_recipe(r, data):
         "slug": r["slug"], "title": r["title"],
         "slotLabel": r["slotLabel"], "time": r["time"],
         "baseServings": r["baseServings"], "kcal": r["kcal"],
+        "times": [czas_kroku(st) for st in r["steps"]],
         "ingredients": r["ingredients"], "steps": r["steps"],
     }
     out.append("<script>window.RECIPE = " + json.dumps(payload, ensure_ascii=False) + ";")
@@ -413,6 +489,88 @@ def render_substitutions(data):
         out.append("</div>")
     out.append("")
     return "\n".join(out)
+
+
+# ------------------------------------------------------------- zakupy.md ---
+
+def render_shopping(data):
+    """Strona zbiorczej listy zakupów na kilka przepisów naraz."""
+    out = ["---", "title: Lista zakupów", "hide:", "  - toc", "---", "",
+           "# Lista zakupów", "",
+           "Zaznacz dania, które planujesz w tym tygodniu, ustaw przy każdym "
+           "liczbę porcji — a złożę z tego jedną listę i jeden PDF. "
+           "Te same produkty z różnych przepisów sumują się.", ""]
+
+    out.append('<div class="p-koszyk" id="koszyk">')
+
+    # --- wybór przepisów
+    out.append('<div class="p-koszyk__pick">')
+    out.append('<div class="p-searchrow">')
+    out.append('<div class="p-search">' + SEARCH_ICON +
+               '<input type="search" id="z-search" inputmode="search" '
+               'placeholder="Szukaj dania…" aria-label="Szukaj dania">'
+               '<button type="button" class="p-search__x" id="z-search-clear" '
+               'aria-label="Wyczyść wyszukiwanie" hidden>&times;</button></div>')
+    out.append("</div>")
+    out.append('<div class="p-slotbar" role="group" aria-label="Pora posiłku">')
+    out.append('<button type="button" class="p-chip" data-z-slot="all" '
+               'data-on="1" aria-pressed="true">Wszystkie</button>')
+    for sl in data["slots"]:
+        out.append(f'<button type="button" class="p-chip p-chip--slot{sl["slot"]}" '
+                   f'data-z-slot="{e(sl["id"])}" aria-pressed="false">'
+                   f'<span class="p-dot"></span>{e(sl["label"])}</button>')
+    out.append("</div>")
+    out.append('<p class="p-hint" id="z-hint">Wczytuję przepisy…</p>')
+    out.append('<ul class="p-zlist" id="z-list"></ul>')
+    out.append("</div>")
+
+    # --- koszyk i wynik
+    out.append('<div class="p-koszyk__cart">')
+    out.append('<div class="p-ings__head">')
+    out.append('<h2 style="margin:0">Wybrane dania <span class="p-num" id="z-count"></span></h2>')
+    out.append('<button type="button" class="p-btn p-btn--ghost" id="z-clear" '
+               'style="min-height:auto;padding:6px 8px" hidden>Wyczyść</button>')
+    out.append("</div>")
+    out.append('<p class="p-empty" id="z-empty">Nic jeszcze nie wybrałeś. '
+               "Dodaj dania z listy obok — lista zakupów złoży się sama.</p>")
+    out.append('<ul class="p-zcart" id="z-cart"></ul>')
+    out.append('<div class="p-actions" id="z-actions" hidden>')
+    out.append('<button type="button" class="p-btn p-btn--block" id="z-reset">'
+               "Odznacz kupione</button>")
+    out.append('<button type="button" class="p-btn p-btn--primary p-btn--block" id="z-pdf">'
+               "Wygeneruj PDF</button>")
+    out.append("</div>")
+    out.append('<div class="p-sheet__body" id="z-body"></div>')
+    out.append("</div>")
+
+    out.append("</div>")
+    out.append('<div class="p-toast" id="toast" role="status" data-on="0"></div>')
+    out.append("")
+    out.append('<noscript><p class="p-note">Zbiorcza lista zakupów wymaga '
+               "JavaScriptu. Listę dla pojedynczego dania znajdziesz na stronie "
+               "każdego przepisu.</p></noscript>")
+    out.append("")
+    out.append("<script>window.UNITS = " +
+               json.dumps(data["units"], ensure_ascii=False, separators=(",", ":")) + ";</script>")
+    out.append("")
+    return "\n".join(out)
+
+
+def dane_zakupow(data):
+    """Składniki wszystkich przepisów — doczytywane dopiero na stronie zakupów.
+
+    Osobny plik, a nie wstawka w stronie: to ~130 kB, których nie ma sensu
+    wysyłać każdemu, kto wchodzi tylko obejrzeć przepis.
+    """
+    return {
+        "recipes": [{
+            "s": r["slug"], "t": r["title"], "l": r["slotLabel"],
+            "sid": r["slotId"], "b": r["baseServings"], "k": r["kcal"],
+            "i": [[i["qty"], i["unit"], i["unitLemma"] or "", i["name"],
+                   i["grams"], 1 if i["pantry"] else 0, i["tag"] or ""]
+                  for i in r["ingredients"]],
+        } for r in data["recipes"]],
+    }
 
 
 # -------------------------------------------------------------------- main --
@@ -541,6 +699,9 @@ def main():
 
     write(os.path.join(DOCS, "index.md"), render_index(data))
     write(os.path.join(DOCS, "zamienniki.md"), render_substitutions(data))
+    write(os.path.join(DOCS, "zakupy.md"), render_shopping(data))
+    write(os.path.join(DOCS, "dane", "zakupy.json"),
+          json.dumps(dane_zakupow(data), ensure_ascii=False, separators=(",", ":")))
     for r in data["recipes"]:
         write(os.path.join(RECIPE_DIR, r["slug"] + ".md"), render_recipe(r, data))
 

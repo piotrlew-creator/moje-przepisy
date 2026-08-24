@@ -12,6 +12,7 @@ hide:
 <div class="p-hero" data-slot="1">
 <div class="p-hero__top">
 <span>Śniadanie</span><span class="p-num">7:00-10:00</span>
+<button type="button" class="p-fav p-fav--hero" data-fav="koktajl-mango-lassi" aria-pressed="false" aria-label="Dodaj do ulubionych"><span aria-hidden="true">&#9825;</span></button>
 </div>
 <div class="p-macros">
 <div class="p-macro"><span class="p-macro__v">522</span><span class="p-macro__l">kcal</span></div>
@@ -20,6 +21,7 @@ hide:
 <div class="p-macro"><span class="p-macro__v">16 g</span><span class="p-macro__l">tłuszcz</span></div>
 </div>
 <p style="margin:0;font-size:.66rem;color:var(--p-ink-3);font-weight:600">Wartości dla jednej porcji, tak jak w planie diety.</p>
+<p class="p-cooked" id="cooked-note" hidden></p>
 </div>
 
 <div class="p-servings">
@@ -72,7 +74,7 @@ hide:
 
 <h2>Sposób przygotowania</h2>
 <ol class="p-steps" id="steps-list">
-<li>Zblenduj wszystkie składniki. W razie potrzeby dodaj wody.</li>
+<li><span class="p-step__text">Zblenduj wszystkie składniki. W razie potrzeby dodaj wody.</span></li>
 </ol>
 
 <div class="p-cook" id="cook" data-open="0" role="dialog" aria-modal="true" aria-label="Gotowanie: Koktajl mango lassi">
@@ -84,6 +86,7 @@ hide:
 <div class="p-cook__body">
 <span class="p-cook__step" id="cook-label"></span>
 <p class="p-cook__text" id="cook-text"></p>
+<button type="button" class="p-timer__btn p-timer__btn--cook" id="cook-timer" hidden></button>
 </div>
 <div class="p-cook__nav">
 <button type="button" class="p-btn" id="cook-prev">Wstecz</button>
@@ -100,7 +103,7 @@ hide:
 </div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "koktajl-mango-lassi", "title": "Koktajl mango lassi", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "kcal": 522, "ingredients": [{"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "mango", "grams": 280.0, "pantry": false, "tag": "mango"}, {"qty": 1.0, "unit": "szklanka", "unitLemma": "szklanka", "name": "napoju sojowego", "grams": 250.0, "pantry": false, "tag": "mleko", "swap": {"group": "mleko", "self": "napoj-sojowy", "nameCase": "D"}}, {"qty": 2.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "wegańskiej odżywki białkowej", "grams": 16.0, "pantry": false, "tag": "odzywka"}, {"qty": 0.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "awokado", "grams": 70.0, "pantry": false, "tag": "awokado"}, {"qty": 0.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "pomarańczy", "grams": 120.0, "pantry": false, "tag": "pomarancza"}, {"qty": 2.0, "unit": "plastry", "unitLemma": "plaster", "name": "imbiru świeżego", "grams": 10.0, "pantry": false, "tag": "imbir"}, {"qty": 1.0, "unit": "łyżeczka", "unitLemma": "łyżeczka", "name": "cynamonu", "grams": 4.0, "pantry": true, "tag": null}], "steps": ["Zblenduj wszystkie składniki. W razie potrzeby dodaj wody."]};
+<script>window.RECIPE = {"slug": "koktajl-mango-lassi", "title": "Koktajl mango lassi", "slotLabel": "Śniadanie", "time": "7:00-10:00", "baseServings": 1, "kcal": 522, "times": [null], "ingredients": [{"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "mango", "grams": 280.0, "pantry": false, "tag": "mango"}, {"qty": 1.0, "unit": "szklanka", "unitLemma": "szklanka", "name": "napoju sojowego", "grams": 250.0, "pantry": false, "tag": "mleko", "swap": {"group": "mleko", "self": "napoj-sojowy", "nameCase": "D"}}, {"qty": 2.0, "unit": "łyżki", "unitLemma": "łyżka", "name": "wegańskiej odżywki białkowej", "grams": 16.0, "pantry": false, "tag": "odzywka"}, {"qty": 0.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "awokado", "grams": 70.0, "pantry": false, "tag": "awokado"}, {"qty": 0.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "pomarańczy", "grams": 120.0, "pantry": false, "tag": "pomarancza"}, {"qty": 2.0, "unit": "plastry", "unitLemma": "plaster", "name": "imbiru świeżego", "grams": 10.0, "pantry": false, "tag": "imbir"}, {"qty": 1.0, "unit": "łyżeczka", "unitLemma": "łyżeczka", "name": "cynamonu", "grams": 4.0, "pantry": true, "tag": null}], "steps": ["Zblenduj wszystkie składniki. W razie potrzeby dodaj wody."]};
 window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"], "kostka": ["kostka", "kostki", "kostek", "kostki"], "listek": ["listek", "listki", "listków", "listka"], "łodyga": ["łodyga", "łodygi", "łodyg", "łodygi"]};
 window.SWAPS = {"mleko": {"label": "Mleko i napoje roślinne", "options": [{"id": "mleko-roslinne", "label": "Mleko roślinne", "rodzaj": "n", "formy": {"M": "mleko roślinne", "D": "mleka roślinnego", "B": "mleko roślinne", "N": "mlekiem roślinnym", "Ms": "mleku roślinnym"}, "rodzajB": "n"}, {"id": "napoj-roslinny", "label": "Napój roślinny", "rodzaj": "m", "formy": {"M": "napój roślinny", "D": "napoju roślinnego", "B": "napój roślinny", "N": "napojem roślinnym", "Ms": "napoju roślinnym"}, "rodzajB": "m"}, {"id": "napoj-sojowy", "label": "Napój sojowy", "rodzaj": "m", "formy": {"M": "napój sojowy", "D": "napoju sojowego", "B": "napój sojowy", "N": "napojem sojowym", "Ms": "napoju sojowym"}, "rodzajB": "m"}, {"id": "napoj-migdalowy", "label": "Napój migdałowy", "rodzaj": "m", "formy": {"M": "napój migdałowy", "D": "napoju migdałowego", "B": "napój migdałowy", "N": "napojem migdałowym", "Ms": "napoju migdałowym"}, "rodzajB": "m"}, {"id": "napoj-owsiany", "label": "Napój owsiany", "rodzaj": "m", "formy": {"M": "napój owsiany", "D": "napoju owsianego", "B": "napój owsiany", "N": "napojem owsianym", "Ms": "napoju owsianym"}, "rodzajB": "m"}, {"id": "mleko-2", "label": "Mleko 2%", "rodzaj": "n", "formy": {"M": "mleko 2%", "D": "mleka 2%", "B": "mleko 2%", "N": "mlekiem 2%", "Ms": "mleku 2%"}, "rodzajB": "n"}]}};
 window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>
