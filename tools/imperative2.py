@@ -15,6 +15,7 @@ VERBS = dict(VERBS_BAZOWE)
 
 VERBS.update({
     # --- czynności kuchenne
+    "pozbywamy": "pozbądź",   # „pozbywamy się pestek” → „pozbądź się pestek”
     "miksujemy": "zmiksuj",
     "skrapiamy": "skrop",
     "ścieramy": "zetrzyj",
