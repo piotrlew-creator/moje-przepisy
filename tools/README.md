@@ -39,6 +39,9 @@ w katalogu głównym.
 ## Uwaga o powtórzeniach
 
 Dania powtarzają się między planami — z 358 posiłków w dziesięciu PDF-ach
-zostaje 280 unikalnych przepisów. Odsiewanie idzie po znormalizowanej nazwie
-dania (bez „(liczba porcji: N)”), zawsze zostaje wersja z planu wcześniejszego
-na liście.
+zostaje 263 unikalne przepisy. Odsiewanie idzie po znormalizowanej nazwie dania
+(bez „(liczba porcji: N)”), zawsze zostaje wersja z planu wcześniejszego na
+liście.
+
+Pomijane są też **przekąski** — pozycje bez godzin w PDF-ie (batonik, jogurt,
+garść orzechów). Nie ma w nich czego gotować, więc nie są przepisami.

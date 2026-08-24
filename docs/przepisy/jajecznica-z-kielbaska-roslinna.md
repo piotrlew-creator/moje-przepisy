@@ -1,4 +1,5 @@
 ---
+title: "Jajecznica z kiełbaską roślinną"
 hide:
   - toc
 ---
@@ -46,13 +47,13 @@ hide:
 </select>
 </div>
 </li>
-<li data-order="name"><div class="p-ing__row"><span class="p-ing__q">1 sztuka</span><span class="p-ing__n">Kiełbaski roślinne węgierskie Dobra Kaloria</span><span class="p-ing__g">45 g</span></div>
+<li data-order="name"><div class="p-ing__row"><span class="p-ing__q">1 szt.</span><span class="p-ing__n">Kiełbaski roślinne węgierskie Dobra Kaloria</span><span class="p-ing__g">45 g</span></div>
 </li>
-<li data-order="name"><div class="p-ing__row"><span class="p-ing__q">2 sztuki</span><span class="p-ing__n">Jajko kurze całe</span><span class="p-ing__g">112 g</span></div>
+<li data-order="name"><div class="p-ing__row"><span class="p-ing__q">2 szt.</span><span class="p-ing__n">Jajko kurze całe</span><span class="p-ing__g">112 g</span></div>
 </li>
 <li data-order="name"><div class="p-ing__row"><span class="p-ing__q">4 kromki</span><span class="p-ing__n">Chleb bezglutenowy</span><span class="p-ing__g">100 g</span></div>
 </li>
-<li data-order="name"><div class="p-ing__row"><span class="p-ing__q">0.5 sztuki</span><span class="p-ing__n">Ogórek świeży</span><span class="p-ing__g">75 g</span></div>
+<li data-order="name"><div class="p-ing__row"><span class="p-ing__q">0.5 szt.</span><span class="p-ing__n">Ogórek świeży</span><span class="p-ing__g">75 g</span></div>
 </li>
 </ul>
 
@@ -60,6 +61,7 @@ hide:
 <button type="button" class="p-btn p-btn--block" id="open-shopping">&#128722; Lista zakupów</button>
 <button type="button" class="p-btn p-btn--primary p-btn--block" id="cook-start">Gotujmy &rarr;</button>
 </div>
+<noscript><p class="p-note">Lista zakupów, przelicznik porcji i tryb gotowania krok po kroku wymagają JavaScriptu. Składniki i sposób przygotowania czytasz normalnie — ilości są podane dla jednej porcji z planu.</p></noscript>
 
 <h2>Sposób przygotowania</h2>
 <ol class="p-steps" id="steps-list">
@@ -93,7 +95,7 @@ hide:
 </div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "jajecznica-z-kielbaska-roslinna", "title": "Jajecznica z kiełbaską roślinną", "slotLabel": "Kolacja", "time": "18:00-20:00", "baseServings": 1, "ingredients": [{"qty": 1.0, "unit": "łyżeczka", "unitLemma": "łyżeczka", "name": "Oliwa z oliwek", "grams": 5.0, "pantry": false, "tag": "oliwa", "nameFirst": true, "swap": {"group": "tluszcz", "self": "oliwa", "nameCase": "M"}}, {"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "Kiełbaski roślinne węgierskie Dobra Kaloria", "grams": 45.0, "pantry": false, "tag": "kielbaski", "nameFirst": true}, {"qty": 2.0, "unit": "sztuki", "unitLemma": "sztuka", "name": "Jajko kurze całe", "grams": 112.0, "pantry": false, "tag": "jajka", "nameFirst": true}, {"qty": 4.0, "unit": "kromki", "unitLemma": "kromka", "name": "Chleb bezglutenowy", "grams": 100.0, "pantry": false, "tag": "chleb", "nameFirst": true}, {"qty": 0.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "Ogórek świeży", "grams": 75.0, "pantry": false, "tag": "ogorek", "nameFirst": true}], "steps": ["Oliwę rozgrzej na patelni. Dodaj pokrojoną kiełbaskę, smaż, aż się zarumieni.", "Wbij jajko i smaż.", "Podaj z pieczywem i warzywami. g błonnika, 1024 mg wapnia, 390 mg magnezu)"]};
+<script>window.RECIPE = {"slug": "jajecznica-z-kielbaska-roslinna", "title": "Jajecznica z kiełbaską roślinną", "slotLabel": "Kolacja", "time": "18:00-20:00", "baseServings": 1, "kcal": 613, "ingredients": [{"qty": 1.0, "unit": "łyżeczka", "unitLemma": "łyżeczka", "name": "Oliwa z oliwek", "grams": 5.0, "pantry": false, "tag": "oliwa", "nameFirst": true, "swap": {"group": "tluszcz", "self": "oliwa", "nameCase": "M"}}, {"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "Kiełbaski roślinne węgierskie Dobra Kaloria", "grams": 45.0, "pantry": false, "tag": "kielbaski", "nameFirst": true}, {"qty": 2.0, "unit": "sztuki", "unitLemma": "sztuka", "name": "Jajko kurze całe", "grams": 112.0, "pantry": false, "tag": "jajka", "nameFirst": true}, {"qty": 4.0, "unit": "kromki", "unitLemma": "kromka", "name": "Chleb bezglutenowy", "grams": 100.0, "pantry": false, "tag": "chleb", "nameFirst": true}, {"qty": 0.5, "unit": "sztuki", "unitLemma": "sztuka", "name": "Ogórek świeży", "grams": 75.0, "pantry": false, "tag": "ogorek", "nameFirst": true}], "steps": ["Oliwę rozgrzej na patelni. Dodaj pokrojoną kiełbaskę, smaż, aż się zarumieni.", "Wbij jajko i smaż.", "Podaj z pieczywem i warzywami. g błonnika, 1024 mg wapnia, 390 mg magnezu)"]};
 window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"], "kostka": ["kostka", "kostki", "kostek", "kostki"], "listek": ["listek", "listki", "listków", "listka"], "łodyga": ["łodyga", "łodygi", "łodyg", "łodygi"]};
 window.SWAPS = {"tluszcz": {"label": "Oliwa i oleje", "options": [{"id": "oliwa", "label": "Oliwa z oliwek", "rodzaj": "f", "formy": {"M": "oliwa z oliwek", "D": "oliwy z oliwek", "B": "oliwę z oliwek", "N": "oliwą z oliwek", "Ms": "oliwie z oliwek"}, "rodzajB": "f"}, {"id": "olej-rzepakowy", "label": "Olej rzepakowy", "rodzaj": "m", "formy": {"M": "olej rzepakowy", "D": "oleju rzepakowego", "B": "olej rzepakowy", "N": "olejem rzepakowym", "Ms": "oleju rzepakowym"}, "rodzajB": "m"}, {"id": "olej-kokosowy", "label": "Olej kokosowy", "rodzaj": "m", "formy": {"M": "olej kokosowy", "D": "oleju kokosowego", "B": "olej kokosowy", "N": "olejem kokosowym", "Ms": "oleju kokosowym"}, "rodzajB": "m"}, {"id": "olej-z-awokado", "label": "Olej z awokado", "rodzaj": "m", "formy": {"M": "olej z awokado", "D": "oleju z awokado", "B": "olej z awokado", "N": "olejem z awokado", "Ms": "oleju z awokado"}, "rodzajB": "m"}]}};
 window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

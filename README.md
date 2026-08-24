@@ -17,7 +17,7 @@ kroki przygotowania, kaloryczność, makroskładniki, dzień i numer posiłku.
 
 ```
 recipes.json ──▶ generate_site.py ──▶ docs/index.md          (wyszukiwarka + lista dań)
-                                      docs/przepisy/*.md     (280 przepisów)
+                                      docs/przepisy/*.md     (263 przepisy)
                                       docs/zamienniki.md     (lista wymienników)
                                              │
                                              ▼
@@ -44,22 +44,23 @@ Znacznik wskazuje konkretny składnik, nie grupę — inaczej w sałatce greckie
 stronie głównej i lista składników w filtrze nie mogą się rozjechać z samymi
 przepisami — wcześniej właśnie tak się stało i 25 z 40 dań było nieosiągalnych.
 
-Generator na koniec sprawdza cztery rzeczy i przerywa build, jeśli któraś nie
-wychodzi:
+Generator sprawdza dane **przed** zapisem — dzięki temu błąd daje czytelny
+komunikat, a nie ślad stosu z połowy renderowania, i nie zostawia po sobie na
+wpół wygenerowanego `docs/`. Kontrolowane jest:
 
-* każdy przepis ma link ze strony głównej,
+* slugi są unikalne (inaczej dwa przepisy nadpisałyby ten sam plik),
 * każdy składnik w filtrze ma co najmniej jeden pasujący przepis,
 * każdy składnik z `featuredIngredients` istnieje w `ingredientIndex`,
-* każdy znacznik zamiennika w krokach wskazuje składnik, który zamiennik ma.
+* każdy znacznik zamiennika wskazuje składnik, który zamiennik ma,
+* **każdy wariant grupy zamienników umie każdy przypadek i przymiotnik**,
+  jakiego używa krok — inaczej po zamianie w przeglądarce cicho wychodziłby
+  zły przypadek („Papryka pokrój” zamiast „Paprykę pokrój”),
+* skróty jednostek w `generate_site.py` i `app.js` mówią to samo,
+* każda jednostka użyta w danych ma skrót we wszystkich swoich formach.
 
-## Porządki po przebudowie
+Po zapisie sprawdzany jest jeszcze komplet linków na stronie głównej.
 
-Dwa pliki nie są już do niczego potrzebne:
-
-```bash
-git rm generate_recipes.py docs/javascripts/main.js
-git rm .github/workflows/jekyll-gh-pages.yml
-```
+## Zawartość docs/
 
 Zawartość `docs/` jest generowana, ale trzymamy ją też w repozytorium — dzięki
 temu strona zbuduje się nawet wtedy, gdy ktoś zapomni uruchomić generator.
@@ -90,6 +91,7 @@ Dopisz obiekt do tablicy `recipes` w `recipes.json` i uruchom
 |---|---|
 | `slug` | nazwa pliku i adres strony |
 | `plan` | z którego planu pochodzi przepis (1–11) |
+| `title` | nazwa dania; trafia też do `title:` we front matterze strony, bo bez tego MkDocs wziąłby tytuł z nazwy pliku („Klejacy ryz”) |
 | `day`, `slot` | dzień planu (1–10) i numer posiłku (1–4) |
 | `mealNo` | numer posiłku z PDF-u (1–4), do kontroli kompletności |
 | `sourceTime` | godziny posiłku z PDF-u; `null` dla przekąski, która ich nie ma |
@@ -133,8 +135,9 @@ rozpoczęcia z PDF-u:
 | Obiad | 12:00–16:00 | 13:00–16:00 |
 | Kolacja | od 17:00 | 18:00–20:00 |
 
-Przekąska nie ma w PDF-ie godzin i zamyka dzień w planach, które nie mają
-osobnej kolacji — dlatego trafia do kolacji (`sourceTime: null`).
+Przekąski (batonik, jogurt, garść orzechów — pozycje bez godzin w PDF-ie) są
+**pomijane w całości**. Nie ma w nich czego gotować, a w wyszukiwarce zaśmiecały
+kolację pozycjami na 180 kcal obok obiadów na 600. Odsiewa je `tools/build.py`.
 
 ## Zamienniki składników
 
@@ -145,16 +148,28 @@ słodziki, pasty). Każdy wariant ma pełną odmianę przez przypadki, bo bez te
 podmiana w krokach dawałaby „Do rondelka po gruszka”.
 
 W grupie „owoce” warianty mają dodatkowo `equiv` — wagę jednej sztuki z tabeli
-zamienników w PDF-ie. Dzięki temu zamiana jabłka (150 g, 1 sztuka) na banana
-daje 106 g, a nie 150 g.
+zamienników w PDF-ie. Przy jednostce sztukowej gramatura liczona jest wprost:
+`liczba sztuk × waga sztuki wariantu`, więc 1 sztuka jabłka po zamianie na kaki
+daje 250 g — dokładnie tyle, ile mówi tabela na stronie „Zamienniki”.
+
+Warzywa takiej tabeli w PDF-ie nie mają, a jedna sztuka dyni to nie to samo co
+jedna sztuka pomidora. Dlatego po zamianie warzywa mierzonego w sztukach
+zostaje sama gramatura z planu („160 g dyni”) — dietetyk podaje właśnie wagę,
+a mylącej liczby sztuk nie wymyślamy.
+
+Formy gramatyczne mają rozsądne cofnięcie: biernik potoczny („pokrój pomidora”)
+mają tylko rzeczowniki męskie odmieniane jak żywotne, więc dla żeńskich
+i nijakich wariant dostaje zwykły biernik („Paprykę pokrój”).
 
 ## Skąd pochodzą dane
 
 Rozdział „Plan diety” z dziesięciu planów żywieniowych — razem 358 posiłków,
-z czego **280 unikalnych przepisów**; powtórzenia (to samo danie w kilku
-planach) są odsiewane po nazwie. Nazwy dań, składniki i kroki są przepisane
-dosłownie, łącznie z literówkami oryginału. Trzymaj pliki źródłowe w
-`source/`, żeby dało się odtworzyć każdą liczbę.
+z czego **263 unikalne przepisy**; powtórzenia (to samo danie w kilku planach)
+są odsiewane po nazwie, a przekąski pomijane. Nazwy dań, składniki i kroki są przepisane
+dosłownie, łącznie z literówkami oryginału. Trzymaj pliki źródłowe w `source/`, żeby dało się
+odtworzyć każdą liczbę — ale **nie commituj ich**: `.gitignore` ma wpis
+`source/*.pdf`, bo to ~42 MB, których strona nie potrzebuje (buduje się
+z `recipes.json`), a w historii gita zostałyby na zawsze.
 
 Kontrola zgodności ze źródłem:
 

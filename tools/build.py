@@ -137,6 +137,11 @@ def main():
     for path in pliki:
         plan = "1" if path in pierwszy else re.sub(r"\D", "", os.path.basename(path)) or "?"
         for r in extract.przepisy(path):
+            # Przekąski (batonik, jogurt, garść orzechów) nie są przepisami —
+            # nie ma w nich czego gotować, a w wyszukiwarce zaśmiecały kolację
+            # pozycjami na 180 kcal obok obiadów na 600. Pomijamy je w całości.
+            if not r["time"]:
+                continue
             k = klucz_tytulu(r["title"])
             if k in widziane:
                 continue

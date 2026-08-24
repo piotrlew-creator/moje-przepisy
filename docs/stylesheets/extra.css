@@ -1224,13 +1224,15 @@ html, body { overflow-x: hidden; }
 
 .p-searchrow .p-search { flex: 1; min-width: 0; }
 
+/* Kółko zostaje wizualnie małe (30 px), ale obszar dotyku ma pełne 44 px —
+   ujemny margines chroni wysokość rzędu z polem wyszukiwania. */
 .p-search__x {
-  width: 30px;
-  height: 30px;
+  width: var(--p-tap);
+  height: var(--p-tap);
+  margin: calc((30px - var(--p-tap)) / 2);
   flex: none;
   border: 0;
-  border-radius: 50%;
-  background: var(--p-surface-3);
+  background: none;
   color: var(--p-ink-2);
   font-size: 1rem;
   line-height: 1;
@@ -1238,6 +1240,16 @@ html, body { overflow-x: hidden; }
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.p-search__x::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--p-surface-3);
+  z-index: -1;
 }
 
 .p-btn--clear {

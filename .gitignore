@@ -7,6 +7,17 @@ __pycache__/
 .venv/
 venv/
 
+# Paczki z przesyłania plików — zawartość i tak leży rozpakowana w repo,
+# a w historii gita zostają na zawsze.
+*.zip
+
+# PDF-y z planami diety. Trzymamy je lokalnie w source/, bo bez nich nie da
+# się uruchomić verify_against_pdf.py ani przebudować recipes.json — ale do
+# repozytorium nie wchodzą: to ~42 MB, których strona do niczego nie
+# potrzebuje (buduje się z recipes.json), a raz wysłane zostają w historii
+# na zawsze. Do tego są to Twoje osobiste plany od dietetyka.
+source/*.pdf
+
 # System
 .DS_Store
 Thumbs.db

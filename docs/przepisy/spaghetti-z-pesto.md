@@ -1,4 +1,5 @@
 ---
+title: "Spaghetti z pesto"
 hide:
   - toc
 ---
@@ -39,9 +40,9 @@ hide:
 </li>
 <li data-order="name"><div class="p-ing__row"><span class="p-ing__q">3 plastry</span><span class="p-ing__n">Ser mozzarella kulka</span><span class="p-ing__g">45 g</span></div>
 </li>
-<li data-order="name"><div class="p-ing__row"><span class="p-ing__q">1 sztuka</span><span class="p-ing__n">Pomidory suszone w oleju (odsączone)</span><span class="p-ing__g">20 g</span></div>
+<li data-order="name"><div class="p-ing__row"><span class="p-ing__q">1 szt.</span><span class="p-ing__n">Pomidory suszone w oleju (odsączone)</span><span class="p-ing__g">20 g</span></div>
 </li>
-<li data-order="name"><div class="p-ing__row"><span class="p-ing__q">5 sztuk</span><span class="p-ing__n">Pomidorki koktajlowe</span><span class="p-ing__g">100 g</span></div>
+<li data-order="name"><div class="p-ing__row"><span class="p-ing__q">5 szt.</span><span class="p-ing__n">Pomidorki koktajlowe</span><span class="p-ing__g">100 g</span></div>
 </li>
 <li data-order="name"><div class="p-ing__row"><span class="p-ing__q">5 łyżeczek</span><span class="p-ing__n">Pesto zielone</span><span class="p-ing__g">25 g</span></div>
 </li>
@@ -51,6 +52,7 @@ hide:
 <button type="button" class="p-btn p-btn--block" id="open-shopping">&#128722; Lista zakupów</button>
 <button type="button" class="p-btn p-btn--primary p-btn--block" id="cook-start">Gotujmy &rarr;</button>
 </div>
+<noscript><p class="p-note">Lista zakupów, przelicznik porcji i tryb gotowania krok po kroku wymagają JavaScriptu. Składniki i sposób przygotowania czytasz normalnie — ilości są podane dla jednej porcji z planu.</p></noscript>
 
 <h2>Sposób przygotowania</h2>
 <ol class="p-steps" id="steps-list">
@@ -85,7 +87,7 @@ hide:
 </div></div></div>
 <div class="p-toast" id="toast" role="status" data-on="0"></div>
 
-<script>window.RECIPE = {"slug": "spaghetti-z-pesto", "title": "Spaghetti z pesto", "slotLabel": "Obiad", "time": "13:00-16:00", "baseServings": 1, "ingredients": [{"qty": 60.0, "unit": "g", "unitLemma": null, "name": "Makaron bezglutenowy", "grams": 60.0, "pantry": false, "tag": "makaron", "nameFirst": true, "weightOnly": true}, {"qty": 3.0, "unit": "plastry", "unitLemma": "plaster", "name": "Ser mozzarella kulka", "grams": 45.0, "pantry": false, "tag": "mozzarella", "nameFirst": true}, {"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "Pomidory suszone w oleju (odsączone)", "grams": 20.0, "pantry": false, "tag": "oliwa", "nameFirst": true}, {"qty": 5.0, "unit": "sztuk", "unitLemma": "sztuka", "name": "Pomidorki koktajlowe", "grams": 100.0, "pantry": false, "tag": "pomidor", "nameFirst": true}, {"qty": 5.0, "unit": "łyżeczek", "unitLemma": "łyżeczka", "name": "Pesto zielone", "grams": 25.0, "pantry": false, "tag": "pesto", "nameFirst": true}], "steps": ["Makaron ugotuj al dente zgodnie z instrukcją podaną na opakowaniu.", "Makaron po ugotowaniu odcedź i zostaw w ganku z niewielką ilością wody, w której się gotował.", "Do garnka z makaronem dodaj pesto i dokładnie wymieszaj.", "Makaron wyłóż na talerz. Na spaghetti ułóż ser i pokrojonego na kawałki suszonego pomidora oraz pomidorki koktajlowe. Smacznego!"]};
+<script>window.RECIPE = {"slug": "spaghetti-z-pesto", "title": "Spaghetti z pesto", "slotLabel": "Obiad", "time": "13:00-16:00", "baseServings": 1, "kcal": 494, "ingredients": [{"qty": 60.0, "unit": "g", "unitLemma": null, "name": "Makaron bezglutenowy", "grams": 60.0, "pantry": false, "tag": "makaron", "nameFirst": true, "weightOnly": true}, {"qty": 3.0, "unit": "plastry", "unitLemma": "plaster", "name": "Ser mozzarella kulka", "grams": 45.0, "pantry": false, "tag": "mozzarella", "nameFirst": true}, {"qty": 1.0, "unit": "sztuka", "unitLemma": "sztuka", "name": "Pomidory suszone w oleju (odsączone)", "grams": 20.0, "pantry": false, "tag": "oliwa", "nameFirst": true}, {"qty": 5.0, "unit": "sztuk", "unitLemma": "sztuka", "name": "Pomidorki koktajlowe", "grams": 100.0, "pantry": false, "tag": "pomidor", "nameFirst": true}, {"qty": 5.0, "unit": "łyżeczek", "unitLemma": "łyżeczka", "name": "Pesto zielone", "grams": 25.0, "pantry": false, "tag": "pesto", "nameFirst": true}], "steps": ["Makaron ugotuj al dente zgodnie z instrukcją podaną na opakowaniu.", "Makaron po ugotowaniu odcedź i zostaw w ganku z niewielką ilością wody, w której się gotował.", "Do garnka z makaronem dodaj pesto i dokładnie wymieszaj.", "Makaron wyłóż na talerz. Na spaghetti ułóż ser i pokrojonego na kawałki suszonego pomidora oraz pomidorki koktajlowe. Smacznego!"]};
 window.UNITS = {"łyżka": ["łyżka", "łyżki", "łyżek", "łyżki"], "łyżeczka": ["łyżeczka", "łyżeczki", "łyżeczek", "łyżeczki"], "sztuka": ["sztuka", "sztuki", "sztuk", "sztuki"], "garść": ["garść", "garście", "garści", "garści"], "kromka": ["kromka", "kromki", "kromek", "kromki"], "plaster": ["plaster", "plastry", "plastrów", "plastra"], "szklanka": ["szklanka", "szklanki", "szklanek", "szklanki"], "opakowanie": ["opakowanie", "opakowania", "opakowań", "opakowania"], "ząbek": ["ząbek", "ząbki", "ząbków", "ząbka"], "szczypta": ["szczypta", "szczypty", "szczypt", "szczypty"], "porcja": ["porcja", "porcje", "porcji", "porcji"], "puszka": ["puszka", "puszki", "puszek", "puszki"], "kostka": ["kostka", "kostki", "kostek", "kostki"], "listek": ["listek", "listki", "listków", "listka"], "łodyga": ["łodyga", "łodygi", "łodyg", "łodygi"]};
 window.SWAPS = {};
 window.SWAP_ADJ = {"umyty_B": {"m": "umyty", "f": "umytą", "n": "umyte", "pl": "umyte", "mz": "umytego"}, "swiezy_B": {"m": "świeży", "f": "świeżą", "n": "świeże", "pl": "świeże", "mz": "świeżego"}, "odsaczony_B": {"m": "odsączony", "f": "odsączoną", "n": "odsączone", "pl": "odsączone", "mz": "odsączonego"}, "pieczony_N": {"m": "pieczonym", "f": "pieczoną", "n": "pieczonym", "pl": "pieczonymi", "mz": "pieczonym"}, "pokrojony_B": {"m": "pokrojony", "f": "pokrojoną", "n": "pokrojone", "pl": "pokrojone", "mz": "pokrojonego"}, "ugotowany_B": {"m": "ugotowany", "f": "ugotowaną", "n": "ugotowane", "pl": "ugotowane", "mz": "ugotowanego"}, "podsmazony_B": {"m": "podsmażony", "f": "podsmażoną", "n": "podsmażone", "pl": "podsmażone", "mz": "podsmażonego"}, "przyprawiony_B": {"m": "przyprawiony", "f": "przyprawioną", "n": "przyprawione", "pl": "przyprawione", "mz": "przyprawionego"}, "prazony_N": {"m": "prażonym", "f": "prażoną", "n": "prażonym", "pl": "prażonymi", "mz": "prażonym"}, "pokrojony_N": {"m": "pokrojonym", "f": "pokrojoną", "n": "pokrojonym", "pl": "pokrojonymi", "mz": "pokrojonym"}, "starty_B": {"m": "starty", "f": "startą", "n": "starte", "pl": "starte", "mz": "startego"}, "ugotowany_N": {"m": "ugotowanym", "f": "ugotowaną", "n": "ugotowanym", "pl": "ugotowanymi", "mz": "ugotowanym"}, "przygotowany_B": {"m": "przygotowany", "f": "przygotowaną", "n": "przygotowane", "pl": "przygotowane", "mz": "przygotowanego"}};</script>

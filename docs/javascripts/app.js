@@ -34,7 +34,20 @@
         /* tryb prywatny albo brak miejsca — działamy dalej bez zapisu */
       }
     },
+    del: function (k) {
+      try {
+        localStorage.removeItem("przepisy:" + k);
+      } catch (e) {
+        /* jw. */
+      }
+    },
   };
+
+  // Zapisuje albo kasuje klucz — żeby wartości domyślne nie zaśmiecały pamięci.
+  function remember(key, value, worthKeeping) {
+    if (worthKeeping) LS.set(key, value);
+    else LS.del(key);
+  }
 
   /* ---------------------------------------------------------- liczebniki -- */
 
@@ -95,6 +108,15 @@
     if (!q) return 0;
     var at = l.indexOf(q);
     if (at === 0) return 0;
+    // Przy jednym–dwóch znakach szukamy tylko na początku słowa i bez
+    // tolerancji literówek. Inaczej „a” pasowało do 97 etykiet, czyli po
+    // wpisaniu pierwszego znaku lista robiła się dłuższa, nie krótsza.
+    if (q.length <= 2) {
+      var naPoczatku = l.split(/[\s/]+/).some(function (word) {
+        return word.indexOf(q) === 0;
+      });
+      return naPoczatku ? 0.5 : Infinity;
+    }
     if (at > 0) return 0.5;
     var tolerance = q.length <= 3 ? 1 : q.length <= 6 ? 2 : 3;
     var best = Infinity;
@@ -113,7 +135,7 @@
 
   function initFinder() {
     var root = document.getElementById("finder");
-    if (!root || !window.RECIPES) return;
+    if (!root) return;
 
     var cards = [].slice.call(document.querySelectorAll("#recipes .p-card"));
     var slotChips = [].slice.call(root.querySelectorAll("[data-slot-filter]"));
@@ -132,8 +154,16 @@
     // Pora posiłku startuje zawsze na „Wszystkie” — zawężenie do śniadania,
     // obiadu czy kolacji ma być świadomym wyborem, a nie stanem odziedziczonym
     // po poprzedniej wizycie. Zaznaczone składniki pamiętamy dalej.
+    // Zapisany składnik, którego już nie ma w danych (bo zmienił się plan),
+    // dawał „0 przepisów” i licznik „Wyczyść (1)” przy żadnym zaznaczonym
+    // kafelku — ślepy zaułek bez widocznej przyczyny. Odsiewamy je.
+    var znane = {};
+    ingChips.forEach(function (c) { znane[c.querySelector("input").value] = true; });
     var saved = LS.get("filters", { ings: [] });
-    var state = { slot: "all", ings: saved.ings || [] };
+    var state = {
+      slot: "all",
+      ings: (saved.ings || []).filter(function (id) { return znane[id]; }),
+    };
 
     // Ile przepisów w danej porze posiłku zawiera dany składnik.
     var countsBySlot = { all: {} };
@@ -331,7 +361,19 @@
     if (!(servings >= 1)) servings = 1;
     servings = Math.min(12, Math.round(servings));
 
-    var swapState = LS.get("swap:" + data.slug, {});
+    // Zapisany wybór zamienników jest kluczowany numerem składnika, więc po
+    // dodaniu nowego planu (inna kolejność albo liczba składników w tym samym
+    // przepisie) stary klucz wskazywałby w pustkę i render przerywałby się
+    // wyjątkiem — po cichu, bo z ekranu nic nie znika. Odsiewamy takie klucze
+    // przy wczytaniu.
+    var swapState = (function () {
+      var zapis = LS.get("swap:" + data.slug, {}), czyste = {};
+      Object.keys(zapis || {}).forEach(function (k) {
+        var ing = data.ingredients[+k];
+        if (ing && ing.swap && optionOf(ing, zapis[k])) czyste[k] = zapis[k];
+      });
+      return czyste;
+    })();
 
     /* ------------------------------------------------------ zamienniki ---- */
 
@@ -343,21 +385,43 @@
       return null;
     }
 
-    // Zwraca nazwę i mnożnik gramatury dla wybranego wariantu składnika.
-    // Owoce mają w PDF-ie różne wagi jednej sztuki, więc podmiana skaluje
-    // gramaturę — 1 sztuka banana to nie to samo co 1 sztuka jabłka.
+    // Biernik potoczny („pokrój pomidora”) mają tylko rzeczowniki męskie
+    // odmieniane jak żywotne. Dla żeńskich i nijakich poprawny jest zwykły
+    // biernik — bez tego po zamianie wychodziło „Papryka pokrój w plastry”.
+    var ZAPAS = { Bpot: "B", Bpl: "B", Mpl: "M", Dpl: "D", Npl: "N", Mspl: "Ms" };
+
+    function forma(opt, kase) {
+      return opt.formy[kase] || opt.formy[ZAPAS[kase] || "M"] || opt.formy.M;
+    }
+
+    // Zwraca nazwę i gramaturę dla wybranego wariantu składnika.
+    //
+    // Owoce mają w „Liście wymienników” podaną wagę jednej sztuki (`equiv`),
+    // więc przy jednostce sztukowej liczymy wagę wprost: sztuki × waga sztuki.
+    // Warzywa takiej tabeli w PDF-ie nie mają, a jedna sztuka dyni to nie to
+    // samo co jedna sztuka pomidora — wtedy zostawiamy gramaturę z planu
+    // (dietetyk podaje właśnie wagę) i chowamy mylącą liczbę sztuk.
     function resolve(ing, idx) {
-      if (!ing.swap) return { name: ing.name, ratio: 1, swapped: false };
+      var nic = { name: ing.name, ratio: 1, swapped: false, hidePieces: false };
+      if (!ing.swap) return nic;
       var chosen = swapState[idx];
-      if (!chosen || chosen === ing.swap.self) {
-        return { name: ing.name, ratio: 1, swapped: false };
-      }
-      var self = optionOf(ing, ing.swap.self);
+      if (!chosen || chosen === ing.swap.self) return nic;
       var opt = optionOf(ing, chosen);
-      if (!opt) return { name: ing.name, ratio: 1, swapped: false };
-      var ratio = (opt.equiv && self && self.equiv) ? opt.equiv / self.equiv : 1;
-      var name = opt.formy[ing.swap.nameCase] || opt.formy.D || opt.formy.M;
-      return { name: name, ratio: ratio, swapped: true };
+      if (!opt) return nic;
+
+      var sztukowa = ing.unitLemma === "sztuka";
+      var ratio = 1;
+      var hidePieces = false;
+      if (sztukowa) {
+        if (opt.equiv && ing.grams > 0) ratio = (ing.qty * opt.equiv) / ing.grams;
+        else hidePieces = true;
+      }
+      return {
+        name: forma(opt, ing.swap.nameCase) || opt.formy.D || opt.formy.M,
+        ratio: ratio,
+        swapped: true,
+        hidePieces: hidePieces,
+      };
     }
 
     var TOKEN = /«(\d+)\|([A-Za-z]+)\|([A-Za-z_]*)\|([^|]*)\|(U?)»/g;
@@ -367,7 +431,7 @@
         var ing = data.ingredients[+idx];
         var opt = optionOf(ing, swapState[+idx] || ing.swap.self) ||
                   optionOf(ing, ing.swap.self);
-        var w = opt.formy[kase] || opt.formy.M;
+        var w = forma(opt, kase);
         if (adj) {
           var rodz = (adj.slice(-2) === "_B" && kase === "Bpot")
             ? (opt.rodzajB || opt.rodzaj) : opt.rodzaj;
@@ -415,7 +479,8 @@
         grams: fmtGrams(f === 1 ? ing.grams * r.ratio : grams),
         swapped: r.swapped,
         nameFirst: !!ing.nameFirst,
-        weightOnly: !!ing.weightOnly,
+        // zamiennik bez znanej wagi sztuki pokazujemy jak składnik wagowy
+        weightOnly: !!ing.weightOnly || r.hidePieces,
         section: ing.section || null,
       };
     }
@@ -429,24 +494,42 @@
       return s.qty + " " + s.unit + " " + s.name;
     }
 
+    // Lista zakupów i PDF mają gramaturę w osobnej kolumnie po prawej, więc
+    // dla składników wagowych nie powtarzamy jej jeszcze raz w nazwie.
+    function lineShort(s) {
+      return s.weightOnly ? s.name : line(s);
+    }
+
+    // Pięć przepisów jest w planie opisanych jako wieloporcjowe, a ilości
+    // zostawiamy dokładnie takie jak w PDF-ie. Liczymy więc dla nich porcje
+    // z planu, nie osoby — inaczej „1 osoba” dawała trzy porcje zupy przy
+    // deklarowanych 404 kcal.
+    var wieloporcjowy = (data.baseServings || 1) > 1;
+
     function render() {
       num.textContent = servings;
-      word.textContent = personWord(servings);
+      word.textContent = wieloporcjowy
+        ? plural(servings, ["porcja", "porcje", "porcji", "porcji"])
+        : personWord(servings);
       minus.disabled = servings <= 1;
       plus.disabled = servings >= 12;
-      heading.textContent = "Składniki na " + servings + " " +
-        plural(servings, ["osobę", "osoby", "osób", "osoby"]);
+      heading.textContent = "Składniki na " + servings + " " + (wieloporcjowy
+        ? plural(servings, ["porcję", "porcje", "porcji", "porcji"]) + " z planu"
+        : plural(servings, ["osobę", "osoby", "osób", "osoby"]));
 
       if (note) {
-        note.hidden = (data.baseServings || 1) === 1;
+        note.hidden = !wieloporcjowy;
         if (!note.hidden) {
-          var total = (data.baseServings || 1) * servings;
+          var total = data.baseServings * servings;
           note.textContent =
-            "W planie diety ten przepis jest opisany jako " + data.baseServings +
-            " porcje i takie ilości podajemy dla jednej osoby — dokładnie jak w PDF-ie. " +
-            "Dla " + servings + " " + plural(servings, ["osoby", "osób", "osób", "osoby"]) +
-            " wyjdzie " + total + " " +
-            plural(total, ["porcja", "porcje", "porcji", "porcji"]) + ".";
+            "Jedna porcja z planu to " + data.baseServings + " " +
+            plural(data.baseServings, ["porcja", "porcje", "porcji", "porcji"]) +
+            " gotowego dania — tak opisał to dietetyk i takich ilości nie " +
+            "zmieniamy. Przy " + servings + " " +
+            plural(servings, ["porcji", "porcjach", "porcjach", "porcjach"]) +
+            " z planu wyjdzie " + total + " " +
+            plural(total, ["porcja", "porcje", "porcji", "porcji"]) +
+            ", czyli " + (data.kcal * servings) + " kcal łącznie.";
         }
       }
 
@@ -470,12 +553,16 @@
       }
 
       var anySwap = Object.keys(swapState).some(function (k) {
-        return swapState[k] && swapState[k] !== data.ingredients[+k].swap.self;
+        var ing = data.ingredients[+k];
+        return ing && ing.swap && swapState[k] && swapState[k] !== ing.swap.self;
       });
       if (swapReset) swapReset.hidden = !anySwap;
 
-      LS.set("servings:" + data.slug, servings);
-      LS.set("swap:" + data.slug, swapState);
+      // Zapisujemy tylko to, co użytkownik faktycznie zmienił. Bez tego samo
+      // przejrzenie przepisów zostawiało po sobie tysiąc kluczy z wartościami
+      // domyślnymi, których nikt nigdy nie sprząta.
+      remember("servings:" + data.slug, servings, servings !== 1);
+      remember("swap:" + data.slug, swapState, anySwap);
       if (sheet && sheet.getAttribute("data-open") === "1") renderShopping();
       if (cook && cook.getAttribute("data-open") === "1") renderStep();
     }
@@ -567,7 +654,7 @@
           });
           var txt = document.createElement("span");
           txt.className = "p-check__text";
-          txt.textContent = line(s);
+          txt.textContent = lineShort(s);
           if (s.swapped) {
             var tag = document.createElement("span");
             tag.className = "p-swapped";
@@ -586,16 +673,55 @@
       });
     }
 
+    // Okno modalne ma trzymać fokus u siebie. Bez tego jeden Tab wyprowadzał
+    // klawiaturę na zasłoniętą treść — dawało się dojść do niewidocznego
+    // „Gotujmy” i uruchomić tryb gotowania drugi raz.
+    var FOKUSOWALNE = 'a[href], button:not([disabled]), input:not([disabled]),' +
+      ' select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])';
+    // Okno leży głęboko w drzewie Material for MkDocs, więc idziemy od niego
+    // w górę i na każdym piętrze wyłączamy rodzeństwo. Wyłączenie samych
+    // dzieci kontenera zostawiało dostępną całą treść strony pod spodem.
+    function zablokujTlo(okno) {
+      for (var el = okno; el && el !== document.body; el = el.parentElement) {
+        [].forEach.call(el.parentElement.children, function (rodzenstwo) {
+          if (rodzenstwo !== el) rodzenstwo.setAttribute("inert", "");
+        });
+      }
+    }
+
+    function odblokujTlo() {
+      [].forEach.call(document.querySelectorAll("[inert]"), function (el) {
+        el.removeAttribute("inert");
+      });
+    }
+
+    function zapetlFokus(okno, ev) {
+      var f = [].slice.call(okno.querySelectorAll(FOKUSOWALNE))
+        .filter(function (el) { return el.offsetParent !== null; });
+      if (!f.length) return;
+      var pierwszy = f[0], ostatni = f[f.length - 1];
+      if (ev.shiftKey && document.activeElement === pierwszy) {
+        ev.preventDefault();
+        ostatni.focus();
+      } else if (!ev.shiftKey && document.activeElement === ostatni) {
+        ev.preventDefault();
+        pierwszy.focus();
+      }
+    }
+
     function openSheet() {
+      if (sheet.getAttribute("data-open") === "1") return;
       renderShopping();
       sheet.setAttribute("data-open", "1");
       document.body.classList.add("p-cooking");
+      zablokujTlo(sheet);
       closeBtn.focus();
     }
 
     function closeSheet() {
       sheet.setAttribute("data-open", "0");
       document.body.classList.remove("p-cooking");
+      odblokujTlo();
       openBtn.focus();
     }
 
@@ -611,7 +737,7 @@
     }
     if (pdfBtn) {
       pdfBtn.addEventListener("click", function () {
-        makePdf(data, servings, scaled, groupsForList(), boughtMap(), pdfBtn, line);
+        makePdf(data, servings, scaled, groupsForList(), boughtMap(), pdfBtn, lineShort);
       });
     }
 
@@ -641,7 +767,31 @@
       LS.set("step:" + data.slug, step);
     }
 
+    // Przeglądarka zwalnia blokadę wygaszania ekranu, gdy karta znika z oczu.
+    // Trzeba ją założyć ponownie po powrocie, bo inaczej ekran gaśnie w połowie
+    // gotowania — dokładnie wtedy, gdy sprawdziłeś coś w innej aplikacji.
+    function trzymajEkran() {
+      if (!("wakeLock" in navigator) || wakeLock) return;
+      navigator.wakeLock.request("screen").then(function (l) {
+        wakeLock = l;
+        l.addEventListener("release", function () { wakeLock = null; });
+      }, function () {});
+    }
+
+    function pusćEkran() {
+      if (!wakeLock) return;
+      var l = wakeLock;
+      wakeLock = null;
+      l.release().catch(function () {});
+    }
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState !== "visible") return;
+      if (cook && cook.getAttribute("data-open") === "1") trzymajEkran();
+    });
+
     function openCook() {
+      if (cook.getAttribute("data-open") === "1") return;
       step = Math.min(LS.get("step:" + data.slug, 0), data.steps.length - 1);
       if (!(step >= 0)) step = 0;
       cookProgress.innerHTML = "";
@@ -653,16 +803,16 @@
       renderStep();
       cook.setAttribute("data-open", "1");
       document.body.classList.add("p-cooking");
+      zablokujTlo(cook);
       cookNext.focus();
-      if ("wakeLock" in navigator) {
-        navigator.wakeLock.request("screen").then(function (l) { wakeLock = l; }, function () {});
-      }
+      trzymajEkran();
     }
 
     function closeCook() {
       cook.setAttribute("data-open", "0");
       document.body.classList.remove("p-cooking");
-      if (wakeLock) { wakeLock.release().catch(function () {}); wakeLock = null; }
+      odblokujTlo();
+      pusćEkran();
       cookStart.focus();
     }
 
@@ -681,8 +831,10 @@
         if (ev.key === "Escape") closeCook();
         if (ev.key === "ArrowRight") cookNext.click();
         if (ev.key === "ArrowLeft") cookPrev.click();
-      } else if (sheet && sheet.getAttribute("data-open") === "1" && ev.key === "Escape") {
-        closeSheet();
+        if (ev.key === "Tab") zapetlFokus(cook, ev);
+      } else if (sheet && sheet.getAttribute("data-open") === "1") {
+        if (ev.key === "Escape") closeSheet();
+        if (ev.key === "Tab") zapetlFokus(sheet, ev);
       }
     });
 

@@ -377,6 +377,7 @@ GRUPY = {
             _o("seler-naciowy", "Seler naciowy", "m",
                "seler naciowy", "selera naciowego", "seler naciowy",
                "selerem naciowym", "selerze naciowym",
+               Bpot="selera naciowego",
                Mpl="selery naciowe", Dpl="selerów naciowych", Bpl="selery naciowe",
                Npl="selerami naciowymi", Mspl="selerach naciowych"),
             _o("dynia", "Dynia", "f",

@@ -18,6 +18,7 @@ import os
 import re
 import shutil
 import sys
+from collections import Counter
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "recipes.json")
@@ -68,6 +69,32 @@ def num(x):
     return str(int(x)) if float(x).is_integer() else str(x)
 
 
+def yaml_str(t):
+    """Tytuł jako bezpieczny skalar YAML — cudzysłowy w nazwie dania nie
+    mogą rozwalić front mattera."""
+    return '"' + str(t).replace("\\", "\\\\").replace('"', '\\"') + '"'
+
+
+def md_escape(t):
+    """Chroni znaki, które Markdown wziąłby za składnię (nazwy dań bywają
+    z gwiazdką albo podkreśleniem)."""
+    return re.sub(r"([\\`*_{}\[\]#+])", r"\\\1", str(t))
+
+
+# Biernik potoczny („pokrój pomidora”) mają tylko te rzeczowniki męskie,
+# które polszczyzna odmienia jak żywotne. Dla rodzaju żeńskiego i nijakiego
+# poprawną formą jest zwykły biernik — bez tego kroku po zamianie wychodziło
+# „Papryka pokrój w plastry” zamiast „Paprykę pokrój w plastry”.
+ZAMIENNIK_FORMY = {"Bpot": "B", "Bpl": "B", "Mpl": "M", "Dpl": "D",
+                   "Npl": "N", "Mspl": "Ms"}
+
+
+def forma(opt, case):
+    """Forma wariantu w danym przypadku, z sensownym cofnięciem."""
+    f = opt["formy"]
+    return f.get(case) or f.get(ZAMIENNIK_FORMY.get(case, "M")) or f["M"]
+
+
 def render_step(step, ingredients, groups, adjectives):
     """Podstawia znaczniki formami składników z przepisu (wersja bez zamian).
 
@@ -79,7 +106,7 @@ def render_step(step, ingredients, groups, adjectives):
         ing = ingredients[int(idx)]
         opt = next(o for o in groups[ing["swap"]["group"]]["options"]
                    if o["id"] == ing["swap"]["self"])
-        word = opt["formy"].get(case) or opt["formy"]["M"]
+        word = forma(opt, case)
         if adj:
             rodz = opt.get("rodzajB", opt["rodzaj"]) \
                 if (adj.endswith("_B") and case == "Bpot") else opt["rodzaj"]
@@ -98,7 +125,8 @@ def render_index(data):
     recipes = data["recipes"]
     by_id = {i["id"]: i for i in idx}
 
-    out = ["---", "hide:", "  - toc", "---", "", "# Co dziś jesz?", ""]
+    out = ["---", "title: Przepisy", "hide:", "  - toc", "---", "",
+           "# Co dziś jesz?", ""]
     out.append(
         "Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — "
         f"albo po prostu przewiń wszystkie {len(recipes)} "
@@ -166,7 +194,8 @@ def render_index(data):
     out.append("</details>")
     out.append("</div>")
 
-    out.append('<div class="p-count"><span id="result-count" class="p-num"></span></div>')
+    out.append('<div class="p-count" role="status" aria-live="polite">'
+               '<span id="result-count" class="p-num"></span></div>')
     out.append("")
     out.append('<p class="p-empty" id="empty-state" hidden>Żaden przepis nie pasuje do tego '
                "wyboru. Odznacz część składników albo wróć do wszystkich pór dnia.</p>")
@@ -195,10 +224,6 @@ def render_index(data):
     out.append("</ul>")
     out.append("")
 
-    payload = {"count": len(recipes),
-               "ingredients": [{"id": i["id"], "label": i["label"]} for i in idx]}
-    out.append("<script>window.RECIPES = " + json.dumps(payload, ensure_ascii=False) + ";</script>")
-    out.append("")
     return "\n".join(out)
 
 
@@ -207,9 +232,12 @@ def render_index(data):
 def render_recipe(r, data):
     groups = data["swapGroups"]
     adjectives = data["swapAdjectives"]
-    out = ["---", "hide:", "  - toc", "---", "",
+    # `title:` musi być jawny. Bez niego MkDocs bierze tytuł z nazwy pliku
+    # („Klejacy ryz”), bo strony przepisów są poza nawigacją — a ten tytuł
+    # trafia do karty przeglądarki, zakładek, Google i wyszukiwarki na stronie.
+    out = ["---", f"title: {yaml_str(r['title'])}", "hide:", "  - toc", "---", "",
            '<a class="p-back" href="../../">&larr; Wszystkie przepisy</a>', "",
-           f'# {r["title"]}', ""]
+           f'# {md_escape(r["title"])}', ""]
 
     out.append(f'<div class="p-hero" data-slot="{r["slot"]}">')
     out.append('<div class="p-hero__top">')
@@ -227,7 +255,9 @@ def render_recipe(r, data):
     out.append("")
 
     out.append('<div class="p-servings">')
-    out.append('<span class="p-eyebrow">Dla ilu osób gotujesz?</span>')
+    etykieta = ("Ile porcji z planu?" if r.get("baseServings", 1) > 1
+                else "Dla ilu osób gotujesz?")
+    out.append(f'<span class="p-eyebrow">{e(etykieta)}</span>')
     out.append('<div class="p-stepper">')
     out.append('<button type="button" class="p-stepper__btn" id="srv-minus" '
                'aria-label="Mniej osób">&minus;</button>')
@@ -285,6 +315,13 @@ def render_recipe(r, data):
     out.append('<button type="button" class="p-btn p-btn--primary p-btn--block" id="cook-start">'
                "Gotujmy &rarr;</button>")
     out.append("</div>")
+    # Przelicznik porcji, lista zakupów i tryb gotowania wymagają JavaScriptu.
+    # Sam przepis czyta się bez niego, więc zamiast martwych przycisków bez
+    # słowa wyjaśnienia mówimy wprost, czego brakuje.
+    out.append('<noscript><p class="p-note">Lista zakupów, przelicznik porcji '
+               "i tryb gotowania krok po kroku wymagają JavaScriptu. Składniki "
+               "i sposób przygotowania czytasz normalnie — ilości są podane "
+               "dla jednej porcji z planu.</p></noscript>")
     out.append("")
 
     out.append("<h2>Sposób przygotowania</h2>")
@@ -331,7 +368,7 @@ def render_recipe(r, data):
     payload = {
         "slug": r["slug"], "title": r["title"],
         "slotLabel": r["slotLabel"], "time": r["time"],
-        "baseServings": r["baseServings"],
+        "baseServings": r["baseServings"], "kcal": r["kcal"],
         "ingredients": r["ingredients"], "steps": r["steps"],
     }
     out.append("<script>window.RECIPE = " + json.dumps(payload, ensure_ascii=False) + ";")
@@ -346,14 +383,15 @@ def render_recipe(r, data):
 # ---------------------------------------------------------- zamienniki.md ---
 
 def render_substitutions(data):
-    out = ["---", "hide:", "  - toc", "---", "", "# Zamienniki", "",
+    out = ["---", "title: Zamienniki", "hide:", "  - toc", "---", "",
+           "# Zamienniki", "",
            "Przepisany fragment „Listy wymienników” z Twojego planu diety. "
            "Znak `=` znaczy: możesz wymienić jedno na drugie. Przy składnikach "
            "w przepisach znajdziesz te same zamienniki pod przyciskiem "
            "**Zamień na**.", ""]
     for group in data.get("substitutions", []):
         out.append('<div class="p-swap-card">')
-        out.append(f'<h3>{e(group["title"])}</h3>')
+        out.append(f'<h2>{e(group["title"])}</h2>')
         for item in group["items"]:
             out.append(f"<p>{e(item)}</p>")
         out.append("</div>")
@@ -369,9 +407,98 @@ def write(path, text):
         f.write(text)
 
 
+def sprawdz(data):
+    """Kontrole spójności. Uruchamiane PRZED zapisem, żeby błąd w danych dał
+    czytelny komunikat, a nie ślad stosu z połowy renderowania — i żeby nie
+    zostawiał po sobie na wpół wygenerowanego docs/."""
+    bledy = []
+
+    dup = sorted(s for s, n in Counter(r["slug"] for r in data["recipes"]).items() if n > 1)
+    if dup:
+        bledy.append(f"powtórzone slugi (pliki nadpisałyby się nawzajem): {dup}")
+
+    tags_used = {t for r in data["recipes"] for t in r["tags"]}
+    dead = [i["id"] for i in data["ingredientIndex"] if i["id"] not in tags_used]
+    if dead:
+        bledy.append(f"filtry bez pokrycia: {dead}")
+
+    known = {i["id"] for i in data["ingredientIndex"]}
+    bad = [f for f in data["featuredIngredients"] if f not in known]
+    if bad:
+        bledy.append(f"wyróżnione składniki spoza indeksu: {bad}")
+
+    grupy = data["swapGroups"]
+    przym = data["swapAdjectives"]
+    # Każdy wariant grupy musi umieć każdy przypadek i przymiotnik, jakiego
+    # używa krok — inaczej po zamianie w przeglądarce cicho wychodzi zły
+    # przypadek („Papryka pokrój” zamiast „Paprykę pokrój”).
+    potrzebne = {}
+    for r in data["recipes"]:
+        for st in r["steps"]:
+            for m in TOKEN.finditer(st):
+                idx, case, adj = int(m.group(1)), m.group(2), m.group(3)
+                if idx >= len(r["ingredients"]) or "swap" not in r["ingredients"][idx]:
+                    bledy.append(f"{r['slug']}: znacznik {m.group(0)} wskazuje "
+                                 "składnik bez zamiennika")
+                    continue
+                gid = r["ingredients"][idx]["swap"]["group"]
+                potrzebne.setdefault(gid, set()).add((case, adj))
+                if adj and adj not in przym:
+                    bledy.append(f"{r['slug']}: nieznany przymiotnik „{adj}”")
+
+    for gid, pary in sorted(potrzebne.items()):
+        for o in grupy[gid]["options"]:
+            for case, adj in sorted(pary):
+                zapas = ZAMIENNIK_FORMY.get(case, "M")
+                if case not in o["formy"] and zapas not in o["formy"]:
+                    bledy.append(f"grupa {gid}, wariant {o['id']}: brak formy "
+                                 f"{case} (ani zastępczej {zapas})")
+                if adj:
+                    rodz = o.get("rodzajB", o["rodzaj"]) \
+                        if (adj.endswith("_B") and case == "Bpot") else o["rodzaj"]
+                    if rodz not in przym.get(adj, {}):
+                        bledy.append(f"grupa {gid}, wariant {o['id']}: "
+                                     f"przymiotnik {adj} nie ma rodzaju {rodz}")
+
+    # Skróty jednostek są w dwóch miejscach — tu i w app.js. Gdyby się
+    # rozjechały, strona przepisu pokazywałaby „1 szt.”, a po zmianie liczby
+    # osób „2 sztuki”.
+    js = open(os.path.join(DOCS, "javascripts", "app.js"), encoding="utf-8").read()
+    blok = re.search(r"var SKROTY = \{(.*?)\};", js, re.S)
+    if not blok:
+        bledy.append("nie znalazłem tabeli SKROTY w app.js")
+    else:
+        z_js = dict(re.findall(r'"([^"]+)":\s*"([^"]+)"', blok.group(1)))
+        if z_js != SKROTY:
+            rozne = sorted(k for k in set(z_js) & set(SKROTY) if z_js[k] != SKROTY[k])
+            bledy.append("skróty jednostek rozjechały się z app.js — "
+                         f"tylko w app.js: {sorted(set(z_js) - set(SKROTY))}, "
+                         f"tylko tutaj: {sorted(set(SKROTY) - set(z_js))}, "
+                         f"różne wartości: {rozne}")
+
+    # Jednostka używana w danych, która ma lemat ze skrótem, musi mieć skrót
+    # w każdej swojej formie — inaczej po przeliczeniu porcji wyskakuje pełne
+    # słowo tam, gdzie wcześniej był skrót.
+    lematy = {f: lem for lem, formy in data["units"].items() for f in formy}
+    uzyte = {i["unit"] for r in data["recipes"] for i in r["ingredients"]}
+    odmiany = {f for lem in SKROTY if lem in data["units"] for f in data["units"][lem]}
+    nieobjete = sorted(f for f in (odmiany | uzyte)
+                       if f not in SKROTY and lematy.get(f, f) in SKROTY)
+    if nieobjete:
+        bledy.append(f"formy jednostek bez skrótu: {nieobjete}")
+
+    if bledy:
+        print("BŁĄD w danych — nie generuję strony:", file=sys.stderr)
+        for b in bledy:
+            print("  •", b, file=sys.stderr)
+        sys.exit(1)
+
+
 def main():
     with open(DATA, encoding="utf-8") as f:
         data = json.load(f)
+
+    sprawdz(data)
 
     if os.path.isdir(RECIPE_DIR):
         shutil.rmtree(RECIPE_DIR)
@@ -396,59 +523,12 @@ def main():
     swaps = sum(1 for r in data["recipes"] for i in r["ingredients"] if "swap" in i)
     print(f"Składników z zamiennikami: {swaps}.")
 
-    # --- kontrole spójności; przy błędzie build ma się wywalić, nie milczeć
+    # Link ze strony głównej da się sprawdzić dopiero po wygenerowaniu.
     index_text = open(os.path.join(DOCS, "index.md"), encoding="utf-8").read()
     missing = [r["slug"] for r in data["recipes"]
                if f'przepisy/{r["slug"]}/' not in index_text]
     if missing:
         print("BŁĄD: brak linków na stronie głównej:", missing, file=sys.stderr)
-        sys.exit(1)
-
-    tags_used = {t for r in data["recipes"] for t in r["tags"]}
-    dead = [i["id"] for i in data["ingredientIndex"] if i["id"] not in tags_used]
-    if dead:
-        print("BŁĄD: filtry bez pokrycia:", dead, file=sys.stderr)
-        sys.exit(1)
-
-    known = {i["id"] for i in data["ingredientIndex"]}
-    bad = [f for f in data["featuredIngredients"] if f not in known]
-    if bad:
-        print("BŁĄD: wyróżnione składniki spoza indeksu:", bad, file=sys.stderr)
-        sys.exit(1)
-
-    for r in data["recipes"]:
-        for s in r["steps"]:
-            for m in TOKEN.finditer(s):
-                idx = int(m.group(1))
-                if idx >= len(r["ingredients"]) or "swap" not in r["ingredients"][idx]:
-                    print(f"BŁĄD: {r['slug']} — znacznik wskazuje na składnik "
-                          f"bez zamiennika ({m.group(0)})", file=sys.stderr)
-                    sys.exit(1)
-
-    # Skróty jednostek są w dwóch miejscach — tu i w app.js. Gdyby się
-    # rozjechały, strona przepisu pokazywałaby „1 szt.”, a po zmianie liczby
-    # osób „2 sztuki”. Pilnujemy, żeby obie tabele mówiły to samo.
-    js = open(os.path.join(DOCS, "javascripts", "app.js"), encoding="utf-8").read()
-    blok = re.search(r"var SKROTY = \{(.*?)\};", js, re.S)
-    if not blok:
-        print("BŁĄD: nie znalazłem tabeli SKROTY w app.js", file=sys.stderr)
-        sys.exit(1)
-    z_js = dict(re.findall(r'"([^"]+)":\s*"([^"]+)"', blok.group(1)))
-    if z_js != SKROTY:
-        print("BŁĄD: skróty jednostek rozjechały się między generate_site.py "
-              f"a app.js.\n  tylko w app.js: {sorted(set(z_js) - set(SKROTY))}"
-              f"\n  tylko w generate_site.py: {sorted(set(SKROTY) - set(z_js))}"
-              f"\n  różne wartości: "
-              f"{sorted(k for k in set(z_js) & set(SKROTY) if z_js[k] != SKROTY[k])}",
-              file=sys.stderr)
-        sys.exit(1)
-
-    uzyte = {i["unit"] for r in data["recipes"] for i in r["ingredients"]}
-    odmiany = {f for lem in SKROTY if lem in data["units"] for f in data["units"][lem]}
-    nieobjete = sorted(f for f in odmiany | uzyte
-                       if f in odmiany and f not in SKROTY)
-    if nieobjete:
-        print(f"BŁĄD: formy jednostek bez skrótu: {nieobjete}", file=sys.stderr)
         sys.exit(1)
 
     print("Kontrola spójności: OK.")
