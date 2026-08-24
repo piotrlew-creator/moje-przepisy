@@ -1429,9 +1429,25 @@ html, body { overflow-x: hidden; }
   cursor: default;
 }
 
+/* Serce jest rysowane jako SVG (patrz HEART_PATH w generate_site.py), więc
+   kształt jest ten sam na każdym telefonie. Pusty kontur = nie w ulubionych,
+   wypełniony = ulubiony; przełącza to `aria-pressed`, a nie podmiana treści.
+   `stroke-linejoin: round` wygładza wcięcie między łukami przy małym rozmiarze. */
 .p-heart {
-  font-size: 0.9em;
-  line-height: 1;
+  width: 1.05em;
+  height: 0.92em;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linejoin: round;
+  vertical-align: -0.1em;
+}
+
+.p-chip[data-on="1"] .p-heart,
+[aria-pressed="true"] > .p-heart {
+  fill: currentColor;
+  stroke: none;
 }
 
 /* ---------------------------------------------------------- ulubione ----- */
@@ -1449,7 +1465,7 @@ html, body { overflow-x: hidden; }
   border: 0;
   background: none;
   color: var(--p-ink-3);
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   line-height: 1;
   cursor: pointer;
   display: flex;
@@ -1457,6 +1473,12 @@ html, body { overflow-x: hidden; }
   justify-content: center;
   -webkit-tap-highlight-color: transparent;
   transition: color 0.15s ease, transform 0.1s ease;
+}
+
+.p-fav .p-heart {
+  width: 1em;
+  height: 0.875em;
+  vertical-align: 0;
 }
 
 .p-fav:hover { color: var(--p-slot-1); }

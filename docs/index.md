@@ -20,7 +20,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <button type="button" class="p-btn p-btn--clear" id="clear-filters" hidden>Wyczyść <span class="p-num" id="clear-count"></span></button>
 </div>
 <div class="p-modes" role="group" aria-label="Widok">
-<button type="button" class="p-chip p-chip--mode" id="mode-fav" data-on="0" aria-pressed="false"><span class="p-heart" aria-hidden="true">&#9825;</span>Ulubione <span class="p-num" id="fav-count"></span></button>
+<button type="button" class="p-chip p-chip--mode" id="mode-fav" data-on="0" aria-pressed="false"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg>Ulubione <span class="p-num" id="fav-count"></span></button>
 <button type="button" class="p-chip p-chip--mode" id="mode-cooked" data-on="0" aria-pressed="false">Ugotowane <span class="p-num" id="cooked-count"></span></button>
 <button type="button" class="p-chip p-chip--mode" id="mode-fridge" data-on="0" aria-pressed="false">&#129530; Mam w lodówce</button>
 </div>
@@ -30,7 +30,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <span class="p-panel__state" id="ing-state">wybierz składniki</span>
 </summary>
 <div class="p-panel__inner">
-<p class="p-hint" id="fridge-hint" hidden>Zaznacz, co masz pod ręką. Zamiast odsiewać przepisy, ułożę je od tych, do których brakuje najmniej. Sól, pieprz i oliwa nie liczą się jako braki.</p>
+<p class="p-hint" id="fridge-hint" hidden>Zaznacz, co masz pod ręką. Pokażę tylko dania, w których to wykorzystasz — najpierw te, które zużywają najwięcej Twoich produktów, i przy każdym napiszę, czego jeszcze brakuje. Sól, pieprz i oliwa nie liczą się jako braki.</p>
 <div class="p-chips" id="ing-chips">
 <label class="p-chip" data-rank="top" data-label="Jajka"><input type="checkbox" value="jajka">Jajka <span class="p-num" style="opacity:.55">43</span></label>
 <label class="p-chip" data-rank="top" data-label="Makaron"><input type="checkbox" value="makaron">Makaron <span class="p-num" style="opacity:.55">19</span></label>
@@ -193,7 +193,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/klejacy-ryz/">Klejący ryż z prażonym jabłkiem</a>
-<button type="button" class="p-fav" data-fav="klejacy-ryz" aria-pressed="false" aria-label="Dodaj do ulubionych: Klejący ryż z prażonym jabłkiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="klejacy-ryz" aria-pressed="false" aria-label="Dodaj do ulubionych: Klejący ryż z prażonym jabłkiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -209,7 +209,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jajecznica/">Jajecznica z pieczarkami, cebulą i pieczywem</a>
-<button type="button" class="p-fav" data-fav="jajecznica" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajecznica z pieczarkami, cebulą i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jajecznica" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajecznica z pieczarkami, cebulą i pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -225,7 +225,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-mozzarella/">Makaron z mozzarellą, szpinakiem, ogórkiem i pomidorkami koktajlowymi</a>
-<button type="button" class="p-fav" data-fav="makaron-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron z mozzarellą, szpinakiem, ogórkiem i pomidorkami koktajlowymi"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="makaron-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron z mozzarellą, szpinakiem, ogórkiem i pomidorkami koktajlowymi"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -241,7 +241,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kulki-mocy/">Daktylowo-kakaowe kulki mocy z orzechami</a>
-<button type="button" class="p-fav" data-fav="kulki-mocy" aria-pressed="false" aria-label="Dodaj do ulubionych: Daktylowo-kakaowe kulki mocy z orzechami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kulki-mocy" aria-pressed="false" aria-label="Dodaj do ulubionych: Daktylowo-kakaowe kulki mocy z orzechami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -257,7 +257,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka/">Owsianka</a>
-<button type="button" class="p-fav" data-fav="owsianka" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsianka" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -273,7 +273,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-grahamka/">Serek wiejski, papryka, grahamka i orzechy</a>
-<button type="button" class="p-fav" data-fav="serek-wiejski-grahamka" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski, papryka, grahamka i orzechy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="serek-wiejski-grahamka" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski, papryka, grahamka i orzechy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -289,7 +289,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/krem-paprykowo-pomidorowy/">Krem paprykowo-pomidorowy</a>
-<button type="button" class="p-fav" data-fav="krem-paprykowo-pomidorowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Krem paprykowo-pomidorowy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="krem-paprykowo-pomidorowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Krem paprykowo-pomidorowy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -305,7 +305,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-serkiem/">Kanapki z serkiem śmietankowym, pomidorem i szczypiorkiem</a>
-<button type="button" class="p-fav" data-fav="kanapki-z-serkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z serkiem śmietankowym, pomidorem i szczypiorkiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-z-serkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z serkiem śmietankowym, pomidorem i szczypiorkiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -321,7 +321,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/placuszki-owsiane/">Placuszki owsiane orzechowe</a>
-<button type="button" class="p-fav" data-fav="placuszki-owsiane" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki owsiane orzechowe"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="placuszki-owsiane" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki owsiane orzechowe"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -337,7 +337,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-serem/">Kanapki z żółtym serem, roszponką i pomidorem</a>
-<button type="button" class="p-fav" data-fav="kanapki-z-serem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z żółtym serem, roszponką i pomidorem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-z-serem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z żółtym serem, roszponką i pomidorem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -353,7 +353,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/gyoza/">Pierożki gyoza z warzywami chef select z kimchi</a>
-<button type="button" class="p-fav" data-fav="gyoza" aria-pressed="false" aria-label="Dodaj do ulubionych: Pierożki gyoza z warzywami chef select z kimchi"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="gyoza" aria-pressed="false" aria-label="Dodaj do ulubionych: Pierożki gyoza z warzywami chef select z kimchi"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -369,7 +369,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/koktajl-bananowy/">Koktajl bananowo-orzechowy</a>
-<button type="button" class="p-fav" data-fav="koktajl-bananowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Koktajl bananowo-orzechowy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="koktajl-bananowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Koktajl bananowo-orzechowy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -385,7 +385,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jaglanka-gruszka/">Jaglanka na mleku roślinnym z gruszką</a>
-<button type="button" class="p-fav" data-fav="jaglanka-gruszka" aria-pressed="false" aria-label="Dodaj do ulubionych: Jaglanka na mleku roślinnym z gruszką"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jaglanka-gruszka" aria-pressed="false" aria-label="Dodaj do ulubionych: Jaglanka na mleku roślinnym z gruszką"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -401,7 +401,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-pasta-warzywna/">Kanapki z pastą warzywną, serem mozzarellą i ogórkiem</a>
-<button type="button" class="p-fav" data-fav="kanapki-z-pasta-warzywna" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z pastą warzywną, serem mozzarellą i ogórkiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-z-pasta-warzywna" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z pastą warzywną, serem mozzarellą i ogórkiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -417,7 +417,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kasza-z-tofu/">Kasza z tofu</a>
-<button type="button" class="p-fav" data-fav="kasza-z-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Kasza z tofu"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kasza-z-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Kasza z tofu"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -433,7 +433,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/smoothie-strawberry/">Smoothie strawberry and friends Solevita i batonik protein bar</a>
-<button type="button" class="p-fav" data-fav="smoothie-strawberry" aria-pressed="false" aria-label="Dodaj do ulubionych: Smoothie strawberry and friends Solevita i batonik protein bar"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="smoothie-strawberry" aria-pressed="false" aria-label="Dodaj do ulubionych: Smoothie strawberry and friends Solevita i batonik protein bar"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -449,7 +449,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-z-miodem/">Serek wiejski z miodem, orzechami i gruszką</a>
-<button type="button" class="p-fav" data-fav="serek-wiejski-z-miodem" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z miodem, orzechami i gruszką"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="serek-wiejski-z-miodem" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z miodem, orzechami i gruszką"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -465,7 +465,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-pasta-z-ciecierzycy/">Kanapka z pastą z ciecierzycy</a>
-<button type="button" class="p-fav" data-fav="kanapka-z-pasta-z-ciecierzycy" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą z ciecierzycy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapka-z-pasta-z-ciecierzycy" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą z ciecierzycy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -481,7 +481,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/spaghetti-bolognese/">Wegańskie spaghetti bolognese</a>
-<button type="button" class="p-fav" data-fav="spaghetti-bolognese" aria-pressed="false" aria-label="Dodaj do ulubionych: Wegańskie spaghetti bolognese"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="spaghetti-bolognese" aria-pressed="false" aria-label="Dodaj do ulubionych: Wegańskie spaghetti bolognese"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -497,7 +497,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-grecka/">Sałatka grecka z serem sałatkowym i pieczywem</a>
-<button type="button" class="p-fav" data-fav="salatka-grecka" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka grecka z serem sałatkowym i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="salatka-grecka" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka grecka z serem sałatkowym i pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -513,7 +513,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/bowl-sniadaniowy/">Bowl śniadaniowy z jabłkiem i kaki</a>
-<button type="button" class="p-fav" data-fav="bowl-sniadaniowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Bowl śniadaniowy z jabłkiem i kaki"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="bowl-sniadaniowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Bowl śniadaniowy z jabłkiem i kaki"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -529,7 +529,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tosty-awokado/">Tosty z jajkiem sadzonym i awokado</a>
-<button type="button" class="p-fav" data-fav="tosty-awokado" aria-pressed="false" aria-label="Dodaj do ulubionych: Tosty z jajkiem sadzonym i awokado"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tosty-awokado" aria-pressed="false" aria-label="Dodaj do ulubionych: Tosty z jajkiem sadzonym i awokado"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -545,7 +545,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-z-dyni/">Zupa z dyni z pieczoną ciecierzycą - przepis na 3 porcje</a>
-<button type="button" class="p-fav" data-fav="zupa-z-dyni" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa z dyni z pieczoną ciecierzycą - przepis na 3 porcje"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zupa-z-dyni" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa z dyni z pieczoną ciecierzycą - przepis na 3 porcje"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -561,7 +561,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-malinowa/">Owsianka malinowa Crownfield</a>
-<button type="button" class="p-fav" data-fav="owsianka-malinowa" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka malinowa Crownfield"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsianka-malinowa" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka malinowa Crownfield"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -577,7 +577,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-z-marchewka/">Owsianka z marchewką</a>
-<button type="button" class="p-fav" data-fav="owsianka-z-marchewka" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z marchewką"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsianka-z-marchewka" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z marchewką"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -593,7 +593,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-tofu-twarozkiem/">Kanapka z tofu twarożkiem</a>
-<button type="button" class="p-fav" data-fav="kanapka-z-tofu-twarozkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z tofu twarożkiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapka-z-tofu-twarozkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z tofu twarożkiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -609,7 +609,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/roslinna-kaszanka/">Roślinna kaszanka Dobra Kaloria z pieczywem i warzywami</a>
-<button type="button" class="p-fav" data-fav="roslinna-kaszanka" aria-pressed="false" aria-label="Dodaj do ulubionych: Roślinna kaszanka Dobra Kaloria z pieczywem i warzywami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="roslinna-kaszanka" aria-pressed="false" aria-label="Dodaj do ulubionych: Roślinna kaszanka Dobra Kaloria z pieczywem i warzywami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -625,7 +625,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/bruschetta/">Bruschetta z pomidorami, świeżymi ziołami i serem grana padano</a>
-<button type="button" class="p-fav" data-fav="bruschetta" aria-pressed="false" aria-label="Dodaj do ulubionych: Bruschetta z pomidorami, świeżymi ziołami i serem grana padano"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="bruschetta" aria-pressed="false" aria-label="Dodaj do ulubionych: Bruschetta z pomidorami, świeżymi ziołami i serem grana padano"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -641,7 +641,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/omlet-mleczna-kanapka/">Omlet mleczna kanapka</a>
-<button type="button" class="p-fav" data-fav="omlet-mleczna-kanapka" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet mleczna kanapka"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="omlet-mleczna-kanapka" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet mleczna kanapka"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -657,7 +657,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/hummus-spicy-salsa/">Hummus spicy salsa z waflami ryżowymi</a>
-<button type="button" class="p-fav" data-fav="hummus-spicy-salsa" aria-pressed="false" aria-label="Dodaj do ulubionych: Hummus spicy salsa z waflami ryżowymi"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="hummus-spicy-salsa" aria-pressed="false" aria-label="Dodaj do ulubionych: Hummus spicy salsa z waflami ryżowymi"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -673,7 +673,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zapiekanka-ziemniaczana/">Zapiekanka ziemniaczana z mozzarellą</a>
-<button type="button" class="p-fav" data-fav="zapiekanka-ziemniaczana" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka ziemniaczana z mozzarellą"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zapiekanka-ziemniaczana" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka ziemniaczana z mozzarellą"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -689,7 +689,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryzowy-pudding/">Ryżowy pudding z prażonymi gruszkami</a>
-<button type="button" class="p-fav" data-fav="ryzowy-pudding" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryżowy pudding z prażonymi gruszkami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="ryzowy-pudding" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryżowy pudding z prażonymi gruszkami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -705,7 +705,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jaglany-snickers/">Jaglany snickers</a>
-<button type="button" class="p-fav" data-fav="jaglany-snickers" aria-pressed="false" aria-label="Dodaj do ulubionych: Jaglany snickers"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jaglany-snickers" aria-pressed="false" aria-label="Dodaj do ulubionych: Jaglany snickers"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -721,7 +721,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-z-pstroga/">Pasta z wędzonego pstrąga i twarogu ze szczypiorkiem, warzywami i pieczywem</a>
-<button type="button" class="p-fav" data-fav="pasta-z-pstroga" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z wędzonego pstrąga i twarogu ze szczypiorkiem, warzywami i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pasta-z-pstroga" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z wędzonego pstrąga i twarogu ze szczypiorkiem, warzywami i pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -737,7 +737,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-krem-z-pomidorow/">Zupa krem z pomidorów z bazylią Chef select</a>
-<button type="button" class="p-fav" data-fav="zupa-krem-z-pomidorow" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa krem z pomidorów z bazylią Chef select"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zupa-krem-z-pomidorow" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa krem z pomidorów z bazylią Chef select"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -753,7 +753,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryzowa-salatka-z-ananasem/">Ryżowa sałatka z ananasem, ogórkiem, selerem i kukurydzą + shake białkowy</a>
-<button type="button" class="p-fav" data-fav="ryzowa-salatka-z-ananasem" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryżowa sałatka z ananasem, ogórkiem, selerem i kukurydzą + shake białkowy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="ryzowa-salatka-z-ananasem" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryżowa sałatka z ananasem, ogórkiem, selerem i kukurydzą + shake białkowy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -769,7 +769,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tost-z-maslem-orzechowym/">Tost z chlebem żytnim, masłem orzechowym i bananem + shake białkowy</a>
-<button type="button" class="p-fav" data-fav="tost-z-maslem-orzechowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Tost z chlebem żytnim, masłem orzechowym i bananem + shake białkowy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tost-z-maslem-orzechowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Tost z chlebem żytnim, masłem orzechowym i bananem + shake białkowy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -785,7 +785,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/roslinne-kabanosy/">Roślinne kabanosy Bez kęsa mięsa Tarczyński z pieczywem i warzywami</a>
-<button type="button" class="p-fav" data-fav="roslinne-kabanosy" aria-pressed="false" aria-label="Dodaj do ulubionych: Roślinne kabanosy Bez kęsa mięsa Tarczyński z pieczywem i warzywami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="roslinne-kabanosy" aria-pressed="false" aria-label="Dodaj do ulubionych: Roślinne kabanosy Bez kęsa mięsa Tarczyński z pieczywem i warzywami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -801,7 +801,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-penne/">Makaron penne ze szpinakiem, pieczarkami, pomidorkami cherry i serem grana padano</a>
-<button type="button" class="p-fav" data-fav="makaron-penne" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron penne ze szpinakiem, pieczarkami, pomidorkami cherry i serem grana padano"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="makaron-penne" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron penne ze szpinakiem, pieczarkami, pomidorkami cherry i serem grana padano"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -817,7 +817,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-pasta-pomidorowa/">Kanapka z pastą pomidorową</a>
-<button type="button" class="p-fav" data-fav="kanapka-z-pasta-pomidorowa" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą pomidorową"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapka-z-pasta-pomidorowa" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą pomidorową"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -833,7 +833,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/risotto-z-dynia-i-serem-salatkowym/">Risotto z dynią i serem sałatkowym</a>
-<button type="button" class="p-fav" data-fav="risotto-z-dynia-i-serem-salatkowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Risotto z dynią i serem sałatkowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="risotto-z-dynia-i-serem-salatkowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Risotto z dynią i serem sałatkowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -849,7 +849,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/warzywne-spring-rolls/">Warzywne spring rolls</a>
-<button type="button" class="p-fav" data-fav="warzywne-spring-rolls" aria-pressed="false" aria-label="Dodaj do ulubionych: Warzywne spring rolls"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="warzywne-spring-rolls" aria-pressed="false" aria-label="Dodaj do ulubionych: Warzywne spring rolls"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -865,7 +865,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsiano-zytnie-batoniki-z-miodem-i/">Owsiano-żytnie batoniki z miodem i czekoladą</a>
-<button type="button" class="p-fav" data-fav="owsiano-zytnie-batoniki-z-miodem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiano-żytnie batoniki z miodem i czekoladą"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsiano-zytnie-batoniki-z-miodem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiano-żytnie batoniki z miodem i czekoladą"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -881,7 +881,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tortilla-z-ciecierzyca-cukinia-i-awokado/">Tortilla z ciecierzycą, cukinią i awokado + shake białkowy - przepis na 2 porcje</a>
-<button type="button" class="p-fav" data-fav="tortilla-z-ciecierzyca-cukinia-i-awokado" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z ciecierzycą, cukinią i awokado + shake białkowy - przepis na 2 porcje"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tortilla-z-ciecierzyca-cukinia-i-awokado" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z ciecierzycą, cukinią i awokado + shake białkowy - przepis na 2 porcje"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -897,7 +897,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/vege-krupnik/">Vege krupnik</a>
-<button type="button" class="p-fav" data-fav="vege-krupnik" aria-pressed="false" aria-label="Dodaj do ulubionych: Vege krupnik"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="vege-krupnik" aria-pressed="false" aria-label="Dodaj do ulubionych: Vege krupnik"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -913,7 +913,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owoce-z-jogurtem-roslinnym/">Owoce z jogurtem roślinnym</a>
-<button type="button" class="p-fav" data-fav="owoce-z-jogurtem-roslinnym" aria-pressed="false" aria-label="Dodaj do ulubionych: Owoce z jogurtem roślinnym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owoce-z-jogurtem-roslinnym" aria-pressed="false" aria-label="Dodaj do ulubionych: Owoce z jogurtem roślinnym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -929,7 +929,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-z-rzodkiewka-pomidorem-i/">Serek wiejski z rzodkiewką, pomidorem i pieczywem</a>
-<button type="button" class="p-fav" data-fav="serek-wiejski-z-rzodkiewka-pomidorem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z rzodkiewką, pomidorem i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="serek-wiejski-z-rzodkiewka-pomidorem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z rzodkiewką, pomidorem i pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -945,7 +945,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pulpeciki-z-soczewicy-z-kasza-jeczmienna/">Pulpeciki z soczewicy z kaszą jęczmienną</a>
-<button type="button" class="p-fav" data-fav="pulpeciki-z-soczewicy-z-kasza-jeczmienna" aria-pressed="false" aria-label="Dodaj do ulubionych: Pulpeciki z soczewicy z kaszą jęczmienną"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pulpeciki-z-soczewicy-z-kasza-jeczmienna" aria-pressed="false" aria-label="Dodaj do ulubionych: Pulpeciki z soczewicy z kaszą jęczmienną"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -961,7 +961,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/hot-dog-z-weganska-parowka/">Hot dog z wegańską parówką</a>
-<button type="button" class="p-fav" data-fav="hot-dog-z-weganska-parowka" aria-pressed="false" aria-label="Dodaj do ulubionych: Hot dog z wegańską parówką"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="hot-dog-z-weganska-parowka" aria-pressed="false" aria-label="Dodaj do ulubionych: Hot dog z wegańską parówką"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -977,7 +977,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/budyn-waniliowy-na-mleku-roslinnym-z/">Budyń waniliowy na mleku roślinnym z sosem malinowym</a>
-<button type="button" class="p-fav" data-fav="budyn-waniliowy-na-mleku-roslinnym-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Budyń waniliowy na mleku roślinnym z sosem malinowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="budyn-waniliowy-na-mleku-roslinnym-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Budyń waniliowy na mleku roślinnym z sosem malinowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -993,7 +993,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/omlet-z-wedzonym-lososiem-szpinakiem-i/">Omlet z wędzonym łososiem, szpinakiem i pomidorkami koktajlowymi</a>
-<button type="button" class="p-fav" data-fav="omlet-z-wedzonym-lososiem-szpinakiem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet z wędzonym łososiem, szpinakiem i pomidorkami koktajlowymi"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="omlet-z-wedzonym-lososiem-szpinakiem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet z wędzonym łososiem, szpinakiem i pomidorkami koktajlowymi"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1009,7 +1009,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zapiekanka-makaronowa-z-serem-mozzarella/">Zapiekanka makaronowa z serem mozzarella</a>
-<button type="button" class="p-fav" data-fav="zapiekanka-makaronowa-z-serem-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka makaronowa z serem mozzarella"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zapiekanka-makaronowa-z-serem-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka makaronowa z serem mozzarella"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1025,7 +1025,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/placuszki-z-cukinii-z-dipem-czosnkowym/">Placuszki z cukinii z dipem czosnkowym</a>
-<button type="button" class="p-fav" data-fav="placuszki-z-cukinii-z-dipem-czosnkowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki z cukinii z dipem czosnkowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="placuszki-z-cukinii-z-dipem-czosnkowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki z cukinii z dipem czosnkowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1041,7 +1041,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/chleb-bananowy/">Chleb bananowy</a>
-<button type="button" class="p-fav" data-fav="chleb-bananowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Chleb bananowy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="chleb-bananowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Chleb bananowy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1057,7 +1057,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-jajeczna/">Pasta jajeczna</a>
-<button type="button" class="p-fav" data-fav="pasta-jajeczna" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta jajeczna"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pasta-jajeczna" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta jajeczna"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1073,7 +1073,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/burger-z-fasoli-z-awokado-i/">Burger z fasoli z awokado i grillowaną cukinią</a>
-<button type="button" class="p-fav" data-fav="burger-z-fasoli-z-awokado-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Burger z fasoli z awokado i grillowaną cukinią"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="burger-z-fasoli-z-awokado-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Burger z fasoli z awokado i grillowaną cukinią"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1089,7 +1089,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/brownie-z-fasoli-z-wisniami-i/">Brownie z fasoli z wiśniami i bananem</a>
-<button type="button" class="p-fav" data-fav="brownie-z-fasoli-z-wisniami-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Brownie z fasoli z wiśniami i bananem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="brownie-z-fasoli-z-wisniami-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Brownie z fasoli z wiśniami i bananem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1105,7 +1105,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jaglanka-z-gruszka/">Jaglanka z gruszką</a>
-<button type="button" class="p-fav" data-fav="jaglanka-z-gruszka" aria-pressed="false" aria-label="Dodaj do ulubionych: Jaglanka z gruszką"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jaglanka-z-gruszka" aria-pressed="false" aria-label="Dodaj do ulubionych: Jaglanka z gruszką"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1121,7 +1121,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tofucznica-z-cebulka-szczypiorkiem-i-pieczywem/">Tofucznica z cebulką, szczypiorkiem i pieczywem</a>
-<button type="button" class="p-fav" data-fav="tofucznica-z-cebulka-szczypiorkiem-i-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tofucznica z cebulką, szczypiorkiem i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tofucznica-z-cebulka-szczypiorkiem-i-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tofucznica z cebulką, szczypiorkiem i pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1137,7 +1137,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tortilla-z-ciecierzyca-cukinia-papryka-i/">Tortilla z ciecierzycą, cukinią, papryką i sosem czosnkowym</a>
-<button type="button" class="p-fav" data-fav="tortilla-z-ciecierzyca-cukinia-papryka-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z ciecierzycą, cukinią, papryką i sosem czosnkowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tortilla-z-ciecierzyca-cukinia-papryka-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z ciecierzycą, cukinią, papryką i sosem czosnkowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1153,7 +1153,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/ciasto-marchewkowe-z-kakao/">Ciasto marchewkowe z kakao</a>
-<button type="button" class="p-fav" data-fav="ciasto-marchewkowe-z-kakao" aria-pressed="false" aria-label="Dodaj do ulubionych: Ciasto marchewkowe z kakao"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="ciasto-marchewkowe-z-kakao" aria-pressed="false" aria-label="Dodaj do ulubionych: Ciasto marchewkowe z kakao"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1169,7 +1169,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/fit-placuszki/">Fit Placuszki</a>
-<button type="button" class="p-fav" data-fav="fit-placuszki" aria-pressed="false" aria-label="Dodaj do ulubionych: Fit Placuszki"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="fit-placuszki" aria-pressed="false" aria-label="Dodaj do ulubionych: Fit Placuszki"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1185,7 +1185,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-mozzarella-i-warzywami/">Kanapka z mozzarellą i warzywami</a>
-<button type="button" class="p-fav" data-fav="kanapka-z-mozzarella-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z mozzarellą i warzywami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapka-z-mozzarella-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z mozzarellą i warzywami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1201,7 +1201,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/krem-z-dyni/">Krem z dyni</a>
-<button type="button" class="p-fav" data-fav="krem-z-dyni" aria-pressed="false" aria-label="Dodaj do ulubionych: Krem z dyni"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="krem-z-dyni" aria-pressed="false" aria-label="Dodaj do ulubionych: Krem z dyni"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1217,7 +1217,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/wege-pizza/">Wege pizza</a>
-<button type="button" class="p-fav" data-fav="wege-pizza" aria-pressed="false" aria-label="Dodaj do ulubionych: Wege pizza"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="wege-pizza" aria-pressed="false" aria-label="Dodaj do ulubionych: Wege pizza"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1233,7 +1233,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryz-z-jablkami/">Ryż z jabłkami</a>
-<button type="button" class="p-fav" data-fav="ryz-z-jablkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryż z jabłkami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="ryz-z-jablkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryż z jabłkami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1249,7 +1249,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-pasta-z-czerwonej-fasoli/">Kanapka z pastą z czerwonej fasoli</a>
-<button type="button" class="p-fav" data-fav="kanapka-z-pasta-z-czerwonej-fasoli" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą z czerwonej fasoli"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapka-z-pasta-z-czerwonej-fasoli" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą z czerwonej fasoli"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1265,7 +1265,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-z-pieczonymi-warzywami-i-serem/">Makaron z pieczonymi warzywami i serem mozzarella</a>
-<button type="button" class="p-fav" data-fav="makaron-z-pieczonymi-warzywami-i-serem" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron z pieczonymi warzywami i serem mozzarella"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="makaron-z-pieczonymi-warzywami-i-serem" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron z pieczonymi warzywami i serem mozzarella"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1281,7 +1281,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jogurt-naturalny-z-domowa-granola-z/">Jogurt naturalny z domową granolą z orzechami i jabłkiem</a>
-<button type="button" class="p-fav" data-fav="jogurt-naturalny-z-domowa-granola-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurt naturalny z domową granolą z orzechami i jabłkiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jogurt-naturalny-z-domowa-granola-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurt naturalny z domową granolą z orzechami i jabłkiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1297,7 +1297,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/shake-snickers/">Shake snickers</a>
-<button type="button" class="p-fav" data-fav="shake-snickers" aria-pressed="false" aria-label="Dodaj do ulubionych: Shake snickers"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="shake-snickers" aria-pressed="false" aria-label="Dodaj do ulubionych: Shake snickers"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1313,7 +1313,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-wedzonym-lososiem/">Kanapka z wędzonym łososiem</a>
-<button type="button" class="p-fav" data-fav="kanapka-z-wedzonym-lososiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z wędzonym łososiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapka-z-wedzonym-lososiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z wędzonym łososiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1329,7 +1329,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/buddha-bowl/">Buddha bowl</a>
-<button type="button" class="p-fav" data-fav="buddha-bowl" aria-pressed="false" aria-label="Dodaj do ulubionych: Buddha bowl"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="buddha-bowl" aria-pressed="false" aria-label="Dodaj do ulubionych: Buddha bowl"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1345,7 +1345,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/bruschetta-z-soczewica-swiezymi-ziolami-i/">Bruschetta z soczewicą, świeżymi ziołami i serem grana padano</a>
-<button type="button" class="p-fav" data-fav="bruschetta-z-soczewica-swiezymi-ziolami-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Bruschetta z soczewicą, świeżymi ziołami i serem grana padano"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="bruschetta-z-soczewica-swiezymi-ziolami-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Bruschetta z soczewicą, świeżymi ziołami i serem grana padano"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1361,7 +1361,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsiane-batoniki-z-czekolada-orzechami-arachidowymi/">Owsiane batoniki z czekoladą, orzechami arachidowymi i miodem</a>
-<button type="button" class="p-fav" data-fav="owsiane-batoniki-z-czekolada-orzechami-arachidowymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiane batoniki z czekoladą, orzechami arachidowymi i miodem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsiane-batoniki-z-czekolada-orzechami-arachidowymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiane batoniki z czekoladą, orzechami arachidowymi i miodem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1377,7 +1377,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-z-twarozku-z-suszonymi-pomidorami/">Pasta z twarożku z suszonymi pomidorami, szczypiorkiem, liśćmi szpinaku, pomidorem i ciemnym pieczywem</a>
-<button type="button" class="p-fav" data-fav="pasta-z-twarozku-z-suszonymi-pomidorami" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z twarożku z suszonymi pomidorami, szczypiorkiem, liśćmi szpinaku, pomidorem i ciemnym pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pasta-z-twarozku-z-suszonymi-pomidorami" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z twarożku z suszonymi pomidorami, szczypiorkiem, liśćmi szpinaku, pomidorem i ciemnym pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1393,7 +1393,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/dorsz-z-ziemniakami-i-kiszona-kapusta/">Dorsz z ziemniakami i kiszoną kapustą</a>
-<button type="button" class="p-fav" data-fav="dorsz-z-ziemniakami-i-kiszona-kapusta" aria-pressed="false" aria-label="Dodaj do ulubionych: Dorsz z ziemniakami i kiszoną kapustą"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="dorsz-z-ziemniakami-i-kiszona-kapusta" aria-pressed="false" aria-label="Dodaj do ulubionych: Dorsz z ziemniakami i kiszoną kapustą"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1409,7 +1409,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-ze-szpinakiem-serem-plesniowym-burakami/">Sałatka ze szpinakiem, serem pleśniowym, burakami i grzankami</a>
-<button type="button" class="p-fav" data-fav="salatka-ze-szpinakiem-serem-plesniowym-burakami" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka ze szpinakiem, serem pleśniowym, burakami i grzankami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="salatka-ze-szpinakiem-serem-plesniowym-burakami" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka ze szpinakiem, serem pleśniowym, burakami i grzankami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1425,7 +1425,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-lion/">Owsianka Lion</a>
-<button type="button" class="p-fav" data-fav="owsianka-lion" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka Lion"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsianka-lion" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka Lion"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1441,7 +1441,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pieczony-omlet-z-cukinia/">Pieczony omlet z cukinią</a>
-<button type="button" class="p-fav" data-fav="pieczony-omlet-z-cukinia" aria-pressed="false" aria-label="Dodaj do ulubionych: Pieczony omlet z cukinią"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pieczony-omlet-z-cukinia" aria-pressed="false" aria-label="Dodaj do ulubionych: Pieczony omlet z cukinią"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1457,7 +1457,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-z-makaronem-i-serem-feta/">Sałatka z makaronem i serem feta</a>
-<button type="button" class="p-fav" data-fav="salatka-z-makaronem-i-serem-feta" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z makaronem i serem feta"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="salatka-z-makaronem-i-serem-feta" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z makaronem i serem feta"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1473,7 +1473,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-waniliowy-z-kawalkami-czekolady-i/">Serek waniliowy z kawałkami czekolady i bananem</a>
-<button type="button" class="p-fav" data-fav="serek-waniliowy-z-kawalkami-czekolady-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek waniliowy z kawałkami czekolady i bananem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="serek-waniliowy-z-kawalkami-czekolady-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek waniliowy z kawałkami czekolady i bananem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1489,7 +1489,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/waniliowa-owsianka-z-bananem-i-kiwi/">Waniliowa owsianka z bananem i kiwi</a>
-<button type="button" class="p-fav" data-fav="waniliowa-owsianka-z-bananem-i-kiwi" aria-pressed="false" aria-label="Dodaj do ulubionych: Waniliowa owsianka z bananem i kiwi"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="waniliowa-owsianka-z-bananem-i-kiwi" aria-pressed="false" aria-label="Dodaj do ulubionych: Waniliowa owsianka z bananem i kiwi"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1505,7 +1505,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tost-z-awokado-i-mozzarella/">Tost z awokado i mozzarellą</a>
-<button type="button" class="p-fav" data-fav="tost-z-awokado-i-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Tost z awokado i mozzarellą"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tost-z-awokado-i-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Tost z awokado i mozzarellą"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1521,7 +1521,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pieczone-kotlety-mielone-z-soczewicy-z/">Pieczone kotlety mielone z soczewicy z ziemniakami</a>
-<button type="button" class="p-fav" data-fav="pieczone-kotlety-mielone-z-soczewicy-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Pieczone kotlety mielone z soczewicy z ziemniakami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pieczone-kotlety-mielone-z-soczewicy-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Pieczone kotlety mielone z soczewicy z ziemniakami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1537,7 +1537,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jaglanka-z-jablkiem-i-cynamonem/">Jaglanka z jabłkiem i cynamonem</a>
-<button type="button" class="p-fav" data-fav="jaglanka-z-jablkiem-i-cynamonem" aria-pressed="false" aria-label="Dodaj do ulubionych: Jaglanka z jabłkiem i cynamonem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jaglanka-z-jablkiem-i-cynamonem" aria-pressed="false" aria-label="Dodaj do ulubionych: Jaglanka z jabłkiem i cynamonem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1553,7 +1553,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/orzechowa-owsianka-z-bananem-i-dzemem/">Orzechowa owsianka z bananem i dżemem porzeczkowym</a>
-<button type="button" class="p-fav" data-fav="orzechowa-owsianka-z-bananem-i-dzemem" aria-pressed="false" aria-label="Dodaj do ulubionych: Orzechowa owsianka z bananem i dżemem porzeczkowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="orzechowa-owsianka-z-bananem-i-dzemem" aria-pressed="false" aria-label="Dodaj do ulubionych: Orzechowa owsianka z bananem i dżemem porzeczkowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1569,7 +1569,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-pasta-tofu/">Kanapki z pastą tofu</a>
-<button type="button" class="p-fav" data-fav="kanapki-z-pasta-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z pastą tofu"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-z-pasta-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z pastą tofu"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1585,7 +1585,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryba-na-parze-z-ryzem-i/">Ryba na parze z ryżem i surówką z kapusty pekińskiej</a>
-<button type="button" class="p-fav" data-fav="ryba-na-parze-z-ryzem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryba na parze z ryżem i surówką z kapusty pekińskiej"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="ryba-na-parze-z-ryzem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryba na parze z ryżem i surówką z kapusty pekińskiej"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1601,7 +1601,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/brownie-z-fasoli-z-bananem-i/">Brownie z fasoli z bananem i mango</a>
-<button type="button" class="p-fav" data-fav="brownie-z-fasoli-z-bananem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Brownie z fasoli z bananem i mango"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="brownie-z-fasoli-z-bananem-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Brownie z fasoli z bananem i mango"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1617,7 +1617,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/fit-monte/">Fit Monte</a>
-<button type="button" class="p-fav" data-fav="fit-monte" aria-pressed="false" aria-label="Dodaj do ulubionych: Fit Monte"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="fit-monte" aria-pressed="false" aria-label="Dodaj do ulubionych: Fit Monte"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1633,7 +1633,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/weganska-pasta-z-czerwonej-soczewicy/">Wegańska pasta z czerwonej soczewicy</a>
-<button type="button" class="p-fav" data-fav="weganska-pasta-z-czerwonej-soczewicy" aria-pressed="false" aria-label="Dodaj do ulubionych: Wegańska pasta z czerwonej soczewicy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="weganska-pasta-z-czerwonej-soczewicy" aria-pressed="false" aria-label="Dodaj do ulubionych: Wegańska pasta z czerwonej soczewicy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1649,7 +1649,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/gotowana-czerwona-fasola-po-meksykansku/">Gotowana czerwona fasola po meksykańsku</a>
-<button type="button" class="p-fav" data-fav="gotowana-czerwona-fasola-po-meksykansku" aria-pressed="false" aria-label="Dodaj do ulubionych: Gotowana czerwona fasola po meksykańsku"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="gotowana-czerwona-fasola-po-meksykansku" aria-pressed="false" aria-label="Dodaj do ulubionych: Gotowana czerwona fasola po meksykańsku"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1665,7 +1665,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tofucznica-z-warzywami-i-pieczywem/">Tofucznica z warzywami i pieczywem</a>
-<button type="button" class="p-fav" data-fav="tofucznica-z-warzywami-i-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tofucznica z warzywami i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tofucznica-z-warzywami-i-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tofucznica z warzywami i pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1681,7 +1681,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/skyr-orzechy-banan/">Skyr + orzechy + banan</a>
-<button type="button" class="p-fav" data-fav="skyr-orzechy-banan" aria-pressed="false" aria-label="Dodaj do ulubionych: Skyr + orzechy + banan"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="skyr-orzechy-banan" aria-pressed="false" aria-label="Dodaj do ulubionych: Skyr + orzechy + banan"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1697,7 +1697,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jajecznica-z-pieczywem/">Jajecznica z pieczywem</a>
-<button type="button" class="p-fav" data-fav="jajecznica-z-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajecznica z pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jajecznica-z-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajecznica z pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1713,7 +1713,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/fasola-z-papryka-i-pomidorami-z/">Fasola z papryką i pomidorami z kaszą jęczmienną</a>
-<button type="button" class="p-fav" data-fav="fasola-z-papryka-i-pomidorami-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Fasola z papryką i pomidorami z kaszą jęczmienną"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="fasola-z-papryka-i-pomidorami-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Fasola z papryką i pomidorami z kaszą jęczmienną"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1729,7 +1729,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/smoothie-z-mango-i-banana-na/">Smoothie z mango i banana na mleku roślinnym</a>
-<button type="button" class="p-fav" data-fav="smoothie-z-mango-i-banana-na" aria-pressed="false" aria-label="Dodaj do ulubionych: Smoothie z mango i banana na mleku roślinnym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="smoothie-z-mango-i-banana-na" aria-pressed="false" aria-label="Dodaj do ulubionych: Smoothie z mango i banana na mleku roślinnym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1745,7 +1745,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-z-gruszka/">Owsianka z gruszką</a>
-<button type="button" class="p-fav" data-fav="owsianka-z-gruszka" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z gruszką"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsianka-z-gruszka" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z gruszką"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1761,7 +1761,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tost-z-awokado-i-lososiem/">Tost z awokado i łososiem</a>
-<button type="button" class="p-fav" data-fav="tost-z-awokado-i-lososiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tost z awokado i łososiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tost-z-awokado-i-lososiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tost z awokado i łososiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1777,7 +1777,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/cukinia-zapiekana-z-sosem-pomidorowym-soczewica/">Cukinia zapiekana z sosem pomidorowym, soczewicą i beszamelem na mleku roślinnym</a>
-<button type="button" class="p-fav" data-fav="cukinia-zapiekana-z-sosem-pomidorowym-soczewica" aria-pressed="false" aria-label="Dodaj do ulubionych: Cukinia zapiekana z sosem pomidorowym, soczewicą i beszamelem na mleku roślinnym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="cukinia-zapiekana-z-sosem-pomidorowym-soczewica" aria-pressed="false" aria-label="Dodaj do ulubionych: Cukinia zapiekana z sosem pomidorowym, soczewicą i beszamelem na mleku roślinnym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1793,7 +1793,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kakaowo-orzechowe-trufle-z-daktyli/">Kakaowo-orzechowe trufle z daktyli</a>
-<button type="button" class="p-fav" data-fav="kakaowo-orzechowe-trufle-z-daktyli" aria-pressed="false" aria-label="Dodaj do ulubionych: Kakaowo-orzechowe trufle z daktyli"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kakaowo-orzechowe-trufle-z-daktyli" aria-pressed="false" aria-label="Dodaj do ulubionych: Kakaowo-orzechowe trufle z daktyli"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1809,7 +1809,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-na-slodko-z-maslem/">Serek wiejski na słodko z masłem orzechowym, domową konfiturą jagodową i płatkami owsianymi</a>
-<button type="button" class="p-fav" data-fav="serek-wiejski-na-slodko-z-maslem" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski na słodko z masłem orzechowym, domową konfiturą jagodową i płatkami owsianymi"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="serek-wiejski-na-slodko-z-maslem" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski na słodko z masłem orzechowym, domową konfiturą jagodową i płatkami owsianymi"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1825,7 +1825,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/wrap-z-mozzarella/">Wrap z mozzarellą</a>
-<button type="button" class="p-fav" data-fav="wrap-z-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Wrap z mozzarellą"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="wrap-z-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Wrap z mozzarellą"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1841,7 +1841,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/burger-z-lososia/">Burger z łososia</a>
-<button type="button" class="p-fav" data-fav="burger-z-lososia" aria-pressed="false" aria-label="Dodaj do ulubionych: Burger z łososia"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="burger-z-lososia" aria-pressed="false" aria-label="Dodaj do ulubionych: Burger z łososia"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1857,7 +1857,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pancakes/">Pancakes</a>
-<button type="button" class="p-fav" data-fav="pancakes" aria-pressed="false" aria-label="Dodaj do ulubionych: Pancakes"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pancakes" aria-pressed="false" aria-label="Dodaj do ulubionych: Pancakes"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1873,7 +1873,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/placuszki-twarogowe-z-jablkiem/">Placuszki twarogowe z jabłkiem</a>
-<button type="button" class="p-fav" data-fav="placuszki-twarogowe-z-jablkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki twarogowe z jabłkiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="placuszki-twarogowe-z-jablkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki twarogowe z jabłkiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1889,7 +1889,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/sniadania-z-biedronki-tosty/">Śniadania z Biedronki: Tosty</a>
-<button type="button" class="p-fav" data-fav="sniadania-z-biedronki-tosty" aria-pressed="false" aria-label="Dodaj do ulubionych: Śniadania z Biedronki: Tosty"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="sniadania-z-biedronki-tosty" aria-pressed="false" aria-label="Dodaj do ulubionych: Śniadania z Biedronki: Tosty"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1905,7 +1905,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/smazony-ryz-z-brokulami-i-tofu/">Smażony ryż z brokułami i tofu</a>
-<button type="button" class="p-fav" data-fav="smazony-ryz-z-brokulami-i-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Smażony ryż z brokułami i tofu"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="smazony-ryz-z-brokulami-i-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Smażony ryż z brokułami i tofu"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1921,7 +1921,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/weganskie-nalesniki-z-jablkami/">Wegańskie naleśniki z jabłkami</a>
-<button type="button" class="p-fav" data-fav="weganskie-nalesniki-z-jablkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Wegańskie naleśniki z jabłkami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="weganskie-nalesniki-z-jablkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Wegańskie naleśniki z jabłkami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -1937,7 +1937,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/chlebek-bananowy-z-kakao-i-orzechami/">Chlebek bananowy z kakao i orzechami</a>
-<button type="button" class="p-fav" data-fav="chlebek-bananowy-z-kakao-i-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Chlebek bananowy z kakao i orzechami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="chlebek-bananowy-z-kakao-i-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Chlebek bananowy z kakao i orzechami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1953,7 +1953,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-pasta-z-makreli-i/">Kanapka z pastą z makreli i jajek</a>
-<button type="button" class="p-fav" data-fav="kanapka-z-pasta-z-makreli-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą z makreli i jajek"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapka-z-pasta-z-makreli-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą z makreli i jajek"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -1969,7 +1969,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kasza-jaglana-z-cukinia-i-pomidorami/">Kasza jaglana z cukinią i pomidorami</a>
-<button type="button" class="p-fav" data-fav="kasza-jaglana-z-cukinia-i-pomidorami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kasza jaglana z cukinią i pomidorami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kasza-jaglana-z-cukinia-i-pomidorami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kasza jaglana z cukinią i pomidorami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -1985,7 +1985,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-gruszka-i-serem-camembert/">Kanapki z gruszką i serem camembert</a>
-<button type="button" class="p-fav" data-fav="kanapki-z-gruszka-i-serem-camembert" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z gruszką i serem camembert"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-z-gruszka-i-serem-camembert" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z gruszką i serem camembert"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -2001,7 +2001,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/krem-jaglany-z-jablkiem-i-orzechami/">Krem jaglany z jabłkiem i orzechami</a>
-<button type="button" class="p-fav" data-fav="krem-jaglany-z-jablkiem-i-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Krem jaglany z jabłkiem i orzechami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="krem-jaglany-z-jablkiem-i-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Krem jaglany z jabłkiem i orzechami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2017,7 +2017,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/roslinne-parowki-bez-kesa-miesa-tarczynski/">Roślinne parówki Bez kęsa mięsa Tarczyński z pieczywem i warzywami</a>
-<button type="button" class="p-fav" data-fav="roslinne-parowki-bez-kesa-miesa-tarczynski" aria-pressed="false" aria-label="Dodaj do ulubionych: Roślinne parówki Bez kęsa mięsa Tarczyński z pieczywem i warzywami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="roslinne-parowki-bez-kesa-miesa-tarczynski" aria-pressed="false" aria-label="Dodaj do ulubionych: Roślinne parówki Bez kęsa mięsa Tarczyński z pieczywem i warzywami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2033,7 +2033,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/bataty-z-burgerem-z-czerwonej-fasoli/">Bataty z burgerem z czerwonej fasoli i sosem salsa</a>
-<button type="button" class="p-fav" data-fav="bataty-z-burgerem-z-czerwonej-fasoli" aria-pressed="false" aria-label="Dodaj do ulubionych: Bataty z burgerem z czerwonej fasoli i sosem salsa"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="bataty-z-burgerem-z-czerwonej-fasoli" aria-pressed="false" aria-label="Dodaj do ulubionych: Bataty z burgerem z czerwonej fasoli i sosem salsa"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2049,7 +2049,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-z-mango/">Owsianka z mango</a>
-<button type="button" class="p-fav" data-fav="owsianka-z-mango" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z mango"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsianka-z-mango" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z mango"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -2065,7 +2065,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsiany-batonik-z-maslem-orzechowym/">Owsiany batonik z masłem orzechowym</a>
-<button type="button" class="p-fav" data-fav="owsiany-batonik-z-maslem-orzechowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiany batonik z masłem orzechowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsiany-batonik-z-maslem-orzechowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiany batonik z masłem orzechowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2081,7 +2081,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/bruschetta-2/">Bruschetta</a>
-<button type="button" class="p-fav" data-fav="bruschetta-2" aria-pressed="false" aria-label="Dodaj do ulubionych: Bruschetta"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="bruschetta-2" aria-pressed="false" aria-label="Dodaj do ulubionych: Bruschetta"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2097,7 +2097,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/curry-z-soczewicy-przepis-na-2/">Curry z soczewicy - przepis na 2 porcje</a>
-<button type="button" class="p-fav" data-fav="curry-z-soczewicy-przepis-na-2" aria-pressed="false" aria-label="Dodaj do ulubionych: Curry z soczewicy - przepis na 2 porcje"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="curry-z-soczewicy-przepis-na-2" aria-pressed="false" aria-label="Dodaj do ulubionych: Curry z soczewicy - przepis na 2 porcje"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2113,7 +2113,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/budyn-jaglany/">Budyń jaglany</a>
-<button type="button" class="p-fav" data-fav="budyn-jaglany" aria-pressed="false" aria-label="Dodaj do ulubionych: Budyń jaglany"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="budyn-jaglany" aria-pressed="false" aria-label="Dodaj do ulubionych: Budyń jaglany"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -2129,7 +2129,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kakaowa-owsianka-z-siekanymi-orzechami/">Kakaowa owsianka z siekanymi orzechami</a>
-<button type="button" class="p-fav" data-fav="kakaowa-owsianka-z-siekanymi-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kakaowa owsianka z siekanymi orzechami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kakaowa-owsianka-z-siekanymi-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kakaowa owsianka z siekanymi orzechami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2145,7 +2145,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/omlet-ze-szpinakiem/">Omlet ze szpinakiem</a>
-<button type="button" class="p-fav" data-fav="omlet-ze-szpinakiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet ze szpinakiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="omlet-ze-szpinakiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet ze szpinakiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2161,7 +2161,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-penne-z-sosem-bolonskim-z/">Makaron penne z sosem bolońskim z soczewicy</a>
-<button type="button" class="p-fav" data-fav="makaron-penne-z-sosem-bolonskim-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron penne z sosem bolońskim z soczewicy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="makaron-penne-z-sosem-bolonskim-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron penne z sosem bolońskim z soczewicy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2177,7 +2177,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jogurt-naturalny-z-domowa-granola-orzechami/">Jogurt naturalny z domową granolą, orzechami i żurawiną</a>
-<button type="button" class="p-fav" data-fav="jogurt-naturalny-z-domowa-granola-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurt naturalny z domową granolą, orzechami i żurawiną"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jogurt-naturalny-z-domowa-granola-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurt naturalny z domową granolą, orzechami i żurawiną"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -2193,7 +2193,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jogurtowe-placki-z-owocami/">Jogurtowe placki z owocami</a>
-<button type="button" class="p-fav" data-fav="jogurtowe-placki-z-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurtowe placki z owocami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jogurtowe-placki-z-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurtowe placki z owocami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2209,7 +2209,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-jajkiem-awokado-i-serem/">Kanapka z jajkiem, awokado i serem cheddar + mandarynka</a>
-<button type="button" class="p-fav" data-fav="kanapka-z-jajkiem-awokado-i-serem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z jajkiem, awokado i serem cheddar + mandarynka"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapka-z-jajkiem-awokado-i-serem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z jajkiem, awokado i serem cheddar + mandarynka"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2225,7 +2225,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-krem-z-ciecierzycy-z-grzankami/">Zupa krem z ciecierzycy z grzankami</a>
-<button type="button" class="p-fav" data-fav="zupa-krem-z-ciecierzycy-z-grzankami" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa krem z ciecierzycy z grzankami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zupa-krem-z-ciecierzycy-z-grzankami" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa krem z ciecierzycy z grzankami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2241,7 +2241,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-z-twarogiem-i-owocami/">Owsianka z twarogiem i owocami</a>
-<button type="button" class="p-fav" data-fav="owsianka-z-twarogiem-i-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z twarogiem i owocami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsianka-z-twarogiem-i-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z twarogiem i owocami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2257,7 +2257,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-z-ogorkiem-suszonymi-pomidorami/">Serek wiejski z ogórkiem, suszonymi pomidorami i pieczywem</a>
-<button type="button" class="p-fav" data-fav="serek-wiejski-z-ogorkiem-suszonymi-pomidorami" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z ogórkiem, suszonymi pomidorami i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="serek-wiejski-z-ogorkiem-suszonymi-pomidorami" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z ogórkiem, suszonymi pomidorami i pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2273,7 +2273,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/placuszki-z-cukinii/">Placuszki z cukinii</a>
-<button type="button" class="p-fav" data-fav="placuszki-z-cukinii" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki z cukinii"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="placuszki-z-cukinii" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki z cukinii"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2289,7 +2289,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jogurt-naturalny-z-domowa-granola-ananasem/">Jogurt naturalny z domową granolą, ananasem i czekoladą</a>
-<button type="button" class="p-fav" data-fav="jogurt-naturalny-z-domowa-granola-ananasem" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurt naturalny z domową granolą, ananasem i czekoladą"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jogurt-naturalny-z-domowa-granola-ananasem" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurt naturalny z domową granolą, ananasem i czekoladą"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2305,7 +2305,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-jajeczna-z-ogorkiem-szczypiorkiem-koperkiem/">Pasta jajeczna z ogórkiem, szczypiorkiem, koperkiem i pieczywem + jabłko</a>
-<button type="button" class="p-fav" data-fav="pasta-jajeczna-z-ogorkiem-szczypiorkiem-koperkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta jajeczna z ogórkiem, szczypiorkiem, koperkiem i pieczywem + jabłko"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pasta-jajeczna-z-ogorkiem-szczypiorkiem-koperkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta jajeczna z ogórkiem, szczypiorkiem, koperkiem i pieczywem + jabłko"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2321,7 +2321,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/curry-z-ciecierzycy/">Curry z ciecierzycy</a>
-<button type="button" class="p-fav" data-fav="curry-z-ciecierzycy" aria-pressed="false" aria-label="Dodaj do ulubionych: Curry z ciecierzycy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="curry-z-ciecierzycy" aria-pressed="false" aria-label="Dodaj do ulubionych: Curry z ciecierzycy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2337,7 +2337,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/koktajl-mango-lassi/">Koktajl mango lassi</a>
-<button type="button" class="p-fav" data-fav="koktajl-mango-lassi" aria-pressed="false" aria-label="Dodaj do ulubionych: Koktajl mango lassi"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="koktajl-mango-lassi" aria-pressed="false" aria-label="Dodaj do ulubionych: Koktajl mango lassi"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2353,7 +2353,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/sniadania-z-biedronki-hummus-pietruszkowy/">Śniadania z Biedronki: Hummus pietruszkowy</a>
-<button type="button" class="p-fav" data-fav="sniadania-z-biedronki-hummus-pietruszkowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Śniadania z Biedronki: Hummus pietruszkowy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="sniadania-z-biedronki-hummus-pietruszkowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Śniadania z Biedronki: Hummus pietruszkowy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2369,7 +2369,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/vege-spaghetti-bolognese/">Vege spaghetti bolognese</a>
-<button type="button" class="p-fav" data-fav="vege-spaghetti-bolognese" aria-pressed="false" aria-label="Dodaj do ulubionych: Vege spaghetti bolognese"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="vege-spaghetti-bolognese" aria-pressed="false" aria-label="Dodaj do ulubionych: Vege spaghetti bolognese"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2385,7 +2385,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jogurtowo-mleczny-koktajl-z-mieta-i/">Jogurtowo-mleczny koktajl z miętą i mango</a>
-<button type="button" class="p-fav" data-fav="jogurtowo-mleczny-koktajl-z-mieta-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurtowo-mleczny koktajl z miętą i mango"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jogurtowo-mleczny-koktajl-z-mieta-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurtowo-mleczny koktajl z miętą i mango"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2401,7 +2401,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-caprese-z-sosem-bazyliowym-i/">Sałatka caprese z sosem bazyliowym i pieczywem</a>
-<button type="button" class="p-fav" data-fav="salatka-caprese-z-sosem-bazyliowym-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka caprese z sosem bazyliowym i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="salatka-caprese-z-sosem-bazyliowym-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka caprese z sosem bazyliowym i pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2417,7 +2417,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/dahl-z-soczewicy-z-pestkami-dyni/">Dahl z soczewicy z pestkami dyni</a>
-<button type="button" class="p-fav" data-fav="dahl-z-soczewicy-z-pestkami-dyni" aria-pressed="false" aria-label="Dodaj do ulubionych: Dahl z soczewicy z pestkami dyni"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="dahl-z-soczewicy-z-pestkami-dyni" aria-pressed="false" aria-label="Dodaj do ulubionych: Dahl z soczewicy z pestkami dyni"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2433,7 +2433,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-na-mleku-roslinnym-z-wisniami/">Owsianka na mleku roślinnym z wiśniami, orzechami, bananem i czekoladą</a>
-<button type="button" class="p-fav" data-fav="owsianka-na-mleku-roslinnym-z-wisniami" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka na mleku roślinnym z wiśniami, orzechami, bananem i czekoladą"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsianka-na-mleku-roslinnym-z-wisniami" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka na mleku roślinnym z wiśniami, orzechami, bananem i czekoladą"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2449,7 +2449,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tofucznica-z-awokado-pomidorem-i-pieczywem/">Tofucznica z awokado, pomidorem i pieczywem</a>
-<button type="button" class="p-fav" data-fav="tofucznica-z-awokado-pomidorem-i-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tofucznica z awokado, pomidorem i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tofucznica-z-awokado-pomidorem-i-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tofucznica z awokado, pomidorem i pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2465,7 +2465,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-krem-z-pomidorow-2/">Zupa krem z pomidorów</a>
-<button type="button" class="p-fav" data-fav="zupa-krem-z-pomidorow-2" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa krem z pomidorów"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zupa-krem-z-pomidorow-2" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa krem z pomidorów"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2481,7 +2481,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/skyr-orzechy-wafle-ryzowe/">Skyr + orzechy + wafle ryżowe</a>
-<button type="button" class="p-fav" data-fav="skyr-orzechy-wafle-ryzowe" aria-pressed="false" aria-label="Dodaj do ulubionych: Skyr + orzechy + wafle ryżowe"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="skyr-orzechy-wafle-ryzowe" aria-pressed="false" aria-label="Dodaj do ulubionych: Skyr + orzechy + wafle ryżowe"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2497,7 +2497,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/roladki-z-lososiem-i-twarozkiem-szpinakowym/">Roladki z łososiem i twarożkiem szpinakowym</a>
-<button type="button" class="p-fav" data-fav="roladki-z-lososiem-i-twarozkiem-szpinakowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Roladki z łososiem i twarożkiem szpinakowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="roladki-z-lososiem-i-twarozkiem-szpinakowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Roladki z łososiem i twarożkiem szpinakowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2513,7 +2513,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/filet-z-pstraga-z-ziemniakami-i/">Filet z pstrąga z ziemniakami i brokułami</a>
-<button type="button" class="p-fav" data-fav="filet-z-pstraga-z-ziemniakami-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Filet z pstrąga z ziemniakami i brokułami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="filet-z-pstraga-z-ziemniakami-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Filet z pstrąga z ziemniakami i brokułami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2529,7 +2529,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/czekoladowa-owsianka-na-mleku-roslinnym-z/">Czekoladowa owsianka na mleku roślinnym z malinami</a>
-<button type="button" class="p-fav" data-fav="czekoladowa-owsianka-na-mleku-roslinnym-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Czekoladowa owsianka na mleku roślinnym z malinami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="czekoladowa-owsianka-na-mleku-roslinnym-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Czekoladowa owsianka na mleku roślinnym z malinami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2545,7 +2545,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/wytrawny-omlet-z-warzywami-i-suszonymi/">Wytrawny omlet z warzywami i suszonymi pomidorami</a>
-<button type="button" class="p-fav" data-fav="wytrawny-omlet-z-warzywami-i-suszonymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Wytrawny omlet z warzywami i suszonymi pomidorami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="wytrawny-omlet-z-warzywami-i-suszonymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Wytrawny omlet z warzywami i suszonymi pomidorami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2561,7 +2561,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryz-smazony-z-warzywami-i-tofu/">Ryż smażony z warzywami i tofu</a>
-<button type="button" class="p-fav" data-fav="ryz-smazony-z-warzywami-i-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryż smażony z warzywami i tofu"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="ryz-smazony-z-warzywami-i-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryż smażony z warzywami i tofu"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2577,7 +2577,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryz-na-mleku-z-czekolada-i/">Ryż na mleku z czekoladą i malinami</a>
-<button type="button" class="p-fav" data-fav="ryz-na-mleku-z-czekolada-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryż na mleku z czekoladą i malinami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="ryz-na-mleku-z-czekolada-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryż na mleku z czekoladą i malinami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2593,7 +2593,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-ziolowym-twarozkiem/">Kanapki z ziołowym twarożkiem</a>
-<button type="button" class="p-fav" data-fav="kanapki-z-ziolowym-twarozkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z ziołowym twarożkiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-z-ziolowym-twarozkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z ziołowym twarożkiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2609,7 +2609,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kotlety-z-fasoli-z-surowka/">Kotlety z fasoli z surówką</a>
-<button type="button" class="p-fav" data-fav="kotlety-z-fasoli-z-surowka" aria-pressed="false" aria-label="Dodaj do ulubionych: Kotlety z fasoli z surówką"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kotlety-z-fasoli-z-surowka" aria-pressed="false" aria-label="Dodaj do ulubionych: Kotlety z fasoli z surówką"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2625,7 +2625,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/omlet-na-slodko-z-miodem/">Omlet na słodko z miodem</a>
-<button type="button" class="p-fav" data-fav="omlet-na-slodko-z-miodem" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet na słodko z miodem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="omlet-na-slodko-z-miodem" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet na słodko z miodem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2641,7 +2641,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/omletowa-tortilla/">Omletowa tortilla</a>
-<button type="button" class="p-fav" data-fav="omletowa-tortilla" aria-pressed="false" aria-label="Dodaj do ulubionych: Omletowa tortilla"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="omletowa-tortilla" aria-pressed="false" aria-label="Dodaj do ulubionych: Omletowa tortilla"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2657,7 +2657,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-lazanki-z-soczewica-pieczarkami-i/">Makaron łazanki z soczewicą, pieczarkami i kapustą kiszoną</a>
-<button type="button" class="p-fav" data-fav="makaron-lazanki-z-soczewica-pieczarkami-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron łazanki z soczewicą, pieczarkami i kapustą kiszoną"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="makaron-lazanki-z-soczewica-pieczarkami-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron łazanki z soczewicą, pieczarkami i kapustą kiszoną"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2673,7 +2673,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-snickers/">Owsianka snickers</a>
-<button type="button" class="p-fav" data-fav="owsianka-snickers" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka snickers"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsianka-snickers" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka snickers"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2689,7 +2689,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/grahamka-z-lososiem-wedzonym-i-warzywami/">Grahamka z łososiem wędzonym i warzywami</a>
-<button type="button" class="p-fav" data-fav="grahamka-z-lososiem-wedzonym-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Grahamka z łososiem wędzonym i warzywami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="grahamka-z-lososiem-wedzonym-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Grahamka z łososiem wędzonym i warzywami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2705,7 +2705,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-fusilli-z-czerwonym-pesto-i/">Makaron fusilli z czerwonym pesto i mozzarellą</a>
-<button type="button" class="p-fav" data-fav="makaron-fusilli-z-czerwonym-pesto-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron fusilli z czerwonym pesto i mozzarellą"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="makaron-fusilli-z-czerwonym-pesto-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron fusilli z czerwonym pesto i mozzarellą"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2721,7 +2721,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/placuszki-twarogowe/">Placuszki twarogowe</a>
-<button type="button" class="p-fav" data-fav="placuszki-twarogowe" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki twarogowe"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="placuszki-twarogowe" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki twarogowe"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -2737,7 +2737,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/bananowa-owsianka-z-malinami/">Bananowa owsianka z malinami</a>
-<button type="button" class="p-fav" data-fav="bananowa-owsianka-z-malinami" aria-pressed="false" aria-label="Dodaj do ulubionych: Bananowa owsianka z malinami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="bananowa-owsianka-z-malinami" aria-pressed="false" aria-label="Dodaj do ulubionych: Bananowa owsianka z malinami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2753,7 +2753,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/wege-omlet-z-mozzarella-i-suszonymi/">Wege omlet z mozzarellą i suszonymi pomidorami</a>
-<button type="button" class="p-fav" data-fav="wege-omlet-z-mozzarella-i-suszonymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Wege omlet z mozzarellą i suszonymi pomidorami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="wege-omlet-z-mozzarella-i-suszonymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Wege omlet z mozzarellą i suszonymi pomidorami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2769,7 +2769,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/buddha-bowl-z-awokado/">Buddha bowl z awokado</a>
-<button type="button" class="p-fav" data-fav="buddha-bowl-z-awokado" aria-pressed="false" aria-label="Dodaj do ulubionych: Buddha bowl z awokado"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="buddha-bowl-z-awokado" aria-pressed="false" aria-label="Dodaj do ulubionych: Buddha bowl z awokado"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2785,7 +2785,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-grillowanym-tofu/">Kanapka z grillowanym tofu</a>
-<button type="button" class="p-fav" data-fav="kanapka-z-grillowanym-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z grillowanym tofu"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapka-z-grillowanym-tofu" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z grillowanym tofu"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -2801,7 +2801,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/koktajl-czekoladowy/">Koktajl czekoladowy</a>
-<button type="button" class="p-fav" data-fav="koktajl-czekoladowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Koktajl czekoladowy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="koktajl-czekoladowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Koktajl czekoladowy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2817,7 +2817,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-jajkiem/">Kanapka z jajkiem</a>
-<button type="button" class="p-fav" data-fav="kanapka-z-jajkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z jajkiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapka-z-jajkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z jajkiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2833,7 +2833,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/losos-w-sezamie/">Łosoś w sezamie</a>
-<button type="button" class="p-fav" data-fav="losos-w-sezamie" aria-pressed="false" aria-label="Dodaj do ulubionych: Łosoś w sezamie"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="losos-w-sezamie" aria-pressed="false" aria-label="Dodaj do ulubionych: Łosoś w sezamie"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2849,7 +2849,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/domowa-granola-z-jogurtem/">Domowa granola z jogurtem</a>
-<button type="button" class="p-fav" data-fav="domowa-granola-z-jogurtem" aria-pressed="false" aria-label="Dodaj do ulubionych: Domowa granola z jogurtem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="domowa-granola-z-jogurtem" aria-pressed="false" aria-label="Dodaj do ulubionych: Domowa granola z jogurtem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -2865,7 +2865,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/budyn-na-mleku-roslinnym-z-jagodami/">Budyń na mleku roślinnym z jagodami i płatkami migdałowymi</a>
-<button type="button" class="p-fav" data-fav="budyn-na-mleku-roslinnym-z-jagodami" aria-pressed="false" aria-label="Dodaj do ulubionych: Budyń na mleku roślinnym z jagodami i płatkami migdałowymi"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="budyn-na-mleku-roslinnym-z-jagodami" aria-pressed="false" aria-label="Dodaj do ulubionych: Budyń na mleku roślinnym z jagodami i płatkami migdałowymi"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2881,7 +2881,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-z-twarozku-z-czarnuszka-z/">Pasta z twarożku z czarnuszką z warzywami</a>
-<button type="button" class="p-fav" data-fav="pasta-z-twarozku-z-czarnuszka-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z twarożku z czarnuszką z warzywami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pasta-z-twarozku-z-czarnuszka-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z twarożku z czarnuszką z warzywami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2897,7 +2897,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/cukinia-nadziewana-kasza-kuskus-z-warzywami/">Cukinia nadziewana kaszą kuskus z warzywami i serem feta</a>
-<button type="button" class="p-fav" data-fav="cukinia-nadziewana-kasza-kuskus-z-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Cukinia nadziewana kaszą kuskus z warzywami i serem feta"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="cukinia-nadziewana-kasza-kuskus-z-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Cukinia nadziewana kaszą kuskus z warzywami i serem feta"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2913,7 +2913,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-z-bobu-ze-szpinakiem-swiezymi/">Pasta z bobu ze szpinakiem, świeżymi pomidorami i pieczywem</a>
-<button type="button" class="p-fav" data-fav="pasta-z-bobu-ze-szpinakiem-swiezymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z bobu ze szpinakiem, świeżymi pomidorami i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pasta-z-bobu-ze-szpinakiem-swiezymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z bobu ze szpinakiem, świeżymi pomidorami i pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -2929,7 +2929,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kokosowy-krem-jaglany-z-malinami/">Kokosowy krem jaglany z malinami</a>
-<button type="button" class="p-fav" data-fav="kokosowy-krem-jaglany-z-malinami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kokosowy krem jaglany z malinami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kokosowy-krem-jaglany-z-malinami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kokosowy krem jaglany z malinami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2945,7 +2945,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapka-z-pasta-z-jajka-i/">Kanapka z pastą z jajka i awokado</a>
-<button type="button" class="p-fav" data-fav="kanapka-z-pasta-z-jajka-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą z jajka i awokado"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapka-z-pasta-z-jajka-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapka z pastą z jajka i awokado"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -2961,7 +2961,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/weganskie-chilli-sin-carne/">Wegańskie chilli sin carne</a>
-<button type="button" class="p-fav" data-fav="weganskie-chilli-sin-carne" aria-pressed="false" aria-label="Dodaj do ulubionych: Wegańskie chilli sin carne"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="weganskie-chilli-sin-carne" aria-pressed="false" aria-label="Dodaj do ulubionych: Wegańskie chilli sin carne"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -2977,7 +2977,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-z-pieczonych-batatow-i-ciecierzycy/">Sałatka z pieczonych batatów i ciecierzycy</a>
-<button type="button" class="p-fav" data-fav="salatka-z-pieczonych-batatow-i-ciecierzycy" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z pieczonych batatów i ciecierzycy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="salatka-z-pieczonych-batatow-i-ciecierzycy" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z pieczonych batatów i ciecierzycy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -2993,7 +2993,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/placuszki-z-truskawkami/">Placuszki z truskawkami</a>
-<button type="button" class="p-fav" data-fav="placuszki-z-truskawkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki z truskawkami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="placuszki-z-truskawkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki z truskawkami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3009,7 +3009,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pieczywo-z-wiosennym-serkiem-wiejskim-rzodkiewka/">Pieczywo z wiosennym serkiem wiejskim, rzodkiewką i ogórkiem</a>
-<button type="button" class="p-fav" data-fav="pieczywo-z-wiosennym-serkiem-wiejskim-rzodkiewka" aria-pressed="false" aria-label="Dodaj do ulubionych: Pieczywo z wiosennym serkiem wiejskim, rzodkiewką i ogórkiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pieczywo-z-wiosennym-serkiem-wiejskim-rzodkiewka" aria-pressed="false" aria-label="Dodaj do ulubionych: Pieczywo z wiosennym serkiem wiejskim, rzodkiewką i ogórkiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3025,7 +3025,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tabbouleh-z-ogorkiem-i-pomidorem/">Tabbouleh z ogórkiem i pomidorem</a>
-<button type="button" class="p-fav" data-fav="tabbouleh-z-ogorkiem-i-pomidorem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tabbouleh z ogórkiem i pomidorem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tabbouleh-z-ogorkiem-i-pomidorem" aria-pressed="false" aria-label="Dodaj do ulubionych: Tabbouleh z ogórkiem i pomidorem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3041,7 +3041,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zapiekanka-z-pomidorami-i-mozzarella/">Zapiekanka z pomidorami i mozzarellą</a>
-<button type="button" class="p-fav" data-fav="zapiekanka-z-pomidorami-i-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka z pomidorami i mozzarellą"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zapiekanka-z-pomidorami-i-mozzarella" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka z pomidorami i mozzarellą"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -3057,7 +3057,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jogurt-z-borowkami-i-orzechami/">Jogurt z borówkami i orzechami</a>
-<button type="button" class="p-fav" data-fav="jogurt-z-borowkami-i-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurt z borówkami i orzechami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jogurt-z-borowkami-i-orzechami" aria-pressed="false" aria-label="Dodaj do ulubionych: Jogurt z borówkami i orzechami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3073,7 +3073,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/buraczany-hummus-z-warzywami-i-pieczywem/">Buraczany hummus z warzywami i pieczywem</a>
-<button type="button" class="p-fav" data-fav="buraczany-hummus-z-warzywami-i-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Buraczany hummus z warzywami i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="buraczany-hummus-z-warzywami-i-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Buraczany hummus z warzywami i pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3089,7 +3089,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zapiekane-pieczarki-portobello-z-farszem-z/">Zapiekane pieczarki portobello z farszem z jajek</a>
-<button type="button" class="p-fav" data-fav="zapiekane-pieczarki-portobello-z-farszem-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekane pieczarki portobello z farszem z jajek"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zapiekane-pieczarki-portobello-z-farszem-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekane pieczarki portobello z farszem z jajek"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3105,7 +3105,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pudding-czekoladowy-z-truskawkami/">Pudding czekoladowy z truskawkami</a>
-<button type="button" class="p-fav" data-fav="pudding-czekoladowy-z-truskawkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Pudding czekoladowy z truskawkami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pudding-czekoladowy-z-truskawkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Pudding czekoladowy z truskawkami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -3121,7 +3121,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-bounty/">Owsianka bounty</a>
-<button type="button" class="p-fav" data-fav="owsianka-bounty" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka bounty"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsianka-bounty" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka bounty"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3137,7 +3137,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-zoltym-serem-i-warzywami/">Kanapki z żółtym serem i warzywami</a>
-<button type="button" class="p-fav" data-fav="kanapki-z-zoltym-serem-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z żółtym serem i warzywami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-z-zoltym-serem-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z żółtym serem i warzywami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3153,7 +3153,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zapiekanka-warzywna-z-serem-feta/">Zapiekanka warzywna z serem feta</a>
-<button type="button" class="p-fav" data-fav="zapiekanka-warzywna-z-serem-feta" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka warzywna z serem feta"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zapiekanka-warzywna-z-serem-feta" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka warzywna z serem feta"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3169,7 +3169,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-z-lososia-teriyaki-z-pieczywem/">Pasta z łososia teriyaki z pieczywem</a>
-<button type="button" class="p-fav" data-fav="pasta-z-lososia-teriyaki-z-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z łososia teriyaki z pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pasta-z-lososia-teriyaki-z-pieczywem" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z łososia teriyaki z pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -3185,7 +3185,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-twarogiem-maslem-orzechowym-i/">Kanapki z twarogiem, masłem orzechowym i dżemem</a>
-<button type="button" class="p-fav" data-fav="kanapki-z-twarogiem-maslem-orzechowym-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z twarogiem, masłem orzechowym i dżemem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-z-twarogiem-maslem-orzechowym-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z twarogiem, masłem orzechowym i dżemem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3201,7 +3201,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/mozzarella-pomidor-grahamka-i-orzechy/">Mozzarella, pomidor, grahamka i orzechy</a>
-<button type="button" class="p-fav" data-fav="mozzarella-pomidor-grahamka-i-orzechy" aria-pressed="false" aria-label="Dodaj do ulubionych: Mozzarella, pomidor, grahamka i orzechy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="mozzarella-pomidor-grahamka-i-orzechy" aria-pressed="false" aria-label="Dodaj do ulubionych: Mozzarella, pomidor, grahamka i orzechy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3217,7 +3217,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-penne-z-awokado-pomidorkami-koktajlowymi/">Makaron penne z awokado, pomidorkami koktajlowymi, rukolą, bazylią i serem grana padano</a>
-<button type="button" class="p-fav" data-fav="makaron-penne-z-awokado-pomidorkami-koktajlowymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron penne z awokado, pomidorkami koktajlowymi, rukolą, bazylią i serem grana padano"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="makaron-penne-z-awokado-pomidorkami-koktajlowymi" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron penne z awokado, pomidorkami koktajlowymi, rukolą, bazylią i serem grana padano"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3233,7 +3233,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/czekoladowy-krem-jaglany-z-porzeczkami/">Czekoladowy krem jaglany z porzeczkami</a>
-<button type="button" class="p-fav" data-fav="czekoladowy-krem-jaglany-z-porzeczkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Czekoladowy krem jaglany z porzeczkami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="czekoladowy-krem-jaglany-z-porzeczkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Czekoladowy krem jaglany z porzeczkami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -3249,7 +3249,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsiane-batoniki-z-miodem-i-maslem/">Owsiane batoniki z miodem i masłem orzechowym</a>
-<button type="button" class="p-fav" data-fav="owsiane-batoniki-z-miodem-i-maslem" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiane batoniki z miodem i masłem orzechowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsiane-batoniki-z-miodem-i-maslem" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiane batoniki z miodem i masłem orzechowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3265,7 +3265,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pasta-z-bialej-fasoli-z-ogorkiem/">Pasta z białej fasoli z ogórkiem kiszonym i pieczywem</a>
-<button type="button" class="p-fav" data-fav="pasta-z-bialej-fasoli-z-ogorkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z białej fasoli z ogórkiem kiszonym i pieczywem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pasta-z-bialej-fasoli-z-ogorkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Pasta z białej fasoli z ogórkiem kiszonym i pieczywem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3281,7 +3281,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-krem-z-ciecierzycy-i-pieczonych/">Zupa krem z ciecierzycy i pieczonych warzyw</a>
-<button type="button" class="p-fav" data-fav="zupa-krem-z-ciecierzycy-i-pieczonych" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa krem z ciecierzycy i pieczonych warzyw"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zupa-krem-z-ciecierzycy-i-pieczonych" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa krem z ciecierzycy i pieczonych warzyw"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3297,7 +3297,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tortilla-z-wedzonym-lososiem-i-warzywami/">Tortilla z wędzonym łososiem i warzywami</a>
-<button type="button" class="p-fav" data-fav="tortilla-z-wedzonym-lososiem-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z wędzonym łososiem i warzywami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tortilla-z-wedzonym-lososiem-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z wędzonym łososiem i warzywami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -3313,7 +3313,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-brownie-z-mikrofali/">Owsianka brownie z mikrofali</a>
-<button type="button" class="p-fav" data-fav="owsianka-brownie-z-mikrofali" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka brownie z mikrofali"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsianka-brownie-z-mikrofali" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka brownie z mikrofali"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3329,7 +3329,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-pasta-bezjajeczna-z-ciecierzycy/">Kanapki z pastą bezjajeczną z ciecierzycy + shake</a>
-<button type="button" class="p-fav" data-fav="kanapki-z-pasta-bezjajeczna-z-ciecierzycy" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z pastą bezjajeczną z ciecierzycy + shake"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-z-pasta-bezjajeczna-z-ciecierzycy" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z pastą bezjajeczną z ciecierzycy + shake"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3345,7 +3345,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/bowl-z-lososiem-teriyaki/">Bowl z łososiem teriyaki</a>
-<button type="button" class="p-fav" data-fav="bowl-z-lososiem-teriyaki" aria-pressed="false" aria-label="Dodaj do ulubionych: Bowl z łososiem teriyaki"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="bowl-z-lososiem-teriyaki" aria-pressed="false" aria-label="Dodaj do ulubionych: Bowl z łososiem teriyaki"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3361,7 +3361,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-w-stylu-kinder-country/">Owsianka w stylu kinder country</a>
-<button type="button" class="p-fav" data-fav="owsianka-w-stylu-kinder-country" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka w stylu kinder country"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsianka-w-stylu-kinder-country" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka w stylu kinder country"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3377,7 +3377,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-meksykanska/">Sałatka meksykańska</a>
-<button type="button" class="p-fav" data-fav="salatka-meksykanska" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka meksykańska"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="salatka-meksykanska" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka meksykańska"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3393,7 +3393,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tortille-z-batatami-i-fasola/">Tortille z batatami i fasolą</a>
-<button type="button" class="p-fav" data-fav="tortille-z-batatami-i-fasola" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortille z batatami i fasolą"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tortille-z-batatami-i-fasola" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortille z batatami i fasolą"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3409,7 +3409,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryz-z-jogurtem-i-owocami/">Ryż z jogurtem i owocami</a>
-<button type="button" class="p-fav" data-fav="ryz-z-jogurtem-i-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryż z jogurtem i owocami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="ryz-z-jogurtem-i-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryż z jogurtem i owocami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3425,7 +3425,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jajecznica-z-cukinia/">Jajecznica z cukinią</a>
-<button type="button" class="p-fav" data-fav="jajecznica-z-cukinia" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajecznica z cukinią"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jajecznica-z-cukinia" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajecznica z cukinią"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3441,7 +3441,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-srodziemnomorska/">Zupa śródziemnomorska</a>
-<button type="button" class="p-fav" data-fav="zupa-srodziemnomorska" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa śródziemnomorska"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zupa-srodziemnomorska" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa śródziemnomorska"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3457,7 +3457,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/omlet-na-slodko-z-bananem/">Omlet na słodko z bananem</a>
-<button type="button" class="p-fav" data-fav="omlet-na-slodko-z-bananem" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet na słodko z bananem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="omlet-na-slodko-z-bananem" aria-pressed="false" aria-label="Dodaj do ulubionych: Omlet na słodko z bananem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3473,7 +3473,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-jajkiem-na-miekko/">Kanapki z jajkiem na miękko</a>
-<button type="button" class="p-fav" data-fav="kanapki-z-jajkiem-na-miekko" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z jajkiem na miękko"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-z-jajkiem-na-miekko" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z jajkiem na miękko"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3489,7 +3489,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zielony-makaron-z-groszkiem/">Zielony makaron z groszkiem</a>
-<button type="button" class="p-fav" data-fav="zielony-makaron-z-groszkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Zielony makaron z groszkiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zielony-makaron-z-groszkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Zielony makaron z groszkiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3505,7 +3505,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/racuszki-jablkowo-owsiane/">Racuszki jabłkowo-owsiane</a>
-<button type="button" class="p-fav" data-fav="racuszki-jablkowo-owsiane" aria-pressed="false" aria-label="Dodaj do ulubionych: Racuszki jabłkowo-owsiane"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="racuszki-jablkowo-owsiane" aria-pressed="false" aria-label="Dodaj do ulubionych: Racuszki jabłkowo-owsiane"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3521,7 +3521,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/buddha-bowl-z-hummusem-i-kasza/">Buddha bowl z hummusem i kaszą kuskus</a>
-<button type="button" class="p-fav" data-fav="buddha-bowl-z-hummusem-i-kasza" aria-pressed="false" aria-label="Dodaj do ulubionych: Buddha bowl z hummusem i kaszą kuskus"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="buddha-bowl-z-hummusem-i-kasza" aria-pressed="false" aria-label="Dodaj do ulubionych: Buddha bowl z hummusem i kaszą kuskus"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3537,7 +3537,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/makaron-z-lososiem-w-delikatnym-sosie/">Makaron z łososiem w delikatnym sosie kokosowym</a>
-<button type="button" class="p-fav" data-fav="makaron-z-lososiem-w-delikatnym-sosie" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron z łososiem w delikatnym sosie kokosowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="makaron-z-lososiem-w-delikatnym-sosie" aria-pressed="false" aria-label="Dodaj do ulubionych: Makaron z łososiem w delikatnym sosie kokosowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3553,7 +3553,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/chia-bowl-z-kiwi-i-pomarancza/">Chia bowl z kiwi i pomarańczą</a>
-<button type="button" class="p-fav" data-fav="chia-bowl-z-kiwi-i-pomarancza" aria-pressed="false" aria-label="Dodaj do ulubionych: Chia bowl z kiwi i pomarańczą"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="chia-bowl-z-kiwi-i-pomarancza" aria-pressed="false" aria-label="Dodaj do ulubionych: Chia bowl z kiwi i pomarańczą"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3569,7 +3569,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/grzanki-z-gruszka-i-serem-z/">Grzanki z gruszką i serem z niebieską pleśnią</a>
-<button type="button" class="p-fav" data-fav="grzanki-z-gruszka-i-serem-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Grzanki z gruszką i serem z niebieską pleśnią"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="grzanki-z-gruszka-i-serem-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Grzanki z gruszką i serem z niebieską pleśnią"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3585,7 +3585,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-z-bialej-fasoli-ziemniakow-i/">Zupa z białej fasoli, ziemniaków i pieczarek</a>
-<button type="button" class="p-fav" data-fav="zupa-z-bialej-fasoli-ziemniakow-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa z białej fasoli, ziemniaków i pieczarek"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zupa-z-bialej-fasoli-ziemniakow-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa z białej fasoli, ziemniaków i pieczarek"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3601,7 +3601,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-na-slodko-z-maslem-orzechowym/">Kanapki na słodko z masłem orzechowym, twarogiem i jabłkiem</a>
-<button type="button" class="p-fav" data-fav="kanapki-na-slodko-z-maslem-orzechowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki na słodko z masłem orzechowym, twarogiem i jabłkiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-na-slodko-z-maslem-orzechowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki na słodko z masłem orzechowym, twarogiem i jabłkiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3617,7 +3617,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zapiekana-tortilla/">Zapiekana tortilla</a>
-<button type="button" class="p-fav" data-fav="zapiekana-tortilla" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekana tortilla"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zapiekana-tortilla" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekana tortilla"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3633,7 +3633,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pulpeciki-z-soczewicy-w-sosie-pomidorowym/">Pulpeciki z soczewicy w sosie pomidorowym z ryżem</a>
-<button type="button" class="p-fav" data-fav="pulpeciki-z-soczewicy-w-sosie-pomidorowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Pulpeciki z soczewicy w sosie pomidorowym z ryżem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pulpeciki-z-soczewicy-w-sosie-pomidorowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Pulpeciki z soczewicy w sosie pomidorowym z ryżem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3649,7 +3649,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/lunchbox-kanapki-z-serem-gouda-i/">Lunchbox Kanapki z serem gouda i warzywami + jogurt + owoc</a>
-<button type="button" class="p-fav" data-fav="lunchbox-kanapki-z-serem-gouda-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Lunchbox Kanapki z serem gouda i warzywami + jogurt + owoc"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="lunchbox-kanapki-z-serem-gouda-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Lunchbox Kanapki z serem gouda i warzywami + jogurt + owoc"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3665,7 +3665,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tortilla-z-salatka-po-grecku-i/">Tortilla z sałatką po grecku i serem halloumi</a>
-<button type="button" class="p-fav" data-fav="tortilla-z-salatka-po-grecku-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z sałatką po grecku i serem halloumi"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tortilla-z-salatka-po-grecku-i" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z sałatką po grecku i serem halloumi"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3681,7 +3681,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/bulka-owsiana-z-lososiem-i-warzywami/">Bułka owsiana z łososiem i warzywami</a>
-<button type="button" class="p-fav" data-fav="bulka-owsiana-z-lososiem-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Bułka owsiana z łososiem i warzywami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="bulka-owsiana-z-lososiem-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Bułka owsiana z łososiem i warzywami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -3697,7 +3697,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-z-serem-halloumi-kuskusem-pomidorem/">Sałatka z serem halloumi, kuskusem, pomidorem oraz ogórkiem</a>
-<button type="button" class="p-fav" data-fav="salatka-z-serem-halloumi-kuskusem-pomidorem" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z serem halloumi, kuskusem, pomidorem oraz ogórkiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="salatka-z-serem-halloumi-kuskusem-pomidorem" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z serem halloumi, kuskusem, pomidorem oraz ogórkiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3713,7 +3713,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/nalesniki-z-serem-twarogowym-bez-laktozy/">Naleśniki z serem twarogowym bez laktozy oraz malinami</a>
-<button type="button" class="p-fav" data-fav="nalesniki-z-serem-twarogowym-bez-laktozy" aria-pressed="false" aria-label="Dodaj do ulubionych: Naleśniki z serem twarogowym bez laktozy oraz malinami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="nalesniki-z-serem-twarogowym-bez-laktozy" aria-pressed="false" aria-label="Dodaj do ulubionych: Naleśniki z serem twarogowym bez laktozy oraz malinami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3729,7 +3729,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-w-greckim-stylu/">Kanapki w greckim stylu</a>
-<button type="button" class="p-fav" data-fav="kanapki-w-greckim-stylu" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki w greckim stylu"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-w-greckim-stylu" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki w greckim stylu"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -3745,7 +3745,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-zielonym-pesto-serem-gouda/">Kanapki z zielonym pesto, serem gouda i papryką czerwoną</a>
-<button type="button" class="p-fav" data-fav="kanapki-z-zielonym-pesto-serem-gouda" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z zielonym pesto, serem gouda i papryką czerwoną"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-z-zielonym-pesto-serem-gouda" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z zielonym pesto, serem gouda i papryką czerwoną"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3761,7 +3761,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kasza-jaglana-z-dynia-i-serem/">Kasza jaglana z dynią i serem typu feta</a>
-<button type="button" class="p-fav" data-fav="kasza-jaglana-z-dynia-i-serem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kasza jaglana z dynią i serem typu feta"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kasza-jaglana-z-dynia-i-serem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kasza jaglana z dynią i serem typu feta"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3777,7 +3777,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jajka-w-koszulkach-z-chlebem-bezglutenowym/">Jajka w koszulkach z chlebem bezglutenowym</a>
-<button type="button" class="p-fav" data-fav="jajka-w-koszulkach-z-chlebem-bezglutenowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajka w koszulkach z chlebem bezglutenowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jajka-w-koszulkach-z-chlebem-bezglutenowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajka w koszulkach z chlebem bezglutenowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -3793,7 +3793,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tortilla-z-lososiem-szpinakiem-koperkiem-oraz/">Tortilla z łososiem, szpinakiem, koperkiem oraz ogórkiem</a>
-<button type="button" class="p-fav" data-fav="tortilla-z-lososiem-szpinakiem-koperkiem-oraz" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z łososiem, szpinakiem, koperkiem oraz ogórkiem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tortilla-z-lososiem-szpinakiem-koperkiem-oraz" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla z łososiem, szpinakiem, koperkiem oraz ogórkiem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3809,7 +3809,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/placki-bananowe/">Placki bananowe</a>
-<button type="button" class="p-fav" data-fav="placki-bananowe" aria-pressed="false" aria-label="Dodaj do ulubionych: Placki bananowe"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="placki-bananowe" aria-pressed="false" aria-label="Dodaj do ulubionych: Placki bananowe"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -3825,7 +3825,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/cytrynowy-skyrnik-proteinowy/">Cytrynowy skyrnik proteinowy</a>
-<button type="button" class="p-fav" data-fav="cytrynowy-skyrnik-proteinowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Cytrynowy skyrnik proteinowy"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="cytrynowy-skyrnik-proteinowy" aria-pressed="false" aria-label="Dodaj do ulubionych: Cytrynowy skyrnik proteinowy"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3841,7 +3841,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/dorsz-z-ziemniakami-szpinakiem-oraz-pomidorkami/">Dorsz z ziemniakami, szpinakiem oraz pomidorkami koktajlowymi</a>
-<button type="button" class="p-fav" data-fav="dorsz-z-ziemniakami-szpinakiem-oraz-pomidorkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Dorsz z ziemniakami, szpinakiem oraz pomidorkami koktajlowymi"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="dorsz-z-ziemniakami-szpinakiem-oraz-pomidorkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Dorsz z ziemniakami, szpinakiem oraz pomidorkami koktajlowymi"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3857,7 +3857,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-grecka-z-serem-typu-feta/">Sałatka grecka z serem typu feta oraz chlebem bezglutenowym</a>
-<button type="button" class="p-fav" data-fav="salatka-grecka-z-serem-typu-feta" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka grecka z serem typu feta oraz chlebem bezglutenowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="salatka-grecka-z-serem-typu-feta" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka grecka z serem typu feta oraz chlebem bezglutenowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -3873,7 +3873,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/spaghetti-z-pesto/">Spaghetti z pesto</a>
-<button type="button" class="p-fav" data-fav="spaghetti-z-pesto" aria-pressed="false" aria-label="Dodaj do ulubionych: Spaghetti z pesto"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="spaghetti-z-pesto" aria-pressed="false" aria-label="Dodaj do ulubionych: Spaghetti z pesto"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3889,7 +3889,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-z-kawalkami-kiwi-oraz-borowkami/">Owsianka z kawałkami kiwi oraz borówkami</a>
-<button type="button" class="p-fav" data-fav="owsianka-z-kawalkami-kiwi-oraz-borowkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z kawałkami kiwi oraz borówkami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsianka-z-kawalkami-kiwi-oraz-borowkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z kawałkami kiwi oraz borówkami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -3905,7 +3905,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/platki-z-malinami-oraz-orzechami-wloskimi/">Płatki z malinami oraz orzechami włoskimi</a>
-<button type="button" class="p-fav" data-fav="platki-z-malinami-oraz-orzechami-wloskimi" aria-pressed="false" aria-label="Dodaj do ulubionych: Płatki z malinami oraz orzechami włoskimi"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="platki-z-malinami-oraz-orzechami-wloskimi" aria-pressed="false" aria-label="Dodaj do ulubionych: Płatki z malinami oraz orzechami włoskimi"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3921,7 +3921,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/szybka-pieczona-ryba/">Szybka pieczona ryba</a>
-<button type="button" class="p-fav" data-fav="szybka-pieczona-ryba" aria-pressed="false" aria-label="Dodaj do ulubionych: Szybka pieczona ryba"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="szybka-pieczona-ryba" aria-pressed="false" aria-label="Dodaj do ulubionych: Szybka pieczona ryba"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3937,7 +3937,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/jajecznica-z-kielbaska-roslinna/">Jajecznica z kiełbaską roślinną</a>
-<button type="button" class="p-fav" data-fav="jajecznica-z-kielbaska-roslinna" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajecznica z kiełbaską roślinną"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="jajecznica-z-kielbaska-roslinna" aria-pressed="false" aria-label="Dodaj do ulubionych: Jajecznica z kiełbaską roślinną"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -3953,7 +3953,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-bez-laktozy-z-owocami/">Serek wiejski bez laktozy z owocami i syropem klonowym</a>
-<button type="button" class="p-fav" data-fav="serek-wiejski-bez-laktozy-z-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski bez laktozy z owocami i syropem klonowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="serek-wiejski-bez-laktozy-z-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski bez laktozy z owocami i syropem klonowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -3969,7 +3969,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zupa-pomidorowo-paprykowa/">Zupa pomidorowo paprykowa</a>
-<button type="button" class="p-fav" data-fav="zupa-pomidorowo-paprykowa" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa pomidorowo paprykowa"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zupa-pomidorowo-paprykowa" aria-pressed="false" aria-label="Dodaj do ulubionych: Zupa pomidorowo paprykowa"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -3985,7 +3985,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsiane-batoniki-z-syropem-klonowym-oraz/">Owsiane batoniki z syropem klonowym oraz masłem orzechowym</a>
-<button type="button" class="p-fav" data-fav="owsiane-batoniki-z-syropem-klonowym-oraz" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiane batoniki z syropem klonowym oraz masłem orzechowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsiane-batoniki-z-syropem-klonowym-oraz" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsiane batoniki z syropem klonowym oraz masłem orzechowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -4001,7 +4001,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-z-grillowanym-serem-halloumi/">Sałatka z grillowanym serem halloumi</a>
-<button type="button" class="p-fav" data-fav="salatka-z-grillowanym-serem-halloumi" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z grillowanym serem halloumi"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="salatka-z-grillowanym-serem-halloumi" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z grillowanym serem halloumi"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -4017,7 +4017,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/zapiekanka-makaronowa-z-suszonymi-pomidorami-w/">Zapiekanka makaronowa z suszonymi pomidorami w kremowo-serowym sosie (liczba porcji: 2)</a>
-<button type="button" class="p-fav" data-fav="zapiekanka-makaronowa-z-suszonymi-pomidorami-w" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka makaronowa z suszonymi pomidorami w kremowo-serowym sosie (liczba porcji: 2)"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="zapiekanka-makaronowa-z-suszonymi-pomidorami-w" aria-pressed="false" aria-label="Dodaj do ulubionych: Zapiekanka makaronowa z suszonymi pomidorami w kremowo-serowym sosie (liczba porcji: 2)"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -4033,7 +4033,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-z-malinami-borowkami-oraz/">Serek wiejski z malinami, borówkami oraz masłem orzechowym</a>
-<button type="button" class="p-fav" data-fav="serek-wiejski-z-malinami-borowkami-oraz" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z malinami, borówkami oraz masłem orzechowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="serek-wiejski-z-malinami-borowkami-oraz" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z malinami, borówkami oraz masłem orzechowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -4049,7 +4049,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/nalesniki-z-serem-twarogowym-bez-laktozy-2/">Naleśniki z serem twarogowym bez laktozy i owocami</a>
-<button type="button" class="p-fav" data-fav="nalesniki-z-serem-twarogowym-bez-laktozy-2" aria-pressed="false" aria-label="Dodaj do ulubionych: Naleśniki z serem twarogowym bez laktozy i owocami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="nalesniki-z-serem-twarogowym-bez-laktozy-2" aria-pressed="false" aria-label="Dodaj do ulubionych: Naleśniki z serem twarogowym bez laktozy i owocami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -4065,7 +4065,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/owsianka-z-bananem-oraz-borowkami/">Owsianka z bananem oraz borówkami</a>
-<button type="button" class="p-fav" data-fav="owsianka-z-bananem-oraz-borowkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z bananem oraz borówkami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="owsianka-z-bananem-oraz-borowkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Owsianka z bananem oraz borówkami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -4081,7 +4081,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/ryba-grillowana-w-papilocie/">Ryba grillowana w papilocie</a>
-<button type="button" class="p-fav" data-fav="ryba-grillowana-w-papilocie" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryba grillowana w papilocie"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="ryba-grillowana-w-papilocie" aria-pressed="false" aria-label="Dodaj do ulubionych: Ryba grillowana w papilocie"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -4097,7 +4097,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tortilla-pelnoziarnista-z-salatka-po-grecku/">Tortilla pełnoziarnista z sałatką po grecku i serem halloumi</a>
-<button type="button" class="p-fav" data-fav="tortilla-pelnoziarnista-z-salatka-po-grecku" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla pełnoziarnista z sałatką po grecku i serem halloumi"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tortilla-pelnoziarnista-z-salatka-po-grecku" aria-pressed="false" aria-label="Dodaj do ulubionych: Tortilla pełnoziarnista z sałatką po grecku i serem halloumi"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -4113,7 +4113,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-hummusem-wedlina-i-warzywami/">Kanapki z hummusem, wędliną i warzywami</a>
-<button type="button" class="p-fav" data-fav="kanapki-z-hummusem-wedlina-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z hummusem, wędliną i warzywami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-z-hummusem-wedlina-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z hummusem, wędliną i warzywami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -4129,7 +4129,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/gulasz-z-soczewicy-czerwonej/">Gulasz z soczewicy czerwonej</a>
-<button type="button" class="p-fav" data-fav="gulasz-z-soczewicy-czerwonej" aria-pressed="false" aria-label="Dodaj do ulubionych: Gulasz z soczewicy czerwonej"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="gulasz-z-soczewicy-czerwonej" aria-pressed="false" aria-label="Dodaj do ulubionych: Gulasz z soczewicy czerwonej"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -4145,7 +4145,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/nalesniki-z-kremem-czekoladowym/">Naleśniki z kremem czekoladowym</a>
-<button type="button" class="p-fav" data-fav="nalesniki-z-kremem-czekoladowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Naleśniki z kremem czekoladowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="nalesniki-z-kremem-czekoladowym" aria-pressed="false" aria-label="Dodaj do ulubionych: Naleśniki z kremem czekoladowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -4161,7 +4161,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/warstwowy-deser-z-gorzka-czekolada/">Warstwowy deser z gorzką czekoladą</a>
-<button type="button" class="p-fav" data-fav="warstwowy-deser-z-gorzka-czekolada" aria-pressed="false" aria-label="Dodaj do ulubionych: Warstwowy deser z gorzką czekoladą"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="warstwowy-deser-z-gorzka-czekolada" aria-pressed="false" aria-label="Dodaj do ulubionych: Warstwowy deser z gorzką czekoladą"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -4177,7 +4177,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/peczak-z-dynia-i-serem-typu/">Pęczak z dynią i serem typu feta</a>
-<button type="button" class="p-fav" data-fav="peczak-z-dynia-i-serem-typu" aria-pressed="false" aria-label="Dodaj do ulubionych: Pęczak z dynią i serem typu feta"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="peczak-z-dynia-i-serem-typu" aria-pressed="false" aria-label="Dodaj do ulubionych: Pęczak z dynią i serem typu feta"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -4193,7 +4193,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/pieczona-owsianka-z-jablkiem-oraz-cynamonem/">Pieczona owsianka z jabłkiem oraz cynamonem</a>
-<button type="button" class="p-fav" data-fav="pieczona-owsianka-z-jablkiem-oraz-cynamonem" aria-pressed="false" aria-label="Dodaj do ulubionych: Pieczona owsianka z jabłkiem oraz cynamonem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="pieczona-owsianka-z-jablkiem-oraz-cynamonem" aria-pressed="false" aria-label="Dodaj do ulubionych: Pieczona owsianka z jabłkiem oraz cynamonem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -4209,7 +4209,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/losos-w-sosie-musztardowo-miodowym-z/">Łosoś w sosie musztardowo-miodowym z ryżem oraz brokułem</a>
-<button type="button" class="p-fav" data-fav="losos-w-sosie-musztardowo-miodowym-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Łosoś w sosie musztardowo-miodowym z ryżem oraz brokułem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="losos-w-sosie-musztardowo-miodowym-z" aria-pressed="false" aria-label="Dodaj do ulubionych: Łosoś w sosie musztardowo-miodowym z ryżem oraz brokułem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -4225,7 +4225,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/placuszki-jablkowe/">Placuszki jabłkowe</a>
-<button type="button" class="p-fav" data-fav="placuszki-jablkowe" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki jabłkowe"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="placuszki-jablkowe" aria-pressed="false" aria-label="Dodaj do ulubionych: Placuszki jabłkowe"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -4241,7 +4241,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/salatka-z-serem-i-kukurydza-konserwowa/">Sałatka z serem i kukurydzą konserwową</a>
-<button type="button" class="p-fav" data-fav="salatka-z-serem-i-kukurydza-konserwowa" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z serem i kukurydzą konserwową"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="salatka-z-serem-i-kukurydza-konserwowa" aria-pressed="false" aria-label="Dodaj do ulubionych: Sałatka z serem i kukurydzą konserwową"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -4257,7 +4257,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tost-z-szynka-serem-i-warzywami/">Tost z szynką, serem i warzywami</a>
-<button type="button" class="p-fav" data-fav="tost-z-szynka-serem-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Tost z szynką, serem i warzywami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tost-z-szynka-serem-i-warzywami" aria-pressed="false" aria-label="Dodaj do ulubionych: Tost z szynką, serem i warzywami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -4273,7 +4273,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/czekoladowe-smoothie/">Czekoladowe smoothie</a>
-<button type="button" class="p-fav" data-fav="czekoladowe-smoothie" aria-pressed="false" aria-label="Dodaj do ulubionych: Czekoladowe smoothie"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="czekoladowe-smoothie" aria-pressed="false" aria-label="Dodaj do ulubionych: Czekoladowe smoothie"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -4289,7 +4289,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/bajgiel-z-kremowym-sosem/">Bajgiel z kremowym sosem</a>
-<button type="button" class="p-fav" data-fav="bajgiel-z-kremowym-sosem" aria-pressed="false" aria-label="Dodaj do ulubionych: Bajgiel z kremowym sosem"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="bajgiel-z-kremowym-sosem" aria-pressed="false" aria-label="Dodaj do ulubionych: Bajgiel z kremowym sosem"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -4305,7 +4305,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/lasagne-w-papryce/">Lasagne w papryce</a>
-<button type="button" class="p-fav" data-fav="lasagne-w-papryce" aria-pressed="false" aria-label="Dodaj do ulubionych: Lasagne w papryce"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="lasagne-w-papryce" aria-pressed="false" aria-label="Dodaj do ulubionych: Lasagne w papryce"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Obiad</span>
@@ -4321,7 +4321,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/serek-wiejski-z-owocami-i-syropem/">Serek wiejski z owocami i syropem klonowym</a>
-<button type="button" class="p-fav" data-fav="serek-wiejski-z-owocami-i-syropem" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z owocami i syropem klonowym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="serek-wiejski-z-owocami-i-syropem" aria-pressed="false" aria-label="Dodaj do ulubionych: Serek wiejski z owocami i syropem klonowym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -4337,7 +4337,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/kanapki-z-szynka-jajkiem-i-ogorkiem/">Kanapki z szynką, jajkiem i ogórkiem kiszonym</a>
-<button type="button" class="p-fav" data-fav="kanapki-z-szynka-jajkiem-i-ogorkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z szynką, jajkiem i ogórkiem kiszonym"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="kanapki-z-szynka-jajkiem-i-ogorkiem" aria-pressed="false" aria-label="Dodaj do ulubionych: Kanapki z szynką, jajkiem i ogórkiem kiszonym"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -4353,7 +4353,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/syrniki-z-owocami/">Syrniki z owocami (liczba porcji: 3)</a>
-<button type="button" class="p-fav" data-fav="syrniki-z-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Syrniki z owocami (liczba porcji: 3)"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="syrniki-z-owocami" aria-pressed="false" aria-label="Dodaj do ulubionych: Syrniki z owocami (liczba porcji: 3)"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Śniadanie</span>
@@ -4369,7 +4369,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tiramisu-z-truskawkami/">Tiramisu z truskawkami</a>
-<button type="button" class="p-fav" data-fav="tiramisu-z-truskawkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Tiramisu z truskawkami"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tiramisu-z-truskawkami" aria-pressed="false" aria-label="Dodaj do ulubionych: Tiramisu z truskawkami"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>
@@ -4385,7 +4385,7 @@ Wybierz porę posiłku, zaznacz produkty, na które masz ochotę — albo po pro
 <div class="p-card__body">
 <div class="p-card__head">
 <a class="p-card__title" href="przepisy/tosty-francuskie-z-serem-gouda-oraz/">Tosty francuskie z serem gouda oraz plastrem wegańskim</a>
-<button type="button" class="p-fav" data-fav="tosty-francuskie-z-serem-gouda-oraz" aria-pressed="false" aria-label="Dodaj do ulubionych: Tosty francuskie z serem gouda oraz plastrem wegańskim"><span aria-hidden="true">&#9825;</span></button>
+<button type="button" class="p-fav" data-fav="tosty-francuskie-z-serem-gouda-oraz" aria-pressed="false" aria-label="Dodaj do ulubionych: Tosty francuskie z serem gouda oraz plastrem wegańskim"><svg class="p-heart" viewBox="0 0 32 28" aria-hidden="true" focusable="false"><path d="M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"/></svg></button>
 </div>
 <div class="p-card__meta">
 <span class="p-card__slot"><span class="p-dot"></span>Kolacja</span>

@@ -540,10 +540,9 @@
       });
     }
 
-    // Pora dnia zawęża, składniki poszerzają: przepis pasuje, gdy jest we
-    // właściwym posiłku ORAZ zawiera CHOĆ JEDEN z zaznaczonych składników.
-    // Ile z zaznaczonych składników brakuje w danym przepisie. Produkty
-    // spiżarniane nie mają kategorii, więc z definicji nie liczą się jako brak.
+    // Składniki przepisu, których nie ma wśród zaznaczonych — czyli to, co
+    // trzeba jeszcze dokupić. Produkty spiżarniane nie mają kategorii, więc
+    // z definicji nie liczą się jako brak.
     function braki(card) {
       var tags = (card.getAttribute("data-tags") || "").split(" ");
       var mam = state.ings;
@@ -555,17 +554,24 @@
     function apply() {
       var shown = 0;
       var doPosortowania = [];
+      var wybranych = state.ings.length;
 
-      cards.forEach(function (card) {
+      cards.forEach(function (card, kolejnosc) {
         var li = card.parentElement;
         var slug = card.getAttribute("data-slug");
         var tags = (card.getAttribute("data-tags") || "").split(" ");
 
         var slotOk = state.slot === "all" || card.getAttribute("data-slot-id") === state.slot;
-        // W trybie „mam w lodówce” składniki nie odsiewają, tylko układają
-        // kolejność — inaczej wybranie trzech rzeczy dawałoby pustą stronę.
-        var ingOk = state.fridge || state.ings.length === 0 ||
-          state.ings.some(function (t) { return tags.indexOf(t) !== -1; });
+        // Ile z zaznaczonych składników naprawdę jest w tym przepisie.
+        var trafienia = 0;
+        for (var i = 0; i < wybranych; i++) {
+          if (tags.indexOf(state.ings[i]) !== -1) trafienia++;
+        }
+        // Zaznaczenie składnika zawęża listę — i w „Mam ochotę na…”,
+        // i w „Mam w lodówce”. Przepis bez ani jednego z wybranych produktów
+        // nie ma po co się pokazywać: w pierwszym trybie nie jest tym, na co
+        // masz ochotę, w drugim nie da się go zrobić z tego, co masz.
+        var ingOk = wybranych === 0 || trafienia > 0;
         var textOk = !state.q || matchScore(szukajTekst[slug] || "", state.q) < Infinity;
         var favOk = !state.fav || fav.indexOf(slug) !== -1;
         var cookedOk = !state.cooked || !!cooked[slug];
@@ -574,21 +580,32 @@
         li.hidden = !ok;
 
         var miss = card.querySelector(".p-card__miss");
-        if (ok && state.fridge && state.ings.length) {
+        if (ok && wybranych) {
           var brak = braki(card);
-          // Przy równej liczbie braków wyżej stoi przepis, który zużywa więcej
-          // z tego, co masz — inaczej na górze lądują dania dwuskładnikowe,
-          // bo im z definicji brakuje najmniej.
-          var mam = tags.length - brak.length;
-          doPosortowania.push({ li: li, n: brak.length, mam: mam });
+          // Najpierw przepisy z największą liczbą trafionych składników —
+          // o to chodzi w obu trybach. Przy remisie wygrywa ten, do którego
+          // trzeba dokupić mniej rzeczy, a na końcu decyduje kolejność
+          // wyjściowa, żeby układ nie skakał między przeliczeniami.
+          doPosortowania.push({
+            li: li, traf: trafienia, brak: brak.length, i: kolejnosc,
+          });
           if (miss) {
             miss.hidden = false;
-            miss.textContent = brak.length === 0
-              ? "Masz wszystko"
-              : "Brakuje " + brak.length + ": " +
-                brak.slice(0, 3).map(function (t) { return etykiety[t] || t; }).join(", ") +
-                (brak.length > 3 ? "…" : "");
-            miss.setAttribute("data-none", brak.length === 0 ? "1" : "0");
+            if (state.fridge) {
+              miss.textContent = brak.length === 0
+                ? "Masz wszystko"
+                : "Brakuje " + brak.length + ": " +
+                  brak.slice(0, 3).map(function (t) { return etykiety[t] || t; }).join(", ") +
+                  (brak.length > 3 ? "…" : "");
+              miss.setAttribute("data-none", brak.length === 0 ? "1" : "0");
+            } else if (wybranych > 1) {
+              // Przy jednym zaznaczonym składniku etykieta „pasuje 1 z 1”
+              // byłaby przy każdym kafelku i niczego by nie wnosiła.
+              miss.textContent = "Pasuje " + trafienia + " z " + wybranych;
+              miss.setAttribute("data-none", trafienia === wybranych ? "1" : "0");
+            } else {
+              miss.hidden = true;
+            }
           }
         } else if (miss) {
           miss.hidden = true;
@@ -599,7 +616,9 @@
       // Kafelki leżą w siatce, więc kolejność zmieniamy właściwością `order`
       // zamiast przestawiać węzły — 263 elementy bez ruszania drzewa.
       if (doPosortowania.length) {
-        doPosortowania.sort(function (a, b) { return a.n - b.n || b.mam - a.mam; });
+        doPosortowania.sort(function (a, b) {
+          return b.traf - a.traf || a.brak - b.brak || a.i - b.i;
+        });
         doPosortowania.forEach(function (x, i) { x.li.style.order = i; });
       } else {
         cards.forEach(function (c) { c.parentElement.style.order = ""; });
@@ -610,10 +629,10 @@
       emptyEl.hidden = shown !== 0;
 
       var n = state.ings.length;
-      // „Mam w lodówce” to tryb pokazywania, nie filtr — nie doliczamy go,
-      // żeby licznik nie mówił „(4)” przy trzech zaznaczonych składnikach.
+      // Sama „lodówka” nie jest osobnym filtrem, tylko innym spojrzeniem na te
+      // same zaznaczone składniki — nie doliczamy jej, żeby licznik nie mówił
+      // „(4)” przy trzech zaznaczonych produktach.
       var aktywne = n + (state.q ? 1 : 0) + (state.fav ? 1 : 0) + (state.cooked ? 1 : 0);
-      if (!aktywne && state.fridge) aktywne = 0;
       if (clearEl) {
         clearEl.hidden = aktywne === 0 && !state.fridge;
         if (clearCount) clearCount.textContent = aktywne ? "(" + aktywne + ")" : "";
@@ -639,7 +658,6 @@
       [].forEach.call(document.querySelectorAll("[data-fav]"), function (btn) {
         var on = fav.indexOf(btn.getAttribute("data-fav")) !== -1;
         btn.setAttribute("aria-pressed", on ? "true" : "false");
-        btn.firstChild.textContent = on ? "\u2665" : "\u2661";
       });
       cards.forEach(function (card) {
         card.setAttribute("data-cooked", cooked[card.getAttribute("data-slug")] ? "1" : "0");
@@ -1211,7 +1229,6 @@
       var on = ulubione().indexOf(data.slug) !== -1;
       [].forEach.call(document.querySelectorAll("[data-fav]"), function (btn) {
         btn.setAttribute("aria-pressed", on ? "true" : "false");
-        btn.firstChild.textContent = on ? "\u2665" : "\u2661";
         btn.setAttribute("aria-label", on ? "Usuń z ulubionych" : "Dodaj do ulubionych");
       });
     }

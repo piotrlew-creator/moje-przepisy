@@ -4,7 +4,6 @@
 Powstają:
   docs/index.md           — wyszukiwarka + lista wszystkich przepisów
   docs/przepisy/<slug>.md — pojedynczy przepis
-  docs/zamienniki.md      — lista wymienników z PDF-u
 
 Nic w docs/ nie jest pisane ręcznie, więc lista przepisów i lista składników
 nie mogą się rozjechać z przepisami. Skrypt jest też uruchamiany w GitHub
@@ -28,9 +27,29 @@ DATA = os.path.join(ROOT, "recipes.json")
 DOCS = os.path.join(ROOT, "docs")
 RECIPE_DIR = os.path.join(DOCS, "przepisy")
 
-# Pliki po usuniętej funkcji „Plan 10 dni” — kasowane, gdyby zostały po
-# wcześniejszej wersji.
-PRZESTARZALE = ["plan.md"]
+# Pliki po usuniętych funkcjach — kasowane, gdyby zostały po wcześniejszej
+# wersji. „Plan 10 dni” zniknął dawno, a strona „Zamienniki” była tylko
+# przepisaniem tabeli z PDF-u: te same wymienniki są przy każdym składniku
+# pod przyciskiem „Zamień na”, więc osobna zakładka niczego nie wnosiła.
+# Sam silnik zamienników (tools/swaps.py, window.SWAPS) zostaje — to on
+# obsługuje przycisk w przepisie.
+PRZESTARZALE = ["plan.md", "zamienniki.md"]
+
+# Serce jako kształt, nie znak z czcionki: znaki ♥ / ♡ rysują się inaczej na
+# każdym systemie (na Androidzie bywają wąskie i kanciaste). Ten kontur ma
+# proporcje emoji ❤️ — szerokie, okrągłe łuki i płytki czubek. Wypełnienie
+# przełącza CSS po `aria-pressed`, więc JS nie musi podmieniać treści.
+HEART_PATH = (
+    "M16 26.6c-.55 0-1.08-.19-1.5-.54C9 21.6 1 15.7 1 9.5 1 4.8 4.8 1 9.5 1"
+    "c2.7 0 5.1 1.2 6.5 3.2C17.4 2.2 19.8 1 22.5 1 27.2 1 31 4.8 31 9.5"
+    "c0 6.2-8 12.1-13.5 16.56-.42.35-.95.54-1.5.54z"
+)
+
+
+def heart_svg(cls="p-heart"):
+    return (f'<svg class="{cls}" viewBox="0 0 32 28" aria-hidden="true" '
+            f'focusable="false"><path d="{HEART_PATH}"/></svg>')
+
 
 SEARCH_ICON = (
     '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" '
@@ -215,9 +234,8 @@ def render_index(data):
     # --- tryby widoku
     out.append('<div class="p-modes" role="group" aria-label="Widok">')
     out.append('<button type="button" class="p-chip p-chip--mode" id="mode-fav" '
-               'data-on="0" aria-pressed="false">'
-               '<span class="p-heart" aria-hidden="true">&#9825;</span>Ulubione'
-               ' <span class="p-num" id="fav-count"></span></button>')
+               'data-on="0" aria-pressed="false">' + heart_svg("p-heart") +
+               'Ulubione <span class="p-num" id="fav-count"></span></button>')
     out.append('<button type="button" class="p-chip p-chip--mode" id="mode-cooked" '
                'data-on="0" aria-pressed="false">Ugotowane'
                ' <span class="p-num" id="cooked-count"></span></button>')
@@ -234,8 +252,9 @@ def render_index(data):
     out.append('<div class="p-panel__inner">')
 
     out.append('<p class="p-hint" id="fridge-hint" hidden>Zaznacz, co masz pod ręką. '
-               "Zamiast odsiewać przepisy, ułożę je od tych, do których brakuje "
-               "najmniej. Sól, pieprz i oliwa nie liczą się jako braki.</p>")
+               "Pokażę tylko dania, w których to wykorzystasz — najpierw te, "
+               "które zużywają najwięcej Twoich produktów, i przy każdym napiszę, "
+               "czego jeszcze brakuje. Sól, pieprz i oliwa nie liczą się jako braki.</p>")
     out.append('<div class="p-chips" id="ing-chips">')
     for iid in featured:
         ing = by_id[iid]
@@ -284,7 +303,7 @@ def render_index(data):
         out.append(f'<a class="p-card__title" href="przepisy/{e(r["slug"])}/">{e(r["title"])}</a>')
         out.append(f'<button type="button" class="p-fav" data-fav="{e(r["slug"])}" '
                    f'aria-pressed="false" aria-label="Dodaj do ulubionych: {e(r["title"])}">'
-                   '<span aria-hidden="true">&#9825;</span></button>')
+                   + heart_svg() + "</button>")
         out.append("</div>")
         out.append('<div class="p-card__meta">')
         out.append(f'<span class="p-card__slot"><span class="p-dot"></span>{e(r["slotLabel"])}</span>')
@@ -331,7 +350,7 @@ def render_recipe(r, data):
     out.append(f'<span>{e(r["slotLabel"])}</span><span class="p-num">{e(r["time"])}</span>')
     out.append(f'<button type="button" class="p-fav p-fav--hero" data-fav="{e(r["slug"])}" '
                f'aria-pressed="false" aria-label="Dodaj do ulubionych">'
-               '<span aria-hidden="true">&#9825;</span></button>')
+               + heart_svg() + "</button>")
     out.append("</div>")
     out.append('<div class="p-macros">')
     for value, label in [(f'{r["kcal"]}', "kcal"), (f'{r["protein"]} g', "białko"),
@@ -479,25 +498,6 @@ def render_recipe(r, data):
     out.append("window.SWAPS = " + json.dumps(
         {g: groups[g] for g in used}, ensure_ascii=False) + ";")
     out.append("window.SWAP_ADJ = " + json.dumps(data["swapAdjectives"], ensure_ascii=False) + ";</script>")
-    out.append("")
-    return "\n".join(out)
-
-
-# ---------------------------------------------------------- zamienniki.md ---
-
-def render_substitutions(data):
-    out = ["---", "title: Zamienniki", "hide:", "  - toc", "---", "",
-           "# Zamienniki", "",
-           "Przepisany fragment „Listy wymienników” z Twojego planu diety. "
-           "Znak `=` znaczy: możesz wymienić jedno na drugie. Przy składnikach "
-           "w przepisach znajdziesz te same zamienniki pod przyciskiem "
-           "**Zamień na**.", ""]
-    for group in data.get("substitutions", []):
-        out.append('<div class="p-swap-card">')
-        out.append(f'<h2>{e(group["title"])}</h2>')
-        for item in group["items"]:
-            out.append(f"<p>{e(item)}</p>")
-        out.append("</div>")
     out.append("")
     return "\n".join(out)
 
@@ -724,7 +724,6 @@ def main():
             print(f"Usunięto nieużywany plik: docs/{stale}")
 
     write(os.path.join(DOCS, "index.md"), render_index(data))
-    write(os.path.join(DOCS, "zamienniki.md"), render_substitutions(data))
     write(os.path.join(DOCS, "zakupy.md"), render_shopping(data))
     write(os.path.join(DOCS, "dane", "zakupy.json"),
           json.dumps(dane_zakupow(data), ensure_ascii=False, separators=(",", ":")))
@@ -732,7 +731,7 @@ def main():
         write(os.path.join(RECIPE_DIR, r["slug"] + ".md"), render_recipe(r, data))
 
     n = len(data["recipes"])
-    print(f"Wygenerowano: index.md, zamienniki.md oraz {n} "
+    print(f"Wygenerowano: index.md, zakupy.md oraz {n} "
           f"{plural(n, 'przepis', 'przepisy', 'przepisów')}.")
     print(f"Kategorie: " + ", ".join(f"{s['label']} {s['time']}" for s in data["slots"]))
     print(f"Składniki: {len(data['featuredIngredients'])} widocznych, "
