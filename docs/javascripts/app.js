@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Przepisy Dietetyczne — logika strony
+   Gotuj z Lewym — logika strony
    --------------------------------------------------------------------------
    Trzy niezależne kawałki, wszystkie inicjowane przez boot():
      1. wyszukiwarka na stronie głównej (pora dnia + składniki),
@@ -952,7 +952,7 @@
       doc.setFont("DejaVu", "normal");
       doc.setFontSize(8);
       doc.setTextColor(150);
-      doc.text("Przepisy Dietetyczne · wygenerowano " +
+      doc.text("Gotuj z Lewym · wygenerowano " +
                new Date().toLocaleDateString("pl-PL"), M, 287);
 
       var name = "lista-zakupow-" + data.slug + "-" + servings + "os.pdf";

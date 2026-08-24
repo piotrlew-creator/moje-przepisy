@@ -1,4 +1,4 @@
-# Przepisy Dietetyczne
+# Gotuj z Lewym
 
 Statyczna strona z przepisami z planów diety: wyszukiwarka według pory posiłku
 i składników, przelicznik porcji, zamienniki składników, interaktywna lista

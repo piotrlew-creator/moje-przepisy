@@ -1,10 +1,12 @@
 /* ==========================================================================
-   Przepisy Dietetyczne — warstwa wizualna
+   Gotuj z Lewym — warstwa wizualna
    --------------------------------------------------------------------------
-   Paleta koduje porę posiłku: śniadanie zielone, obiad żółty, kolacja
-   granatowa. Kolor niesie więc informację (który to posiłek), a nie tylko
-   dekorację. Żółty jest zbyt jasny na biały tekst, dlatego każdy kafel ma
-   osobny token na kolor napisu (--p-slot-N-ink).
+   Paleta koduje porę posiłku. W trybie jasnym: śniadanie pomarańczowe,
+   obiad ciemnozielony, kolacja granatowa — wszystkie trzy uniosą biały
+   napis. W trybie ciemnym ta sama trójka rozjaśniona (żółty, jasnoszary,
+   jasnoniebieski) z napisem ciemnym. Kolor niesie więc informację (który
+   to posiłek), a nie tylko dekorację; kolor napisu ma osobny token
+   (--p-slot-N-ink), bo nie każde tło uniesie to samo.
 
    Typografia: Literata (nagłówki, tytuły dań) + Manrope (interfejs, kroki).
 
@@ -30,16 +32,19 @@
   --p-brand-ink: #ffffff;
   --p-brand-soft: #e2efe7;
 
-  --p-slot-1: #dd7a1f; /* śniadanie  7:00 — pomarańczowy  */
+  /* Pomarańcz jest tak ciemny, jak trzeba, żeby uniósł biały napis
+     (4,66 przy progu 4,5). Dzięki temu zaznaczony kafel śniadania zachowuje
+     się tak samo jak obiad i kolacja. Wysokie nasycenie trzyma go po stronie
+     pomarańczu, a nie rdzy. */
+  --p-slot-1: #b55b08; /* śniadanie  7:00 — pomarańczowy  */
   --p-slot-2: #2b6630; /* obiad     13:00 — ciemnozielony */
   --p-slot-3: #24417d; /* kolacja   18:00 — granatowy     */
   --p-slot-1-soft: #fdeadb;
   --p-slot-2-soft: #e2efdf;
   --p-slot-3-soft: #e0e6f4;
   /* Kolor napisu na wypełnionym kaflu — osobny token, bo nie każde tło
-     uniesie biały tekst. Pomarańcz jest na to za jasny (biel dałaby 3,0),
-     więc śniadanie dostaje ciemny napis: 5,6 zamiast 3,0. */
-  --p-slot-1-ink: #1a1c19;
+     uniesie biały tekst. */
+  --p-slot-1-ink: #ffffff;
   --p-slot-2-ink: #ffffff;
   --p-slot-3-ink: #ffffff;
 
@@ -1374,4 +1379,52 @@ html, body { overflow-x: hidden; }
   text-transform: none;
   letter-spacing: 0.02em;
   font-size: 0.66rem;
+}
+
+/* --------------------------------------------------------------- logo ----- */
+/* Garnek jest znakiem rozpoznawczym strony, a Material domyślnie chowa logo
+   poniżej 76.25em — czyli dokładnie tam, gdzie ta strona jest używana
+   najczęściej. Pokazujemy je także na telefonie i przesuwamy tuż przed
+   nazwę: w kodzie logo stoi przed hamburgerem, więc bez zmiany kolejności
+   ikona wylądowałaby na samym lewym skraju, z dala od tytułu. */
+@media screen and (max-width: 76.1875em) {
+  .md-header__inner > .md-header__button.md-icon:first-of-type { order: 0; }
+  .md-header__button.md-logo { order: 1; }
+  .md-header__title { order: 2; }
+  .md-header__inner > .md-header__option,
+  .md-header__inner > .md-header__button:not(.md-logo):not(:first-of-type) { order: 3; }
+
+  .md-header__button.md-logo {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    margin: 0 0 0 2px;
+  }
+
+  .md-header__button.md-logo img,
+  .md-header__button.md-logo svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .md-header__title {
+    margin-left: 0.5rem;
+  }
+}
+
+/* Na najwęższych ekranach nazwa musi zmieścić się obok garnka, hamburgera,
+   przełącznika motywu i lupy — inaczej „Gotuj z Lewym” ucina się w połowie. */
+@media screen and (max-width: 22.5em) {
+  .md-header__title {
+    font-size: 0.78rem;
+    margin-left: 0.2rem;
+  }
+
+  .md-header__button.md-logo {
+    margin-left: 0;
+  }
+
+  .md-header__inner > .md-header__button.md-icon {
+    padding: 0 0.35rem;
+  }
 }

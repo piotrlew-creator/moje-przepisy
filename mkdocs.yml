@@ -1,4 +1,4 @@
-site_name: Przepisy Dietetyczne
+site_name: Gotuj z Lewym
 site_description: Przepisy z Twojego planu diety — z przelicznikiem porcji, listą zakupów i trybem gotowania krok po kroku.
 site_url: https://piotrlew-creator.github.io/moje-przepisy/
 repo_url: https://github.com/piotrlew-creator/moje-przepisy
@@ -30,8 +30,12 @@ theme:
     - navigation.tabs
     - search.suggest
     - search.highlight
+  # Garnek z parą zamiast domyślnej książki Material — strona jest o gotowaniu,
+  # nie o dokumentacji. Ta sama ikona siedzi w favicon.svg.
   icon:
+    logo: material/pot-steam
     repo: fontawesome/brands/github
+  favicon: assets/favicon.svg
 
 extra_css:
   - stylesheets/fonts.css
