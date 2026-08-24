@@ -545,12 +545,14 @@ input:focus-visible {
   color: var(--p-ink-2);
 }
 
-/* Cztery sztywne kolumny rozpychały kafelek przy powiększeniu tekstu do
-   200% — węglowodany i tłuszcz były po prostu przycinane, bez możliwości
-   przewinięcia. auto-fit zawija je wtedy do dwóch rzędów (WCAG 1.4.4). */
+/* Cztery kafelki zawsze w jednym rzędzie. Kluczowe jest `minmax(0, 1fr)`
+   zamiast `1fr`: `1fr` to w istocie `minmax(auto, 1fr)`, więc kolumna nie może
+   zejść poniżej szerokości swojej treści i kafelek rozpycha się poza ekran
+   (przy powiększeniu tekstu do 200% ucinało to węglowodany i tłuszcz).
+   Z `minmax(0, …)` kolumny się kurczą, a tekst maleje razem z nimi. */
 .p-macros {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1px;
   background: var(--p-line);
   border: 1px solid var(--p-line);
@@ -568,20 +570,25 @@ input:focus-visible {
   gap: 1px;
 }
 
+/* Wartość i etykieta skalują się z szerokością ekranu (`clamp`), a `nowrap`
+   pilnuje, żeby „TŁUSZCZ” nigdy nie łamało się na dwie linie — przy 320 px
+   etykieta schodzi do ~7 px i cała czwórka mieści się w jednym rzędzie. */
 .p-macro__v {
-  font-size: 0.82rem;
+  font-size: clamp(0.66rem, 2.9vw, 0.82rem);
   font-weight: 800;
   color: var(--p-ink);
   font-variant-numeric: tabular-nums;
   line-height: 1.1;
+  white-space: nowrap;
 }
 
 .p-macro__l {
-  font-size: 0.56rem;
+  font-size: clamp(0.44rem, 1.95vw, 0.56rem);
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: clamp(0.01em, 0.28vw, 0.08em);
   text-transform: uppercase;
   color: var(--p-ink-3);
+  white-space: nowrap;
 }
 
 /* --------------------------------------------------------- liczba osób ---- */
@@ -672,11 +679,21 @@ input:focus-visible {
 
 .p-ing__row {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 2px 10px;
   align-items: baseline;
 }
 
-.p-ing__n { flex: 1; min-width: 0; }
+/* Kluczowy jest brak `min-width: 0`. Domyślne `auto` daje elementowi flex
+   minimalny rozmiar równy najdłuższemu wyrazowi nazwy, więc przeglądarka sama
+   wie, kiedy wiersz musi się zawinąć: „1 szt. jabłka 150 g” zostaje w jednej
+   linii, a „0,5 szklanki mleka roślinnego 125 g” na wąskim ekranie przenosi
+   nazwę do drugiej linii — zamiast łamać wyraz w środku („roślinneg / o”).
+   Próg dopasowuje się do treści, bez zgadywanych wartości w `ch`.
+   `overflow-wrap: break-word` (dziedziczone) nie wpływa na ten rozmiar
+   minimalny — zadziała dopiero, gdy pojedynczy wyraz nie zmieści się w całym
+   wierszu. Gramatura idzie na koniec, dosunięta `margin-left: auto`. */
+.p-ing__n { flex: 1 1 0%; }
 
 .p-ings li[data-swapped="1"] .p-ing__n {
   color: var(--p-brand);
@@ -700,7 +717,6 @@ input:focus-visible {
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   margin-left: auto;
-  padding-left: 10px;
   flex: none;
 }
 
@@ -1520,7 +1536,34 @@ html, body { overflow-x: hidden; }
 .p-koszyk {
   display: grid;
   gap: 22px;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Elementy siatki mają domyślnie `min-width: auto`, więc długa nazwa dania
+   albo pasek pór posiłku rozpychały kolumnę ponad szerokość ekranu. Na
+   telefonie kończyło się to ucięciem listy i paskiem, którego nie dało się
+   przewinąć — bo urósł do pełnej szerokości treści zamiast zacząć się
+   przewijać. */
+.p-koszyk > *,
+.p-koszyk__pick > *,
+.p-koszyk__cart > * {
+  min-width: 0;
+}
+
+/* Pasek pór posiłku wychodzi na całą szerokość ekranu tylko na stronie
+   głównej. W kolumnie zakupów ten ujemny margines wypychał go poza kontener.
+   Tutaj kafle nie mają godzin, więc zamiast przewijania po prostu je zawijamy
+   — „Kolacja” ma być widoczna od razu, bez szukania jej gestem w bok. */
+.p-koszyk .p-slotbar {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  flex-wrap: wrap;
+  overflow-x: visible;
+}
+
+.p-koszyk .p-slotbar > * {
+  flex: 0 1 auto;
 }
 
 @media screen and (min-width: 60em) {
@@ -1547,7 +1590,7 @@ html, body { overflow-x: hidden; }
 
 .p-zitem {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: minmax(0, 1fr) auto;
   gap: 2px 10px;
   align-items: center;
   padding: 8px 10px 8px 12px;
@@ -1555,7 +1598,13 @@ html, body { overflow-x: hidden; }
 }
 
 .p-zitem[data-in="1"] { background: var(--p-brand-soft); }
-.p-zitem__t { font-size: 0.76rem; font-weight: 600; line-height: 1.3; }
+.p-zitem__t {
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.3;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
 .p-zitem__m { grid-column: 1; font-size: 0.64rem; color: var(--p-ink-3); }
 
 .p-zitem__b {
@@ -1591,6 +1640,7 @@ html, body { overflow-x: hidden; }
 
 .p-zcart__i {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
   padding: 8px 10px;
@@ -1601,6 +1651,8 @@ html, body { overflow-x: hidden; }
 
 .p-zcart__t {
   flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
   font-size: 0.76rem;
   font-weight: 600;
   line-height: 1.3;
@@ -1643,4 +1695,12 @@ html, body { overflow-x: hidden; }
   margin-top: 18px;
   border-top: 1px solid var(--p-line);
   padding-top: 14px;
+}
+
+
+/* Pozycje list zakupów bywają długie („Przekąski na 2 śniadanie kasza
+   jaglana-jabłko-cynamon Tymbark”) — bez tego rozpychały wiersz poza ekran. */
+.p-check__text {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
