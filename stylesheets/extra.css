@@ -1,0 +1,1736 @@
+/* ==========================================================================
+   Gotuj z Lewym — warstwa wizualna
+   --------------------------------------------------------------------------
+   Paleta koduje porę posiłku. W trybie jasnym: śniadanie pomarańczowe,
+   obiad ciemnozielony, kolacja granatowa — wszystkie trzy uniosą biały
+   napis. W trybie ciemnym ta sama trójka rozjaśniona (żółty, jasnoszary,
+   jasnoniebieski) z napisem ciemnym. Kolor niesie więc informację (który
+   to posiłek), a nie tylko dekorację; kolor napisu ma osobny token
+   (--p-slot-N-ink), bo nie każde tło uniesie to samo.
+
+   Typografia: Literata (nagłówki, tytuły dań) + Manrope (interfejs, kroki).
+
+   Uwaga o jednostkach: Material ustawia html { font-size: 125% }, więc
+   1rem = 20px. Rozmiary tekstu podajemy w rem (skalują się z ustawieniami
+   przeglądarki), a wymiary dotykowe i odstępy w px (mają być dokładne). 
+   ========================================================================== */
+
+/* --------------------------------------------------------------- tokeny -- */
+:root,
+[data-md-color-scheme="default"] {
+  --p-ground: #f5f5ef;
+  --p-surface: #ffffff;
+  --p-surface-2: #ecece4;
+  --p-surface-3: #e2e2d8;
+  --p-ink: #191e1a;
+  --p-ink-2: #4a544c;
+  --p-ink-3: #78827a;
+  --p-line: #dddcd1;
+  --p-line-2: #c7c6b9;
+
+  --p-brand: #2c6a4a;
+  --p-brand-ink: #ffffff;
+  --p-brand-soft: #e2efe7;
+
+  /* Pomarańcz jest tak ciemny, jak trzeba, żeby uniósł biały napis
+     (4,66 przy progu 4,5). Dzięki temu zaznaczony kafel śniadania zachowuje
+     się tak samo jak obiad i kolacja. Wysokie nasycenie trzyma go po stronie
+     pomarańczu, a nie rdzy. */
+  --p-slot-1: #b55b08; /* śniadanie  7:00 — pomarańczowy  */
+  --p-slot-2: #2b6630; /* obiad     13:00 — ciemnozielony */
+  --p-slot-3: #24417d; /* kolacja   18:00 — granatowy     */
+  --p-slot-1-soft: #fdeadb;
+  --p-slot-2-soft: #e2efdf;
+  --p-slot-3-soft: #e0e6f4;
+  /* Kolor napisu na wypełnionym kaflu — osobny token, bo nie każde tło
+     uniesie biały tekst. */
+  --p-slot-1-ink: #ffffff;
+  --p-slot-2-ink: #ffffff;
+  --p-slot-3-ink: #ffffff;
+
+  /* Ciepły akcent przycisku „Wyczyść”. Bursztyn, bo trzy kolory posiłków
+     (zieleń, czerwień, granat) są już zajęte i akcent musi się od nich
+     odróżniać. */
+  --p-accent-warm: #8a5e12;
+  --p-accent-warm-soft: #f7edd8;
+
+  --p-shadow: 0 1px 2px rgba(25, 30, 26, 0.07), 0 4px 14px rgba(25, 30, 26, 0.05);
+  --p-shadow-lift: 0 6px 24px rgba(25, 30, 26, 0.14);
+
+  --p-radius: 14px;
+  --p-radius-sm: 10px;
+  --p-tap: 44px; /* minimalny cel dotykowy */
+}
+
+[data-md-color-scheme="slate"] {
+  --p-ground: #10130f;
+  --p-surface: #171b17;
+  --p-surface-2: #1e231e;
+  --p-surface-3: #262c26;
+  --p-ink: #e9ede7;
+  --p-ink-2: #aab4ab;
+  --p-ink-3: #7f897f;
+  --p-line: #2b312b;
+  --p-line-2: #3b423b;
+
+  --p-brand: #7fd0a2;
+  --p-brand-ink: #0d1a12;
+  --p-brand-soft: #1a2e22;
+
+  /* Na ciemnym tle ta sama trójka w jaśniejszym wydaniu — ciemny pomarańcz,
+     zieleń i granat zlałyby się z tłem. */
+  --p-slot-1: #eac65c; /* żółty          */
+  --p-slot-2: #c9cdc7; /* jasnoszary     */
+  --p-slot-3: #7fb6e8; /* jasnoniebieski */
+  --p-slot-1-soft: #2e2614;
+  --p-slot-2-soft: #272a27;
+  --p-slot-3-soft: #16202e;
+  --p-slot-1-ink: #10130f;
+  --p-slot-2-ink: #10130f;
+  --p-slot-3-ink: #10130f;
+
+  --p-accent-warm: #e0b15c;
+  --p-accent-warm-soft: #2c2611;
+
+  --p-shadow: 0 1px 2px rgba(0, 0, 0, 0.5), 0 4px 14px rgba(0, 0, 0, 0.35);
+  --p-shadow-lift: 0 6px 24px rgba(0, 0, 0, 0.55);
+}
+
+/* Material korzysta z własnych zmiennych — podpinamy je pod naszą paletę,
+   żeby nagłówek, wyszukiwarka i menu też należały do tego samego projektu. */
+:root,
+[data-md-color-scheme="default"],
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: var(--p-ground);
+  --md-default-fg-color: var(--p-ink);
+  --md-default-fg-color--light: var(--p-ink-2);
+  --md-default-fg-color--lighter: var(--p-ink-3);
+  --md-typeset-color: var(--p-ink);
+  --md-typeset-a-color: var(--p-brand);
+  --md-primary-fg-color: var(--p-brand);
+  --md-primary-bg-color: var(--p-brand-ink);
+  --md-accent-fg-color: var(--p-brand);
+  --md-code-bg-color: var(--p-surface-2);
+  --md-text-font: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --md-code-font: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ------------------------------------------------------------ typografia -- */
+body,
+.md-typeset {
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-feature-settings: "kern" 1;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-family: "Literata", Georgia, "Times New Roman", serif;
+  font-weight: 600;
+  color: var(--p-ink);
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+.md-typeset h1 {
+  font-size: 1.55rem;
+  line-height: 1.15;
+  margin: 0 0 12px;
+}
+
+.md-typeset h2 {
+  font-size: 1.05rem;
+  line-height: 1.2;
+  margin: 32px 0 12px;
+}
+
+.md-typeset {
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.p-eyebrow {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--p-ink-3);
+}
+
+.p-num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Nagłówek Material bywa zbyt ciasny na małych ekranach */
+.md-header {
+  box-shadow: none;
+  border-bottom: 1px solid var(--p-line);
+}
+
+.md-header__title {
+  font-family: "Literata", Georgia, serif;
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------- przyciski */
+.p-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: var(--p-tap);
+  padding: 10px 18px;
+  border: 1px solid var(--p-line-2);
+  border-radius: 999px;
+  background: var(--p-surface);
+  color: var(--p-ink);
+  font-family: inherit;
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
+}
+
+.p-btn:hover {
+  background: var(--p-surface-2);
+}
+
+.p-btn:active {
+  transform: scale(0.98);
+}
+
+.p-btn--primary {
+  background: var(--p-brand);
+  border-color: var(--p-brand);
+  color: var(--p-brand-ink);
+}
+
+.p-btn--primary:hover {
+  background: var(--p-brand);
+  filter: brightness(1.08);
+}
+
+.p-btn--block {
+  width: 100%;
+}
+
+.p-btn--ghost {
+  background: transparent;
+  border-color: transparent;
+  color: var(--p-brand);
+  font-weight: 700;
+}
+
+.p-btn[disabled] {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Obramowanie fokusu tylko dla klawiatury. Przy :focus-within zielony pierścień
+   pojawiał się też po zwykłym tapnięciu — na czerwonym kaflu „Obiad” wyglądał
+   jak błąd. */
+.p-btn:focus-visible,
+.p-chip:focus-visible,
+.p-chip:has(input:focus-visible),
+.p-check:has(input:focus-visible),
+input:focus-visible {
+  outline: 3px solid var(--p-brand);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------------ chipy -- */
+.p-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: var(--p-tap);
+  padding: 8px 15px;
+  border: 1px solid var(--p-line-2);
+  border-radius: 999px;
+  background: var(--p-surface);
+  color: var(--p-ink-2);
+  font-size: 0.74rem;
+  font-weight: 600;
+  line-height: 1.2;
+  cursor: pointer;
+  white-space: nowrap;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.p-chip input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+
+.p-chip .p-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: currentColor;
+  flex: none;
+}
+
+.p-chip[data-on="1"] {
+  background: var(--p-brand);
+  border-color: var(--p-brand);
+  color: var(--p-brand-ink);
+}
+
+/* Kafel „Wszystkie” nie jest porą posiłku — po przejściu śniadania na zieleń
+   marki byłby nie do odróżnienia, więc dostaje neutralną czerń. */
+.p-slotbar .p-chip[data-slot-filter="all"][data-on="1"] {
+  background: var(--p-ink);
+  border-color: var(--p-ink);
+  color: var(--p-ground);
+}
+
+.p-chip--slot1[data-on="1"] { background: var(--p-slot-1); border-color: var(--p-slot-1); color: var(--p-slot-1-ink); }
+.p-chip--slot2[data-on="1"] { background: var(--p-slot-2); border-color: var(--p-slot-2); color: var(--p-slot-2-ink); }
+.p-chip--slot3[data-on="1"] { background: var(--p-slot-3); border-color: var(--p-slot-3); color: var(--p-slot-3-ink); }
+
+.p-chip--slot1 .p-dot { color: var(--p-slot-1); }
+.p-chip--slot2 .p-dot { color: var(--p-slot-2); }
+.p-chip--slot3 .p-dot { color: var(--p-slot-3); }
+.p-chip[data-on="1"] .p-dot { color: currentColor; }
+
+/* ---------------------------------------------------------- wyszukiwarka -- */
+.p-finder {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin: 0 0 24px;
+}
+
+.p-slotbar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  padding: 4px 0 8px;
+  margin: 0 -16px;
+  padding-left: 16px;
+  padding-right: 16px;
+  scrollbar-width: none;
+}
+
+.p-slotbar::-webkit-scrollbar { display: none; }
+.p-slotbar > * { scroll-snap-align: start; flex: none; }
+
+/* Panel składników jest zwinięty, bo na telefonie 80 chipów zepchnęłoby listę
+   dań poza ekran. <details> daje działające zwijanie także bez JavaScriptu. */
+.p-panel {
+  background: var(--p-surface);
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-radius);
+  overflow: hidden;
+}
+
+.p-panel__summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: var(--p-tap);
+  padding: 12px 16px;
+  cursor: pointer;
+  list-style: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.p-panel__summary::-webkit-details-marker { display: none; }
+
+.p-panel__summary::after {
+  content: "";
+  width: 9px;
+  height: 9px;
+  flex: none;
+  border-right: 2px solid var(--p-ink-3);
+  border-bottom: 2px solid var(--p-ink-3);
+  transform: rotate(45deg) translate(-2px, -2px);
+  transition: transform 0.18s ease;
+}
+
+.p-panel[open] .p-panel__summary::after {
+  transform: rotate(-135deg) translate(-2px, -2px);
+}
+
+.p-panel__state {
+  margin-left: auto;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--p-ink-3);
+}
+
+.p-panel__state[data-active="1"] { color: var(--p-brand); }
+
+.p-panel__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0 16px 16px;
+  border-top: 1px solid var(--p-line);
+  padding-top: 14px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p-panel__summary::after { transition: none; }
+}
+
+.p-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--p-tap);
+  padding: 0 14px;
+  border: 1px solid var(--p-line-2);
+  border-radius: 999px;
+  background: var(--p-ground);
+}
+
+.p-search input {
+  flex: 1;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  color: var(--p-ink);
+  font-family: inherit;
+  font-size: 0.8rem; /* 16px — poniżej tej wartości iOS przybliża stronę */
+  padding: 10px 0;
+}
+
+.p-search input:focus { outline: none; }
+.p-search svg { flex: none; color: var(--p-ink-3); }
+
+.p-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.p-chips[data-collapsed="1"] .p-chip[data-rank="rest"] { display: none; }
+
+.p-count {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--p-ink-2);
+}
+
+.p-empty {
+  text-align: center;
+  padding: 32px 16px;
+  border: 1px dashed var(--p-line-2);
+  border-radius: var(--p-radius);
+  color: var(--p-ink-2);
+  font-size: 0.78rem;
+}
+
+/* ----------------------------------------------------------- lista dań ---- */
+/* Specyficzność musi bić regułę Material dla list w treści (display: flow-root),
+   inaczej siatka się nie włącza — a bez niej `order` z trybu „mam w lodówce”
+   nie przestawia kafelków. */
+.md-typeset ul.p-cards,
+.p-cards {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.md-typeset .p-cards li { margin: 0; }
+
+.p-card {
+  display: grid;
+  grid-template-columns: 6px 1fr;
+  background: var(--p-surface);
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-radius);
+  overflow: hidden;
+  box-shadow: var(--p-shadow);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.p-card:hover { transform: translateY(-1px); box-shadow: var(--p-shadow-lift); }
+
+.p-card__band { background: var(--p-line-2); }
+.p-card[data-slot="1"] .p-card__band { background: var(--p-slot-1); }
+.p-card[data-slot="2"] .p-card__band { background: var(--p-slot-2); }
+.p-card[data-slot="3"] .p-card__band { background: var(--p-slot-3); }
+
+.p-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 14px 16px;
+  min-height: 68px;
+  justify-content: center;
+}
+
+.md-typeset .p-card__title {
+  font-family: "Literata", Georgia, serif;
+  font-size: 0.88rem;
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--p-ink);
+  text-decoration: none;
+}
+
+.p-card__title::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.p-card__body { position: relative; }
+
+.p-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 10px;
+  font-size: 0.64rem;
+  font-weight: 700;
+  color: var(--p-ink-3);
+  letter-spacing: 0.02em;
+}
+
+.p-card__slot { display: inline-flex; align-items: center; gap: 6px; }
+.p-card__slot .p-dot { width: 8px; height: 8px; border-radius: 50%; }
+.p-card[data-slot="1"] .p-dot { background: var(--p-slot-1); }
+.p-card[data-slot="2"] .p-dot { background: var(--p-slot-2); }
+.p-card[data-slot="3"] .p-dot { background: var(--p-slot-3); }
+
+.p-card__tags {
+  font-size: 0.64rem;
+  color: var(--p-ink-3);
+  font-weight: 500;
+}
+
+/* ------------------------------------------------------------- przepis ---- */
+.p-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  margin: 0 0 20px;
+  border-radius: var(--p-radius);
+  border: 1px solid var(--p-line);
+  background: var(--p-surface);
+  border-left: 6px solid var(--p-line-2);
+}
+
+.p-hero[data-slot="1"] { border-left-color: var(--p-slot-1); background: var(--p-slot-1-soft); }
+.p-hero[data-slot="2"] { border-left-color: var(--p-slot-2); background: var(--p-slot-2-soft); }
+.p-hero[data-slot="3"] { border-left-color: var(--p-slot-3); background: var(--p-slot-3-soft); }
+
+.p-hero__top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  font-size: 0.66rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--p-ink-2);
+}
+
+/* Cztery kafelki zawsze w jednym rzędzie. Kluczowe jest `minmax(0, 1fr)`
+   zamiast `1fr`: `1fr` to w istocie `minmax(auto, 1fr)`, więc kolumna nie może
+   zejść poniżej szerokości swojej treści i kafelek rozpycha się poza ekran
+   (przy powiększeniu tekstu do 200% ucinało to węglowodany i tłuszcz).
+   Z `minmax(0, …)` kolumny się kurczą, a tekst maleje razem z nimi. */
+.p-macros {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--p-line);
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-radius-sm);
+  overflow: hidden;
+}
+
+.p-macro {
+  min-width: 0;
+  background: var(--p-surface);
+  padding: 9px 6px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+/* Wartość i etykieta skalują się z szerokością ekranu (`clamp`), a `nowrap`
+   pilnuje, żeby „TŁUSZCZ” nigdy nie łamało się na dwie linie — przy 320 px
+   etykieta schodzi do ~7 px i cała czwórka mieści się w jednym rzędzie. */
+.p-macro__v {
+  font-size: clamp(0.66rem, 2.9vw, 0.82rem);
+  font-weight: 800;
+  color: var(--p-ink);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.p-macro__l {
+  font-size: clamp(0.44rem, 1.95vw, 0.56rem);
+  font-weight: 700;
+  letter-spacing: clamp(0.01em, 0.28vw, 0.08em);
+  text-transform: uppercase;
+  color: var(--p-ink-3);
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------- liczba osób ---- */
+.p-servings {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 14px 16px;
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-radius);
+  background: var(--p-surface);
+  margin: 0 0 18px;
+}
+
+.p-stepper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.p-stepper__btn {
+  width: 52px;
+  height: 52px;
+  flex: none;
+  border-radius: 50%;
+  border: 1px solid var(--p-line-2);
+  background: var(--p-ground);
+  color: var(--p-ink);
+  font-size: 1.2rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.p-stepper__btn:active { background: var(--p-surface-3); }
+.p-stepper__btn[disabled] { opacity: 0.35; cursor: default; }
+
+.p-stepper__value {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.p-stepper__num {
+  font-family: "Literata", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--p-ink);
+  font-variant-numeric: tabular-nums;
+}
+
+.p-stepper__word {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--p-ink-3);
+}
+
+/* ---------------------------------------------------------- składniki ----- */
+.p-ings {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-radius);
+  overflow: hidden;
+  background: var(--p-surface);
+}
+
+.md-typeset .p-ings li {
+  margin: 0;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--p-line);
+  font-size: 0.8rem;
+  line-height: 1.45;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.p-ing__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px 10px;
+  align-items: baseline;
+}
+
+/* Kluczowy jest brak `min-width: 0`. Domyślne `auto` daje elementowi flex
+   minimalny rozmiar równy najdłuższemu wyrazowi nazwy, więc przeglądarka sama
+   wie, kiedy wiersz musi się zawinąć: „1 szt. jabłka 150 g” zostaje w jednej
+   linii, a „0,5 szklanki mleka roślinnego 125 g” na wąskim ekranie przenosi
+   nazwę do drugiej linii — zamiast łamać wyraz w środku („roślinneg / o”).
+   Próg dopasowuje się do treści, bez zgadywanych wartości w `ch`.
+   `overflow-wrap: break-word` (dziedziczone) nie wpływa na ten rozmiar
+   minimalny — zadziała dopiero, gdy pojedynczy wyraz nie zmieści się w całym
+   wierszu. Gramatura idzie na koniec, dosunięta `margin-left: auto`. */
+.p-ing__n { flex: 1 1 0%; }
+
+.p-ings li[data-swapped="1"] .p-ing__n {
+  color: var(--p-brand);
+  font-weight: 700;
+}
+
+.md-typeset .p-ings li:last-child { border-bottom: 0; }
+
+.p-ings li[data-pantry="1"] { color: var(--p-ink-2); }
+
+.p-ing__q {
+  font-weight: 800;
+  color: var(--p-ink);
+  font-variant-numeric: tabular-nums;
+  flex: none;
+}
+
+.p-ing__g {
+  color: var(--p-ink-3);
+  font-size: 0.72rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
+  flex: none;
+}
+
+/* ------------------------------------------------------------- akcje ------ */
+.p-actions {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+  margin: 18px 0 8px;
+}
+
+@media (min-width: 30em) {
+  .p-actions { grid-template-columns: 1fr 1fr; }
+}
+
+/* ------------------------------------------------- tryb gotowania --------- */
+.p-cook {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: var(--p-ground);
+  display: none;
+  flex-direction: column;
+}
+
+.p-cook[data-open="1"] { display: flex; }
+body.p-cooking { overflow: hidden; }
+
+.p-cook__bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  padding-top: max(10px, env(safe-area-inset-top));
+  border-bottom: 1px solid var(--p-line);
+  background: var(--p-surface);
+}
+
+.p-cook__title {
+  flex: 1;
+  min-width: 0;
+  font-family: "Literata", Georgia, serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--p-ink);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.p-iconbtn {
+  width: var(--p-tap);
+  height: var(--p-tap);
+  flex: none;
+  border: 0;
+  border-radius: 50%;
+  background: var(--p-surface-2);
+  color: var(--p-ink);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-progress {
+  display: flex;
+  gap: 4px;
+  padding: 12px 16px 0;
+}
+
+.p-progress__seg {
+  height: 5px;
+  flex: 1;
+  border-radius: 999px;
+  background: var(--p-surface-3);
+}
+
+.p-progress__seg[data-done="1"] { background: var(--p-brand); }
+
+.p-cook__body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 24px 20px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  /* krótki krok ma stać na środku ekranu, długi normalnie się przewija */
+  justify-content: safe center;
+}
+
+.p-cook__step {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--p-ink-3);
+}
+
+.p-cook__text {
+  font-size: 1.12rem;
+  line-height: 1.5;
+  color: var(--p-ink);
+  max-width: 30ch;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+.p-cook__nav {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  padding: 12px 16px;
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--p-line);
+  background: var(--p-surface);
+}
+
+.p-cook__nav .p-btn { min-height: 54px; font-size: 0.84rem; }
+
+/* --------------------------------------------------- lista zakupów -------- */
+.p-sheet {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: none;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.p-sheet[data-open="1"] { display: flex; }
+
+.p-sheet__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 14, 11, 0.5);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.p-sheet__panel {
+  position: relative;
+  width: 100%;
+  max-width: 34rem;
+  max-height: 88vh;
+  background: var(--p-surface);
+  border-radius: 20px 20px 0 0;
+  box-shadow: var(--p-shadow-lift);
+  display: flex;
+  flex-direction: column;
+  animation: p-rise 0.22s ease;
+}
+
+@media (min-width: 45em) {
+  .p-sheet { align-items: center; }
+  .p-sheet__panel { border-radius: 20px; max-height: 80vh; }
+}
+
+@keyframes p-rise {
+  from { transform: translateY(14px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .p-sheet__panel { animation: none; }
+  .p-card { transition: none; }
+}
+
+.p-sheet__head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-bottom: 1px solid var(--p-line);
+}
+
+.p-sheet__head h2 {
+  flex: 1;
+  margin: 0 !important;
+  font-family: "Literata", Georgia, serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.p-sheet__body {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 6px 0;
+}
+
+.p-sheet__foot {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr 1fr;
+  padding: 12px 16px;
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+  border-top: 1px solid var(--p-line);
+}
+
+/* Nagłówek działu sklepowego. Działów bywa i osiem, więc każdy dostaje
+   kreskę u góry — inaczej na telefonie lista zlewa się w jeden słup tekstu
+   i trudno na pierwszy rzut oka znaleźć, gdzie zaczyna się nabiał.
+   Odstęp między literami maleje na wąskich ekranach, żeby „MAKARONY, RYŻE,
+   KASZE I MĄKI” nie rozłaziło się na trzy linie. */
+.p-group {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: clamp(0.04em, 1.6vw, 0.12em);
+  text-transform: uppercase;
+  color: var(--p-ink-3);
+  padding: 16px 16px 6px;
+  border-top: 1px solid var(--p-line);
+  margin-top: 6px;
+}
+
+.p-group:first-child {
+  border-top: 0;
+  margin-top: 0;
+  padding-top: 12px;
+}
+
+.p-check {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 52px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-bottom: 1px solid var(--p-line);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.p-check:last-child { border-bottom: 0; }
+
+/* Ostatnia pozycja działu i kreska nad nagłówkiem następnego dawały dwie
+   linie kilka pikseli od siebie. Zostaje ta przy nagłówku. */
+.p-check:has(+ .p-group) { border-bottom: 0; }
+
+.p-check input {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 26px;
+  height: 26px;
+  flex: none;
+  margin: 0;
+  border: 2px solid var(--p-line-2);
+  border-radius: 8px;
+  background: var(--p-surface);
+  cursor: pointer;
+  position: relative;
+}
+
+.p-check input:checked {
+  background: var(--p-brand);
+  border-color: var(--p-brand);
+}
+
+.p-check input:checked::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid var(--p-brand-ink);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.p-check__text {
+  flex: 1;
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--p-ink);
+}
+
+.p-check input:checked ~ .p-check__text {
+  text-decoration: line-through;
+  color: var(--p-ink-3);
+}
+
+.p-check__g {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--p-ink-3);
+  font-variant-numeric: tabular-nums;
+  flex: none;
+}
+
+/* --------------------------------------------------------------- plan ----- */
+
+/* ------------------------------------------------------------ zamienniki -- */
+.p-swap-card {
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-radius);
+  background: var(--p-surface);
+  padding: 14px 16px;
+  margin: 0 0 10px;
+}
+
+.p-swap-card h3 {
+  margin: 0 0 6px !important;
+  font-family: "Literata", Georgia, serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.p-swap-card p { margin: 0; font-size: 0.76rem; line-height: 1.55; color: var(--p-ink-2); }
+.p-swap-card em { color: var(--p-ink); font-style: normal; font-weight: 700; }
+
+/* ------------------------------------------------------------- drobiazgi -- */
+.p-note {
+  font-size: 0.72rem;
+  color: var(--p-ink-2);
+  background: var(--p-surface-2);
+  border-radius: var(--p-radius-sm);
+  padding: 10px 14px;
+  margin: 0 0 16px;
+}
+
+.p-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: var(--p-tap);
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--p-brand);
+  text-decoration: none;
+}
+
+.p-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 60;
+  background: var(--p-ink);
+  color: var(--p-ground);
+  font-size: 0.74rem;
+  font-weight: 700;
+  padding: 12px 20px;
+  border-radius: 999px;
+  box-shadow: var(--p-shadow-lift);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  max-width: calc(100vw - 32px);
+  text-align: center;
+}
+
+.p-toast[data-on="1"] { opacity: 1; }
+
+/* Nic nie może rozpychać strony w poziomie */
+html, body { overflow-x: hidden; }
+.md-typeset table:not([class]) { display: block; overflow-x: auto; }
+
+@media print {
+  /* Listy rozwijane „Zamień na” drukowały się jako martwe „Pomidor · oryginał”
+     przy każdym składniku, a link powrotny jako podkreślony tekst. */
+  .md-header, .md-sidebar, .md-footer, .p-finder, .p-actions,
+  .p-cook, .p-sheet, .p-servings, .p-back, .p-ing__swap,
+  .p-toast, .md-dialog, .p-timer__btn, .p-fav, .p-modes,
+  .p-koszyk__pick { display: none !important; }
+
+  /* Na papierze nie widać steppera, więc liczba porcji musi stać przy
+     nagłówku składników — inaczej wydruk nie mówi, na ile to jest. */
+  .p-ings__head { display: block !important; }
+
+  .p-ings li { break-inside: avoid; }
+  .p-steps li { break-inside: avoid; }
+
+  a[href]::after { content: ""; }
+}
+
+/* Material zostawia sporo powietrza nad treścią; na telefonie to jest
+   pół ekranu zanim cokolwiek się pojawi. */
+@media screen and (max-width: 76.1875em) {
+  .md-main__inner { margin-top: 0; }
+  .md-content__inner { padding-top: 8px; }
+  .md-content__inner > :first-child { margin-top: 0; }
+}
+
+.md-content__inner::before { display: none; }
+
+/* Material stylizuje każdy <details> jak admonicję (niebieska ramka + ikonka
+   ołówka). Nasz panel filtrów to zwykły element sterujący, nie notka. */
+.md-typeset details.p-panel {
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--p-line);
+  border-left-width: 1px;
+  border-radius: var(--p-radius);
+  box-shadow: none;
+  background: var(--p-surface);
+  font-size: inherit;
+}
+
+.md-typeset details.p-panel > summary {
+  background: transparent;
+  border: 0;
+  font-weight: inherit;
+  padding: 12px 16px;
+}
+
+.md-typeset details.p-panel > summary::before,
+.md-typeset details.p-panel > summary::after {
+  background: none;
+  content: none;
+}
+
+.md-typeset details.p-panel > summary.p-panel__summary::after {
+  content: "";
+  display: block;
+  flex: none;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--p-ink-3);
+  border-bottom: 2px solid var(--p-ink-3);
+  background: none;
+  transform: rotate(45deg) translate(-2px, -2px);
+  top: auto;
+  right: auto;
+  position: static;
+}
+
+.md-typeset details.p-panel[open] > summary.p-panel__summary::after {
+  transform: rotate(-135deg) translate(-2px, -2px);
+}
+
+/* [hidden] musi wygrać z display z komponentów */
+[hidden] { display: none !important; }
+
+/* Material dorzuca własne odstępy do naszych bloków */
+.md-typeset .p-finder,
+.md-typeset .p-cards,
+.md-typeset .p-count { margin-left: 0; margin-right: 0; }
+
+/* Na planie dnia kolor niesie pora posiłku (paseczek z lewej), więc same
+   nazwy dań zostają w kolorze tekstu — inaczej strona robi się jaskrawa. */
+.md-typeset a.p-card__title:hover { text-decoration: underline; }
+
+
+/* Pełna lista kroków — widoczna zawsze (także bez JavaScriptu i przy druku),
+   a tryb gotowania pokazuje te same kroki po jednym na ekran. */
+.md-typeset ol.p-steps {
+  list-style: none;
+  counter-reset: krok;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.md-typeset ol.p-steps li {
+  counter-increment: krok;
+  margin: 0;
+  padding: 14px 16px 14px 52px;
+  position: relative;
+  background: var(--p-surface);
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-radius);
+  font-size: 0.8rem;
+  line-height: 1.55;
+}
+
+.md-typeset ol.p-steps li::before {
+  content: counter(krok);
+  position: absolute;
+  left: 14px;
+  top: 13px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--p-brand);
+  color: var(--p-brand-ink);
+  font-size: 0.68rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ------------------------------------------------ pole szukania + wyczyść -- */
+/* „Wyczyść” stoi obok pola wyszukiwania, bo odznaczenie wszystkiego to
+   najczęstsza akcja po przefiltrowaniu — nie ma go szukać pod listą. */
+.p-searchrow {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.p-searchrow .p-search { flex: 1; min-width: 0; }
+
+/* Kółko zostaje wizualnie małe (30 px), ale obszar dotyku ma pełne 44 px —
+   ujemny margines chroni wysokość rzędu z polem wyszukiwania. */
+.p-search__x {
+  width: var(--p-tap);
+  height: var(--p-tap);
+  margin: calc((30px - var(--p-tap)) / 2);
+  flex: none;
+  border: 0;
+  background: none;
+  color: var(--p-ink-2);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.p-search__x::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--p-surface-3);
+  z-index: -1;
+}
+
+.p-btn--clear {
+  flex: none;
+  background: var(--p-accent-warm-soft);
+  border-color: var(--p-accent-warm);
+  color: var(--p-accent-warm);
+  font-weight: 800;
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+
+.p-btn--clear:hover { background: var(--p-accent-warm); color: #fff; }
+[data-md-color-scheme="slate"] .p-btn--clear:hover { color: #10130f; }
+
+.p-hint {
+  margin: 0;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  color: var(--p-ink-3);
+}
+
+/* --------------------------------------------------------- „Zamień na” ---- */
+.p-ings__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 12px;
+  flex-wrap: wrap;
+  margin: 32px 0 12px;
+}
+
+.p-ings__head h2 {
+  font-size: 0.95rem !important;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.p-ings__head .p-btn { white-space: nowrap; flex: none; }
+
+.p-ing__swap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.p-swaplabel {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--p-ink-3);
+  flex: none;
+}
+
+/* Natywny <select> — na telefonie otwiera systemowy wybierak, który jest
+   wygodniejszy i dostępniejszy niż własna lista rozwijana. */
+.p-select {
+  flex: 1;
+  min-width: 0;
+  min-height: var(--p-tap);
+  padding: 8px 34px 8px 12px;
+  border: 1px solid var(--p-line-2);
+  border-radius: 10px;
+  background-color: var(--p-ground);
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%2378827a' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  color: var(--p-ink);
+  font-family: inherit;
+  font-size: 0.76rem;
+  font-weight: 600;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.p-ings li[data-swapped="1"] .p-select {
+  border-color: var(--p-brand);
+  color: var(--p-brand);
+}
+
+.p-swapped {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--p-brand);
+  background: var(--p-brand-soft);
+  border-radius: 999px;
+  padding: 1px 7px;
+  vertical-align: 1px;
+}
+
+/* ------------------------------------------- sekcje i zapis składników ---- */
+/* Nowsze plany dzielą składniki na części („sos:”, „Przekąska: …”). */
+.md-typeset .p-ings li.p-ings__sec {
+  display: block;
+  padding: 12px 16px 4px;
+  border-bottom: 0;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--p-ink-3);
+  background: var(--p-surface-2);
+}
+
+/* Zapis „Nazwa – ilość” zamiast „ilość Nazwa”: ta sama treść, kolejność
+   jak w źródle. */
+.p-ings li[data-order="name"] .p-ing__row { flex-wrap: wrap; }
+.p-ings li[data-order="name"] .p-ing__n { order: 1; flex: 1 1 auto; font-weight: 700; color: var(--p-ink); }
+.p-ings li[data-order="name"] .p-ing__q { order: 2; font-weight: 600; color: var(--p-ink-2); }
+.p-ings li[data-order="name"] .p-ing__g { order: 3; }
+.p-ings .p-ing__q:empty { display: none; }
+
+/* --------------------------------------------------------------- logo ----- */
+/* Garnek jest znakiem rozpoznawczym strony, a Material domyślnie chowa logo
+   poniżej 76.25em — czyli dokładnie tam, gdzie ta strona jest używana
+   najczęściej. Pokazujemy je także na telefonie i przesuwamy tuż przed
+   nazwę: w kodzie logo stoi przed hamburgerem, więc bez zmiany kolejności
+   ikona wylądowałaby na samym lewym skraju, z dala od tytułu. */
+@media screen and (max-width: 76.1875em) {
+  .md-header__inner > .md-header__button.md-icon:first-of-type { order: 0; }
+  .md-header__button.md-logo { order: 1; }
+  .md-header__title { order: 2; }
+  .md-header__inner > .md-header__option,
+  .md-header__inner > .md-header__button:not(.md-logo):not(:first-of-type) { order: 3; }
+
+  .md-header__button.md-logo {
+    display: inline-flex;
+    align-items: center;
+    padding: 0;
+    margin: 0 0 0 2px;
+  }
+
+  .md-header__button.md-logo img,
+  .md-header__button.md-logo svg {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .md-header__title {
+    margin-left: 0.5rem;
+  }
+}
+
+/* Na najwęższych ekranach nazwa musi zmieścić się obok garnka, hamburgera,
+   przełącznika motywu i lupy — inaczej „Gotuj z Lewym” ucina się w połowie. */
+@media screen and (max-width: 22.5em) {
+  .md-header__title {
+    font-size: 0.78rem;
+    margin-left: 0.2rem;
+  }
+
+  .md-header__button.md-logo {
+    margin-left: 0;
+  }
+
+  .md-header__inner > .md-header__button.md-icon {
+    padding: 0 0.35rem;
+  }
+}
+
+/* ================================================ NOWE FUNKCJE ============ */
+
+/* ------------------------------------------------------ tryby widoku ----- */
+.p-modes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 0;
+}
+
+.p-chip--mode[data-on="1"] {
+  background: var(--p-ink);
+  border-color: var(--p-ink);
+  color: var(--p-ground);
+}
+
+.p-chip--mode[disabled] {
+  opacity: 0.45;
+  cursor: default;
+}
+
+/* Serce jest rysowane jako SVG (patrz HEART_PATH w generate_site.py), więc
+   kształt jest ten sam na każdym telefonie. Pusty kontur = nie w ulubionych,
+   wypełniony = ulubiony; przełącza to `aria-pressed`, a nie podmiana treści.
+   `stroke-linejoin: round` wygładza wcięcie między łukami przy małym rozmiarze. */
+.p-heart {
+  width: 1.05em;
+  height: 0.92em;
+  flex: none;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.4;
+  stroke-linejoin: round;
+  vertical-align: -0.1em;
+}
+
+.p-chip[data-on="1"] .p-heart,
+[aria-pressed="true"] > .p-heart {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* ---------------------------------------------------------- ulubione ----- */
+/* Serce leży w rogu kafelka, ale jego cel dotykowy ma pełne 44 px — dlatego
+   ujemny margines zamiast mniejszego przycisku. */
+.p-fav {
+  /* Tytuł kafelka rozciąga swój obszar klikalny na całą kartę (::after),
+     więc serce musi stać nad nim — inaczej kliknięcie trafia w link. */
+  position: relative;
+  z-index: 1;
+  flex: none;
+  width: var(--p-tap);
+  height: var(--p-tap);
+  margin: -10px -10px -10px 0;
+  border: 0;
+  background: none;
+  color: var(--p-ink-3);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.15s ease, transform 0.1s ease;
+}
+
+.p-fav .p-heart {
+  width: 1em;
+  height: 0.875em;
+  vertical-align: 0;
+}
+
+.p-fav:hover { color: var(--p-slot-1); }
+.p-fav:active { transform: scale(0.88); }
+.p-fav[aria-pressed="true"] { color: #c0392b; }
+[data-md-color-scheme="slate"] .p-fav[aria-pressed="true"] { color: #f08a7d; }
+
+.p-fav--hero {
+  margin: -10px -8px -10px auto;
+  color: var(--p-ink-2);
+}
+
+.p-card__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.p-card__head .p-card__title { flex: 1 1 auto; }
+
+/* Ugotowane: dyskretny znacznik, nie odznaka */
+.p-card[data-cooked="1"] .p-card__title::after {
+  content: " ✓";
+  color: var(--p-slot-2);
+  font-weight: 700;
+}
+
+.p-cooked {
+  margin: 6px 0 0;
+  font-size: 0.66rem;
+  font-weight: 700;
+  color: var(--p-slot-2);
+}
+
+/* ------------------------------------------------ co mam w lodówce ------- */
+.p-card__miss {
+  margin: 6px 0 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--p-accent-warm);
+  letter-spacing: 0.01em;
+}
+
+.p-card__miss[data-none="1"] { color: var(--p-slot-2); }
+
+/* ---------------------------------------------------------- minutnik ----- */
+.p-timer__btn {
+  align-self: flex-start;
+  margin-top: 8px;
+  min-height: 36px;
+  padding: 6px 14px;
+  border: 1px solid var(--p-line-2);
+  border-radius: 999px;
+  background: var(--p-surface);
+  color: var(--p-ink-2);
+  font-family: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.p-timer__btn[data-running="1"] {
+  background: var(--p-slot-1);
+  border-color: var(--p-slot-1);
+  color: var(--p-slot-1-ink);
+}
+
+.p-timer__btn--cook {
+  margin-top: 18px;
+  min-height: var(--p-tap);
+  font-size: 0.82rem;
+  padding: 10px 20px;
+}
+
+.p-steps li {
+  display: flex;
+  flex-direction: column;
+}
+
+.p-step__text { display: block; }
+
+/* --------------------------------------------------- zbiorcze zakupy ----- */
+.p-koszyk {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+/* Elementy siatki mają domyślnie `min-width: auto`, więc długa nazwa dania
+   albo pasek pór posiłku rozpychały kolumnę ponad szerokość ekranu. Na
+   telefonie kończyło się to ucięciem listy i paskiem, którego nie dało się
+   przewinąć — bo urósł do pełnej szerokości treści zamiast zacząć się
+   przewijać. */
+.p-koszyk > *,
+.p-koszyk__pick > *,
+.p-koszyk__cart > * {
+  min-width: 0;
+}
+
+/* Pasek pór posiłku wychodzi na całą szerokość ekranu tylko na stronie
+   głównej. W kolumnie zakupów ten ujemny margines wypychał go poza kontener.
+   Tutaj kafle nie mają godzin, więc zamiast przewijania po prostu je zawijamy
+   — „Kolacja” ma być widoczna od razu, bez szukania jej gestem w bok. */
+.p-koszyk .p-slotbar {
+  margin: 0;
+  padding-left: 0;
+  padding-right: 0;
+  flex-wrap: wrap;
+  overflow-x: visible;
+}
+
+.p-koszyk .p-slotbar > * {
+  flex: 0 1 auto;
+}
+
+@media screen and (min-width: 60em) {
+  .p-koszyk {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}
+
+.p-zlist {
+  list-style: none !important;
+  margin: 10px 0 0 !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--p-line);
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-radius-sm);
+  overflow: hidden;
+  max-height: 26rem;
+  overflow-y: auto;
+}
+
+.p-zitem {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 10px;
+  align-items: center;
+  padding: 8px 10px 8px 12px;
+  background: var(--p-surface);
+}
+
+.p-zitem[data-in="1"] { background: var(--p-brand-soft); }
+.p-zitem__t {
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.3;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.p-zitem__m { grid-column: 1; font-size: 0.64rem; color: var(--p-ink-3); }
+
+.p-zitem__b {
+  grid-column: 2;
+  grid-row: 1 / 3;
+  width: var(--p-tap);
+  height: var(--p-tap);
+  flex: none;
+  border: 1px solid var(--p-line-2);
+  border-radius: 50%;
+  background: var(--p-surface);
+  color: var(--p-ink);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.p-zitem[data-in="1"] .p-zitem__b {
+  background: var(--p-brand);
+  border-color: var(--p-brand);
+  color: var(--p-brand-ink);
+}
+
+.p-zcart {
+  list-style: none !important;
+  margin: 10px 0 0 !important;
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.p-zcart__i {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  background: var(--p-surface);
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-radius-sm);
+}
+
+.p-zcart__t {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--p-ink) !important;
+  text-decoration: none !important;
+}
+
+.p-stepper--sm {
+  flex: none;
+  gap: 2px;
+  padding: 0;
+  border: 0;
+  background: none;
+}
+
+.p-stepper--sm .p-stepper__btn {
+  width: 34px;
+  height: 34px;
+  min-height: 34px;
+  font-size: 0.9rem;
+}
+
+.p-stepper--sm .p-num {
+  min-width: 1.4rem;
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+/* Skąd pochodzi scalona pozycja — bez tego nie wiadomo, czy „3 jajka”
+   to jedno danie, czy suma trzech. */
+.p-zfrom {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--p-ink-3);
+  white-space: nowrap;
+}
+
+#z-body:not(:empty) {
+  margin-top: 18px;
+  border-top: 1px solid var(--p-line);
+  padding-top: 14px;
+}
+
+
+/* Pozycje list zakupów bywają długie („Przekąski na 2 śniadanie kasza
+   jaglana-jabłko-cynamon Tymbark”) — bez tego rozpychały wiersz poza ekran. */
+.p-check__text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
